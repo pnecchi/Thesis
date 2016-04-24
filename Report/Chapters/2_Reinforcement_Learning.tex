@@ -3,6 +3,152 @@
 \section{The Reinforcement Learning Problem}
 
 \section{Markov Decision Processes}
+The reinforcement learning problem is modeled using Markov decision processes.
+\begin{definition}[Markov Decision Process]
+	A Markov decision process (MDP) is a tuple $<\S, \A, \calP, \calR,
+	\gamma>$, where
+	\begin{enumerate}[label={\roman*)}]
+		\item $(\S, \calS)$ is a measurable state space.
+		\item $(\A, \calA)$ is a measurable action space. 
+		\item $\calP: \S \times \A \times \calS \to \R$ is a Markov transition
+			kernel, i.e.
+			\begin{enumerate}[label={\alph*)}]
+				\item for every $s\in\S$ and $a\in\A$, $B \mapsto \calP(s,a,B)$
+					  is a probability distribution over $(\S, \calS)$.
+				\item for every $B\in\calS$, $(s,a) \mapsto \calP(s,a,B)$ is
+					  a measurable function on $\S \times \A$.
+			\end{enumerate}
+		\item $\calR: \S \times \A \to \R$ is a reward function.
+		\item $\gamma \in (0,1)$ is a discount factor. 
+	\end{enumerate}
+\end{definition}
+The kernel $\calP$ describes the random evolution of the system: suppose that
+at time $t$ the system is in state $s_t$ and that the agent takes action $a_t$,
+then, regardless of the previous history of the system, the probability to find
+the system in a state belonging to $B\in\calS$ at time $t+1$ is given by
+$\calP(s_t, a_t, B)$, i.e.
+\begin{equation}
+	\calP(s_t, a_t, B) = \P{S_{t+1} \in B | S_t = s_t, A_t = a_t}
+\end{equation}
+Following this random transition, the agent receives a stochastic reward
+$R_{t+1}$. The reward function $\calR(s_t, a_t)$ gives the expected reward
+obtained when action $a_t$ is taken in state $s_t$, i.e. 
+\begin{equation}
+	\calR(s_t, a_t) = \E{R_{t+1} | S_t = s_t, A_t = a_t}
+\end{equation}
+At any time step, the agent selects his actions according to a certain policy. 
+\begin{definition}[Policy]
+	A policy is a function $\pi: \S \times \calA \to \R$ such that
+	\begin{enumerate}[label={\roman*)}]
+		\item for every $s \in \S$, $C \mapsto \pi(s,C)$ is a probability
+			  distribution over $(\A, \calA)$. 
+		\item for every $C \in \calA$, $s \mapsto \pi(s, C)$ is a measurable
+			  function. 
+	\end{enumerate}
+\end{definition}
+Intuitively, a policy represents a stochastic mapping from the current state of
+the system to actions. Deterministic policies are a particular case of this 
+general definition. We assumed that the agent's policy is stationary and only
+depends on the current state of the system. We might in fact  consider more 
+general policies that depends on the whole history of the system. However, as
+we will see, we can always find an optimal policy that depends only on the
+current state, so that our definition is not restrictive. A policy $\pi$ and an
+initial state $s_0 \in \S$ together determine a random state-action-reward 
+sequence ${\{(S_t, A_t, R_{t+1})\}}_{t\geq 0}$ with values on $\S \times \A
+\times \R$ following the mechanism described above. We introduce the useful
+concept of history of an MDP 
+\begin{definition}[History]
+	Given an initial state $s_0 \in \S$ and a policy $\pi$, a history (or
+	equivalently trajectory or roll-out) of the system is a random sequence
+	$H_\pi = {\{(S_t, A_t)\}}_{t\geq 0}$ with values on $\S \times \A$, defined
+	on some probability space $(\Omega, \mathcal{F}, \mathbb{P})$, such that for 
+	$t = 0, 1, \ldots$
+	\begin{equation}
+		\begin{cases}
+			S_0 = s_0\\
+			A_t \sim \pi(S_t, \cdot)\\
+			S_{t+1} \sim \calP(S_t, A_t, \cdot)\\
+		\end{cases}
+	\end{equation}
+	we will denote by $(\H, \calH)$ the measurable space of all possible
+	histories. 
+\end{definition}
+Moreover, we observe that
+\begin{enumerate}[label={\roman*)}]
+	\item the state sequence ${\{S_t\}}_{t\geq 0}$ is a Markov process $<\S,
+		  \calP_\pi>$
+	  \item the state-reward sequence ${\{(S_t, R_t)\}}_{t\geq 0}$ is a Markov 
+		  reward process $<\S, \calP_\pi, \calR_\pi, \gamma>$
+\end{enumerate}
+where we denoted 
+\begin{equation}
+	\begin{split}
+		\calP_\pi(s, s') &= \int_\A \pi(s, a) \calP(s, a, s') da\\
+		\calR_\pi(s) &= \int_\A \pi(s, a) \calR(s, a) da\\
+	\end{split}
+\end{equation}
+The goal of the agent is to maximize his expected return. 
+\begin{definition}[Return]
+	The return is the total discounted reward obtained by the agent starting 
+	from $t$  
+	\begin{equation}
+		G_t = \sum^{\infty}_{t=0} \gamma^t R_{t+k+1} 
+	\end{equation}
+\end{definition}
+where $0 < \gamma < 1$ is the discount factor. The discount factor models the
+trade-off between immediate and delayed reward: if $\gamma = 0$ the agent
+selects his actions in a myopic way, while if $\gamma \to 1$ he acts in a
+far-sighted manner. There are other possilble reasons for discounting future
+rewards. The first is because it is mathematically convenient, as it avoids
+infinite returns and it solves many convergence issues. Another interpretation
+is that it models the uncertainty about the future, which may not be fully
+represented. Finally, the financial interpration is that discounting gives the
+present value of future rewards. Since the return are stochastic, we consider
+their expected value. 
+\begin{definition}[State-Value Function]
+	The state-value function $V_\pi: \S \to \R$ is the expected return that can
+	be obtained starting from a state and following policy $\pi$
+	\begin{equation}
+		V_\pi(s) = \E[\pi]{G_t|S_t = s}
+	\end{equation}
+\end{definition}
+where $\mathbb{E}_{\pi}$ indicates that all the actions are selected according
+to policy $\pi$. In reinforcement learning, it is useful to consider another
+function 
+\begin{definition}[Action-Value Function]
+	The action-value function $Q_\pi: \S \times \A \to \R$ is the expected 
+	return that can be obtained starting from a state, taking an action and
+	then following policy $\pi$
+	\begin{equation}
+		Q_\pi(s,a) = \E[\pi]{G_t|S_t = s, A_t = a}
+	\end{equation}
+\end{definition}
+\begin{definition}[Optimal State-Value Function]
+	The optimal state-value function $V_*: \S \to \R$ is the largest expected 
+	return that can be obtained starting from a state
+	\begin{equation}
+		V_*(s) = \sup_\pi V_\pi(s)
+	\end{equation}
+\end{definition}
+\begin{definition}[Optimal Action-Value Function]
+	The optimal action-value function $Q_*: \S \times \A \to \R$ is the largest
+	expected return that can be obtained starting from a state and taking an
+	action
+	\begin{equation}
+		Q_*(s,a) = \sup_\pi Q_\pi(s,a)
+	\end{equation}
+\end{definition}
+The agent goal is to select a policy $\pi_*$ that maximize his expected return
+in all possible states. Such a policy is called \emph{optimal}. More formally,
+we introduce the following partial ordering in the policy space
+\begin{equation}
+	\pi \succeq \pi' \Leftrightarrow V_\pi(s) \geq V_{\pi'}(s) \;\;\; \forall s \in \S
+\end{equation}
+Then the optimal policy $\pi_* \succeq \pi$, $\forall \pi$.
+
+\subsection{Bellman Equations}
+
+\subsection{Risk-Sensitive MDP}
 
 \section{Policy Gradient}
 

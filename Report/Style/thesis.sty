@@ -1,6 +1,7 @@
 \ProvidesPackage{thesis}
 
 % Useful packages 
+\usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[top=43mm, bottom=44mm, left=41mm, right=32mm]{geometry}
 \usepackage{amsmath}
@@ -17,6 +18,7 @@
 \usepackage{booktabs}
 \usepackage{tikz}
 \usepackage{hyperref}
+\usepackage{enumitem}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
@@ -30,11 +32,27 @@
 \pagestyle{fancy}
 
 % Redefine the plain page style used by chapter pages
-\fancypagestyle{plain}{
+\fancypagestyle{plain}{%
 	\fancyhead{}
 	\fancyfoot{}
 	\renewcommand{\headrulewidth}{0pt}
 }
+
+% User-defined environments 
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemmma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{note}{Note}[section]
+
+% Modify interline for enumerate environment 
+\setlist{nosep}
 
 % User-defined commands
 \newcommand{\R}{\mathbb{R}}
@@ -44,9 +62,11 @@
 \newcommand{\calA}{\mathcal{A}}
 \renewcommand{\H}{\mathbb{H}}
 \newcommand{\calH}{\mathcal{H}}
-\newcommand{\calP}[1]{\mathcal{P}\left(#1\right)}
-\newcommand{\calR}[1]{\mathcal{R}\left(#1\right)}
-\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}
-\renewcommand{\P}[1]{\mathbb{P}\left(#1\right)}
-\newcommand{\Var}[1]{\text{Var}\left(#1\right)}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\E}[2][]{\mathbb{E}_{#1}\left[#2\right]}
+\renewcommand{\P}[2][]{\mathbb{P}_{#1}\left(#2\right)}
+\newcommand{\Var}[2][]{\text{Var}_{#1}\left(#2\right)}
+
+
 
