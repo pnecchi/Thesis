@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: acm.bst
+Database file #1: Bibliography/bibliography.bib
+Warning--can't use both volume and number fields in bertsekas1995dynamic
+Warning--can't use both author and editor fields in bishop2006pattern
+Warning--empty journal in corazzaq
+Warning--empty journal in cumming2015investigation
+Warning--empty year in du1algorithm
+Warning--empty journal in eldercreating
+You've used 62 entries,
+            2253 wiz_defined-function locations,
+            852 strings with 14321 characters,
+and the built_in function-call counts, 21506 in all, are:
+= -- 2079
+> -- 969
+< -- 0
++ -- 405
+- -- 338
+* -- 1600
+:= -- 3419
+add.period$ -- 187
+call.type$ -- 62
+change.case$ -- 342
+chr.to.int$ -- 0
+cite$ -- 68
+duplicate$ -- 854
+empty$ -- 1768
+format.name$ -- 338
+if$ -- 4561
+int.to.chr$ -- 0
+int.to.str$ -- 62
+missing$ -- 72
+newline$ -- 310
+num.names$ -- 124
+pop$ -- 411
+preamble$ -- 1
+purify$ -- 291
+quote$ -- 0
+skip$ -- 554
+stack$ -- 0
+substring$ -- 1321
+swap$ -- 249
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 224
+warning$ -- 6
+while$ -- 200
+width$ -- 64
+write$ -- 627
+(There were 6 warnings)

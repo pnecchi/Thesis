@@ -1,0 +1,76 @@
+\documentclass[12pt, a4paper, twoside]{book}
+
+\usepackage{Style/thesis}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+% COVER PAGE
+%----------------------------------------------------------------------------------------
+
+%\include{cover/frontespizio}
+%\clearpage
+
+%% Set page numbers of the introduction to roman  
+%\frontmatter
+%%Insert white page
+%\clearpage
+%\thispagestyle{empty}
+%\null
+%\newpage
+
+%----------------------------------------------------------------------------------------
+% ACKNOWLEDGMENTS
+%----------------------------------------------------------------------------------------
+
+%\include{acknowledgements/acknowledgements}
+%\newpage
+%Insert white page
+%\clearpage
+%\thispagestyle{empty}
+%\null
+%\newpage
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+ 
+%\tableofcontents{} % Write out the Table of Contents
+
+%\listoffigures % Write out the List of Figures
+
+%\listoftables % Write out the List of Tables
+
+%\lstlistoflistings
+
+%----------------------------------------------------------------------------------------
+% ABSTRACT
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter
+
+% \input{Chapters/1_Introduction}
+\input{Chapters/2_Reinforcement_Learning}
+% \input{Chapters/3_Finance}
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\backmatter
+\nocite{*}
+\bibliographystyle{acm}
+\bibliography{Bibliography/bibliography}
+
+\end{document}

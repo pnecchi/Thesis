@@ -1,0 +1,10 @@
+\BOOKMARK [0][-]{chapter.1}{Reinforcement Learning}{}% 1
+\BOOKMARK [1][-]{section.1.1}{The Reinforcement Learning Problem}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Markov Decision Processes}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Policy Gradient}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.3.1}{Finite Differences}{section.1.3}% 5
+\BOOKMARK [2][-]{subsection.1.3.2}{Monte-Carlo Policy Gradient}{section.1.3}% 6
+\BOOKMARK [2][-]{subsection.1.3.3}{Policy Gradient Theorem}{section.1.3}% 7
+\BOOKMARK [2][-]{subsection.1.3.4}{Actor-Critic Methods}{section.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.3.5}{Natural Policy Gradient}{section.1.3}% 9
+\BOOKMARK [2][-]{subsection.1.3.6}{Policy Gradient with Parameter Exploration}{section.1.3}% 10

@@ -1,0 +1,52 @@
+\ProvidesPackage{thesis}
+
+% Useful packages 
+\usepackage[english]{babel}
+\usepackage[top=43mm, bottom=44mm, left=41mm, right=32mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}  
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{latexsym} 
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{changebar}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{hyperref}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+% Fancyhdr settings
+\fancyfoot{}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\itshape\nouppercase{\leftmark}}
+\fancyhead[RE]{\itshape\nouppercase{\rightmark}}
+\setlength{\headheight}{15.0pt}
+\renewcommand{\headrulewidth}{0.2pt}
+\pagestyle{fancy}
+
+% Redefine the plain page style used by chapter pages
+\fancypagestyle{plain}{
+	\fancyhead{}
+	\fancyfoot{}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+% User-defined commands
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\calA}{\mathcal{A}}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calP}[1]{\mathcal{P}\left(#1\right)}
+\newcommand{\calR}[1]{\mathcal{R}\left(#1\right)}
+\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}
+\renewcommand{\P}[1]{\mathbb{P}\left(#1\right)}
+\newcommand{\Var}[1]{\text{Var}\left(#1\right)}
+
