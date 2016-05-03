@@ -10,6 +10,7 @@
 \usepackage{mathrsfs}
 \usepackage{amssymb}
 \usepackage{latexsym} 
+\usepackage{bbm}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -55,6 +56,7 @@
 \setlist{nosep}
 
 % User-defined commands
+\newcommand{\ind}[1]{\mathbbm{1}_{#1}}
 \newcommand{\R}{\mathbb{R}}
 \renewcommand{\S}{\mathbb{S}}
 \newcommand{\calS}{\mathcal{S}}
@@ -64,8 +66,8 @@
 \newcommand{\calH}{\mathcal{H}}
 \newcommand{\calP}{\mathcal{P}}
 \newcommand{\calR}{\mathcal{R}}
-\newcommand{\E}[2][]{\mathbb{E}_{#1}\left[#2\right]}
-\renewcommand{\P}[2][]{\mathbb{P}_{#1}\left(#2\right)}
-\newcommand{\Var}[2][]{\text{Var}_{#1}\left(#2\right)}
+\newcommand{\E}[2][]{\mathbb{E}_{#1}\left[ #2 \right]}
+\renewcommand{\P}[2][]{\mathbb{P}_{#1}\left( #2 \right)}
+\newcommand{\Var}[2][]{\text{Var}_{#1}\left( #2 \right)}
 \newcommand{\pardev}[2]{\frac{\partial #1}{\partial #2}}
 

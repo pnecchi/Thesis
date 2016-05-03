@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.19)  2 MAY 2016 17:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.19)  3 MAY 2016 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -381,6 +381,13 @@ Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
@@ -991,7 +998,11 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 LaTeX Warning: Reference `algo:QAC' on page 8 undefined on input line 378.
 
 [8]
-Overfull \hbox (8.37056pt too wide) in paragraph at lines 433--437
+LaTeX Font Info:    Try loading font information for U+bbm on input line 407.
+ (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+Overfull \hbox (8.37056pt too wide) in paragraph at lines 437--441
 \OT1/cmr/m/n/12 By sam-pling $\OML/cmm/m/it/12 ^^R \OMS/cmsy/m/n/12 ^^X \OML/cm
 m/m/it/12 p[]$ \OT1/cmr/m/n/12 and then gen-er-at-ing $\OML/cmm/m/it/12 M$ \OT1
 /cmr/m/n/12 tra-jec-to-ries $\OML/cmm/m/it/12 h[] \OT1/cmr/m/n/12 = \OMS/cmsy/m
@@ -999,17 +1010,30 @@ m/m/it/12 p[]$ \OT1/cmr/m/n/12 and then gen-er-at-ing $\OML/cmm/m/it/12 M$ \OT1
 /12 g[]$
  []
 
-[9]) [10] (./thesis.bbl [11
+[9]
+Overfull \hbox (68.7844pt too wide) in paragraph at lines 449--455
+\OMS/cmsy/m/n/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^V[]; ^^[[]\OT1/cmr/m/n/12
+ )$, the gra-di-ent with re-spect to the hy-per-pa-ram-e-ters $\OML/cmm/m/it/12
+ ^^X \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 ^^V[]; [] ; ^^V[]; ^^[[]; [] ; ^^[[]\O
+T1/cmr/m/n/12 )[]$
+ []
 
+) (./Chapters/3_Asset_Allocation.tex [10]
+Chapter 2.
+[11
 
-] [12] [13] [14] [15]) [16]
+] [12]) [13] [14
+
+] (./thesis.bbl [15
+
+] [16] [17] [18] [19]) [20]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 76.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 76.
  (./thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 76.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 76.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 39DC0B38699174D1DD09447B07C1D375;889.
+(rerunfilecheck)             Checksum: AD398FC45D911849FDFD502C1A47BFC4;1110.
 
 
 LaTeX Warning: There were undefined references.
@@ -1017,31 +1041,32 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 76.
  ) 
 Here is how much of TeX's memory you used:
- 17255 strings out of 493304
- 296513 string characters out of 6139870
- 387466 words of memory out of 5000000
- 20218 multiletter control sequences out of 15000+600000
- 12570 words of font info for 49 fonts, out of 8000000 for 9000
+ 17323 strings out of 493304
+ 297855 string characters out of 6139870
+ 387754 words of memory out of 5000000
+ 20254 multiletter control sequences out of 15000+600000
+ 12965 words of font info for 52 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  63i,16n,57p,418b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (16 pages, 233023 bytes).
+ </home/pierpaolo/.texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (20 pages, 247176 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
- 312 compressed objects within 4 object streams
- 155 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 403 PDF objects out of 1000 (max. 8388607)
+ 361 compressed objects within 4 object streams
+ 174 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

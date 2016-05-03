@@ -1,0 +1,109 @@
+\chapter{Asset Allocation}
+
+The asset allocation problem consists of determining how to dynamically invest
+the available capital in a portfolio of different assets in order to maximize
+the expected total return or another relevant performance measure. Let us
+consider a financial market consisting of $I+1$ different stocks that are
+traded only at discrete times $t \in \{0, 1, 2, \ldots\}$ and denote by $Z_t =
+{(Z_t^0, Z_t^1, \ldots, Z_t^I)}^T$ their prices at time t. Typically, $Z_t^0$
+refers to a riskless asset whose dynamic is given by $Z_t^0 = {(1 + R)}^t$ and
+$R$ is the deterministic risk-free interest rate. The investment process works
+as follows: at time $t$, the investor observes the state of the market $S_t$,
+consisting for example of the past asset prices and other relevant economic
+variables, and subsequently chooses how to rebalance his portfolio, by
+specifying the units of each stock $n_t = {(n_t^0 , n_t^1 , \ldots , n_t^I)}^T$
+to be held between $t$ and $t+1$. In doing so, he needs to take into account
+the transaction costs that he has to pay to the broker to change his position.
+At time $t+1$, the investor realizes a profit or a loss from his investment due
+to the stochastic variation of the stock values. The investor’s goal is to
+maximize a given performance measure.
+
+\section{Reward Function}
+Let $W_t$ denote the wealth of the investor at time $t$. The profit realized
+between $t$ and $t+1$ is simply given by the difference between the trading
+P\&L and the transaction costs payed to the broker, which we assume
+proportional to the value of the transaction. More formally
+\begin{equation*}
+	\Delta W_{t+1} = W_{t+1} - W_t = \sum^{I}_{i=0} \left[n_t^m (Z_{t+1}^i -
+	Z_t^i) - \delta_i \left| n_t^i - n_{t-1}^i \right| Z_t^i \right] 
+\end{equation*}
+The portfolio return between $t$ and $t+1$ is thus given by
+\begin{equation}\label{eq:portfolio_return}
+	X_{t+1} = \frac{\Delta W_{t+1}}{W_t} = \sum^{I}_{i=0} \left[ a_t^i
+	X_{t+1}^i - \delta_i \left| a_t^i - \tilde{a}_t^i \right| \right]  
+\end{equation}
+where 
+\begin{equation*}
+	X_{t+1}^i = \frac{\Delta Z_{t+1}^i}{Z_t^i}
+\end{equation*}
+is the return of the $i$-th stock between $t$ and $t+1$, 
+\begin{equation*}
+	a_t^i = \frac{n_t^i Z_t^i}{W_t}
+\end{equation*}
+is the fraction of wealth invested in the $i$-th stock between time $t$ and
+$t+1$ and finally 
+\begin{equation*}
+	\tilde{a}_t^i = \frac{n_{t-1}^i Z_t^i}{W_t} = \frac{a_{t-1}^i (1+X_t^i)}
+	{1 + X_t}
+\end{equation*}
+is the fraction of wealth invested in the $i$-th stock just before the 
+reallocation. We assume that the agent invests all his wealth at each step, so 
+that $W_t$ can be also interpreted as the value of his portfolio. This 
+assumption leads to the following constraint on the portfolio weights
+\begin{equation}
+	\sum^{I}_{i=0} a_t^i = 1 \;\;\;\;\; \forall t \in \{0, 1, 2, \ldots\}
+\end{equation}
+Plugging this constraint into Eq. (\ref{eq:portfolio_return}), we obtain
+\begin{equation}\label{eq:portfolio_return_benchmark}
+	X_{t+1} = R + \sum^{I}_{i=1} a_t^i (X_{t+1}^i - R) - \sum^{I}_{i=0}
+	\delta_i \left| a_t^i - \tilde{a}_t^i \right|  
+\end{equation}
+which highlights the role of the risk-free asset as a benchmark for the 
+portfolio returns. The total profit realized by the investor between $t=0$ and
+$T$ is 
+\begin{equation*}
+	P_{0,T} = W_T - W_0 = \sum^{T}_{t=1} \Delta W_t = \sum^{T}_{t=1} W_t R_t  
+\end{equation*}
+The portfolio return between $t=0$ and $T$ is given by
+\begin{equation}
+	X_{0:T} = \frac{W_T}{W_0} = \prod_{t=1}^T (1+X_t) - 1
+\end{equation}
+In order to cast the asset allocation problem in the reinforcement learning
+framework, we consider the log-return of the portfolio between $t=0$ and $T$
+\begin{equation}
+	r_{0,T} = \log \frac{W_T}{W_0} = \sum^{T}_{t=1} \log(1+X_t) = \sum_{t=1}^T
+	r_t
+\end{equation}
+where $r_{t+1}$ is the log-return of the portfolio between $t$ and $t+1$
+\begin{equation}
+	r_{t+1} \log \left\{ 1 + \sum^{I}_{i=0} \left[ a_t^i X_{t+1}^i - \delta_i
+	\left| a_t^i - \tilde{a}_{t-1}^i \right| \right] \right\}
+\end{equation}
+The portfolio return and log-return can be used as the reward function of a
+RL algorithm, either in a offline or in an online approach. In the case where
+only two assets are available on the market - a risky assez and a risk-free
+asset - and that no transaction costs are payed on the risk-free asset, the
+returns take the simpler form
+\begin{equation}
+	X_{t+1} = R + a_t (X_{t+1}^1 - R) - \delta \left| a_t - \tilde{a}_t \right|
+\end{equation} 
+
+\section{States}
+
+\section{Actions}
+In this section, we specify the actions that the trading system may take. If we
+assume that the agent invests all his capital at each time step and that
+short-selling is not allowed, then the portfolio weights should satisfy
+\begin{equation} 
+	a_t^i \geq 0 \;\;\;\;\;\; \sum^{I}_{i=0} a_t^i = 1
+\end{equation} 
+This constraint can be easily enforced by considering a softmax policy. If
+short selling is allowed, weights might also be negative. However, working in a
+constinuous action space becomes computationally difficult.  Therefore, in the
+two assets scenario, we will consider the simplified problem where $a_t \in
+\{-1, 0, +1\}$. Thus the agent may be long ($+1$), neutral ($0$) or short
+($-1$) on the risky-asset. Working in a discrete action space is more simple,
+and standard value-based approaches might be employed. We could generalize the
+framework of the previous sections to include additional fees or margin
+requirements if short positions are taken by the agent.
+
