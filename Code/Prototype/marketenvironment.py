@@ -8,10 +8,8 @@
 
 import numpy as np
 import pandas as pd
-
 from pybrain.utilities import Named
 from pybrain.rl.environments.environment import Environment
-from tradingperformance import portfolioSimpleReturn
 
 
 class MarketEnvironment(Environment, Named):
@@ -74,7 +72,8 @@ class MarketEnvironment(Environment, Named):
         t = self.currentTimeStep
 
         # Extract past returns from dataset and flatten into numpy array
-        pastReturns = self.data.iloc[t-self.P:t,:].values.flatten()
+        # TODO: It is useless to use the risk-free rate multiple times
+        pastReturns = self.data.iloc[t-self.P:t, :].values.flatten()
         return pastReturns
 
     def getAssetReturns(self):
@@ -99,4 +98,14 @@ class MarketEnvironment(Environment, Named):
     def reset(self):
         """ Reset market environment to initial time step and reset allocation
         """
-        self.currentTimeStep = self.P + 1
+        self.currentTimeStep = self.P
+
+    def getDate(self):
+        """ Return current market date.
+
+        Returns:
+            currentDate (date): current market date
+        """
+        currentDate = self.data.iloc[self.currentTimeStep].name
+        return currentDate
+

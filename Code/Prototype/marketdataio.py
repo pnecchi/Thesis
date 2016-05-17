@@ -90,7 +90,7 @@ if __name__ == "__main__":
     output_data_dir = '../../Data/Output/'
 
     # Target Dates
-    start_date = '1980-01-01'
+    start_date = '1990-01-01'
     end_date = '2015-03-20'
     dates = pd.date_range(start_date, end_date)
 

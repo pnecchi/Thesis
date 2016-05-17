@@ -6,6 +6,7 @@
 ################################################################################
 
 import numpy as np
+import pandas as pd
 
 from pybrain.rl.environments.episodic import EpisodicTask
 from tradingperformance import portfolioSimpleReturn
@@ -29,16 +30,27 @@ class AssetAllocationTask(EpisodicTask):
     deltaF = 0.0
     deltaS = 0.0
 
-    # Last time step asset returns
-    assetReturns = None
-
     # Current portfolio allocation
     currentAllocation = None
 
     # New portfolio allocation
     newAllocation = None
 
-    def __init__(self, environment, deltaP, deltaF, deltaS, discount, T):
+    # Backtest
+    backtest = None
+
+    # If backtest is True, all allocations and portfolio log-returns are stored
+    # for performance evaluation
+    report = None
+
+    def __init__(self,
+                 environment,
+                 deltaP,
+                 deltaF,
+                 deltaS,
+                 discount,
+                 T,
+                 backtest=False):
         """ Standard constructor for the asset allocation task.
 
         Args:
@@ -48,10 +60,10 @@ class AssetAllocationTask(EpisodicTask):
             deltaS (double): short selling borrowing cost rate
             discount (double): discount factor
             T (int): receding horizon for episodic task
+            backtest (bool): flag for training mode or test mode
         """
         # Initialize episodic task
         EpisodicTask.__init__(self, environment)
-        self.T = T
 
         # Transaction costs
         self.deltaP = deltaP
@@ -61,9 +73,16 @@ class AssetAllocationTask(EpisodicTask):
         # Discount factor
         self.discount = discount
 
+        # Receding horizon
+        self.T = T
+
+        # Backtesting
+        self.backtest = backtest
+        self.report = pd.DataFrame(columns=list(self.env.data.columns) +
+                                           ['ptfLogReturn'])
+
         # Initialize allocation
-        self.currentAllocation = np.zeros(self.env.indim)
-        self.currentAllocation[0] = 1.0
+        self.initializeAllocation()
 
     def getObservation(self):
         """ An augmented observation of the underlying environment state that
@@ -86,15 +105,10 @@ class AssetAllocationTask(EpisodicTask):
         Args:
             action (np.array): new allocation
         """
-        # Increment episode time step
-        self.t += 1
-
         # Cache new asset allocation for computing rewards
         self.newAllocation = action
-
         # Perform action
         EpisodicTask.performAction(self, action)
-
 
     def getReward(self):
         """ Function that returns the portfolio simple returns associated with
@@ -104,10 +118,10 @@ class AssetAllocationTask(EpisodicTask):
             ptfSimpleReturn (double): portfolio simple return
         """
         # Retrieve current time step asset returns
-        self.assetReturns = self.env.getAssetReturns()
+        assetReturns = self.env.getAssetReturns()
 
         # Compute portfolio return associated to new allocation
-        ptfSimpleReturn = portfolioSimpleReturn(self.assetReturns,
+        ptfSimpleReturn = portfolioSimpleReturn(assetReturns,
                                                 self.currentAllocation,
                                                 self.newAllocation,
                                                 self.deltaP,
@@ -115,8 +129,19 @@ class AssetAllocationTask(EpisodicTask):
                                                 self.deltaS)
         # Update allocation weights
         self.currentAllocation = self.newAllocation * \
-            (1.0 + self.assetReturns) / (1.0 + ptfSimpleReturn)
-        return np.log(1.0 + ptfSimpleReturn)
+            (1.0 + assetReturns) / (1.0 + ptfSimpleReturn)
+
+        # Compute portfolio log-return
+        ptfLogReturn = np.log(1.0 + ptfSimpleReturn)
+
+        # Store allocation and return when backtesting
+        if self.backtest:
+            reportEntry = np.append(self.newAllocation, ptfLogReturn)
+            currentDate = self.env.getDate()
+            self.report.ix[currentDate, :] = reportEntry
+
+        return ptfLogReturn
+
 
     def isFinished(self):
         """ Function that checks if the current episode is over. To define an
@@ -127,7 +152,18 @@ class AssetAllocationTask(EpisodicTask):
         """
         if self.t >= self.T or self.env.currentTimeStep >= self.env.nSamples:
             self.t = 0
+            self.initializeAllocation()
             return True
         else:
             self.t += 1
             return False
+
+    def initializeAllocation(self):
+        """ Initialize portfolio allocation at the beginning of an episode
+        """
+        # Everything invested in the risk-free asset
+        # self.currentAllocation = np.ones(self.env.indim) / self.env.indim
+        # Random initialization
+        temp = np.random.rand(self.env.indim)
+        self.currentAllocation = temp / np.sum(temp)
+
