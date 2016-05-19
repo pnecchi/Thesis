@@ -20,19 +20,7 @@ class MarketEnvironment(Environment, Named):
         allocations in the different assets.
     """
 
-    # Current time step
-    currentTimeStep = 0
-
-    # Total number of time steps
-    nSamples = 0
-
-    # Risk-free rate
-    X = 0.0
-
-    # Number of past returns considered by the trading system
-    P = 0
-
-    def __init__(self, inputFile, X=0., P=0):
+    def __init__(self, inputFile, X=0., P=0, start=0, end=0):
         """ Initialize market environment from inputFile containing the time
             series of the asses returns. The initial capital is assumed to be
             entirely invested in the risk-free asset.
@@ -41,6 +29,8 @@ class MarketEnvironment(Environment, Named):
             inputFile (str): the path to the .csv file containing market data
             X (double): daily risk-free interest rate
             P (int): the number of past time steps in the system state
+            start (int): initial time step
+            end (int): final time step
         """
         # Read past asset returns from inputFile into a pandas DataFrame
         marketData = pd.read_csv(inputFile, index_col=0)
@@ -54,13 +44,21 @@ class MarketEnvironment(Environment, Named):
         self.indim = I + 1
 
         # Size of state space: number of tradable assets + current allocations
-        self.outdim = (P + 1) * (I + 1)
+        self.outdim = (P + 2) * I + 2
 
-        # Initialize other variables
-        self.currentTimeStep = P
+        # Number of samples
         self.nSamples = N
+
+        # Risk-free rate
         self.X = X
+
+        # Number of past returns considered by the trading system
         self.P = P
+
+        # Time indicators
+        self.initialTimeStep = start
+        self.finalTimeStep = end
+        self.currentTimeStep = start if start > P else P
 
     def getSensors(self):
         """ Retrieve the current state of the market, i.e. the last P+1 returns
@@ -69,12 +67,10 @@ class MarketEnvironment(Environment, Named):
         Returns:
             state (np.array): the system observable state
         """
-        t = self.currentTimeStep
-
         # Extract past returns from dataset and flatten into numpy array
-        # TODO: It is useless to use the risk-free rate multiple times
-        pastReturns = self.data.iloc[t-self.P:t, :].values.flatten()
-        return pastReturns
+        t = self.currentTimeStep
+        pastReturns = self.data.iloc[t-self.P:t+1, 1:].values.flatten()
+        return np.append(pastReturns, self.X)
 
     def getAssetReturns(self):
         """ Retrieve current time step asset returns.
@@ -98,7 +94,7 @@ class MarketEnvironment(Environment, Named):
     def reset(self):
         """ Reset market environment to initial time step and reset allocation
         """
-        self.currentTimeStep = self.P
+        self.currentTimeStep = self.initialTimeStep
 
     def getDate(self):
         """ Return current market date.
@@ -109,3 +105,15 @@ class MarketEnvironment(Environment, Named):
         currentDate = self.data.iloc[self.currentTimeStep].name
         return currentDate
 
+    def setEvaluationInterval(self, start, end):
+        """ Set the time interval to be considered in the evaluation. This
+        function is used to change the evaluation interval during the backtest
+        procedure.
+
+        Args:
+            start (int): start time index
+            end (int): end time index
+        """
+        self.initialTimeStep = start
+        self.finalTimeStep = end
+        self.currentTimeStep = start if start > self.P else self.P

@@ -19,28 +19,6 @@ class AssetAllocationTask(EpisodicTask):
         returns of the tradable assets augmented with the current allocation.
         The reward function is the portfolio log-return."""
 
-    # Episode time step
-    t = 0
-
-    # Episode receding horizon
-    T = 0
-
-    # Transaction costs
-    deltaP = 0.0
-    deltaF = 0.0
-    deltaS = 0.0
-
-    # Current portfolio allocation
-    currentAllocation = None
-
-    # New portfolio allocation
-    newAllocation = None
-
-    # Backtest
-    backtest = None
-
-    # If backtest is True, all allocations and portfolio log-returns are stored
-    # for performance evaluation
     report = None
 
     def __init__(self,
@@ -49,7 +27,6 @@ class AssetAllocationTask(EpisodicTask):
                  deltaF,
                  deltaS,
                  discount,
-                 T,
                  backtest=False):
         """ Standard constructor for the asset allocation task.
 
@@ -59,7 +36,6 @@ class AssetAllocationTask(EpisodicTask):
             deltaF (double): fixed transaction cost rate
             deltaS (double): short selling borrowing cost rate
             discount (double): discount factor
-            T (int): receding horizon for episodic task
             backtest (bool): flag for training mode or test mode
         """
         # Initialize episodic task
@@ -73,11 +49,10 @@ class AssetAllocationTask(EpisodicTask):
         # Discount factor
         self.discount = discount
 
-        # Receding horizon
-        self.T = T
-
         # Backtesting
         self.backtest = backtest
+
+        # Report stores allocations and portfolio log-returns for backtesting
         self.report = pd.DataFrame(columns=list(self.env.data.columns) +
                                            ['ptfLogReturn'])
 
@@ -150,20 +125,36 @@ class AssetAllocationTask(EpisodicTask):
         Returns:
             over (bool): flag that indicates if the current episode is over
         """
-        if self.t >= self.T or self.env.currentTimeStep >= self.env.nSamples:
-            self.t = 0
+        if self.env.currentTimeStep >= self.env.finalTimeStep:
             self.initializeAllocation()
             return True
         else:
-            self.t += 1
             return False
 
     def initializeAllocation(self):
         """ Initialize portfolio allocation at the beginning of an episode
         """
+        # Equally weighted portfolio
+        self.currentAllocation = np.ones(self.env.indim) / self.env.indim
         # Everything invested in the risk-free asset
         # self.currentAllocation = np.ones(self.env.indim) / self.env.indim
         # Random initialization
-        temp = np.random.rand(self.env.indim)
-        self.currentAllocation = temp / np.sum(temp)
+        # temp = np.random.rand(self.env.indim)
+        # self.currentAllocation = temp / np.sum(temp)
 
+    def setEvaluationInterval(self, start, end):
+        """ Set the time interval to be considered in the evaluation. This
+        function is used to change the evaluation interval during the backtest
+        procedure.
+
+        Args:
+            start (int): start time index
+            end (int): end time index
+        """
+        self.env.setEvaluationInterval(start, end)
+
+    def trainingMode(self):
+        self.backtest = False
+
+    def backtestMode(self):
+        self.backtest = True

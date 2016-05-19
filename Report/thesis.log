@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.19)  11 MAY 2016 22:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.19)  12 MAY 2016 09:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1001,15 +1001,21 @@ LaTeX Warning: Reference `algo:QAC' on page 8 undefined on input line 378.
 LaTeX Font Info:    Try loading font information for U+bbm on input line 410.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [9] [10])
-(./Chapters/3_Asset_Allocation.tex [11] [12
+) [9] [10]
+[11]
+Overfull \hbox (4.72786pt too wide) in paragraph at lines 553--558
+\OT1/cmr/m/n/12 How-ever, up-dat-ing pa-ram-e-ters asyn-chronously changes the 
+pol-icy only slightly
+ []
 
-]
+) (./Chapters/3_Asset_Allocation.tex [12]
 Chapter 2.
 
 Underfull \vbox (badness 8132) has occurred while \output is active []
 
- [13]
+ [13
+
+]
 [14] [15]
 
 LaTeX Warning: Reference `sec:softmax' on page 16 undefined on input line 139.
@@ -1033,8 +1039,8 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 76.
  ) 
 Here is how much of TeX's memory you used:
- 17334 strings out of 493304
- 297976 string characters out of 6139870
+ 17337 strings out of 493304
+ 298021 string characters out of 6139870
  387749 words of memory out of 5000000
  20255 multiletter control sequences out of 15000+600000
  12965 words of font info for 52 fonts, out of 8000000 for 9000
@@ -1055,10 +1061,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (24 pages, 259335 bytes).
+Output written on thesis.pdf (24 pages, 260892 bytes).
 PDF statistics:
- 428 PDF objects out of 1000 (max. 8388607)
- 382 compressed objects within 4 object streams
- 184 named destinations out of 1000 (max. 500000)
+ 432 PDF objects out of 1000 (max. 8388607)
+ 386 compressed objects within 4 object streams
+ 187 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

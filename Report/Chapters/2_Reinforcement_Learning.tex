@@ -536,7 +536,34 @@ In this section we discuss the extension of the PGPE method to the infinite
 horizon case \cite{sehnke2012parameter}. While in the episodic PGPE the
 parameters $\theta$ are sampled only at the beginning of each episode, in
 \emph{Infinite Horizon PGPE} (IHPGPE) the parameters and learning are carried 
-out simultaneously, while interacting with the environmnent.
-
+out simultaneously, while interacting with the environmnent. Let $0 <
+\varepsilon < 1$ the probability of updating the policy parameters, the 
+parameters $\theta_t$ can be sampled consecutively as follows
+\begin{equation}
+	p_\xi(\theta_{i,t+1}) = \varepsilon \mathcal{N}(\mu_{i,t}, \sigma_{i,t}^2) 
+							+ (1-\varepsilon) \delta_{\theta_{i,t}}
+\end{equation}
+In practice, $\varepsilon$ should be chosen so that the expected frequency of
+changing a single parameter is coherent with the typical episode length in the
+episodic framework. Alternatively, one could sample all the parameters at a
+certain time step simultaneously
+\begin{equation}
+	p_\xi(\theta_{t+1}) = \varepsilon \mathcal{N}(\mu_{t}, \Sigma_t) 
+							+ (1-\varepsilon) \delta_{\theta_{t}}
+\end{equation}
+This is equivalent to splitting the state-action space into artificial
+episodes. However, updating parameters asynchronously changes the policy only
+slightly thus introducing less noise in the process. Again, parameters can be
+updated at every time step by gradient ascent
+\begin{equation}
+	\begin{split}
+		\mu_{i,t+1} &= \mu_{i,t} + \alpha \left[G_t(h) - b\right] (\theta_{i,t}
+		- \mu_{i,t})\\
+		\sigma_{i,t+1} &= \sigma_{i,t} + \alpha \left[G_t(h) - b\right] 
+		\frac{(\theta_{i,t} -\mu_{i,t})^2}{\sigma_{i,t}}
+	\end{split}
+\end{equation}
+Similarly to the episodic case, we can improve the gradient estimate by
+symmetric sampling and gain normalization. 
 
 
