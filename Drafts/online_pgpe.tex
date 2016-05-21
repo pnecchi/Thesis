@@ -1,0 +1,89 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{Style/thesis}
+
+\begin{document}
+
+\title{Draft: Online PGPE}
+\author{Pierpaolo Necchi}
+\maketitle
+
+In PGPE we consider a deterministic controller $F: \S \times \Theta \to \A$
+that, given a set of parameters $\theta \in \Theta \subseteq \R^{D_\theta}$,
+maps a state $s \in \S$ to an action $a = F(s; \theta) = F_\theta(s) \in \A$. 
+The policy parameters are drawn from a probability distribution $p_\xi$, with
+hyperparameters $\xi \in \Xi \subseteq \R^{D_\xi}$. Combining these two
+hypotheses, the agent follows a stochastic policy $\pi_\xi$ given by
+\begin{equation}
+	\pi_\xi(s,a) = \pi(s, a; \xi) =	\int_\Theta p_\xi(\theta)
+	\ind{F_{\theta}(s)=a} d\theta
+\end{equation}
+If we assume that the policy $\pi_\xi$ is differentiable with respect to $\xi$,
+the policy gradient theorem states that the gradient of the objective function
+is given by 
+\begin{equation}\label{eq:policy_gradient}
+	\begin{split}
+		\nabla_\xi J(\xi) &= \E{\nabla_\xi \log \pi_\xi(S,A) Q_{\pi_\xi}(S,A)}\\
+						  &= \int_{\S} \mu_{\xi}(s) \int_{\A} \pi_{\xi}(s, a)
+		\nabla_{\xi} \log \pi_{\xi}(s,a) Q_{\pi_\xi}(s,a) da ds\\
+	\end{split}
+\end{equation}
+This expression can be rewritten in a different form that will allow us to
+formulate various online versions of the PGPE algorithm, similar to the
+standard policy gradient algorithms. First, by using the likelihood trick we
+have
+\begin{equation*}
+	\begin{split}
+		\pi_\xi(s,a) \nabla_\xi \log \pi_\xi(s,a) &= \nabla_\xi \pi_\xi(s,a) \\
+			&= \int_\Theta \nabla_\xi p_\xi(\theta) \ind{F_\theta(s)=a} d\theta
+		\\
+		&= \int_\Theta p_\xi(\theta) \nabla_\xi \log p_\xi(\theta) \ind{F_\theta(s)=a} d\theta
+		\\
+		&= \E[\theta \sim p_\xi]{\nabla_\xi \log p_\xi(\theta) \ind{F_\theta(s)=a}}
+	\end{split}
+\end{equation*}
+Then, by exchanging the integral over the action space with the expectation
+\begin{equation*}
+	\begin{split}
+		\int_\A \pi_\xi(s,a) \nabla_\xi \log \pi_\xi(s,a) Q_{\pi_\xi}(s,a) da 
+			&= \E[\theta \sim p_\xi]{\nabla_\xi \log p_\xi(\theta) \int_\A \ind{F_\theta(s)=a}
+			Q_{\pi_\xi}(s,a) da}\\
+			&= \E[\theta \sim p_\xi]{\nabla_\xi \log p_\xi(\theta) Q_{\pi_\xi}(s, F_\theta(s))}\\
+			&= \E[\theta \sim p_\xi]{\nabla_\xi \log p_\xi(\theta) Q_{\pi_\xi}(s, \theta))}
+	\end{split}
+\end{equation*}
+Finally, pluggin this equality in the policy gradient theorem, we obtain 
+\begin{equation}
+	\begin{split}
+		\nabla_\xi J(\xi) &= \E{\nabla_\xi \log p_\xi(\theta) Q_{\pi_\xi}(S,
+	\theta)}\\
+		&= \int_\S \mu_\xi(s) \int_\Theta p_\xi(\theta) \nabla_\xi \log
+	p_\xi(\theta) Q_{\pi_\xi}(S, \theta) d\theta ds
+	\end{split}
+\end{equation}
+This expression is very similar to the original policy gradient theorem, but
+the expectation is taken over the controller parameters and not on the actions.
+Thus, we might interpret this result as if the agent chose the parameters
+$\theta$, which then lead to an action through the deterministic mapping
+$F_\theta$. The agent policy is in parameters space and not in the control
+space. As in the standard policy gradient methods, we can add a state-dependent
+baseline $B(S)$ to the gradient without increasing the bias
+\begin{equation}
+	\nabla_\xi J(\xi) = \E{\nabla_\xi \log p_\xi(\theta) \left(Q_{\pi_\xi}(S,
+						\theta) - B(S)\right)}
+\end{equation}
+Indeed, 
+\begin{equation*}
+	\begin{split}
+		\E{\nabla_\xi \log p_\xi(\theta) B(S)} 
+			&= \int_\S \mu_\xi(s) \int_\Theta p_\xi(\theta) \nabla_\xi \log
+		p_\xi(\theta) B(s) d\theta ds\\
+		&= \int_\S \mu_\xi(s) B(s) ds \underbrace{\int_\Theta \nabla_\xi p_\xi(\theta)
+	d\theta}_{\nabla_\xi 1 = 0} = 0
+	\end{split}
+\end{equation*}
+This result can be used to design several actor-only or actor-critic online
+algorithms that are the parameter-based equivalents of the traditional 
+control-based policy-gradient algorithms, such as REINFORCE, GPOMDP or QAC.  
+
+\end{document}
