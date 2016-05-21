@@ -135,9 +135,10 @@ class AssetAllocationTask(EpisodicTask):
         """ Initialize portfolio allocation at the beginning of an episode
         """
         # Equally weighted portfolio
-        self.currentAllocation = np.ones(self.env.indim) / self.env.indim
-        # Everything invested in the risk-free asset
         # self.currentAllocation = np.ones(self.env.indim) / self.env.indim
+        # Everything invested in the risk-free asset
+        self.currentAllocation = np.zeros(self.env.indim)
+        self.currentAllocation[0] = 1.0
         # Random initialization
         # temp = np.random.rand(self.env.indim)
         # self.currentAllocation = temp / np.sum(temp)

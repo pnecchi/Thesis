@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.style.use('ggplot')
+matplotlib.style.use('seaborn-pastel')
 
 def main():
     """ Main program for automatic asset allocation problem.
@@ -28,24 +28,24 @@ def main():
     output_data_dir = '../../Data/Output/'
 
     # Experiment parameters
-    batch = 1                     # Number of samples per learning step
-    prnts = 50                    # Learning steps before printing results
-    nEpisodes = 500/batch/prnts   # Number of rollouts
+    batch = 1                      # Number of samples per learning step
+    prnts = 100                    # Learning steps before printing results
+    nEpisodes = 3000/batch/prnts   # Number of rollouts
     nExperiments = 1               # Number of experiments
     et = ExTools(batch, prnts)     # Tool for printing and plotting
 
     # Paramenters
     X = 0.05 / 252    # Daily risk-free rate
-    deltaP = 0.0005   # Proportional transaction costs
+    deltaP = 0.001   # Proportional transaction costs
     deltaF = 0.0      # Fixed transaction costs
     deltaS = 0.0      # Short-selling borrowing costs
-    P = 5             # Number of past days the agent considers
-    discount = None   # Discount factor
+    P = 5            # Number of past days the agent considers
+    discount = 0.95   # Discount factor
 
     # Evaluation interval sizes
     start = P + 1
-    trainingIntervalLength = 40
-    testIntervalLength = 10
+    trainingIntervalLength = 70
+    testIntervalLength = 30
 
     # Initialize the market environment
     market = MarketEnvironment(input_data_dir + 'daily_returns.csv', X, P)
@@ -56,14 +56,16 @@ def main():
     task = AssetAllocationTask(market, deltaP, deltaF, deltaS, discount)
 
     # Initialize controller module
-    module = buildNetwork(market.outdim, market.outdim, market.indim, outclass=SoftmaxLayer)
+    module = buildNetwork(market.outdim,  # Input layer
+                          market.indim,   # Output layer
+                          outclass=SoftmaxLayer)  # Output activation function
 
     # Initialize learner module
     learner = PGPE(storeAllEvaluations=True,
                    learningRate=0.05,
                    sigmaLearningRate=0.025,
                    batchSize=batch,
-                   # momentum=0.0,
+                   # momentum=0.05,
                    # epsilon=6.0,
                    rprop=False)
 
@@ -71,16 +73,13 @@ def main():
     agent = OptimizationAgent(module, learner)
     et.agent = agent
 
-
-    for period in xrange(6):  #  nPeriods):
+    for period in xrange(5):  #  nPeriods):
 
         # Set initial and final time steps for training
         initialTimeStep = start
         finalTimeStep = start + trainingIntervalLength
         task.setEvaluationInterval(initialTimeStep, finalTimeStep)
-        # task.trainingMode()
-        task.backtest = False
-        print "Training: from " + str(initialTimeStep) + " to " + str(finalTimeStep)
+        task.trainingMode()
 
         # Initialize experiment
         experiment = EpisodicExperiment(task, agent)
@@ -96,9 +95,7 @@ def main():
         initialTimeStep = start + trainingIntervalLength
         finalTimeStep = initialTimeStep + testIntervalLength
         task.setEvaluationInterval(initialTimeStep, finalTimeStep)
-        # task.backtestMode()
-        task.backtest = True
-        print "Testing: from " + str(initialTimeStep) + " to " + str(finalTimeStep)
+        task.backtestMode()
 
         # Initialize experiment
         experiment = EpisodicExperiment(task, agent)
@@ -123,7 +120,8 @@ def main():
     cumLogReturns = pd.DataFrame(index=task.report.index)
     cumLogReturns['Buy & Hold'] = buyHoldCumLogReturns
     cumLogReturns['PGPE'] = ptfCumLogReturns
-    cumLogReturns.plot(title='Cumulative Log-Returns - PGPE', lw=1.5)
+    cumLogReturns.plot(title='Cumulative Log-Returns - PGPE',
+                       lw=2, grid=True)
     plt.xlabel('Date')
     plt.ylabel('Cumulative Log-Returns')
     plt.show()
