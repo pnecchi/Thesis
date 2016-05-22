@@ -15,15 +15,15 @@ from pybrain.rl.environments.environment import Environment
 class MarketEnvironment(Environment, Named):
     """ Financial market environent for the automatic asset allocation problem.
         The market consists of I+1 assets that can be traded only at discrete
-        times. The state of the system consists of the assets past returns and.
-        The actions that the learning agent can take are the porfolio
-        allocations in the different assets.
+        times. The state of the system consists of the past P+1 asset returns.
+        The actions that the learning agent can take are the porfolio weights
+        for the different assets.
     """
 
     def __init__(self, inputFile, X=0., P=0, start=0, end=0):
-        """ Initialize market environment from inputFile containing the time
+        """ Initialize MarketEnvironment from inputFile containing the time
             series of the asses returns. The initial capital is assumed to be
-            entirely invested in the risk-free asset.
+            entirely invested in the risk-free asset at each time step.
 
         Args:
             inputFile (str): the path to the .csv file containing market data
@@ -69,8 +69,10 @@ class MarketEnvironment(Environment, Named):
         """
         # Extract past returns from dataset and flatten into numpy array
         t = self.currentTimeStep
-        pastReturns = self.data.iloc[t-self.P:t+1, 1:].values.flatten()
-        return np.append(pastReturns, self.X)
+        pastReturns = self.data.iloc[t-self.P, :].values.flatten()
+        pastReturns = np.append(pastReturns,
+                                self.data.iloc[t-self.P+1:t+1, 1:].values.flatten())
+        return pastReturns
 
     def getAssetReturns(self):
         """ Retrieve current time step asset returns.
@@ -92,9 +94,10 @@ class MarketEnvironment(Environment, Named):
         self.currentTimeStep += 1
 
     def reset(self):
-        """ Reset market environment to initial time step and reset allocation
+        """ Reset market environment to initial time step
         """
-        self.currentTimeStep = self.initialTimeStep
+        self.currentTimeStep = \
+            self.initialTimeStep if self.initialTimeStep > self.P else self.P
 
     def getDate(self):
         """ Return current market date.
@@ -116,4 +119,4 @@ class MarketEnvironment(Environment, Named):
         """
         self.initialTimeStep = start
         self.finalTimeStep = end
-        self.currentTimeStep = start if start > self.P else self.P
+        self.reset()

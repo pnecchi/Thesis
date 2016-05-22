@@ -19,8 +19,6 @@ class AssetAllocationTask(EpisodicTask):
         returns of the tradable assets augmented with the current allocation.
         The reward function is the portfolio log-return."""
 
-    report = None
-
     def __init__(self,
                  environment,
                  deltaP,
@@ -155,7 +153,11 @@ class AssetAllocationTask(EpisodicTask):
         self.env.setEvaluationInterval(start, end)
 
     def trainingMode(self):
+        """ Set the task in training mode
+        """
         self.backtest = False
 
     def backtestMode(self):
+        """ Set the task in backtest mode
+        """
         self.backtest = True
