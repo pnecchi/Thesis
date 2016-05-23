@@ -20,7 +20,7 @@ class MarketEnvironment(Environment, Named):
         for the different assets.
     """
 
-    def __init__(self, inputFile, X=0., P=0, start=0, end=0):
+    def __init__(self, inputFile, X=0., P=0, start=0, end=None):
         """ Initialize MarketEnvironment from inputFile containing the time
             series of the asses returns. The initial capital is assumed to be
             entirely invested in the risk-free asset at each time step.
@@ -57,8 +57,8 @@ class MarketEnvironment(Environment, Named):
 
         # Time indicators
         self.initialTimeStep = start
-        self.finalTimeStep = end
         self.currentTimeStep = start if start > P else P
+        self.finalTimeStep = end if end is not None else N
 
     def getSensors(self):
         """ Retrieve the current state of the market, i.e. the last P+1 returns
