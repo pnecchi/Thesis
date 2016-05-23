@@ -30,7 +30,7 @@ def main():
     # Experiment parameters
     batch = 1                      # Number of samples per learning step
     prnts = 100                    # Learning steps before printing results
-    nEpisodes = 3000/batch/prnts   # Number of rollouts
+    nEpisodes = 100/batch/prnts   # Number of rollouts
     nExperiments = 1               # Number of experiments
     et = ExTools(batch, prnts)     # Tool for printing and plotting
 
