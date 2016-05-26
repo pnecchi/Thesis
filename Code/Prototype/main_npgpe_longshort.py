@@ -8,7 +8,7 @@
 
 from marketenvironment import MarketEnvironment
 from assetallocationtask import AssetAllocationTask
-from softmaxcontroller import SoftmaxController
+from discretecontroller import DiscreteController
 from npgpe import NPGPE
 from tradingsystem import TradingSystem
 from pybrain.rl.experiments.continuous import ContinuousExperiment
@@ -27,16 +27,16 @@ def main():
 
     # Experiment parameters
     batch = 1              # Number of samples per learning step
-    nEpochs = 50           # Number of learning epochs
-    nLearningSteps = 2000  # Number of learning steps per epoch
+    nEpochs = 100          # Number of learning epochs
+    nLearningSteps = 1000  # Number of learning steps per epoch
     nTestSteps = 100       # Number of test steps
 
     # Paramenters
-    X = 0.02 / 252    # Daily risk-free rate
-    deltaP = 0.001     # Proportional transaction costs
+    X = 0.0 / 252    # Daily risk-free rate
+    deltaP = 0.001    # Proportional transaction costs
     deltaF = 0.0      # Fixed transaction costs
     deltaS = 0.0      # Short-selling borrowing costs
-    P = 10            # Number of past days the agent considers
+    P = 20            # Number of past days the agent considers
     discount = 0.95   # Discount factor
 
     # Initialize the market environment
@@ -48,10 +48,12 @@ def main():
     task = AssetAllocationTask(market, deltaP, deltaF, deltaS, discount)
 
     # Initialize controller module
-    controller = SoftmaxController(task.outdim, market.indim)
+    controller = DiscreteController(task.outdim)
 
     # Initialize agent
     agent = NPGPE(controller)
+    agent.alphaMu = 0.05
+    agent.alphaC  = 0.025
 
     # History
     history = pd.DataFrame(columns=list(market.data.columns) + ['ptfLogReturn'])
@@ -95,8 +97,8 @@ def main():
         experiment.doInteractionsAndLearn()
 
     # Print allocations
-    tradingSystem.history.iloc[:, :-1].plot.area(title='Portfolio Allocation - PGPE')
-    plt.ylim(0.0, 1.0)
+    tradingSystem.history['SPY'].plot(title='Portfolio Allocation - PGPE')
+    plt.ylim(-1.2, 1.2)
     plt.xlabel('Date')
     plt.ylabel('Portfolio Allocation')
     plt.show()

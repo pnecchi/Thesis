@@ -21,81 +21,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="continuous.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/experiments/continuous.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="agent.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/agent.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="812">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="experiment.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/experiments/experiment.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="812">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="assetallocationtask.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assetallocationtask.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1943">
+            <state relative-caret-position="1513">
               <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tradingsystem.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tradingsystem.py">
+      <file leaf-file-name="discretecontroller.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/discretecontroller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="851">
-              <caret line="108" column="61" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
+            <state relative-caret-position="1426">
+              <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="merge.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/pandas-0.18.0-py2.7-linux-x86_64.egg/pandas/tools/merge.py">
+      <file leaf-file-name="main_npgpe_longshort.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main_npgpe_longshort.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25259">
-              <caret line="889" column="0" selection-start-line="889" selection-start-column="0" selection-end-line="889" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="npgpe.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/npgpe.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_npgpe.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main_npgpe.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="812">
+              <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -111,11 +61,13 @@
         <option value="$PROJECT_DIR$/tradingsystem.py" />
         <option value="$PROJECT_DIR$/npgpe.py" />
         <option value="$PROJECT_DIR$/main_npgpe.py" />
+        <option value="$PROJECT_DIR$/discretecontroller.py" />
+        <option value="$PROJECT_DIR$/main_npgpe_longshort.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2009" />
+    <option name="x" value="89" />
     <option name="y" value="33" />
     <option name="width" value="3111" />
     <option name="height" value="1767" />
@@ -145,7 +97,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -166,7 +118,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,7 +126,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.main_npgpe">
+  <component name="RunManager" selected="Python.main_npgpe_longshort">
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -205,6 +157,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Prototype" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_npgpe.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="main_npgpe_longshort" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Prototype" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_npgpe_longshort.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -343,14 +312,16 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.main" />
       <item index="1" class="java.lang.String" itemvalue="Python.main_npgpe" />
+      <item index="2" class="java.lang.String" itemvalue="Python.main_npgpe_longshort" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.main_npgpe" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.main_npgpe_longshort" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main_npgpe" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -380,15 +351,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2009" y="33" width="3111" height="1767" extended-state="6" />
-    <editor active="false" />
+    <frame x="89" y="33" width="3111" height="1767" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17365853" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17333333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939714" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939714" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -415,17 +386,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/main_npgpe.py</url>
-          <line>111</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="21" />
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -434,22 +398,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/pandas-0.18.0-py2.7-linux-x86_64.egg/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12470">
-          <caret line="430" column="0" selection-start-line="430" selection-start-column="0" selection-end-line="430" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assetallocationtask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1943">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tradingsystem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -458,14 +406,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/pandas-0.18.0-py2.7-linux-x86_64.egg/pandas/tools/merge.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25259">
-          <caret line="889" column="0" selection-start-line="889" selection-start-column="0" selection-end-line="889" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pandas-0.18.0-py2.7-linux-x86_64.egg/pandas/tools/merge.py" />
     <entry file="file://$PROJECT_DIR$/npgpe.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3422">
@@ -482,79 +423,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/experiments/continuous.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/agent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/finitedifference/pgpe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/structure/modules/module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/optimizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5152">
-          <caret line="224" column="8" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/learning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1817">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/logging.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/learner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/directsearch/policygradient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/directsearch/reinforce.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/experiments/continuous.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/agent.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/finitedifference/pgpe.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/structure/modules/module.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/optimizer.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/learning.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/logging.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/learner.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/directsearch/policygradient.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/directsearch/reinforce.py" />
     <entry file="file://$PROJECT_DIR$/main.py" />
     <entry file="file://$PROJECT_DIR$/assetallocationtask.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -564,140 +442,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/finitedifference/pgpe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/finitedifference/fd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/finitedifference/pgpe.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/finitedifference/fd.py" />
     <entry file="file://$PROJECT_DIR$/episodicexperiment.py" />
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/optimizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8207">
-          <caret line="283" column="0" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2581">
-          <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/optimization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/experiments/episodic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2581">
-          <caret line="89" column="4" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/finitedifference/fd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/optimizer.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/utilities.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/optimization.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/experiments/episodic.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/utilities.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/finitedifference/fd.py" />
     <entry file="file://$PROJECT_DIR$/episodicexperiment.py" />
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/directsearch/directsearch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/learner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/directsearch/policygradient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/directsearch/reinforce.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/logging.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/structure/modules/module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/optimizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="224" column="8" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/learning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/directsearch/directsearch.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/learner.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/directsearch/policygradient.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/learners/directsearch/reinforce.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/logging.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/structure/modules/module.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/optimizer.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/learning.py" />
     <entry file="file://$PROJECT_DIR$/main.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="936" column="0" selection-start-line="936" selection-start-column="0" selection-end-line="936" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/numpy-1.12.0.dev0_7ef1451-py2.7-linux-x86_64.egg/numpy/lib/twodim_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="483" column="0" selection-start-line="483" selection-start-column="0" selection-end-line="483" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/numpy-1.12.0.dev0_7ef1451-py2.7-linux-x86_64.egg/numpy/lib/twodim_base.py" />
     <entry file="file://$PROJECT_DIR$/main_pgpe.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
@@ -705,89 +476,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/finitedifference/pgpe.py">
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/optimization/finitedifference/pgpe.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pandas-0.18.0-py2.7-linux-x86_64.egg/pandas/core/frame.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pandas-0.18.0-py2.7-linux-x86_64.egg/pandas/core/internals.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pandas-0.18.0-py2.7-linux-x86_64.egg/pandas/tools/merge.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/experiments/experiment.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/experiments/continuous.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/agent.py" />
+    <entry file="file://$PROJECT_DIR$/main_npgpe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-812">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assetallocationtask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1943">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/pandas-0.18.0-py2.7-linux-x86_64.egg/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12470">
-          <caret line="430" column="0" selection-start-line="430" selection-start-column="0" selection-end-line="430" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/pandas-0.18.0-py2.7-linux-x86_64.egg/pandas/core/internals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111911">
-          <caret line="3898" column="0" selection-start-line="3898" selection-start-column="0" selection-end-line="3898" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/pandas-0.18.0-py2.7-linux-x86_64.egg/pandas/tools/merge.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25259">
-          <caret line="889" column="0" selection-start-line="889" selection-start-column="0" selection-end-line="889" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tradingsystem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="108" column="61" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/experiments/experiment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/experiments/continuous.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PyBrain-0.3.3-py2.7.egg/pybrain/rl/agents/agent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="445">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/npgpe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
+        <state relative-caret-position="754">
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_npgpe.py">
+    <entry file="file://$PROJECT_DIR$/tradingsystem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state relative-caret-position="1513">
+          <caret line="108" column="61" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assetallocationtask.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discretecontroller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1426">
+          <caret line="57" column="38" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_npgpe_longshort.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
           <folding />
         </state>
       </provider>
