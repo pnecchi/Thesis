@@ -27,15 +27,15 @@ def main():
 
     # Experiment parameters
     batch = 1              # Number of samples per learning step
-    nEpochs = 100          # Number of learning epochs
+    nEpochs = 200          # Number of learning epochs
     nLearningSteps = 1000  # Number of learning steps per epoch
-    nTestSteps = 100       # Number of test steps
+    nTestSteps = 200       # Number of test steps
 
     # Paramenters
-    X = 0.0 / 252    # Daily risk-free rate
-    deltaP = 0.001    # Proportional transaction costs
+    X = 0.05 / 252    # Daily risk-free rate
+    deltaP = 0.001   # Proportional transaction costs
     deltaF = 0.0      # Fixed transaction costs
-    deltaS = 0.0      # Short-selling borrowing costs
+    deltaS = 0.000    # Short-selling borrowing costs
     P = 20            # Number of past days the agent considers
     discount = 0.95   # Discount factor
 
@@ -52,8 +52,8 @@ def main():
 
     # Initialize agent
     agent = NPGPE(controller)
-    agent.alphaMu = 0.05
-    agent.alphaC  = 0.025
+    agent.alphaMu = 0.05 # 0.05
+    agent.alphaC  = 0.025 # 0.025
 
     # History
     history = pd.DataFrame(columns=list(market.data.columns) + ['ptfLogReturn'])
@@ -97,25 +97,30 @@ def main():
         experiment.doInteractionsAndLearn()
 
     # Print allocations
-    tradingSystem.history['SPY'].plot(title='Portfolio Allocation - PGPE')
+    tradingSystem.history['JPM'].plot(title='Portfolio Allocation - PGPE', lw=2)
     plt.ylim(-1.2, 1.2)
     plt.xlabel('Date')
     plt.ylabel('Portfolio Allocation')
     plt.show()
 
     # Print cumulative log-returns
-    buyHold = market.data.ix[market.initialTimeStep+1:market.finalTimeStep+1, 'SPY']
+    buyHold = market.data.ix[market.initialTimeStep+1:market.finalTimeStep+1, 'JPM']
     buyHoldCumLogReturns = np.log(buyHold + 1.0).cumsum(axis=0)
+
     ptfCumLogReturns = tradingSystem.history['ptfLogReturn'].cumsum(axis=0)
     ptfCumLogReturns.index = buyHoldCumLogReturns.index
-    cumLogReturns = pd.DataFrame(index=buyHoldCumLogReturns.index)
-    cumLogReturns['Buy & Hold'] = buyHoldCumLogReturns
-    cumLogReturns['PGPE'] = ptfCumLogReturns
-    cumLogReturns.plot(title='Cumulative Log-Returns - PGPE',
-                       lw=2, grid=True)
+
+    cumProfit = pd.DataFrame(index=buyHoldCumLogReturns.index)
+
+
+    cumProfit['Buy & Hold'] = np.exp(buyHoldCumLogReturns)
+    cumProfit['NPGPE'] = np.exp(ptfCumLogReturns.values.astype(float))
+    cumProfit.plot(title='Cumulative Profits - NPGPE',
+                   lw=2, grid=True)
     plt.xlabel('Date')
-    plt.ylabel('Cumulative Log-Returns')
+    plt.ylabel('Cumulative Profits')
     plt.show()
+
 
 if __name__ == "__main__":
     main()

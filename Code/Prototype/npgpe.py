@@ -24,10 +24,10 @@ class NPGPE(object):
     alphaC = 0.05
 
     # Standard deviation for parameters initialization
-    epsilon = 1.0
+    epsilon = 2.0
 
     # Discount factor
-    gamma = 0.95
+    gamma = 0.90
 
     def __init__(self, controller):
         """

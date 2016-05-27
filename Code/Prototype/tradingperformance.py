@@ -29,9 +29,13 @@ def portfolioSimpleReturn(assetReturns,
     Returns:
         ptfSimpleReturn (double): portfolio simple return over (t, t+1)
     """
+
+
     posDifference = newAllocation - oldAllocation
+    tcProp = deltaP * np.sum(np.absolute(posDifference))
+    tcShort = deltaS * np.sum(newAllocation.clip(max=0.))
     ptfSimpleReturn = np.dot(newAllocation, assetReturns) - \
-        deltaP * np.sum(np.absolute(posDifference)) - \
+        deltaP * np.sum(np.absolute(posDifference)) + \
         deltaS * np.sum(newAllocation.clip(max=0.)) - \
         deltaF * np.any(posDifference == 0)
     return ptfSimpleReturn
