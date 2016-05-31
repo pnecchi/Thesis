@@ -10,45 +10,45 @@ Warning--empty year in corazzaq
 Warning--empty journal in cumming2015investigation
 Warning--empty year in du1algorithm
 Warning--empty journal in eldercreating
-You've used 69 entries,
+You've used 75 entries,
             2030 wiz_defined-function locations,
-            855 strings with 15449 characters,
-and the built_in function-call counts, 25116 in all, are:
-= -- 2364
-> -- 1103
+            894 strings with 16564 characters,
+and the built_in function-call counts, 27580 in all, are:
+= -- 2622
+> -- 1181
 < -- 0
-+ -- 441
-- -- 367
-* -- 1878
-:= -- 3797
-add.period$ -- 70
-call.type$ -- 69
-change.case$ -- 385
++ -- 473
+- -- 391
+* -- 2055
+:= -- 4142
+add.period$ -- 76
+call.type$ -- 75
+change.case$ -- 414
 chr.to.int$ -- 0
-cite$ -- 76
-duplicate$ -- 1204
-empty$ -- 1998
-format.name$ -- 367
-if$ -- 5464
+cite$ -- 82
+duplicate$ -- 1325
+empty$ -- 2195
+format.name$ -- 391
+if$ -- 6022
 int.to.chr$ -- 0
-int.to.str$ -- 69
-missing$ -- 79
-newline$ -- 211
-num.names$ -- 133
-pop$ -- 461
+int.to.str$ -- 75
+missing$ -- 85
+newline$ -- 229
+num.names$ -- 145
+pop$ -- 485
 preamble$ -- 1
-purify$ -- 327
+purify$ -- 350
 quote$ -- 0
-skip$ -- 948
+skip$ -- 1063
 stack$ -- 0
-substring$ -- 1645
-swap$ -- 473
+substring$ -- 1869
+swap$ -- 531
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 252
+type$ -- 276
 warning$ -- 7
-while$ -- 243
-width$ -- 71
-write$ -- 613
+while$ -- 272
+width$ -- 77
+write$ -- 671
 (There were 7 warnings)

@@ -8,6 +8,11 @@
 {\sc R.~Almgren and N.~Chriss}, {\em Optimal execution of portfolio
   transactions}, Journal of Risk, 3 (2001), pp.~5--40.
 
+\bibitem{basu2008learning}
+{\sc A.~Basu, T.~Bhattacharyya, and V.~S. Borkar}, {\em A learning algorithm
+  for risk-sensitive cost}, Mathematics of Operations Research, 33 (2008),
+  pp.~880--898.
+
 \bibitem{bauerle2011markov}
 {\sc N.~B{\"a}uerle and U.~Rieder}, {\em Markov decision processes with
   applications to finance}, Springer Science \& Business Media, 2011.
@@ -45,6 +50,21 @@
 \bibitem{bishop2006pattern}
 {\sc C.~M. Bishop}, {\em Pattern Recognition and Machine Learning}, Springer,
   2006.
+
+\bibitem{borkar2001sensitivity}
+{\sc V.~S. Borkar}, {\em A sensitivity formula for risk-sensitive cost and the
+  actor--critic algorithm}, Systems \& Control Letters, 44 (2001),
+  pp.~339--346.
+
+\bibitem{borkar2002q}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Q-learning for
+  risk-sensitive control}, Mathematics of operations research, 27 (2002),
+  pp.~294--311.
+
+\bibitem{borkar2002risk}
+{\sc V.~S. Borkar and S.~P. Meyn}, {\em Risk-sensitive optimal control for
+  markov decision processes with monotone cost}, Mathematics of Operations
+  Research, 27 (2002), pp.~192--209.
 
 \bibitem{busoniu2010reinforcement}
 {\sc L.~Busoniu, R.~Babuska, B.~De~Schutter, and D.~Ernst}, {\em Reinforcement
@@ -155,6 +175,12 @@
 {\sc V.~R. Konda and J.~N. Tsitsiklis}, {\em Actor-critic algorithms.}, in
   NIPS, vol.~13, 1999, pp.~1008--1014.
 
+\bibitem{NIPS2013_4917}
+{\sc P.~L.A. and M.~Ghavamzadeh}, {\em Actor-critic algorithms for
+  risk-sensitive mdps}, in Advances in Neural Information Processing Systems
+  26, C.~J.~C. Burges, L.~Bottou, M.~Welling, Z.~Ghahramani, and K.~Q.
+  Weinberger, eds., Curran Associates, Inc., 2013, pp.~252--260.
+
 \bibitem{laruelle2011optimal}
 {\sc S.~Laruelle, C.-A. Lehalle, and G.~Pages}, {\em Optimal split of orders
   across liquidity pools: a stochastic algorithm approach}, SIAM Journal on
@@ -240,6 +266,13 @@
   for risk-averse asset allocation}, in Intelligent Data Engineering and
   Automated Learning—IDEAL 2000. Data Mining, Financial Engineering, and
   Intelligent Agents, Springer, 2000, pp.~244--249.
+
+\bibitem{Sato:2001:ARL:645530.757778}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Average-reward
+  reinforcement learning for variance penalized markov decision problems}, in
+  Proceedings of the Eighteenth International Conference on Machine Learning,
+  ICML '01, San Francisco, CA, USA, 2001, Morgan Kaufmann Publishers Inc.,
+  pp.~473--480.
 
 \bibitem{sehnke2012parameter}
 {\sc F.~Sehnke et~al.}, {\em Parameter exploring policy gradients and their

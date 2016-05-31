@@ -1,0 +1,177 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{Style/thesis}
+
+\begin{document}
+
+\title{Average Reward Risk-Sensitive Actor-Critic Algorithm}
+\author{Pierpaolo Necchi}
+\maketitle
+
+\section{Average Reward}
+Most of the research in RL has studied a problem formulation where agents maxi-
+mize the cumulative sum of rewards. However, this approach cannot handle 
+infinite horizon tasks, where there are no absorbing goal states, without
+discounting future rewards. Traditionally, discounting has served two purposes.
+In some domains, such as economics, discounting can be used to represent
+interest earned on rewards, so that an action that generates an immediate
+reward will be preferred over one that generates the same reward some steps
+into the future. However, the typical domains studied in RL, such as robotics
+or games, do not fall in this category. In fact, many RL tasks have absorbing
+goal states, where the aim of the agent is to get to a given goal state as
+quickly as possible. Such tasks can be solved using undiscounted RL methods.  
+Clearly, discounting is only really necessary in cyclical tasks, where the 
+cumulative reward sum can be unbounded. More natural long-term measure of
+optimality exists for such cyclical tasks, based on maximizing the average
+reward per action \cite{mahadevan1996average}. 
+
+\section{Average Reward Control Problem}
+In the average reward setting, the goal of the agent is to find a policy that
+maximizes the expected reward per step. 
+\begin{definition}[Average Reward]
+	The average reward $\rho_\pi$ associated to a policy $\pi$ is defined as  
+	\begin{equation}
+		\begin{split}
+			\rho_\pi &= \lim_{T\to\infty} \frac{1}{T} \E{ \sum^{T-1}_{t=0} R_{t+1}}\\
+					 &= \int_\S d_\pi(s) \int_\A \pi(s, a) \calR(s,a) da ds\\
+					 &= \E[\substack{S\sim d_\pi \\ A \sim \pi(S,
+						\cdot)}]{\calR(S,A)}
+		\end{split}
+	\end{equation}
+where $d_\pi$ is the stationary distribution induced by policy $\pi$.
+\end{definition}
+In the risk-neutral setting, the optimal policy solves the following
+optimization problem  
+\begin{equation}
+	\rho_* = \sup_\pi \rho(\pi)
+\end{equation}
+In this setting, we introduce the \emph{average adjusted} value and action-value 
+functions. 
+\begin{definition}[Average Adjusted State-Value Function]
+	The average adjusted state-value function $V_\pi : \S \to \R$ is the
+	expected residual return that can be obtained starting from a state and
+	following policy $\pi$
+	\begin{equation}
+		V_\pi(s) = \E[\pi]{\sum^{\infty}_{t=0} \left(R_{t+1} - \rho_\pi\right)
+		\bigg| S_0 = s}
+	\end{equation}
+\end{definition}
+\begin{definition}[Average Adjusted Action-Value Function]
+	The average adjusted action-value function $Q_\pi : \S \times \A \to \R$ is 
+	the expected residual return that can be obtained starting from a state,
+	taking an action and then following policy $\pi$
+	\begin{equation}
+		Q_\pi(s, a) = \E[\pi]{\sum^{\infty}_{t=0} \left(R_{t+1} -
+			\rho_\pi\right) \bigg| S_0 = s, A_0
+		= a}
+	\end{equation}
+\end{definition}
+We have the following relation between the state-value function and the
+action-value function
+\begin{equation}
+	V_\pi(s) = \int_\A \pi(s,a) Q_\pi(s,a)
+\end{equation}
+These functions satisfy the following Bellman equations
+\begin{equation}
+	\begin{split}
+		\rho_\pi + V_\pi(s) &= \calR_\pi(s) + T_\pi V_\pi(s)\\
+		\rho_\pi + Q_\pi(s,a) &= \calR(s,a) + T_a V_\pi(s)\\
+	\end{split}
+\end{equation}
+where $T_a$ denotes the transition operator for action $a$ while $T_\pi$
+denotes the transition operator for the policy $\pi$, i.e. 
+\begin{equation}
+	\begin{split}
+		T_a V(s) &= \int_\S \calP(s, a, s') V_\pi(s')\\
+		T_\pi V(s) &= \int_\A \pi(s,a) \int_\S \calP(s,a,s') V_\pi(s')\\ 
+	\end{split}
+\end{equation}
+
+\section{Risk-Sensitive Average Reward Control Problem}
+In many application, in addition to maximining the average reward, the agent
+may want to control risk by minimizing some measure of viariability in rewards.
+In \cite{prashanth2014actor}, the authors consider the long-run variance of
+$\pi$, defined as 
+\begin{definition}[Long-Run Variance]
+	Given a policy $\pi$, the long-run variance $\Lambda_\pi$ is 
+	\begin{equation}
+		\begin{split}
+			\Lambda_\pi &= \lim_{T \to \infty} \frac{1}{T} \E[\pi]{
+			\sum^{T-1}_{t=0} (R_{t+1} - \rho_\pi)^2}\\
+			&= \int_\A d_\pi(s) \int_\A \pi(s,a) \left(\calR(s,a) - \rho_\pi
+			\right)^2 da ds\\
+			&= \E[\substack{S\sim d_\pi \\ A \sim \pi(S, \cdot)}]{(\calR(S,A) -
+				\rho_\pi)^2}
+		\end{split}
+	\end{equation}
+\end{definition}
+We can split the long-run variance in the following way
+\begin{equation}
+	\Lambda_\pi = \eta_\pi - \rho_\pi^2 
+\end{equation}
+where $\eta_\pi$ is the expected square reward per step  
+\begin{equation}
+	\begin{split}
+		\eta_\pi &= \int_\S d_\pi(s) \int_\A \pi(s,a) \calR(s,a)^2\\
+				 &= \E[\substack{S\sim d_\pi \\ A \sim \pi(S, \cdot)}]{\calR(S,A)^2}	
+	\end{split}
+\end{equation}
+We introduce the state-value and action-value functions associated with the
+square reward under policy $\pi$
+\begin{definition}[Average Adjusted Square State-Value Function]
+	The average adjusted square state-value function $U_\pi : \S \to \R$ is the
+	expected square residual return that can be obtained starting from a state 
+	and following policy $\pi$
+	\begin{equation}
+		U_\pi(s) = \E[\pi]{\sum^{\infty}_{t=0} \left(R_{t+1}^2 - \eta_\pi\right)
+		\bigg| S_0 = s}
+	\end{equation}
+\end{definition}
+\begin{definition}[Average Adjusted Square Action-Value Function]
+	The average adjusted square action-value function $Q_\pi : \S \times \A \to 
+	\R$ is the expected residual square return that can be obtained starting from a
+	state, taking an action and then following policy $\pi$
+	\begin{equation}
+		W_\pi(s, a) = \E[\pi]{\sum^{\infty}_{t=0} \left(R_{t+1}^2 -
+			\eta_\pi\right) \bigg| S_0 = s, A_0 = a}
+	\end{equation}
+\end{definition}
+The average adjusted square action-value function satisfies the following 
+Bellman equation
+\begin{equation}
+	\eta_\pi + W_\pi(s,a) = \calR(s,a)^2 + \int_\S \calP(s,a,s') U_\pi(s') ds'\\
+\end{equation}
+Moreover, the average adjusted square state-value function is related to the
+action-value function by the following
+\begin{equation}
+	U_\pi(s) = \int_\A \pi(s,a) W_\pi(s,a)
+\end{equation}
+Using this equality, we can write an analogous Bellman equation for the
+square state-value function. 
+In the risk-sensitive setting, the agent wants to find a policy that solves the
+following optimization problem 
+\begin{equation}\label{eq:risk_sensitive_problem}
+	\begin{cases}
+		\max_\pi \rho_\pi\\
+		\text{subject to}\ \Lambda_\pi \leq \alpha\\
+	\end{cases}
+\end{equation}
+for a given $\alpha > 0$. Using the Lagrangian relaxation procedure, we can 
+recast (\ref{eq:risk_sensitive_problem}) to the following uncostrained problem
+\begin{equation}
+	\max_\lambda \min_\pi L(\theta, \lambda) = - \rho_\pi + \lambda 
+	(\Lambda_\theta - \alpha)
+\end{equation}
+Let us observe that the discussion can be easily extended to other
+risk-sensitive performance measures, such as the standard mean-variance
+criterion or the Sharpe ratio. 
+
+\section{Risk-Sensitive Policy Gradient}
+
+\section{Risk-Sensitive Actor-Critic Algorithm}
+
+% Bibliography
+\bibliographystyle{siam}
+\bibliography{Bibliography/bibliography}
+
+\end{document}

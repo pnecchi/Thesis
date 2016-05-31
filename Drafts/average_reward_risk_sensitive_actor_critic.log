@@ -1,25 +1,24 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  31 MAY 2016 14:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  31 MAY 2016 18:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**thesis.tex
-(./thesis.tex
+**average_reward_risk_sensitive_actor_critic.tex
+(./average_reward_risk_sensitive_actor_critic.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 2 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
-Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
-File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -254,7 +253,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/12/03 3.9h Babel common definitions
-\babel@savecnt=\count88
+\babel@savecnt=\count87
 \U@D=\dimen103
 )
 \l@british = a dialect from \language\l@english 
@@ -281,9 +280,9 @@ Package ifvtex Info: VTeX not detected.
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count89
-\Gm@cntv=\count90
-\c@Gm@tempcnt=\count91
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
 \Gm@bindingoffset=\dimen104
 \Gm@wd@mp=\dimen105
 \Gm@odd@mp=\dimen106
@@ -314,13 +313,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count92
+\inf@bad=\count91
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count93
-\leftroot@=\count94
+\uproot@=\count92
+\leftroot@=\count93
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count95
-\DOTSCASE@=\count96
+\classnum@=\count94
+\DOTSCASE@=\count95
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -329,15 +328,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen114
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count97
-\c@MaxMatrixCols=\count98
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
-\c@parentequation=\count99
-\dspbrk@lvl=\count100
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
 \tag@help=\toks19
-\row@=\count101
-\column@=\count102
-\maxfields@=\count103
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
 \andhelp@=\toks20
 \eqnshift@=\dimen115
 \alignsep@=\dimen116
@@ -414,7 +413,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count104
+\Gread@gobject=\count103
 ))
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
@@ -433,12 +432,12 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \caption@parindent=\dimen128
 \caption@hangindent=\dimen129
 )
-\c@ContinuedFloat=\count105
+\c@ContinuedFloat=\count104
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
-\c@subfigure=\count106
-\c@subtable=\count107
+\c@subfigure=\count105
+\c@subtable=\count106
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip49
@@ -453,32 +452,32 @@ Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/changebar/changebar.sty
 Package: changebar 2005/09/18 v3.5c Indicate changes with marginal bars
-\cb@nextpoint=\count108
-\cb@topleft=\count109
-\cb@topright=\count110
-\cb@botleft=\count111
-\cb@botright=\count112
-\cb@cnta=\count113
-\cb@cntb=\count114
+\cb@nextpoint=\count107
+\cb@topleft=\count108
+\cb@topright=\count109
+\cb@botleft=\count110
+\cb@botright=\count111
+\cb@cnta=\count112
+\cb@cntb=\count113
 \cb@dima=\dimen130
 \cb@curbarwd=\dimen131
-\cb@page=\count115
-\cb@pagecount=\count116
+\cb@page=\count114
+\cb@pagecount=\count115
 \cb@odd@left=\dimen132
 \cb@odd@right=\dimen133
 \cb@even@left=\dimen134
 \cb@even@right=\dimen135
 \cb@writexy=\write3
 \cb@readxy=\read1
-\openout3 = `thesis.cb2'.
+\openout3 = `average_reward_risk_sensitive_actor_critic.cb2'.
 
 \changebarwidth=\skip58
 \deletebarwidth=\skip59
 \changebarsep=\skip60
-\c@changebargrey=\count117
+\c@changebargrey=\count116
 \cb@write=\write4
 \cb@read=\read2
-\openout4 = `thesis.cb'.
+\openout4 = `average_reward_risk_sensitive_actor_critic.cb'.
 
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
@@ -493,12 +492,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen143
 \cmidrulekern=\dimen144
 \defaultaddspace=\dimen145
-\@cmidla=\count118
-\@cmidlb=\count119
+\@cmidla=\count117
+\@cmidlb=\count118
 \@aboverulesep=\dimen146
 \@belowrulesep=\dimen147
-\@thisruleclass=\count120
-\@lastruleclass=\count121
+\@thisruleclass=\count119
+\@lastruleclass=\count120
 \@thisrulewidth=\dimen148
 )
 (/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
@@ -540,10 +539,10 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 \pgf@yc=\dimen156
 \w@pgf@writea=\write5
 \r@pgf@reada=\read3
-\c@pgf@counta=\count122
-\c@pgf@countb=\count123
-\c@pgf@countc=\count124
-\c@pgf@countd=\count125
+\c@pgf@counta=\count121
+\c@pgf@countb=\count122
+\c@pgf@countc=\count123
+\c@pgf@countd=\count124
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -558,8 +557,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count126
-\pgfsyssoftpath@bigbuffer@items=\count127
+\pgfsyssoftpath@smallbuffer@items=\count125
+\pgfsyssoftpath@bigbuffer@items=\count126
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -589,7 +588,7 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen157
-\pgfmath@count=\count128
+\pgfmath@count=\count127
 \pgfmath@box=\box29
 \pgfmath@toks=\toks33
 \pgfmath@stack@operand=\toks34
@@ -604,7 +603,7 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count129
+\c@pgfmathroundto@lastzeros=\count128
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
@@ -638,7 +637,7 @@ File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box30
 \pgf@hbox=\box31
 \pgf@layerbox@main=\box32
-\pgf@picture@serial@count=\count130
+\pgf@picture@serial@count=\count129
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
@@ -665,7 +664,7 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen180
-\pgf@sys@shading@range@num=\count131
+\pgf@sys@shading@range@num=\count130
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
@@ -713,7 +712,7 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count132
+\pgf@plot@mark@count=\count131
 \pgfplotmarksize=\dimen185
 )
 \tikz@lastx=\dimen186
@@ -724,18 +723,18 @@ File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \tikzsiblingdistance=\dimen191
 \tikz@figbox=\box35
 \tikz@tempbox=\box36
-\tikztreelevel=\count133
-\tikznumberofchildren=\count134
-\tikznumberofcurrentchild=\count135
-\tikz@fig@count=\count136
+\tikztreelevel=\count132
+\tikznumberofchildren=\count133
+\tikznumberofcurrentchild=\count134
+\tikz@fig@count=\count135
 
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count137
-\pgfmatrixcurrentcolumn=\count138
-\pgf@matrix@numberofcolumns=\count139
+\pgfmatrixcurrentrow=\count136
+\pgfmatrixcurrentcolumn=\count137
+\pgf@matrix@numberofcolumns=\count138
 )
-\tikz@expandcount=\count140
+\tikz@expandcount=\count139
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
@@ -793,15 +792,15 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen192
-\Hy@linkcounter=\count141
-\Hy@pagecounter=\count142
+\Hy@linkcounter=\count140
+\Hy@pagecounter=\count141
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count143
+\Hy@SavedSpaceFactor=\count142
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -813,7 +812,7 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count144
+\c@Hy@tempcnt=\count143
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
@@ -821,7 +820,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen193
-\Fld@menulength=\count145
+\Fld@menulength=\count144
 \Field@Width=\dimen194
 \Fld@charsize=\dimen195
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -833,17 +832,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count146
-\c@Item=\count147
-\c@Hfootnote=\count148
+\Hy@abspage=\count145
+\c@Item=\count146
+\c@Hfootnote=\count147
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count149
-\c@bookmark@seq@number=\count150
+\Fld@listcount=\count148
+\c@bookmark@seq@number=\count149
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -858,18 +857,26 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@outerparindent=\dimen196
 \enit@toks=\toks38
 \enit@inbox=\box37
-\enitdp@description=\count151
+\enitdp@description=\count150
 )
-\c@theorem=\count152
-\c@lemmma=\count153
-\c@proposition=\count154
-\c@corollary=\count155
-\c@definition=\count156
-\c@example=\count157
-\c@remark=\count158
-\c@note=\count159
-) (./thesis.aux)
-\openout1 = `thesis.aux'.
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 28.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 30.
+
+\c@theorem=\count151
+\c@lemmma=\count152
+\c@proposition=\count153
+\c@corollary=\count154
+\c@definition=\count155
+\c@example=\count156
+\c@remark=\count157
+\c@note=\count158
+) (./average_reward_risk_sensitive_actor_critic.aux)
+\openout1 = `average_reward_risk_sensitive_actor_critic.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -885,6 +892,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -892,7 +900,7 @@ LaTeX Font Info:    ... okay on input line 5.
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
+* modes: 
 * h-part:(L,W,R)=(116.6563pt, 389.80276pt, 91.04881pt)
 * v-part:(T,H,B)=(122.34685pt, 597.50787pt, 125.19212pt)
 * \paperwidth=597.50787pt
@@ -900,37 +908,37 @@ LaTeX Font Info:    ... okay on input line 5.
 * \textwidth=389.80276pt
 * \textheight=597.50787pt
 * \oddsidemargin=44.3863pt
-* \evensidemargin=18.77882pt
-* \topmargin=18.20306pt
+* \evensidemargin=44.3863pt
+* \topmargin=13.07686pt
 * \headheight=15.0pt
-* \headsep=19.8738pt
-* \topskip=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=88.0pt
-* \marginparsep=7.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
+* \@twosidefalse
+* \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count160
+\scratchcounter=\count159
 \scratchdimen=\dimen197
 \scratchbox=\box38
-\nofMPsegments=\count161
-\nofMParguments=\count162
+\nofMPsegments=\count160
+\nofMParguments=\count161
 \everyMPshowfont=\toks39
-\MPscratchCnt=\count163
+\MPscratchCnt=\count162
 \MPscratchDim=\dimen198
-\MPnumerator=\count164
-\makeMPintoPDFobject=\count165
+\MPnumerator=\count163
+\makeMPintoPDFobject=\count164
 \everyMPtoPDFconversion=\toks40
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -961,116 +969,86 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count166
+\c@section@level=\count165
 )
 LaTeX Info: Redefining \ref on input line 5.
 LaTeX Info: Redefining \pageref on input line 5.
 LaTeX Info: Redefining \nameref on input line 5.
 
-(./thesis.out) (./thesis.out)
+(./average_reward_risk_sensitive_actor_critic.out)
+(./average_reward_risk_sensitive_actor_critic.out)
 \@outlinefile=\write6
-\openout6 = `thesis.out'.
+\openout6 = `average_reward_risk_sensitive_actor_critic.out'.
 
- (./Chapters/2_Markov_Decision_Processes.tex
-Chapter 1.
-LaTeX Font Info:    Try loading font information for U+msa on input line 12.
+LaTeX Font Info:    Try loading font information for U+msa on input line 10.
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 12.
+LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 12.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 12.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ) [1
 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+(./average_reward_risk_sensitive_actor_critic.bbl) [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
+
+(./average_reward_risk_sensitive_actor_critic.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3])
-(./Chapters/3_Reinforcement_Learning.tex [4]
-Chapter 2.
-[5
+Package rerunfilecheck Warning: File `average_reward_risk_sensitive_actor_criti
+c.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
 
-] [6] [7] [8] [9]
-
-LaTeX Warning: Reference `algo:QAC' on page 10 undefined on input line 230.
-
-LaTeX Font Info:    Try loading font information for U+bbm on input line 262.
-(/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [10] [11] [12]
-Overfull \hbox (4.72786pt too wide) in paragraph at lines 405--410
-\OT1/cmr/m/n/12 How-ever, up-dat-ing pa-ram-e-ters asyn-chronously changes the 
-pol-icy only slightly
- []
-
-) (./Chapters/4_Asset_Allocation.tex [13] [14
-
-]
-Chapter 3.
-
-Underfull \vbox (badness 8132) has occurred while \output is active []
-
- [15]
-[16] [17]
-
-LaTeX Warning: Reference `sec:softmax' on page 18 undefined on input line 139.
-
-) [18] [19] [20
-
-] (./thesis.bbl [21
-
-] [22] [23] [24] [25] [26]) [27]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
-
-(./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 140FF0E1AE31CC273B9C1148791CD010;1300.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 77.
+Package rerunfilecheck Info: Checksums for `average_reward_risk_sensitive_actor
+_critic.out':
+(rerunfilecheck)             Before: 5F54310AFC39FEBA407FB9FF36D4F310;252
+(rerunfilecheck)             After:  B0B2F9A266160A10701090E24EED112A;331.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
  ) 
 Here is how much of TeX's memory you used:
- 17377 strings out of 495028
- 298749 string characters out of 6181497
- 383986 words of memory out of 5000000
- 20024 multiletter control sequences out of 15000+600000
- 12965 words of font info for 52 fonts, out of 8000000 for 9000
+ 17063 strings out of 495028
+ 293500 string characters out of 6181497
+ 379467 words of memory out of 5000000
+ 19898 multiletter control sequences out of 15000+600000
+ 12775 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,16n,57p,418b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/pierpaolo/.texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (27 pages, 264173 bytes).
+ 63i,20n,57p,454b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on average_reward_risk_sensitive_actor_critic.pdf (4 pages, 1712
+84 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
- 424 compressed objects within 5 object streams
- 206 named destinations out of 1000 (max. 500000)
- 165 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 
