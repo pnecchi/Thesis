@@ -69,6 +69,10 @@ def main():
     # Price series length
     T = 10000
 
+    # Use fictitious dates
+    start = '1990-01-01'
+    dates = pd.date_range(start, periods=T+1)
+
     # Initialize generator
     generator = PriceGenerator()
 
@@ -77,14 +81,19 @@ def main():
 
     # Store price series in pandas dataframe
     df = pd.DataFrame(price,
+                      index=dates,
                       columns=['SYNT'])
 
     # Plot price seris
     df.plot(title='Synthetic Price Series', lw=2)
     plt.show()
 
+    # Compute daily returns
+    daily_returns = df / df.shift(1) - 1
+    daily_returns = daily_returns.ix[1:]
+
     # Write df to csv file
-    df.to_csv('./synthetic.csv')
+    daily_returns.to_csv('./synthetic.csv')
 
 
 if __name__ == "__main__":

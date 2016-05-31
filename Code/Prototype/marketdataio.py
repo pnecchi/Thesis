@@ -95,7 +95,7 @@ if __name__ == "__main__":
     dates = pd.date_range(start_date, end_date)
 
     # Target symbols
-    reference_symbol = 'JPM'
+    reference_symbol = 'SPY'
     symbols = []
 
     # Portfolio allocations

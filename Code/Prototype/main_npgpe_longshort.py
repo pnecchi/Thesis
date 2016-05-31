@@ -27,20 +27,22 @@ def main():
 
     # Experiment parameters
     batch = 1              # Number of samples per learning step
-    nEpochs = 200          # Number of learning epochs
+    nEpochs = 100          # Number of learning epochs
     nLearningSteps = 1000  # Number of learning steps per epoch
-    nTestSteps = 200       # Number of test steps
+    nTestSteps = 8000      # Number of test steps
 
     # Paramenters
-    X = 0.05 / 252    # Daily risk-free rate
-    deltaP = 0.001   # Proportional transaction costs
+    X = 0.0 / 252     # Daily risk-free rate
+    deltaP = 0.001    # Proportional transaction costs
     deltaF = 0.0      # Fixed transaction costs
-    deltaS = 0.000    # Short-selling borrowing costs
-    P = 20            # Number of past days the agent considers
+    deltaS = 0.00     # Short-selling borrowing costs
+    P = 8             # Number of past days the agent considers
     discount = 0.95   # Discount factor
 
     # Initialize the market environment
-    market = MarketEnvironment(input_data_dir + 'daily_returns.csv', X, P)
+    # market = MarketEnvironment(input_data_dir + 'daily_returns.csv', X, P)
+    market = MarketEnvironment(input_data_dir + 'Synthetic/synthetic.csv', X, P)
+
     # nSamples = len(market.data)
     # nPeriods = (nSamples - start + 1) / (trainingIntervalLength + testIntervalLength)
 
@@ -52,8 +54,8 @@ def main():
 
     # Initialize agent
     agent = NPGPE(controller)
-    agent.alphaMu = 0.05 # 0.05
-    agent.alphaC  = 0.025 # 0.025
+    agent.alphaMu = 0.2 # 0.05
+    agent.alphaC  = 0.1 # 0.025
 
     # History
     history = pd.DataFrame(columns=list(market.data.columns) + ['ptfLogReturn'])
@@ -97,14 +99,14 @@ def main():
         experiment.doInteractionsAndLearn()
 
     # Print allocations
-    tradingSystem.history['JPM'].plot(title='Portfolio Allocation - PGPE', lw=2)
+    tradingSystem.history['SYNT'].plot(title='Portfolio Allocation - PGPE', lw=2)
     plt.ylim(-1.2, 1.2)
     plt.xlabel('Date')
     plt.ylabel('Portfolio Allocation')
     plt.show()
 
     # Print cumulative log-returns
-    buyHold = market.data.ix[market.initialTimeStep+1:market.finalTimeStep+1, 'JPM']
+    buyHold = market.data.ix[market.initialTimeStep+1:market.finalTimeStep+1, 'SYNT']
     buyHoldCumLogReturns = np.log(buyHold + 1.0).cumsum(axis=0)
 
     ptfCumLogReturns = tradingSystem.history['ptfLogReturn'].cumsum(axis=0)

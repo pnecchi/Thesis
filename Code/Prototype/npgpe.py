@@ -24,7 +24,7 @@ class NPGPE(object):
     alphaC = 0.05
 
     # Standard deviation for parameters initialization
-    epsilon = 2.0
+    epsilon = 1.0
 
     # Discount factor
     gamma = 0.90
