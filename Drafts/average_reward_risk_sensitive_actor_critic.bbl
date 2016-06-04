@@ -10,4 +10,9 @@
   risk-sensitive reinforcement learning.}, arXiv preprint arXiv:1403.6530,
   (2014).
 
+\bibitem{sutton1999policy}
+{\sc R.~S. Sutton, D.~A. McAllester, S.~P. Singh, Y.~Mansour, et~al.}, {\em
+  Policy gradient methods for reinforcement learning with function
+  approximation.}, in NIPS, vol.~99, 1999, pp.~1057--1063.
+
 \end{thebibliography}

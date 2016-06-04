@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: average_reward_risk_sensitive_actor_critic.aux
 The style file: siam.bst
 Database file #1: Bibliography/bibliography.bib
-You've used 2 entries,
+You've used 3 entries,
             2030 wiz_defined-function locations,
-            511 strings with 4132 characters,
-and the built_in function-call counts, 611 in all, are:
-= -- 59
-> -- 20
+            518 strings with 4341 characters,
+and the built_in function-call counts, 1173 in all, are:
+= -- 114
+> -- 48
 < -- 0
-+ -- 8
-- -- 6
-* -- 46
-:= -- 101
-add.period$ -- 2
-call.type$ -- 2
-change.case$ -- 9
++ -- 19
+- -- 16
+* -- 89
+:= -- 181
+add.period$ -- 3
+call.type$ -- 3
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 30
-empty$ -- 46
-format.name$ -- 6
-if$ -- 126
+cite$ -- 3
+duplicate$ -- 54
+empty$ -- 89
+format.name$ -- 16
+if$ -- 252
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 9
-num.names$ -- 4
-pop$ -- 7
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 12
+num.names$ -- 6
+pop$ -- 16
 preamble$ -- 1
-purify$ -- 7
+purify$ -- 13
 quote$ -- 0
-skip$ -- 25
+skip$ -- 48
 stack$ -- 0
-substring$ -- 42
-swap$ -- 12
+substring$ -- 87
+swap$ -- 24
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 12
 warning$ -- 0
-while$ -- 7
-width$ -- 3
-write$ -- 19
+while$ -- 12
+width$ -- 4
+write$ -- 29

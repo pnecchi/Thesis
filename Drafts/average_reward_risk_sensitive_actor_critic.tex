@@ -32,18 +32,18 @@ maximizes the expected reward per step.
 	The average reward $\rho_\pi$ associated to a policy $\pi$ is defined as  
 	\begin{equation}
 		\begin{split}
-			\rho_\pi &= \lim_{T\to\infty} \frac{1}{T} \E{ \sum^{T-1}_{t=0} R_{t+1}}\\
-					 &= \int_\S d_\pi(s) \int_\A \pi(s, a) \calR(s,a) da ds\\
-					 &= \E[\substack{S\sim d_\pi \\ A \sim \pi(S,
-						\cdot)}]{\calR(S,A)}
+			\rho_\pi &= \lim_{T\to\infty} \frac{1}{T} \E[\pi]{ \sum^{T-1}_{t=0} R_{t+1}}\\
+					 &= \E[\substack{S\sim d_\pi \\ A \sim \pi}]{\calR(S,A)}\\ 
+					 &= \int_\S d_\pi(s) \int_\A \pi(s, a) \calR(s,a) da ds\\ 
 		\end{split}
 	\end{equation}
-where $d_\pi$ is the stationary distribution induced by policy $\pi$.
+where $d_\pi$ is the stationary distribution of the Markov process induced by 
+policy $\pi$.
 \end{definition}
-In the risk-neutral setting, the optimal policy solves the following
-optimization problem  
+In the risk-neutral setting, the agent aims to find an \emph{average optimal}
+policy
 \begin{equation}
-	\rho_* = \sup_\pi \rho(\pi)
+	\pi_* = \argsup_\pi \rho_\pi
 \end{equation}
 In this setting, we introduce the \emph{average adjusted} value and action-value 
 functions. 
@@ -56,6 +56,11 @@ functions.
 		\bigg| S_0 = s}
 	\end{equation}
 \end{definition}
+The term $V_\pi(s)$ is usually referred to as the \emph{bias} value, or the
+\emph{relative} value, since it represents the relative difference in total
+reward gained starting from a state $s$ as opposed to a generic state. 
+$\rho_\pi$ serves as a baseline that allows to avoid divergence in the value
+function definition.
 \begin{definition}[Average Adjusted Action-Value Function]
 	The average adjusted action-value function $Q_\pi : \S \times \A \to \R$ is 
 	the expected residual return that can be obtained starting from a state,
@@ -68,24 +73,37 @@ functions.
 \end{definition}
 We have the following relation between the state-value function and the
 action-value function
-\begin{equation}
+\begin{equation}\label{eq:VQ_equality}
 	V_\pi(s) = \int_\A \pi(s,a) Q_\pi(s,a)
 \end{equation}
-These functions satisfy the following Bellman equations
+The action-value function satisfies the following Bellman equation 
 \begin{equation}
-	\begin{split}
-		\rho_\pi + V_\pi(s) &= \calR_\pi(s) + T_\pi V_\pi(s)\\
-		\rho_\pi + Q_\pi(s,a) &= \calR(s,a) + T_a V_\pi(s)\\
-	\end{split}
+	\rho_\pi + Q_\pi(s,a) = \calR(s,a) + \int_\S \calP(s,a,s') V_\pi(s') ds'
 \end{equation}
-where $T_a$ denotes the transition operator for action $a$ while $T_\pi$
-denotes the transition operator for the policy $\pi$, i.e. 
+Using equality (\ref{eq:VQ_equality}), we obtain the Bellman equation for the
+state-value function
+\begin{equation}
+	\rho_\pi + V_\pi(s) = \int_\A \pi(s,a) \left[\calR(s,a) + \int_\S 
+	\calP(s,a,s') V_\pi(s') ds'\right] da
+\end{equation}
+Denoting by $T_a$ (resp. $T_\pi$) the transition operator for action $a$ (resp. 
+for policy $\pi$)
 \begin{equation}
 	\begin{split}
 		T_a V(s) &= \int_\S \calP(s, a, s') V_\pi(s')\\
 		T_\pi V(s) &= \int_\A \pi(s,a) \int_\S \calP(s,a,s') V_\pi(s')\\ 
 	\end{split}
 \end{equation}
+The Bellman equations can be rewritten in the shorter form
+\begin{equation}
+	\begin{split}
+		\rho_\pi + V_\pi(s) &= \calR_\pi(s) + T_\pi V_\pi(s)\\
+		\rho_\pi + Q_\pi(s,a) &= \calR(s,a) + T_a V_\pi(s)\\
+	\end{split}
+\end{equation}
+In the discrete case, where the transition operator correspond to matrices, 
+these Bellman equations become linear systems that can be solved to obtain the
+value functions. 
 
 \section{Risk-Sensitive Average Reward Control Problem}
 In many application, in addition to maximining the average reward, the agent
@@ -93,31 +111,33 @@ may want to control risk by minimizing some measure of viariability in rewards.
 In \cite{prashanth2014actor}, the authors consider the long-run variance of
 $\pi$, defined as 
 \begin{definition}[Long-Run Variance]
-	Given a policy $\pi$, the long-run variance $\Lambda_\pi$ is 
+	The long-run variance $\Lambda_\pi$ under policy $\pi$ 
 	\begin{equation}
 		\begin{split}
 			\Lambda_\pi &= \lim_{T \to \infty} \frac{1}{T} \E[\pi]{
 			\sum^{T-1}_{t=0} (R_{t+1} - \rho_\pi)^2}\\
+			&= \E[\substack{S\sim d_\pi \\ A \sim \pi}]{(\calR(S,A) -
+				\rho_\pi)^2}\\
 			&= \int_\A d_\pi(s) \int_\A \pi(s,a) \left(\calR(s,a) - \rho_\pi
 			\right)^2 da ds\\
-			&= \E[\substack{S\sim d_\pi \\ A \sim \pi(S, \cdot)}]{(\calR(S,A) -
-				\rho_\pi)^2}
 		\end{split}
 	\end{equation}
 \end{definition}
-We can split the long-run variance in the following way
+The long-run variance can be decomposed as follows
 \begin{equation}
 	\Lambda_\pi = \eta_\pi - \rho_\pi^2 
 \end{equation}
-where $\eta_\pi$ is the expected square reward per step  
-\begin{equation}
-	\begin{split}
-		\eta_\pi &= \int_\S d_\pi(s) \int_\A \pi(s,a) \calR(s,a)^2\\
-				 &= \E[\substack{S\sim d_\pi \\ A \sim \pi(S, \cdot)}]{\calR(S,A)^2}	
-	\end{split}
-\end{equation}
-We introduce the state-value and action-value functions associated with the
-square reward under policy $\pi$
+where $\eta_\pi$ is the average square reward per step  
+\begin{definition}[Average Square Reward]
+	\begin{equation}
+		\begin{split}
+			\eta_\pi &= \E[\substack{S\sim d_\pi \\ A \sim \pi}]{\calR(S,A)^2}\\	
+					 &= \int_\S d_\pi(s) \int_\A \pi(s,a) \calR(s,a)^2\\
+		\end{split}
+	\end{equation}
+\end{definition}
+As before, we introduce the residual state-value and action-value functions 
+associated with the square reward under policy $\pi$
 \begin{definition}[Average Adjusted Square State-Value Function]
 	The average adjusted square state-value function $U_\pi : \S \to \R$ is the
 	expected square residual return that can be obtained starting from a state 
@@ -159,7 +179,7 @@ following optimization problem
 for a given $\alpha > 0$. Using the Lagrangian relaxation procedure, we can 
 recast (\ref{eq:risk_sensitive_problem}) to the following uncostrained problem
 \begin{equation}
-	\max_\lambda \min_\pi L(\theta, \lambda) = - \rho_\pi + \lambda 
+	\max_\lambda \min_\pi L(\pi, \lambda) = - \rho_\pi + \lambda 
 	(\Lambda_\theta - \alpha)
 \end{equation}
 Let us observe that the discussion can be easily extended to other
@@ -167,8 +187,143 @@ risk-sensitive performance measures, such as the standard mean-variance
 criterion or the Sharpe ratio. 
 
 \section{Risk-Sensitive Policy Gradient}
+Let us consider a family of parametrized policies $\pi_\theta$, with $\theta
+\in \Theta \subseteq \R^{D_\theta}$. The optimization problem then becomes
+\begin{equation}
+	\max_\lambda \min_\theta L(\theta, \lambda) = - \rho(\theta) + \lambda
+	(\Lambda(\theta) - \alpha)
+\end{equation}
+Using a policy gradient approach, the policy parameters are updated following 
+the gradient ascent direction
+\begin{equation}
+	\nabla_\theta L(\theta, \lambda) = - \nabla_\theta \rho(\theta) + \lambda
+	\nabla_\theta \Lambda(\theta)
+\end{equation}
+while the Lagrange multiplier is updated following the gradient descent
+direction  
+\begin{equation}
+	\nabla_\lambda L(\theta, \lambda) = \Lambda(\theta) - \alpha
+\end{equation}
+Since 
+\begin{equation}
+	\nabla_\theta \Lambda(\theta) = \nabla_\theta \eta(\theta) - 2 \rho(\theta)
+	\nabla_\theta \rho(\theta)
+\end{equation}
+it is enough to compute $\nabla_\theta \eta(\theta)$ and $\nabla_\theta
+\rho(\theta)$. These quantities are provided by the policy gradient theorem 
+\begin{theorem}[Policy Gradient]
+	\begin{equation}\label{eq:policy_gradient_theorem_Q}
+		\begin{split}
+			\nabla_\theta \rho(\theta) &= \E[\substack{S\sim d_\pi \\ 
+			A \sim \pi}]{\nabla_\theta \log \pi_\theta(S,A) Q_\theta(S,A)}\\
+			&= \int_\S d_\pi(s) \int_\A \pi(s,a) \nabla_\theta \log
+			\pi_\theta(s,a) Q_\theta(s,a) da ds	
+		\end{split}
+	\end{equation}
+	\begin{equation}\label{eq:policy_gradient_theorem_W}
+		\begin{split}
+			\nabla_\theta \eta(\theta) &= \E[\substack{S\sim d_\pi \\ 
+			A \sim \pi}]{\nabla_\theta \log \pi_\theta(S,A) W_\theta(S,A)}\\
+			&= \int_\S d_\pi(s) \int_\A \pi(s,a) \nabla_\theta \log
+			\pi_\theta(s,a) W_\theta(s,a) da ds	
+		\end{split}
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	Eq. (\ref{eq:policy_gradient_theorem_Q}) is the standard policy gradient
+	and its proof can be found in the literature, e.g. \cite{sutton1999policy}.
+	Eq. (\ref{eq:policy_gradient_theorem_W}) can be shown in a similar fashion.
+	TODO
+\end{proof}
+As in the standard risk-neutral case, a state-dependent baseline can be 
+introduced in both gradients without changing the result. In particular, by 
+using the average adjusted value functions as baseline, we can replace the 
+average adjusted action-value functions with the following advantage functions
+\begin{equation}
+	A_\theta(s,a) = Q_\theta(s,a) - V_\theta(s)
+\end{equation}
+\begin{equation}
+	B_\theta(s,a) = W_\theta(s,a) - U_\theta(s)
+\end{equation}
+Intuitively, the advantage functions measure how good is to take action $a$ in
+state $s$ compared to simply following the policy $\pi_\theta$. The use of a
+baseline also serves the purpose of reducing the variance of the gradient
+estimates. Thus, the gradients can be written as 
+\begin{equation}\label{eq:pg_advantage_Q}
+	\nabla_\theta \rho(\theta) = \E[\substack{S\sim d_\pi \\ 
+A \sim \pi}]{\nabla_\theta \log \pi_\theta(S,A) A_\theta(S,A)}
+\end{equation}
+\begin{equation}\label{eq:pg_advantage_W}
+	\nabla_\theta \eta(\theta) = \E[\substack{S\sim d_\pi \\ 
+A \sim \pi}]{\nabla_\theta \log \pi_\theta(S,A) B_\theta(S,A)}
+\end{equation}
+Results of this type form the basis of many actor-critic algorithms, which
+employ an approximation of the advantage function to obtain a more accurate
+estimate of the objective function. 
 
 \section{Risk-Sensitive Actor-Critic Algorithm}
+In \cite{prashanth2014actor}, starting from (\ref{eq:pg_advantage_Q}) and 
+(\ref{eq:pg_advantage_W}), the authors derive a risk-sensitive actor-critic 
+algorithm for the average reward setting. In the algorithm proposed, the
+advantage functions are approximated using a temporal difference (TD) scheme in
+which a critic maintains a linear approximation of the value functions. More in
+detail, let $\delta_n^A$ and $\delta_n^B$ be the TD errors for residual value
+and square value functions
+\begin{equation}
+	\begin{split}
+		\delta_t^A &= R_{t+1} - \widehat{\rho}_{t+1} + \widehat{V}(S_{t+1}) -
+		\widehat{V}(S_t)\\
+		\delta_t^B &= R_{t+1}^2 - \widehat{\eta}_{t+1} + \widehat{U}(S_{t+1}) -
+		\widehat{U}(S_t)\\
+	\end{split}
+\end{equation}
+where $\widehat{V}$, $\widehat{U}$, $\widehat{\rho}$ and $\widehat{\eta}$ are
+unbiased estimate of $V_\theta$, $U_\theta$, $\rho(\theta)$ and $\eta(\theta)$
+respectively. It is easy to show that $\delta_t^A$ and $\delta_t^B$ are
+unbiased estimates of the advantage functions.
+\begin{proposition}[Temporal Difference Errors]
+	\begin{equation}
+		\begin{split}
+			\E[\theta]{\delta_t^A|S_t = s, A_t = a} &= A_\theta(s, a)\\
+			\E[\theta]{\delta_t^B|S_t = s, A_t = a} &= B_\theta(s, a)\\
+		\end{split}
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	TODO
+\end{proof}
+Denoting by $\psi_t = \psi(S_t, A_t) = \nabla_\theta \log \pi(S_t, A_t)$ the
+compatible feature \cite{sutton1999policy}, we can easily obtain an unbiased
+estimate of the gradients 
+\begin{equation}
+	\begin{split}
+		\nabla_\theta \rho(\theta) &\approx \psi_t \delta_t^A\\
+		\nabla_\theta \eta(\theta) &\approx \psi_t \delta_t^B\\
+	\end{split}
+\end{equation}
+The value functions are linearly approximated using some veatures vectors
+$\Phi_V: \S \to \R^{D_V}$ and $\Phi_U: \S \to \R^{D_U}$ as follows
+\begin{equation}
+	\begin{split}
+		\widehat{V}(s) &= v^T \Phi_V(s)\\
+		\widehat{U}(s) &= u^T \Phi_U(s)\\
+	\end{split}
+\end{equation}
+Given all these ingredients, the authors propose a three time-scale stochastic
+approximation algorithm whose pseudo-code is illustrated in Algorithm
+%\ref{algo:average_reward_risk_sensitive_actor_critic_algorithm}.
+
+% \begin{algorithm}
+	%\caption{Average Reward Risk-Sensitive Actor-Critic Algorithm}
+	% \label{algo:average_reward_risk_sensitive_actor_critic_algorithm}
+	%\begin{algorithmic}
+	%	test		
+	%\end{algorithmic}
+% \end{algorithm}
+
+
+
+
 
 % Bibliography
 \bibliographystyle{siam}

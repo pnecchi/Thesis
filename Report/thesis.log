@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  31 MAY 2016 14:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  4 JUN 2016 19:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1042,13 +1042,16 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 77.
  ) 
 Here is how much of TeX's memory you used:
- 17377 strings out of 495028
- 298749 string characters out of 6181497
+ 17381 strings out of 495028
+ 298843 string characters out of 6181497
  383986 words of memory out of 5000000
- 20024 multiletter control sequences out of 15000+600000
+ 20026 multiletter control sequences out of 15000+600000
  12965 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  63i,16n,57p,418b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1067,10 +1070,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (27 pages, 264173 bytes).
+Output written on thesis.pdf (27 pages, 264553 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
- 424 compressed objects within 5 object streams
- 206 named destinations out of 1000 (max. 500000)
+ 476 PDF objects out of 1000 (max. 8388607)
+ 426 compressed objects within 5 object streams
+ 208 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

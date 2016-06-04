@@ -47,6 +47,10 @@
   Optimization and neural computation series, Athena Scientific, Belmont,
   1~ed., 1996.
 
+\bibitem{bhatnagar2009natural}
+{\sc S.~Bhatnagar, R.~S. Sutton, M.~Ghavamzadeh, and M.~Lee}, {\em Natural
+  actor--critic algorithms}, Automatica, 45 (2009), pp.~2471--2482.
+
 \bibitem{bishop2006pattern}
 {\sc C.~M. Bishop}, {\em Pattern Recognition and Machine Learning}, Springer,
   2006.
@@ -196,6 +200,11 @@
   prediction under reinforcement learning schemes}, in 2007 IEEE International
   Symposium on Approximate Dynamic Programming and Reinforcement Learning,
   2007, pp.~233--240.
+
+\bibitem{mahadevan1996average}
+{\sc S.~Mahadevan}, {\em Average reward reinforcement learning: Foundations,
+  algorithms, and empirical results}, Machine learning, 22 (1996),
+  pp.~159--195.
 
 \bibitem{miyamae2010natural}
 {\sc A.~Miyamae, Y.~Nagata, I.~Ono, and S.~Kobayashi}, {\em Natural policy
