@@ -8,7 +8,7 @@
 import numpy as np
 
 
-def Actor(object):
+class Actor(object):
     """ Actor class which specifies the generic interface of an actor. """
 
     def __init__(self, dimIn, dimOut):
@@ -136,3 +136,19 @@ class BoltzmannExploration(Actor):
         score = self._featuresEval[self._actionList == action, :] - \
             np.dot(self._featuresEval, self._actionProb.T)
         return score
+
+    def getParameters(self):
+        """ Return actor parameters.
+
+        Returns:
+            parameters (np.array): actor parameters
+        """
+        return self._parameters
+
+    def setParameters(self, parameters):
+        """ Set actor parameters.
+
+        Args:
+            parameters (np.array): new actor parameters
+        """
+        self._parameters = parameters

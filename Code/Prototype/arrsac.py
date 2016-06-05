@@ -6,6 +6,7 @@
 ################################################################################
 
 import numpy as np
+from statistics import ExponentialMovingAverage
 
 
 class ARRSAC(object):
@@ -38,19 +39,20 @@ class ARRSAC(object):
         self.reward = None
 
         # Initialize first and second moment of the reward
-        self.averageReward = None
-        self.averageSquareReward = None
+        self.averageReward = ExponentialMovingAverage(self.alphaMoment)
+        self.averageSquareReward = ExponentialMovingAverage(self.alphaMoment)
 
-    def getAction(self, obs):
-        """ Select action given a state observation.
+    def getAction(self, state):
+        """ Select action given a state.
 
         Args:
-            obs (np.array): observation of the system
+            state (np.array): state of the system
 
         Returns:
             action (np.array): action
         """
-        return self.actor.activate(obs)
+        self.action = self.actor.getAction(obs)
+        return self.action
 
     def giveReward(self, r):
         """ Receive a reward
@@ -63,5 +65,31 @@ class ARRSAC(object):
     def learn(self):
         """ One learning step of the algorithm """
 
+        # 1) Update first and second moment estimates
+        self.averageReward.update(self.reward)
+        self.averageSquareReward.update(self.reward**2)
 
+        # 2) Compute TD errors
+        # TODO: How to pass the next state to the agent?
+        delta = self.reward - self.averageReward.get() + \
+            self.criticV(self.nextState) - self.criticV(self.state)
+        epsilon = self.reward**2 - self.averageSquareReward.get() + \
+            self.criticU(self.nextState) - self.criticU(self.state)
 
+        # 3) Critic update
+        newParamV = self.criticV.getParameters() + \
+            self.alphaCritic * delta * self.criticV.gradient(self.state)
+        self.criticV.setParameters(newParamV)
+        newParamU = self.criticU.getParameters() + \
+            self.alphaCritic * epsilon * self.criticU.gradient(self.state)
+        self.criticU.setParameters(newParamU)
+
+        # 4) Actor update
+        likelihoodScore = self.actor.scoreFunction(self.state, self.action)
+        variance = self.averageSquareReward.get() - self.averageReward.get()**2
+        newParamActor = self.actor.getParameters() + \
+            self.alphaActor / np.sqrt(variance) * (delta * likelihoodScore -
+            self.averageReward.get() * (epsilon * likelihoodScore -
+            2.0 * self.averageReward.get() * delta * likelihoodScore) / (2.0 * variance))
+        # TODO: Manage projection
+        self.actor.setParameters(newParamActor)
