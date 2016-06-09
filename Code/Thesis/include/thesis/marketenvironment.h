@@ -17,13 +17,13 @@ class MarketEnvironment
 public:
 	// Constructor
 	MarketEnvironment (std::string inputFilePath, 
-					   size_t nDaysObserved, 
-					   double riskFreeRate, 
-					   size_t startDate, 
-					   size_t endDate);
+					   double riskFreeRate_,
+					   size_t numDaysObserved_,  
+					   size_t startDate_, 
+					   size_t endDate_);
 	
 	// Destructor
-	virtual ~MarketEnvironment ();
+	virtual ~MarketEnvironment () = default;
 	
 	// Get system state
 	arma::vec getState() const;
@@ -32,29 +32,44 @@ public:
 	void performAction(arma::vec const &action);
 	
 	// Get methods
+	std::vector<std::string> getAssetsSymbols() const { return assetSymbols; }
+	double getRiskFreeRate() const { return riskFreeRate; }
+
+	size_t getNumDays() const { return numDays; }
+	size_t getNumRiskyAssets() const { return numRiskyAssets; }
+	size_t getNumDaysObserved() const { return numDaysObserved; }
+
 	size_t getDimState() const { return dimState; }
 	size_t getDimAction() const { return dimAction; }
-	size_t getNumDaysObserved() const { return numDaysObserved; }
+
 	size_t getStartDate() const { return startDate; }
 	size_t getCurrentDate() const { return currentDate; }
 	size_t getEndDate() const { return endDate; }
-	double getRiskFreeRate() const { return riskFreeRate; }
 	
 	// Set methods
 	void setStartDate(size_t startDate_) { startDate = startDate_; }
 	void setEndDate(size_t endDate_) { endDate = endDate_; }
-	void SetEvaluationInterval(size_t startDate_, size_t EndDate_);
+	void SetEvaluationInterval(size_t startDate_, size_t endDate_);
 
 	// Reset
 	void reset(); 
 
 private:
-	std::vector<std::string>> assetSymbols; 
+	// Assets 
+	std::vector<std::string> assetSymbols; 
 	arma::mat logReturns;
 	double riskFreeRate;
+	
+	// Sizes
+	size_t numDays;
+	size_t numRiskyAssets;	
+	size_t numDaysObserved;
+
+	// Dimensions of state and action spaces
 	size_t dimState;
 	size_t dimAction;
-	size_t numDaysObserved;
+
+	// Evaluation time interval
 	size_t startDate;
 	size_t currentDate;
 	size_t endDate;	

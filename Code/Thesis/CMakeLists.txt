@@ -1,8 +1,8 @@
 # Requires Cmake version
-CMAKE_MINIMUM_REQUIRED( VERSION 2.8 )
+cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 
 # Defines some variables
-SET( PROJ_NAME      "thesis" )
+set( PROJ_NAME      "thesis" )
 SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  "build" )
 SET( PROJ_LIBRARIES "" )
@@ -10,7 +10,7 @@ SET( PROJ_INCLUDES  "include" )
 SET( PROJ_SRC       "src" )
 
 # Set Project name
-PROJECT( ${PROJ_NAME} )
+project(${PROJ_NAME} CXX)
 
 # Find sources and headers
 FILE( GLOB_RECURSE SOURCES ${PROJ_SRC}/*.cpp )
@@ -23,5 +23,8 @@ INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
 add_custom_target( headers SOURCES ${HEADERS} )
 
 # Executables
-ADD_EXECUTABLE( ${PROJ_NAME} ${SOURCES} )
+add_executable(${PROJ_NAME} ${SOURCES})
 
+# Compiler features
+set_property(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD 11)
+set_property(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
