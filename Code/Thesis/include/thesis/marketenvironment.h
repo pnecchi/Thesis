@@ -18,10 +18,10 @@ public:
 	// Constructor
 	MarketEnvironment (std::string inputFilePath, 
 					   double riskFreeRate_,
-					   size_t numDaysObserved_,  
 					   size_t startDate_, 
 					   size_t endDate_);
-	
+	MarketEnvironment (MarketEnvironment const &market_) = default;
+
 	// Destructor
 	virtual ~MarketEnvironment () = default;
 	
@@ -37,7 +37,6 @@ public:
 
 	size_t getNumDays() const { return numDays; }
 	size_t getNumRiskyAssets() const { return numRiskyAssets; }
-	size_t getNumDaysObserved() const { return numDaysObserved; }
 
 	size_t getDimState() const { return dimState; }
 	size_t getDimAction() const { return dimAction; }
@@ -63,7 +62,6 @@ private:
 	// Sizes
 	size_t numDays;
 	size_t numRiskyAssets;	
-	size_t numDaysObserved;
 
 	// Dimensions of state and action spaces
 	size_t dimState;

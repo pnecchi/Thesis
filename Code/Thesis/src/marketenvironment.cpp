@@ -6,11 +6,12 @@
 
 MarketEnvironment::MarketEnvironment (std::string inputFilePath, 
 									  double riskFreeRate_,
-									  size_t numDaysObserved_,
 									  size_t startDate_, 
 									  size_t endDate_)
 	: riskFreeRate(riskFreeRate_), 
-	  numDaysObserved(numDaysObserved_)
+	  numDaysObserved(numDaysObserved_),
+	  startDate(startDate_), 
+	  endDate(endDate_)
 {
 	// Initialize filestream from inputFilePath
 	std::ifstream ifs(inputFilePath);
@@ -53,24 +54,17 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 	}
 	
 	// Set dimensions of state and action spaces 
-	dimState = (numDaysObserved + 1) * numRiskyAssets + 1;
+	dimState = numRiskyAssets + 1;
 	dimAction = numRiskyAssets + 1;
-
-	// Set evaluation dates 
-	startDate = (startDate_ > numDaysObserved) ? startDate_ : numDaysObserved;
-	currentDate = startDate;
-	endDate = (endDate_ < numDays) ? endDate_ : numDays;
 }
 		
 arma::vec MarketEnvironment::getState() const
 {
 	// pierpaolo - gio 09 giu 2016 10:28:19 CEST
-	// TODO: To avoid copy, pass state vector as input by reference? 
-	
+	// TODO: To avoid copy, pass state vector as input by reference? 	
 	arma::vec pastLogReturns(dimState);  
 	pastLogReturns(0) = riskFreeRate;			
-	pastLogReturns.rows(1, dimState-1) = arma::vectorise(
-			logReturns.cols(currentDate - numDaysObserved, currentDate)); 	
+	pastLogReturns.rows(1, dimState-1) = arma::vectorise(logReturns.col(currentDate)); 	
 	return pastLogReturns;
 }
 	
