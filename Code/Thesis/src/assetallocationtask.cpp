@@ -1,4 +1,30 @@
 #include <thesis/assetallocationtask.h>
+#include <armadillo> 
+#include <math.h>      /* log */
+#include <limits>      /* numeric_limits */
+
+void AssetAllocationTask::initializeStatesCache()
+{
+	// Initialize past market states
+	arma::vec proxyAction(dimAction);
+	for(size_t i = 0; i < numDaysObserved; ++i)
+	{
+		pastStates.rows(i * dimState, (i + 1) * dimState - 1) = 
+			market.getState();
+		
+		// Move to the next time step
+		market.performAction(proxyAction);
+	}
+
+	// Initialize current market state
+	currentState = market.getState();
+}
+
+void AssetAllocationTask::initializeAllocationCache()
+{
+	currentAllocation.zeros();
+	currentAllocation(0) = 1.0;
+}
 
 AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_, 
 										  double deltaP_, 
@@ -15,49 +41,30 @@ AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_,
 	dimState = market.getDimState();
 	dimAction = market.getDimAction();
 	dimPastStates = numDaysObserved * dimState;
-	dimObservation = dimPastStates + dimState + marketDimAction();
+	dimObservation = dimPastStates + dimState + dimAction;
 	
 	// Initialize state cache variables 	
 	pastStates.set_size(dimPastStates);
 	currentState.set_size(dimState);
-	(*this).initializePastStates();  
+	initializeStatesCache();  
 		
 	// Initialize allocation cache variables
-	currentAllocation.set_size(dimAction);
-	(*this).initializeAllocation();
+	currentAllocation.set_size(dimAction);	
 	newAllocation.set_size(dimAction);
-}
-
-AssetAllocationTask::initializePastStates()
-{
-	// Initialize past market states
-	for(size_t i = 0; i < numDaysObserved; ++i)
-	{
-		pastState.rows(i * dimState, (i + 1) * dimState - 1) = market.getState()
-		market.performAction()
-	}
-
-	// Initialize current market state
-	currentState = market.getState();
-}
-
-AssetAllocationTask::initializeAllocation()
-{
-	currentAllocation.zeros();
-	currentAllocation(0) = 1.0;
+	initializeAllocationCache();
 }
 
 arma::vec AssetAllocationTask::getObservation () const
 {
 	arma::vec observation(dimObservation);
 
-	// Copy past states
+	// Past states
 	observation.rows(0, dimPastStates-1) = pastStates;
 	
-	// Copy current states
+	// Current state
 	observation.rows(dimPastStates, dimPastStates + dimState - 1) = currentState;
 	
-	// Copy current allocation 
+	// Current allocation 
 	observation.rows(dimPastStates + dimState, observation.size() - 1) = currentAllocation;
 	
 	return observation;
@@ -72,36 +79,61 @@ void AssetAllocationTask::performAction (arma::vec const &action)
 	market.performAction(action);
 }
 
-double AssetAllocationTask::getReward () const
+double AssetAllocationTask::getReward ()
 {
 	// Update past states with current state
-	pastStates.rows(0, numDaysObserved * dimState - 1) = 
-		pastState.rows(dimState, size(pastState));
-	pastStates.rows(numDaysObserved * dimState, size(pastState)) = 
+	pastStates.rows(0, (numDaysObserved - 1) * dimState - 1) = 
+		pastStates.rows(dimState, pastStates.size());
+	pastStates.rows((numDaysObserved - 1) * dimState, pastStates.size()) = 
 		currentState;
 
 	// Observe new market state
 	currentState = market.getState();
 
-	// Compute portfolio return
-	// pierpaolo - gio 09 giu 2016 16:47:48 CEST
-	// TODO: Compute portfolio return
-	
-	double reward = 0.0;
+	// Compute portfolio simple return 
+	double portfolioSimpleReturn = computePortfolioSimpleReturn();
 
-	// Update allocation
-	// pierpaolo - gio 09 giu 2016 16:48:22 CEST
-	// TODO: Update portfolio allocation
+	// Update allocation weights 
+	currentAllocation = newAllocation % (1.0 + currentState) / 
+						(1.0 + portfolioSimpleReturn);
 
-	return reward;
+	// Return portfolio log-return
+	return log(1.0 + portfolioSimpleReturn);
 }
 	
 void AssetAllocationTask::setEvaluationInterval (size_t startDate_,
 												 size_t endDate_)
 {
 	market.setEvaluationInterval(startDate_, endDate_);
-	(*this).initializePastStates();
-	
-	(*this).initializeAllocation();	
+	initializeStatesCache();
+	initializeAllocationCache();	
 }
 
+double AssetAllocationTask::computePortfolioSimpleReturn () const
+{
+	// Proportional transaction costs
+	double proportionTransactionCosts = deltaP * 
+		arma::sum(arma::abs(newAllocation - currentAllocation));
+	
+	// Fixed transaction costs
+	double fixedTransactionCosts = 	deltaF * 
+		(!arma::approx_equal(currentAllocation, newAllocation, "absdiff", 
+							 std::numeric_limits<double>::epsilon()));
+
+	// Short-selling fees
+	double shortPositionsWeight = 0.0;
+	for(size_t i = 0; i < newAllocation.size(); ++i)
+		if (newAllocation(i) < 0.0)
+			shortPositionsWeight += - newAllocation(i);
+	double shortTransactionCosts = deltaS * shortPositionsWeight;
+	
+	// Trading profit & loss
+	double tradingPL = arma::dot(newAllocation, currentState);
+
+	// Compute simple portfolio return
+	double portfolioSimpleReturn = tradingPL 
+								 - proportionTransactionCosts
+								 - fixedTransactionCosts 
+								 - shortTransactionCosts;
+	return portfolioSimpleReturn;
+}

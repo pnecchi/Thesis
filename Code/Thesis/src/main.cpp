@@ -1,21 +1,26 @@
 #include <iostream>
 #include <string>
-#include <thesis/marketenvironment.h>
 #include <armadillo>
+#include <thesis/marketenvironment.h>
+#include <thesis/assetallocationtask.h>
 
 int main(int argc, char *argv[])
 {
-	// Parameters 
+	// Market parameters 
 	std::string inputFilePath = "../../../Data/Input/synthetic.csv";
 	double riskFreeRate = 0.0;
-	size_t numDaysObserved = 2;
 	size_t startDate = 0;
 	size_t endDate = 10;
-	
+
+	// Task parameters
+	double deltaP = 0.0005;
+	double deltaF = 0.0;
+	double deltaS = 0.0;
+	size_t numDaysObserved = 2;
+
 	// Market 
 	MarketEnvironment market(inputFilePath, 
 							 riskFreeRate, 
-							 numDaysObserved,
 							 startDate, 
 							 endDate);
 	
@@ -49,6 +54,9 @@ int main(int argc, char *argv[])
 	std::cout << "Current state: " << std::endl;  
 	state = market.getState();
 	state.print(std::cout);
+
+	// Asset allocation task
+	AssetAllocationTask task(market, deltaP, deltaF, deltaP, numDaysObserved);
 
 	return 0;
 }

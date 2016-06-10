@@ -9,7 +9,6 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 									  size_t startDate_, 
 									  size_t endDate_)
 	: riskFreeRate(riskFreeRate_), 
-	  numDaysObserved(numDaysObserved_),
 	  startDate(startDate_), 
 	  endDate(endDate_)
 {
@@ -74,15 +73,15 @@ void MarketEnvironment::performAction(arma::vec const &action)
 	currentDate++;
 }
 
-void MarketEnvironment::SetEvaluationInterval(size_t startDate_, 
+void MarketEnvironment::setEvaluationInterval(size_t startDate_, 
 											  size_t endDate_)
 {
-	(*this).setStartDate(startDate_);
-	(*this).setEndDate(endDate_);
-	(*this).reset();
+	setStartDate(startDate_);
+	setEndDate(endDate_);
+	reset();
 }
 
 void MarketEnvironment::reset() 
 {
-	currentDate = (startDate > numDaysObserved) ? startDate : numDaysObserved;
+	currentDate = startDate;
 }

@@ -1,8 +1,8 @@
 # Requires Cmake version
-cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1.0 FATAL_ERROR)
 
 # Defines some variables
-set( PROJ_NAME      "thesis" )
+SET( PROJ_NAME      "thesis" )
 SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
 SET( PROJ_OUT_PATH  "build" )
 SET( PROJ_LIBRARIES "" )
@@ -10,21 +10,27 @@ SET( PROJ_INCLUDES  "include" )
 SET( PROJ_SRC       "src" )
 
 # Set Project name
-project(${PROJ_NAME} CXX)
+PROJECT(${PROJ_NAME} C CXX)
 
 # Find sources and headers
 FILE( GLOB_RECURSE SOURCES ${PROJ_SRC}/*.cpp )
 FILE( GLOB_RECURSE HEADERS ${PROJ_INCLUDES}/${PROJ_NAME}/*.h )
 
 # Add include directory to the include path
-INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} )
+INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} ${BLAS_INCLUDE_DIR} )
 
 # Add headers as custom targets
-add_custom_target( headers SOURCES ${HEADERS} )
+ADD_CUSTOM_TARGET( headers SOURCES ${HEADERS} )
+
+# Link libraries
+FIND_PACKAGE( LAPACK REQUIRED )
+FIND_PACKAGE( BLAS REQUIRED )
 
 # Executables
-add_executable(${PROJ_NAME} ${SOURCES})
+ADD_EXECUTABLE(${PROJ_NAME} ${SOURCES})
+
+TARGET_LINK_LIBRARIES( ${PROJ_NAME} blas lapack )
 
 # Compiler features
-set_property(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD 11)
-set_property(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
+SET_PROPERTY(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD 11)
+SET_PROPERTY(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)

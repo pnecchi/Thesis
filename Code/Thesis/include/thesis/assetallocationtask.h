@@ -24,6 +24,10 @@ public:
 	// Destructor
 	virtual ~AssetAllocationTask () = default;
 
+	// Initialization helper functions
+	void initializeStatesCache ();
+	void initializeAllocationCache ();
+
 	// Get methods
 	double getDeltaP () const { return deltaP; }
 	double getDeltaF () const { return deltaF; }
@@ -39,17 +43,15 @@ public:
 	void performAction (arma::vec const &action);
 
 	// Provide reward
-	double getReward () const;
+	double getReward ();
 	
 	// Set evaluation interval for the allocation task
 	void setEvaluationInterval (size_t startDate_, size_t endDate_);
-	
-private:
-	// Private methods 
-	void initializePastStates ();
-	void initializeAllocation ();
 
-	// Private members
+private:
+	// Compute portfolio simple returns
+	double computePortfolioSimpleReturn () const;
+
 	// Underlying market environment
 	MarketEnvironment market;
 

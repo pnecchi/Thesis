@@ -48,7 +48,7 @@ public:
 	// Set methods
 	void setStartDate(size_t startDate_) { startDate = startDate_; }
 	void setEndDate(size_t endDate_) { endDate = endDate_; }
-	void SetEvaluationInterval(size_t startDate_, size_t endDate_);
+	void setEvaluationInterval(size_t startDate_, size_t endDate_);
 
 	// Reset
 	void reset(); 
