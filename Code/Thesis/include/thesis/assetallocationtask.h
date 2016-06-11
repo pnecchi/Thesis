@@ -15,10 +15,10 @@ class AssetAllocationTask
 {
 public:
 	// Constructor
-	AssetAllocationTask (MarketEnvironment const & market_, 
-						 double deltaP_, 
-						 double deltaF_, 
-						 double deltaS_, 
+	AssetAllocationTask (MarketEnvironment const & market_,
+						 double deltaP_,
+						 double deltaF_,
+						 double deltaS_,
 						 size_t numDaysObserved_);
 
 	// Destructor
@@ -32,11 +32,11 @@ public:
 	double getDeltaP () const { return deltaP; }
 	double getDeltaF () const { return deltaF; }
 	double getDeltaS () const { return deltaS; }
-
+    size_t getNumDaysObserved () const { return numDaysObserved; }
 	size_t getDimObservation () const { return dimObservation; }
 	size_t getDimAction () const { return dimAction; }
 
-	// Provide state observation 
+	// Provide state observation
 	arma::vec getObservation () const;
 
 	// Perform action
@@ -44,7 +44,7 @@ public:
 
 	// Provide reward
 	double getReward ();
-	
+
 	// Set evaluation interval for the allocation task
 	void setEvaluationInterval (size_t startDate_, size_t endDate_);
 
@@ -59,20 +59,20 @@ private:
 	double deltaP;
 	double deltaF;
 	double deltaS;
-	
+
 	// Number of past days observed
 	size_t numDaysObserved;
-	
+
 	// Dimensions of the observation and action space
 	size_t dimState;
 	size_t dimPastStates;
-	size_t dimObservation; 
+	size_t dimObservation;
 	size_t dimAction;
 
 	// Current state cache variable
 	arma::vec pastStates;
 	arma::vec currentState;
-	
+
 	// Allocations cache variable
 	arma::vec currentAllocation;
 	arma::vec newAllocation;

@@ -56,7 +56,7 @@ public:
 private:
 	// Assets 
 	std::vector<std::string> assetSymbols; 
-	arma::mat logReturns;
+	arma::mat assetsReturns;
 	double riskFreeRate;
 	
 	// Sizes

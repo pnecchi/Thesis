@@ -1,36 +1,38 @@
-# Requires Cmake version
-CMAKE_MINIMUM_REQUIRED(VERSION 3.1.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 2.8)
 
-# Defines some variables
-SET( PROJ_NAME      "thesis" )
-SET( PROJ_PATH      ${CMAKE_SOURCE_DIR} )
-SET( PROJ_OUT_PATH  "build" )
-SET( PROJ_LIBRARIES "" )
-SET( PROJ_INCLUDES  "include" )
-SET( PROJ_SRC       "src" )
+project(thesis)
 
-# Set Project name
-PROJECT(${PROJ_NAME} C CXX)
+# ----------------------- INCLUDES ----------------------------
+include_directories(include)
 
-# Find sources and headers
-FILE( GLOB_RECURSE SOURCES ${PROJ_SRC}/*.cpp )
-FILE( GLOB_RECURSE HEADERS ${PROJ_INCLUDES}/${PROJ_NAME}/*.h )
 
-# Add include directory to the include path
-INCLUDE_DIRECTORIES( ${PROJ_INCLUDES} ${BLAS_INCLUDE_DIR} )
+# ----------------------- LIBRARIES ---------------------------
+find_package(Armadillo REQUIRED)
+include_directories(${ARMADILLO_INCLUDE_DIR})
 
-# Add headers as custom targets
-ADD_CUSTOM_TARGET( headers SOURCES ${HEADERS} )
+# ----------------------- GCC FLAGS ----------------------------
 
-# Link libraries
-FIND_PACKAGE( LAPACK REQUIRED )
-FIND_PACKAGE( BLAS REQUIRED )
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fPIC")
 
-# Executables
-ADD_EXECUTABLE(${PROJ_NAME} ${SOURCES})
+if(CMAKE_BUILD_TYPE MATCHES Debug)
+    set(BUILD_TYPE_MSG "Debug")
 
-TARGET_LINK_LIBRARIES( ${PROJ_NAME} blas lapack )
+else()
+    set(BUILD_TYPE_MSG "Release")
+endif()
 
-# Compiler features
-SET_PROPERTY(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD 11)
-SET_PROPERTY(TARGET ${PROJ_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
+# ------------------------ MESSAGES ----------------------------
+
+message(STATUS "Build type       : " ${BUILD_TYPE_MSG})
+
+# ------------------------ BUILD -------------------------------
+
+file(GLOB_RECURSE PRJ_SOURCE src/*.cpp)
+
+file(GLOB_RECURSE PRJ_INCLUDE include/*.h)
+
+add_library(${PROJECT_NAME} ${PRJ_SOURCE} ${PRJ_INCLUDE})
+target_link_libraries(${PROJECT_NAME} ${ARMADILLO_LIBRARIES})
+
+# examples folder contains the executable files
+add_subdirectory(examples)
