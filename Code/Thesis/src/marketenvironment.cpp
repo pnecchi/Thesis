@@ -16,7 +16,7 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 	// Initialize filestream from inputFilePath
 	std::ifstream ifs(inputFilePath);
 	std::string line;
-
+    char ch;
 	// pierpaolo - gio 09 giu 2016 09:57:32 CEST
 	// TODO: Test file opening
 
@@ -24,7 +24,7 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 	if (getline(ifs, line))
 	{
 		std::istringstream linestream(line);
-		linestream >> numDays >> numRiskyAssets;
+		linestream >> numDays >> ch >> numRiskyAssets;
 	}
 
 	// Read risky assets symbols from the second line
@@ -32,10 +32,12 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 	{
 		std::istringstream linestream(line);
 		std::string symbol;
-		for (size_t i = 0; i < numRiskyAssets; ++i)
+
+		for(size_t i = 0; i < numRiskyAssets && linestream >> symbol; i++)
 		{
-			linestream >> symbol;
-			assetSymbols.push_back(symbol);
+            assetSymbols.push_back(symbol);
+            if (linestream.peek() == ',')
+                linestream.ignore();
 		}
 	}
 
@@ -46,10 +48,12 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 	for(size_t i = 0; i < numDays && getline(ifs, line); ++i)
 	{
 		std::istringstream linestream(line);
-		for(size_t j = 0; j < numRiskyAssets; ++j)
+		for(size_t j = 0; j < numRiskyAssets && linestream >> oneReturn; ++j)
 		{
-			linestream >> oneReturn;
 			assetsReturns(j, i) = oneReturn;
+
+			if (linestream.peek() == ',')
+                linestream.ignore();
 		}
 	}
 

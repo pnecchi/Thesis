@@ -133,70 +133,16 @@
             <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
-      <Target title="first">
-         <Option output="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/first" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples" />
-         <Option object_output="./" />
-         <Option type="1" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add directory="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 first" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="first/fast">
-         <Option output="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/first" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples" />
-         <Option object_output="./" />
-         <Option type="1" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add directory="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 first/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
       </Build>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main_first.cpp">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationtask.cpp">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/marketenvironment.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/prova.cpp">
-      </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/assetallocationtask.h">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/marketenvironment.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/prova.h">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />

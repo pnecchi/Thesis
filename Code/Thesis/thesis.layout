@@ -3,22 +3,27 @@
 	<ActiveTarget name="main" />
 	<File name="include/thesis/assetallocationtask.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1321" topLine="30" />
-		</Cursor>
-	</File>
-	<File name="src/marketenvironment.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="446" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="src/assetallocationtask.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2141" topLine="67" />
+			<Cursor1 position="61" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="examples/main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2037" topLine="37" />
+			<Cursor1 position="254" topLine="42" />
+		</Cursor>
+	</File>
+	<File name="src/assetallocationtask.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2468" topLine="78" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/marketenvironment.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="410" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="src/marketenvironment.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1191" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

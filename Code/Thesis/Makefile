@@ -115,19 +115,6 @@ thesis/fast:
 .PHONY : thesis/fast
 
 #=============================================================================
-# Target rules for targets named first
-
-# Build rule for target.
-first: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 first
-.PHONY : first
-
-# fast build rule for target.
-first/fast:
-	$(MAKE) -f examples/CMakeFiles/first.dir/build.make examples/CMakeFiles/first.dir/build
-.PHONY : first/fast
-
-#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -188,30 +175,6 @@ src/marketenvironment.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/marketenvironment.cpp.s
 .PHONY : src/marketenvironment.cpp.s
 
-src/prova.o: src/prova.cpp.o
-.PHONY : src/prova.o
-
-# target to build an object file
-src/prova.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/prova.cpp.o
-.PHONY : src/prova.cpp.o
-
-src/prova.i: src/prova.cpp.i
-.PHONY : src/prova.i
-
-# target to preprocess a source file
-src/prova.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/prova.cpp.i
-.PHONY : src/prova.cpp.i
-
-src/prova.s: src/prova.cpp.s
-.PHONY : src/prova.s
-
-# target to generate assembly for a file
-src/prova.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/prova.cpp.s
-.PHONY : src/prova.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,16 +185,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... thesis"
 	@echo "... main"
-	@echo "... first"
 	@echo "... src/assetallocationtask.o"
 	@echo "... src/assetallocationtask.i"
 	@echo "... src/assetallocationtask.s"
 	@echo "... src/marketenvironment.o"
 	@echo "... src/marketenvironment.i"
 	@echo "... src/marketenvironment.s"
-	@echo "... src/prova.o"
-	@echo "... src/prova.i"
-	@echo "... src/prova.s"
 .PHONY : help
 
 

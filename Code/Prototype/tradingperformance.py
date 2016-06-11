@@ -32,8 +32,6 @@ def portfolioSimpleReturn(assetReturns,
 
 
     posDifference = newAllocation - oldAllocation
-    tcProp = deltaP * np.sum(np.absolute(posDifference))
-    tcShort = deltaS * np.sum(newAllocation.clip(max=0.))
     ptfSimpleReturn = np.dot(newAllocation, assetReturns) - \
         deltaP * np.sum(np.absolute(posDifference)) + \
         deltaS * np.sum(newAllocation.clip(max=0.)) - \

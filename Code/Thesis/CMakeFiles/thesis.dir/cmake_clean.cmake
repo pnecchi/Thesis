@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/thesis.dir/src/assetallocationtask.cpp.o"
   "CMakeFiles/thesis.dir/src/marketenvironment.cpp.o"
-  "CMakeFiles/thesis.dir/src/prova.cpp.o"
   "libthesis.pdb"
   "libthesis.a"
 )

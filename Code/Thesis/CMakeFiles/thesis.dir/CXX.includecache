@@ -28,10 +28,6 @@ fstream
 sstream
 -
 
-/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/prova.cpp
-thesis/prova.h
-/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/thesis/prova.h
-
 /usr/local/include/armadillo
 cstdlib
 -
@@ -2000,11 +1996,5 @@ armadillo
 vector
 -
 string
--
-
-include/thesis/prova.h
-iostream
--
-armadillo
 -
 

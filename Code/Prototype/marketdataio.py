@@ -96,7 +96,7 @@ if __name__ == "__main__":
 
     # Target symbols
     reference_symbol = 'SPY'
-    symbols = []
+    symbols = ['JPM','IBM']
 
     # Portfolio allocations
     ptf_weights = np.array([0.4, 0.4, 0.1, 0.1])

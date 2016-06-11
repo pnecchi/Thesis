@@ -6,6 +6,7 @@
 # Date:        ven 27 mag 2016 14:27:25 CEST
 ################################################################################
 
+import csv
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -69,10 +70,6 @@ def main():
     # Price series length
     T = 10000
 
-    # Use fictitious dates
-    start = '1990-01-01'
-    dates = pd.date_range(start, periods=T+1)
-
     # Initialize generator
     generator = PriceGenerator()
 
@@ -81,7 +78,6 @@ def main():
 
     # Store price series in pandas dataframe
     df = pd.DataFrame(price,
-                      index=dates,
                       columns=['SYNT'])
 
     # Plot price seris
@@ -89,11 +85,14 @@ def main():
     plt.show()
 
     # Compute daily returns
-    daily_returns = df / df.shift(1) - 1
+    daily_returns = (df / df.shift(1)) - 1
     daily_returns = daily_returns.ix[1:]
 
     # Write df to csv file
-    daily_returns.to_csv('./synthetic.csv')
+    with open('synthetic.csv', 'w') as f:
+        a = csv.writer(f, delimiter=',', lineterminator='\n')
+        a.writerows([[daily_returns.shape[0], daily_returns.shape[1]]])
+        daily_returns.to_csv(f, index=False)
 
 
 if __name__ == "__main__":
