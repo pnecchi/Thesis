@@ -102,20 +102,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-examples/CMakeFiles/first.dir/rule:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/first.dir/rule
-.PHONY : examples/CMakeFiles/first.dir/rule
-
-# Convenience name for target.
-first: examples/CMakeFiles/first.dir/rule
-.PHONY : first
-
-# fast build rule for target.
-first/fast:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/first.dir/build.make examples/CMakeFiles/first.dir/build
-.PHONY : first/fast
-
-# Convenience name for target.
 examples/CMakeFiles/main.dir/rule:
 	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/main.dir/rule
 .PHONY : examples/CMakeFiles/main.dir/rule
@@ -153,30 +139,6 @@ main.cpp.s:
 	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-main_first.o: main_first.cpp.o
-.PHONY : main_first.o
-
-# target to build an object file
-main_first.cpp.o:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/first.dir/build.make examples/CMakeFiles/first.dir/main_first.cpp.o
-.PHONY : main_first.cpp.o
-
-main_first.i: main_first.cpp.i
-.PHONY : main_first.i
-
-# target to preprocess a source file
-main_first.cpp.i:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/first.dir/build.make examples/CMakeFiles/first.dir/main_first.cpp.i
-.PHONY : main_first.cpp.i
-
-main_first.s: main_first.cpp.s
-.PHONY : main_first.s
-
-# target to generate assembly for a file
-main_first.cpp.s:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/first.dir/build.make examples/CMakeFiles/first.dir/main_first.cpp.s
-.PHONY : main_first.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,13 +148,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
-	@echo "... first"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... main_first.o"
-	@echo "... main_first.i"
-	@echo "... main_first.s"
 .PHONY : help
 
 
