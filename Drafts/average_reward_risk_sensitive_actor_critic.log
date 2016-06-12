@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  4 JUN 2016 18:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  12 JUN 2016 09:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1036,8 +1036,8 @@ cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on average_reward_risk_sensitive_actor_critic.pdf (6 pages, 1891
-34 bytes).
+Output written on average_reward_risk_sensitive_actor_critic.pdf (6 pages, 1889
+79 bytes).
 PDF statistics:
  186 PDF objects out of 1000 (max. 8388607)
  161 compressed objects within 2 object streams
