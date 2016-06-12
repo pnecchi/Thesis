@@ -62,14 +62,10 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 	dimAction = numRiskyAssets + 1;
 }
 
-arma::vec MarketEnvironment::getState() const
+void MarketEnvironment::getState(arma::vec &state) const
 {
-	// pierpaolo - gio 09 giu 2016 10:28:19 CEST
-	// TODO: To avoid copy, pass state vector as input by reference?
-	arma::vec pastReturns(dimState);
-	pastReturns(0) = riskFreeRate;
-	pastReturns.rows(1, dimState-1) = arma::vectorise(assetsReturns.col(currentDate));
-	return pastReturns;
+	state(0) = riskFreeRate;
+	state.rows(1, dimState-1) = assetsReturns.col(currentDate);
 }
 
 void MarketEnvironment::performAction(arma::vec const &action)

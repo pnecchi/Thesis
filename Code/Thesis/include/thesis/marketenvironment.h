@@ -16,21 +16,21 @@ class MarketEnvironment
 {
 public:
 	// Constructor
-	MarketEnvironment (std::string inputFilePath, 
+	MarketEnvironment (std::string inputFilePath,
 					   double riskFreeRate_,
-					   size_t startDate_, 
+					   size_t startDate_,
 					   size_t endDate_);
 	MarketEnvironment (MarketEnvironment const &market_) = default;
 
 	// Destructor
 	virtual ~MarketEnvironment () = default;
-	
+
 	// Get system state
-	arma::vec getState() const;
-	
+	void getState(arma::vec &state) const;
+
 	// Perform Action on the system
 	void performAction(arma::vec const &action);
-	
+
 	// Get methods
 	std::vector<std::string> getAssetsSymbols() const { return assetSymbols; }
 	double getRiskFreeRate() const { return riskFreeRate; }
@@ -44,24 +44,24 @@ public:
 	size_t getStartDate() const { return startDate; }
 	size_t getCurrentDate() const { return currentDate; }
 	size_t getEndDate() const { return endDate; }
-	
+
 	// Set methods
 	void setStartDate(size_t startDate_) { startDate = startDate_; }
 	void setEndDate(size_t endDate_) { endDate = endDate_; }
 	void setEvaluationInterval(size_t startDate_, size_t endDate_);
 
 	// Reset
-	void reset(); 
+	void reset();
 
 private:
-	// Assets 
-	std::vector<std::string> assetSymbols; 
+	// Assets
+	std::vector<std::string> assetSymbols;
 	arma::mat assetsReturns;
 	double riskFreeRate;
-	
+
 	// Sizes
 	size_t numDays;
-	size_t numRiskyAssets;	
+	size_t numRiskyAssets;
 
 	// Dimensions of state and action spaces
 	size_t dimState;
@@ -70,7 +70,7 @@ private:
 	// Evaluation time interval
 	size_t startDate;
 	size_t currentDate;
-	size_t endDate;	
+	size_t endDate;
 };
 
 #endif /* end of include guard: MARKETENVIRONMENT_H */

@@ -16,7 +16,7 @@ from pybrain.rl.agents.agent import Agent
 
 
 class TradingSystem(Agent):
-    """ Trading system that interacts with the financial market. It takes care
+    """ Trading system // that interacts with the financial market. It takes care
         of feature extraction, selecting allocations, learning from the
         interaction with the environment and reporting the strategy performance.
         Moreover, the trading system can be set in training mode, during which

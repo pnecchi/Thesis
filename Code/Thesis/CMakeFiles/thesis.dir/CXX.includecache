@@ -16,6 +16,12 @@ math.h
 limits
 -
 
+/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/learningagent.cpp
+thesis/learningagent.h
+-
+armadillo
+-
+
 /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/marketenvironment.cpp
 thesis/marketenvironment.h
 -
@@ -26,6 +32,10 @@ string
 fstream
 -
 sstream
+-
+
+/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/tradingsystem.cpp
+thesis/tradingsystem.h
 -
 
 /usr/local/include/armadillo
@@ -1990,11 +2000,29 @@ thesis/marketenvironment.h
 armadillo
 -
 
+include/thesis/learningagent.h
+armadillo
+-
+memory
+-
+thesis/Agent
+-
+thesis/Actor
+-
+
 include/thesis/marketenvironment.h
 armadillo
 -
 vector
 -
 string
+-
+
+include/thesis/tradingsystem.h
+armadillo
+-
+memory
+-
+thesis/learningagent.h
 -
 

@@ -37,7 +37,7 @@ public:
 	size_t getDimAction () const { return dimAction; }
 
 	// Provide state observation
-	arma::vec getObservation () const;
+	void getObservation (arma::vec &observation) const;
 
 	// Perform action
 	void performAction (arma::vec const &action);
