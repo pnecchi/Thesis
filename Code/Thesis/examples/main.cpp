@@ -41,10 +41,11 @@ int main(int argc, char *argv[])
 			  << market.getEndDate() <<  std::endl;
 
 	std::cout << "Current state: " << std::endl;
-	arma::vec state = market.getState();
+	arma::vec state(market.getDimState());
+    market.getState(state);
 	state.print(std::cout);
 
-	arma::vec action = arma::zeros(market.getDimAction());
+	arma::vec action(market.getDimAction());
 	action(1) = 1.0;
 	market.performAction(action);
 
@@ -54,7 +55,7 @@ int main(int argc, char *argv[])
 			  << market.getEndDate() <<  std::endl;
 
 	std::cout << "Current state: " << std::endl;
-	state = market.getState();
+	market.getState(state);
 	state.print(std::cout);
 
 	// Asset allocation task
@@ -65,7 +66,8 @@ int main(int argc, char *argv[])
     std::cout << "Action size: " << task.getDimAction() << std::endl;
 
     std::cout << "Observation: " << std::endl;
-    arma::vec observation = task.getObservation();
+    arma::vec observation(task.getDimObservation());
+    task.getObservation(observation);
     observation.print(std::cout);
 
     task.performAction(action);
@@ -74,7 +76,7 @@ int main(int argc, char *argv[])
     std::cout << task.getReward() << std::endl;
 
     std::cout << "Observation: " << std::endl;
-    observation = task.getObservation();
+    task.getObservation(observation);
     observation.print(std::cout);
 
 

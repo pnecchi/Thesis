@@ -151,30 +151,6 @@ src/assetallocationtask.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationtask.cpp.s
 .PHONY : src/assetallocationtask.cpp.s
 
-src/learningagent.o: src/learningagent.cpp.o
-.PHONY : src/learningagent.o
-
-# target to build an object file
-src/learningagent.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/learningagent.cpp.o
-.PHONY : src/learningagent.cpp.o
-
-src/learningagent.i: src/learningagent.cpp.i
-.PHONY : src/learningagent.i
-
-# target to preprocess a source file
-src/learningagent.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/learningagent.cpp.i
-.PHONY : src/learningagent.cpp.i
-
-src/learningagent.s: src/learningagent.cpp.s
-.PHONY : src/learningagent.s
-
-# target to generate assembly for a file
-src/learningagent.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/learningagent.cpp.s
-.PHONY : src/learningagent.cpp.s
-
 src/marketenvironment.o: src/marketenvironment.cpp.o
 .PHONY : src/marketenvironment.o
 
@@ -236,9 +212,6 @@ help:
 	@echo "... src/assetallocationtask.o"
 	@echo "... src/assetallocationtask.i"
 	@echo "... src/assetallocationtask.s"
-	@echo "... src/learningagent.o"
-	@echo "... src/learningagent.i"
-	@echo "... src/learningagent.s"
 	@echo "... src/marketenvironment.o"
 	@echo "... src/marketenvironment.i"
 	@echo "... src/marketenvironment.s"

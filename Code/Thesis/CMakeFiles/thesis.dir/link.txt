@@ -1,2 +1,2 @@
-/usr/bin/ar cq libthesis.a  CMakeFiles/thesis.dir/src/assetallocationtask.cpp.o CMakeFiles/thesis.dir/src/marketenvironment.cpp.o CMakeFiles/thesis.dir/src/learningagent.cpp.o CMakeFiles/thesis.dir/src/tradingsystem.cpp.o
+/usr/bin/ar cq libthesis.a  CMakeFiles/thesis.dir/src/assetallocationtask.cpp.o CMakeFiles/thesis.dir/src/marketenvironment.cpp.o CMakeFiles/thesis.dir/src/tradingsystem.cpp.o
 /usr/bin/ranlib libthesis.a

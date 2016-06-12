@@ -16,12 +16,6 @@ math.h
 limits
 -
 
-/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/learningagent.cpp
-thesis/learningagent.h
--
-armadillo
--
-
 /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/marketenvironment.cpp
 thesis/marketenvironment.h
 -
@@ -1994,20 +1988,14 @@ hdf5.h
 
 /usr/local/include/armadillo_bits/xvec_htrans_meat.hpp
 
+include/thesis/agent.h
+armadillo
+-
+
 include/thesis/assetallocationtask.h
 thesis/marketenvironment.h
 -
 armadillo
--
-
-include/thesis/learningagent.h
-armadillo
--
-memory
--
-thesis/Agent
--
-thesis/Actor
 -
 
 include/thesis/marketenvironment.h
@@ -2023,6 +2011,6 @@ armadillo
 -
 memory
 -
-thesis/learningagent.h
+thesis/agent.h
 -
 

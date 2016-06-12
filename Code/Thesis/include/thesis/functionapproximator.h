@@ -36,7 +36,7 @@ class FunctionApproximator
         virtual void setParameters(arma::vec const &parameters) = 0;
 
         // Evaluate function approximator
-        double evaluate(arma::vec const &x) const = 0;
+        virtual double evaluate(arma::vec const &x) const = 0;
 
         // Evaluate function approximator gradient wrt the parameters
         virtual arma::vec gradient(arma::vec const &x) const = 0;

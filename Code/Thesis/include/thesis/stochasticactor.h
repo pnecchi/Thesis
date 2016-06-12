@@ -9,9 +9,13 @@
 class StochasticActor : public Actor
 {
     public:
-        // Default constructor
+        // Constructor
         StochasticActor(StochasticPolicy const &policy_)
             : policyPtr(policy_.clone()) {}
+
+        // Copy constructor
+        StochasticActor(StochasticActor const &actor_)
+            : policyPtr(actor_.policyPtr->clone()) {}
 
         // Default destructor
         virtual ~StochasticActor() = default;
@@ -29,7 +33,7 @@ class StochasticActor : public Actor
 
         // Get Action
         arma::vec getAction(arma::vec const &observation) const
-            { return policyPtr->evaluate(observation); }
+            { return policyPtr->getAction(observation); }
 
         // Likelihood score function
         arma::vec likelihoodScore(arma::vec const &observation,

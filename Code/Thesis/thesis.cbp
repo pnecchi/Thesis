@@ -138,8 +138,6 @@
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationtask.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/learningagent.cpp">
-      </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/marketenvironment.cpp">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/tradingsystem.cpp">
@@ -152,11 +150,9 @@
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/critic.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/learningagent.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/functionapproximator.h">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/marketenvironment.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/parametricfunction.h">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/policy.h">
       </Unit>

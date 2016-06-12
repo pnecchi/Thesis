@@ -33,7 +33,7 @@ class StochasticPolicy : public Policy
         virtual void setParameters(arma::vec const &parameters) = 0;
 
         // Select action given
-        virtual arma::vec getAction(arma::vec const &observation) = 0;
+        virtual arma::vec getAction(arma::vec const &observation) const = 0;
 
         // Likelihood score function
         virtual arma::vec likelihoodScore(arma::vec const &observation,

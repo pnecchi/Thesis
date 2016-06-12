@@ -16,7 +16,7 @@ class Actor
         virtual ~Actor() = default;
 
         // Get Action
-        arma::vec selectAction(arma::vec const &observation) const = 0;
+        arma::vec getAction(arma::vec const &observation) const = 0;
 };
 
 
