@@ -11,25 +11,12 @@
 
 class Actor
 {
-public:
-    // Default constructor
-    Actor(Module const &module_);
+    public:
+        // Default destructor
+        virtual ~Actor() = default;
 
-    // Default destructor
-    virtual ~Actor() = default;
-
-    // Get sizes
-    size_t getDimInput() const { return dimInput; }
-    size_t getDimOutput() const { return dimOutput; }
-
-    // Get Action
-    void selectAction(arma::vec const &observation, arma::vec &action);
-
-
-
-private:
-    Module module;
-
+        // Get Action
+        arma::vec selectAction(arma::vec const &observation) const = 0;
 };
 
 
