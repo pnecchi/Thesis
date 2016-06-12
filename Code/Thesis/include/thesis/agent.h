@@ -2,6 +2,7 @@
 #define AGENT_H
 
 #include <armadillo>
+#include <memory>
 
 /**
  * An Agent is an entity capable of producing actions based on previous
@@ -19,7 +20,7 @@ class Agent
         virtual ~Agent() = default;
 
         // Clone method for virtual copy constructor
-        virtual Agent* clone() const=0;
+        virtual std::unique_ptr<Agent> clone() const=0;
 
         // Receive observation of the system state
         virtual void receiveObservation(arma::vec const &observation_)=0;

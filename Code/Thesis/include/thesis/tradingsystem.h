@@ -19,8 +19,14 @@ public:
 	TradingSystem(Agent const &agent_, bool backtestMode = false)
         : agentPtr(agent_.clone()) {}
 
+    // Copy constructor
+    TradingSystem(TradingSystem const &other_);
+
 	// Standard destructor
 	virtual ~TradingSystem() = default;
+
+	// Virtual polymorphic clone
+	virtual std::unique_ptr<Agent> clone() const;
 
     // backtestMode: get and set
 	bool getBacktestMode () const { return backtestMode; }

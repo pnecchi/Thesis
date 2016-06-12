@@ -13,69 +13,74 @@
 
 class AssetAllocationTask
 {
-public:
-	// Constructor
-	AssetAllocationTask (MarketEnvironment const & market_,
-						 double deltaP_,
-						 double deltaF_,
-						 double deltaS_,
-						 size_t numDaysObserved_);
+    public:
+        // Constructor
+        AssetAllocationTask (MarketEnvironment const & market_,
+                             double deltaP_,
+                             double deltaF_,
+                             double deltaS_,
+                             size_t numDaysObserved_);
 
-	// Destructor
-	virtual ~AssetAllocationTask () = default;
+        AssetAllocationTask(AssetAllocationTask const &other_) = default;
 
-	// Initialization helper functions
-	void initializeStatesCache ();
-	void initializeAllocationCache ();
+        // Destructor
+        virtual ~AssetAllocationTask () = default;
 
-	// Get methods
-	double getDeltaP () const { return deltaP; }
-	double getDeltaF () const { return deltaF; }
-	double getDeltaS () const { return deltaS; }
-    size_t getNumDaysObserved () const { return numDaysObserved; }
-	size_t getDimObservation () const { return dimObservation; }
-	size_t getDimAction () const { return dimAction; }
+        // Initialization helper functions
+        void initializeStatesCache ();
+        void initializeAllocationCache ();
 
-	// Provide state observation
-	void getObservation (arma::vec &observation) const;
+        // Get methods
+        double getDeltaP () const { return deltaP; }
+        double getDeltaF () const { return deltaF; }
+        double getDeltaS () const { return deltaS; }
+        size_t getNumDaysObserved () const { return numDaysObserved; }
+        size_t getDimObservation () const { return dimObservation; }
+        size_t getDimAction () const { return dimAction; }
 
-	// Perform action
-	void performAction (arma::vec const &action);
+        // Provide state observation
+        arma::vec getObservation () const;
 
-	// Provide reward
-	double getReward ();
+        // Perform action
+        void performAction (arma::vec const &action);
 
-	// Set evaluation interval for the allocation task
-	void setEvaluationInterval (size_t startDate_, size_t endDate_);
+        // Provide reward
+        double getReward ();
 
-private:
-	// Compute portfolio simple returns
-	double computePortfolioSimpleReturn () const;
+        // Reset market environment
+        void reset();
 
-	// Underlying market environment
-	MarketEnvironment market;
+        // Set evaluation interval for the allocation task
+        void setEvaluationInterval (size_t startDate_, size_t endDate_);
 
-	// Transaction costs constants
-	double deltaP;
-	double deltaF;
-	double deltaS;
+    private:
+        // Compute portfolio simple returns
+        double computePortfolioSimpleReturn () const;
 
-	// Number of past days observed
-	size_t numDaysObserved;
+        // Underlying market environment
+        MarketEnvironment market;
 
-	// Dimensions of the observation and action space
-	size_t dimState;
-	size_t dimPastStates;
-	size_t dimObservation;
-	size_t dimAction;
+        // Transaction costs constants
+        double deltaP;
+        double deltaF;
+        double deltaS;
 
-	// Current state cache variable
-	arma::vec pastStates;
-	arma::vec currentState;
+        // Number of past days observed
+        size_t numDaysObserved;
 
-	// Allocations cache variable
-	arma::vec currentAllocation;
-	arma::vec newAllocation;
+        // Dimensions of the observation and action space
+        size_t dimState;
+        size_t dimPastStates;
+        size_t dimObservation;
+        size_t dimAction;
+
+        // Current state cache variable
+        arma::vec pastStates;
+        arma::vec currentState;
+
+        // Allocations cache variable
+        arma::vec currentAllocation;
+        arma::vec newAllocation;
 };
 
 #endif /* end of include guard: ASSETALLOCATIONTASK_H */

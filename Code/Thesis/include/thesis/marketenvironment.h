@@ -26,7 +26,7 @@ public:
 	virtual ~MarketEnvironment () = default;
 
 	// Get system state
-	void getState(arma::vec &state) const;
+	arma::vec getState() const;
 
 	// Perform Action on the system
 	void performAction(arma::vec const &action);

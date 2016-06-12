@@ -127,6 +127,30 @@ main/fast:
 	$(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/assetallocationexperiment.o: src/assetallocationexperiment.cpp.o
+.PHONY : src/assetallocationexperiment.o
+
+# target to build an object file
+src/assetallocationexperiment.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o
+.PHONY : src/assetallocationexperiment.cpp.o
+
+src/assetallocationexperiment.i: src/assetallocationexperiment.cpp.i
+.PHONY : src/assetallocationexperiment.i
+
+# target to preprocess a source file
+src/assetallocationexperiment.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.i
+.PHONY : src/assetallocationexperiment.cpp.i
+
+src/assetallocationexperiment.s: src/assetallocationexperiment.cpp.s
+.PHONY : src/assetallocationexperiment.s
+
+# target to generate assembly for a file
+src/assetallocationexperiment.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.s
+.PHONY : src/assetallocationexperiment.cpp.s
+
 src/assetallocationtask.o: src/assetallocationtask.cpp.o
 .PHONY : src/assetallocationtask.o
 
@@ -209,6 +233,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... thesis"
 	@echo "... main"
+	@echo "... src/assetallocationexperiment.o"
+	@echo "... src/assetallocationexperiment.i"
+	@echo "... src/assetallocationexperiment.s"
 	@echo "... src/assetallocationtask.o"
 	@echo "... src/assetallocationtask.i"
 	@echo "... src/assetallocationtask.s"

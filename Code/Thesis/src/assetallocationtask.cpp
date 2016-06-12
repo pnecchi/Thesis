@@ -7,19 +7,17 @@ void AssetAllocationTask::initializeStatesCache()
 {
 	// Initialize past market states
 	arma::vec proxyAction(dimAction);
-	arma::vec tempState(dimState);
 	for(size_t i = 0; i < numDaysObserved; ++i)
 	{
         // Get market state
-		market.getState(tempState);
-        pastStates.rows(i * dimState, (i + 1) * dimState - 1) = tempState;
+        pastStates.rows(i * dimState, (i + 1) * dimState - 1) = market.getState();
 
 		// Move to the next time step
 		market.performAction(proxyAction);
 	}
 
 	// Initialize current market state
-    market.getState(currentState);
+    currentState = market.getState();
 }
 
 void AssetAllocationTask::initializeAllocationCache()
@@ -56,8 +54,10 @@ AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_,
 	initializeAllocationCache();
 }
 
-void AssetAllocationTask::getObservation (arma::vec &observation) const
+arma::vec AssetAllocationTask::getObservation () const
 {
+	arma::vec observation(dimObservation);
+
 	// Past states
 	observation.rows(0, dimPastStates-1) = pastStates;
 
@@ -66,6 +66,8 @@ void AssetAllocationTask::getObservation (arma::vec &observation) const
 
 	// Current allocation
 	observation.rows(dimPastStates + dimState, observation.size() - 1) = currentAllocation;
+
+	return observation;
 }
 
 void AssetAllocationTask::performAction (arma::vec const &action)
@@ -86,7 +88,7 @@ double AssetAllocationTask::getReward ()
 		currentState;
 
 	// Observe new market state
-	market.getState(currentState);
+	currentState = market.getState();
 
 	// Compute portfolio simple return
 	double portfolioSimpleReturn = computePortfolioSimpleReturn();
@@ -97,6 +99,11 @@ double AssetAllocationTask::getReward ()
 
 	// Return portfolio log-return
 	return log(1.0 + portfolioSimpleReturn);
+}
+
+void AssetAllocationTask::reset()
+{
+    market.reset();
 }
 
 void AssetAllocationTask::setEvaluationInterval (size_t startDate_,

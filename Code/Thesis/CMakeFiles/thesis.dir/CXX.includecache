@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationexperiment.cpp
+thesis/assetallocationexperiment.h
+/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/thesis/assetallocationexperiment.h
+
 /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationtask.cpp
 thesis/assetallocationtask.h
 -
@@ -1990,6 +1994,16 @@ hdf5.h
 
 include/thesis/agent.h
 armadillo
+-
+memory
+-
+
+include/thesis/assetallocationexperiment.h
+memory
+-
+thesis/assetallocationtask.h
+-
+thesis/tradingsystem.h
 -
 
 include/thesis/assetallocationtask.h

@@ -136,6 +136,8 @@
       </Build>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main.cpp">
       </Unit>
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationexperiment.cpp">
+      </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationtask.cpp">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/marketenvironment.cpp">
@@ -145,6 +147,8 @@
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/actor.h">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/agent.h">
+      </Unit>
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/assetallocationexperiment.h">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/assetallocationtask.h">
       </Unit>
