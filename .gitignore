@@ -1,4 +1,5 @@
 Bibliography/
 Code/Prototype/.idea
 Code/Thesis/build/
+Code/Thesis/CMakeFiles/
 *.pyc
