@@ -25,8 +25,8 @@ class Policy
         virtual std::unique_ptr<Policy> clone() const = 0;
 
         // Get policy sizes
-        size_t getDimInput() const { return dimInput; }
-        size_t getDimOutput() const { return dimOutput; }
+        size_t getDimInput() const { return dimObservation; }
+        size_t getDimOutput() const { return dimAction; }
         virtual size_t getDimParameters() const = 0;
 
         // Get and set parameters
@@ -34,7 +34,7 @@ class Policy
         virtual void setParameters(arma::vec const &parameters) = 0;
 
         // Get action given an observation
-        arma::vec getAction(arma::vec const & observation) const = 0;
+        virtual arma::vec getAction(arma::vec const & observation) const = 0;
 
     private:
         size_t dimObservation;

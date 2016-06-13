@@ -10,14 +10,18 @@ class Critic
     public:
         // Default constructor
         Critic(FunctionApproximator const &approximator_)
-            : approximatorPtr(approximator_.clone()) ()
+            : approximatorPtr(approximator_.clone()) {}
+
+        // Copy constructor
+        Critic(Critic const &critic_)
+            : approximatorPtr(critic_.approximatorPtr->clone()) {}
 
         // Default destructor
         virtual ~Critic() = default;
 
         // Get sizes
-        size_t getDimInput() const { return policyPtr->getDimInput(); }
-        size_t getDimParams() const { return policyPtr->getDimParams(); }
+        size_t getDimInput() const { return approximatorPtr->getDimInput(); }
+        size_t getDimParams() const { return approximatorPtr->getDimParams(); }
 
         // Getter and setter methods for parameters
         arma::vec getParameters() const

@@ -127,6 +127,30 @@ main/fast:
 	$(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/arrsacagent.o: src/arrsacagent.cpp.o
+.PHONY : src/arrsacagent.o
+
+# target to build an object file
+src/arrsacagent.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/arrsacagent.cpp.o
+.PHONY : src/arrsacagent.cpp.o
+
+src/arrsacagent.i: src/arrsacagent.cpp.i
+.PHONY : src/arrsacagent.i
+
+# target to preprocess a source file
+src/arrsacagent.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/arrsacagent.cpp.i
+.PHONY : src/arrsacagent.cpp.i
+
+src/arrsacagent.s: src/arrsacagent.cpp.s
+.PHONY : src/arrsacagent.s
+
+# target to generate assembly for a file
+src/arrsacagent.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/arrsacagent.cpp.s
+.PHONY : src/arrsacagent.cpp.s
+
 src/assetallocationexperiment.o: src/assetallocationexperiment.cpp.o
 .PHONY : src/assetallocationexperiment.o
 
@@ -199,6 +223,30 @@ src/marketenvironment.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/marketenvironment.cpp.s
 .PHONY : src/marketenvironment.cpp.s
 
+src/statistics.o: src/statistics.cpp.o
+.PHONY : src/statistics.o
+
+# target to build an object file
+src/statistics.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/statistics.cpp.o
+.PHONY : src/statistics.cpp.o
+
+src/statistics.i: src/statistics.cpp.i
+.PHONY : src/statistics.i
+
+# target to preprocess a source file
+src/statistics.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/statistics.cpp.i
+.PHONY : src/statistics.cpp.i
+
+src/statistics.s: src/statistics.cpp.s
+.PHONY : src/statistics.s
+
+# target to generate assembly for a file
+src/statistics.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/statistics.cpp.s
+.PHONY : src/statistics.cpp.s
+
 src/tradingsystem.o: src/tradingsystem.cpp.o
 .PHONY : src/tradingsystem.o
 
@@ -233,6 +281,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... thesis"
 	@echo "... main"
+	@echo "... src/arrsacagent.o"
+	@echo "... src/arrsacagent.i"
+	@echo "... src/arrsacagent.s"
 	@echo "... src/assetallocationexperiment.o"
 	@echo "... src/assetallocationexperiment.i"
 	@echo "... src/assetallocationexperiment.s"
@@ -242,6 +293,9 @@ help:
 	@echo "... src/marketenvironment.o"
 	@echo "... src/marketenvironment.i"
 	@echo "... src/marketenvironment.s"
+	@echo "... src/statistics.o"
+	@echo "... src/statistics.i"
+	@echo "... src/statistics.s"
 	@echo "... src/tradingsystem.o"
 	@echo "... src/tradingsystem.i"
 	@echo "... src/tradingsystem.s"

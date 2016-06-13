@@ -17,13 +17,13 @@ class StochasticPolicy : public Policy
     public:
         // Default constructor
         StochasticPolicy(size_t dimInput_, size_t dimOutput_)
-            : ParametricFunction(dimInput_, dimOutput_) {}
+            : Policy(dimInput_, dimOutput_) {}
 
         // Default destructor
         virtual ~StochasticPolicy() = default;
 
         // Virtual clone method for polymorphic clone
-        virtual std::unique_ptr<ParameterFunction> clone() const = 0;
+        virtual std::unique_ptr<StochasticPolicy> clone() const = 0;
 
         // Getter methods for sizes
         virtual size_t getDimParams() const = 0;

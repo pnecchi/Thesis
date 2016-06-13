@@ -22,14 +22,17 @@ class Agent
         // Clone method for virtual copy constructor
         virtual std::unique_ptr<Agent> clone() const=0;
 
-        // Receive observation of the system state
+        // Receive observation of the system state --> O_t
         virtual void receiveObservation(arma::vec const &observation_)=0;
 
-        // Get action to be performed on the system
-        virtual arma::vec getAction() const =0;
+        // Get action to be performed on the system --> A_t
+        virtual arma::vec getAction()=0;
 
-        // Receive reward from the system
+        // Receive reward from the system --> R_{t+1}
         virtual void receiveReward(double reward_)=0;
+
+        // Receive next observation --> O_{t+1}
+        virtual void receiveNextObservation(arma::vec const &nextObservation_)=0;
 
         // Learning step given previous experience
         virtual void learn()=0;

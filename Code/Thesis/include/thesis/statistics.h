@@ -29,7 +29,7 @@ class StatisticsAverage : public Statistics
 {
     public:
         StatisticsAverage();
-        virtual void std::unique_ptr<Statistics> clone() const;
+        virtual std::unique_ptr<Statistics> clone() const;
         virtual void dumpOneResult(double result);
         virtual std::vector<std::vector<double>> getStatistics() const;
     private:
@@ -45,13 +45,13 @@ class StatisticsEMA : public Statistics
 {
     public:
         StatisticsEMA(double decayRate_);
-        virtual void std::unique_ptr<Statistics> clone() const;
+        virtual std::unique_ptr<Statistics> clone() const;
         virtual void dumpOneResult(double result);
         virtual std::vector<std::vector<double>> getStatistics() const;
     private:
         double EMA;
         double decayRate;
         double learningRate;
-}
+};
 
 #endif // STATISTICS_H

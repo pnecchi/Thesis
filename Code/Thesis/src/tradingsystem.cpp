@@ -19,7 +19,7 @@ void TradingSystem::receiveObservation(arma::vec const &observation)
     agentPtr->receiveObservation(observation);
 }
 
-arma::vec TradingSystem::getAction() const
+arma::vec TradingSystem::getAction()
 {
     actionCache = agentPtr->getAction();
     return actionCache;
@@ -35,6 +35,11 @@ void TradingSystem::receiveReward(double const reward)
     {
         // TODO: Dump action and result into log data-structure
     }
+}
+
+void TradingSystem::receiveNextObservation(arma::vec const &nextObservation_)
+{
+    agentPtr->reiceiveNextObservation(nextObservation_);
 }
 
 void TradingSystem::learn()

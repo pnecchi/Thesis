@@ -14,8 +14,8 @@ class FunctionApproximator
 {
     public:
         // Default constructor
-        ParametricFunction(size_t dimInput_)
-            : dimInput(dimInput_), dimOutput(dimOutput_) {}
+        FunctionApproximator(size_t dimInput_)
+            : dimInput(dimInput_) {}
 
         // Virtual destructor
         virtual ~FunctionApproximator() = default;

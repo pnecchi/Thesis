@@ -33,13 +33,16 @@ public:
     void setBacktestMode(bool backtestMode_) { backtestMode = backtestMode_; }
 
     // Receive observation from the system
-	virtual void receiveObservation (arma::vec const &observation);
+	virtual void receiveObservation (arma::vec const &observation_);
 
 	// Get action to perform on the environment
-	virtual arma::vec getAction() const;
+	virtual arma::vec getAction();
 
     // Receive reward from the environment
 	virtual void receiveReward(double const reward_);
+
+	// Receive next observation --> O_{t+1}
+	void receiveNextObservation(arma::vec const &nextObservation_);
 
     // Learning step given previous experience
 	virtual void learn();

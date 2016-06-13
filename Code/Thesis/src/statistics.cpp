@@ -38,10 +38,8 @@ virtual void std::unique_ptr<Statistics> StatisticsEMA::clone() const
 
 virtual void StatisticsEMA::dumpOneResult(double result)
 {
-    if (first)
-        EMA = result;
-    else
-        EMA = decayRate * EMA + learningRate * result;
+    // TODO: check for first result dumped
+    EMA = decayRate * EMA + learningRate * result;
 }
 
 virtual std::vector<std::vector<double>> StatisticsEMA::getStatistics() const

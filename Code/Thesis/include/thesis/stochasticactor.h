@@ -4,7 +4,7 @@
 #include <armadillo>
 #include <memory>
 #include <thesis/actor.h>
-
+#include <thesis/stochasticpolicy.h>
 
 class StochasticActor : public Actor
 {

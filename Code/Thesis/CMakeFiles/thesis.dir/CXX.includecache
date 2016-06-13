@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/arrsacagent.cpp
+thesis/arrsacagent.h
+/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/thesis/arrsacagent.h
+math.h
+-
+
 /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationexperiment.cpp
 thesis/assetallocationexperiment.h
 /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/thesis/assetallocationexperiment.h
@@ -31,6 +37,10 @@ fstream
 -
 sstream
 -
+
+/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/statistics.cpp
+thesis/statistics.h
+/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/thesis/statistics.h
 
 /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/tradingsystem.cpp
 thesis/tradingsystem.h
@@ -1992,7 +2002,27 @@ hdf5.h
 
 /usr/local/include/armadillo_bits/xvec_htrans_meat.hpp
 
+include/thesis/actor.h
+armadillo
+-
+memory
+-
+
 include/thesis/agent.h
+armadillo
+-
+memory
+-
+
+include/thesis/arrsacagent.h
+thesis/agent.h
+-
+thesis/stochasticactor.h
+-
+thesis/critic.h
+-
+thesis/statistics.h
+-
 armadillo
 -
 memory
@@ -2012,12 +2042,52 @@ thesis/marketenvironment.h
 armadillo
 -
 
+include/thesis/critic.h
+armadillo
+-
+memory
+-
+thesis/functionapproximator.h
+-
+
+include/thesis/functionapproximator.h
+armadillo
+-
+memory
+-
+
 include/thesis/marketenvironment.h
 armadillo
 -
 vector
 -
 string
+-
+
+include/thesis/policy.h
+
+include/thesis/statistics.h
+vector
+-
+memory
+-
+
+include/thesis/stochasticactor.h
+armadillo
+-
+memory
+-
+thesis/actor.h
+-
+thesis/stochasticpolicy.h
+-
+
+include/thesis/stochasticpolicy.h
+armadillo
+-
+memory
+-
+thesis/policy.h
 -
 
 include/thesis/tradingsystem.h
