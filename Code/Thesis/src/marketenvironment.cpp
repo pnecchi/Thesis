@@ -62,10 +62,12 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 	dimAction = numRiskyAssets + 1;
 }
 
-void MarketEnvironment::getState(arma::vec &state) const
+arma::vec MarketEnvironment::getState() const
 {
+	arma::vec state(dimState);
 	state(0) = riskFreeRate;
 	state.rows(1, dimState-1) = assetsReturns.col(currentDate);
+	return state;
 }
 
 void MarketEnvironment::performAction(arma::vec const &action)

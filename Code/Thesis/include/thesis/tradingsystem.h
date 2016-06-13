@@ -10,18 +10,23 @@
 
 #include <armadillo>
 #include <memory>
-#include <thesis/learningagent.h>
+#include <thesis/agent.h>
 
-class TradingSystem : public LearningAgent
+class TradingSystem : public Agent
 {
 public:
     // Standard constructor
-	TradingSystem(std::unique_ptr<LearningAgent> const &learningAgentPtr_,
-                  std::unique_ptr<Statistics> const &backtestStatistics_,
-                  bool backtestMode = false);
+	TradingSystem(Agent const &agent_, bool backtestMode = false)
+        : agentPtr(agent_.clone()) {}
+
+    // Copy constructor
+    TradingSystem(TradingSystem const &other_);
 
 	// Standard destructor
-	virtual ~TradingSystem(){}
+	virtual ~TradingSystem() = default;
+
+	// Virtual polymorphic clone
+	virtual std::unique_ptr<Agent> clone() const;
 
     // backtestMode: get and set
 	bool getBacktestMode () const { return backtestMode; }
@@ -31,10 +36,13 @@ public:
 	virtual void receiveObservation (arma::vec const &observation_);
 
 	// Get action to perform on the environment
-	virtual void getAction (arma::vec &action_);
+	virtual arma::vec getAction();
 
     // Receive reward from the environment
-	virtual void receiveReward (double reward_);
+	virtual void receiveReward(double const reward_);
+
+	// Receive next observation --> O_{t+1}
+	void receiveNextObservation(arma::vec const &nextObservation_);
 
     // Learning step given previous experience
 	virtual void learn();
@@ -42,16 +50,20 @@ public:
     // TODO: implement method to output statistics
 
 private:
-	// Learning agent (wrapped)
-	std::unique_ptr<LearningAgent> learningAgentPtr;
+	// Agent (wrapped)
+	std::unique_ptr<Agent> agentPtr;
 
 	// Statistics gatherer
 	// pierpaolo - sab 11 giu 2016 12:21:42 CEST
 	// TODO: Implement statistics gatherer class (cf. Joshi)
-	std::unique_ptr<Statistics> backtestStatisticsPtr;
+	// std::unique_ptr<Statistics> backtestStatisticsPtr;
 
 	// Backtest flag
 	bool backtestMode = false;
+
+	// Cache variables
+	mutable arma::vec actionCache;
+	mutable double rewardCache;
 };
 
 #endif /* end of include guard: TRADINGSTSTEM_H */

@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
 							 startDate,
 							 endDate);
 
+    MarketEnvironment market2(market);
 
 	std::cout << "Number of days: " << market.getNumDays() << std::endl;
 	std::cout << "Number of risky assets: " << market.getNumRiskyAssets() << std::endl;
@@ -41,10 +42,11 @@ int main(int argc, char *argv[])
 			  << market.getEndDate() <<  std::endl;
 
 	std::cout << "Current state: " << std::endl;
-	arma::vec state = market.getState();
+	arma::vec state(market.getDimState());
+    state = market.getState();
 	state.print(std::cout);
 
-	arma::vec action = arma::zeros(market.getDimAction());
+	arma::vec action(market.getDimAction());
 	action(1) = 1.0;
 	market.performAction(action);
 
@@ -65,7 +67,8 @@ int main(int argc, char *argv[])
     std::cout << "Action size: " << task.getDimAction() << std::endl;
 
     std::cout << "Observation: " << std::endl;
-    arma::vec observation = task.getObservation();
+    arma::vec observation(task.getDimObservation());
+    observation = task.getObservation();
     observation.print(std::cout);
 
     task.performAction(action);

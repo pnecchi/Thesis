@@ -95,32 +95,78 @@ CMakeFiles/thesis.dir/src/marketenvironment.cpp.o.provides: CMakeFiles/thesis.di
 
 CMakeFiles/thesis.dir/src/marketenvironment.cpp.o.provides.build: CMakeFiles/thesis.dir/src/marketenvironment.cpp.o
 
-CMakeFiles/thesis.dir/src/learningagent.cpp.o: CMakeFiles/thesis.dir/flags.make
-CMakeFiles/thesis.dir/src/learningagent.cpp.o: src/learningagent.cpp
+CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o: CMakeFiles/thesis.dir/flags.make
+CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o: src/assetallocationexperiment.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/thesis.dir/src/learningagent.cpp.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis.dir/src/learningagent.cpp.o -c /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/learningagent.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o -c /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationexperiment.cpp
 
-CMakeFiles/thesis.dir/src/learningagent.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thesis.dir/src/learningagent.cpp.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/learningagent.cpp > CMakeFiles/thesis.dir/src/learningagent.cpp.i
+CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationexperiment.cpp > CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.i
 
-CMakeFiles/thesis.dir/src/learningagent.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thesis.dir/src/learningagent.cpp.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/learningagent.cpp -o CMakeFiles/thesis.dir/src/learningagent.cpp.s
+CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationexperiment.cpp -o CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.s
 
-CMakeFiles/thesis.dir/src/learningagent.cpp.o.requires:
-.PHONY : CMakeFiles/thesis.dir/src/learningagent.cpp.o.requires
+CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o.requires:
+.PHONY : CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o.requires
 
-CMakeFiles/thesis.dir/src/learningagent.cpp.o.provides: CMakeFiles/thesis.dir/src/learningagent.cpp.o.requires
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/learningagent.cpp.o.provides.build
-.PHONY : CMakeFiles/thesis.dir/src/learningagent.cpp.o.provides
+CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o.provides: CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o.requires
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o.provides.build
+.PHONY : CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o.provides
 
-CMakeFiles/thesis.dir/src/learningagent.cpp.o.provides.build: CMakeFiles/thesis.dir/src/learningagent.cpp.o
+CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o.provides.build: CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o
+
+CMakeFiles/thesis.dir/src/arrsacagent.cpp.o: CMakeFiles/thesis.dir/flags.make
+CMakeFiles/thesis.dir/src/arrsacagent.cpp.o: src/arrsacagent.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/thesis.dir/src/arrsacagent.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis.dir/src/arrsacagent.cpp.o -c /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/arrsacagent.cpp
+
+CMakeFiles/thesis.dir/src/arrsacagent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thesis.dir/src/arrsacagent.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/arrsacagent.cpp > CMakeFiles/thesis.dir/src/arrsacagent.cpp.i
+
+CMakeFiles/thesis.dir/src/arrsacagent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thesis.dir/src/arrsacagent.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/arrsacagent.cpp -o CMakeFiles/thesis.dir/src/arrsacagent.cpp.s
+
+CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.requires:
+.PHONY : CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.requires
+
+CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.provides: CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.requires
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.provides.build
+.PHONY : CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.provides
+
+CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.provides.build: CMakeFiles/thesis.dir/src/arrsacagent.cpp.o
+
+CMakeFiles/thesis.dir/src/statistics.cpp.o: CMakeFiles/thesis.dir/flags.make
+CMakeFiles/thesis.dir/src/statistics.cpp.o: src/statistics.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/thesis.dir/src/statistics.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis.dir/src/statistics.cpp.o -c /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/statistics.cpp
+
+CMakeFiles/thesis.dir/src/statistics.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thesis.dir/src/statistics.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/statistics.cpp > CMakeFiles/thesis.dir/src/statistics.cpp.i
+
+CMakeFiles/thesis.dir/src/statistics.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thesis.dir/src/statistics.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/statistics.cpp -o CMakeFiles/thesis.dir/src/statistics.cpp.s
+
+CMakeFiles/thesis.dir/src/statistics.cpp.o.requires:
+.PHONY : CMakeFiles/thesis.dir/src/statistics.cpp.o.requires
+
+CMakeFiles/thesis.dir/src/statistics.cpp.o.provides: CMakeFiles/thesis.dir/src/statistics.cpp.o.requires
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/statistics.cpp.o.provides.build
+.PHONY : CMakeFiles/thesis.dir/src/statistics.cpp.o.provides
+
+CMakeFiles/thesis.dir/src/statistics.cpp.o.provides.build: CMakeFiles/thesis.dir/src/statistics.cpp.o
 
 CMakeFiles/thesis.dir/src/tradingsystem.cpp.o: CMakeFiles/thesis.dir/flags.make
 CMakeFiles/thesis.dir/src/tradingsystem.cpp.o: src/tradingsystem.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/thesis.dir/src/tradingsystem.cpp.o"
 	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis.dir/src/tradingsystem.cpp.o -c /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/tradingsystem.cpp
 
@@ -145,7 +191,9 @@ CMakeFiles/thesis.dir/src/tradingsystem.cpp.o.provides.build: CMakeFiles/thesis.
 thesis_OBJECTS = \
 "CMakeFiles/thesis.dir/src/assetallocationtask.cpp.o" \
 "CMakeFiles/thesis.dir/src/marketenvironment.cpp.o" \
-"CMakeFiles/thesis.dir/src/learningagent.cpp.o" \
+"CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o" \
+"CMakeFiles/thesis.dir/src/arrsacagent.cpp.o" \
+"CMakeFiles/thesis.dir/src/statistics.cpp.o" \
 "CMakeFiles/thesis.dir/src/tradingsystem.cpp.o"
 
 # External object files for target thesis
@@ -153,7 +201,9 @@ thesis_EXTERNAL_OBJECTS =
 
 libthesis.a: CMakeFiles/thesis.dir/src/assetallocationtask.cpp.o
 libthesis.a: CMakeFiles/thesis.dir/src/marketenvironment.cpp.o
-libthesis.a: CMakeFiles/thesis.dir/src/learningagent.cpp.o
+libthesis.a: CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o
+libthesis.a: CMakeFiles/thesis.dir/src/arrsacagent.cpp.o
+libthesis.a: CMakeFiles/thesis.dir/src/statistics.cpp.o
 libthesis.a: CMakeFiles/thesis.dir/src/tradingsystem.cpp.o
 libthesis.a: CMakeFiles/thesis.dir/build.make
 libthesis.a: CMakeFiles/thesis.dir/link.txt
@@ -167,7 +217,9 @@ CMakeFiles/thesis.dir/build: libthesis.a
 
 CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/assetallocationtask.cpp.o.requires
 CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/marketenvironment.cpp.o.requires
-CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/learningagent.cpp.o.requires
+CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o.requires
+CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.requires
+CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/statistics.cpp.o.requires
 CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/tradingsystem.cpp.o.requires
 .PHONY : CMakeFiles/thesis.dir/requires
 

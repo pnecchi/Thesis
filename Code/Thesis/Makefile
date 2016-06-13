@@ -127,6 +127,54 @@ main/fast:
 	$(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/arrsacagent.o: src/arrsacagent.cpp.o
+.PHONY : src/arrsacagent.o
+
+# target to build an object file
+src/arrsacagent.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/arrsacagent.cpp.o
+.PHONY : src/arrsacagent.cpp.o
+
+src/arrsacagent.i: src/arrsacagent.cpp.i
+.PHONY : src/arrsacagent.i
+
+# target to preprocess a source file
+src/arrsacagent.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/arrsacagent.cpp.i
+.PHONY : src/arrsacagent.cpp.i
+
+src/arrsacagent.s: src/arrsacagent.cpp.s
+.PHONY : src/arrsacagent.s
+
+# target to generate assembly for a file
+src/arrsacagent.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/arrsacagent.cpp.s
+.PHONY : src/arrsacagent.cpp.s
+
+src/assetallocationexperiment.o: src/assetallocationexperiment.cpp.o
+.PHONY : src/assetallocationexperiment.o
+
+# target to build an object file
+src/assetallocationexperiment.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o
+.PHONY : src/assetallocationexperiment.cpp.o
+
+src/assetallocationexperiment.i: src/assetallocationexperiment.cpp.i
+.PHONY : src/assetallocationexperiment.i
+
+# target to preprocess a source file
+src/assetallocationexperiment.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.i
+.PHONY : src/assetallocationexperiment.cpp.i
+
+src/assetallocationexperiment.s: src/assetallocationexperiment.cpp.s
+.PHONY : src/assetallocationexperiment.s
+
+# target to generate assembly for a file
+src/assetallocationexperiment.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.s
+.PHONY : src/assetallocationexperiment.cpp.s
+
 src/assetallocationtask.o: src/assetallocationtask.cpp.o
 .PHONY : src/assetallocationtask.o
 
@@ -151,30 +199,6 @@ src/assetallocationtask.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationtask.cpp.s
 .PHONY : src/assetallocationtask.cpp.s
 
-src/learningagent.o: src/learningagent.cpp.o
-.PHONY : src/learningagent.o
-
-# target to build an object file
-src/learningagent.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/learningagent.cpp.o
-.PHONY : src/learningagent.cpp.o
-
-src/learningagent.i: src/learningagent.cpp.i
-.PHONY : src/learningagent.i
-
-# target to preprocess a source file
-src/learningagent.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/learningagent.cpp.i
-.PHONY : src/learningagent.cpp.i
-
-src/learningagent.s: src/learningagent.cpp.s
-.PHONY : src/learningagent.s
-
-# target to generate assembly for a file
-src/learningagent.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/learningagent.cpp.s
-.PHONY : src/learningagent.cpp.s
-
 src/marketenvironment.o: src/marketenvironment.cpp.o
 .PHONY : src/marketenvironment.o
 
@@ -198,6 +222,30 @@ src/marketenvironment.s: src/marketenvironment.cpp.s
 src/marketenvironment.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/marketenvironment.cpp.s
 .PHONY : src/marketenvironment.cpp.s
+
+src/statistics.o: src/statistics.cpp.o
+.PHONY : src/statistics.o
+
+# target to build an object file
+src/statistics.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/statistics.cpp.o
+.PHONY : src/statistics.cpp.o
+
+src/statistics.i: src/statistics.cpp.i
+.PHONY : src/statistics.i
+
+# target to preprocess a source file
+src/statistics.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/statistics.cpp.i
+.PHONY : src/statistics.cpp.i
+
+src/statistics.s: src/statistics.cpp.s
+.PHONY : src/statistics.s
+
+# target to generate assembly for a file
+src/statistics.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/statistics.cpp.s
+.PHONY : src/statistics.cpp.s
 
 src/tradingsystem.o: src/tradingsystem.cpp.o
 .PHONY : src/tradingsystem.o
@@ -233,15 +281,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... thesis"
 	@echo "... main"
+	@echo "... src/arrsacagent.o"
+	@echo "... src/arrsacagent.i"
+	@echo "... src/arrsacagent.s"
+	@echo "... src/assetallocationexperiment.o"
+	@echo "... src/assetallocationexperiment.i"
+	@echo "... src/assetallocationexperiment.s"
 	@echo "... src/assetallocationtask.o"
 	@echo "... src/assetallocationtask.i"
 	@echo "... src/assetallocationtask.s"
-	@echo "... src/learningagent.o"
-	@echo "... src/learningagent.i"
-	@echo "... src/learningagent.s"
 	@echo "... src/marketenvironment.o"
 	@echo "... src/marketenvironment.i"
 	@echo "... src/marketenvironment.s"
+	@echo "... src/statistics.o"
+	@echo "... src/statistics.i"
+	@echo "... src/statistics.s"
 	@echo "... src/tradingsystem.o"
 	@echo "... src/tradingsystem.i"
 	@echo "... src/tradingsystem.s"

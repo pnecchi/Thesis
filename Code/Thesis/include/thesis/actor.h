@@ -2,6 +2,7 @@
 #define ACTOR_H
 
 #include <armadillo>
+#include <memory>
 
 /**
  * An Actor is the policy employed by an Agent for selecting an action given an
@@ -11,25 +12,12 @@
 
 class Actor
 {
-public:
-    // Default constructor
-    Actor(Module const &module_);
+    public:
+        // Default destructor
+        virtual ~Actor() = default;
 
-    // Default destructor
-    virtual ~Actor() = default;
-
-    // Get sizes
-    size_t getDimInput() const { return dimInput; }
-    size_t getDimOutput() const { return dimOutput; }
-
-    // Get Action
-    void selectAction(arma::vec const &observation, arma::vec &action);
-
-
-
-private:
-    Module module;
-
+        // Get Action
+        virtual arma::vec getAction(arma::vec const &observation) const = 0;
 };
 
 
