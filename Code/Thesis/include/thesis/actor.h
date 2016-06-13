@@ -2,6 +2,7 @@
 #define ACTOR_H
 
 #include <armadillo>
+#include <memory>
 
 /**
  * An Actor is the policy employed by an Agent for selecting an action given an
