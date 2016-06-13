@@ -30,8 +30,8 @@ class Policy
         }
 
         // Get policy sizes
-        size_t getDimInput() const { return dimObservation; }
-        size_t getDimOutput() const { return dimAction; }
+        size_t getDimObservation() const { return dimObservation; }
+        size_t getDimAction() const { return dimAction; }
         virtual size_t getDimParameters() const = 0;
 
         // Get and set parameters

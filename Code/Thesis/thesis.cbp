@@ -142,6 +142,8 @@
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationtask.cpp">
       </Unit>
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/boltzmannexplorationpolicy.cpp">
+      </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/marketenvironment.cpp">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/statistics.cpp">
@@ -157,6 +159,8 @@
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/assetallocationexperiment.h">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/assetallocationtask.h">
+      </Unit>
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/boltzmannexplorationpolicy.h">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/critic.h">
       </Unit>

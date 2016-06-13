@@ -26,6 +26,14 @@ math.h
 limits
 -
 
+/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/boltzmannexplorationpolicy.cpp
+thesis/boltzmannexplorationpolicy.h
+/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/thesis/boltzmannexplorationpolicy.h
+cmath
+-
+limits
+-
+
 /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/marketenvironment.cpp
 thesis/marketenvironment.h
 -
@@ -2040,6 +2048,16 @@ include/thesis/assetallocationtask.h
 thesis/marketenvironment.h
 -
 armadillo
+-
+
+include/thesis/boltzmannexplorationpolicy.h
+thesis/stochasticpolicy.h
+-
+armadillo
+-
+vector
+-
+random
 -
 
 include/thesis/critic.h

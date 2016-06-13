@@ -199,6 +199,30 @@ src/assetallocationtask.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationtask.cpp.s
 .PHONY : src/assetallocationtask.cpp.s
 
+src/boltzmannexplorationpolicy.o: src/boltzmannexplorationpolicy.cpp.o
+.PHONY : src/boltzmannexplorationpolicy.o
+
+# target to build an object file
+src/boltzmannexplorationpolicy.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o
+.PHONY : src/boltzmannexplorationpolicy.cpp.o
+
+src/boltzmannexplorationpolicy.i: src/boltzmannexplorationpolicy.cpp.i
+.PHONY : src/boltzmannexplorationpolicy.i
+
+# target to preprocess a source file
+src/boltzmannexplorationpolicy.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.i
+.PHONY : src/boltzmannexplorationpolicy.cpp.i
+
+src/boltzmannexplorationpolicy.s: src/boltzmannexplorationpolicy.cpp.s
+.PHONY : src/boltzmannexplorationpolicy.s
+
+# target to generate assembly for a file
+src/boltzmannexplorationpolicy.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.s
+.PHONY : src/boltzmannexplorationpolicy.cpp.s
+
 src/marketenvironment.o: src/marketenvironment.cpp.o
 .PHONY : src/marketenvironment.o
 
@@ -290,6 +314,9 @@ help:
 	@echo "... src/assetallocationtask.o"
 	@echo "... src/assetallocationtask.i"
 	@echo "... src/assetallocationtask.s"
+	@echo "... src/boltzmannexplorationpolicy.o"
+	@echo "... src/boltzmannexplorationpolicy.i"
+	@echo "... src/boltzmannexplorationpolicy.s"
 	@echo "... src/marketenvironment.o"
 	@echo "... src/marketenvironment.i"
 	@echo "... src/marketenvironment.s"

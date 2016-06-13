@@ -141,9 +141,32 @@ CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.provides: CMakeFiles/thesis.dir/src/
 
 CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.provides.build: CMakeFiles/thesis.dir/src/arrsacagent.cpp.o
 
+CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o: CMakeFiles/thesis.dir/flags.make
+CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o: src/boltzmannexplorationpolicy.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o -c /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/boltzmannexplorationpolicy.cpp
+
+CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/boltzmannexplorationpolicy.cpp > CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.i
+
+CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/boltzmannexplorationpolicy.cpp -o CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.s
+
+CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o.requires:
+.PHONY : CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o.requires
+
+CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o.provides: CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o.requires
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o.provides.build
+.PHONY : CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o.provides
+
+CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o.provides.build: CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o
+
 CMakeFiles/thesis.dir/src/statistics.cpp.o: CMakeFiles/thesis.dir/flags.make
 CMakeFiles/thesis.dir/src/statistics.cpp.o: src/statistics.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/thesis.dir/src/statistics.cpp.o"
 	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis.dir/src/statistics.cpp.o -c /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/statistics.cpp
 
@@ -166,7 +189,7 @@ CMakeFiles/thesis.dir/src/statistics.cpp.o.provides.build: CMakeFiles/thesis.dir
 
 CMakeFiles/thesis.dir/src/tradingsystem.cpp.o: CMakeFiles/thesis.dir/flags.make
 CMakeFiles/thesis.dir/src/tradingsystem.cpp.o: src/tradingsystem.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/thesis.dir/src/tradingsystem.cpp.o"
 	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis.dir/src/tradingsystem.cpp.o -c /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/tradingsystem.cpp
 
@@ -193,6 +216,7 @@ thesis_OBJECTS = \
 "CMakeFiles/thesis.dir/src/marketenvironment.cpp.o" \
 "CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o" \
 "CMakeFiles/thesis.dir/src/arrsacagent.cpp.o" \
+"CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o" \
 "CMakeFiles/thesis.dir/src/statistics.cpp.o" \
 "CMakeFiles/thesis.dir/src/tradingsystem.cpp.o"
 
@@ -203,6 +227,7 @@ libthesis.a: CMakeFiles/thesis.dir/src/assetallocationtask.cpp.o
 libthesis.a: CMakeFiles/thesis.dir/src/marketenvironment.cpp.o
 libthesis.a: CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o
 libthesis.a: CMakeFiles/thesis.dir/src/arrsacagent.cpp.o
+libthesis.a: CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o
 libthesis.a: CMakeFiles/thesis.dir/src/statistics.cpp.o
 libthesis.a: CMakeFiles/thesis.dir/src/tradingsystem.cpp.o
 libthesis.a: CMakeFiles/thesis.dir/build.make
@@ -219,6 +244,7 @@ CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/assetallocationtask.cp
 CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/marketenvironment.cpp.o.requires
 CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o.requires
 CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/arrsacagent.cpp.o.requires
+CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o.requires
 CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/statistics.cpp.o.requires
 CMakeFiles/thesis.dir/requires: CMakeFiles/thesis.dir/src/tradingsystem.cpp.o.requires
 .PHONY : CMakeFiles/thesis.dir/requires

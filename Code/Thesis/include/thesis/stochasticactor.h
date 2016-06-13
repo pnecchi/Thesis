@@ -21,9 +21,9 @@ class StochasticActor : public Actor
         virtual ~StochasticActor() = default;
 
         // Get sizes
-        size_t getDimInput() const { return policyPtr->getDimInput(); }
-        size_t getDimOutput() const { return policyPtr->getDimOutput(); }
-        size_t getDimParams() const { return policyPtr->getDimParams(); }
+        size_t getDimObservation() const { return policyPtr->getDimObservation(); }
+        size_t getDimAction() const { return policyPtr->getDimAction(); }
+        size_t getDimParameters() const { return policyPtr->getDimParameters(); }
 
         // Getter and setter methods for parameters
         arma::vec getParameters() const

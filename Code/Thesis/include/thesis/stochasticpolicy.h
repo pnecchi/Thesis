@@ -16,8 +16,8 @@ class StochasticPolicy : public Policy
 {
     public:
         // Default constructor
-        StochasticPolicy(size_t dimInput_, size_t dimOutput_)
-            : Policy(dimInput_, dimOutput_) {}
+        StochasticPolicy(size_t dimObservation_, size_t dimAction_)
+            : Policy(dimObservation_, dimAction_) {}
 
         // Default destructor
         virtual ~StochasticPolicy() = default;
@@ -29,7 +29,7 @@ class StochasticPolicy : public Policy
         }
 
         // Getter methods for sizes
-        virtual size_t getDimParams() const = 0;
+        virtual size_t getDimParameters() const = 0;
 
         // Getter and setter methods for parameters
         virtual arma::vec getParameters() const = 0;
@@ -41,9 +41,6 @@ class StochasticPolicy : public Policy
         // Likelihood score function
         virtual arma::vec likelihoodScore(arma::vec const &observation,
                                           arma::vec const &action) const = 0;
-
-    private:
-
 };
 
 #endif // STOCHASTICPOLICY_H

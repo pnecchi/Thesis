@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/thesis.dir/src/marketenvironment.cpp.o"
   "CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o"
   "CMakeFiles/thesis.dir/src/arrsacagent.cpp.o"
+  "CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o"
   "CMakeFiles/thesis.dir/src/statistics.cpp.o"
   "CMakeFiles/thesis.dir/src/tradingsystem.cpp.o"
   "libthesis.pdb"
