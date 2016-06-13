@@ -39,7 +39,7 @@ void TradingSystem::receiveReward(double const reward)
 
 void TradingSystem::receiveNextObservation(arma::vec const &nextObservation_)
 {
-    agentPtr->reiceiveNextObservation(nextObservation_);
+    agentPtr->receiveNextObservation(nextObservation_);
 }
 
 void TradingSystem::learn()

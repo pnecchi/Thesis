@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="main" />
-	<File name="include/thesis/stochasticpolicy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="examples/main.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="807" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/tradingsystem.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1308" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="src/assetallocationtask.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2827" topLine="100" />
+			<Cursor1 position="2236" topLine="15" />
 		</Cursor>
 	</File>
 	<File name="include/thesis/stochasticactor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -26,29 +16,9 @@
 			<Cursor1 position="502" topLine="9" />
 		</Cursor>
 	</File>
-	<File name="src/arrsacagent.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/arrsacagent.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="952" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/critic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="173" topLine="1" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/policy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="307" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/statistics.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1268" topLine="17" />
-		</Cursor>
-	</File>
-	<File name="src/tradingsystem.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="396" topLine="3" />
+			<Cursor1 position="827" topLine="12" />
 		</Cursor>
 	</File>
 	<File name="src/marketenvironment.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -56,29 +26,34 @@
 			<Cursor1 position="1980" topLine="36" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/arrsacagent.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/agent.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="827" topLine="12" />
+			<Cursor1 position="499" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/assetallocationexperiment.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/stochasticpolicy.h" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="318" topLine="0" />
+			<Cursor1 position="858" topLine="6" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/actor.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/tradingsystem.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="422" topLine="0" />
+			<Cursor1 position="396" topLine="3" />
 		</Cursor>
 	</File>
-	<File name="examples/main.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/assetallocationtask.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2236" topLine="15" />
+			<Cursor1 position="2827" topLine="100" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/marketenvironment.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/tradingsystem.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="747" topLine="36" />
+			<Cursor1 position="1308" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/statistics.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1268" topLine="17" />
 		</Cursor>
 	</File>
 	<File name="include/thesis/assetallocationtask.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -86,9 +61,34 @@
 			<Cursor1 position="1034" topLine="18" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/agent.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/assetallocationexperiment.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="499" topLine="0" />
+			<Cursor1 position="318" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/marketenvironment.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="747" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/policy.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1846" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/arrsacagent.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="952" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/actor.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="422" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/critic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="173" topLine="1" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

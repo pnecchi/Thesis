@@ -6,18 +6,18 @@ StatisticsAverage::StatisticsAverage()
     /* Nothing to do */
 }
 
-void std::unique_ptr<Statistics> StatisticsAverage::clone() const
+std::unique_ptr<Statistics> StatisticsAverage::clone() const
 {
     return std::unique_ptr<Statistics>(new StatisticsAverage(*this));
 }
 
-virtual void StatisticsAverage::dumpOneResult(double result)
+void StatisticsAverage::dumpOneResult(double result)
 {
     runningSum += result;
     nResults += 1;
 }
 
-virtual std::vector<std::vector<double>> getStatistics() const
+std::vector<std::vector<double>> StatisticsAverage::getStatistics() const
 {
     std::vector<std::vector<double>> results(1);
     results[0].resize(1);
@@ -25,24 +25,24 @@ virtual std::vector<std::vector<double>> getStatistics() const
     return results;
 }
 
-StatisticsEMA::StatisticsEMA(double decayRate_):
-    : EMA(0.0), decayRate(decayRate_), learningRate(1.0 - decayRate), first(true)
+StatisticsEMA::StatisticsEMA(double decayRate_)
+    : EMA(0.0), decayRate(decayRate_), learningRate(1.0 - decayRate)
 {
     /* Nothing to do */
 }
 
-virtual void std::unique_ptr<Statistics> StatisticsEMA::clone() const
+std::unique_ptr<Statistics> StatisticsEMA::clone() const
 {
     return std::unique_ptr<Statistics>(new StatisticsEMA(*this));
 }
 
-virtual void StatisticsEMA::dumpOneResult(double result)
+void StatisticsEMA::dumpOneResult(double result)
 {
     // TODO: check for first result dumped
     EMA = decayRate * EMA + learningRate * result;
 }
 
-virtual std::vector<std::vector<double>> StatisticsEMA::getStatistics() const
+std::vector<std::vector<double>> StatisticsEMA::getStatistics() const
 {
     std::vector<std::vector<double>> results(1);
     results[0].resize(1);

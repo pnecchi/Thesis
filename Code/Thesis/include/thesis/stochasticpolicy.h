@@ -23,7 +23,10 @@ class StochasticPolicy : public Policy
         virtual ~StochasticPolicy() = default;
 
         // Virtual clone method for polymorphic clone
-        virtual std::unique_ptr<StochasticPolicy> clone() const = 0;
+        std::unique_ptr<StochasticPolicy> clone() const
+        {
+            return checkedClone<StochasticPolicy>();
+        }
 
         // Getter methods for sizes
         virtual size_t getDimParams() const = 0;
@@ -38,6 +41,9 @@ class StochasticPolicy : public Policy
         // Likelihood score function
         virtual arma::vec likelihoodScore(arma::vec const &observation,
                                           arma::vec const &action) const = 0;
+
+    private:
+
 };
 
 #endif // STOCHASTICPOLICY_H
