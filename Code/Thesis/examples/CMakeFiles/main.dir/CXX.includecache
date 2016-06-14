@@ -13,9 +13,11 @@ string
 -
 armadillo
 -
-thesis/marketenvironment.h
+thesis/MarketEnvironment.h
 -
-thesis/assetallocationtask.h
+thesis/AssetAllocationTask.h
+-
+thesis/LinearRegressor.h
 -
 
 /usr/local/include/armadillo
@@ -1974,13 +1976,25 @@ hdf5.h
 
 /usr/local/include/armadillo_bits/xvec_htrans_meat.hpp
 
-include/thesis/assetallocationtask.h
-thesis/marketenvironment.h
+include/thesis/AssetAllocationTask.h
+thesis/MarketEnvironment.h
 -
 armadillo
 -
 
-include/thesis/marketenvironment.h
+include/thesis/FunctionApproximator.h
+armadillo
+-
+memory
+-
+
+include/thesis/LinearRegressor.h
+thesis/FunctionApproximator.h
+-
+armadillo
+-
+
+include/thesis/MarketEnvironment.h
 armadillo
 -
 vector

@@ -127,173 +127,245 @@ main/fast:
 	$(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-src/arrsacagent.o: src/arrsacagent.cpp.o
-.PHONY : src/arrsacagent.o
+src/ArrsacAgent.o: src/ArrsacAgent.cpp.o
+.PHONY : src/ArrsacAgent.o
 
 # target to build an object file
-src/arrsacagent.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/arrsacagent.cpp.o
-.PHONY : src/arrsacagent.cpp.o
+src/ArrsacAgent.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/ArrsacAgent.cpp.o
+.PHONY : src/ArrsacAgent.cpp.o
 
-src/arrsacagent.i: src/arrsacagent.cpp.i
-.PHONY : src/arrsacagent.i
+src/ArrsacAgent.i: src/ArrsacAgent.cpp.i
+.PHONY : src/ArrsacAgent.i
 
 # target to preprocess a source file
-src/arrsacagent.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/arrsacagent.cpp.i
-.PHONY : src/arrsacagent.cpp.i
+src/ArrsacAgent.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/ArrsacAgent.cpp.i
+.PHONY : src/ArrsacAgent.cpp.i
 
-src/arrsacagent.s: src/arrsacagent.cpp.s
-.PHONY : src/arrsacagent.s
+src/ArrsacAgent.s: src/ArrsacAgent.cpp.s
+.PHONY : src/ArrsacAgent.s
 
 # target to generate assembly for a file
-src/arrsacagent.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/arrsacagent.cpp.s
-.PHONY : src/arrsacagent.cpp.s
+src/ArrsacAgent.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/ArrsacAgent.cpp.s
+.PHONY : src/ArrsacAgent.cpp.s
 
-src/assetallocationexperiment.o: src/assetallocationexperiment.cpp.o
-.PHONY : src/assetallocationexperiment.o
+src/AssetAllocationExperiment.o: src/AssetAllocationExperiment.cpp.o
+.PHONY : src/AssetAllocationExperiment.o
 
 # target to build an object file
-src/assetallocationexperiment.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.o
-.PHONY : src/assetallocationexperiment.cpp.o
+src/AssetAllocationExperiment.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/AssetAllocationExperiment.cpp.o
+.PHONY : src/AssetAllocationExperiment.cpp.o
 
-src/assetallocationexperiment.i: src/assetallocationexperiment.cpp.i
-.PHONY : src/assetallocationexperiment.i
+src/AssetAllocationExperiment.i: src/AssetAllocationExperiment.cpp.i
+.PHONY : src/AssetAllocationExperiment.i
 
 # target to preprocess a source file
-src/assetallocationexperiment.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.i
-.PHONY : src/assetallocationexperiment.cpp.i
+src/AssetAllocationExperiment.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/AssetAllocationExperiment.cpp.i
+.PHONY : src/AssetAllocationExperiment.cpp.i
 
-src/assetallocationexperiment.s: src/assetallocationexperiment.cpp.s
-.PHONY : src/assetallocationexperiment.s
+src/AssetAllocationExperiment.s: src/AssetAllocationExperiment.cpp.s
+.PHONY : src/AssetAllocationExperiment.s
 
 # target to generate assembly for a file
-src/assetallocationexperiment.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationexperiment.cpp.s
-.PHONY : src/assetallocationexperiment.cpp.s
+src/AssetAllocationExperiment.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/AssetAllocationExperiment.cpp.s
+.PHONY : src/AssetAllocationExperiment.cpp.s
 
-src/assetallocationtask.o: src/assetallocationtask.cpp.o
-.PHONY : src/assetallocationtask.o
+src/AssetAllocationTask.o: src/AssetAllocationTask.cpp.o
+.PHONY : src/AssetAllocationTask.o
 
 # target to build an object file
-src/assetallocationtask.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationtask.cpp.o
-.PHONY : src/assetallocationtask.cpp.o
+src/AssetAllocationTask.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/AssetAllocationTask.cpp.o
+.PHONY : src/AssetAllocationTask.cpp.o
 
-src/assetallocationtask.i: src/assetallocationtask.cpp.i
-.PHONY : src/assetallocationtask.i
+src/AssetAllocationTask.i: src/AssetAllocationTask.cpp.i
+.PHONY : src/AssetAllocationTask.i
 
 # target to preprocess a source file
-src/assetallocationtask.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationtask.cpp.i
-.PHONY : src/assetallocationtask.cpp.i
+src/AssetAllocationTask.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/AssetAllocationTask.cpp.i
+.PHONY : src/AssetAllocationTask.cpp.i
 
-src/assetallocationtask.s: src/assetallocationtask.cpp.s
-.PHONY : src/assetallocationtask.s
+src/AssetAllocationTask.s: src/AssetAllocationTask.cpp.s
+.PHONY : src/AssetAllocationTask.s
 
 # target to generate assembly for a file
-src/assetallocationtask.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/assetallocationtask.cpp.s
-.PHONY : src/assetallocationtask.cpp.s
+src/AssetAllocationTask.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/AssetAllocationTask.cpp.s
+.PHONY : src/AssetAllocationTask.cpp.s
 
-src/boltzmannexplorationpolicy.o: src/boltzmannexplorationpolicy.cpp.o
-.PHONY : src/boltzmannexplorationpolicy.o
+src/BacktestLog.o: src/BacktestLog.cpp.o
+.PHONY : src/BacktestLog.o
 
 # target to build an object file
-src/boltzmannexplorationpolicy.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.o
-.PHONY : src/boltzmannexplorationpolicy.cpp.o
+src/BacktestLog.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BacktestLog.cpp.o
+.PHONY : src/BacktestLog.cpp.o
 
-src/boltzmannexplorationpolicy.i: src/boltzmannexplorationpolicy.cpp.i
-.PHONY : src/boltzmannexplorationpolicy.i
+src/BacktestLog.i: src/BacktestLog.cpp.i
+.PHONY : src/BacktestLog.i
 
 # target to preprocess a source file
-src/boltzmannexplorationpolicy.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.i
-.PHONY : src/boltzmannexplorationpolicy.cpp.i
+src/BacktestLog.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BacktestLog.cpp.i
+.PHONY : src/BacktestLog.cpp.i
 
-src/boltzmannexplorationpolicy.s: src/boltzmannexplorationpolicy.cpp.s
-.PHONY : src/boltzmannexplorationpolicy.s
+src/BacktestLog.s: src/BacktestLog.cpp.s
+.PHONY : src/BacktestLog.s
 
 # target to generate assembly for a file
-src/boltzmannexplorationpolicy.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/boltzmannexplorationpolicy.cpp.s
-.PHONY : src/boltzmannexplorationpolicy.cpp.s
+src/BacktestLog.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BacktestLog.cpp.s
+.PHONY : src/BacktestLog.cpp.s
 
-src/marketenvironment.o: src/marketenvironment.cpp.o
-.PHONY : src/marketenvironment.o
+src/BoltzmannExplorationPolicy.o: src/BoltzmannExplorationPolicy.cpp.o
+.PHONY : src/BoltzmannExplorationPolicy.o
 
 # target to build an object file
-src/marketenvironment.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/marketenvironment.cpp.o
-.PHONY : src/marketenvironment.cpp.o
+src/BoltzmannExplorationPolicy.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannExplorationPolicy.cpp.o
+.PHONY : src/BoltzmannExplorationPolicy.cpp.o
 
-src/marketenvironment.i: src/marketenvironment.cpp.i
-.PHONY : src/marketenvironment.i
+src/BoltzmannExplorationPolicy.i: src/BoltzmannExplorationPolicy.cpp.i
+.PHONY : src/BoltzmannExplorationPolicy.i
 
 # target to preprocess a source file
-src/marketenvironment.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/marketenvironment.cpp.i
-.PHONY : src/marketenvironment.cpp.i
+src/BoltzmannExplorationPolicy.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannExplorationPolicy.cpp.i
+.PHONY : src/BoltzmannExplorationPolicy.cpp.i
 
-src/marketenvironment.s: src/marketenvironment.cpp.s
-.PHONY : src/marketenvironment.s
+src/BoltzmannExplorationPolicy.s: src/BoltzmannExplorationPolicy.cpp.s
+.PHONY : src/BoltzmannExplorationPolicy.s
 
 # target to generate assembly for a file
-src/marketenvironment.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/marketenvironment.cpp.s
-.PHONY : src/marketenvironment.cpp.s
+src/BoltzmannExplorationPolicy.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannExplorationPolicy.cpp.s
+.PHONY : src/BoltzmannExplorationPolicy.cpp.s
 
-src/statistics.o: src/statistics.cpp.o
-.PHONY : src/statistics.o
+src/LinearRegressor.o: src/LinearRegressor.cpp.o
+.PHONY : src/LinearRegressor.o
 
 # target to build an object file
-src/statistics.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/statistics.cpp.o
-.PHONY : src/statistics.cpp.o
+src/LinearRegressor.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LinearRegressor.cpp.o
+.PHONY : src/LinearRegressor.cpp.o
 
-src/statistics.i: src/statistics.cpp.i
-.PHONY : src/statistics.i
+src/LinearRegressor.i: src/LinearRegressor.cpp.i
+.PHONY : src/LinearRegressor.i
 
 # target to preprocess a source file
-src/statistics.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/statistics.cpp.i
-.PHONY : src/statistics.cpp.i
+src/LinearRegressor.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LinearRegressor.cpp.i
+.PHONY : src/LinearRegressor.cpp.i
 
-src/statistics.s: src/statistics.cpp.s
-.PHONY : src/statistics.s
+src/LinearRegressor.s: src/LinearRegressor.cpp.s
+.PHONY : src/LinearRegressor.s
 
 # target to generate assembly for a file
-src/statistics.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/statistics.cpp.s
-.PHONY : src/statistics.cpp.s
+src/LinearRegressor.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LinearRegressor.cpp.s
+.PHONY : src/LinearRegressor.cpp.s
 
-src/tradingsystem.o: src/tradingsystem.cpp.o
-.PHONY : src/tradingsystem.o
+src/MarketEnvironment.o: src/MarketEnvironment.cpp.o
+.PHONY : src/MarketEnvironment.o
 
 # target to build an object file
-src/tradingsystem.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/tradingsystem.cpp.o
-.PHONY : src/tradingsystem.cpp.o
+src/MarketEnvironment.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/MarketEnvironment.cpp.o
+.PHONY : src/MarketEnvironment.cpp.o
 
-src/tradingsystem.i: src/tradingsystem.cpp.i
-.PHONY : src/tradingsystem.i
+src/MarketEnvironment.i: src/MarketEnvironment.cpp.i
+.PHONY : src/MarketEnvironment.i
 
 # target to preprocess a source file
-src/tradingsystem.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/tradingsystem.cpp.i
-.PHONY : src/tradingsystem.cpp.i
+src/MarketEnvironment.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/MarketEnvironment.cpp.i
+.PHONY : src/MarketEnvironment.cpp.i
 
-src/tradingsystem.s: src/tradingsystem.cpp.s
-.PHONY : src/tradingsystem.s
+src/MarketEnvironment.s: src/MarketEnvironment.cpp.s
+.PHONY : src/MarketEnvironment.s
 
 # target to generate assembly for a file
-src/tradingsystem.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/tradingsystem.cpp.s
-.PHONY : src/tradingsystem.cpp.s
+src/MarketEnvironment.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/MarketEnvironment.cpp.s
+.PHONY : src/MarketEnvironment.cpp.s
+
+src/RandomGenerator.o: src/RandomGenerator.cpp.o
+.PHONY : src/RandomGenerator.o
+
+# target to build an object file
+src/RandomGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/RandomGenerator.cpp.o
+.PHONY : src/RandomGenerator.cpp.o
+
+src/RandomGenerator.i: src/RandomGenerator.cpp.i
+.PHONY : src/RandomGenerator.i
+
+# target to preprocess a source file
+src/RandomGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/RandomGenerator.cpp.i
+.PHONY : src/RandomGenerator.cpp.i
+
+src/RandomGenerator.s: src/RandomGenerator.cpp.s
+.PHONY : src/RandomGenerator.s
+
+# target to generate assembly for a file
+src/RandomGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/RandomGenerator.cpp.s
+.PHONY : src/RandomGenerator.cpp.s
+
+src/Statistics.o: src/Statistics.cpp.o
+.PHONY : src/Statistics.o
+
+# target to build an object file
+src/Statistics.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/Statistics.cpp.o
+.PHONY : src/Statistics.cpp.o
+
+src/Statistics.i: src/Statistics.cpp.i
+.PHONY : src/Statistics.i
+
+# target to preprocess a source file
+src/Statistics.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/Statistics.cpp.i
+.PHONY : src/Statistics.cpp.i
+
+src/Statistics.s: src/Statistics.cpp.s
+.PHONY : src/Statistics.s
+
+# target to generate assembly for a file
+src/Statistics.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/Statistics.cpp.s
+.PHONY : src/Statistics.cpp.s
+
+src/TradingSystem.o: src/TradingSystem.cpp.o
+.PHONY : src/TradingSystem.o
+
+# target to build an object file
+src/TradingSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/TradingSystem.cpp.o
+.PHONY : src/TradingSystem.cpp.o
+
+src/TradingSystem.i: src/TradingSystem.cpp.i
+.PHONY : src/TradingSystem.i
+
+# target to preprocess a source file
+src/TradingSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/TradingSystem.cpp.i
+.PHONY : src/TradingSystem.cpp.i
+
+src/TradingSystem.s: src/TradingSystem.cpp.s
+.PHONY : src/TradingSystem.s
+
+# target to generate assembly for a file
+src/TradingSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/TradingSystem.cpp.s
+.PHONY : src/TradingSystem.cpp.s
 
 # Help Target
 help:
@@ -305,27 +377,36 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... thesis"
 	@echo "... main"
-	@echo "... src/arrsacagent.o"
-	@echo "... src/arrsacagent.i"
-	@echo "... src/arrsacagent.s"
-	@echo "... src/assetallocationexperiment.o"
-	@echo "... src/assetallocationexperiment.i"
-	@echo "... src/assetallocationexperiment.s"
-	@echo "... src/assetallocationtask.o"
-	@echo "... src/assetallocationtask.i"
-	@echo "... src/assetallocationtask.s"
-	@echo "... src/boltzmannexplorationpolicy.o"
-	@echo "... src/boltzmannexplorationpolicy.i"
-	@echo "... src/boltzmannexplorationpolicy.s"
-	@echo "... src/marketenvironment.o"
-	@echo "... src/marketenvironment.i"
-	@echo "... src/marketenvironment.s"
-	@echo "... src/statistics.o"
-	@echo "... src/statistics.i"
-	@echo "... src/statistics.s"
-	@echo "... src/tradingsystem.o"
-	@echo "... src/tradingsystem.i"
-	@echo "... src/tradingsystem.s"
+	@echo "... src/ArrsacAgent.o"
+	@echo "... src/ArrsacAgent.i"
+	@echo "... src/ArrsacAgent.s"
+	@echo "... src/AssetAllocationExperiment.o"
+	@echo "... src/AssetAllocationExperiment.i"
+	@echo "... src/AssetAllocationExperiment.s"
+	@echo "... src/AssetAllocationTask.o"
+	@echo "... src/AssetAllocationTask.i"
+	@echo "... src/AssetAllocationTask.s"
+	@echo "... src/BacktestLog.o"
+	@echo "... src/BacktestLog.i"
+	@echo "... src/BacktestLog.s"
+	@echo "... src/BoltzmannExplorationPolicy.o"
+	@echo "... src/BoltzmannExplorationPolicy.i"
+	@echo "... src/BoltzmannExplorationPolicy.s"
+	@echo "... src/LinearRegressor.o"
+	@echo "... src/LinearRegressor.i"
+	@echo "... src/LinearRegressor.s"
+	@echo "... src/MarketEnvironment.o"
+	@echo "... src/MarketEnvironment.i"
+	@echo "... src/MarketEnvironment.s"
+	@echo "... src/RandomGenerator.o"
+	@echo "... src/RandomGenerator.i"
+	@echo "... src/RandomGenerator.s"
+	@echo "... src/Statistics.o"
+	@echo "... src/Statistics.i"
+	@echo "... src/Statistics.s"
+	@echo "... src/TradingSystem.o"
+	@echo "... src/TradingSystem.i"
+	@echo "... src/TradingSystem.s"
 .PHONY : help
 
 

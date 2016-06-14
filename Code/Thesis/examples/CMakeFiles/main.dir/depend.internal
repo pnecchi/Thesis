@@ -477,5 +477,7 @@ examples/CMakeFiles/main.dir/main.cpp.o
  /usr/local/include/armadillo_bits/xtrans_mat_meat.hpp
  /usr/local/include/armadillo_bits/xvec_htrans_bones.hpp
  /usr/local/include/armadillo_bits/xvec_htrans_meat.hpp
- include/thesis/assetallocationtask.h
- include/thesis/marketenvironment.h
+ include/thesis/AssetAllocationTask.h
+ include/thesis/FunctionApproximator.h
+ include/thesis/LinearRegressor.h
+ include/thesis/MarketEnvironment.h

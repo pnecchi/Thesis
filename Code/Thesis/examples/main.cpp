@@ -1,11 +1,16 @@
 #include <iostream>
 #include <string>
 #include <armadillo>
-#include <thesis/marketenvironment.h>
-#include <thesis/assetallocationtask.h>
+#include <thesis/MarketEnvironment.h>
+#include <thesis/AssetAllocationTask.h>
+#include <thesis/LinearRegressor.h>
 
 int main(int argc, char *argv[])
 {
+    std::cout << "----------------------------------------------" << std::endl;
+    std::cout << "-        Algorithmic Asset Allocation        -" << std::endl;
+    std::cout << "----------------------------------------------" << std::endl;
+
 	// Market parameters
 	std::string inputFilePath = "../../../Data/Input/synthetic.csv";
 	double riskFreeRate = 0.0;
@@ -19,67 +24,63 @@ int main(int argc, char *argv[])
 	size_t numDaysObserved = 2;
 
 	// Market
-	MarketEnvironment market(inputFilePath,
-							 riskFreeRate,
-							 startDate,
-							 endDate);
+	std::cout << ">> Initialize market environment" << std::endl;
+	MarketEnvironment market(inputFilePath, riskFreeRate, startDate, endDate);
 
-    MarketEnvironment market2(market);
-
-	std::cout << "Number of days: " << market.getNumDays() << std::endl;
-	std::cout << "Number of risky assets: " << market.getNumRiskyAssets() << std::endl;
-
-	std::cout << "Assets symbols: ";
-	for (auto s : market.getAssetsSymbols())
-	{
-		std::cout << s << ", ";
-	}
-	std::cout << std::endl;
-
-	std::cout << "Evaluation dates: "
-			  << market.getStartDate() << ", "
-			  << market.getCurrentDate() << ", "
-			  << market.getEndDate() <<  std::endl;
-
-	std::cout << "Current state: " << std::endl;
-	arma::vec state(market.getDimState());
-    state = market.getState();
-	state.print(std::cout);
-
-	arma::vec action(market.getDimAction());
-	action(1) = 1.0;
-	market.performAction(action);
-
-	std::cout << "Evaluation dates: "
-			  << market.getStartDate() << ", "
-			  << market.getCurrentDate() << ", "
-			  << market.getEndDate() <<  std::endl;
-
-	std::cout << "Current state: " << std::endl;
-	state = market.getState();
-	state.print(std::cout);
-
-	// Asset allocation task
+    // Asset allocation task
+    std::cout << ">> Initialize asset allocation task" << std::endl;
 	AssetAllocationTask task(market, deltaP, deltaF, deltaP, numDaysObserved);
 
-	std::cout << "Number of days observed: " << task.getNumDaysObserved() << std::endl;
-    std::cout << "Observation size: " << task.getDimObservation() << std::endl;
-    std::cout << "Action size: " << task.getDimAction() << std::endl;
+	// State-value function critic
+	std::cout << ">> Initialize state-value function critic" << std::endl;
+	LinearRegressor criticV(task.getDimObservation());
 
-    std::cout << "Observation: " << std::endl;
+
+
     arma::vec observation(task.getDimObservation());
-    observation = task.getObservation();
-    observation.print(std::cout);
+    arma::vec action(task.getDimAction());
+    action.zeros();
+    action(1) = 1.0;
+    double reward;
 
-    task.performAction(action);
-
-    std::cout << "Reward: ";
-    std::cout << task.getReward() << std::endl;
-
+    std::cout << ">> 1st interaction" << std::endl;
     std::cout << "Observation: " << std::endl;
     observation = task.getObservation();
     observation.print(std::cout);
+    std::cout << "Action:" << std::endl;
+    action.print(std::cout);
+    task.performAction(action);
+    reward = task.getReward();
+    std::cout << "Reward: " << reward << std::endl;
+    std::cout << "Critic: " << criticV.evaluate(observation) << std::endl;
 
+    std::cout << ">> 2nd interaction" << std::endl;
+    std::cout << "Observation: " << std::endl;
+    observation = task.getObservation();
+    observation.print(std::cout);
+    std::cout << "Action:" << std::endl;
+    action.print(std::cout);
+    task.performAction(action);
+    reward = task.getReward();
+    std::cout << "Reward: " << reward << std::endl;
+    std::cout << "Critic: " << criticV.evaluate(observation) << std::endl;
+
+    std::cout << "Critic parameters:" << std::endl;
+    arma::vec parameters = criticV.getParameters();
+    parameters.print(std::cout);
+    parameters(0) *= 2.0;
+    std::cout << "New parameters:" << std::endl;
+    parameters.print(std::cout);
+    criticV.setParameters(parameters);
+    parameters = criticV.getParameters();
+    std::cout << "New Critic parameters:" << std::endl;
+    parameters.print(std::cout);
+
+    arma::vec gradient = criticV.gradient(observation);
+    std::cout << "Critic gradient" << std::endl;
+    gradient.print(std::cout);
+
+    std::cout << "Critic parameters size: " << criticV.getDimParameters();
 
 	return 0;
 }

@@ -136,47 +136,59 @@
       </Build>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/arrsacagent.cpp">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/ArrsacAgent.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationexperiment.cpp">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/AssetAllocationExperiment.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/assetallocationtask.cpp">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/AssetAllocationTask.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/boltzmannexplorationpolicy.cpp">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/BacktestLog.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/marketenvironment.cpp">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/BoltzmannExplorationPolicy.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/statistics.cpp">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/LinearRegressor.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/tradingsystem.cpp">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/MarketEnvironment.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/actor.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/RandomGenerator.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/agent.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/Statistics.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/arrsacagent.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/src/TradingSystem.cpp">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/assetallocationexperiment.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/Actor.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/assetallocationtask.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/Agent.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/boltzmannexplorationpolicy.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/ArrsacAgent.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/critic.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/AssetAllocationExperiment.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/functionapproximator.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/AssetAllocationTask.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/marketenvironment.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/BacktestLog.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/policy.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/BoltzmannExplorationPolicy.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/statistics.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/Critic.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/stochasticactor.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/FunctionApproximator.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/stochasticpolicy.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/LinearRegressor.h">
       </Unit>
-      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/tradingsystem.h">
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/MarketEnvironment.h">
+      </Unit>
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/Policy.h">
+      </Unit>
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/RandomGenerator.h">
+      </Unit>
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/Statistics.h">
+      </Unit>
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/StochasticActor.h">
+      </Unit>
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/StochasticPolicy.h">
+      </Unit>
+      <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/TradingSystem.h">
       </Unit>
       <Unit filename="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
