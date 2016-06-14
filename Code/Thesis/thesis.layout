@@ -1,94 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="main" />
-	<File name="include/thesis/StochasticPolicy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="112" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/ArrsacAgent.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="203" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/MarketEnvironment.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="24" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/TradingSystem.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="25" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/AssetAllocationExperiment.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="157" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/BoltzmannExplorationPolicy.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="46" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/AssetAllocationExperiment.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="45" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="examples/main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2870" topLine="45" />
-		</Cursor>
-	</File>
-	<File name="src/ArrsacAgent.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="31" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/BoltzmannExplorationPolicy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="111" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/Critic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="101" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/LinearRegressor.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1310" topLine="17" />
-		</Cursor>
-	</File>
 	<File name="include/thesis/StochasticActor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="194" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/RandomGenerator.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/LinearRegressor.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="768" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/AssetAllocationTask.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="351" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/LinearRegressor.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="966" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="src/BacktestLog.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="26" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/RandomGenerator.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="180" />
+			<Cursor1 position="969" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="include/thesis/FunctionApproximator.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -96,19 +16,99 @@
 			<Cursor1 position="1295" topLine="22" />
 		</Cursor>
 	</File>
-	<File name="src/AssetAllocationTask.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/LinearRegressor.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="33" topLine="0" />
+			<Cursor1 position="1310" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/TradingSystem.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/BacktestLog.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="446" topLine="0" />
+			<Cursor1 position="26" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/StochasticPolicy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="112" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src/Statistics.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="18" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/RandomGenerator.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="180" />
+		</Cursor>
+	</File>
+	<File name="src/RandomGenerator.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="768" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="examples/main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2870" topLine="46" />
+		</Cursor>
+	</File>
+	<File name="src/TradingSystem.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="547" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/AssetAllocationExperiment.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1448" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="src/MarketEnvironment.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="24" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/ArrsacAgent.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="203" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/AssetAllocationTask.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="33" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/BoltzmannExplorationPolicy.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="46" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/BoltzmannExplorationPolicy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="111" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/AssetAllocationExperiment.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="960" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/Critic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="101" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/AssetAllocationTask.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="351" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/ArrsacAgent.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="31" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/TradingSystem.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="561" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

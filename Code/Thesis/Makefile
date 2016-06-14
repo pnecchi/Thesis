@@ -343,30 +343,6 @@ src/Statistics.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/Statistics.cpp.s
 .PHONY : src/Statistics.cpp.s
 
-src/TradingSystem.o: src/TradingSystem.cpp.o
-.PHONY : src/TradingSystem.o
-
-# target to build an object file
-src/TradingSystem.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/TradingSystem.cpp.o
-.PHONY : src/TradingSystem.cpp.o
-
-src/TradingSystem.i: src/TradingSystem.cpp.i
-.PHONY : src/TradingSystem.i
-
-# target to preprocess a source file
-src/TradingSystem.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/TradingSystem.cpp.i
-.PHONY : src/TradingSystem.cpp.i
-
-src/TradingSystem.s: src/TradingSystem.cpp.s
-.PHONY : src/TradingSystem.s
-
-# target to generate assembly for a file
-src/TradingSystem.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/TradingSystem.cpp.s
-.PHONY : src/TradingSystem.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -404,9 +380,6 @@ help:
 	@echo "... src/Statistics.o"
 	@echo "... src/Statistics.i"
 	@echo "... src/Statistics.s"
-	@echo "... src/TradingSystem.o"
-	@echo "... src/TradingSystem.i"
-	@echo "... src/TradingSystem.s"
 .PHONY : help
 
 
