@@ -1,6 +1,7 @@
 #include "thesis/boltzmannexplorationpolicy.h"
 #include <cmath>   /* abs */
 #include <limits>  /* eps */
+#include <random>
 
 BoltzmannExplorationPolicy::BoltzmannExplorationPolicy(size_t dimObservation_,
                                                        std::vector<double> possibleActions_)
@@ -10,7 +11,9 @@ BoltzmannExplorationPolicy::BoltzmannExplorationPolicy(size_t dimObservation_,
       dimParametersPerAction(dimObservation_ + 1),
       dimParameters(dimParametersPerAction * numPossibleActions),
       parametersMat(dimObservation_, numPossibleActions),
-      boltzmannDistribution()
+      paramatersVec(parametersMat.memptr(), dimParameters, false, false),
+      generator(),
+      boltzmannProbabilities(numPossibleActions)
 {
     initializeParameters();
 }
@@ -24,27 +27,26 @@ void BoltzmannExplorationPolicy::initializeParameters()
 
 arma::vec BoltzmannExplorationPolicy::getParameters() const
 {
-    return arma::vectorise(parametersMat);
+    return paramatersVec;
 }
 
 void BoltzmannExplorationPolicy::setParameters(arma::vec const &parameters)
 {
-    parametersMat = arma::mat(parameters,
-                              dimParametersPerAction,
-                              numPossibleActions,
-                              false,   /* copy_aux_mem */
-                              false);  /* strict */
+    paramatersVec = parameters;
 }
 
 arma::vec BoltzmannExplorationPolicy::getAction(arma::vec const &observation) const
 {
     // Compute actions probabilities according to Boltzmann distribution
-    arma::vec boltzmannWeights = arma::exp(parametersMat.t() * observation)
-    boltzmannDistribution = std::discrete_distribution<>(boltzmannWeights.begin(),
-                                                         boltzmannWeights.end());
+    arma::vec boltzmannWeights = arma::exp(parametersMat.t() * observation);
+    std::discrete_distribution<int> boltzmannDistribution(boltzmannWeights.begin(),
+                                                          boltzmannWeights.end());
+
+    // Cache action probabilities
+    boltzmannProbabilities = boltzmannDistribution.probabilities();
 
     // Generate action
-    size_t actionIdx = boltzmannDistribution();
+    int actionIdx = boltzmannDistribution(generator);
     arma::vec action(1);
     action(0) = possibleActions[actionIdx];
     return action;
@@ -53,9 +55,6 @@ arma::vec BoltzmannExplorationPolicy::getAction(arma::vec const &observation) co
 arma::vec BoltzmannExplorationPolicy::likelihoodScore(arma::vec const &observation,
                                                       arma::vec const &action) const
 {
-    // Get Boltzmann probabilities
-    std::vector<double> boltzmannProbabilities = boltzmannDistribution.probabilities();
-
     // Compute likelihood score
     arma::vec likScore(dimParameters);
     double coeff = 0.0;

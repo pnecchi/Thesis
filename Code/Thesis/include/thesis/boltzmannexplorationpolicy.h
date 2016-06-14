@@ -4,8 +4,7 @@
 #include <thesis/stochasticpolicy.h>
 #include <armadillo>
 #include <vector>
-#include <random>  /* discrete_distribution */
-
+#include <random>
 
 class BoltzmannExplorationPolicy : public StochasticPolicy
 {
@@ -38,9 +37,6 @@ class BoltzmannExplorationPolicy : public StochasticPolicy
         // Initialize policy parameters
         void initializeParameters();
 
-        // Boltzmann probability distribution
-        std::discrete_distribution<> boltzmannDistribution;
-
         // Possible actions
         std::vector<double> possibleActions;
 
@@ -51,6 +47,14 @@ class BoltzmannExplorationPolicy : public StochasticPolicy
 
         // Policy parameters: Theta = [ theta_1 | thetha_2 | ... | theta_D ]
         arma::mat parametersMat;
+        arma::vec paramatersVec;  // Linearized matrix (shares memory)
+
+        // Boltzmann probability distribution and random number generator
+        // Need to be mutable because the generator state changes when
+        // simulating an action.
+        // TODO: check boost for simulating random variables
+        mutable std::mt19937 generator;
+        mutable std::vector<double> boltzmannProbabilities;
 
         // TODO: Consider generic features of the input
 };
