@@ -1,9 +1,12 @@
 #ifndef ASSETALLOCATIONEXPERIMENT_H
 #define ASSETALLOCATIONEXPERIMENT_H
 
+#include <armadillo>
 #include <memory>
 #include <thesis/AssetAllocationTask.h>
-#include <thesis/TradingSystem.h>
+#include <thesis/Agent.h>
+#include <thesis/BacktestLog.h>
+#include <thesis/Statistics.h>
 
 /**
  * An AssetAllocationExperiment handles the interactions between the
@@ -15,8 +18,9 @@ class AssetAllocationExperiment
     public:
         // Default constructor
         AssetAllocationExperiment(AssetAllocationTask const &task_,
-                                  TradingSystem const &agent_)
-            : task(task_), agent(agent_) {}
+                                  Agent const &agent_,
+                                  bool backtestMode_=false,
+                                  size_t numRecords=0ul);
 
         // Default destructor
         virtual ~AssetAllocationExperiment() = default;
@@ -41,7 +45,18 @@ class AssetAllocationExperiment
         AssetAllocationTask task;
 
         // Trading system
-        TradingSystem agent;
+        std::unique_ptr<Agent> agentPtr;
+
+        // Backtest Log
+        bool backtestMode = false;
+        BacktestLog blog;
+
+        // Cache variables
+        arma::vec actionCache;
+        double rewardCache;
+
+        // Experiment statistics
+        StatisticsExperiment experimentStats;
 };
 
 #endif // ASSETALLOCATIONEXPERIMENT_H

@@ -53,15 +53,15 @@ examples/CMakeFiles/main.dir/main.cpp.o: examples/CMakeFiles/main.dir/flags.make
 examples/CMakeFiles/main.dir/main.cpp.o: examples/main.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object examples/CMakeFiles/main.dir/main.cpp.o"
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples && /usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main.cpp
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main.cpp
 
 examples/CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples && /usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main.cpp > CMakeFiles/main.dir/main.cpp.i
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main.cpp > CMakeFiles/main.dir/main.cpp.i
 
 examples/CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples && /usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main.cpp -o CMakeFiles/main.dir/main.cpp.s
 
 examples/CMakeFiles/main.dir/main.cpp.o.requires:
 .PHONY : examples/CMakeFiles/main.dir/main.cpp.o.requires

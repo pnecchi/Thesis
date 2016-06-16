@@ -39,9 +39,9 @@ AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_,
 {
 	// Dimensions of observation and action spaces
 	dimState = market.getDimState();
-	dimAction = market.getDimAction();
+	dimAction = market.getDimAction() - 1;
 	dimPastStates = numDaysObserved * dimState;
-	dimObservation = dimPastStates + dimState + dimAction;
+	dimObservation = dimPastStates + dimState + dimAction + 1;
 
 	// Initialize state cache variables
 	pastStates.set_size(dimPastStates);
@@ -49,8 +49,8 @@ AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_,
 	initializeStatesCache();
 
 	// Initialize allocation cache variables
-	currentAllocation.set_size(dimAction);
-	newAllocation.set_size(dimAction);
+	currentAllocation.set_size(dimAction + 1);
+	newAllocation.set_size(dimAction + 1);
 	initializeAllocationCache();
 }
 
@@ -73,10 +73,11 @@ arma::vec AssetAllocationTask::getObservation () const
 void AssetAllocationTask::performAction (arma::vec const &action)
 {
 	// Cache new allocation
-	newAllocation = action;
+	newAllocation(0) = 1 - arma::sum(action);
+	newAllocation.rows(1, newAllocation.size() - 1) = action;
 
 	// Broadcast action to underlying environment
-	market.performAction(action);
+	market.performAction(newAllocation);
 }
 
 double AssetAllocationTask::getReward ()

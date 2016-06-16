@@ -13,14 +13,24 @@
 class Actor
 {
     public:
-        // Default destructor
+        //! Default constructor
+        Actor() = default;
+
+        //! Default copy constructor
+        Actor(Actor const &rhs) = default;
+
+        //! Default destructor
         virtual ~Actor() = default;
 
-        // Get action size
+        //! Get action size
         virtual size_t getDimAction() const=0;
 
-        // Get Action
-        virtual arma::vec getAction(arma::vec const &observation) const = 0;
+        /*!
+         * Select action given an observation of the system.
+         * \param observation_ observation of the system
+         * \return an action
+         */
+        virtual arma::vec getAction(arma::vec const &observation_) const = 0;
 };
 
 

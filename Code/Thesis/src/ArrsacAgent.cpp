@@ -1,22 +1,26 @@
 #include "thesis/ArrsacAgent.h"
 #include <math.h>  /* sqrt */
+#include <iostream>
 
 ARRSACAgent::ARRSACAgent(StochasticActor const & actor_,
                          Critic const & criticV_,
                          Critic const & criticU_,
-                         double alphaBaseline_,
+                         double alphaActor_,
                          double alphaCritic_,
-                         double alphaActor_)
+                         double alphaBaseline_)
     : actor(actor_),
       criticV(criticV_),
       criticU(criticU_),
-      alphaBaseline(alphaBaseline_),
-      alphaCritic(alphaCritic_),
       alphaActor(alphaActor_),
-      averageReward(StatisticsEMA(alphaBaseline)),
-      averageSquareReward(StatisticsEMA(alphaBaseline))
+      alphaCritic(alphaCritic_),
+      alphaBaseline(alphaBaseline_),
+      averageReward(alphaBaseline_),
+      averageSquareReward(alphaBaseline_),
+      observation(actor_.getDimObservation()),
+      action(actor_.getDimAction()),
+      nextObservation(actor_.getDimObservation())
 {
-    //ctor
+    /* Nothing to do */
 }
 
 std::unique_ptr<Agent> ARRSACAgent::clone() const
