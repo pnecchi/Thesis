@@ -25,6 +25,10 @@ thesis/BoltzmannExplorationPolicy.h
 -
 thesis/StochasticActor.h
 -
+thesis/ArrsacAgent.h
+-
+thesis/AssetAllocationExperiment.h
+-
 
 /usr/local/include/armadillo
 cstdlib
@@ -1988,10 +1992,48 @@ armadillo
 memory
 -
 
+include/thesis/Agent.h
+armadillo
+-
+memory
+-
+
+include/thesis/ArrsacAgent.h
+thesis/Agent.h
+-
+thesis/StochasticActor.h
+-
+thesis/Critic.h
+-
+thesis/Statistics.h
+-
+armadillo
+-
+memory
+-
+
+include/thesis/AssetAllocationExperiment.h
+armadillo
+-
+memory
+-
+thesis/AssetAllocationTask.h
+-
+thesis/Agent.h
+-
+thesis/BacktestLog.h
+-
+
 include/thesis/AssetAllocationTask.h
 thesis/MarketEnvironment.h
 -
 armadillo
+-
+
+include/thesis/BacktestLog.h
+armadillo
+-
+ostream
 -
 
 include/thesis/BoltzmannExplorationPolicy.h
@@ -2038,6 +2080,12 @@ armadillo
 memory
 -
 assert.h
+-
+
+include/thesis/Statistics.h
+vector
+-
+memory
 -
 
 include/thesis/StochasticActor.h

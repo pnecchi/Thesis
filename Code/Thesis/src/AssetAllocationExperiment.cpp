@@ -2,8 +2,8 @@
 
 AssetAllocationExperiment::AssetAllocationExperiment(AssetAllocationTask const &task_,
                                                      Agent const &agent_,
-                                                     bool backtestMode_=false,
-                                                     size_t numRecords=0ul)
+                                                     bool backtestMode_,
+                                                     size_t numRecords)
     : task(task_),
       agentPtr(agent_.clone()),
       backtestMode(backtestMode_),

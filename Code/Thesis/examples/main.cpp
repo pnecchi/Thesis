@@ -7,12 +7,18 @@
 #include <thesis/Critic.h>
 #include <thesis/BoltzmannExplorationPolicy.h>
 #include <thesis/StochasticActor.h>
+#include <thesis/ArrsacAgent.h>
+#include <thesis/AssetAllocationExperiment.h>
 
 int main(int argc, char *argv[])
 {
     std::cout << "----------------------------------------------" << std::endl;
     std::cout << "-        Algorithmic Asset Allocation        -" << std::endl;
     std::cout << "----------------------------------------------" << std::endl;
+
+    // 0) Parameters
+    std::cout << "0) Read parameters" << std::endl;
+    // TODO: read parameters from file
 
 	// Market parameters
 	std::string inputFilePath = "../../../Data/Input/synthetic.csv";
@@ -26,65 +32,68 @@ int main(int argc, char *argv[])
 	double deltaS = 0.0;
 	size_t numDaysObserved = 2;
 
+	// Agent parameters
+	double alphaBaseline = 0.1;
+	double alphaCritic = 0.05;
+	double alphaActor = 0.01;
+
+	// Experiment parameters
+	size_t numSteps = 20;
+
+    // 1) Initialization
+    std::cout << "1) Initialization" << std::endl;
+
 	// Market
-	std::cout << ">> Initialize market environment" << std::endl;
+	std::cout << ".. Market environment - ";
 	MarketEnvironment market(inputFilePath, riskFreeRate, startDate, endDate);
+    std::cout << "done" << std::endl;
 
     // Asset allocation task
-    std::cout << ">> Initialize asset allocation task" << std::endl;
+    std::cout << ".. Asset allocation task - ";
 	AssetAllocationTask task(market, deltaP, deltaF, deltaP, numDaysObserved);
+    std::cout << "done" << std::endl;
 
 	// State-value function critic
-	std::cout << ">> Initialize linear regressor" << std::endl;
-	LinearRegressor linearReg(task.getDimObservation());
+	std::cout << ".. Linear regressors - ";
+	LinearRegressor linearRegV(task.getDimObservation());
+	LinearRegressor linearRegU(task.getDimObservation());
+	std::cout << "done" << std::endl;
 
-    // Initialize critic
-    std::cout << ">> Initialize critic" << std::endl;
-    Critic criticV(linearReg);
+    // Initialize critics
+    std::cout << ".. Critics - ";
+    Critic criticV(linearRegV);
+    Critic criticU(linearRegU);
+    std::cout << "done" << std::endl;
 
     // Boltzmann Exploration Policy
-    std::cout << ">> Initialize Boltzmann stochastic policy" << std::endl;
+    std::cout << ".. Boltzmann stochastic policy - ";
     std::vector<double> possibleAction {-1.0, 0.0, 1.0};
     BoltzmannExplorationPolicy policy(task.getDimObservation(), possibleAction);
+    std::cout << "done" << std::endl;
 
     // Stochastic Actor
-    std::cout << ">> Initialize actor" << std::endl;
+    std::cout << ".. Actor - ";
     StochasticActor actor(policy);
+    std::cout << "done" << std::endl;
 
-    arma::vec observation(task.getDimObservation());
-    arma::vec action(task.getDimAction());
-    arma::vec likScore(actor.getDimParameters());
-    double reward;
+    // ARSSAC Agent
+    std::cout << ".. ARRSAC Agent - ";
+    ARRSACAgent agent(actor,
+                      criticV,
+                      criticU,
+                      alphaActor,
+                      alphaCritic,
+                      alphaBaseline);
+    std::cout << "done" << std::endl;
 
-    std::cout << ">> 1st interaction" << std::endl;
-    std::cout << "Observation: " << std::endl;
-    observation = task.getObservation();
-    observation.print(std::cout);
-    std::cout << "Action:" << std::endl;
-    action = actor.getAction(observation);
-    action.print(std::cout);
-    task.performAction(action);
-    reward = task.getReward();
-    std::cout << "Reward: " << reward << std::endl;
-    std::cout << "Critic: " << criticV.evaluate(observation) << std::endl;
-    likScore = actor.likelihoodScore(observation, action);
-    std::cout << "Likelihood score:" << std::endl;
-    likScore.print(std::cout);
+    // Asset allocation experiment
+    std::cout << ".. Asset allocation experiment - ";
+    AssetAllocationExperiment experiment(task, agent);
+    std::cout << "done" << std::endl;
 
-    std::cout << ">> 2nd interaction" << std::endl;
-    std::cout << "Observation: " << std::endl;
-    observation = task.getObservation();
-    observation.print(std::cout);
-    std::cout << "Action:" << std::endl;
-    action = actor.getAction(observation);
-    action.print(std::cout);
-    task.performAction(action);
-    reward = task.getReward();
-    std::cout << "Reward: " << reward << std::endl;
-    std::cout << "Critic: " << criticV.evaluate(observation) << std::endl;
-    likScore = actor.likelihoodScore(observation, action);
-    std::cout << "Likelihood score:" << std::endl;
-    likScore.print(std::cout);
+    // 2) Run experiment
+    // std::cout << "2) Experiment" << std::endl;
+    // experiment.run(numSteps);
 
 	return 0;
 }

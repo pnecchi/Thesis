@@ -24,9 +24,9 @@ class ARRSACAgent : public Agent
         ARRSACAgent(StochasticActor const & actor_,
                     Critic const & criticV_,
                     Critic const & criticU_,
-                    double alphaBaseline,
-                    double alphaCritic,
-                    double alphaActor);
+                    double alphaActor_,
+                    double alphaCritic_,
+                    double alphaBaseline_);
 
         // Default destructor
         virtual ~ARRSACAgent() = default;

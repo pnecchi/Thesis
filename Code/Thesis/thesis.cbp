@@ -45,13 +45,6 @@
          <Option compiler="gcc" />
          <Compiler>
             <Add directory="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
@@ -69,13 +62,6 @@
          <Option compiler="gcc" />
          <Compiler>
             <Add directory="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
@@ -93,13 +79,6 @@
          <Option compiler="gcc" />
          <Compiler>
             <Add directory="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>
@@ -117,13 +96,6 @@
          <Option compiler="gcc" />
          <Compiler>
             <Add directory="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
             <Add directory="/usr/local/include" />
          </Compiler>
          <MakeCommands>

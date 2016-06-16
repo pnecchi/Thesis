@@ -18,8 +18,8 @@ class AssetAllocationExperiment
         // Default constructor
         AssetAllocationExperiment(AssetAllocationTask const &task_,
                                   Agent const &agent_,
-                                  bool backtestMode_,
-                                  size_t numRecords);
+                                  bool backtestMode_=false,
+                                  size_t numRecords=0ul);
 
         // Default destructor
         virtual ~AssetAllocationExperiment() = default;

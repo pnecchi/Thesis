@@ -1,1 +1,0 @@
-/usr/bin/g++    -std=c++11 -fPIC -O3 -DNDEBUG   CMakeFiles/first.dir/main_first.cpp.o  -o first -rdynamic ../libthesis.a /usr/local/lib/libarmadillo.so -Wl,-rpath,/usr/local/lib 
