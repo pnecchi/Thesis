@@ -54,4 +54,19 @@ class StatisticsEMA : public Statistics
         double learningRate;
 };
 
+
+class StatisticsExperiment : public Statistics
+{
+    public:
+        StatisticsExperiment() = default;
+        virtual std::unique_ptr<Statistics> clone() const;
+        virtual void dumpOneResult(double result);
+        virtual std::vector<std::vector<double>> getStatistics() const;
+
+    private:
+        StatisticsAverage averageReward;
+        StatisticsAverage averageSquareReward;
+};
+
+
 #endif // STATISTICS_H

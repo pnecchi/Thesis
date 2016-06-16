@@ -2023,6 +2023,8 @@ thesis/Agent.h
 -
 thesis/BacktestLog.h
 -
+thesis/Statistics.h
+-
 
 include/thesis/AssetAllocationTask.h
 thesis/MarketEnvironment.h

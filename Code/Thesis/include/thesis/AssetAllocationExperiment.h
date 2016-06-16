@@ -6,6 +6,7 @@
 #include <thesis/AssetAllocationTask.h>
 #include <thesis/Agent.h>
 #include <thesis/BacktestLog.h>
+#include <thesis/Statistics.h>
 
 /**
  * An AssetAllocationExperiment handles the interactions between the
@@ -54,7 +55,8 @@ class AssetAllocationExperiment
         arma::vec actionCache;
         double rewardCache;
 
-        // TODO: Add experiment statistics class
+        // Experiment statistics
+        StatisticsExperiment experimentStats;
 };
 
 #endif // ASSETALLOCATIONEXPERIMENT_H

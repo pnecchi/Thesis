@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	double deltaP = 0.0005;
 	double deltaF = 0.0;
 	double deltaS = 0.0;
-	size_t numDaysObserved = 2;
+	size_t numDaysObserved = 5;
 
 	// Agent parameters
 	double alphaBaseline = 0.05;
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	double alphaActor = 0.005;
 
 	// Experiment parameters
-	size_t numSteps = 1900;
+	size_t numSteps = 5000;
 
     // 1) Initialization
     std::cout << "1) Initialization" << std::endl;

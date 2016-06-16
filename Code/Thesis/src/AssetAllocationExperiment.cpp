@@ -49,6 +49,9 @@ void AssetAllocationExperiment::interact()
     // 5) Backtest
     if (backtestMode)
         blog.insertRecord(actionCache, rewardCache);
+
+    // 6) Dump results in statistics gatherer
+    experimentStats.dumpOneResult(rewardCache);
 }
 
 void AssetAllocationExperiment::run(size_t numSteps)
@@ -59,5 +62,14 @@ void AssetAllocationExperiment::run(size_t numSteps)
         interact();
         // Learning step
         agentPtr->learn();
+
+        if ((n + 1) % 50 == 0)
+        {
+            std::vector<std::vector<double>> stats = experimentStats.getStatistics();
+            std::cout << "Average: " << stats[0][0]
+                      << " - Standard Deviation: " << stats[0][1]
+                      << " - Sharpe ratio: " << stats[0][2] << std::endl;
+        }
+
     }
 }

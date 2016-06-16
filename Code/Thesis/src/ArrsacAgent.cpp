@@ -79,10 +79,4 @@ void ARRSACAgent::learn()
     arma::vec newParametersActor = actor.getParameters() +
         alphaActor * coeffGradientSR * actor.likelihoodScore(observation, action);
     actor.setParameters(newParametersActor);
-
-    // Print scores
-    // TODO: Dump these values in experiment statistics
-    std::cout << "rho: " << rho <<
-                 " - sqrtLambda: " << sqrtLambda <<
-                 " - sharpe: " << rho / sqrtLambda << std::endl;
 }
