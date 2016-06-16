@@ -44,13 +44,13 @@ class StatisticsAverage : public Statistics
 class StatisticsEMA : public Statistics
 {
     public:
-        StatisticsEMA(double decayRate_);
+        StatisticsEMA(double learningRate_);
         virtual std::unique_ptr<Statistics> clone() const;
         virtual void dumpOneResult(double result);
         virtual std::vector<std::vector<double>> getStatistics() const;
+        double getLearningRate() const { return learningRate; }
     private:
         double EMA;
-        double decayRate;
         double learningRate;
 };
 

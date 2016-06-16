@@ -33,12 +33,12 @@ int main(int argc, char *argv[])
 	size_t numDaysObserved = 2;
 
 	// Agent parameters
-	double alphaBaseline = 0.1;
-	double alphaCritic = 0.05;
-	double alphaActor = 0.01;
+	double alphaBaseline = 0.05;
+	double alphaCritic = 0.01;
+	double alphaActor = 0.005;
 
 	// Experiment parameters
-	size_t numSteps = 20;
+	size_t numSteps = 1900;
 
     // 1) Initialization
     std::cout << "1) Initialization" << std::endl;
@@ -92,8 +92,8 @@ int main(int argc, char *argv[])
     std::cout << "done" << std::endl;
 
     // 2) Run experiment
-    // std::cout << "2) Experiment" << std::endl;
-    // experiment.run(numSteps);
+    std::cout << "2) Experiment" << std::endl;
+    experiment.run(numSteps);
 
 	return 0;
 }

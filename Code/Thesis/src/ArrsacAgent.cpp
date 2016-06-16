@@ -1,5 +1,6 @@
 #include "thesis/ArrsacAgent.h"
 #include <math.h>  /* sqrt */
+#include <iostream>
 
 ARRSACAgent::ARRSACAgent(StochasticActor const & actor_,
                          Critic const & criticV_,
@@ -13,10 +14,13 @@ ARRSACAgent::ARRSACAgent(StochasticActor const & actor_,
       alphaActor(alphaActor_),
       alphaCritic(alphaCritic_),
       alphaBaseline(alphaBaseline_),
-      averageReward(StatisticsEMA(1.0 - alphaBaseline)),
-      averageSquareReward(StatisticsEMA(1.0 - alphaBaseline))
+      averageReward(alphaBaseline_),
+      averageSquareReward(alphaBaseline_),
+      observation(actor_.getDimObservation()),
+      action(actor_.getDimAction()),
+      nextObservation(actor_.getDimObservation())
 {
-    //ctor
+    /* Nothing to do */
 }
 
 std::unique_ptr<Agent> ARRSACAgent::clone() const
@@ -76,6 +80,8 @@ void ARRSACAgent::learn()
         alphaActor * coeffGradientSR * actor.likelihoodScore(observation, action);
     actor.setParameters(newParametersActor);
 
+    // Print scores
+    // TODO: Dump these values in experiment statistics
     std::cout << "rho: " << rho <<
                  " - sqrtLambda: " << sqrtLambda <<
                  " - sharpe: " << rho / sqrtLambda << std::endl;
