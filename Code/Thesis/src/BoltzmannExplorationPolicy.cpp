@@ -2,6 +2,7 @@
 #include <cmath>   /* abs */
 #include <limits>  /* eps */
 #include <random>
+#include <iostream>
 
 BoltzmannExplorationPolicy::BoltzmannExplorationPolicy(size_t dimObservation_,
                                                        std::vector<double> possibleActions_)
@@ -57,23 +58,28 @@ arma::vec BoltzmannExplorationPolicy::getAction(arma::vec const &observation_) c
     return action;
 }
 
-arma::vec BoltzmannExplorationPolicy::likelihoodScore(arma::vec const &observation,
-                                                      arma::vec const &action) const
+arma::vec BoltzmannExplorationPolicy::likelihoodScore(arma::vec const &observation_,
+                                                      arma::vec const &action_) const
 {
+    // Compute features
+    arma::vec features(dimParametersPerAction);
+    features(0) = 1.0;
+    features.rows(1, features.n_elem - 1) = observation_;
+
     // Compute likelihood score
     arma::vec likScore(dimParameters);
     double coeff = 0.0;
     for (size_t i = 0; i < numPossibleActions; ++i)
     {
         // Compute coefficient for the different actions
-        if (std::abs(action[0] - possibleActions[i]) < std::numeric_limits<double>::epsilon())
+        if (std::abs(action_[0] - possibleActions[i]) < std::numeric_limits<double>::epsilon())
             coeff = 1.0 - boltzmannProbabilities[i];
         else
             coeff = - boltzmannProbabilities[i];
 
         // Compute likScore associated to the given action
         likScore.rows(i * dimParametersPerAction, (i + 1) * dimParametersPerAction - 1)
-            = coeff * observation;
+            = coeff * features;
     }
     return likScore;
 }

@@ -6,6 +6,7 @@
 #include <thesis/LinearRegressor.h>
 #include <thesis/Critic.h>
 #include <thesis/BoltzmannExplorationPolicy.h>
+#include <thesis/StochasticActor.h>
 
 int main(int argc, char *argv[])
 {
@@ -46,10 +47,13 @@ int main(int argc, char *argv[])
     std::vector<double> possibleAction {-1.0, 0.0, 1.0};
     BoltzmannExplorationPolicy policy(task.getDimObservation(), possibleAction);
 
+    // Stochastic Actor
+    std::cout << ">> Initialize actor" << std::endl;
+    StochasticActor actor(policy);
+
     arma::vec observation(task.getDimObservation());
     arma::vec action(task.getDimAction());
-    action.zeros();
-    action(1) = 1.0;
+    arma::vec likScore(actor.getDimParameters());
     double reward;
 
     std::cout << ">> 1st interaction" << std::endl;
@@ -57,39 +61,30 @@ int main(int argc, char *argv[])
     observation = task.getObservation();
     observation.print(std::cout);
     std::cout << "Action:" << std::endl;
+    action = actor.getAction(observation);
     action.print(std::cout);
     task.performAction(action);
     reward = task.getReward();
     std::cout << "Reward: " << reward << std::endl;
     std::cout << "Critic: " << criticV.evaluate(observation) << std::endl;
+    likScore = actor.likelihoodScore(observation, action);
+    std::cout << "Likelihood score:" << std::endl;
+    likScore.print(std::cout);
 
     std::cout << ">> 2nd interaction" << std::endl;
     std::cout << "Observation: " << std::endl;
     observation = task.getObservation();
     observation.print(std::cout);
     std::cout << "Action:" << std::endl;
+    action = actor.getAction(observation);
     action.print(std::cout);
     task.performAction(action);
     reward = task.getReward();
     std::cout << "Reward: " << reward << std::endl;
     std::cout << "Critic: " << criticV.evaluate(observation) << std::endl;
-
-    std::cout << "Critic parameters:" << std::endl;
-    arma::vec parameters = criticV.getParameters();
-    parameters.print(std::cout);
-    parameters(0) *= 2.0;
-    std::cout << "New parameters:" << std::endl;
-    parameters.print(std::cout);
-    criticV.setParameters(parameters);
-    parameters = criticV.getParameters();
-    std::cout << "New Critic parameters:" << std::endl;
-    parameters.print(std::cout);
-
-    arma::vec gradient = criticV.gradient(observation);
-    std::cout << "Critic gradient" << std::endl;
-    gradient.print(std::cout);
-
-    std::cout << "Critic parameters size: " << criticV.getDimParameters();
+    likScore = actor.likelihoodScore(observation, action);
+    std::cout << "Likelihood score:" << std::endl;
+    likScore.print(std::cout);
 
 	return 0;
 }
