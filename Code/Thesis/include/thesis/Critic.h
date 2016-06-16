@@ -5,40 +5,78 @@
 #include <memory>
 #include <thesis/FunctionApproximator.h>
 
+/*!
+ * Critic implements the generic interface of a critic for a state-value
+ * function. It is based on the FunctionApproximator hierarchy by composition,
+ * so that different function approximators can be easily used as the core of
+ * critic.
+ */
+
 class Critic
 {
     public:
-        // Default constructor
+        /*!
+         * Constructor.
+         * Initialize a critic using a function approximator.
+         * \param approximator_ function approximator
+         */
         Critic(FunctionApproximator const &approximator_)
             : approximatorPtr(approximator_.clone()) {}
 
-        // Copy constructor
-        Critic(Critic const &critic_)
-            : approximatorPtr(critic_.approximatorPtr->clone()) {}
+        /*!
+         * Copy constructor.
+         * \param rhs critic to copy
+         */
+        Critic(Critic const &rhs)
+            : approximatorPtr(rhs.approximatorPtr->clone()) {}
 
-        // Default destructor
+        //! Default destructor
         virtual ~Critic() = default;
 
-        // Get sizes
+        /*!
+         * Get method for the input dimention.
+         * \return input size
+         */
         size_t getDimInput() const { return approximatorPtr->getDimInput(); }
+
+        /*!
+         * Get method for the parameters dimension.
+         * \return parameters size
+         */
         size_t getDimParameters() const { return approximatorPtr->getDimParameters(); }
 
-        // Getter and setter methods for parameters
+        /*!
+         * Get method for the critic parameters.
+         * \return parameters stored in an arma::vector
+         */
         arma::vec getParameters() const
             { return approximatorPtr->getParameters(); }
-        void setParameters(arma::vec const &parameters)
-            { approximatorPtr->setParameters(parameters); }
 
-        // Evaluate
-        double evaluate(arma::vec &observation) const
-            { return approximatorPtr->evaluate(observation); }
+        /*!
+         * Set method for the critic parameters.
+         * \param parameters_ the new parameters stored in an arma::vector
+         */
+        void setParameters(arma::vec const &parameters_)
+            { approximatorPtr->setParameters(parameters_); }
 
-        // Gradient
+        /*!
+         * Evaluate the critic for a given observation.
+         * \param observation_ observation
+         * \return evaluation of the critic for this observation
+         */
+        double evaluate(arma::vec &observation_) const
+            { return approximatorPtr->evaluate(observation_); }
+
+        /*!
+         * Evaluate the critic's gradient wrt the parameters.
+         * \param observation_ observation
+         * \return evaluation of the critic's gradient for this observation
+         */
         arma::vec gradient(arma::vec const &observation) const
             { return approximatorPtr->gradient(observation); }
 
     private:
-        // Function approximator
+        //! Function approximator
         std::unique_ptr<FunctionApproximator> approximatorPtr;
 };
 

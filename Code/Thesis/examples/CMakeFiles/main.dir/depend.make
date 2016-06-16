@@ -477,7 +477,11 @@ examples/CMakeFiles/main.dir/main.cpp.o: /usr/local/include/armadillo_bits/xtran
 examples/CMakeFiles/main.dir/main.cpp.o: /usr/local/include/armadillo_bits/xvec_htrans_bones.hpp
 examples/CMakeFiles/main.dir/main.cpp.o: /usr/local/include/armadillo_bits/xvec_htrans_meat.hpp
 examples/CMakeFiles/main.dir/main.cpp.o: include/thesis/AssetAllocationTask.h
+examples/CMakeFiles/main.dir/main.cpp.o: include/thesis/BoltzmannExplorationPolicy.h
+examples/CMakeFiles/main.dir/main.cpp.o: include/thesis/Critic.h
 examples/CMakeFiles/main.dir/main.cpp.o: include/thesis/FunctionApproximator.h
 examples/CMakeFiles/main.dir/main.cpp.o: include/thesis/LinearRegressor.h
 examples/CMakeFiles/main.dir/main.cpp.o: include/thesis/MarketEnvironment.h
+examples/CMakeFiles/main.dir/main.cpp.o: include/thesis/Policy.h
+examples/CMakeFiles/main.dir/main.cpp.o: include/thesis/StochasticPolicy.h
 

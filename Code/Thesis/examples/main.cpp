@@ -4,6 +4,8 @@
 #include <thesis/MarketEnvironment.h>
 #include <thesis/AssetAllocationTask.h>
 #include <thesis/LinearRegressor.h>
+#include <thesis/Critic.h>
+#include <thesis/BoltzmannExplorationPolicy.h>
 
 int main(int argc, char *argv[])
 {
@@ -32,10 +34,17 @@ int main(int argc, char *argv[])
 	AssetAllocationTask task(market, deltaP, deltaF, deltaP, numDaysObserved);
 
 	// State-value function critic
-	std::cout << ">> Initialize state-value function critic" << std::endl;
-	LinearRegressor criticV(task.getDimObservation());
+	std::cout << ">> Initialize linear regressor" << std::endl;
+	LinearRegressor linearReg(task.getDimObservation());
 
+    // Initialize critic
+    std::cout << ">> Initialize critic" << std::endl;
+    Critic criticV(linearReg);
 
+    // Boltzmann Exploration Policy
+    std::cout << ">> Initialize Boltzmann stochastic policy" << std::endl;
+    std::vector<double> possibleAction {-1.0, 0.0, 1.0};
+    BoltzmannExplorationPolicy policy(task.getDimObservation(), possibleAction);
 
     arma::vec observation(task.getDimObservation());
     arma::vec action(task.getDimAction());

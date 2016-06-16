@@ -19,6 +19,10 @@ thesis/AssetAllocationTask.h
 -
 thesis/LinearRegressor.h
 -
+thesis/Critic.h
+-
+thesis/BoltzmannExplorationPolicy.h
+-
 
 /usr/local/include/armadillo
 cstdlib
@@ -1982,6 +1986,24 @@ thesis/MarketEnvironment.h
 armadillo
 -
 
+include/thesis/BoltzmannExplorationPolicy.h
+thesis/StochasticPolicy.h
+-
+armadillo
+-
+vector
+-
+random
+-
+
+include/thesis/Critic.h
+armadillo
+-
+memory
+-
+thesis/FunctionApproximator.h
+-
+
 include/thesis/FunctionApproximator.h
 armadillo
 -
@@ -2000,5 +2022,21 @@ armadillo
 vector
 -
 string
+-
+
+include/thesis/Policy.h
+armadillo
+-
+memory
+-
+assert.h
+-
+
+include/thesis/StochasticPolicy.h
+armadillo
+-
+memory
+-
+thesis/Policy.h
 -
 
