@@ -247,6 +247,30 @@ src/BoltzmannExplorationPolicy.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannExplorationPolicy.cpp.s
 .PHONY : src/BoltzmannExplorationPolicy.cpp.s
 
+src/ExperimentParameters.o: src/ExperimentParameters.cpp.o
+.PHONY : src/ExperimentParameters.o
+
+# target to build an object file
+src/ExperimentParameters.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/ExperimentParameters.cpp.o
+.PHONY : src/ExperimentParameters.cpp.o
+
+src/ExperimentParameters.i: src/ExperimentParameters.cpp.i
+.PHONY : src/ExperimentParameters.i
+
+# target to preprocess a source file
+src/ExperimentParameters.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/ExperimentParameters.cpp.i
+.PHONY : src/ExperimentParameters.cpp.i
+
+src/ExperimentParameters.s: src/ExperimentParameters.cpp.s
+.PHONY : src/ExperimentParameters.s
+
+# target to generate assembly for a file
+src/ExperimentParameters.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/ExperimentParameters.cpp.s
+.PHONY : src/ExperimentParameters.cpp.s
+
 src/LinearRegressor.o: src/LinearRegressor.cpp.o
 .PHONY : src/LinearRegressor.o
 
@@ -368,6 +392,9 @@ help:
 	@echo "... src/BoltzmannExplorationPolicy.o"
 	@echo "... src/BoltzmannExplorationPolicy.i"
 	@echo "... src/BoltzmannExplorationPolicy.s"
+	@echo "... src/ExperimentParameters.o"
+	@echo "... src/ExperimentParameters.i"
+	@echo "... src/ExperimentParameters.s"
 	@echo "... src/LinearRegressor.o"
 	@echo "... src/LinearRegressor.i"
 	@echo "... src/LinearRegressor.s"

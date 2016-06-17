@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <armadillo>
+#include <thesis/ExperimentParameters.h>
 #include <thesis/MarketEnvironment.h>
 #include <thesis/AssetAllocationTask.h>
 #include <thesis/LinearRegressor.h>
@@ -10,42 +11,43 @@
 #include <thesis/ArrsacAgent.h>
 #include <thesis/AssetAllocationExperiment.h>
 
-int main(int argc, char *argv[])
+int main()
 {
     std::cout << "----------------------------------------------" << std::endl;
     std::cout << "-        Algorithmic Asset Allocation        -" << std::endl;
     std::cout << "----------------------------------------------" << std::endl;
+    std::cout << std::endl;
 
     // 0) Parameters
     std::cout << "0) Read parameters" << std::endl;
-    // TODO: read parameters from file
+    std::string parametersFilepath  = "../../../Data/Parameters/ParametersARRSAC.pot";
+    const ExperimentParameters params(parametersFilepath, true);
 
-	// Market parameters
-	std::string inputFilePath = "../../../Data/Input/synthetic.csv";
-	double riskFreeRate = 0.0;
-	size_t startDate = 0;
-	size_t endDate = 10;
-
-	// Task parameters
-	double deltaP = 0.0005;
-	double deltaF = 0.0;
-	double deltaS = 0.0;
-	size_t numDaysObserved = 5;
-
-	// Agent parameters
-	double alphaBaseline = 0.05;
-	double alphaCritic = 0.01;
-	double alphaActor = 0.005;
-
-	// Experiment parameters
-	size_t numSteps = 5000;
+    // Copy parameters
+    std::string inputDataPath = params.inputDataPath;
+    std::string outputDataPath = params.outputDataPath;
+    std::string debugDataPath = params.debugDataPath;
+    double riskFreeRate = params.riskFreeRate;
+    double deltaP = params.deltaP;
+    double deltaF = params.deltaF;
+    double deltaS = params.deltaS;
+    size_t numDaysObserved = params.numDaysObserved;
+    double alphaActor = params.alphaActor;
+    double alphaCritic = params.alphaCritic;
+    double alphaBaseline = params.alphaBaseline;
+    size_t numExperiments = params.numExperiments;
+    size_t numEpochs = params.numEpochs;
+    size_t numTrainingSteps = params.numTrainingSteps;
+    size_t numTestSteps = params.numTestSteps;
 
     // 1) Initialization
-    std::cout << "1) Initialization" << std::endl;
+    std::cout << std::endl << "1) Initialization" << std::endl;
 
 	// Market
 	std::cout << ".. Market environment - ";
-	MarketEnvironment market(inputFilePath, riskFreeRate, startDate, endDate);
+	size_t startDate = 0;
+	size_t endDate = numTrainingSteps;
+	MarketEnvironment market(inputDataPath, riskFreeRate, startDate, endDate);
     std::cout << "done" << std::endl;
 
     // Asset allocation task
@@ -92,8 +94,8 @@ int main(int argc, char *argv[])
     std::cout << "done" << std::endl;
 
     // 2) Run experiment
-    std::cout << "2) Experiment" << std::endl;
-    experiment.run(numSteps);
+    std::cout << std::endl << "2) Experiment" << std::endl;
+    experiment.run(numTrainingSteps);
 
 	return 0;
 }

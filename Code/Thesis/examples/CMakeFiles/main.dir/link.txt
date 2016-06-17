@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=c++11 -fPIC -g   CMakeFiles/main.dir/main.cpp.o  -o main -rdynamic ../libthesis.a /usr/local/lib/libarmadillo.so -Wl,-rpath,/usr/local/lib 
