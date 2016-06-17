@@ -26,6 +26,12 @@ std::vector<std::vector<double>> StatisticsAverage::getStatistics() const
     return results;
 }
 
+void StatisticsAverage::reset()
+{
+    runningSum = 0.0;
+    nResults = 0;
+}
+
 StatisticsEMA::StatisticsEMA(double learningRate_)
     : EMA(0.0),
       learningRate(learningRate_)
@@ -50,6 +56,11 @@ std::vector<std::vector<double>> StatisticsEMA::getStatistics() const
     results[0].resize(1);
     results[0][0] = EMA;
     return results;
+}
+
+void StatisticsEMA::reset()
+{
+    EMA = 0.0;
 }
 
 std::unique_ptr<Statistics> StatisticsExperiment::clone() const
@@ -78,4 +89,11 @@ std::vector<std::vector<double>> StatisticsExperiment::getStatistics() const
     // Sharpe ratio
     result[0][2] = result[0][0] / result[0][1];
     return result;
+}
+
+
+void StatisticsExperiment::reset()
+{
+    averageReward.reset();
+    averageSquareReward.reset();
 }

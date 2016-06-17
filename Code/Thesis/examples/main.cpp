@@ -90,12 +90,17 @@ int main()
 
     // Asset allocation experiment
     std::cout << ".. Asset allocation experiment - ";
-    AssetAllocationExperiment experiment(task, agent);
+    AssetAllocationExperiment experiment(task,
+                                         agent,
+                                         numExperiments,
+                                         numEpochs,
+                                         numTrainingSteps,
+                                         numTestSteps);
     std::cout << "done" << std::endl;
 
     // 2) Run experiment
     std::cout << std::endl << "2) Experiment" << std::endl;
-    experiment.run(numTrainingSteps);
+    experiment.run();
 
 	return 0;
 }

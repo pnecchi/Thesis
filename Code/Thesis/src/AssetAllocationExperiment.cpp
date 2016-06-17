@@ -1,36 +1,26 @@
 #include "thesis/AssetAllocationExperiment.h"
+#include <fstream>
 
 AssetAllocationExperiment::AssetAllocationExperiment(AssetAllocationTask const &task_,
                                                      Agent const &agent_,
-                                                     bool backtestMode_,
-                                                     size_t numRecords)
+                                                     size_t numExperiments_,
+                                                     size_t numEpochs_,
+                                                     size_t numTrainingSteps_,
+                                                     size_t numTestSteps_)
     : task(task_),
       agentPtr(agent_.clone()),
-      backtestMode(backtestMode_),
-      blog(task.getDimAction(), numRecords),
+      numExperiments(numExperiments_),
+      numEpochs(numEpochs_),
+      numTrainingSteps(numTrainingSteps_),
+      numTestSteps(numTestSteps_),
+      blog(task.getDimAction(), numTestSteps),
       actionCache(task.getDimAction()),
       rewardCache(0.0)
 {
     /* Nothing to do */
 }
 
-void AssetAllocationExperiment::setEvaluationInterval (size_t startDate_,
-                                                       size_t endDate_)
-{
-    task.setEvaluationInterval(startDate_, endDate_);
-}
-
-void AssetAllocationExperiment::resetTask()
-{
-    task.reset();
-}
-
-void AssetAllocationExperiment::setBacktestMode(bool backtestMode_)
-{
-    backtestMode = backtestMode_;
-}
-
-void AssetAllocationExperiment::interact()
+void AssetAllocationExperiment::oneInteraction()
 {
     // 1) Get observation
     agentPtr->receiveObservation(task.getObservation());
@@ -54,22 +44,46 @@ void AssetAllocationExperiment::interact()
     experimentStats.dumpOneResult(rewardCache);
 }
 
-void AssetAllocationExperiment::run(size_t numSteps)
+void AssetAllocationExperiment::run()
 {
-    for(size_t n = 0; n < numSteps; n++)
-    {
-        // Interaction between the task and the agent
-        interact();
-        // Learning step
-        agentPtr->learn();
+    std::ofstream debugFile;
+    debugFile.open("../../../Data/Debug/debugExperiment1.csv" );
+    debugFile << "epoch,average,stdev,sharpe,\n";
 
-        if ((n + 1) % 50 == 0)
+    for (size_t exp = 0; exp < numExperiments; ++exp)
+    {
+        // Training
+        for (size_t epoch = 0; epoch < numEpochs; ++epoch)
         {
+
+
+            for (size_t step = 0; step < numTrainingSteps; ++step)
+            {
+                // Interaction between the task and the agent
+                oneInteraction();
+
+                // Learning step
+                agentPtr->learn();
+            }
+
+            //
             std::vector<std::vector<double>> stats = experimentStats.getStatistics();
-            std::cout << "Average: " << stats[0][0]
+            std::cout << "Epoch #" << epoch
+                      << " - Average: " << stats[0][0]
                       << " - Standard Deviation: " << stats[0][1]
                       << " - Sharpe ratio: " << stats[0][2] << std::endl;
+
+            debugFile << epoch << "," << stats[0][0] << "," << stats[0][1]
+                      << "," << stats[0][2] << ",\n";
+
+            // Reset task and statistics
+            task.reset();
+            experimentStats.reset();
         }
 
+        // Test
+        // TODO: implement test and backtest log
     }
+
+    debugFile.close();
 }

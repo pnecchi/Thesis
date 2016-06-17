@@ -19,27 +19,26 @@ class AssetAllocationExperiment
         // Default constructor
         AssetAllocationExperiment(AssetAllocationTask const &task_,
                                   Agent const &agent_,
-                                  bool backtestMode_=false,
-                                  size_t numRecords=0ul);
+                                  size_t numExperiments_,
+                                  size_t numEpochs_,
+                                  size_t numTrainingSteps_,
+                                  size_t numTestSteps_);
 
         // Default destructor
         virtual ~AssetAllocationExperiment() = default;
 
-        // Set evaluation interval for the allocation task
-        void setEvaluationInterval (size_t startDate_, size_t endDate_);
-
-        // Reset task
-        void resetTask();
-
-        // Set backtesting mode
-        void setBacktestMode(bool backtestMode_);
-
         // Run experiment
-        void run(size_t numSteps);
+        void run();
 
     private:
         // Interaction agent-task
-        void interact();
+        void oneInteraction();
+
+        // Experiment sizes
+        size_t numExperiments;
+        size_t numEpochs;
+        size_t numTrainingSteps;
+        size_t numTestSteps;
 
         // Asset allocation task
         AssetAllocationTask task;

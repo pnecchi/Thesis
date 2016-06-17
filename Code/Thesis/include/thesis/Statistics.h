@@ -22,6 +22,7 @@ class Statistics
 
         virtual void dumpOneResult(double result) = 0;
         virtual std::vector<std::vector<double>> getStatistics() const = 0;
+        virtual void reset() = 0;
 };
 
 
@@ -32,6 +33,7 @@ class StatisticsAverage : public Statistics
         virtual std::unique_ptr<Statistics> clone() const;
         virtual void dumpOneResult(double result);
         virtual std::vector<std::vector<double>> getStatistics() const;
+        virtual void reset();
     private:
         double runningSum;
         size_t nResults;
@@ -48,7 +50,7 @@ class StatisticsEMA : public Statistics
         virtual std::unique_ptr<Statistics> clone() const;
         virtual void dumpOneResult(double result);
         virtual std::vector<std::vector<double>> getStatistics() const;
-        double getLearningRate() const { return learningRate; }
+        virtual void reset();
     private:
         double EMA;
         double learningRate;
@@ -62,7 +64,7 @@ class StatisticsExperiment : public Statistics
         virtual std::unique_ptr<Statistics> clone() const;
         virtual void dumpOneResult(double result);
         virtual std::vector<std::vector<double>> getStatistics() const;
-
+        virtual void reset();
     private:
         StatisticsAverage averageReward;
         StatisticsAverage averageSquareReward;

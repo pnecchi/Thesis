@@ -105,14 +105,15 @@ double AssetAllocationTask::getReward ()
 void AssetAllocationTask::reset()
 {
     market.reset();
+    initializeStatesCache();
+    initializeAllocationCache();
 }
 
 void AssetAllocationTask::setEvaluationInterval (size_t startDate_,
 												 size_t endDate_)
 {
 	market.setEvaluationInterval(startDate_, endDate_);
-	initializeStatesCache();
-	initializeAllocationCache();
+    reset();
 }
 
 double AssetAllocationTask::computePortfolioSimpleReturn () const
