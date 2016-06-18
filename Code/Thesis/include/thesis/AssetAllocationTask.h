@@ -16,6 +16,7 @@ class AssetAllocationTask
     public:
         // Constructor
         AssetAllocationTask (MarketEnvironment const & market_,
+                             double riskFreeRate_,
                              double deltaP_,
                              double deltaF_,
                              double deltaS_,
@@ -59,6 +60,9 @@ class AssetAllocationTask
 
         // Underlying market environment
         MarketEnvironment market;
+
+        // Risk-free rate
+        double riskFreeRate;
 
         // Transaction costs constants
         double deltaP;

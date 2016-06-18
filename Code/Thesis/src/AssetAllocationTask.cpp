@@ -23,15 +23,16 @@ void AssetAllocationTask::initializeStatesCache()
 void AssetAllocationTask::initializeAllocationCache()
 {
 	currentAllocation.zeros();
-	currentAllocation(0) = 1.0;
 }
 
 AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_,
+                                          double riskFreeRate_,
 										  double deltaP_,
 										  double deltaF_,
 										  double deltaS_,
 										  size_t numDaysObserved_)
 	: market(market_),
+	  riskFreeRate(riskFreeRate_),
 	  deltaP(deltaP_),
 	  deltaF(deltaF_),
 	  deltaS(deltaS_),
@@ -39,9 +40,9 @@ AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_,
 {
 	// Dimensions of observation and action spaces
 	dimState = market.getDimState();
-	dimAction = market.getDimAction() - 1;
+	dimAction = market.getDimAction();
 	dimPastStates = numDaysObserved * dimState;
-	dimObservation = dimPastStates + dimState + dimAction + 1;
+	dimObservation = 1 + dimPastStates + dimState + dimAction;
 
 	// Initialize state cache variables
 	pastStates.set_size(dimPastStates);
@@ -49,8 +50,8 @@ AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_,
 	initializeStatesCache();
 
 	// Initialize allocation cache variables
-	currentAllocation.set_size(dimAction + 1);
-	newAllocation.set_size(dimAction + 1);
+	currentAllocation.set_size(dimAction);
+	newAllocation.set_size(dimAction);
 	initializeAllocationCache();
 }
 
@@ -58,14 +59,17 @@ arma::vec AssetAllocationTask::getObservation () const
 {
 	arma::vec observation(dimObservation);
 
+    // Risk-free rate
+    observation(0) = riskFreeRate;
+
 	// Past states
-	observation.rows(0, dimPastStates-1) = pastStates;
+	observation.rows(1, dimPastStates) = pastStates;
 
 	// Current state
-	observation.rows(dimPastStates, dimPastStates + dimState - 1) = currentState;
+	observation.rows(dimPastStates + 1, dimPastStates + dimState) = currentState;
 
 	// Current allocation
-	observation.rows(dimPastStates + dimState, observation.size() - 1) = currentAllocation;
+	observation.rows(dimPastStates + dimState + 1, observation.size() - 1) = currentAllocation;
 
 	return observation;
 }
@@ -73,8 +77,7 @@ arma::vec AssetAllocationTask::getObservation () const
 void AssetAllocationTask::performAction (arma::vec const &action)
 {
 	// Cache new allocation
-	newAllocation(0) = 1 - arma::sum(action);
-	newAllocation.rows(1, newAllocation.size() - 1) = action;
+	newAllocation = action;
 
 	// Broadcast action to underlying environment
 	market.performAction(newAllocation);
@@ -135,7 +138,8 @@ double AssetAllocationTask::computePortfolioSimpleReturn () const
 	double shortTransactionCosts = deltaS * shortPositionsWeight;
 
 	// Trading profit & loss
-	double tradingPL = arma::dot(newAllocation, currentState);
+	double tradingPL = riskFreeRate +
+                       arma::dot(newAllocation, currentState - riskFreeRate);
 
 	// Compute simple portfolio return
 	double portfolioSimpleReturn = tradingPL

@@ -55,8 +55,6 @@ void AssetAllocationExperiment::run()
         // Training
         for (size_t epoch = 0; epoch < numEpochs; ++epoch)
         {
-
-
             for (size_t step = 0; step < numTrainingSteps; ++step)
             {
                 // Interaction between the task and the agent
@@ -80,10 +78,24 @@ void AssetAllocationExperiment::run()
             task.reset();
             experimentStats.reset();
         }
+        debugFile.close();
 
-        // Test
-        // TODO: implement test and backtest log
+        // Backtest
+        for (size_t step = 0; step < numTestSteps; ++step)
+        {
+            // Interaction between the task and the agent
+            oneInteraction();
+
+            // Learning step
+            agentPtr->learn();
+
+            // Log (action, reward) tuple
+            blog.insertRecord(actionCache, rewardCache);
+        }
+
+        std::ofstream backtestFile;
+        backtestFile.open("../../../Data/Debug/backtestExperiment1.csv" );
+        blog.print(backtestFile);
+        backtestFile.close();
     }
-
-    debugFile.close();
 }

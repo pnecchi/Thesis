@@ -47,12 +47,17 @@ int main()
 	std::cout << ".. Market environment - ";
 	size_t startDate = 0;
 	size_t endDate = numTrainingSteps;
-	MarketEnvironment market(inputDataPath, riskFreeRate, startDate, endDate);
+	MarketEnvironment market(inputDataPath, startDate, endDate);
     std::cout << "done" << std::endl;
 
     // Asset allocation task
     std::cout << ".. Asset allocation task - ";
-	AssetAllocationTask task(market, deltaP, deltaF, deltaP, numDaysObserved);
+	AssetAllocationTask task(market,
+                             riskFreeRate,
+                             deltaP,
+                             deltaF,
+                             deltaP,
+                             numDaysObserved);
     std::cout << "done" << std::endl;
 
 	// State-value function critic

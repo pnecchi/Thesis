@@ -17,7 +17,6 @@ class MarketEnvironment
 public:
 	// Constructor
 	MarketEnvironment (std::string inputFilePath,
-					   double riskFreeRate_,
 					   size_t startDate_,
 					   size_t endDate_);
 	MarketEnvironment (MarketEnvironment const &market_) = default;
@@ -33,7 +32,6 @@ public:
 
 	// Get methods
 	std::vector<std::string> getAssetsSymbols() const { return assetSymbols; }
-	double getRiskFreeRate() const { return riskFreeRate; }
 
 	size_t getNumDays() const { return numDays; }
 	size_t getNumRiskyAssets() const { return numRiskyAssets; }
@@ -57,7 +55,6 @@ private:
 	// Assets
 	std::vector<std::string> assetSymbols;
 	arma::mat assetsReturns;
-	double riskFreeRate;
 
 	// Sizes
 	size_t numDays;

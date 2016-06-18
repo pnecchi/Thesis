@@ -8,7 +8,7 @@
 ###############
 
 # Input filepath (relative to Thesis/Code/Thesis/examples/ directory) 
-inputDataPath=../../../Data/Input/synthetic.csv
+inputDataPath=../../../Data/Input/daily_returns.csv
 
 # Output filepath (relative to Thesis/Code/Thesis/examples/ directory)
 outputDataPath=../../../Data/Output/
@@ -28,7 +28,7 @@ riskFreeRate=0.0
 #########################
 
 # Proportional transaction costs
-deltaP=0.0005
+deltaP=0.000
 
 # Fixed transaction costs
 deltaF=0.0
@@ -37,20 +37,20 @@ deltaF=0.0
 deltaS=0.0
 
 # Number of past days observed by the agent
-numDaysObserved=2
+numDaysObserved=5
 
 ################
 # ARRSAC agent #
 ################
 
 # Actor learning rate
-alphaActor=0.005
+alphaActor=0.01
 
 # Critic learning rate
-alphaCritic=0.01
+alphaCritic=0.05
 
 # Baselines learning rate 
-alphaBaseline=0.05
+alphaBaseline=0.1
 
 ##############
 # Experiment #
@@ -60,10 +60,10 @@ alphaBaseline=0.05
 numExperiments=1
 
 # Number of epochs
-numEpochs=50
+numEpochs=1000
 
 # Number of training steps
-numTrainingSteps=1000 
+numTrainingSteps=2000
 
 # Number of test steps
 numTestSteps=10

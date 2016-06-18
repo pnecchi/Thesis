@@ -11,3 +11,8 @@ void BacktestLog::insertRecord(arma::vec const &action_, double const reward_)
     history.col(currentIdx).rows(0, history.n_rows-2) = action_;
     history(currentIdx, history.n_rows-1) = reward_;
 }
+
+void BacktestLog::print(std::ostream& os)
+{
+    history.print(os);
+}

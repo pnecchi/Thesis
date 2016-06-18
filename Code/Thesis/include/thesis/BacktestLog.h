@@ -25,6 +25,9 @@ class BacktestLog
         // Add entry
         void insertRecord(arma::vec const &action_, double const reward_);
 
+        // Print
+        void print(std::ostream& os);
+
     private:
         arma::mat history;
         size_t currentIdx;

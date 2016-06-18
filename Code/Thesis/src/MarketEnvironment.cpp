@@ -5,11 +5,9 @@
 #include <sstream>    /* std::istringstream */
 
 MarketEnvironment::MarketEnvironment (std::string inputFilePath,
-									  double riskFreeRate_,
 									  size_t startDate_,
 									  size_t endDate_)
-	: riskFreeRate(riskFreeRate_),
-	  startDate(startDate_),
+	: startDate(startDate_),
 	  currentDate(startDate),
 	  endDate(endDate_)
 {
@@ -58,16 +56,13 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 	}
 
 	// Set dimensions of state and action spaces
-	dimState = numRiskyAssets + 1;
-	dimAction = numRiskyAssets + 1;
+	dimState = numRiskyAssets;
+	dimAction = numRiskyAssets;
 }
 
 arma::vec MarketEnvironment::getState() const
 {
-	arma::vec state(dimState);
-	state(0) = riskFreeRate;
-	state.rows(1, dimState-1) = assetsReturns.col(currentDate);
-	return state;
+	return assetsReturns.col(currentDate);
 }
 
 void MarketEnvironment::performAction(arma::vec const &action)
