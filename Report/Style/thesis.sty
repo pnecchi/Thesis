@@ -20,6 +20,7 @@
 \usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{listings}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
@@ -76,3 +77,9 @@
 \renewcommand{\P}[2][]{\mathbb{P}_{#1}\left( #2 \right)}
 \newcommand{\Var}[2][]{\text{Var}_{#1}\left( #2 \right)}
 \newcommand{\pardev}[2]{\frac{\partial #1}{\partial #2}}
+
+% Tikz settings
+\tikzstyle{block} = [rectangle, draw, 
+    text width=8em, text centered, rounded corners, minimum height=4em]
+	    
+\tikzstyle{line} = [draw, -latex]

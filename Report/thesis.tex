@@ -8,22 +8,16 @@
 % COVER PAGE
 %----------------------------------------------------------------------------------------
 
-%\include{cover/frontespizio}
-%\clearpage
-
-%% Set page numbers of the introduction to roman  
-%\frontmatter
-%%Insert white page
-%\clearpage
-%\thispagestyle{empty}
-%\null
-%\newpage
+%\input{Cover/cover}
 
 %----------------------------------------------------------------------------------------
 % ACKNOWLEDGMENTS
 %----------------------------------------------------------------------------------------
 
-%\include{acknowledgements/acknowledgements}
+%% Set page numbers of the introduction to roman  
+\frontmatter
+
+%\input{Acknowledgements/acknowledgements}
 %\newpage
 %Insert white page
 %\clearpage
@@ -35,11 +29,11 @@
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
 %----------------------------------------------------------------------------------------
  
-%\tableofcontents{} % Write out the Table of Contents
+\tableofcontents{} % Write out the Table of Contents
 
 %\listoffigures % Write out the List of Figures
 
-%\listoftables % Write out the List of Tables
+%\listoftables % Write out the List of Tables 
 
 %\lstlistoflistings
 
@@ -54,8 +48,8 @@
 
 \mainmatter
 
-% \input{Chapters/1_Introduction}
-\input{Chapters/2_Markov_Decision_Processes}
+\input{Chapters/1_Introduction}
+\input{Chapters/2_Discrete_Time_Stochastic_Optimal_Control}
 \input{Chapters/3_Reinforcement_Learning}
 \input{Chapters/4_Asset_Allocation}
 

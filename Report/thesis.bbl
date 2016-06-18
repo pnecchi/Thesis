@@ -42,6 +42,10 @@
 {\sc D.~P. Bertsekas}, {\em Dynamic programming and optimal control}, vol.~1,
   Athena Scientific, Belmont, 1995.
 
+\bibitem{bertsekas1978stochastic}
+{\sc D.~P. Bertsekas and S.~E. Shreve}, {\em Stochastic optimal control: the
+  discrete-time case}, vol.~23, Academic Press New York, 1978.
+
 \bibitem{bertsekas1996neuro}
 {\sc D.~P. Bertsekas and J.~N. Tsitsiklis}, {\em Neuro-Dynamic Programming},
   Optimization and neural computation series, Athena Scientific, Belmont,
@@ -165,6 +169,10 @@
   BPPT, RTRL, EKF and the echo state network approach}, GMD-Forschungszentrum
   Informationstechnik, 2002.
 
+\bibitem{joshi2008c++}
+{\sc M.~S. Joshi}, {\em C++ design patterns and derivatives pricing}, vol.~2,
+  Cambridge University Press, 2008.
+
 \bibitem{kamijo1990stock}
 {\sc K.~Kamijo and T.~Tanigawa}, {\em Stock price pattern recognition-a
   recurrent neural network approach}, in IEEE 1990 IJCNN International Joint
@@ -265,10 +273,18 @@
   risk-sensitive reinforcement learning.}, arXiv preprint arXiv:1403.6530,
   (2014).
 
+\bibitem{puterman1994markov}
+{\sc M.~L. Puterman}, {\em Markov decision processes: discrete stochastic
+  dynamic programming}, John Wiley \& Sons, 1994.
+
 \bibitem{Saad1998comparative}
 {\sc E.~W. Saad, D.~V. Prokhorov, and D.~C. Wunsch}, {\em Comparative study of
   stock trend prediction using time delay, recurrent and probabilistic neural
   networks}, IEEE Transactions on Neural Networks, 9 (1998), pp.~1456--1470.
+
+\bibitem{sanderson2010armadillo}
+{\sc C.~Sanderson}, {\em Armadillo: An open source c++ linear algebra library
+  for fast prototyping and computationally intensive experiments},  (2010).
 
 \bibitem{sato2000variance}
 {\sc M.~Sato and S.~Kobayashi}, {\em Variance-penalized reinforcement learning
