@@ -70,6 +70,11 @@ class BoltzmannExplorationPolicy : public StochasticPolicy
         virtual arma::vec likelihoodScore(arma::vec const &observation_,
                                           arma::vec const &action_) const;
 
+        /*!
+         * Reset policy to initial conditions.
+         */
+        virtual void reset();
+
     private:
         //! Virtual inner clone method
         virtual std::unique_ptr<Policy> cloneImpl() const;

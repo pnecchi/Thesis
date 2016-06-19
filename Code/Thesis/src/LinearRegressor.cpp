@@ -40,3 +40,8 @@ arma::vec LinearRegressor::gradient(arma::vec const &x) const
     grad.rows(1, getDimParameters() - 1) = x;
     return grad;
 }
+
+void LinearRegressor::reset()
+{
+    initializeParameters();
+}

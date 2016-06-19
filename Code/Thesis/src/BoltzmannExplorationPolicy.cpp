@@ -89,4 +89,8 @@ std::unique_ptr<Policy> BoltzmannExplorationPolicy::cloneImpl() const
     return std::unique_ptr<Policy>(new BoltzmannExplorationPolicy(*this));
 }
 
+void BoltzmannExplorationPolicy::reset()
+{
+    initializeParameters();
+}
 

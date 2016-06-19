@@ -21,33 +21,33 @@ debugDataPath=../../../Data/Debug/
 ##########
 
 # Risk-free rate
-riskFreeRate=0.0 
+riskFreeRate=0.0001
 
 #########################
 # Asset allocation task #
 #########################
 
 # Proportional transaction costs
-deltaP=0.0
+deltaP=0.00005
 
 # Fixed transaction costs
 deltaF=0.0
 
 # Short-selling fees
-deltaS=0.0
+deltaS=0.00005
 
 # Number of past days observed by the agent
-numDaysObserved=5
+numDaysObserved=20
 
 ################
 # ARRSAC agent #
 ################
 
 # Actor learning rate
-alphaActor=0.01
+alphaActor=0.001
 
 # Critic learning rate
-alphaCritic=0.05
+alphaCritic=0.01
 
 # Baselines learning rate 
 alphaBaseline=0.1
@@ -57,13 +57,13 @@ alphaBaseline=0.1
 ##############
 
 # Number of experiments
-numExperiments=5
+numExperiments=10
 
 # Number of epochs
 numEpochs=1000
 
 # Number of training steps
-numTrainingSteps=3000
+numTrainingSteps=1000
 
 # Number of test steps
-numTestSteps=1000
+numTestSteps=250

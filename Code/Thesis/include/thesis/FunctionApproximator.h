@@ -71,6 +71,9 @@ class FunctionApproximator
          */
         virtual arma::vec gradient(arma::vec const &x) const = 0;
 
+        //! Reset function approximator parameters to initial conditions
+        virtual void reset() = 0;
+
     private:
         // Input size
         size_t dimInput;

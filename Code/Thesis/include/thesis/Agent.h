@@ -39,6 +39,9 @@ class Agent
 
         // Learning step given previous experience
         virtual void learn()=0;
+
+        // Reset agent
+        virtual void reset()=0;
 };
 
 #endif /* end of include guard: AGENT_H */

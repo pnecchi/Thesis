@@ -64,6 +64,9 @@ class LinearRegressor : public FunctionApproximator
          */
         virtual arma::vec gradient(arma::vec const &x) const;
 
+        //! Reset linear regressor parameters to initial conditions
+        virtual void reset();
+
     private:
         //! Initialize the linear regressor parameters.
         void initializeParameters();

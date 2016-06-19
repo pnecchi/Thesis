@@ -68,6 +68,11 @@ class StochasticPolicy : public Policy
          */
         virtual arma::vec likelihoodScore(arma::vec const &observation_,
                                           arma::vec const &action_) const = 0;
+
+        /*!
+         * Reset policy to initial conditions.
+         */
+        virtual void reset() = 0;
 };
 
 #endif // STOCHASTICPOLICY_H

@@ -75,6 +75,9 @@ class Critic
         arma::vec gradient(arma::vec const &observation) const
             { return approximatorPtr->gradient(observation); }
 
+        //! Reset critic to initial conditions
+        void reset() { approximatorPtr->reset(); }
+
     private:
         //! Function approximator
         std::unique_ptr<FunctionApproximator> approximatorPtr;

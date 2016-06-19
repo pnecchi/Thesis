@@ -44,8 +44,13 @@ void AssetAllocationExperiment::oneInteraction()
 
 void AssetAllocationExperiment::run()
 {
+    // Perform numExperiments independent experiments
     for (size_t exp = 0; exp < numExperiments; ++exp)
     {
+        // Reset backtest log and agent
+        agentPtr->reset();
+        blog.reset();
+
         // Open debugging file
         std::ostringstream stringStream;
         stringStream << "../../../Data/Debug/debugExperiment" << exp << ".csv";
@@ -69,14 +74,18 @@ void AssetAllocationExperiment::run()
                 agentPtr->learn();
             }
 
-            std::vector<std::vector<double>> stats = experimentStats.getStatistics();
-            std::cout << "Epoch #" << epoch
-                      << " - Average: " << stats[0][0]
-                      << " - Standard Deviation: " << stats[0][1]
-                      << " - Sharpe ratio: " << stats[0][2] << std::endl;
+            if ((epoch + 1) % 50 == 0)
+            {
+                std::vector<std::vector<double>> stats = experimentStats.getStatistics();
+                std::cout << "Experiment #" << exp
+                          << " - Epoch #" << epochi + 1
+                          << " - Average: " << stats[0][0]
+                          << " - Standard Deviation: " << stats[0][1]
+                          << " - Sharpe ratio: " << stats[0][2] << std::endl;
 
-            debugFile << epoch << "," << stats[0][0] << "," << stats[0][1]
-                      << "," << stats[0][2] << ",\n";
+                debugFile << epoch + 1 << "," << stats[0][0] << "," << stats[0][1]
+                          << "," << stats[0][2] << ",\n";
+            }
         }
         debugFile.close();
 
@@ -91,13 +100,13 @@ void AssetAllocationExperiment::run()
 
             // Log (action, reward) tuple
             arma::vec stateCache =
-                observationCache.rows(observationCache.size() - 2 * task.getDimAction(),                                      observationCache.size() - task.getDimAction() - 1);
+                observationCache.rows(observationCache.size() - 2 * task.getDimAction(),
+                                      observationCache.size() - task.getDimAction() - 1);
             blog.insertRecord(stateCache, actionCache, rewardCache);
         }
 
         std::ostringstream stringStreamBacktest;
         stringStreamBacktest << "../../../Data/Debug/backtestExperiment" << exp << ".csv";
         blog.save(stringStreamBacktest.str());
-        blog.reset();
     }
 }

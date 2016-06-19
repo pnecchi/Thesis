@@ -52,6 +52,9 @@ class ARRSACAgent : public Agent
         // Learning step given previous experience
         virtual void learn();
 
+        // Reset
+        virtual void reset();
+
     private:
         // Actor
         StochasticActor actor;

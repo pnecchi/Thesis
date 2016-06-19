@@ -76,6 +76,11 @@ class Policy
          */
         virtual arma::vec getAction(arma::vec const & observation_) const = 0;
 
+        /*!
+         * Reset policy to initial conditions.
+         */
+        virtual void reset() = 0;
+
     protected:
         /*!
          * checkedClone method for converting the unique pointer to Policy

@@ -84,6 +84,11 @@ class StochasticActor : public Actor
                                   arma::vec const &action) const
             { return policyPtr->likelihoodScore(observation, action); }
 
+        /*!
+         * Reset stochatic actor to initial conditions.
+         */
+        void reset() { policyPtr->reset(); }
+
     private:
         //! Stochastic policy employed by the agent
         std::unique_ptr<StochasticPolicy> policyPtr;

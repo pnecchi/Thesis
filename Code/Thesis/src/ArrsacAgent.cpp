@@ -80,3 +80,13 @@ void ARRSACAgent::learn()
         alphaActor * coeffGradientSR * actor.likelihoodScore(observation, action);
     actor.setParameters(newParametersActor);
 }
+
+void ARRSACAgent::reset()
+{
+    actor.reset();
+    criticV.reset();
+    criticU.reset();
+    averageReward.reset();
+    averageSquareReward.reset();
+}
+

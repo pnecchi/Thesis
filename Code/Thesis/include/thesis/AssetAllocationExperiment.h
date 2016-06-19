@@ -10,8 +10,12 @@
 
 /**
  * An AssetAllocationExperiment handles the interactions between the
- * AssetAllocationTask and a trading agent.
+ * AssetAllocationTask and a trading agent and is responsible for logging the
+ * strategy backtest performance.
  */
+
+// TODO: Match experiment cache variables with agent inner cache variables in
+// order to avoid useless copies
 
 class AssetAllocationExperiment
 {
