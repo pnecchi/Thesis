@@ -47,10 +47,10 @@ class AssetAllocationExperiment
         std::unique_ptr<Agent> agentPtr;
 
         // Backtest Log
-        bool backtestMode = false;
         BacktestLog blog;
 
         // Cache variables
+        arma::vec observationCache;
         arma::vec actionCache;
         double rewardCache;
 

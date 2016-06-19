@@ -1,4 +1,4 @@
-###############################################################################
+﻿###############################################################################
 # Parameters for Average Reward Risk Sensitive Actor-Critic algorithm for the #
 # asset allocation problem                                                    #
 ###############################################################################
@@ -28,7 +28,7 @@ riskFreeRate=0.0
 #########################
 
 # Proportional transaction costs
-deltaP=0.000
+deltaP=0.0
 
 # Fixed transaction costs
 deltaF=0.0
@@ -57,13 +57,13 @@ alphaBaseline=0.1
 ##############
 
 # Number of experiments
-numExperiments=1
+numExperiments=5
 
 # Number of epochs
 numEpochs=1000
 
 # Number of training steps
-numTrainingSteps=2000
+numTrainingSteps=3000
 
 # Number of test steps
-numTestSteps=10
+numTestSteps=1000

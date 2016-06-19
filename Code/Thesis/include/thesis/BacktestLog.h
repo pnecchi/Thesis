@@ -10,8 +10,7 @@ class BacktestLog
 
     public:
         // Constructor
-        BacktestLog(size_t dimAction, size_t numRecords):
-            history(dimAction, numRecords), currentIdx(0ul) {}
+        BacktestLog(size_t dimState_, size_t dimAction_, size_t numRecords_);
 
         // Copy constructor
         BacktestLog(BacktestLog const &other_) = default;
@@ -19,17 +18,21 @@ class BacktestLog
         // Destructor
         virtual ~BacktestLog() = default;
 
-        // Get number of records
-        size_t getNumRecords() const { return history.n_cols; }
-
         // Add entry
-        void insertRecord(arma::vec const &action_, double const reward_);
+        void insertRecord(arma::vec const &state_,
+                          arma::vec const &action_,
+                          double const reward_);
 
         // Print
-        void print(std::ostream& os);
+        void save(std::string filename);
+
+        // Reset
+        void reset();
 
     private:
         arma::mat history;
+        size_t dimState;
+        size_t dimAction;
         size_t currentIdx;
 };
 

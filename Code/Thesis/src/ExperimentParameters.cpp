@@ -53,7 +53,7 @@ ExperimentParameters::ExperimentParameters(std::string const &filename, bool ver
         alphaActor = ifile("alphaActor", alphaActor);
         alphaCritic = ifile("alphaCritic", alphaCritic);
         alphaBaseline = ifile("alphaBaseline", alphaBaseline);
-        numExperiments = ifile("numExperiment", static_cast<int>(numExperiments));
+        numExperiments = ifile("numExperiments", static_cast<int>(numExperiments));
         numEpochs = ifile("numEpochs", static_cast<int>(numEpochs));
         numTrainingSteps = ifile("numTrainingSteps", static_cast<int>(numTrainingSteps));
         numTestSteps = ifile("numTestSteps", static_cast<int>(numTestSteps));

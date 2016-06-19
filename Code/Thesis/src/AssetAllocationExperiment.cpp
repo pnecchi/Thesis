@@ -13,7 +13,8 @@ AssetAllocationExperiment::AssetAllocationExperiment(AssetAllocationTask const &
       numEpochs(numEpochs_),
       numTrainingSteps(numTrainingSteps_),
       numTestSteps(numTestSteps_),
-      blog(task.getDimAction(), numTestSteps),
+      blog(task.getDimAction(), task.getDimAction(), numTestSteps),
+      observationCache(task.getDimObservation()),
       actionCache(task.getDimAction()),
       rewardCache(0.0)
 {
@@ -23,7 +24,8 @@ AssetAllocationExperiment::AssetAllocationExperiment(AssetAllocationTask const &
 void AssetAllocationExperiment::oneInteraction()
 {
     // 1) Get observation
-    agentPtr->receiveObservation(task.getObservation());
+    observationCache = task.getObservation();
+    agentPtr->receiveObservation(observationCache);
 
     // 2) Perform action
     actionCache = agentPtr->getAction();
@@ -36,25 +38,28 @@ void AssetAllocationExperiment::oneInteraction()
     // 4) Receive next observation
     agentPtr->receiveNextObservation(task.getObservation());
 
-    // 5) Backtest
-    if (backtestMode)
-        blog.insertRecord(actionCache, rewardCache);
-
-    // 6) Dump results in statistics gatherer
+    // 5) Dump results in statistics gatherer
     experimentStats.dumpOneResult(rewardCache);
 }
 
 void AssetAllocationExperiment::run()
 {
-    std::ofstream debugFile;
-    debugFile.open("../../../Data/Debug/debugExperiment1.csv" );
-    debugFile << "epoch,average,stdev,sharpe,\n";
-
     for (size_t exp = 0; exp < numExperiments; ++exp)
     {
+        // Open debugging file
+        std::ostringstream stringStream;
+        stringStream << "../../../Data/Debug/debugExperiment" << exp << ".csv";
+        std::ofstream debugFile;
+        debugFile.open(stringStream.str());
+        debugFile << "epoch,average,stdev,sharpe,\n";
+
         // Training
         for (size_t epoch = 0; epoch < numEpochs; ++epoch)
         {
+            // Reset task and statistics
+            task.reset();
+            experimentStats.reset();
+
             for (size_t step = 0; step < numTrainingSteps; ++step)
             {
                 // Interaction between the task and the agent
@@ -64,7 +69,6 @@ void AssetAllocationExperiment::run()
                 agentPtr->learn();
             }
 
-            //
             std::vector<std::vector<double>> stats = experimentStats.getStatistics();
             std::cout << "Epoch #" << epoch
                       << " - Average: " << stats[0][0]
@@ -73,10 +77,6 @@ void AssetAllocationExperiment::run()
 
             debugFile << epoch << "," << stats[0][0] << "," << stats[0][1]
                       << "," << stats[0][2] << ",\n";
-
-            // Reset task and statistics
-            task.reset();
-            experimentStats.reset();
         }
         debugFile.close();
 
@@ -90,12 +90,14 @@ void AssetAllocationExperiment::run()
             agentPtr->learn();
 
             // Log (action, reward) tuple
-            blog.insertRecord(actionCache, rewardCache);
+            arma::vec stateCache =
+                observationCache.rows(observationCache.size() - 2 * task.getDimAction(),                                      observationCache.size() - task.getDimAction() - 1);
+            blog.insertRecord(stateCache, actionCache, rewardCache);
         }
 
-        std::ofstream backtestFile;
-        backtestFile.open("../../../Data/Debug/backtestExperiment1.csv" );
-        blog.print(backtestFile);
-        backtestFile.close();
+        std::ostringstream stringStreamBacktest;
+        stringStreamBacktest << "../../../Data/Debug/backtestExperiment" << exp << ".csv";
+        blog.save(stringStreamBacktest.str());
+        blog.reset();
     }
 }
