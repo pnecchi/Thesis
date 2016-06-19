@@ -5,20 +5,17 @@
 \BOOKMARK [1][-]{section.2.3}{Policies}{chapter.2}% 5
 \BOOKMARK [1][-]{section.2.4}{Discounted Reward Formulation}{chapter.2}% 6
 \BOOKMARK [1][-]{section.2.5}{Average Reward Formulation}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.5.1}{Bellman Equations}{section.2.5}% 8
-\BOOKMARK [1][-]{section.2.6}{Risk-Sensitive Average Reward Formulation}{chapter.2}% 9
-\BOOKMARK [2][-]{subsection.2.6.1}{Bellman Equations}{section.2.6}% 10
-\BOOKMARK [2][-]{subsection.2.6.2}{Risk-Sensitive Control Problem}{section.2.6}% 11
-\BOOKMARK [0][-]{chapter.3}{Reinforcement Learning}{}% 12
-\BOOKMARK [1][-]{section.3.1}{The Reinforcement Learning Problem}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.2}{Policy Gradient}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.2.1}{Basics of Policy Gradient}{section.3.2}% 15
-\BOOKMARK [2][-]{subsection.3.2.2}{Finite Differences}{section.3.2}% 16
-\BOOKMARK [2][-]{subsection.3.2.3}{Monte Carlo Policy Gradient}{section.3.2}% 17
-\BOOKMARK [2][-]{subsection.3.2.4}{Policy Gradient Theorem}{section.3.2}% 18
-\BOOKMARK [2][-]{subsection.3.2.5}{Natural Policy Gradient}{section.3.2}% 19
-\BOOKMARK [2][-]{subsection.3.2.6}{Policy Gradient with Parameter Exploration}{section.3.2}% 20
-\BOOKMARK [0][-]{chapter.4}{Asset Allocation}{}% 21
-\BOOKMARK [1][-]{section.4.1}{Reward Function}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.2}{States}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.3}{Actions}{chapter.4}% 24
+\BOOKMARK [1][-]{section.2.6}{Risk-Sensitive Formulation}{chapter.2}% 8
+\BOOKMARK [0][-]{chapter.3}{Reinforcement Learning}{}% 9
+\BOOKMARK [1][-]{section.3.1}{The Reinforcement Learning Problem}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.2}{Policy Gradient}{chapter.3}% 11
+\BOOKMARK [2][-]{subsection.3.2.1}{Basics of Policy Gradient}{section.3.2}% 12
+\BOOKMARK [2][-]{subsection.3.2.2}{Finite Differences}{section.3.2}% 13
+\BOOKMARK [2][-]{subsection.3.2.3}{Monte Carlo Policy Gradient}{section.3.2}% 14
+\BOOKMARK [2][-]{subsection.3.2.4}{Policy Gradient Theorem}{section.3.2}% 15
+\BOOKMARK [2][-]{subsection.3.2.5}{Natural Policy Gradient}{section.3.2}% 16
+\BOOKMARK [2][-]{subsection.3.2.6}{Policy Gradient with Parameter Exploration}{section.3.2}% 17
+\BOOKMARK [0][-]{chapter.4}{Asset Allocation}{}% 18
+\BOOKMARK [1][-]{section.4.1}{Reward Function}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.2}{States}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.3}{Actions}{chapter.4}% 21

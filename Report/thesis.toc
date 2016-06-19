@@ -6,10 +6,7 @@
 \contentsline {section}{\numberline {2.3}Policies}{5}{section.2.3}
 \contentsline {section}{\numberline {2.4}Discounted Reward Formulation}{6}{section.2.4}
 \contentsline {section}{\numberline {2.5}Average Reward Formulation}{9}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Bellman Equations}{10}{subsection.2.5.1}
-\contentsline {section}{\numberline {2.6}Risk-Sensitive Average Reward Formulation}{11}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Bellman Equations}{12}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Risk-Sensitive Control Problem}{12}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.6}Risk-Sensitive Formulation}{10}{section.2.6}
 \contentsline {chapter}{\numberline {3}Reinforcement Learning}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}The Reinforcement Learning Problem}{13}{section.3.1}
 \contentsline {section}{\numberline {3.2}Policy Gradient}{13}{section.3.2}

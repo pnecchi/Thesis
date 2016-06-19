@@ -8,6 +8,12 @@
 {\sc R.~Almgren and N.~Chriss}, {\em Optimal execution of portfolio
   transactions}, Journal of Risk, 3 (2001), pp.~5--40.
 
+\bibitem{arapostathis1993discrete}
+{\sc A.~Arapostathis, V.~S. Borkar, E.~Fern{\'a}ndez-Gaucherand, M.~K. Ghosh,
+  and S.~I. Marcus}, {\em Discrete-time controlled markov processes with
+  average cost criterion: a survey}, SIAM Journal on Control and Optimization,
+  31 (1993), pp.~282--344.
+
 \bibitem{basu2008learning}
 {\sc A.~Basu, T.~Bhattacharyya, and V.~S. Borkar}, {\em A learning algorithm
   for risk-sensitive cost}, Mathematics of Operations Research, 33 (2008),

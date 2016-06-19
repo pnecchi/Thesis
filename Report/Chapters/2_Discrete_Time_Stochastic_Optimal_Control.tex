@@ -37,11 +37,11 @@ subsequent time $t+1$, the agent selects a new action given the new state of
 the system and the process repeats. This interaction can be modeled rigorously
 using Markov decision processes.  
 \begin{definition}[Markov Decision Process]
-	A Markov decision process (MDP) is a tuple $<\S, \A, \calP, \calR,
+	A Markov decision process (MDP) is a stochastic dynamical system specified by the tuple $<\S, \A, \calP, \calR,
 	\gamma>$, where
 	\begin{enumerate}[label={\roman*)}]
-		\item $(\S, \calS)$ is a measurable state space.
-		\item $(\A, \calA)$ is a measurable action space. 
+		\item $(\S, \calS)$ is a measurable space, called the state space.
+		\item $(\A, \calA)$ is a meausrable space, called the action space. 
 		\item $\calP: \S \times \A \times \calS \to \R$ is a Markov transition
 			kernel, i.e.
 			\begin{enumerate}[label={\alph*)}]
@@ -192,8 +192,7 @@ We have the following relationship between $V_\pi$ and $Q_\pi$
 	V_\pi(s) = \int_\A \pi(s,a) Q_\pi(s,a) da
 \end{equation}
 Almost all reinforcement learning algorithms are designed for estimating these 
-value functions and are typically based on the Bellman equations, which are 
-recursive relationships that these functions must satisfy.
+value functions and are typically based on the Bellman equations.
 \begin{proposition}[Bellman Expectation Equations]
 	\begin{equation}
 		V_\pi(s) = \calR_\pi(s) + \gamma T_\pi V_\pi(s)	
@@ -276,12 +275,12 @@ following result
 		\item $Q_{\pi_*}(s,a) = Q_*(s,a)$. 
 	\end{enumerate}
 \end{theorem}
-An optimal policy can be found by acting greedily with respect to $Q_*$, i.e.
+An optimal policy can be found by acting greedily with respect to $Q_*$, i.e. in each state $s$ the agent selects the action that maximizes the action-value function
 \begin{equation}
-	\pi_*(s,a) = \delta_{\argsup_a Q_*(s,a)}
+	a = \argsup_a Q_*(s,a)
 \end{equation}
 We see that this policy is deterministic and only depends on the current state
-of the system. 
+of the system. The Bellman equations provide the basis for the \emph{value iteration} and \emph{policy iteration} algorithms \cite{sutton1998introduction}, which however require knowledge of the Markov transition kernel.
 
 
 \section{Average Reward Formulation}
@@ -291,9 +290,7 @@ infinite horizon tasks, where there are no absorbing goal states, without
 discounting future rewards. Clearly, discounting is only necessary in cyclical
 tasks, where the cumulative reward sum can be unbounded. More natural long-term
 measure of  optimality exists for such cyclical tasks, based on maximizing the
-average reward per action \cite{mahadevan1996average}. In the average reward
-setting, the goal of the agent is to find a policy that maximizes the expected
-reward per step. 
+average reward per action. For a more in-depth presentation, the reader may again refer to the extensive literature on the subject, such as \cite{arapostathis1993discrete}, \cite{mahadevan1996average} and the references therein. In the average reward setting, also known as long-run reward or ergodic reward, the goal of the agent is to find a policy that maximizes the expected reward per step. 
 \begin{definition}[Average Reward]
 	The average reward $\rho_\pi$ associated to a policy $\pi$ is defined as  
 	\begin{equation}
@@ -340,42 +337,24 @@ action-value function
 \begin{equation}\label{eq:VQ_equality}
 	V_\pi(s) = \int_\A \pi(s,a) Q_\pi(s,a)
 \end{equation}
+The value functions satisfy the following Bellman equation 
+\begin{proposition}[Bellman Expectation Equations]
+	\begin{equation}
+		\rho_\pi + V_\pi(s) = \calR_\pi(s) + T_\pi V_\pi(s)
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+			\rho_\pi + Q_\pi(s,a) &= \calR(s,a) + T_a V_\pi(s)\\
+			&= \calR(s,a) + \int_{\S} \calP(s,a,s') \int_\A \pi(s',a') Q_\pi(s',a') da' ds'
+		\end{split}
+	\end{equation}
+\end{proposition}
+Again, by introducing opportune Bellman operators, these equations can be rewritten as fixed-point equations. In the discrete case, where the transition operator correspond to matrices, these Bellman equations become linear systems that can be solved to obtain the value functions. 
 
-\subsection{Bellman Equations}
-The action-value function satisfies the following Bellman equation 
-\begin{equation}
-	\rho_\pi + Q_\pi(s,a) = \calR(s,a) + \int_\S \calP(s,a,s') V_\pi(s') ds'
-\end{equation}
-Using equality (\ref{eq:VQ_equality}), we obtain the Bellman equation for the
-state-value function
-\begin{equation}
-	\rho_\pi + V_\pi(s) = \int_\A \pi(s,a) \left[\calR(s,a) + \int_\S 
-	\calP(s,a,s') V_\pi(s') ds'\right] da
-\end{equation}
-Denoting by $T_a$ (resp. $T_\pi$) the transition operator for action $a$ (resp. 
-for policy $\pi$)
-\begin{equation}
-	\begin{split}
-		T_a V(s) &= \int_\S \calP(s, a, s') V_\pi(s')\\
-		T_\pi V(s) &= \int_\A \pi(s,a) \int_\S \calP(s,a,s') V_\pi(s')\\ 
-	\end{split}
-\end{equation}
-The Bellman equations can be rewritten in the shorter form
-\begin{equation}
-	\begin{split}
-		\rho_\pi + V_\pi(s) &= \calR_\pi(s) + T_\pi V_\pi(s)\\
-		\rho_\pi + Q_\pi(s,a) &= \calR(s,a) + T_a V_\pi(s)\\
-	\end{split}
-\end{equation}
-In the discrete case, where the transition operator correspond to matrices, 
-these Bellman equations become linear systems that can be solved to obtain the
-value functions. 
-
-\section{Risk-Sensitive Average Reward Formulation}
-In many application, in addition to maximining the average reward, the agent
-may want to control risk by minimizing some measure of viariability in rewards.
-In \cite{prashanth2014actor}, the authors consider the long-run variance of
-$\pi$
+\section{Risk-Sensitive Formulation}
+In many application, in addition to maximizing the average reward, the agent
+may want to control risk by minimizing some measure of variability in rewards.
+In \cite{prashanth2014actor}, the authors consider the long-run variance of $\pi$
 \begin{definition}[Long-Run Variance]
 	The long-run variance $\Lambda_\pi$ under policy $\pi$ is defined as
 	\begin{equation}
@@ -398,11 +377,11 @@ where $\eta_\pi$ is the average square reward per step
 					 &= \int_\S d_\pi(s) \int_\A \pi(s,a) \calM(s,a)\\
 		\end{split}
 	\end{equation}
+	where we denoted by $\calM(s,a)$ the square reward function
+	\begin{equation}
+		\calM(s,a) = \E{R_{t+1}^2 | S_t = s, A_t = a}
+	\end{equation}
 \end{definition}
-where we denoted by $\calM(s,a)$ the square reward function
-\begin{equation}
-	\calM(s,a) = \E{R_{t+1}^2 | S_t = s, A_t = a}
-\end{equation}
 As before, we introduce the residual state-value and action-value functions 
 associated with the square reward under policy $\pi$
 \begin{definition}[Average Adjusted Square State-Value Function]
@@ -423,28 +402,24 @@ associated with the square reward under policy $\pi$
 			\eta_\pi\right) \bigg| S_0 = s, A_0 = a}
 	\end{equation}
 \end{definition}
-We have the following relation between square state-value function and the
-square action-value
+The following relation between square state-value function and the square action-value holds
 \begin{equation}\label{eq:UW_equality}
 	U_\pi(s) = \int_\A \pi(s,a) W_\pi(s,a)
 \end{equation}
-
-\subsection{Bellman Equations}
-The average adjusted square action-value function satisfies the following 
-Bellman equation
-\begin{equation}
-	\eta_\pi + W_\pi(s,a) = \calM(s,a) + \int_\S \calP(s,a,s') U_\pi(s') ds'\\
-\end{equation}
-Using equality (\ref{eq:UW_equality}), we obtain an analogous Bellman equation
-for the square state-value function
-\begin{equation}
-	\eta_\pi + U_\pi(s) = \int_\A \pi(s,a)\left[\calM(s,a) + \int_\S 
-	\calP(s,a,s') U_\pi(s') ds'\right]da
-\end{equation}
-
-\subsection{Risk-Sensitive Control Problem}
+The average adjusted square value functions satisfy the following Bellman equations
+\begin{proposition}[Bellman Expectation Equations]
+	\begin{equation}
+		\eta_\pi + U_\pi(s) = \calM_\pi(s) + T_\pi U_\pi(s)
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+			\eta_\pi + W_\pi(s,a) &= \calM(s,a) + T_a U_\pi(s)\\
+			&= \calM(s,a) + \int_{\S} \calP(s,a,s') \int_{\A} \pi(s',a') W_\pi(s',a') da' ds'
+		\end{split}
+	\end{equation}
+\end{proposition}
 In the risk-sensitive setting, the agent wants to find a policy that solves the 
-following optimization problem 
+following mean-variance optimization problem
 \begin{equation}\label{eq:risk_sensitive_problem}
 	\begin{cases}
 		\max_\pi \rho_\pi\\
@@ -457,6 +432,8 @@ recast (\ref{eq:risk_sensitive_problem}) to the following uncostrained problem
 	\max_\lambda \min_\pi L(\pi, \lambda) = - \rho_\pi + \lambda 
 	(\Lambda_\theta - \alpha)
 \end{equation}
-Let us observe that the discussion can be easily extended to other
-risk-sensitive performance measures, such as the standard mean-variance
-criterion or the Sharpe ratio. 
+Alternatively, the agent may want to optimize the Sharpe ratio, a risk-sensitive performance measure commonly used in finance
+\begin{equation}
+	\textbf{Sh}_\pi = \frac{\rho_\pi}{\sqrt{\Lambda_\pi}} 
+\end{equation}
+The algorithms that will be discussed in the next chapters apply equally to both optimization problems with only minor modifications. 
