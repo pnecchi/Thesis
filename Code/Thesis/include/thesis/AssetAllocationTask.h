@@ -32,6 +32,7 @@ class AssetAllocationTask
         void initializeAllocationCache ();
 
         // Get methods
+        double getRiskFreeRate() const { return riskFreeRate; }
         double getDeltaP () const { return deltaP; }
         double getDeltaF () const { return deltaF; }
         double getDeltaS () const { return deltaS; }

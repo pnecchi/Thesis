@@ -26,7 +26,8 @@ class ARRSACAgent : public Agent
                     Critic const & criticU_,
                     double alphaActor_=0.01,
                     double alphaCritic_=0.05,
-                    double alphaBaseline_=0.1);
+                    double alphaBaseline_=0.1,
+                    double benchmark_=0.0);
 
         // Default destructor
         virtual ~ARRSACAgent() = default;
@@ -76,6 +77,9 @@ class ARRSACAgent : public Agent
         double alphaBaseline;
         double alphaCritic;
         double alphaActor;
+
+        // Benchmark for Sharpe ratio
+        double benchmark;
 
         // Cache variables
         arma::vec observation;

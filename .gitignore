@@ -4,5 +4,6 @@ Code/Thesis/build/
 Code/Thesis/CMakeFiles/
 Code/Thesis/examples/CMakeFiles/
 Code/Thesis/doc/
+Data/Debug/
 *.pyc
 *.swp

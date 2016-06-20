@@ -6,7 +6,8 @@
 #include <thesis/AssetAllocationTask.h>
 #include <thesis/LinearRegressor.h>
 #include <thesis/Critic.h>
-#include <thesis/BoltzmannExplorationPolicy.h>
+#include <thesis/BoltzmannPolicy.h>
+#include <thesis/GaussianPolicy.h>
 #include <thesis/StochasticActor.h>
 #include <thesis/ArrsacAgent.h>
 #include <thesis/AssetAllocationExperiment.h>
@@ -72,10 +73,15 @@ int main()
     Critic criticU(linearRegU);
     std::cout << "done" << std::endl;
 
-    // Boltzmann Exploration Policy
-    std::cout << ".. Boltzmann stochastic policy - ";
-    std::vector<double> possibleAction {-1.0, 0.0, 1.0};
-    BoltzmannExplorationPolicy policy(task.getDimObservation(), possibleAction);
+    // Boltzmann Policy
+//    std::cout << ".. Boltzmann stochastic policy - ";
+//    std::vector<double> possibleAction {-1.0, 0.0, 1.0};
+//    BoltzmannPolicy policy(task.getDimObservation(), possibleAction);
+//    std::cout << "done" << std::endl;
+
+    // Gaussian Policy
+    std::cout << ".. Gaussian stochastic policy - ";
+    GaussianPolicy policy(task.getDimObservation(), task.getDimAction());
     std::cout << "done" << std::endl;
 
     // Stochastic Actor
@@ -90,7 +96,8 @@ int main()
                       criticU,
                       alphaActor,
                       alphaCritic,
-                      alphaBaseline);
+                      alphaBaseline,
+                      task.getRiskFreeRate());
     std::cout << "done" << std::endl;
 
     // Asset allocation experiment

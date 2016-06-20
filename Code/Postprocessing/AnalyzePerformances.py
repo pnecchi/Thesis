@@ -24,7 +24,7 @@ nExperiments = 5
 ########################
 
 # Read backtest data
-df = pd.read_csv(inputDir + 'backtestExperiment1.csv')
+df = pd.read_csv(inputDir + 'backtestExperiment0.csv')
 
 # Compute buy-hold cumulative profits
 assetSimpleReturns = df['r_1'].values

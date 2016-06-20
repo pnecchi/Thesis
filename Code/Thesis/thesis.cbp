@@ -150,6 +150,7 @@
 		<Unit filename="include/thesis/Critic.h" />
 		<Unit filename="include/thesis/ExperimentParameters.h" />
 		<Unit filename="include/thesis/FunctionApproximator.h" />
+		<Unit filename="include/thesis/GaussianPolicy.h" />
 		<Unit filename="include/thesis/LinearRegressor.h" />
 		<Unit filename="include/thesis/MarketEnvironment.h" />
 		<Unit filename="include/thesis/Policy.h" />
@@ -163,6 +164,7 @@
 		<Unit filename="src/BacktestLog.cpp" />
 		<Unit filename="src/BoltzmannExplorationPolicy.cpp" />
 		<Unit filename="src/ExperimentParameters.cpp" />
+		<Unit filename="src/GaussianPolicy.cpp" />
 		<Unit filename="src/LinearRegressor.cpp" />
 		<Unit filename="src/MarketEnvironment.cpp" />
 		<Unit filename="src/RandomGenerator.cpp" />

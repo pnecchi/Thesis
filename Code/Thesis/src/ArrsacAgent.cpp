@@ -7,13 +7,15 @@ ARRSACAgent::ARRSACAgent(StochasticActor const & actor_,
                          Critic const & criticU_,
                          double alphaActor_,
                          double alphaCritic_,
-                         double alphaBaseline_)
+                         double alphaBaseline_,
+                         double benchmark_)
     : actor(actor_),
       criticV(criticV_),
       criticU(criticU_),
       alphaActor(alphaActor_),
       alphaCritic(alphaCritic_),
       alphaBaseline(alphaBaseline_),
+      benchmark(benchmark_),
       averageReward(alphaBaseline_),
       averageSquareReward(alphaBaseline_),
       observation(actor_.getDimObservation()),
@@ -75,7 +77,9 @@ void ARRSACAgent::learn()
     // 4) Update actor
     double lambda = eta - rho * rho;
     double sqrtLambda = sqrt(lambda);
-    double coeffGradientSR = (eta * tdV - 0.5 * rho * tdU) / (lambda * sqrtLambda);
+    double coeffGradientSR = ((eta - benchmark * rho) * tdV -
+                              0.5 * (rho - benchmark) * tdU) /
+                              (lambda * sqrtLambda);
     arma::vec newParametersActor = actor.getParameters() +
         alphaActor * coeffGradientSR * actor.likelihoodScore(observation, action);
     actor.setParameters(newParametersActor);

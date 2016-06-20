@@ -78,7 +78,7 @@ void AssetAllocationExperiment::run()
             {
                 std::vector<std::vector<double>> stats = experimentStats.getStatistics();
                 std::cout << "Experiment #" << exp
-                          << " - Epoch #" << epochi + 1
+                          << " - Epoch #" << epoch + 1
                           << " - Average: " << stats[0][0]
                           << " - Standard Deviation: " << stats[0][1]
                           << " - Sharpe ratio: " << stats[0][2] << std::endl;

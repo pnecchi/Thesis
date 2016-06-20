@@ -223,29 +223,29 @@ src/BacktestLog.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BacktestLog.cpp.s
 .PHONY : src/BacktestLog.cpp.s
 
-src/BoltzmannExplorationPolicy.o: src/BoltzmannExplorationPolicy.cpp.o
-.PHONY : src/BoltzmannExplorationPolicy.o
+src/BoltzmannPolicy.o: src/BoltzmannPolicy.cpp.o
+.PHONY : src/BoltzmannPolicy.o
 
 # target to build an object file
-src/BoltzmannExplorationPolicy.cpp.o:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannExplorationPolicy.cpp.o
-.PHONY : src/BoltzmannExplorationPolicy.cpp.o
+src/BoltzmannPolicy.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannPolicy.cpp.o
+.PHONY : src/BoltzmannPolicy.cpp.o
 
-src/BoltzmannExplorationPolicy.i: src/BoltzmannExplorationPolicy.cpp.i
-.PHONY : src/BoltzmannExplorationPolicy.i
+src/BoltzmannPolicy.i: src/BoltzmannPolicy.cpp.i
+.PHONY : src/BoltzmannPolicy.i
 
 # target to preprocess a source file
-src/BoltzmannExplorationPolicy.cpp.i:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannExplorationPolicy.cpp.i
-.PHONY : src/BoltzmannExplorationPolicy.cpp.i
+src/BoltzmannPolicy.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannPolicy.cpp.i
+.PHONY : src/BoltzmannPolicy.cpp.i
 
-src/BoltzmannExplorationPolicy.s: src/BoltzmannExplorationPolicy.cpp.s
-.PHONY : src/BoltzmannExplorationPolicy.s
+src/BoltzmannPolicy.s: src/BoltzmannPolicy.cpp.s
+.PHONY : src/BoltzmannPolicy.s
 
 # target to generate assembly for a file
-src/BoltzmannExplorationPolicy.cpp.s:
-	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannExplorationPolicy.cpp.s
-.PHONY : src/BoltzmannExplorationPolicy.cpp.s
+src/BoltzmannPolicy.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannPolicy.cpp.s
+.PHONY : src/BoltzmannPolicy.cpp.s
 
 src/ExperimentParameters.o: src/ExperimentParameters.cpp.o
 .PHONY : src/ExperimentParameters.o
@@ -270,6 +270,30 @@ src/ExperimentParameters.s: src/ExperimentParameters.cpp.s
 src/ExperimentParameters.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/ExperimentParameters.cpp.s
 .PHONY : src/ExperimentParameters.cpp.s
+
+src/GaussianPolicy.o: src/GaussianPolicy.cpp.o
+.PHONY : src/GaussianPolicy.o
+
+# target to build an object file
+src/GaussianPolicy.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/GaussianPolicy.cpp.o
+.PHONY : src/GaussianPolicy.cpp.o
+
+src/GaussianPolicy.i: src/GaussianPolicy.cpp.i
+.PHONY : src/GaussianPolicy.i
+
+# target to preprocess a source file
+src/GaussianPolicy.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/GaussianPolicy.cpp.i
+.PHONY : src/GaussianPolicy.cpp.i
+
+src/GaussianPolicy.s: src/GaussianPolicy.cpp.s
+.PHONY : src/GaussianPolicy.s
+
+# target to generate assembly for a file
+src/GaussianPolicy.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/GaussianPolicy.cpp.s
+.PHONY : src/GaussianPolicy.cpp.s
 
 src/LinearRegressor.o: src/LinearRegressor.cpp.o
 .PHONY : src/LinearRegressor.o
@@ -389,12 +413,15 @@ help:
 	@echo "... src/BacktestLog.o"
 	@echo "... src/BacktestLog.i"
 	@echo "... src/BacktestLog.s"
-	@echo "... src/BoltzmannExplorationPolicy.o"
-	@echo "... src/BoltzmannExplorationPolicy.i"
-	@echo "... src/BoltzmannExplorationPolicy.s"
+	@echo "... src/BoltzmannPolicy.o"
+	@echo "... src/BoltzmannPolicy.i"
+	@echo "... src/BoltzmannPolicy.s"
 	@echo "... src/ExperimentParameters.o"
 	@echo "... src/ExperimentParameters.i"
 	@echo "... src/ExperimentParameters.s"
+	@echo "... src/GaussianPolicy.o"
+	@echo "... src/GaussianPolicy.i"
+	@echo "... src/GaussianPolicy.s"
 	@echo "... src/LinearRegressor.o"
 	@echo "... src/LinearRegressor.i"
 	@echo "... src/LinearRegressor.s"
