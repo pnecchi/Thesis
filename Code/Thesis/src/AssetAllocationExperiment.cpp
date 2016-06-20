@@ -81,7 +81,7 @@ void AssetAllocationExperiment::run()
                           << " - Epoch #" << epoch + 1
                           << " - Average: " << stats[0][0]
                           << " - Standard Deviation: " << stats[0][1]
-                          << " - Sharpe ratio: " << stats[0][2] << std::endl;
+                          << " - Sharpe Ratio: " << stats[0][2] << std::endl;
 
                 debugFile << epoch + 1 << "," << stats[0][0] << "," << stats[0][1]
                           << "," << stats[0][2] << ",\n";

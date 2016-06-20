@@ -74,5 +74,6 @@ ax2 = fig.add_subplot(212)
 ax2.plot(np.arange(len(alloc)), alloc, lw=2)
 ax2.set_ylabel('Allocation')
 ax2.set_xlabel('Time Step')
+ax2.set_ylim((1.1 * alloc.min(), alloc.max() * 1.1))
 
 plt.show()

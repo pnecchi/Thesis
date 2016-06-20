@@ -12,9 +12,11 @@ ExperimentParameters::ExperimentParameters()
       deltaF(0.0),
       deltaS(0.0),
       numDaysObserved(2),
-      alphaActor(0.01),
-      alphaCritic(0.05),
-      alphaBaseline(0.1),
+      maxVar(0.0),
+      alphaActor(0.005),
+      alphaCritic(0.01),
+      alphaBaseline(0.05),
+      alphaLagrange(0.1),
       numExperiments(1),
       numEpochs(100),
       numTrainingSteps(1000),
@@ -50,9 +52,11 @@ ExperimentParameters::ExperimentParameters(std::string const &filename, bool ver
         deltaF = ifile("deltaF", deltaF);
         deltaS = ifile("deltaS", deltaS);
         numDaysObserved = ifile("numDaysObserved", static_cast<int>(numDaysObserved));
+        maxVar = ifile("maxVar", maxVar);
         alphaActor = ifile("alphaActor", alphaActor);
         alphaCritic = ifile("alphaCritic", alphaCritic);
         alphaBaseline = ifile("alphaBaseline", alphaBaseline);
+        alphaLagrange = ifile("alphaLagrange", alphaLagrange);
         numExperiments = ifile("numExperiments", static_cast<int>(numExperiments));
         numEpochs = ifile("numEpochs", static_cast<int>(numEpochs));
         numTrainingSteps = ifile("numTrainingSteps", static_cast<int>(numTrainingSteps));
@@ -75,9 +79,11 @@ std::ostream &operator<<(std::ostream &os, ExperimentParameters const &params)
     std::cout << ".. deltaF:           " << params.deltaF << std::endl;
     std::cout << ".. deltaS:           " << params.deltaS << std::endl;
     std::cout << ".. numDaysObserved:  " << params.numDaysObserved << std::endl;
+    std::cout << ".. maxVar:           " << params.maxVar << std::endl;
     std::cout << ".. alphaActor:       " << params.alphaActor << std::endl;
     std::cout << ".. alphaCritic:      " << params.alphaCritic << std::endl;
     std::cout << ".. alphaBaseline:    " << params.alphaBaseline << std::endl;
+    std::cout << ".. alphaLagrange:    " << params.alphaLagrange << std::endl;
     std::cout << ".. numExperiments:   " << params.numExperiments << std::endl;
     std::cout << ".. numEpochs:        " << params.numEpochs << std::endl;
     std::cout << ".. numTrainingSteps: " << params.numTrainingSteps << std::endl;

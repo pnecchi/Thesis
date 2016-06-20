@@ -24,10 +24,11 @@ class ARRSACAgent : public Agent
         ARRSACAgent(StochasticActor const & actor_,
                     Critic const & criticV_,
                     Critic const & criticU_,
-                    double alphaActor_=0.01,
-                    double alphaCritic_=0.05,
-                    double alphaBaseline_=0.1,
-                    double benchmark_=0.0);
+                    double varMax_=0.04,
+                    double alphaActor_=0.001,
+                    double alphaCritic_=0.005,
+                    double alphaBaseline_=0.05,
+                    double alphaLagrange=0.1);
 
         // Default destructor
         virtual ~ARRSACAgent() = default;
@@ -72,14 +73,16 @@ class ARRSACAgent : public Agent
         // Average square reward (Exponential Moving Average)
         StatisticsEMA averageSquareReward;
 
+        // variance constraint: Lambda <= varMax
+        double varMax;
+        double lagrangeMult;
+
         // Learning rates
         // TODO: implement time-varying learning rates?
         double alphaBaseline;
         double alphaCritic;
         double alphaActor;
-
-        // Benchmark for Sharpe ratio
-        double benchmark;
+        double alphaLagrange;
 
         // Cache variables
         arma::vec observation;

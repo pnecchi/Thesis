@@ -33,9 +33,11 @@ int main()
     double deltaF = params.deltaF;
     double deltaS = params.deltaS;
     size_t numDaysObserved = params.numDaysObserved;
+    double maxVar = params.maxVar;
     double alphaActor = params.alphaActor;
     double alphaCritic = params.alphaCritic;
     double alphaBaseline = params.alphaBaseline;
+    double alphaLagrange = params.alphaLagrange;
     size_t numExperiments = params.numExperiments;
     size_t numEpochs = params.numEpochs;
     size_t numTrainingSteps = params.numTrainingSteps;
@@ -74,15 +76,15 @@ int main()
     std::cout << "done" << std::endl;
 
     // Boltzmann Policy
-//    std::cout << ".. Boltzmann stochastic policy - ";
-//    std::vector<double> possibleAction {-1.0, 0.0, 1.0};
-//    BoltzmannPolicy policy(task.getDimObservation(), possibleAction);
-//    std::cout << "done" << std::endl;
+    std::cout << ".. Boltzmann stochastic policy - ";
+    std::vector<double> possibleAction {-1.0, 1.0};
+    BoltzmannPolicy policy(task.getDimObservation(), possibleAction);
+    std::cout << "done" << std::endl;
 
     // Gaussian Policy
-    std::cout << ".. Gaussian stochastic policy - ";
-    GaussianPolicy policy(task.getDimObservation(), task.getDimAction());
-    std::cout << "done" << std::endl;
+//    std::cout << ".. Gaussian stochastic policy - ";
+//    GaussianPolicy policy(task.getDimObservation(), task.getDimAction());
+//    std::cout << "done" << std::endl;
 
     // Stochastic Actor
     std::cout << ".. Actor - ";
@@ -94,10 +96,11 @@ int main()
     ARRSACAgent agent(actor,
                       criticV,
                       criticU,
+                      maxVar,
                       alphaActor,
                       alphaCritic,
                       alphaBaseline,
-                      task.getRiskFreeRate());
+                      alphaLagrange);
     std::cout << "done" << std::endl;
 
     // Asset allocation experiment

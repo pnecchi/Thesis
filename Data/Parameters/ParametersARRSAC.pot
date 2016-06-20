@@ -8,7 +8,7 @@
 ###############
 
 # Input filepath (relative to Thesis/Code/Thesis/examples/ directory) 
-inputDataPath=../../../Data/Input/daily_returns.csv
+inputDataPath=../../../Data/Input/synthetic.csv
 
 # Output filepath (relative to Thesis/Code/Thesis/examples/ directory)
 outputDataPath=../../../Data/Output/
@@ -28,29 +28,35 @@ riskFreeRate=0.0
 #########################
 
 # Proportional transaction costs
-deltaP=0.00005
+deltaP=0.000
 
 # Fixed transaction costs
 deltaF=0.0
 
 # Short-selling fees
-deltaS=0.00005
+deltaS=0.000
 
 # Number of past days observed by the agent
-numDaysObserved=10
+numDaysObserved=5
 
 ################
 # ARRSAC agent #
 ################
 
+# Maximum variance for mean variance problem
+maxVar=0.04
+
 # Actor learning rate
-alphaActor=0.0005
+alphaActor=0.0001
 
 # Critic learning rate
-alphaCritic=0.005
+alphaCritic=0.0005
 
 # Baselines learning rate 
-alphaBaseline=0.05
+alphaBaseline=0.001
+
+# Lagrange multiplier learning rate
+alphaLagrange=0.005
 
 ##############
 # Experiment #
@@ -60,7 +66,7 @@ alphaBaseline=0.05
 numExperiments=5
 
 # Number of epochs
-numEpochs=1000
+numEpochs=2000
 
 # Number of training steps
 numTrainingSteps=1000

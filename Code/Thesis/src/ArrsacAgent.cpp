@@ -5,18 +5,20 @@
 ARRSACAgent::ARRSACAgent(StochasticActor const & actor_,
                          Critic const & criticV_,
                          Critic const & criticU_,
+                         double varMax_,
                          double alphaActor_,
                          double alphaCritic_,
                          double alphaBaseline_,
-                         double benchmark_)
+                         double alphaLagrange_)
     : actor(actor_),
       criticV(criticV_),
       criticU(criticU_),
+      varMax(varMax_),
       alphaActor(alphaActor_),
       alphaCritic(alphaCritic_),
       alphaBaseline(alphaBaseline_),
-      benchmark(benchmark_),
       averageReward(alphaBaseline_),
+      alphaLagrange(alphaLagrange_),
       averageSquareReward(alphaBaseline_),
       observation(actor_.getDimObservation()),
       action(actor_.getDimAction()),
@@ -76,13 +78,26 @@ void ARRSACAgent::learn()
 
     // 4) Update actor
     double lambda = eta - rho * rho;
-    double sqrtLambda = sqrt(lambda);
-    double coeffGradientSR = ((eta - benchmark * rho) * tdV -
-                              0.5 * (rho - benchmark) * tdU) /
-                              (lambda * sqrtLambda);
-    arma::vec newParametersActor = actor.getParameters() +
-        alphaActor * coeffGradientSR * actor.likelihoodScore(observation, action);
+//    double sqrtLambda = sqrt(lambda);
+//    double coeffGradientSR = ((eta - benchmark * rho) * tdV -
+//                              0.5 * (rho - benchmark) * tdU) /
+//                              (lambda * sqrtLambda);
+//    arma::vec newParametersActor = actor.getParameters() +
+//        alphaActor * coeffGradientSR * actor.likelihoodScore(observation, action);
+//    actor.setParameters(newParametersActor);
+
+    // 4) Update actor - mean-variance criterion
+    double coeffGradientMV = - tdV + lagrangeMult * (tdU - 2.0 * rho * tdV);
+    arma::vec newParametersActor = actor.getParameters() -
+    alphaActor * coeffGradientMV * actor.likelihoodScore(observation, action);
     actor.setParameters(newParametersActor);
+
+    // 5) Update lagrange multiplier
+    lagrangeMult += alphaLagrange * (lambda - varMax);
+    if (lambda < 0.0)
+        lambda = 0.0;
+    if (lambda > 10000)
+        lambda = 10000;
 }
 
 void ARRSACAgent::reset()

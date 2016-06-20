@@ -138,8 +138,9 @@ double AssetAllocationTask::computePortfolioSimpleReturn () const
 	double shortTransactionCosts = deltaS * shortPositionsWeight;
 
 	// Trading profit & loss
-	double tradingPL = riskFreeRate +
-                       arma::dot(newAllocation, currentState - riskFreeRate);
+//	double tradingPL = riskFreeRate +
+//                       arma::dot(newAllocation, currentState - riskFreeRate);
+    double tradingPL = arma::dot(newAllocation, currentState);
 
 	// Compute simple portfolio return
 	double portfolioSimpleReturn = tradingPL
