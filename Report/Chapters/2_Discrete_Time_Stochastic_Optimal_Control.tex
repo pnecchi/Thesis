@@ -1,0 +1,439 @@
+\chapter{Discrete-Time Stochastic Optimal Control}
+
+\section{Sequential Decision Problems}
+In sequential decision problems, an agent interacts with an environment by
+selecting a series of actions in order to complete a specific task. During this
+interaction, the agent receives a numerical reward from the environment and his
+goal is to find the best strategy in order to maximize a certain measure of his
+performance. The environment evolves stochastically and may be influenced by
+the interaction with the agent, so that each action taken by the agent may 
+influence the circumstances under which future decisions will be made. 
+Therefore, the agent must balance his desire to obtain a large reward today 
+by acting greedily and the opportunities that will be available in the future. 
+While this setting appears quite simple, it is general enough to encompasses a 
+wide range of applications in different fields. A classical example is 
+portfolio management, where an investor must allocate his capital so as to 
+maximize his long-term profits. Another standard example is chess, where two
+players successively move pieces around the chessboard to checkmate the
+opponent's king.\\
+The purpose of the following sections is to introduce the notation that will be
+used in the rest of this work and to recall the fundamental concepts and 
+results of the discrete-time stochastic optimal control theory, which is the 
+standard framework to study sequential decisions problems in mathematical
+terms. Since our discussion will be far from being comprehensive, we refer the
+reader to the extensive literature on the subject, such as
+\cite{bertsekas1978stochastic}, \cite{puterman1994markov}, 
+\cite{bertsekas1995dynamic}.
+
+\section{Markov Decision Processes}
+A sequential decision problem under uncertainty can be schematized as in Figure
+\ref{fig:sequential_decision_problem}: at a given time $t$, the agent (also
+known as decision maker or controller) observes the state $s_t$ of the system 
+(also know as environment) and subsequently performs an action $a_t$. Following
+this action, the agent receives an immediate reward $r_{t+1}$ (or incurs an
+immediate cost) and the system evolves to a new state according to a probability
+distribution which depends on the action selected by the agent. At the
+subsequent time $t+1$, the agent selects a new action given the new state of
+the system and the process repeats. This interaction can be modeled rigorously
+using Markov decision processes.  
+\begin{definition}[Markov Decision Process]
+	A Markov decision process (MDP) is a stochastic dynamical system specified by the tuple $<\S, \A, \calP, \calR,
+	\gamma>$, where
+	\begin{enumerate}[label={\roman*)}]
+		\item $(\S, \calS)$ is a measurable space, called the state space.
+		\item $(\A, \calA)$ is a meausrable space, called the action space. 
+		\item $\calP: \S \times \A \times \calS \to \R$ is a Markov transition
+			kernel, i.e.
+			\begin{enumerate}[label={\alph*)}]
+				\item for every $s\in\S$ and $a\in\A$, $B \mapsto \calP(s,a,B)$
+					  is a probability distribution over $(\S, \calS)$.
+				\item for every $B\in\calS$, $(s,a) \mapsto \calP(s,a,B)$ is
+					  a measurable function on $\S \times \A$.
+			\end{enumerate}
+		\item $\calR: \S \times \A \to \R$ is a reward function.
+		\item $\gamma \in (0,1)$ is a discount factor.
+	\end{enumerate}
+\end{definition}
+Typically, the state space (and similarly the action space) will be either
+finite, i.e. $\S = \{s_1, \ldots, s_d\}$, or continuous, i.e. $\S \subseteq
+\R^{D_s}$. The kernel $\calP$ describes the random evolution of the system:
+suppose that at time $t$ the system is in state $s$ and that the agent takes
+action $a$, then, regardless of the previous history of the system, the
+probability to find the system in a state belonging to $B\in\calS$ at time
+$t+1$ is given by $\calP(s, a, B)$, i.e.  \begin{equation}
+	\calP(s, a, B) = \P{S_{t+1} \in B | S_t = s, A_t = a}
+\end{equation}
+Following this random transition, the agent receives a stochastic reward
+$R_{t+1}$. The reward function $\calR(s, a)$ gives the expected reward
+obtained when action $a$ is taken in state $s$, i.e. 
+\begin{equation}
+	\calR(s, a) = \E{R_{t+1} | S_t = s, A_t = a}
+\end{equation}
+This setting can be easily generalized to the following cases
+\begin{enumerate}
+	\item The initial state of the system is a random variable $S_0 \sim \mu$. 
+	\item The actions that an agent can select depend on the state of the system.
+\end{enumerate}
+
+\begin{figure}[htpb]
+	\centering
+	\begin{tikzpicture}[node distance = 6em, auto, thick]
+		\node [block] (Agent) {Agent};
+		\node [block, below of=Agent] (Environment) {Environment};		    
+		\path [line] (Agent.0) --++ (4em,0em) |- node [near start]{Action $a_t$} (Environment.0);
+		\path [line] (Environment.190) --++ (-6em,0em) |- node [near start]{State  $s_{t}$} (Agent.170);
+		\path [line] (Environment.170) --++ (-4.25em,0em) |- node [near start, right] {Reward $r_{t+1}$} (Agent.190);
+	\end{tikzpicture}
+	\caption{Agent-environment interaction in sequential decision problems.}
+	\label{fig:sequential_decision_problem}
+\end{figure}
+
+\section{Policies}
+At any time step, the agent selects his actions according to a certain policy. 
+\begin{definition}[Policy]
+	A policy is a function $\pi: \S \times \calA \to \R$ such that
+	\begin{enumerate}[label={\roman*)}]
+		\item for every $s \in \S$, $C \mapsto \pi(s,C)$ is a probability
+			  distribution over $(\A, \calA)$. 
+		\item for every $C \in \calA$, $s \mapsto \pi(s, C)$ is a measurable
+			  function. 
+	\end{enumerate}
+\end{definition}
+Intuitively, a policy represents a stochastic mapping from the current state of
+the system to actions. Deterministic policies are a particular case of this 
+general definition. We assumed that the agent's policy is stationary and only
+depends on the current state of the system. We might in fact  consider more 
+general policies that depends on the whole history of the system. However, as
+we will see, we can always find an optimal policy that depends only on the
+current state, so that our definition is not restrictive. A policy $\pi$ and an
+initial state $s_0 \in \S$ determine a random state-action-reward sequence
+${\{(S_t, A_t, R_{t+1})\}}_{t\geq 0}$ with values on $\S \times \A \times \R$
+following the mechanism described above. 
+\begin{definition}[History]
+	Given an initial state $s_0 \in \S$ and a policy $\pi$, a history (or
+	equivalently trajectory or roll-out) of the system is a random sequence
+	$H_\pi = {\{(S_t, A_t)\}}_{t\geq 0}$ with values in $\S \times \A$, defined
+	on some probability space $(\Omega, \mathcal{F}, \mathbb{P})$, such that for 
+	$t = 0, 1, \ldots$
+	\begin{equation}
+		\begin{cases}
+			S_0 = s_0\\
+			A_t \sim \pi(S_t, \cdot)\\
+			S_{t+1} \sim \calP(S_t, A_t, \cdot)\\
+		\end{cases}
+	\end{equation}
+	we will denote by $(\H, \calH)$ the measurable space of all possible
+	histories. 
+\end{definition}
+Moreover, we observe that
+\begin{enumerate}[label={\roman*)}]
+	\item the state sequence ${\{S_t\}}_{t\geq 0}$ is a Markov process $<\S,
+		  \calP_\pi>$
+	  \item the state-reward sequence ${\{(S_t, R_t)\}}_{t\geq 0}$ is a Markov 
+		  reward process $<\S, \calP_\pi, \calR_\pi, \gamma>$
+\end{enumerate}
+where we denoted 
+\begin{equation}
+	\begin{split}
+		\calP_\pi(s, s') &= \int_\A \pi(s, a) \calP(s, a, s') da\\
+		\calR_\pi(s) &= \int_\A \pi(s, a) \calR(s, a) da\\
+	\end{split}
+\end{equation}
+In stochastic optimal control, the goal of the agent is to find a policy that
+maximizes a measure of the agent's long-term performance. In the next sections
+we discuss some objective functions that are commonly used in the infinite
+horizon framework. 
+
+\section{Discounted Reward Formulation}
+In the discounted reward formulation, the agent's performance is measured as
+the expected return obtained following a specific policy.
+\begin{definition}[Return]
+	The return is the total discounted reward obtained by the agent starting 
+	from $t$  
+	\begin{equation}
+		G_t = \sum^{\infty}_{t=0} \gamma^t R_{t+k+1} 
+	\end{equation}
+	where $0 < \gamma < 1$ is the discount factor.
+\end{definition}
+In some domains, such as economics, discounting can be used to represent
+interest earned on rewards, so that an action that generates an immediate
+reward will be preferred over one that generates the same reward some steps
+into the future. Discounting thus models the trade-off between immediate and
+delayed reward: if $\gamma = 0$ the agent selects his actions in a myopic way,
+while if $\gamma \to 1$ he acts in a far-sighted manner. There are other
+possilble reasons for discounting future rewards. The first is because it is
+mathematically convenient, as it avoids infinite returns and it solves many
+convergence issues. Another interpretation is that it models the uncertainty
+about the future, which may not be fully represented. Indeed, the discount
+factor could be seen as the probability that the world does not stop at a given 
+time step. Since the return is stochastic, we consider its expected value.  
+\begin{definition}[State-Value Function]
+	The state-value function $V_\pi: \S \to \R$ is the expected return that can
+	be obtained starting from a state and following policy $\pi$
+	\begin{equation}
+		V_\pi(s) = \E[\pi]{G_t|S_t = s}
+	\end{equation}
+\end{definition}
+where $\mathbb{E}_{\pi}$ indicates that all the actions are selected according
+to policy $\pi$. The state-value function measures how good it is for the agent
+to be in a given state and follow a certain policy. Similarly, we can introduce
+an action-value function that measures how good it is for the agent to be in a 
+state, take a certain action and then follow the policy. 
+\begin{definition}[Action-Value Function]
+	The action-value function $Q_\pi: \S \times \A \to \R$ is the expected 
+	return that can be obtained starting from a state, taking an action and
+	then following policy $\pi$
+	\begin{equation}
+		Q_\pi(s,a) = \E[\pi]{G_t|S_t = s, A_t = a}
+	\end{equation}
+\end{definition}
+We have the following relationship between $V_\pi$ and $Q_\pi$
+\begin{equation}
+	V_\pi(s) = \int_\A \pi(s,a) Q_\pi(s,a) da
+\end{equation}
+Almost all reinforcement learning algorithms are designed for estimating these 
+value functions and are typically based on the Bellman equations.
+\begin{proposition}[Bellman Expectation Equations]
+	\begin{equation}
+		V_\pi(s) = \calR_\pi(s) + \gamma T_\pi V_\pi(s)	
+		\label{eq:bellman_expectation_eq_V}
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+			Q_\pi(s,a) &= \calR(s,a) + \gamma T_a V_\pi(s)\\
+					   &= \calR(s,a) + \gamma \int_\S \calP(s,a,s') \int_\A
+			\pi(s',a') Q_\pi(s', a') da' ds'
+			\label{eq:bellman_expectation_eq_Q}
+		\end{split}
+	\end{equation}
+	where we denoted by $T_a$ (resp. $T_\pi$) the transition operator for action 
+	$a$ (resp. for policy $\pi$)
+	\begin{equation}
+		\begin{split}
+			T_a V(s) &= \int_\S \calP(s, a, s') V_\pi(s') ds'\\
+			T_\pi V(s) &= \int_\A \pi(s,a) \int_\S \calP(s,a,s') V_\pi(s') ds'
+			da\\ 
+		\end{split}
+	\end{equation}
+\end{proposition}
+If we introduce the Bellman expection operator $B_\pi$, defined as 
+\begin{equation}
+	B_\pi V_\pi(s) = \calR_\pi(s) + \gamma T_\pi V_\pi(s)	
+\end{equation}
+Then Eq. (\ref{eq:bellman_expectation_eq_V}) can be written as a fixed-point equation
+\begin{equation}
+	V_\pi(s) = B_\pi V_\pi(s)
+\end{equation}
+which, under some simple assumptions on the reward functions, admits a unique
+solution by the contraction mapping theorem. A similar argument applies to Eq.
+(\ref{eq:bellman_expectation_eq_Q}). The agent's goal is to select a policy
+$\pi_*$ that maximizes his expected return in all possible states. Such a
+policy is called \emph{optimal}.
+\begin{definition}[Optimal State-Value Function]
+	The optimal state-value function $V_*: \S \to \R$ is the largest expected 
+	return that can be obtained starting from a state
+	\begin{equation}
+		V_*(s) = \sup_\pi V_\pi(s)
+	\end{equation}
+\end{definition}
+\begin{definition}[Optimal Action-Value Function]
+	The optimal action-value function $Q_*: \S \times \A \to \R$ is the largest
+	expected return that can be obtained starting from a state and taking an
+	action
+	\begin{equation}
+		Q_*(s,a) = \sup_\pi Q_\pi(s,a)
+	\end{equation}
+\end{definition}
+The optimal value functions satisfy the following Bellman equations.
+\begin{proposition}[Bellman Optimality Equations]
+	\begin{equation}
+		V_*(s) = \sup_a Q_*(s,a) = \sup_a \left\{\calR(s,a) + \gamma T_a V_*(s)\right\}
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+			Q_*(s,a) &= \calR(s,a) + \gamma T_a V_*(s)\\
+					 &= \calR(s,a) + \gamma \int_\S \calP(s,a,s') \sup_a Q_*(s', a') ds'
+		\end{split}
+	\end{equation}
+\end{proposition}
+Again, these two equations are fixed-point equations and the existence and
+uniqueness of a solution is guaranteed, under some technical assumptions, by 
+the contraction mapping theorem. Starting from the optimal value functions, we
+can easily derived an optimal policy. Let us define a partial ordering in the 
+policy space
+\begin{equation}
+	\pi \succeq \pi' \Leftrightarrow V_\pi(s) \geq V_{\pi'}(s) \;\;\; \forall s \in \S
+\end{equation}
+Then the optimal policy $\pi_* \succeq \pi$, $\forall \pi$. We have the
+following result
+\begin{theorem}[Optimal Policy]
+	For any Markov decision process,
+	\begin{enumerate}[label={\roman*)}]
+		\item It exists an optimal policy $\pi_*$ such that $\pi_* \succeq
+			\pi$, $\forall \pi$. 
+		\item $V_{\pi_*}(s) = V_*(s)$.
+		\item $Q_{\pi_*}(s,a) = Q_*(s,a)$. 
+	\end{enumerate}
+\end{theorem}
+An optimal policy can be found by acting greedily with respect to $Q_*$, i.e. in each state $s$ the agent selects the action that maximizes the action-value function
+\begin{equation}
+	a = \argsup_a Q_*(s,a)
+\end{equation}
+We see that this policy is deterministic and only depends on the current state
+of the system. The Bellman equations provide the basis for the \emph{value iteration} and \emph{policy iteration} algorithms \cite{sutton1998introduction}, which however require knowledge of the Markov transition kernel.
+
+
+\section{Average Reward Formulation}
+Most of the research in RL has studied a problem formulation where agents
+maximize the cumulative sum of rewards. However, this approach cannot handle
+infinite horizon tasks, where there are no absorbing goal states, without
+discounting future rewards. Clearly, discounting is only necessary in cyclical
+tasks, where the cumulative reward sum can be unbounded. More natural long-term
+measure of  optimality exists for such cyclical tasks, based on maximizing the
+average reward per action. For a more in-depth presentation, the reader may again refer to the extensive literature on the subject, such as \cite{arapostathis1993discrete}, \cite{mahadevan1996average} and the references therein. In the average reward setting, also known as long-run reward or ergodic reward, the goal of the agent is to find a policy that maximizes the expected reward per step. 
+\begin{definition}[Average Reward]
+	The average reward $\rho_\pi$ associated to a policy $\pi$ is defined as  
+	\begin{equation}
+		\begin{split}
+			\rho_\pi &= \lim_{T\to\infty} \frac{1}{T} \E[\pi]{ \sum^{T-1}_{t=0} R_{t+1}}\\
+					 &= \E[\substack{S\sim d_\pi \\ A \sim \pi}]{\calR(S,A)}\\ 
+					 &= \int_\S d_\pi(s) \int_\A \pi(s, a) \calR(s,a) da ds\\ 
+		\end{split}
+	\end{equation}
+where $d_\pi$ is the stationary distribution of the Markov process induced by $\pi$.
+\end{definition}
+The agent aims to find an \emph{average optimal} policy
+\begin{equation}
+	\pi_* = \argsup_\pi \rho_\pi
+\end{equation}
+In this setting, we introduce the \emph{average adjusted} value and action-value 
+functions. 
+\begin{definition}[Average Adjusted State-Value Function]
+	The average adjusted state-value function $V_\pi : \S \to \R$ is the
+	expected residual return that can be obtained starting from a state and
+	following policy $\pi$
+	\begin{equation}
+		V_\pi(s) = \E[\pi]{\sum^{\infty}_{t=0} \left(R_{t+1} - \rho_\pi\right)
+		\bigg| S_0 = s}
+	\end{equation}
+\end{definition}
+The term $V_\pi(s)$ is usually referred to as the \emph{bias} value, or the
+\emph{relative} value, since it represents the relative difference in total
+reward gained starting from a state $s$ as opposed to a generic state. 
+$\rho_\pi$ serves as a baseline that allows to avoid divergence in the value
+function definition.
+\begin{definition}[Average Adjusted Action-Value Function]
+	The average adjusted action-value function $Q_\pi : \S \times \A \to \R$ is 
+	the expected residual return that can be obtained starting from a state,
+	taking an action and then following policy $\pi$
+	\begin{equation}
+		Q_\pi(s, a) = \E[\pi]{\sum^{\infty}_{t=0} \left(R_{t+1} -
+			\rho_\pi\right) \bigg| S_0 = s, A_0
+		= a}
+	\end{equation}
+\end{definition}
+We have the following relation between the state-value function and the
+action-value function
+\begin{equation}\label{eq:VQ_equality}
+	V_\pi(s) = \int_\A \pi(s,a) Q_\pi(s,a)
+\end{equation}
+The value functions satisfy the following Bellman equation 
+\begin{proposition}[Bellman Expectation Equations]
+	\begin{equation}
+		\rho_\pi + V_\pi(s) = \calR_\pi(s) + T_\pi V_\pi(s)
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+			\rho_\pi + Q_\pi(s,a) &= \calR(s,a) + T_a V_\pi(s)\\
+			&= \calR(s,a) + \int_{\S} \calP(s,a,s') \int_\A \pi(s',a') Q_\pi(s',a') da' ds'
+		\end{split}
+	\end{equation}
+\end{proposition}
+Again, by introducing opportune Bellman operators, these equations can be rewritten as fixed-point equations. In the discrete case, where the transition operator correspond to matrices, these Bellman equations become linear systems that can be solved to obtain the value functions. 
+
+\section{Risk-Sensitive Formulation}
+In many application, in addition to maximizing the average reward, the agent
+may want to control risk by minimizing some measure of variability in rewards.
+In \cite{prashanth2014actor}, the authors consider the long-run variance of $\pi$
+\begin{definition}[Long-Run Variance]
+	The long-run variance $\Lambda_\pi$ under policy $\pi$ is defined as
+	\begin{equation}
+		\begin{split}
+			\Lambda_\pi &= \lim_{T \to \infty} \frac{1}{T} \E[\pi]{
+			\sum^{T-1}_{t=0} (R_{t+1} - \rho_\pi)^2}\\
+		\end{split}
+	\end{equation}
+\end{definition}
+The long-run variance can be decomposed as follows
+\begin{equation}
+	\Lambda_\pi = \eta_\pi - \rho_\pi^2 
+\end{equation}
+where $\eta_\pi$ is the average square reward per step  
+\begin{definition}[Average Square Reward]
+	\begin{equation}
+		\begin{split}
+			\eta_\pi &= \lim_{T\to\infty}\frac{1}{T}\E[\pi]{\sum_{t=0}^{T-1} R_{t+1}^2}\\
+					 &= \E[\substack{S\sim d_\pi \\ A \sim \pi}]{\calM(S,A)}\\	
+					 &= \int_\S d_\pi(s) \int_\A \pi(s,a) \calM(s,a)\\
+		\end{split}
+	\end{equation}
+	where we denoted by $\calM(s,a)$ the square reward function
+	\begin{equation}
+		\calM(s,a) = \E{R_{t+1}^2 | S_t = s, A_t = a}
+	\end{equation}
+\end{definition}
+As before, we introduce the residual state-value and action-value functions 
+associated with the square reward under policy $\pi$
+\begin{definition}[Average Adjusted Square State-Value Function]
+	The average adjusted square state-value function $U_\pi : \S \to \R$ is the
+	expected square residual return that can be obtained starting from a state 
+	and following policy $\pi$
+	\begin{equation}
+		U_\pi(s) = \E[\pi]{\sum^{\infty}_{t=0} \left(R_{t+1}^2 - \eta_\pi\right)
+		\bigg| S_0 = s}
+	\end{equation}
+\end{definition}
+\begin{definition}[Average Adjusted Square Action-Value Function]
+	The average adjusted square action-value function $Q_\pi : \S \times \A \to 
+	\R$ is the expected residual square return that can be obtained starting from a
+	state, taking an action and then following policy $\pi$
+	\begin{equation}
+		W_\pi(s, a) = \E[\pi]{\sum^{\infty}_{t=0} \left(R_{t+1}^2 -
+			\eta_\pi\right) \bigg| S_0 = s, A_0 = a}
+	\end{equation}
+\end{definition}
+The following relation between square state-value function and the square action-value holds
+\begin{equation}\label{eq:UW_equality}
+	U_\pi(s) = \int_\A \pi(s,a) W_\pi(s,a)
+\end{equation}
+The average adjusted square value functions satisfy the following Bellman equations
+\begin{proposition}[Bellman Expectation Equations]
+	\begin{equation}
+		\eta_\pi + U_\pi(s) = \calM_\pi(s) + T_\pi U_\pi(s)
+	\end{equation}
+	\begin{equation}
+		\begin{split}
+			\eta_\pi + W_\pi(s,a) &= \calM(s,a) + T_a U_\pi(s)\\
+			&= \calM(s,a) + \int_{\S} \calP(s,a,s') \int_{\A} \pi(s',a') W_\pi(s',a') da' ds'
+		\end{split}
+	\end{equation}
+\end{proposition}
+In the risk-sensitive setting, the agent wants to find a policy that solves the 
+following mean-variance optimization problem
+\begin{equation}\label{eq:risk_sensitive_problem}
+	\begin{cases}
+		\max_\pi \rho_\pi\\
+		\text{subject to}\ \Lambda_\pi \leq \alpha\\
+	\end{cases}
+\end{equation}
+for a given $\alpha > 0$. Using the Lagrangian relaxation procedure, we can 
+recast (\ref{eq:risk_sensitive_problem}) to the following uncostrained problem
+\begin{equation}
+	\max_\lambda \min_\pi L(\pi, \lambda) = - \rho_\pi + \lambda 
+	(\Lambda_\theta - \alpha)
+\end{equation}
+Alternatively, the agent may want to optimize the Sharpe ratio, a risk-sensitive performance measure commonly used in finance
+\begin{equation}
+	\textbf{Sh}_\pi = \frac{\rho_\pi}{\sqrt{\Lambda_\pi}} 
+\end{equation}
+The algorithms that will be discussed in the next chapters apply equally to both optimization problems with only minor modifications. 

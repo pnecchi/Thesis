@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  12 JUN 2016 09:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  19 JUN 2016 10:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -860,14 +860,38 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box37
 \enitdp@description=\count151
 )
-\c@theorem=\count152
-\c@lemmma=\count153
-\c@proposition=\count154
-\c@corollary=\count155
-\c@definition=\count156
-\c@example=\count157
-\c@remark=\count158
-\c@note=\count159
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count152
+\lst@gtempboxa=\box38
+\lst@token=\toks39
+\lst@length=\count153
+\lst@currlwidth=\dimen197
+\lst@column=\count154
+\lst@pos=\count155
+\lst@lostspace=\dimen198
+\lst@width=\dimen199
+\lst@newlines=\count156
+\lst@lineno=\count157
+\lst@maxwidth=\dimen200
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count158
+\lst@skipnumbers=\count159
+\lst@framebox=\box39
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+\c@theorem=\count160
+\c@lemmma=\count161
+\c@proposition=\count162
+\c@corollary=\count163
+\c@definition=\count164
+\c@example=\count165
+\c@remark=\count166
+\c@note=\count167
 ) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
@@ -885,6 +909,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -921,17 +946,17 @@ LaTeX Font Info:    ... okay on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count160
-\scratchdimen=\dimen197
-\scratchbox=\box38
-\nofMPsegments=\count161
-\nofMParguments=\count162
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count163
-\MPscratchDim=\dimen198
-\MPnumerator=\count164
-\makeMPintoPDFobject=\count165
-\everyMPtoPDFconversion=\toks40
+\scratchcounter=\count168
+\scratchdimen=\dimen201
+\scratchbox=\box40
+\nofMPsegments=\count169
+\nofMParguments=\count170
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count171
+\MPscratchDim=\dimen202
+\MPnumerator=\count172
+\makeMPintoPDFobject=\count173
+\everyMPtoPDFconversion=\toks41
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -949,10 +974,11 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box39
+\AtBeginShipoutBox=\box41
 Package hyperref Info: Link coloring OFF on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -961,7 +987,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count166
+\c@section@level=\count174
 )
 LaTeX Info: Redefining \ref on input line 5.
 LaTeX Info: Redefining \pageref on input line 5.
@@ -971,122 +997,132 @@ LaTeX Info: Redefining \nameref on input line 5.
 \@outlinefile=\write6
 \openout6 = `thesis.out'.
 
- (./Chapters/2_Markov_Decision_Processes.tex
-Chapter 1.
-LaTeX Font Info:    Try loading font information for U+msa on input line 12.
+\c@lstlisting=\count175
+ (./thesis.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 12.
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 12.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 12.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) [1
+))
+\tf@toc=\write7
+\openout7 = `thesis.toc'.
+
+ [1
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-LaTeX Warning: Reference `eq:UW_equality' on page 7 undefined on input line 320
-.
+] (./Chapters/1_Introduction.tex
+Chapter 1.
+) (./Chapters/2_Discrete_Time_Stochastic_Optimal_Control.tex [1
 
-) (./Chapters/3_Reinforcement_Learning.tex [7] [8]
+] [2
+
+]
 Chapter 2.
-[9
 
-] [10] [11] [12] [13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `algo:QAC' on page 14 undefined on input line 230.
+ [3]
+Overfull \hbox (9.82712pt too wide) in paragraph at lines 40--42
+\OT1/cmr/m/it/12 (MDP) is a stochas-tic dy-nam-i-cal sys-tem spec-i-fied by the
+ tu-ple $\OML/cmm/m/it/12 < \U/msb/m/n/12 S\OML/cmm/m/it/12 ; \U/msb/m/n/12 A\O
+ML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 P\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 R\OML/cm
+m/m/it/12 ; ^^M >$\OT1/cmr/m/it/12 ,
+ []
+
+[4] [5] [6] [7] [8] [9] [10] [11]) (./Chapters/3_Reinforcement_Learning.tex
+[12]
+Chapter 3.
+[13
+
+] [14] [15] [16] [17]
+
+LaTeX Warning: Reference `algo:QAC' on page 18 undefined on input line 230.
 
 LaTeX Font Info:    Try loading font information for U+bbm on input line 262.
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [14] [15] [16]
+) [18] [19] [20]
 Overfull \hbox (4.72786pt too wide) in paragraph at lines 405--410
 \OT1/cmr/m/n/12 How-ever, up-dat-ing pa-ram-e-ters asyn-chronously changes the 
 pol-icy only slightly
  []
 
-) (./Chapters/4_Asset_Allocation.tex [17] [18
+) (./Chapters/4_Asset_Allocation.tex [21] [22
 
 ]
-Chapter 3.
+Chapter 4.
 
 Underfull \vbox (badness 8132) has occurred while \output is active []
 
- [19]
-[20] [21]
+ [23]
+[24] [25]
 
-LaTeX Warning: Reference `sec:softmax' on page 22 undefined on input line 139.
+LaTeX Warning: Reference `sec:softmax' on page 26 undefined on input line 139.
 
-) [22] [23] [24
+) [26] [27] [28
 
-] (./thesis.bbl [25
+] (./thesis.bbl [29
 
-] [26] [27] [28] [29] [30]) [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
+] [30] [31] [32] [33] [34] [35]) [36]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 71.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 71.
 
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 71.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 71.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 8EB37D564A4A3D825F9D64AAB5C09FD3;1443.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: 370924B7E2A219BC77172862E0010192;1550
-(rerunfilecheck)             After:  5A6FA313277562DCDD29FBA46AA34B4D;1632.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 77.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 71.
  ) 
 Here is how much of TeX's memory you used:
- 17432 strings out of 495028
- 299522 string characters out of 6181497
- 384281 words of memory out of 5000000
- 20041 multiletter control sequences out of 15000+600000
- 12965 words of font info for 52 fonts, out of 8000000 for 9000
+ 18871 strings out of 495028
+ 320642 string characters out of 6181497
+ 403284 words of memory out of 5000000
+ 21431 multiletter control sequences out of 15000+600000
+ 13586 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,20n,57p,418b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.1.6} has been referenced but does not exi
-st, replaced by a fixed one
-
- </home/pierpaolo/.texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (31 pages, 278785 bytes).
+ 63i,20n,57p,495b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/pierpaolo/.texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (38 pages, 291456 bytes).
 PDF statistics:
- 547 PDF objects out of 1000 (max. 8388607)
- 493 compressed objects within 5 object streams
- 244 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 632 PDF objects out of 1000 (max. 8388607)
+ 570 compressed objects within 6 object streams
+ 273 named destinations out of 1000 (max. 500000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 
