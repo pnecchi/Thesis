@@ -28,7 +28,7 @@ def main():
     # Experiment parameters
     batch = 1              # Number of samples per learning step
     nEpochs = 50           # Number of learning epochs
-    nLearningSteps = 2000  # Number of learning steps per epoch
+    nLearningSteps = 500   # Number of learning steps per epoch
     nTestSteps = 100       # Number of test steps
 
     # Paramenters

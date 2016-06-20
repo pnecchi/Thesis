@@ -60,14 +60,16 @@ arma::vec GaussianPolicy::likelihoodScore(arma::vec const &observation_,
     features(0) = 1.0;
     features.rows(1, features.size() - 1) = observation_;
 
-    // Compute mean
+    // Compute mean and stddev
     arma::vec mean = psiMat.t() * features;
     double stddev = parameters(dimParameters - 1);
+    double stddev2 = stddev * stddev;
+    double stddev3 = stddev2 * stddev;
 
     // Compute gradient with respect to parameters
     arma::vec deltaAction = action_ - mean;
-    arma::vec gradientMean = deltaAction * stddev;
-    double gradientSigma = arma::norm(deltaAction, 2) - stddev * stddev;
+    arma::vec gradientMean = deltaAction / stddev2;
+    double gradientSigma = arma::norm(deltaAction, 2) / stddev3 - 1.0 / stddev;
 
     // Compute gradient with respect to mean hyperparameters
     arma::vec likScore(dimParameters, arma::fill::zeros);

@@ -10,6 +10,7 @@
 #include <thesis/GaussianPolicy.h>
 #include <thesis/StochasticActor.h>
 #include <thesis/ArrsacAgent.h>
+#include <thesis/AracAgent.h>
 #include <thesis/AssetAllocationExperiment.h>
 
 int main()
@@ -92,16 +93,27 @@ int main()
     std::cout << "done" << std::endl;
 
     // ARSSAC Agent
-    std::cout << ".. ARRSAC Agent - ";
-    ARRSACAgent agent(actor,
-                      criticV,
-                      criticU,
-                      maxVar,
-                      alphaActor,
-                      alphaCritic,
-                      alphaBaseline,
-                      alphaLagrange);
+//    std::cout << ".. ARRSAC Agent - ";
+//    ARRSACAgent agent(actor,
+//                      criticV,
+//                      criticU,
+//                      maxVar,
+//                      alphaActor,
+//                      alphaCritic,
+//                      alphaBaseline,
+//                      alphaLagrange);
+//    std::cout << "done" << std::endl;
+
+    // ARAC Agent
+    std::cout << ".. ARAC Agent - ";
+    ARACAgent agent(actor,
+                    criticV,
+                    alphaActor,
+                    alphaCritic,
+                    alphaBaseline);
     std::cout << "done" << std::endl;
+
+
 
     // Asset allocation experiment
     std::cout << ".. Asset allocation experiment - ";

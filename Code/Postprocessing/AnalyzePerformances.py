@@ -56,7 +56,7 @@ for i in xrange(nExperiments):
     sumSquaresCumReturn += cumReturn * cumReturn
 
     # Plot cumulative profit for this experiment
-    # ax1.plot(np.arange(len(cumReturn)), cumReturn, lw=1, ls='--', c='grey')
+    ax1.plot(np.arange(len(cumReturn)), cumReturn, lw=1, ls='--', c='grey')
 
 meanCumReturn = sumCumReturn / float(nExperiments)
 stddevCumReturn = np.sqrt(sumSquaresCumReturn / float(nExperiments)

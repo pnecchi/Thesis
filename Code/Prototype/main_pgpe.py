@@ -62,8 +62,8 @@ def main():
 
     # Initialize learner module
     learner = PGPE(storeAllEvaluations=True,
-                   learningRate=0.05,
-                   sigmaLearningRate=0.025,
+                   learningRate=0.01,
+                   sigmaLearningRate=0.01,
                    batchSize=batch,
                    # momentum=0.05,
                    # epsilon=6.0,

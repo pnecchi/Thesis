@@ -127,6 +127,30 @@ main/fast:
 	$(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/AracAgent.o: src/AracAgent.cpp.o
+.PHONY : src/AracAgent.o
+
+# target to build an object file
+src/AracAgent.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/AracAgent.cpp.o
+.PHONY : src/AracAgent.cpp.o
+
+src/AracAgent.i: src/AracAgent.cpp.i
+.PHONY : src/AracAgent.i
+
+# target to preprocess a source file
+src/AracAgent.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/AracAgent.cpp.i
+.PHONY : src/AracAgent.cpp.i
+
+src/AracAgent.s: src/AracAgent.cpp.s
+.PHONY : src/AracAgent.s
+
+# target to generate assembly for a file
+src/AracAgent.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/AracAgent.cpp.s
+.PHONY : src/AracAgent.cpp.s
+
 src/ArrsacAgent.o: src/ArrsacAgent.cpp.o
 .PHONY : src/ArrsacAgent.o
 
@@ -401,6 +425,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... thesis"
 	@echo "... main"
+	@echo "... src/AracAgent.o"
+	@echo "... src/AracAgent.i"
+	@echo "... src/AracAgent.s"
 	@echo "... src/ArrsacAgent.o"
 	@echo "... src/ArrsacAgent.i"
 	@echo "... src/ArrsacAgent.s"
