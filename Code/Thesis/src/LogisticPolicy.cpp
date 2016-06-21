@@ -27,6 +27,7 @@ arma::vec LogisticPolicy::getAction(arma::vec const & observation_) const
     double activation = arma::dot(parameters, features);
     arma::vec action(1);
     action(0) = std::tanh(activation);
+    return action;
 }
 
 void LogisticPolicy::reset()

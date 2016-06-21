@@ -156,6 +156,7 @@
 			<Option virtualFolder="CMake Files/examples/" />
 		</Unit>
 		<Unit filename="examples/main.cpp" />
+		<Unit filename="examples/main_pgpe.cpp" />
 		<Unit filename="include/thesis/Actor.h" />
 		<Unit filename="include/thesis/Agent.h" />
 		<Unit filename="include/thesis/AracAgent.h" />
@@ -164,7 +165,6 @@
 		<Unit filename="include/thesis/AssetAllocationTask.h" />
 		<Unit filename="include/thesis/BacktestLog.h" />
 		<Unit filename="include/thesis/BinaryPolicy.h" />
-		<Unit filename="include/thesis/BoltzmannExplorationPolicy.h" />
 		<Unit filename="include/thesis/BoltzmannPolicy.h" />
 		<Unit filename="include/thesis/Critic.h" />
 		<Unit filename="include/thesis/ExperimentParameters.h" />
@@ -196,7 +196,6 @@
 		<Unit filename="src/LogisticPolicy.cpp" />
 		<Unit filename="src/MarketEnvironment.cpp" />
 		<Unit filename="src/PgpePolicy.cpp" />
-		<Unit filename="src/ProbabilityDistribution.cpp" />
 		<Unit filename="src/RandomGenerator.cpp" />
 		<Unit filename="src/Statistics.cpp" />
 		<Extensions>

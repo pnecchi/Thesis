@@ -17,7 +17,7 @@ matplotlib.style.use('seaborn-colorblind')
 ##############
 
 inputDir = '../../Data/Debug/'
-nExperiments = 5
+nExperiments = 10
 
 ########################
 # Visualize allocation #

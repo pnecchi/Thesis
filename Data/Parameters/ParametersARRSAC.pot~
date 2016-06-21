@@ -8,7 +8,7 @@
 ###############
 
 # Input filepath (relative to Thesis/Code/Thesis/examples/ directory) 
-inputDataPath=../../../Data/Input/daily_returns.csv
+inputDataPath=../../../Data/Input/synthetic.csv
 
 # Output filepath (relative to Thesis/Code/Thesis/examples/ directory)
 outputDataPath=../../../Data/Output/
@@ -28,13 +28,13 @@ riskFreeRate=0.0
 #########################
 
 # Proportional transaction costs
-deltaP=0.00
+deltaP=0.000
 
 # Fixed transaction costs
 deltaF=0.0
 
 # Short-selling fees
-deltaS=0.00
+deltaS=0.000
 
 # Number of past days observed by the agent
 numDaysObserved=5
@@ -47,13 +47,13 @@ numDaysObserved=5
 maxVar=0.04
 
 # Actor learning rate
-alphaActor=0.001
+alphaActor=0.0005
 
 # Critic learning rate
 alphaCritic=0.01
 
 # Baselines learning rate 
-alphaBaseline=0.2
+alphaBaseline=0.1
 
 # Lagrange multiplier learning rate
 alphaLagrange=0.005
@@ -63,13 +63,13 @@ alphaLagrange=0.005
 ##############
 
 # Number of experiments
-numExperiments=5
+numExperiments=10
 
 # Number of epochs
-numEpochs=300
+numEpochs=1000
 
 # Number of training steps
-numTrainingSteps=100
+numTrainingSteps=1000
 
 # Number of test steps
 numTestSteps=100

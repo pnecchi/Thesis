@@ -74,7 +74,7 @@ void AssetAllocationExperiment::run()
                 agentPtr->learn();
             }
 
-            if ((epoch + 1) % 50 == 0)
+            if ((epoch + 1) % 10 == 0)
             {
                 std::vector<std::vector<double>> stats = experimentStats.getStatistics();
                 std::cout << "Experiment #" << exp

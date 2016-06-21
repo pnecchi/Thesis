@@ -115,6 +115,20 @@ main/fast:
 	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+# Convenience name for target.
+examples/CMakeFiles/main_pgpe.dir/rule:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/main_pgpe.dir/rule
+.PHONY : examples/CMakeFiles/main_pgpe.dir/rule
+
+# Convenience name for target.
+main_pgpe: examples/CMakeFiles/main_pgpe.dir/rule
+.PHONY : main_pgpe
+
+# fast build rule for target.
+main_pgpe/fast:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_pgpe.dir/build.make examples/CMakeFiles/main_pgpe.dir/build
+.PHONY : main_pgpe/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -139,6 +153,30 @@ main.cpp.s:
 	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+main_pgpe.o: main_pgpe.cpp.o
+.PHONY : main_pgpe.o
+
+# target to build an object file
+main_pgpe.cpp.o:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_pgpe.dir/build.make examples/CMakeFiles/main_pgpe.dir/main_pgpe.cpp.o
+.PHONY : main_pgpe.cpp.o
+
+main_pgpe.i: main_pgpe.cpp.i
+.PHONY : main_pgpe.i
+
+# target to preprocess a source file
+main_pgpe.cpp.i:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_pgpe.dir/build.make examples/CMakeFiles/main_pgpe.dir/main_pgpe.cpp.i
+.PHONY : main_pgpe.cpp.i
+
+main_pgpe.s: main_pgpe.cpp.s
+.PHONY : main_pgpe.s
+
+# target to generate assembly for a file
+main_pgpe.cpp.s:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_pgpe.dir/build.make examples/CMakeFiles/main_pgpe.dir/main_pgpe.cpp.s
+.PHONY : main_pgpe.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -148,9 +186,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... main_pgpe"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main_pgpe.o"
+	@echo "... main_pgpe.i"
+	@echo "... main_pgpe.s"
 .PHONY : help
 
 

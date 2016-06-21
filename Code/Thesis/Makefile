@@ -127,6 +127,19 @@ main/fast:
 	$(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named main_pgpe
+
+# Build rule for target.
+main_pgpe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main_pgpe
+.PHONY : main_pgpe
+
+# fast build rule for target.
+main_pgpe/fast:
+	$(MAKE) -f examples/CMakeFiles/main_pgpe.dir/build.make examples/CMakeFiles/main_pgpe.dir/build
+.PHONY : main_pgpe/fast
+
 src/AracAgent.o: src/AracAgent.cpp.o
 .PHONY : src/AracAgent.o
 
@@ -521,6 +534,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... thesis"
 	@echo "... main"
+	@echo "... main_pgpe"
 	@echo "... src/AracAgent.o"
 	@echo "... src/AracAgent.i"
 	@echo "... src/AracAgent.s"

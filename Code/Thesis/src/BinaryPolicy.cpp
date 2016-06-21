@@ -3,7 +3,7 @@
 BinaryPolicy::BinaryPolicy(size_t dimObservation_)
     : Policy(dimObservation_, 1ul),
       dimParameters(dimObservation_ + 1),
-      parameters(dimParameters)
+      parameters(dimObservation_ + 1)
 {
     initializeParameters();
 }
@@ -26,6 +26,7 @@ arma::vec BinaryPolicy::getAction(arma::vec const & observation_) const
     double activation = arma::dot(parameters, features);
     arma::vec action(1);
     action(0) = (activation > 0.0) ? 1.0 : -1.0;
+    return action;
 }
 
 void BinaryPolicy::reset()

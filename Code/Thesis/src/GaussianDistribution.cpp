@@ -3,7 +3,7 @@
 GaussianDistribution::GaussianDistribution(size_t dimOutput_)
     : dimOutput(dimOutput_),
       dimParameters(2 * dimOutput_),
-      parameters(dimParameters),
+      parameters(2 * dimOutput_),
       generator(16u)                    // eventually use random seed
 {
     initializeParameters();
@@ -11,8 +11,8 @@ GaussianDistribution::GaussianDistribution(size_t dimOutput_)
 
 void GaussianDistribution::initializeParameters()
 {
-    parameters.rows(0, dimOutput - 1) = 0.0;
-    parameters.rows(dimOutput, dimParameters - 1) = 1.0;
+    parameters.rows(0, dimOutput - 1).zeros();
+    parameters.rows(dimOutput, dimParameters - 1).ones();
 }
 
 std::unique_ptr<ProbabilityDistribution> GaussianDistribution::clone() const
