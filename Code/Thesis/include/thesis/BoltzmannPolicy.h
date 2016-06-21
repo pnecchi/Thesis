@@ -24,7 +24,7 @@ class BoltzmannPolicy : public StochasticPolicy
          * \param possibleActions_ vector of possible actions
          */
         BoltzmannPolicy(size_t dimObservation_,
-                                   std::vector<double> possibleActions_);
+                        std::vector<double> possibleActions_);
 
         //! Default destructor
         virtual ~BoltzmannPolicy() = default;

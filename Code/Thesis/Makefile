@@ -247,6 +247,30 @@ src/BacktestLog.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BacktestLog.cpp.s
 .PHONY : src/BacktestLog.cpp.s
 
+src/BinaryPolicy.o: src/BinaryPolicy.cpp.o
+.PHONY : src/BinaryPolicy.o
+
+# target to build an object file
+src/BinaryPolicy.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BinaryPolicy.cpp.o
+.PHONY : src/BinaryPolicy.cpp.o
+
+src/BinaryPolicy.i: src/BinaryPolicy.cpp.i
+.PHONY : src/BinaryPolicy.i
+
+# target to preprocess a source file
+src/BinaryPolicy.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BinaryPolicy.cpp.i
+.PHONY : src/BinaryPolicy.cpp.i
+
+src/BinaryPolicy.s: src/BinaryPolicy.cpp.s
+.PHONY : src/BinaryPolicy.s
+
+# target to generate assembly for a file
+src/BinaryPolicy.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BinaryPolicy.cpp.s
+.PHONY : src/BinaryPolicy.cpp.s
+
 src/BoltzmannPolicy.o: src/BoltzmannPolicy.cpp.o
 .PHONY : src/BoltzmannPolicy.o
 
@@ -294,6 +318,30 @@ src/ExperimentParameters.s: src/ExperimentParameters.cpp.s
 src/ExperimentParameters.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/ExperimentParameters.cpp.s
 .PHONY : src/ExperimentParameters.cpp.s
+
+src/GaussianDistribution.o: src/GaussianDistribution.cpp.o
+.PHONY : src/GaussianDistribution.o
+
+# target to build an object file
+src/GaussianDistribution.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/GaussianDistribution.cpp.o
+.PHONY : src/GaussianDistribution.cpp.o
+
+src/GaussianDistribution.i: src/GaussianDistribution.cpp.i
+.PHONY : src/GaussianDistribution.i
+
+# target to preprocess a source file
+src/GaussianDistribution.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/GaussianDistribution.cpp.i
+.PHONY : src/GaussianDistribution.cpp.i
+
+src/GaussianDistribution.s: src/GaussianDistribution.cpp.s
+.PHONY : src/GaussianDistribution.s
+
+# target to generate assembly for a file
+src/GaussianDistribution.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/GaussianDistribution.cpp.s
+.PHONY : src/GaussianDistribution.cpp.s
 
 src/GaussianPolicy.o: src/GaussianPolicy.cpp.o
 .PHONY : src/GaussianPolicy.o
@@ -343,6 +391,30 @@ src/LinearRegressor.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LinearRegressor.cpp.s
 .PHONY : src/LinearRegressor.cpp.s
 
+src/LogisticPolicy.o: src/LogisticPolicy.cpp.o
+.PHONY : src/LogisticPolicy.o
+
+# target to build an object file
+src/LogisticPolicy.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LogisticPolicy.cpp.o
+.PHONY : src/LogisticPolicy.cpp.o
+
+src/LogisticPolicy.i: src/LogisticPolicy.cpp.i
+.PHONY : src/LogisticPolicy.i
+
+# target to preprocess a source file
+src/LogisticPolicy.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LogisticPolicy.cpp.i
+.PHONY : src/LogisticPolicy.cpp.i
+
+src/LogisticPolicy.s: src/LogisticPolicy.cpp.s
+.PHONY : src/LogisticPolicy.s
+
+# target to generate assembly for a file
+src/LogisticPolicy.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LogisticPolicy.cpp.s
+.PHONY : src/LogisticPolicy.cpp.s
+
 src/MarketEnvironment.o: src/MarketEnvironment.cpp.o
 .PHONY : src/MarketEnvironment.o
 
@@ -366,6 +438,30 @@ src/MarketEnvironment.s: src/MarketEnvironment.cpp.s
 src/MarketEnvironment.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/MarketEnvironment.cpp.s
 .PHONY : src/MarketEnvironment.cpp.s
+
+src/PgpePolicy.o: src/PgpePolicy.cpp.o
+.PHONY : src/PgpePolicy.o
+
+# target to build an object file
+src/PgpePolicy.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/PgpePolicy.cpp.o
+.PHONY : src/PgpePolicy.cpp.o
+
+src/PgpePolicy.i: src/PgpePolicy.cpp.i
+.PHONY : src/PgpePolicy.i
+
+# target to preprocess a source file
+src/PgpePolicy.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/PgpePolicy.cpp.i
+.PHONY : src/PgpePolicy.cpp.i
+
+src/PgpePolicy.s: src/PgpePolicy.cpp.s
+.PHONY : src/PgpePolicy.s
+
+# target to generate assembly for a file
+src/PgpePolicy.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/PgpePolicy.cpp.s
+.PHONY : src/PgpePolicy.cpp.s
 
 src/RandomGenerator.o: src/RandomGenerator.cpp.o
 .PHONY : src/RandomGenerator.o
@@ -440,21 +536,33 @@ help:
 	@echo "... src/BacktestLog.o"
 	@echo "... src/BacktestLog.i"
 	@echo "... src/BacktestLog.s"
+	@echo "... src/BinaryPolicy.o"
+	@echo "... src/BinaryPolicy.i"
+	@echo "... src/BinaryPolicy.s"
 	@echo "... src/BoltzmannPolicy.o"
 	@echo "... src/BoltzmannPolicy.i"
 	@echo "... src/BoltzmannPolicy.s"
 	@echo "... src/ExperimentParameters.o"
 	@echo "... src/ExperimentParameters.i"
 	@echo "... src/ExperimentParameters.s"
+	@echo "... src/GaussianDistribution.o"
+	@echo "... src/GaussianDistribution.i"
+	@echo "... src/GaussianDistribution.s"
 	@echo "... src/GaussianPolicy.o"
 	@echo "... src/GaussianPolicy.i"
 	@echo "... src/GaussianPolicy.s"
 	@echo "... src/LinearRegressor.o"
 	@echo "... src/LinearRegressor.i"
 	@echo "... src/LinearRegressor.s"
+	@echo "... src/LogisticPolicy.o"
+	@echo "... src/LogisticPolicy.i"
+	@echo "... src/LogisticPolicy.s"
 	@echo "... src/MarketEnvironment.o"
 	@echo "... src/MarketEnvironment.i"
 	@echo "... src/MarketEnvironment.s"
+	@echo "... src/PgpePolicy.o"
+	@echo "... src/PgpePolicy.i"
+	@echo "... src/PgpePolicy.s"
 	@echo "... src/RandomGenerator.o"
 	@echo "... src/RandomGenerator.i"
 	@echo "... src/RandomGenerator.s"

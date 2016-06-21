@@ -77,15 +77,15 @@ int main()
     std::cout << "done" << std::endl;
 
     // Boltzmann Policy
-    std::cout << ".. Boltzmann stochastic policy - ";
-    std::vector<double> possibleAction {-1.0, 1.0};
-    BoltzmannPolicy policy(task.getDimObservation(), possibleAction);
-    std::cout << "done" << std::endl;
+//    std::cout << ".. Boltzmann stochastic policy - ";
+//    std::vector<double> possibleAction {-1.0, 1.0};
+//    BoltzmannPolicy policy(task.getDimObservation(), possibleAction);
+//    std::cout << "done" << std::endl;
 
     // Gaussian Policy
-//    std::cout << ".. Gaussian stochastic policy - ";
-//    GaussianPolicy policy(task.getDimObservation(), task.getDimAction());
-//    std::cout << "done" << std::endl;
+    std::cout << ".. Gaussian stochastic policy - ";
+    GaussianPolicy policy(task.getDimObservation(), task.getDimAction());
+    std::cout << "done" << std::endl;
 
     // Stochastic Actor
     std::cout << ".. Actor - ";
@@ -93,25 +93,25 @@ int main()
     std::cout << "done" << std::endl;
 
     // ARSSAC Agent
-//    std::cout << ".. ARRSAC Agent - ";
-//    ARRSACAgent agent(actor,
-//                      criticV,
-//                      criticU,
-//                      maxVar,
-//                      alphaActor,
-//                      alphaCritic,
-//                      alphaBaseline,
-//                      alphaLagrange);
-//    std::cout << "done" << std::endl;
+    std::cout << ".. ARRSAC Agent - ";
+    ARRSACAgent agent(actor,
+                      criticV,
+                      criticU,
+                      maxVar,
+                      alphaActor,
+                      alphaCritic,
+                      alphaBaseline,
+                      alphaLagrange);
+    std::cout << "done" << std::endl;
 
     // ARAC Agent
-    std::cout << ".. ARAC Agent - ";
-    ARACAgent agent(actor,
-                    criticV,
-                    alphaActor,
-                    alphaCritic,
-                    alphaBaseline);
-    std::cout << "done" << std::endl;
+//    std::cout << ".. ARAC Agent - ";
+//    ARACAgent agent(actor,
+//                    criticV,
+//                    alphaActor,
+//                    alphaCritic,
+//                    alphaBaseline);
+//    std::cout << "done" << std::endl;
 
 
 

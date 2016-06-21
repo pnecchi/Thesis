@@ -133,40 +133,70 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" />
+		<Unit filename="CMakeFiles/feature_tests.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="CMakeFiles/feature_tests.cxx" />
 		<Unit filename="CMakeLists.txt">
 			<Option virtualFolder="CMake Files/" />
 		</Unit>
+		<Unit filename="examples/CMakeFiles/3.2.2/CompilerIdC/CMakeCCompilerId.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="examples/CMakeFiles/3.2.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" />
+		<Unit filename="examples/CMakeFiles/feature_tests.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="examples/CMakeFiles/feature_tests.cxx" />
 		<Unit filename="examples/CMakeLists.txt">
 			<Option virtualFolder="CMake Files/examples/" />
 		</Unit>
 		<Unit filename="examples/main.cpp" />
 		<Unit filename="include/thesis/Actor.h" />
 		<Unit filename="include/thesis/Agent.h" />
+		<Unit filename="include/thesis/AracAgent.h" />
 		<Unit filename="include/thesis/ArrsacAgent.h" />
 		<Unit filename="include/thesis/AssetAllocationExperiment.h" />
 		<Unit filename="include/thesis/AssetAllocationTask.h" />
 		<Unit filename="include/thesis/BacktestLog.h" />
+		<Unit filename="include/thesis/BinaryPolicy.h" />
 		<Unit filename="include/thesis/BoltzmannExplorationPolicy.h" />
+		<Unit filename="include/thesis/BoltzmannPolicy.h" />
 		<Unit filename="include/thesis/Critic.h" />
 		<Unit filename="include/thesis/ExperimentParameters.h" />
 		<Unit filename="include/thesis/FunctionApproximator.h" />
+		<Unit filename="include/thesis/GaussianDistribution.h" />
 		<Unit filename="include/thesis/GaussianPolicy.h" />
 		<Unit filename="include/thesis/LinearRegressor.h" />
+		<Unit filename="include/thesis/LogisticPolicy.h" />
 		<Unit filename="include/thesis/MarketEnvironment.h" />
+		<Unit filename="include/thesis/PgpePolicy.h" />
 		<Unit filename="include/thesis/Policy.h" />
+		<Unit filename="include/thesis/ProbabilityDistribution.h" />
 		<Unit filename="include/thesis/RandomGenerator.h" />
 		<Unit filename="include/thesis/Statistics.h" />
 		<Unit filename="include/thesis/StochasticActor.h" />
 		<Unit filename="include/thesis/StochasticPolicy.h" />
+		<Unit filename="src/AracAgent.cpp" />
 		<Unit filename="src/ArrsacAgent.cpp" />
 		<Unit filename="src/AssetAllocationExperiment.cpp" />
 		<Unit filename="src/AssetAllocationTask.cpp" />
 		<Unit filename="src/BacktestLog.cpp" />
+		<Unit filename="src/BinaryPolicy.cpp" />
 		<Unit filename="src/BoltzmannExplorationPolicy.cpp" />
+		<Unit filename="src/BoltzmannPolicy.cpp" />
 		<Unit filename="src/ExperimentParameters.cpp" />
+		<Unit filename="src/GaussianDistribution.cpp" />
 		<Unit filename="src/GaussianPolicy.cpp" />
 		<Unit filename="src/LinearRegressor.cpp" />
+		<Unit filename="src/LogisticPolicy.cpp" />
 		<Unit filename="src/MarketEnvironment.cpp" />
+		<Unit filename="src/PgpePolicy.cpp" />
+		<Unit filename="src/ProbabilityDistribution.cpp" />
 		<Unit filename="src/RandomGenerator.cpp" />
 		<Unit filename="src/Statistics.cpp" />
 		<Extensions>

@@ -69,7 +69,7 @@ arma::vec GaussianPolicy::likelihoodScore(arma::vec const &observation_,
     // Compute gradient with respect to parameters
     arma::vec deltaAction = action_ - mean;
     arma::vec gradientMean = deltaAction / stddev2;
-    double gradientSigma = arma::norm(deltaAction, 2) / stddev3 - 1.0 / stddev;
+    double gradientSigma = arma::norm(deltaAction, 2) / stddev3 - getDimAction() / stddev;
 
     // Compute gradient with respect to mean hyperparameters
     arma::vec likScore(dimParameters, arma::fill::zeros);
