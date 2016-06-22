@@ -1,0 +1,164 @@
+\chapter{Asset Allocation}
+
+The asset allocation problem consists of determining how to dynamically invest
+the available capital in a portfolio of different assets in order to maximize
+the expected total return or another relevant performance measure. Let us
+consider a financial market consisting of $I+1$ different stocks that are
+traded only at discrete times $t \in \{0, 1, 2, \ldots\}$ and denote by
+${Z}_t = {(Z_t^0, Z_t^1, \ldots, Z_t^I)}^T$ their prices at time $t$.
+Typically, $Z_t^0$ refers to a riskless asset whose dynamic is given by $Z_t^0
+= {(1 + X)}^t$ where $X$ is the deterministic risk-free interest rate. The
+investment process works as follows: at time $t$, the investor observes the
+state of the market $S_t$, consisting for example of the past asset prices and
+other relevant economic variables, and subsequently chooses how to rebalance
+his portfolio, by specifying the units of each stock ${n}_t = {(n_t^0 ,
+n_t^1 , \ldots , n_t^I)}^T$ to be held between $t$ and $t+1$. In doing so, he
+needs to take into account the transaction costs that he has to pay to the
+broker to change his position.  At time $t+1$, the investor realizes a profit
+or a loss from his investment due to the stochastic variation of the stock
+values. The investor’s goal is to maximize a given performance measure.
+
+\section{Reward Function}
+Let $W_t$ denote the wealth of the investor at time $t$. The profit realized
+between $t$ and $t+1$ is simply given by the difference between the trading
+P\&L and the transaction costs payed to the broker. More formally
+\begin{equation*}
+	\Delta W_{t+1} = W_{t+1} - W_t = \text{PL}_{t+1} - \text{TC}_{t}	
+\end{equation*}
+where $\text{PL}_{t+1}$ denotes the profit due to the variation of the
+portfolio asset prices between $t$ and $t+1$
+\begin{equation*}
+	\text{PL}_{t+1} = {n}_t \cdot \Delta{Z}_{t+1} = \sum^{I}_{i=0} 
+	n_t^i (Z_{t+1}^i - Z_t^i) 
+\end{equation*}
+and $\text{TC}_t$ denotes the fees payed to the broker to change the portfolio
+allocation and on the short positions
+\begin{equation*}
+	\text{TC}_t = \sum^{I}_{i=0} \delta_p^i \left| n_t^i - n_{t-1}^i\right| Z_t^i 
+				- \delta_f W_t \ind{{n}_t \neq {n}_{t-1}} 
+				- \sum^{I}_{i=0} \delta_s^i {(n_t^i)}^{-} Z_t^i
+\end{equation*}
+The transaction costs consist of three different components. The first term 
+represent a transaction cost that is proportional to the change in value of the 
+position in each asset. The second term is a fixed fraction of the total value
+of the portfolio which is payed only if the allocation is changed. The last
+term represents the fees payed to the broker for the shares borrowed to build a
+short position. The portfolio return between $t$ and $t+1$ is thus given by
+\begin{equation}\label{eq:portfolio_return}
+	X_{t+1} = \frac{\Delta W_{t+1}}{W_t} = \sum^{I}_{i=0} \left[ a_t^i
+	X_{t+1}^i - \delta_i \left| a_t^i - \tilde{a}_t^i \right| - \delta_s
+	{(a_t^i)}^- \right] - \delta_f \ind{{a}_t \neq \tilde{{a}}_{t-1}}  
+\end{equation}
+where 
+\begin{equation*}
+	X_{t+1}^i = \frac{\Delta Z_{t+1}^i}{Z_t^i}
+\end{equation*}
+is the return of the $i$-th stock between $t$ and $t+1$, 
+\begin{equation*}
+	a_t^i = \frac{n_t^i Z_t^i}{W_t}
+\end{equation*}
+is the fraction of wealth invested in the $i$-th stock between time $t$ and
+$t+1$ and finally 
+\begin{equation*}
+	\tilde{a}_t^i = \frac{n_{t-1}^i Z_t^i}{W_t} = \frac{a_{t-1}^i (1+X_t^i)}
+	{1 + X_t}
+\end{equation*}
+is the fraction of wealth invested in the $i$-th stock just before the 
+reallocation. We assume that the agent invests all his wealth at each step, so 
+that $W_t$ can be also interpreted as the value of his portfolio. This 
+assumption leads to the following constraint on the portfolio weights
+\begin{equation}
+	\sum^{I}_{i=0} a_t^i = 1 \;\;\;\;\; \forall t \in \{0, 1, 2, \ldots\}
+\end{equation}
+We notice that we are neglecting the typical margin requirements on the short
+positions, which would reduce the available capital at time $t$. Considering
+margin requirements would lead to a more complex constraint on the portfolio
+weights which would be difficult to treat in the reinforcement learning
+framework. Plugging this constraint into Eq. (\ref{eq:portfolio_return}), we
+obtain
+\begin{equation}\label{eq:portfolio_return_benchmark}
+	X_{t+1} = X + \sum^{I}_{i=1} a_t^i (X_{t+1}^i - X) - \sum^{I}_{i=0}
+	\left[\delta_i \left| a_t^i - \tilde{a}_t^i \right| - \delta_s^i
+	{(a_t^i)}^-\right] - \delta_f \ind{{a}_t \neq \tilde{{a}}_{t-1}}   
+\end{equation}
+which highlights the role of the risk-free asset as a benchmark for the 
+portfolio returns. The total profit realized by the investor between $t=0$ and
+$T$ is 
+\begin{equation*}
+	\Pi_T = W_T - W_0 = \sum^{T}_{t=1} \Delta W_t = \sum^{T}_{t=1} W_t X_t  
+\end{equation*}
+The portfolio return between $t=0$ and $T$ is given by
+\begin{equation*}
+	X_{0,T} = \frac{W_T}{W_0} - 1 = \prod_{t=1}^T (1+X_t) - 1
+\end{equation*}
+In order to cast the asset allocation problem in the reinforcement learning
+framework, we consider the log-return of the portfolio between $t=0$ and $T$
+\begin{equation}
+	R_{0,T} = \log \frac{W_T}{W_0} = \sum^{T}_{t=1} \log(1+X_t) = \sum_{t=1}^T
+	R_t
+\end{equation}
+where $R_{t+1}$ is the log-return of the portfolio between $t$ and $t+1$
+\begin{equation}
+	R_{t+1} = \log \left\{ 1 + \sum^{I}_{i=0} \left[ a_t^i X_{t+1}^i - \delta_i
+	\left| a_t^i - \tilde{a}_t^i \right| - \delta_s {(a_t^i)}^- \right] -
+	\delta_f \ind{{a}_t \neq \tilde{{a}}_{t-1}}\right\}
+\end{equation}
+The portfolio return and log-return can be used as the reward function of a
+RL algorithm, either in a offline or in an online approach.
+
+\section{States}
+In this section, we specify the state of the system that the agent observes in
+order to make his decisions. First, we consider the $P+1$ past returns of all
+risky assets, i.e. $\{X_t, X_{t-1}, \ldots, X_{t-P}\}$. These input variables
+may be used to construct more complex features for example using some Deep
+Learning techniques, such as a deep auto-encoder. In order to properly 
+incorporate the effects of transaction costs into his decision process, the
+agent must keep track of its current position $\tilde{a}_t$. Finally, we might
+consider some external variables $Y_t$ that may be relevant to the trader.
+Summing up, we assume that the state of the system is composed in the following
+way 
+\begin{equation}
+	S_t = \{X_t, X_{t-1}, \ldots, X_{t-P}, \tilde{a}_t, Y_t, Y_{t-1}, \ldots,
+	Y_{t-P}\}
+\end{equation}
+
+\section{Actions}
+In this section, we specify the actions that the trading system may take. We
+assume that the agent only specifies the portfolio weights $a_t = (a_t^0,
+\ldots, a_t^I)^T$ and therefore determines the allocation for the time interval
+$[t, t+1)$. If we assume that the agent invests all of his capital at each time
+step and that short-selling is not allowed, then the portfolio weights should
+satisfy, for every $t \in \{0, 1, \ldots\}$, the following constraints
+\begin{equation}
+	\begin{cases}
+		a_t^i \geq 0 \;,\; \forall i \in \{0, \ldots, I\}\\
+		\sum^{I}_{i=0} a_t^i = 1 
+	\end{cases}
+\end{equation}
+This constraint can be easily enforced by considering a parametric softmax 
+policy, which has been introduced in Section \ref{sec:softmax}. If short 
+selling is allowed, weights might also be negative. A simple approach is to 
+assume that, for every $t \in \{0, 1, \ldots\}$, the weights satisfy
+\begin{equation}
+	\begin{cases}
+		a_t^i \in \R \;,\; \forall i \in \{1, \ldots, I\}\\
+		a_t^0 = 1 - \sum^{I}_{i=1} a_t^i
+	\end{cases}
+\end{equation}
+Since $a_t^0$ is uniquely determined by the other weights, it is enough to
+define a policy that specifies the allocation in the risky assets, e.g.\ a
+Gaussian policy in $\R^I$. The obvious shortcoming of this approach is that
+the agent might enter in huge short positions, which is not realistic. A first
+observation is that, if the stochastic policy is concentrated around the
+origin, huge long or short positions would have very small probabilities of 
+being selected. Moreover, we notice that the agent would pay large fees for 
+entering into large short positions, independently of the trading profits. 
+Therefore, we expect the agent to learn that short positions are very expensive 
+and would therefore try to avoid them.\\
+Working in a constinuous action space is computationally difficult and only few
+reinforcement learning algorithm are well-suited to this setting, e.g. policy
+gradient methods. A simpler approach is to reduce the action space to a discrete 
+space. For instance, in the two assets scenario we might assume that $a_t \in
+\{-1, 0, +1\}$. Thus the agent may be long ($+1$), neutral ($0$) or short
+($-1$) on the risky-asset. Working in a discrete action space is more simple,
+and standard value-based approaches might be employed. 

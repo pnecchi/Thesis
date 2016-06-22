@@ -5,6 +5,7 @@
 #include <thesis/Policy.h>
 #include <thesis/ProbabilityDistribution.h>
 #include <memory>
+#include <random>
 
 class PGPEPolicy : public StochasticPolicy
 {
@@ -42,6 +43,9 @@ class PGPEPolicy : public StochasticPolicy
 
         // Controller parameters distributions
         std::unique_ptr<ProbabilityDistribution> distributionPtr;
+
+        mutable std::mt19937 generator;
+        mutable std::uniform_real_distribution<double> distribution;
 };
 
 #endif // PGPEPOLICY_H

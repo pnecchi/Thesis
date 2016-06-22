@@ -11,7 +11,7 @@ class LogisticPolicy : public Policy
         virtual ~LogisticPolicy() = default;
         virtual size_t getDimParameters() const { return dimParameters; }
         virtual arma::vec getParameters() const { return parameters; }
-        virtual void setParameters(arma::vec const & parameters_) { parameters = parameters_; }
+        virtual void setParameters(arma::vec const & parameters_);
         virtual arma::vec getAction(arma::vec const & observation_) const;
         virtual void reset();
 

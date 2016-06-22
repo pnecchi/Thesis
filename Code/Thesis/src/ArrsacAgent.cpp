@@ -20,6 +20,9 @@ ARRSACAgent::ARRSACAgent(StochasticActor const & actor_,
       averageReward(alphaBaseline_),
       alphaLagrange(alphaLagrange_),
       averageSquareReward(alphaBaseline_),
+      gradientCriticV(criticV.getDimParameters(), arma::fill::zeros),
+      gradientCriticU(criticU.getDimParameters(), arma::fill::zeros),
+      gradientActor(actor.getDimParameters(), arma::fill::zeros),
       observation(actor_.getDimObservation()),
       action(actor_.getDimAction()),
       nextObservation(actor_.getDimObservation())
@@ -69,35 +72,34 @@ void ARRSACAgent::learn()
                  criticU.evaluate(observation);
 
     // 3) Update critics
-    arma::vec newParametersV = criticV.getParameters() +
-                               alphaCritic * tdV * criticV.gradient(observation);
-    arma::vec newParametersU = criticU.getParameters() +
-                               alphaCritic * tdU * criticU.gradient(observation);
+    gradientCriticV = lambda * gradientCriticV + criticV.gradient(observation);
+    gradientCriticU = lambda * gradientCriticU + criticU.gradient(observation);
+    arma::vec newParametersV = criticV.getParameters() + alphaCritic * tdV * gradientCriticV;
+    arma::vec newParametersU = criticU.getParameters() + alphaCritic * tdU * gradientCriticU;
     criticV.setParameters(newParametersV);
     criticU.setParameters(newParametersU);
 
     // 4) Update actor
     double lambda = eta - rho * rho;
-//    double sqrtLambda = sqrt(lambda);
-//    double coeffGradientSR = ((eta - benchmark * rho) * tdV -
-//                              0.5 * (rho - benchmark) * tdU) /
-//                              (lambda * sqrtLambda);
-//    arma::vec newParametersActor = actor.getParameters() +
-//        alphaActor * coeffGradientSR * actor.likelihoodScore(observation, action);
-//    actor.setParameters(newParametersActor);
-
-    // 4) Update actor - mean-variance criterion
-    double coeffGradientMV = - tdV + lagrangeMult * (tdU - 2.0 * rho * tdV);
-    arma::vec newParametersActor = actor.getParameters() -
-    alphaActor * coeffGradientMV * actor.likelihoodScore(observation, action);
+    double sqrtLambda = sqrt(lambda);
+    double coeffGradientSR = (eta * tdV - 0.5 * rho * tdU) / (lambda * sqrtLambda);
+    gradientActor = lambda * gradientActor + actor.likelihoodScore(observation, action);
+    arma::vec newParametersActor = actor.getParameters() +
+        alphaActor * coeffGradientSR * gradientActor;
     actor.setParameters(newParametersActor);
 
-    // 5) Update lagrange multiplier
-    lagrangeMult += alphaLagrange * (lambda - varMax);
-    if (lambda < 0.0)
-        lambda = 0.0;
-    if (lambda > 10000)
-        lambda = 10000;
+    // 4) Update actor - mean-variance criterion
+//    double coeffGradientMV = - tdV + lagrangeMult * (tdU - 2.0 * rho * tdV);
+//    gradientActor = lambda * gradientActor + actor.likelihoodScore(observation, action);
+//    arma::vec newParametersActor = actor.getParameters() - alphaActor * coeffGradientMV * gradientActor;
+//    actor.setParameters(newParametersActor);
+
+//    // 5) Update lagrange multiplier
+//    lagrangeMult += alphaLagrange * (lambda - varMax);
+//    if (lambda < 0.0)
+//        lambda = 0.0;
+//    if (lambda > 10000)
+//        lambda = 10000;
 }
 
 void ARRSACAgent::reset()

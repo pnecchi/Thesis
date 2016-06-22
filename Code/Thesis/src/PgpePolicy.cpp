@@ -4,7 +4,9 @@ PGPEPolicy::PGPEPolicy(Policy const &policy_,
                        ProbabilityDistribution const &distribution_)
     : StochasticPolicy(policy_.getDimObservation(), policy_.getDimAction()),
       policyPtr(policy_.clone()),
-      distributionPtr(distribution_.clone())
+      distributionPtr(distribution_.clone()),
+      generator(),
+      distribution(0.0, 1.0)
 {
     /* Nothing to do */
 }
@@ -25,7 +27,8 @@ std::unique_ptr<Policy> PGPEPolicy::cloneImpl() const
 arma::vec PGPEPolicy::getAction(arma::vec const &observation_) const
 {
     // Simulate policy parameters
-    policyPtr->setParameters(distributionPtr->simulate());
+    if (distribution(generator) < 0.1)
+        policyPtr->setParameters(distributionPtr->simulate());
 
     // Select action
     return policyPtr->getAction(observation_);

@@ -63,7 +63,6 @@ void AssetAllocationExperiment::run()
         {
             // Reset task and statistics
             task.reset();
-            experimentStats.reset();
 
             for (size_t step = 0; step < numTrainingSteps; ++step)
             {
@@ -74,7 +73,7 @@ void AssetAllocationExperiment::run()
                 agentPtr->learn();
             }
 
-            if ((epoch + 1) % 10 == 0)
+            if ((epoch + 1) % 50 == 0)
             {
                 std::vector<std::vector<double>> stats = experimentStats.getStatistics();
                 std::cout << "Experiment #" << exp
@@ -85,6 +84,8 @@ void AssetAllocationExperiment::run()
 
                 debugFile << epoch + 1 << "," << stats[0][0] << "," << stats[0][1]
                           << "," << stats[0][2] << ",\n";
+
+                experimentStats.reset();
             }
         }
         debugFile.close();

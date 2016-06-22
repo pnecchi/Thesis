@@ -13,6 +13,8 @@ ARACAgent::ARACAgent(StochasticActor const & actor_,
       alphaCritic(alphaCritic_),
       alphaBaseline(alphaBaseline_),
       averageReward(alphaBaseline),
+      gradientCritic(critic.getDimParameters(), arma::fill::zeros),
+      gradientActor(actor.getDimParameters(), arma::fill::zeros),
       observation(actor_.getDimObservation()),
       action(actor_.getDimAction()),
       nextObservation(actor_.getDimObservation())
@@ -57,13 +59,13 @@ void ARACAgent::learn()
         critic.evaluate(nextObservation) - critic.evaluate(observation);
 
     // 3) Update critics
-    arma::vec newParameters = critic.getParameters() +
-        alphaCritic * tdErr * critic.gradient(observation);
+    gradientCritic = lambda * gradientCritic + critic.gradient(observation);
+    arma::vec newParameters = critic.getParameters() + alphaCritic * tdErr * gradientCritic;
     critic.setParameters(newParameters);
 
     // 4) Update actor
-    arma::vec newParametersActor = actor.getParameters() +
-        alphaActor * tdErr * actor.likelihoodScore(observation, action);
+    gradientActor = lambda * gradientActor + actor.likelihoodScore(observation, action);
+    arma::vec newParametersActor = actor.getParameters() + alphaActor * tdErr * gradientActor;
     actor.setParameters(newParametersActor);
 }
 

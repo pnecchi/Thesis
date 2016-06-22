@@ -84,6 +84,12 @@ class ARRSACAgent : public Agent
         double alphaActor;
         double alphaLagrange;
 
+        // Gradient cache vectors
+        double lambda = 0.2;
+        arma::vec gradientCriticV;
+        arma::vec gradientCriticU;
+        arma::vec gradientActor;
+
         // Cache variables
         arma::vec observation;
         arma::vec action;

@@ -8,7 +8,7 @@
 ###############
 
 # Input filepath (relative to Thesis/Code/Thesis/examples/ directory) 
-inputDataPath=../../../Data/Input/synthetic.csv
+inputDataPath=../../../Data/Input/daily_returns.csv
 
 # Output filepath (relative to Thesis/Code/Thesis/examples/ directory)
 outputDataPath=../../../Data/Output/
@@ -47,29 +47,29 @@ numDaysObserved=5
 maxVar=0.04
 
 # Actor learning rate
-alphaActor=0.0005
+alphaActor=0.05
 
 # Critic learning rate
-alphaCritic=0.01
+alphaCritic=0.1
 
 # Baselines learning rate 
-alphaBaseline=0.1
+alphaBaseline=0.2
 
 # Lagrange multiplier learning rate
-alphaLagrange=0.005
+alphaLagrange=0.001
 
 ##############
 # Experiment #
 ##############
 
 # Number of experiments
-numExperiments=10
+numExperiments=5
 
 # Number of epochs
-numEpochs=1000
+numEpochs=2000
 
 # Number of training steps
 numTrainingSteps=1000
 
 # Number of test steps
-numTestSteps=100
+numTestSteps=500

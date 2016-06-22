@@ -4,7 +4,7 @@
 LogisticPolicy::LogisticPolicy(size_t dimObservation_)
     : Policy(dimObservation_, 1ul),
       dimParameters(dimObservation_ + 1),
-      parameters(dimParameters)
+      parameters(dimObservation_ + 1)
 {
     initializeParameters();
 }
@@ -13,7 +13,12 @@ void LogisticPolicy::initializeParameters()
 {
     parameters.randu();
     parameters -= 0.5;
-    parameters *= 0.01;
+    parameters *= 0.001;
+}
+
+void LogisticPolicy::setParameters(arma::vec const & parameters_)
+{
+    parameters = parameters_;
 }
 
 arma::vec LogisticPolicy::getAction(arma::vec const & observation_) const

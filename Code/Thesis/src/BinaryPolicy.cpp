@@ -12,7 +12,12 @@ void BinaryPolicy::initializeParameters()
 {
     parameters.randu();
     parameters -= 0.5;
-    parameters *= 0.01;
+    parameters *= 0.001;
+}
+
+void BinaryPolicy::setParameters(arma::vec const & parameters_)
+{
+    parameters = parameters_;
 }
 
 arma::vec BinaryPolicy::getAction(arma::vec const & observation_) const

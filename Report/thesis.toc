@@ -9,19 +9,24 @@
 \contentsline {section}{\numberline {2.6}Risk-Sensitive Formulation}{10}{section.2.6}
 \contentsline {chapter}{\numberline {3}Reinforcement Learning}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}The Reinforcement Learning Problem}{13}{section.3.1}
-\contentsline {section}{\numberline {3.2}Policy Gradient}{13}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Basics of Policy Gradient}{14}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Finite Differences}{15}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Monte Carlo Policy Gradient}{15}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Policy Gradient Theorem}{17}{subsection.3.2.4}
-\contentsline {subsubsection}{\numberline {3.2.4.1}Actor-Critic Policy Gradient}{17}{subsubsection.3.2.4.1}
-\contentsline {subsection}{\numberline {3.2.5}Natural Policy Gradient}{18}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Policy Gradient with Parameter Exploration}{18}{subsection.3.2.6}
-\contentsline {subsubsection}{\numberline {3.2.6.1}Episodic PGPE}{18}{subsubsection.3.2.6.1}
-\contentsline {paragraph}{Gaussian Parameter Distribution}{20}{section*.3}
-\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{20}{section*.4}
-\contentsline {subsubsection}{\numberline {3.2.6.2}Infinite Horizon PGPE}{21}{subsubsection.3.2.6.2}
-\contentsline {chapter}{\numberline {4}Asset Allocation}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Reward Function}{23}{section.4.1}
-\contentsline {section}{\numberline {4.2}States}{25}{section.4.2}
-\contentsline {section}{\numberline {4.3}Actions}{26}{section.4.3}
+\contentsline {section}{\numberline {3.2}Model-Free RL Methods}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Model Approximation}{15}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Value Approximation}{15}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Policy Approximation}{15}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Policy Gradient Methods}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Policy Gradient}{17}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Basics of Policy Gradient}{18}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Finite Differences}{19}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Monte Carlo Policy Gradient}{19}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Policy Gradient Theorem}{20}{subsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.4.1}Actor-Critic Policy Gradient}{21}{subsubsection.4.1.4.1}
+\contentsline {subsection}{\numberline {4.1.5}Natural Policy Gradient}{21}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Policy Gradient with Parameter Exploration}{21}{subsection.4.1.6}
+\contentsline {subsubsection}{\numberline {4.1.6.1}Episodic PGPE}{22}{subsubsection.4.1.6.1}
+\contentsline {paragraph}{Gaussian Parameter Distribution}{23}{section*.3}
+\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{24}{section*.4}
+\contentsline {subsubsection}{\numberline {4.1.6.2}Infinite Horizon PGPE}{24}{subsubsection.4.1.6.2}
+\contentsline {chapter}{\numberline {5}Asset Allocation}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Reward Function}{27}{section.5.1}
+\contentsline {section}{\numberline {5.2}States}{29}{section.5.2}
+\contentsline {section}{\numberline {5.3}Actions}{30}{section.5.3}

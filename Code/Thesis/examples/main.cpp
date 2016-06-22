@@ -103,25 +103,25 @@ int main()
     std::cout << "done" << std::endl;
 
     // ARSSAC Agent
-//    std::cout << ".. ARRSAC Agent - ";
-//    ARRSACAgent agent(actor,
-//                      criticV,
-//                      criticU,
-//                      maxVar,
-//                      alphaActor,
-//                      alphaCritic,
-//                      alphaBaseline,
-//                      alphaLagrange);
-//    std::cout << "done" << std::endl;
+    std::cout << ".. ARRSAC Agent - ";
+    ARRSACAgent agent(actor,
+                      criticV,
+                      criticU,
+                      maxVar,
+                      alphaActor,
+                      alphaCritic,
+                      alphaBaseline,
+                      alphaLagrange);
+    std::cout << "done" << std::endl;
 
     // ARAC Agent
-    std::cout << ".. ARAC Agent - ";
-    ARACAgent agent(actor,
-                    criticV,
-                    alphaActor,
-                    alphaCritic,
-                    alphaBaseline);
-    std::cout << "done" << std::endl;
+//    std::cout << ".. ARAC Agent - ";
+//    ARACAgent agent(actor,
+//                    criticV,
+//                    alphaActor,
+//                    alphaCritic,
+//                    alphaBaseline);
+//    std::cout << "done" << std::endl;
 
 
 

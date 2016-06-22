@@ -17,7 +17,7 @@ matplotlib.style.use('seaborn-colorblind')
 ##############
 
 inputDir = '../../Data/Debug/'
-nExperiments = 10
+nExperiments = 5
 
 ########################
 # Visualize allocation #
@@ -33,7 +33,7 @@ assetCumReturns = 100.0 * np.cumprod(1.0 + assetSimpleReturns)
 # Extract allocation in the risky asset
 alloc = df['a_1'].values
 
-fig = plt.figure(figsize=(15,15), facecolor='white', edgecolor='black')
+fig = plt.figure(figsize=(22,15), facecolor='white', edgecolor='black')
 
 ax1 = fig.add_subplot(211)
 ax1.set_title('Backtest Performances of Trading Strategy')
@@ -43,6 +43,8 @@ ax1.plot(np.arange(len(assetCumReturns)), 100.0 * np.ones(assetCumReturns.shape)
 # Compute mean cumulative returns from various experiments
 sumCumReturn = np.zeros(alloc.shape)
 sumSquaresCumReturn = np.zeros(alloc.shape)
+sumAlloc = np.zeros(alloc.shape)
+sumSquaresAlloc = np.zeros(alloc.shape)
 
 for i in xrange(nExperiments):
 
@@ -71,9 +73,9 @@ ax1.grid()
 ax1.legend(loc=2)
 
 ax2 = fig.add_subplot(212)
-ax2.plot(np.arange(len(alloc)), alloc, lw=2)
+ax2.plot(np.arange(len(cumReturn)), df['a_1'], lw=2)
 ax2.set_ylabel('Allocation')
 ax2.set_xlabel('Time Step')
-ax2.set_ylim((1.1 * alloc.min(), alloc.max() * 1.1))
+ax2.set_ylim((-1.1, 1.1))
 
 plt.show()

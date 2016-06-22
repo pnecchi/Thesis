@@ -66,6 +66,11 @@ class ARACAgent : public Agent
         double alphaActor;
         double alphaBaseline;
 
+        // Gradient cache vectors
+        double lambda = 0.2;
+        arma::vec gradientCritic;
+        arma::vec gradientActor;
+
         // Cache variables
         arma::vec observation;
         arma::vec action;
