@@ -32,8 +32,8 @@ def main():
     nTestSteps = 100       # Number of test steps
 
     # Paramenters
-    X = 0.02 / 252    # Daily risk-free rate
-    deltaP = 0.001     # Proportional transaction costs
+    X = 0.0 / 252    # Daily risk-free rate
+    deltaP = 0.0      # Proportional transaction costs
     deltaF = 0.0      # Fixed transaction costs
     deltaS = 0.0      # Short-selling borrowing costs
     P = 10            # Number of past days the agent considers

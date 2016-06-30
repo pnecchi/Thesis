@@ -17,7 +17,7 @@ matplotlib.style.use('seaborn-colorblind')
 ##############
 
 inputDir = '../../Data/Debug/'
-nExperiments = 5
+nExperiments = 10
 
 ########################
 # Visualize allocation #
@@ -65,8 +65,8 @@ stddevCumReturn = np.sqrt(sumSquaresCumReturn / float(nExperiments)
                           - meanCumReturn * meanCumReturn)
 
 ax1.plot(np.arange(len(meanCumReturn)), meanCumReturn, lw=2, label='ARRSAC', c='orangered')
-ax1.plot(np.arange(len(meanCumReturn)), meanCumReturn + stddevCumReturn, lw=2, ls=':', c='orangered')
-ax1.plot(np.arange(len(meanCumReturn)), meanCumReturn - stddevCumReturn, lw=2, ls=':', c='orangered')
+ax1.plot(np.arange(len(meanCumReturn)), meanCumReturn + 2.0 * stddevCumReturn, lw=2, ls=':', c='orangered')
+ax1.plot(np.arange(len(meanCumReturn)), meanCumReturn - 2.0 * stddevCumReturn, lw=2, ls=':', c='orangered')
 
 ax1.set_ylabel('Cumulative Returns')
 ax1.grid()

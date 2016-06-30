@@ -1,0 +1,72 @@
+﻿###############################################################################
+# Parameters for Average Reward Risk Sensitive Actor-Critic algorithm for the #
+# asset allocation problem                                                    #
+###############################################################################
+
+###############
+# Directories #
+###############
+
+# Input filepath (relative to Thesis/Code/Thesis/examples/ directory) 
+inputDataPath=../../../Data/Input/daily_returns.csv
+
+# Output filepath (relative to Thesis/Code/Thesis/examples/ directory)
+outputDataPath=../../../Data/Output/
+
+# Debug filepath (relative to Thesis/Code/Thesis/examples/ directory)
+debugDataPath=../../../Data/Debug/
+
+##########
+# Market #
+##########
+
+# Risk-free rate
+riskFreeRate=0.0
+
+#########################
+# Asset allocation task #
+#########################
+
+# Proportional transaction costs
+deltaP=0.00
+
+# Fixed transaction costs
+deltaF=0.0
+
+# Short-selling fees
+deltaS=0.000
+
+# Number of past days observed by the agent
+numDaysObserved=10
+
+################
+# ARRSAC agent #
+################
+
+# TD(lambda)
+lambda=0.9
+
+# Actor learning rate (0.05)
+alphaActor=0.05
+
+# Critic learning rate (0.1)
+alphaCritic=0.1
+
+# Baselines learning rate (0.2)
+alphaBaseline=0.2
+
+##############
+# Experiment #
+##############
+
+# Number of experiments
+numExperiments=10
+
+# Number of epochs
+numEpochs=500
+
+# Number of training steps
+numTrainingSteps=4000
+
+# Number of test steps
+numTestSteps=1000

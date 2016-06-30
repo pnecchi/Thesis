@@ -115,30 +115,56 @@ thesis/fast:
 .PHONY : thesis/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named MainArac
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+MainArac: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MainArac
+.PHONY : MainArac
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
-.PHONY : main/fast
+MainArac/fast:
+	$(MAKE) -f examples/CMakeFiles/MainArac.dir/build.make examples/CMakeFiles/MainArac.dir/build
+.PHONY : MainArac/fast
 
 #=============================================================================
-# Target rules for targets named main_pgpe
+# Target rules for targets named MainArrsac
 
 # Build rule for target.
-main_pgpe: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main_pgpe
-.PHONY : main_pgpe
+MainArrsac: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MainArrsac
+.PHONY : MainArrsac
 
 # fast build rule for target.
-main_pgpe/fast:
-	$(MAKE) -f examples/CMakeFiles/main_pgpe.dir/build.make examples/CMakeFiles/main_pgpe.dir/build
-.PHONY : main_pgpe/fast
+MainArrsac/fast:
+	$(MAKE) -f examples/CMakeFiles/MainArrsac.dir/build.make examples/CMakeFiles/MainArrsac.dir/build
+.PHONY : MainArrsac/fast
+
+#=============================================================================
+# Target rules for targets named MainPgpeArac
+
+# Build rule for target.
+MainPgpeArac: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MainPgpeArac
+.PHONY : MainPgpeArac
+
+# fast build rule for target.
+MainPgpeArac/fast:
+	$(MAKE) -f examples/CMakeFiles/MainPgpeArac.dir/build.make examples/CMakeFiles/MainPgpeArac.dir/build
+.PHONY : MainPgpeArac/fast
+
+#=============================================================================
+# Target rules for targets named MainPgpeArrsac
+
+# Build rule for target.
+MainPgpeArrsac: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MainPgpeArrsac
+.PHONY : MainPgpeArrsac
+
+# fast build rule for target.
+MainPgpeArrsac/fast:
+	$(MAKE) -f examples/CMakeFiles/MainPgpeArrsac.dir/build.make examples/CMakeFiles/MainPgpeArrsac.dir/build
+.PHONY : MainPgpeArrsac/fast
 
 src/AracAgent.o: src/AracAgent.cpp.o
 .PHONY : src/AracAgent.o
@@ -557,8 +583,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... thesis"
-	@echo "... main"
-	@echo "... main_pgpe"
+	@echo "... MainArac"
+	@echo "... MainPgpeArac"
+	@echo "... MainArrsac"
+	@echo "... MainPgpeArrsac"
 	@echo "... src/AracAgent.o"
 	@echo "... src/AracAgent.i"
 	@echo "... src/AracAgent.s"

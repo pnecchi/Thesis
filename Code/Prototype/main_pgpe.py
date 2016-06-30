@@ -30,15 +30,15 @@ def main():
     # Experiment parameters
     batch = 1                      # Number of samples per learning step
     prnts = 100                    # Learning steps before printing results
-    nEpisodes = 1000/batch/prnts   # Number of rollouts
+    nEpisodes = 100/batch/prnts   # Number of rollouts
     nExperiments = 1               # Number of experiments
     et = ExTools(batch, prnts)     # Tool for printing and plotting
 
     # Paramenters
     X = 0.0 / 252    # Daily risk-free rate
-    deltaP = 0.01    # Proportional transaction costs
+    deltaP = 0.00    # Proportional transaction costs
     deltaF = 0.0      # Fixed transaction costs
-    deltaS = 0.002    # Short-selling borrowing costs
+    deltaS = 0.00    # Short-selling borrowing costs
     P = 5             # Number of past days the agent considers
     discount = 0.95   # Discount factor
 
@@ -48,7 +48,7 @@ def main():
     testIntervalLength = 30
 
     # Initialize the market environment
-    market = MarketEnvironment(input_data_dir + 'Synthetic/synthetic.csv', X, P)
+    market = MarketEnvironment(input_data_dir + 'daily_returns.csv', X, P)
     nSamples = len(market.data)
     nPeriods = (nSamples - start + 1) / (trainingIntervalLength + testIntervalLength)
 
@@ -114,7 +114,7 @@ def main():
     plt.show()
 
     # Print cumulative log-returns
-    buyHold = market.data.ix[task.report.index, 'SYNT']
+    buyHold = market.data.ix[task.report.index, 'SPY']
     buyHoldCumLogReturns = np.log(buyHold + 1.0).cumsum(axis=0)
     ptfCumLogReturns = task.report['ptfLogReturn'].cumsum(axis=0)
     cumLogReturns = pd.DataFrame(index=task.report.index)
