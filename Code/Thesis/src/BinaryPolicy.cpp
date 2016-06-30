@@ -1,9 +1,13 @@
 #include "thesis/BinaryPolicy.h"
 
-BinaryPolicy::BinaryPolicy(size_t dimObservation_)
+BinaryPolicy::BinaryPolicy(size_t dimObservation_,
+                           double paramMinValue_,
+                           double paramMaxValue_)
     : Policy(dimObservation_, 1ul),
       dimParameters(dimObservation_ + 1),
-      parameters(dimObservation_ + 1)
+      parameters(dimObservation_ + 1),
+      paramMinValue(paramMinValue_),
+      paramMaxValue(paramMaxValue_)
 {
     initializeParameters();
 }
@@ -17,7 +21,7 @@ void BinaryPolicy::initializeParameters()
 
 void BinaryPolicy::setParameters(arma::vec const & parameters_)
 {
-    parameters = parameters_;
+    parameters = arma::clamp(parameters_, paramMinValue, paramMaxValue);
 }
 
 arma::vec BinaryPolicy::getAction(arma::vec const & observation_) const

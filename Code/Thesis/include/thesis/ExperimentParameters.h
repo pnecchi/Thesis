@@ -64,8 +64,8 @@ class ExperimentParameters
          * ARRSAC agent parameters
          */
 
-        //! Maximum variance for mean-variance problem
-        double maxVar;
+        //! TD(lambda) parameter
+        double lambda;
 
         //! Actor learning rate
         double alphaActor;
@@ -75,9 +75,6 @@ class ExperimentParameters
 
         //! Baseline learning rate
         double alphaBaseline;
-
-        //! Lagrange multiplier learning rate
-        double alphaLagrange;
 
         /*!
          * Experiment parameters

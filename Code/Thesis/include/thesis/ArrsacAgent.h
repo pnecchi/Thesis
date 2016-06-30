@@ -24,11 +24,10 @@ class ARRSACAgent : public Agent
         ARRSACAgent(StochasticActor const & actor_,
                     Critic const & criticV_,
                     Critic const & criticU_,
-                    double varMax_=0.04,
+                    double lambda_=0.5,
                     double alphaActor_=0.001,
                     double alphaCritic_=0.005,
-                    double alphaBaseline_=0.05,
-                    double alphaLagrange=0.1);
+                    double alphaBaseline_=0.05);
 
         // Default destructor
         virtual ~ARRSACAgent() = default;
@@ -73,19 +72,14 @@ class ARRSACAgent : public Agent
         // Average square reward (Exponential Moving Average)
         StatisticsEMA averageSquareReward;
 
-        // variance constraint: Lambda <= varMax
-        double varMax;
-        double lagrangeMult;
-
         // Learning rates
         // TODO: implement time-varying learning rates?
-        double alphaBaseline;
-        double alphaCritic;
         double alphaActor;
-        double alphaLagrange;
+        double alphaCritic;
+        double alphaBaseline;
 
         // Gradient cache vectors
-        double lambda = 0.2;
+        double lambda;
         arma::vec gradientCriticV;
         arma::vec gradientCriticU;
         arma::vec gradientActor;

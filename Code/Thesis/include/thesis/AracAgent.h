@@ -19,6 +19,7 @@ class ARACAgent : public Agent
         // Default constructor
         ARACAgent(StochasticActor const & actor_,
                   Critic const & critic_,
+                  double lambda_=0.5,
                   double alphaActor_=0.001,
                   double alphaCritic_=0.01,
                   double alphaBaseline_=0.1);
@@ -67,7 +68,7 @@ class ARACAgent : public Agent
         double alphaBaseline;
 
         // Gradient cache vectors
-        double lambda = 0.2;
+        double lambda;
         arma::vec gradientCritic;
         arma::vec gradientActor;
 

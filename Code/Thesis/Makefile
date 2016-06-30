@@ -452,6 +452,30 @@ src/MarketEnvironment.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/MarketEnvironment.cpp.s
 .PHONY : src/MarketEnvironment.cpp.s
 
+src/NPGPEPolicy.o: src/NPGPEPolicy.cpp.o
+.PHONY : src/NPGPEPolicy.o
+
+# target to build an object file
+src/NPGPEPolicy.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/NPGPEPolicy.cpp.o
+.PHONY : src/NPGPEPolicy.cpp.o
+
+src/NPGPEPolicy.i: src/NPGPEPolicy.cpp.i
+.PHONY : src/NPGPEPolicy.i
+
+# target to preprocess a source file
+src/NPGPEPolicy.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/NPGPEPolicy.cpp.i
+.PHONY : src/NPGPEPolicy.cpp.i
+
+src/NPGPEPolicy.s: src/NPGPEPolicy.cpp.s
+.PHONY : src/NPGPEPolicy.s
+
+# target to generate assembly for a file
+src/NPGPEPolicy.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/NPGPEPolicy.cpp.s
+.PHONY : src/NPGPEPolicy.cpp.s
+
 src/PgpePolicy.o: src/PgpePolicy.cpp.o
 .PHONY : src/PgpePolicy.o
 
@@ -574,6 +598,9 @@ help:
 	@echo "... src/MarketEnvironment.o"
 	@echo "... src/MarketEnvironment.i"
 	@echo "... src/MarketEnvironment.s"
+	@echo "... src/NPGPEPolicy.o"
+	@echo "... src/NPGPEPolicy.i"
+	@echo "... src/NPGPEPolicy.s"
 	@echo "... src/PgpePolicy.o"
 	@echo "... src/PgpePolicy.i"
 	@echo "... src/PgpePolicy.s"

@@ -35,11 +35,10 @@ int main()
     double deltaF = params.deltaF;
     double deltaS = params.deltaS;
     size_t numDaysObserved = params.numDaysObserved;
-    double maxVar = params.maxVar;
+    double lambda = params.lambda;
     double alphaActor = params.alphaActor;
     double alphaCritic = params.alphaCritic;
     double alphaBaseline = params.alphaBaseline;
-    double alphaLagrange = params.alphaLagrange;
     size_t numExperiments = params.numExperiments;
     size_t numEpochs = params.numEpochs;
     size_t numTrainingSteps = params.numTrainingSteps;
@@ -51,7 +50,7 @@ int main()
 	// Market
 	std::cout << ".. Market environment - ";
 	size_t startDate = 0;
-	size_t endDate = numTrainingSteps;
+	size_t endDate = numTrainingSteps + numTestSteps;
 	MarketEnvironment market(inputDataPath, startDate, endDate);
     std::cout << "done" << std::endl;
 
@@ -78,9 +77,9 @@ int main()
     std::cout << "done" << std::endl;
 
     // Binary policy
-    BinaryPolicy controller(task.getDimObservation());
+    BinaryPolicy controller(task.getDimObservation(), -100.0, 100.0);
     GaussianDistribution distribution(controller.getDimParameters());
-    PGPEPolicy policy(controller, distribution);
+    PGPEPolicy policy(controller, distribution, 0.2);
 
     // Stochastic Actor
     std::cout << ".. Actor - ";
@@ -92,23 +91,11 @@ int main()
     ARRSACAgent agent(actor,
                       criticV,
                       criticU,
-                      maxVar,
+                      lambda,
                       alphaActor,
                       alphaCritic,
-                      alphaBaseline,
-                      alphaLagrange);
+                      alphaBaseline);
     std::cout << "done" << std::endl;
-
-    // ARAC Agent
-//    std::cout << ".. ARAC Agent - ";
-//    ARACAgent agent(actor,
-//                    criticV,
-//                    alphaActor,
-//                    alphaCritic,
-//                    alphaBaseline);
-//    std::cout << "done" << std::endl;
-
-
 
     // Asset allocation experiment
     std::cout << ".. Asset allocation experiment - ";

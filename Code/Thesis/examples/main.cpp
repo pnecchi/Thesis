@@ -12,6 +12,7 @@
 #include <thesis/LogisticPolicy.h>
 #include <thesis/GaussianDistribution.h>
 #include <thesis/PgpePolicy.h>
+#include <thesis/NpgpePolicy.h>
 #include <thesis/StochasticActor.h>
 #include <thesis/ArrsacAgent.h>
 #include <thesis/AracAgent.h>
@@ -38,11 +39,10 @@ int main()
     double deltaF = params.deltaF;
     double deltaS = params.deltaS;
     size_t numDaysObserved = params.numDaysObserved;
-    double maxVar = params.maxVar;
+    double lambda = params.lambda;
     double alphaActor = params.alphaActor;
     double alphaCritic = params.alphaCritic;
     double alphaBaseline = params.alphaBaseline;
-    double alphaLagrange = params.alphaLagrange;
     size_t numExperiments = params.numExperiments;
     size_t numEpochs = params.numEpochs;
     size_t numTrainingSteps = params.numTrainingSteps;
@@ -92,10 +92,11 @@ int main()
 //    std::cout << "done" << std::endl;
 
     // PGPE Binary policy
-    // LogisticPolicy controller(task.getDimObservation());
-    BinaryPolicy controller(task.getDimObservation());
-    GaussianDistribution distribution(controller.getDimParameters());
-    PGPEPolicy policy(controller, distribution);
+    BinaryPolicy controller(task.getDimObservation(), -100.0, 100.0);
+    // GaussianDistribution distribution(controller.getDimParameters());
+    // PGPEPolicy policy(controller, distribution, 1.0);
+
+    NPGPEPolicy policy(controller, 0.2);
 
     // Stochastic Actor
     std::cout << ".. Actor - ";
@@ -107,17 +108,17 @@ int main()
     ARRSACAgent agent(actor,
                       criticV,
                       criticU,
-                      maxVar,
+                      lambda,
                       alphaActor,
                       alphaCritic,
-                      alphaBaseline,
-                      alphaLagrange);
+                      alphaBaseline);
     std::cout << "done" << std::endl;
 
     // ARAC Agent
 //    std::cout << ".. ARAC Agent - ";
 //    ARACAgent agent(actor,
 //                    criticV,
+//                    lambda,
 //                    alphaActor,
 //                    alphaCritic,
 //                    alphaBaseline);

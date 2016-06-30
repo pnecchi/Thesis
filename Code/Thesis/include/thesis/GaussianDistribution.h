@@ -2,34 +2,88 @@
 #define GAUSSIANDISTRIBUTION_H
 
 #include <thesis/ProbabilityDistribution.h>
-#include <memory>
+#include <armadillo>  /* arma::vec */
+#include <memory>     /* std::unique_ptr */
+
+/*!
+ * GaussianDistribution defines an axis-aligned multivariate Gaussian
+ * probability distribution.
+ */
 
 class GaussianDistribution : public ProbabilityDistribution
 {
     public:
+        /*!
+         * Default constructor.
+         * \param dimOutput_ output size
+         */
         GaussianDistribution(size_t dimOutput_);
+
+        //! Default copy constructor.
         GaussianDistribution(GaussianDistribution const &other) = default;
+
+        //! Default destructor.
         virtual ~GaussianDistribution() = default;
+
+        //! Virtual clone method for polymorphic copy.
         virtual std::unique_ptr<ProbabilityDistribution> clone() const;
+
+        /*!
+         * Get distribution output size.
+         * \return output size
+         */
         virtual size_t getDimOutput() const { return dimOutput; }
+
+        /*!
+         * Get probability distribution size, i.e. size of the parameter vector
+         * \return parameters size
+         */
         virtual size_t getDimParameters() const { return dimParameters; }
+
+        /*!
+         * Get method for the distribution parameters.
+         * \return parameters stored in an arma::vector
+         */
         virtual arma::vec getParameters() const { return parameters; }
-        virtual void setParameters(arma::vec const &parameters_) { parameters = parameters_; }
+
+        /*!
+         * Set method for the distribution parameters.
+         * \param parameters_ the new parameters stored in an arma::vector
+         */
+        virtual void setParameters(arma::vec const &parameters_)
+            { parameters = parameters_; }
+
+        /*!
+         * Simulate a realization of the probability distribution.
+         * \return realization of the probability distribution
+         */
         virtual arma::vec simulate() const;
+
+        /*!
+         * Evaluate the Likelihood score of a given realization
+         * \param output_ distribution realization
+         * \return likelihood score evaluated at output_
+         */
         virtual arma::vec likelihoodScore(arma::vec const &output_) const;
+
+        /*!
+         * Reset distribution to initial conditions.
+         */
         virtual void reset();
 
     private:
+
+        //! Initialize distribution parameters
         void initializeParameters();
 
-        // Parameters: [mu_1; ... ; mu_D; sigma_1; ... ; sigma_D]
+        //! Parameters: [mu_1; ... ; mu_D; sigma_1; ... ; sigma_D]
         arma::vec parameters;
 
-        // Sizes
+        //! Sizes
         size_t dimOutput;
         size_t dimParameters;
 
-        // Random number generator
+        //! Random number generator
         mutable std::mt19937 generator;
 };
 

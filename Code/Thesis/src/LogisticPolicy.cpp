@@ -1,10 +1,14 @@
 #include "thesis/LogisticPolicy.h"
 #include <math.h>
 
-LogisticPolicy::LogisticPolicy(size_t dimObservation_)
+LogisticPolicy::LogisticPolicy(size_t dimObservation_,
+                               double paramMinValue_,
+                               double paramMaxValue_)
     : Policy(dimObservation_, 1ul),
       dimParameters(dimObservation_ + 1),
-      parameters(dimObservation_ + 1)
+      parameters(dimObservation_ + 1),
+      paramMinValue(paramMinValue_),
+      paramMaxValue(paramMaxValue_)
 {
     initializeParameters();
 }
@@ -18,7 +22,7 @@ void LogisticPolicy::initializeParameters()
 
 void LogisticPolicy::setParameters(arma::vec const & parameters_)
 {
-    parameters = parameters_;
+    parameters = arma::clamp(parameters_, paramMinValue, paramMaxValue);;
 }
 
 arma::vec LogisticPolicy::getAction(arma::vec const & observation_) const
