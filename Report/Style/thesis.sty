@@ -1,9 +1,8 @@
-\ProvidesPackage{thesis}
-
 % Useful packages 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[top=43mm, bottom=44mm, left=41mm, right=32mm]{geometry}
+\usepackage{float}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amsfonts}  
@@ -18,9 +17,11 @@
 \usepackage{changebar}
 \usepackage{booktabs}
 \usepackage{tikz}
-\usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{listings}
+\usepackage{hyperref}
+\usepackage[chapter]{algorithm}
+\usepackage{algpseudocode}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
@@ -83,3 +84,7 @@
     text width=8em, text centered, rounded corners, minimum height=4em]
 	    
 \tikzstyle{line} = [draw, -latex]
+
+% Algorithmic - rename require/ensure to input/output
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}

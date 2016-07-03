@@ -29,6 +29,9 @@ class ARRSACAgent : public Agent
                     double alphaCritic_=0.005,
                     double alphaBaseline_=0.05);
 
+        // Copy constructor
+        ARRSACAgent(ARRSACAgent const &other_) = default;
+
         // Default destructor
         virtual ~ARRSACAgent() = default;
 

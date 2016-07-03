@@ -16,6 +16,7 @@
 #include <thesis/StochasticActor.h>
 #include <thesis/ArrsacAgent.h>
 #include <thesis/AracAgent.h>
+#include <thesis/NPGPEAgent.h>
 #include <thesis/AssetAllocationExperiment.h>
 
 int main()
@@ -96,23 +97,23 @@ int main()
     // GaussianDistribution distribution(controller.getDimParameters());
     // PGPEPolicy policy(controller, distribution, 1.0);
 
-    NPGPEPolicy policy(controller, 0.2);
+    // NPGPEPolicy policy(controller, 0.2);
 
     // Stochastic Actor
-    std::cout << ".. Actor - ";
-    StochasticActor actor(policy);
-    std::cout << "done" << std::endl;
+//    std::cout << ".. Actor - ";
+//    StochasticActor actor(policy);
+//    std::cout << "done" << std::endl;
 
     // ARSSAC Agent
-    std::cout << ".. ARRSAC Agent - ";
-    ARRSACAgent agent(actor,
-                      criticV,
-                      criticU,
-                      lambda,
-                      alphaActor,
-                      alphaCritic,
-                      alphaBaseline);
-    std::cout << "done" << std::endl;
+//    std::cout << ".. ARRSAC Agent - ";
+//    ARRSACAgent agent(actor,
+//                      criticV,
+//                      criticU,
+//                      lambda,
+//                      alphaActor,
+//                      alphaCritic,
+//                      alphaBaseline);
+//    std::cout << "done" << std::endl;
 
     // ARAC Agent
 //    std::cout << ".. ARAC Agent - ";
@@ -124,7 +125,13 @@ int main()
 //                    alphaBaseline);
 //    std::cout << "done" << std::endl;
 
+    // NPGPE Agent
+    std::cout << ".. NPGPE Agent - ";
+    NPGPEAgent agent(controller,
+                     alphaActor,
+                     0.95);
 
+    std::cout << "done" << std::endl;
 
     // Asset allocation experiment
     std::cout << ".. Asset allocation experiment - ";
