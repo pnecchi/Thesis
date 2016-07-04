@@ -28,13 +28,13 @@ riskFreeRate=0.0
 #########################
 
 # Proportional transaction costs
-deltaP=0.00
+deltaP=0.0001
 
 # Fixed transaction costs
 deltaF=0.0
 
 # Short-selling fees
-deltaS=0.000
+deltaS=0.001
 
 # Number of past days observed by the agent
 numDaysObserved=10
