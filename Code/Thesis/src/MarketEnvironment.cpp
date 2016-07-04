@@ -1,22 +1,19 @@
 #include <thesis/MarketEnvironment.h>
-#include <armadillo>  /* arma::mat */
-#include <string>     /* std::string */
 #include <fstream>    /* std::ifstream */
 #include <sstream>    /* std::istringstream */
 
-MarketEnvironment::MarketEnvironment (std::string inputFilePath,
-									  size_t startDate_,
-									  size_t endDate_)
-	: startDate(startDate_),
-	  currentDate(startDate),
-	  endDate(endDate_)
+MarketEnvironment::MarketEnvironment (std::string inputFilePath)
 {
 	// Initialize filestream from inputFilePath
 	std::ifstream ifs(inputFilePath);
 	std::string line;
     char ch;
-	// pierpaolo - gio 09 giu 2016 09:57:32 CEST
-	// TODO: Test file opening
+
+    // Check file opening
+    if (!ifs)
+    {
+        std::cerr << "Error: input file doesn't exist";
+    }
 
 	// Read number of days and number of risky assets from the first line
 	if (getline(ifs, line))
@@ -40,7 +37,6 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 	}
 
 	// Read risky assets log-returns in an armadillo matrix.
-	// For faster slicing, the matrix is of size numRiskyAssets X numDays
 	assetsReturns.set_size(numRiskyAssets, numDays);
 	double oneReturn = 0.0;
 	for(size_t i = 0; i < numDays && getline(ifs, line); ++i)
@@ -58,6 +54,11 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath,
 	// Set dimensions of state and action spaces
 	dimState = numRiskyAssets;
 	dimAction = numRiskyAssets;
+
+    // Set time steps
+    startDate = 0;
+    currentDate = startDate;
+    endDate = numDays - 1;
 }
 
 arma::vec MarketEnvironment::getState() const
@@ -67,7 +68,6 @@ arma::vec MarketEnvironment::getState() const
 
 void MarketEnvironment::performAction(arma::vec const &action)
 {
-	// The system evolution is independent from the agent's allocation
 	currentDate++;
 }
 

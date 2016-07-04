@@ -28,7 +28,9 @@ df = pd.read_csv(inputDir + 'backtestExperiment0.csv')
 
 # Compute buy-hold cumulative profits
 assetSimpleReturns = df['r_1'].values
-assetCumReturns = 100.0 * np.cumprod(1.0 + assetSimpleReturns)
+assetCumReturns = np.zeros(len(assetSimpleReturns) + 1)
+assetCumReturns[0] = 100.0
+assetCumReturns[1:] = 100.0 * np.cumprod(1.0 + assetSimpleReturns)
 
 # Extract allocation in the risky asset
 alloc = df['a_1'].values
@@ -41,10 +43,11 @@ ax1.plot(np.arange(len(assetCumReturns)), assetCumReturns, label='Buy-Hold', lw=
 ax1.plot(np.arange(len(assetCumReturns)), 100.0 * np.ones(assetCumReturns.shape), lw=1, c='black')
 
 # Compute mean cumulative returns from various experiments
-sumCumReturn = np.zeros(alloc.shape)
-sumSquaresCumReturn = np.zeros(alloc.shape)
-sumAlloc = np.zeros(alloc.shape)
-sumSquaresAlloc = np.zeros(alloc.shape)
+cumReturn = np.zeros(len(assetSimpleReturns) + 1)
+sumCumReturn = np.zeros(cumReturn.shape)
+sumSquaresCumReturn = np.zeros(cumReturn.shape)
+sumAlloc = np.zeros(cumReturn.shape)
+sumSquaresAlloc = np.zeros(cumReturn.shape)
 
 for i in xrange(nExperiments):
 
@@ -53,7 +56,8 @@ for i in xrange(nExperiments):
 
     # Compute cumulative profit
     logReturns = df['logReturn'].values
-    cumReturn = 100.0 * np.exp(np.cumsum(logReturns))
+    cumReturn[0] = 100.0
+    cumReturn[1:] = 100.0 * np.exp(np.cumsum(logReturns))
     sumCumReturn += cumReturn
     sumSquaresCumReturn += cumReturn * cumReturn
 
@@ -73,7 +77,7 @@ ax1.grid()
 ax1.legend(loc=2)
 
 ax2 = fig.add_subplot(212)
-ax2.plot(np.arange(len(cumReturn)), alloc, lw=2)
+ax2.plot(np.arange(len(alloc)), alloc, lw=2)
 ax2.set_ylabel('Allocation')
 ax2.set_xlabel('Time Step')
 ax2.set_ylim((-1.1, 1.1))

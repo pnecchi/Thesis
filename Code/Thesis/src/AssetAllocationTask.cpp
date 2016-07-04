@@ -1,5 +1,4 @@
 #include <thesis/AssetAllocationTask.h>
-#include <armadillo>
 #include <math.h>      /* log */
 #include <limits>      /* numeric_limits */
 
@@ -86,8 +85,9 @@ void AssetAllocationTask::performAction (arma::vec const &action)
 double AssetAllocationTask::getReward ()
 {
 	// Update past states with current state
-	pastStates.rows(0, (numDaysObserved - 1) * dimState - 1) =
-		pastStates.rows(dimState, pastStates.size() - 1);
+	if (numDaysObserved > 1)
+        pastStates.rows(0, (numDaysObserved - 1) * dimState - 1) =
+            pastStates.rows(dimState, pastStates.size() - 1);
 	pastStates.rows((numDaysObserved - 1) * dimState, pastStates.size() - 1) =
 		currentState;
 
@@ -140,7 +140,6 @@ double AssetAllocationTask::computePortfolioSimpleReturn () const
 	// Trading profit & loss
 	double tradingPL = riskFreeRate +
                        arma::dot(newAllocation, currentState - riskFreeRate);
-//    double tradingPL = arma::dot(newAllocation, currentState);
 
 	// Compute simple portfolio return
 	double portfolioSimpleReturn = tradingPL

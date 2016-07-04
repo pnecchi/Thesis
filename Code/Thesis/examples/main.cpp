@@ -29,7 +29,7 @@ int main()
 
     // 0) Parameters
     std::cout << "0) Read parameters" << std::endl;
-    std::string parametersFilepath  = "../../../Data/Parameters/ParametersArrsac.pot";
+    std::string parametersFilepath  = "../../../Data/Parameters/ParametersPgpeArrsac.pot";
     const ExperimentParameters params(parametersFilepath, true);
 
     // Copy parameters
@@ -55,9 +55,10 @@ int main()
 
 	// Market
 	std::cout << ".. Market environment - ";
-	size_t startDate = 0;
-	size_t endDate = numTrainingSteps + numTestSteps;
-	MarketEnvironment market(inputDataPath, startDate, endDate);
+	MarketEnvironment market(inputDataPath);
+    size_t startDate = 0;
+	size_t endDate = numDaysObserved + numTrainingSteps + numTestSteps - 1;
+	market.setEvaluationInterval(startDate, endDate);
     std::cout << "done" << std::endl;
 
     // Asset allocation task

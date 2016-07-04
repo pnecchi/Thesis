@@ -8,7 +8,7 @@
 ###############
 
 # Input filepath (relative to Thesis/Code/Thesis/examples/ directory) 
-inputDataPath=../../../Data/Input/test.csv
+inputDataPath=../../../Data/Input/synthetic.csv
 
 # Output filepath (relative to Thesis/Code/Thesis/examples/ directory)
 outputDataPath=../../../Data/Output/
@@ -37,7 +37,7 @@ deltaF=0.0
 deltaS=0.000
 
 # Number of past days observed by the agent
-numDaysObserved=5
+numDaysObserved=10
 
 ################
 # ARRSAC agent #
@@ -47,7 +47,7 @@ numDaysObserved=5
 lambda=0.9
 
 # Actor learning rate (0.05)
-alphaActor=0.05
+alphaActor=0.02
 
 # Critic learning rate (0.1)
 alphaCritic=0.1
@@ -66,7 +66,7 @@ numExperiments=5
 numEpochs=300
 
 # Number of training steps
-numTrainingSteps=1000
+numTrainingSteps=3000
 
 # Number of test steps
 numTestSteps=1000

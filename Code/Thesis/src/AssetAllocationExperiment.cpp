@@ -24,8 +24,7 @@ AssetAllocationExperiment::AssetAllocationExperiment(AssetAllocationTask const &
 void AssetAllocationExperiment::oneInteraction()
 {
     // 1) Get observation
-    observationCache = task.getObservation();
-    agentPtr->receiveObservation(observationCache);
+    agentPtr->receiveObservation(task.getObservation());
 
     // 2) Perform action
     actionCache = agentPtr->getAction();
@@ -36,7 +35,8 @@ void AssetAllocationExperiment::oneInteraction()
     agentPtr->receiveReward(rewardCache);
 
     // 4) Receive next observation
-    agentPtr->receiveNextObservation(task.getObservation());
+    observationCache = task.getObservation();
+    agentPtr->receiveNextObservation(observationCache);
 
     // 5) Dump results in statistics gatherer
     experimentStats.dumpOneResult(rewardCache);
