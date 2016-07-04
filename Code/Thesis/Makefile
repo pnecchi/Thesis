@@ -166,6 +166,19 @@ MainPgpeArrsac/fast:
 	$(MAKE) -f examples/CMakeFiles/MainPgpeArrsac.dir/build.make examples/CMakeFiles/MainPgpeArrsac.dir/build
 .PHONY : MainPgpeArrsac/fast
 
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
 src/AracAgent.o: src/AracAgent.cpp.o
 .PHONY : src/AracAgent.o
 
@@ -502,6 +515,30 @@ src/NPGPEPolicy.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/NPGPEPolicy.cpp.s
 .PHONY : src/NPGPEPolicy.cpp.s
 
+src/NpgpeAgent.o: src/NpgpeAgent.cpp.o
+.PHONY : src/NpgpeAgent.o
+
+# target to build an object file
+src/NpgpeAgent.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/NpgpeAgent.cpp.o
+.PHONY : src/NpgpeAgent.cpp.o
+
+src/NpgpeAgent.i: src/NpgpeAgent.cpp.i
+.PHONY : src/NpgpeAgent.i
+
+# target to preprocess a source file
+src/NpgpeAgent.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/NpgpeAgent.cpp.i
+.PHONY : src/NpgpeAgent.cpp.i
+
+src/NpgpeAgent.s: src/NpgpeAgent.cpp.s
+.PHONY : src/NpgpeAgent.s
+
+# target to generate assembly for a file
+src/NpgpeAgent.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/NpgpeAgent.cpp.s
+.PHONY : src/NpgpeAgent.cpp.s
+
 src/PgpePolicy.o: src/PgpePolicy.cpp.o
 .PHONY : src/PgpePolicy.o
 
@@ -584,6 +621,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... thesis"
 	@echo "... MainArac"
+	@echo "... main"
 	@echo "... MainPgpeArac"
 	@echo "... MainArrsac"
 	@echo "... MainPgpeArrsac"
@@ -629,6 +667,9 @@ help:
 	@echo "... src/NPGPEPolicy.o"
 	@echo "... src/NPGPEPolicy.i"
 	@echo "... src/NPGPEPolicy.s"
+	@echo "... src/NpgpeAgent.o"
+	@echo "... src/NpgpeAgent.i"
+	@echo "... src/NpgpeAgent.s"
 	@echo "... src/PgpePolicy.o"
 	@echo "... src/PgpePolicy.i"
 	@echo "... src/PgpePolicy.s"

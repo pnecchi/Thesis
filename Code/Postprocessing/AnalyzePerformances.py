@@ -17,7 +17,7 @@ matplotlib.style.use('seaborn-colorblind')
 ##############
 
 inputDir = '../../Data/Debug/'
-nExperiments = 10
+nExperiments = 5
 
 ########################
 # Visualize allocation #
@@ -73,7 +73,7 @@ ax1.grid()
 ax1.legend(loc=2)
 
 ax2 = fig.add_subplot(212)
-ax2.plot(np.arange(len(cumReturn)), df['a_1'], lw=2)
+ax2.plot(np.arange(len(cumReturn)), alloc, lw=2)
 ax2.set_ylabel('Allocation')
 ax2.set_xlabel('Time Step')
 ax2.set_ylim((-1.1, 1.1))

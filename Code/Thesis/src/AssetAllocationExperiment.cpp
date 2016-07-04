@@ -73,7 +73,7 @@ void AssetAllocationExperiment::run()
                 agentPtr->learn();
             }
 
-            if ((epoch + 1) % static_cast<int>(numEpochs / 10) == 0)
+            if ((epoch + 1) % static_cast<int>(numEpochs / 20) == 0)
             {
                 std::vector<std::vector<double>> stats = experimentStats.getStatistics();
                 std::cout << "Experiment #" << exp
@@ -97,7 +97,7 @@ void AssetAllocationExperiment::run()
             oneInteraction();
 
             // Learning step
-            // agentPtr->learn();
+            agentPtr->learn();
 
             // Log (action, reward) tuple
             arma::vec stateCache =

@@ -157,6 +157,20 @@ MainPgpeArrsac/fast:
 	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainPgpeArrsac.dir/build.make examples/CMakeFiles/MainPgpeArrsac.dir/build
 .PHONY : MainPgpeArrsac/fast
 
+# Convenience name for target.
+examples/CMakeFiles/main.dir/rule:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/main.dir/rule
+.PHONY : examples/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: examples/CMakeFiles/main.dir/rule
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
 MainArac.o: MainArac.cpp.o
 .PHONY : MainArac.o
 
@@ -253,6 +267,30 @@ MainPgpeArrsac.cpp.s:
 	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainPgpeArrsac.dir/build.make examples/CMakeFiles/MainPgpeArrsac.dir/MainPgpeArrsac.cpp.s
 .PHONY : MainPgpeArrsac.cpp.s
 
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -262,6 +300,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MainArac"
+	@echo "... main"
 	@echo "... MainPgpeArac"
 	@echo "... MainArrsac"
 	@echo "... MainPgpeArrsac"
@@ -277,6 +316,9 @@ help:
 	@echo "... MainPgpeArrsac.o"
 	@echo "... MainPgpeArrsac.i"
 	@echo "... MainPgpeArrsac.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

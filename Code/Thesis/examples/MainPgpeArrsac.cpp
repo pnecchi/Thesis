@@ -79,9 +79,9 @@ int main()
 
     // Binary policy
     std::cout << ".. PGPE binary policy - ";
-    BinaryPolicy controller(task.getDimObservation(), -1000.0, 1000.0);
+    BinaryPolicy controller(task.getDimObservation());
     GaussianDistribution distribution(controller.getDimParameters());
-    PGPEPolicy policy(controller, distribution, 0.2);
+    PGPEPolicy policy(controller, distribution, 0.1);
     std::cout << "done" << std::endl;
 
     // Stochastic Actor

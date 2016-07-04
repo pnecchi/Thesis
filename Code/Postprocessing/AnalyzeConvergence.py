@@ -16,7 +16,7 @@ matplotlib.style.use('seaborn-colorblind')
 ##############
 
 inputDir = '../../Data/Debug/'
-nExperiments = 10
+nExperiments = 5
 
 ########################
 # Visualize allocation #
@@ -52,26 +52,29 @@ sDev  = np.sqrt(s2Sum / float(nExperiments) - sMean * sMean)
 shMean = shSum / float(nExperiments)
 shDev  = np.sqrt(sh2Sum / float(nExperiments) - shMean * shMean)
 
-fig = plt.figure(figsize=(15,20), facecolor='white', edgecolor='black')
+fig = plt.figure(figsize=(15,5), facecolor='white', edgecolor='black')
 
-ax1 = fig.add_subplot(311)
-ax1.set_title('Learning Algorithm')
+ax1 = fig.add_subplot(131)
 ax1.plot(df['epoch'].values, rMean, lw=2, c='black')
 ax1.plot(df['epoch'].values, rMean + rDev, lw=2, ls=':', c='black')
 ax1.plot(df['epoch'].values, rMean - rDev, lw=2, ls=':', c='black')
 ax1.set_ylabel('Average Reward')
+ax1.set_xlabel('Training Epoch')
 
-ax2 = fig.add_subplot(312)
+ax2 = fig.add_subplot(132)
+ax2.set_title('Learning Algorithm', fontsize=18)
 ax2.plot(df['epoch'].values, sMean, lw=2, c='black')
 ax2.plot(df['epoch'].values, sMean + sDev, lw=2, ls=':', c='black')
 ax2.plot(df['epoch'].values, sMean - sDev, lw=2, ls=':', c='black')
 ax2.set_ylabel('Reward Standard Deviation')
+ax2.set_xlabel('Training Epoch')
 
-ax3 = fig.add_subplot(313)
+ax3 = fig.add_subplot(133)
 ax3.plot(df['epoch'].values, shMean, lw=2, c='black')
 ax3.plot(df['epoch'].values, shMean + shDev, lw=2, ls=':', c='black')
 ax3.plot(df['epoch'].values, shMean - shDev, lw=2, ls=':', c='black')
 ax3.set_ylabel('Sharpe Ratio')
 ax3.set_xlabel('Training Epoch')
 
+plt.tight_layout()
 plt.show()

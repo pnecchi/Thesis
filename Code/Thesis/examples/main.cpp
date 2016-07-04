@@ -8,6 +8,7 @@
 #include <thesis/Critic.h>
 #include <thesis/BoltzmannPolicy.h>
 #include <thesis/GaussianPolicy.h>
+#include <thesis/LogisticPolicy.h>
 #include <thesis/BinaryPolicy.h>
 #include <thesis/LogisticPolicy.h>
 #include <thesis/GaussianDistribution.h>
@@ -16,7 +17,7 @@
 #include <thesis/StochasticActor.h>
 #include <thesis/ArrsacAgent.h>
 #include <thesis/AracAgent.h>
-#include <thesis/NPGPEAgent.h>
+#include <thesis/NpgpeAgent.h>
 #include <thesis/AssetAllocationExperiment.h>
 
 int main()
@@ -28,7 +29,7 @@ int main()
 
     // 0) Parameters
     std::cout << "0) Read parameters" << std::endl;
-    std::string parametersFilepath  = "../../../Data/Parameters/ParametersARRSAC.pot";
+    std::string parametersFilepath  = "../../../Data/Parameters/ParametersArrsac.pot";
     const ExperimentParameters params(parametersFilepath, true);
 
     // Copy parameters
@@ -55,7 +56,7 @@ int main()
 	// Market
 	std::cout << ".. Market environment - ";
 	size_t startDate = 0;
-	size_t endDate = numTrainingSteps;
+	size_t endDate = numTrainingSteps + numTestSteps;
 	MarketEnvironment market(inputDataPath, startDate, endDate);
     std::cout << "done" << std::endl;
 
@@ -93,7 +94,7 @@ int main()
 //    std::cout << "done" << std::endl;
 
     // PGPE Binary policy
-    BinaryPolicy controller(task.getDimObservation(), -100.0, 100.0);
+    BinaryPolicy controller(task.getDimObservation()); //, -10000.0, 10000.0);
     // GaussianDistribution distribution(controller.getDimParameters());
     // PGPEPolicy policy(controller, distribution, 1.0);
 

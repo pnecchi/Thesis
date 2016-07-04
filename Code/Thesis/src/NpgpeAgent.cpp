@@ -15,16 +15,15 @@ NPGPEAgent::NPGPEAgent(Policy const &policy_,
       alpha(alpha_),
       discountFactor(discountFactor_),
       observation(policy_.getDimObservation()),
-      action(policy_.getDimAction()),
-      nextObservation(policy_.getDimObservation())
+      action(policy_.getDimAction())
 {
     initializeParameters();
 }
 
 NPGPEAgent::NPGPEAgent(NPGPEAgent const &other_)
     : policyPtr(other_.policyPtr->clone()),
-      mean(other.mean),
-      choleskyFactor(other.choleskyFactor),
+      mean(other_.mean),
+      choleskyFactor(other_.choleskyFactor),
       generator(other_.generator),
       gaussianDistr(other_.gaussianDistr),
       xi(other_.xi),
@@ -34,13 +33,12 @@ NPGPEAgent::NPGPEAgent(NPGPEAgent const &other_)
       alpha(other_.alpha),
       discountFactor(other_.discountFactor),
       observation(other_.observation),
-      action(other_.action),
-      nextObservation(other_.nextObservation)
+      action(other_.action)
 {
     /* Nothing to do */
 }
 
-NPGPEAgent::initializeParameters()
+void NPGPEAgent::initializeParameters()
 {
     mean.zeros();
     choleskyFactor.zeros();
@@ -56,10 +54,10 @@ arma::vec NPGPEAgent::getAction()
 {
     // Simulate policy parameters: w = mean + cholFactor * xi
     xi.imbue( [&]() { return gaussianDistr(generator); } );
-    policyPtr->setParameters(mean + cholFactor * xi);
+    policyPtr->setParameters(mean + choleskyFactor * xi);
 
     // Select action
-    return policyPtr->getAction(observation_);
+    return policyPtr->getAction(observation);
 }
 
 void NPGPEAgent::learn()
@@ -73,8 +71,8 @@ void NPGPEAgent::learn()
     arma::mat likelihoodChol =
         (arma::trimatu(xi * xi.t()) -
         0.5 * arma::diagmat(xi * xi.t()) -
-        0.5 * arma::eye(dimParameters, dimParameters)) *
-        cholFactor.t();
+        0.5 * arma::eye(policyPtr->getDimParameters(), policyPtr->getDimParameters())) *
+        choleskyFactor.t();
 
     // 3) Update gradients
     gradientMean = discountFactor * gradientMean + likelihoodMean;

@@ -8,7 +8,7 @@
 ###############
 
 # Input filepath (relative to Thesis/Code/Thesis/examples/ directory) 
-inputDataPath=../../../Data/Input/daily_returns.csv
+inputDataPath=../../../Data/Input/test.csv
 
 # Output filepath (relative to Thesis/Code/Thesis/examples/ directory)
 outputDataPath=../../../Data/Output/
@@ -21,23 +21,23 @@ debugDataPath=../../../Data/Debug/
 ##########
 
 # Risk-free rate
-riskFreeRate=0.0
+riskFreeRate=0.001
 
 #########################
 # Asset allocation task #
 #########################
 
 # Proportional transaction costs
-deltaP=0.00
+deltaP=0.000
 
 # Fixed transaction costs
-deltaF=0.0
+deltaF=0.00
 
 # Short-selling fees
 deltaS=0.000
 
 # Number of past days observed by the agent
-numDaysObserved=10
+numDaysObserved=2
 
 ################
 # ARRSAC agent #
@@ -60,13 +60,13 @@ alphaBaseline=0.2
 ##############
 
 # Number of experiments
-numExperiments=10
+numExperiments=5
 
 # Number of epochs
-numEpochs=500
+numEpochs=300
 
 # Number of training steps
-numTrainingSteps=4000
+numTrainingSteps=1000
 
 # Number of test steps
 numTestSteps=1000

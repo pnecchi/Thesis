@@ -155,11 +155,11 @@
 		<Unit filename="examples/CMakeLists.txt">
 			<Option virtualFolder="CMake Files/examples/" />
 		</Unit>
+		<Unit filename="examples/Main.cpp" />
 		<Unit filename="examples/MainArac.cpp" />
 		<Unit filename="examples/MainArrsac.cpp" />
 		<Unit filename="examples/MainPgpeArac.cpp" />
 		<Unit filename="examples/MainPgpeArrsac.cpp" />
-		<Unit filename="examples/main.cpp" />
 		<Unit filename="include/thesis/Actor.h" />
 		<Unit filename="include/thesis/Agent.h" />
 		<Unit filename="include/thesis/AracAgent.h" />
@@ -177,6 +177,7 @@
 		<Unit filename="include/thesis/LinearRegressor.h" />
 		<Unit filename="include/thesis/LogisticPolicy.h" />
 		<Unit filename="include/thesis/MarketEnvironment.h" />
+		<Unit filename="include/thesis/NpgpeAgent.h" />
 		<Unit filename="include/thesis/NpgpePolicy.h" />
 		<Unit filename="include/thesis/PgpePolicy.h" />
 		<Unit filename="include/thesis/Policy.h" />
@@ -200,6 +201,7 @@
 		<Unit filename="src/LogisticPolicy.cpp" />
 		<Unit filename="src/MarketEnvironment.cpp" />
 		<Unit filename="src/NPGPEPolicy.cpp" />
+		<Unit filename="src/NpgpeAgent.cpp" />
 		<Unit filename="src/PgpePolicy.cpp" />
 		<Unit filename="src/RandomGenerator.cpp" />
 		<Unit filename="src/Statistics.cpp" />
