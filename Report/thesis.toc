@@ -16,22 +16,40 @@
 \contentsline {subsection}{\numberline {3.2.3}Policy Approximation}{17}{subsection.3.2.3}
 \contentsline {chapter}{\numberline {4}Policy Gradient}{19}{chapter.4}
 \contentsline {section}{\numberline {4.1}Basics of Policy Gradient Methods}{20}{section.4.1}
-\contentsline {section}{\numberline {4.2}Finite Differences}{21}{section.4.2}
-\contentsline {section}{\numberline {4.3}Monte Carlo Policy Gradient}{22}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Optimal Baseline}{24}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Boltzmann Exploration Policy}{24}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Gaussian Exploration Policy}{25}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4}Policy Gradient Theorem}{25}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Actor-Critic Policy Gradient}{27}{subsection.4.4.1}
-\contentsline {section}{\numberline {4.5}Natural Policy Gradient}{28}{section.4.5}
-\contentsline {section}{\numberline {4.6}Policy Gradient with Parameter Exploration}{28}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Episodic PGPE}{28}{subsection.4.6.1}
-\contentsline {subsubsection}{\numberline {4.6.1.1}Gaussian Parameter Distribution}{29}{subsubsection.4.6.1.1}
-\contentsline {subsubsection}{\numberline {4.6.1.2}Symmetric Sampling and Gain Normalization}{30}{subsubsection.4.6.1.2}
-\contentsline {subsection}{\numberline {4.6.2}Infinite Horizon PGPE}{31}{subsection.4.6.2}
-\contentsline {section}{\numberline {4.7}Risk-Sensitive Policy Gradient}{32}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}Risk-Sensitive Actor-Critic Algorithm}{33}{subsection.4.7.1}
-\contentsline {chapter}{\numberline {5}Asset Allocation}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}Reward Function}{35}{section.5.1}
-\contentsline {section}{\numberline {5.2}States}{37}{section.5.2}
-\contentsline {section}{\numberline {5.3}Actions}{38}{section.5.3}
+\contentsline {subsection}{\numberline {4.1.1}Risk-Neutral Framework}{21}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Risk-Sensitive Framework}{21}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Finite Differences}{23}{section.4.2}
+\contentsline {section}{\numberline {4.3}Likelihood Ratio Methods}{23}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Monte Carlo Policy Gradient}{24}{subsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.1.1}Optimal Baseline}{25}{subsubsection.4.3.1.1}
+\contentsline {subsection}{\numberline {4.3.2}GPOMDP}{26}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Risk-Sensitive Monte Carlo Policy Gradient}{27}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Stochastic Policies}{27}{subsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.4.1}Boltzmann Exploration Policy}{27}{subsubsection.4.3.4.1}
+\contentsline {subsubsection}{\numberline {4.3.4.2}Gaussian Exploration Policy}{27}{subsubsection.4.3.4.2}
+\contentsline {subsection}{\numberline {4.3.5}Policy Gradient with Parameter Exploration}{27}{subsection.4.3.5}
+\contentsline {subsubsection}{\numberline {4.3.5.1}Episodic PGPE}{28}{subsubsection.4.3.5.1}
+\contentsline {paragraph}{Gaussian Parameter Distribution}{29}{section*.9}
+\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{30}{section*.10}
+\contentsline {subsubsection}{\numberline {4.3.5.2}Infinite Horizon PGPE}{30}{subsubsection.4.3.5.2}
+\contentsline {section}{\numberline {4.4}Policy Gradient Theorem}{31}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Risk-Neutral Setting}{31}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Risk-Sensitive Setting}{33}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}GPOMDP from the Policy Gradient Theorem}{33}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Compatible Function Approximation}{33}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Actor-Critic Policy Gradient}{33}{subsection.4.4.5}
+\contentsline {subsubsection}{\numberline {4.4.5.1}QAC}{34}{subsubsection.4.4.5.1}
+\contentsline {subsubsection}{\numberline {4.4.5.2}ARRSAC}{34}{subsubsection.4.4.5.2}
+\contentsline {subsection}{\numberline {4.4.6}Natural Policy Gradient}{34}{subsection.4.4.6}
+\contentsline {section}{\numberline {4.5}Risk-Sensitive Policy Gradient}{34}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Risk-Sensitive Actor-Critic Algorithm}{35}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}Parameter-Based Policy Gradient Theorem}{36}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Risk-Neutral Setting}{36}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Risk-Sensitive Setting}{36}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Natural Policy Gradient}{36}{subsection.4.6.3}
+\contentsline {subsubsection}{\numberline {4.6.3.1}NPGPE}{36}{subsubsection.4.6.3.1}
+\contentsline {subsubsection}{\numberline {4.6.3.2}Risk-Sensitive NPGPE}{36}{subsubsection.4.6.3.2}
+\contentsline {chapter}{\numberline {5}Asset Allocation}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}Reward Function}{37}{section.5.1}
+\contentsline {section}{\numberline {5.2}States}{39}{section.5.2}
+\contentsline {section}{\numberline {5.3}Actions}{40}{section.5.3}

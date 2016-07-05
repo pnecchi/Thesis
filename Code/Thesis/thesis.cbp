@@ -157,6 +157,7 @@
 		</Unit>
 		<Unit filename="examples/MainArac.cpp" />
 		<Unit filename="examples/MainArrsac.cpp" />
+		<Unit filename="examples/MainNpgpe.cpp" />
 		<Unit filename="examples/MainPgpeArac.cpp" />
 		<Unit filename="examples/MainPgpeArrsac.cpp" />
 		<Unit filename="examples/main.cpp" />
