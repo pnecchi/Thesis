@@ -60,10 +60,10 @@ alphaBaseline=0.2
 ##############
 
 # Number of experiments
-numExperiments=10
+numExperiments=5
 
 # Number of epochs
-numEpochs=500
+numEpochs=300
 
 # Number of training steps
 numTrainingSteps=1000

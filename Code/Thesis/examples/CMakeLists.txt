@@ -13,3 +13,5 @@ target_link_libraries(MainPgpeArac thesis)
 add_executable(MainPgpeArrsac MainPgpeArrsac.cpp)
 target_link_libraries(MainPgpeArrsac thesis)
 
+add_executable(MainNpgpe MainNpgpe.cpp)
+target_link_libraries(MainNpgpe thesis)

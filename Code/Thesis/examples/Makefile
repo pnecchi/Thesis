@@ -130,6 +130,20 @@ MainArrsac/fast:
 .PHONY : MainArrsac/fast
 
 # Convenience name for target.
+examples/CMakeFiles/MainNpgpe.dir/rule:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/MainNpgpe.dir/rule
+.PHONY : examples/CMakeFiles/MainNpgpe.dir/rule
+
+# Convenience name for target.
+MainNpgpe: examples/CMakeFiles/MainNpgpe.dir/rule
+.PHONY : MainNpgpe
+
+# fast build rule for target.
+MainNpgpe/fast:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainNpgpe.dir/build.make examples/CMakeFiles/MainNpgpe.dir/build
+.PHONY : MainNpgpe/fast
+
+# Convenience name for target.
 examples/CMakeFiles/MainPgpeArac.dir/rule:
 	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/MainPgpeArac.dir/rule
 .PHONY : examples/CMakeFiles/MainPgpeArac.dir/rule
@@ -219,6 +233,30 @@ MainArrsac.cpp.s:
 	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainArrsac.dir/build.make examples/CMakeFiles/MainArrsac.dir/MainArrsac.cpp.s
 .PHONY : MainArrsac.cpp.s
 
+MainNpgpe.o: MainNpgpe.cpp.o
+.PHONY : MainNpgpe.o
+
+# target to build an object file
+MainNpgpe.cpp.o:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainNpgpe.dir/build.make examples/CMakeFiles/MainNpgpe.dir/MainNpgpe.cpp.o
+.PHONY : MainNpgpe.cpp.o
+
+MainNpgpe.i: MainNpgpe.cpp.i
+.PHONY : MainNpgpe.i
+
+# target to preprocess a source file
+MainNpgpe.cpp.i:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainNpgpe.dir/build.make examples/CMakeFiles/MainNpgpe.dir/MainNpgpe.cpp.i
+.PHONY : MainNpgpe.cpp.i
+
+MainNpgpe.s: MainNpgpe.cpp.s
+.PHONY : MainNpgpe.s
+
+# target to generate assembly for a file
+MainNpgpe.cpp.s:
+	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainNpgpe.dir/build.make examples/CMakeFiles/MainNpgpe.dir/MainNpgpe.cpp.s
+.PHONY : MainNpgpe.cpp.s
+
 MainPgpeArac.o: MainPgpeArac.cpp.o
 .PHONY : MainPgpeArac.o
 
@@ -303,6 +341,7 @@ help:
 	@echo "... main"
 	@echo "... MainPgpeArac"
 	@echo "... MainArrsac"
+	@echo "... MainNpgpe"
 	@echo "... MainPgpeArrsac"
 	@echo "... MainArac.o"
 	@echo "... MainArac.i"
@@ -310,6 +349,9 @@ help:
 	@echo "... MainArrsac.o"
 	@echo "... MainArrsac.i"
 	@echo "... MainArrsac.s"
+	@echo "... MainNpgpe.o"
+	@echo "... MainNpgpe.i"
+	@echo "... MainNpgpe.s"
 	@echo "... MainPgpeArac.o"
 	@echo "... MainPgpeArac.i"
 	@echo "... MainPgpeArac.s"

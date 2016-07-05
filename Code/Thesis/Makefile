@@ -141,6 +141,19 @@ MainArrsac/fast:
 .PHONY : MainArrsac/fast
 
 #=============================================================================
+# Target rules for targets named MainNpgpe
+
+# Build rule for target.
+MainNpgpe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MainNpgpe
+.PHONY : MainNpgpe
+
+# fast build rule for target.
+MainNpgpe/fast:
+	$(MAKE) -f examples/CMakeFiles/MainNpgpe.dir/build.make examples/CMakeFiles/MainNpgpe.dir/build
+.PHONY : MainNpgpe/fast
+
+#=============================================================================
 # Target rules for targets named MainPgpeArac
 
 # Build rule for target.
@@ -624,6 +637,7 @@ help:
 	@echo "... main"
 	@echo "... MainPgpeArac"
 	@echo "... MainArrsac"
+	@echo "... MainNpgpe"
 	@echo "... MainPgpeArrsac"
 	@echo "... src/AracAgent.o"
 	@echo "... src/AracAgent.i"

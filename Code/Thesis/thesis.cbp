@@ -155,11 +155,11 @@
 		<Unit filename="examples/CMakeLists.txt">
 			<Option virtualFolder="CMake Files/examples/" />
 		</Unit>
-		<Unit filename="examples/Main.cpp" />
 		<Unit filename="examples/MainArac.cpp" />
 		<Unit filename="examples/MainArrsac.cpp" />
 		<Unit filename="examples/MainPgpeArac.cpp" />
 		<Unit filename="examples/MainPgpeArrsac.cpp" />
+		<Unit filename="examples/main.cpp" />
 		<Unit filename="include/thesis/Actor.h" />
 		<Unit filename="include/thesis/Agent.h" />
 		<Unit filename="include/thesis/AracAgent.h" />
