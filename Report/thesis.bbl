@@ -1,5 +1,8 @@
 \begin{thebibliography}{10}
 
+\bibitem{}
+
+
 \bibitem{agarwal2010optimal}
 {\sc A.~Agarwal, P.~Bartlett, and M.~Dama}, {\em Optimal allocation strategies
   for the dark pool problem}, arXiv preprint arXiv:1003.2245,  (2010).
@@ -22,6 +25,11 @@
 \bibitem{bauerle2011markov}
 {\sc N.~B{\"a}uerle and U.~Rieder}, {\em Markov decision processes with
   applications to finance}, Springer Science \& Business Media, 2011.
+
+\bibitem{baxter2001infinite}
+{\sc J.~Baxter and P.~L. Bartlett}, {\em Infinite-horizon policy-gradient
+  estimation}, Journal of Artificial Intelligence Research, 15 (2001),
+  pp.~319--350.
 
 \bibitem{bekiros2010heterogeneouseltit}
 {\sc S.~D. Bekiros}, {\em Heterogeneous trading strategies with adaptive fuzzy

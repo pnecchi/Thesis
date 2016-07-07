@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.19)  21 MAY 2016 17:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  6 JUL 2016 18:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **online_pgpe.tex
 (./online_pgpe.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -256,6 +256,8 @@ File: babel.def 2013/12/03 3.9h Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
 )
+\l@british = a dialect from \language\l@english 
+\l@UKenglish = a dialect from \language\l@english 
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
@@ -1014,12 +1016,12 @@ Package rerunfilecheck Info: File `online_pgpe.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
  ) 
 Here is how much of TeX's memory you used:
- 17031 strings out of 493304
- 292990 string characters out of 6139870
- 383624 words of memory out of 5000000
- 20143 multiletter control sequences out of 15000+600000
+ 17041 strings out of 495028
+ 293062 string characters out of 6181497
+ 379410 words of memory out of 5000000
+ 19904 multiletter control sequences out of 15000+600000
  11957 words of font info for 51 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
+ 14 hyphenation exceptions out of 8191
  63i,22n,57p,423b,360s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/pierpaolo/.texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
@@ -1033,7 +1035,7 @@ ts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on online_pgpe.pdf (2 pages, 108754 bytes).
+Output written on online_pgpe.pdf (2 pages, 108801 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  58 compressed objects within 1 object stream
