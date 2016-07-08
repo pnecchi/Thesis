@@ -18,6 +18,7 @@
 #include <thesis/ArrsacAgent.h>
 #include <thesis/AracAgent.h>
 #include <thesis/NpgpeAgent.h>
+#include <thesis/RiskSensitiveNpgpeAgent.h>
 #include <thesis/AssetAllocationExperiment.h>
 
 int main()
@@ -129,9 +130,9 @@ int main()
 
     // NPGPE Agent
     std::cout << ".. NPGPE Agent - ";
-    NPGPEAgent agent(controller,
-                     alphaActor,
-                     0.95);
+    RiskSensitiveNPGPEAgent agent(controller,
+                                  alphaActor,
+                                  0.95);
 
     std::cout << "done" << std::endl;
 

@@ -600,6 +600,30 @@ src/RandomGenerator.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/RandomGenerator.cpp.s
 .PHONY : src/RandomGenerator.cpp.s
 
+src/RiskSensitiveNpgpeAgent.o: src/RiskSensitiveNpgpeAgent.cpp.o
+.PHONY : src/RiskSensitiveNpgpeAgent.o
+
+# target to build an object file
+src/RiskSensitiveNpgpeAgent.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/RiskSensitiveNpgpeAgent.cpp.o
+.PHONY : src/RiskSensitiveNpgpeAgent.cpp.o
+
+src/RiskSensitiveNpgpeAgent.i: src/RiskSensitiveNpgpeAgent.cpp.i
+.PHONY : src/RiskSensitiveNpgpeAgent.i
+
+# target to preprocess a source file
+src/RiskSensitiveNpgpeAgent.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/RiskSensitiveNpgpeAgent.cpp.i
+.PHONY : src/RiskSensitiveNpgpeAgent.cpp.i
+
+src/RiskSensitiveNpgpeAgent.s: src/RiskSensitiveNpgpeAgent.cpp.s
+.PHONY : src/RiskSensitiveNpgpeAgent.s
+
+# target to generate assembly for a file
+src/RiskSensitiveNpgpeAgent.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/RiskSensitiveNpgpeAgent.cpp.s
+.PHONY : src/RiskSensitiveNpgpeAgent.cpp.s
+
 src/Statistics.o: src/Statistics.cpp.o
 .PHONY : src/Statistics.o
 
@@ -690,6 +714,9 @@ help:
 	@echo "... src/RandomGenerator.o"
 	@echo "... src/RandomGenerator.i"
 	@echo "... src/RandomGenerator.s"
+	@echo "... src/RiskSensitiveNpgpeAgent.o"
+	@echo "... src/RiskSensitiveNpgpeAgent.i"
+	@echo "... src/RiskSensitiveNpgpeAgent.s"
 	@echo "... src/Statistics.o"
 	@echo "... src/Statistics.i"
 	@echo "... src/Statistics.s"

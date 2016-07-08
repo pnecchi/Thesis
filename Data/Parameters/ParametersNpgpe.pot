@@ -8,7 +8,7 @@
 ###############
 
 # Input filepath (relative to Thesis/Code/Thesis/examples/ directory) 
-inputDataPath=../../../Data/Input/test.csv
+inputDataPath=../../../Data/Input/synthetic.csv
 
 # Output filepath (relative to Thesis/Code/Thesis/examples/ directory)
 outputDataPath=../../../Data/Output/
@@ -66,7 +66,7 @@ numExperiments=5
 numEpochs=500
 
 # Number of training steps
-numTrainingSteps=1000
+numTrainingSteps=3000
 
 # Number of test steps
 numTestSteps=1000
