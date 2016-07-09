@@ -66,7 +66,7 @@ numExperiments=5
 numEpochs=100
 
 # Number of training steps
-numTrainingSteps=1000
+numTrainingSteps=3000
 
 # Number of test steps
 numTestSteps=1000

@@ -74,5 +74,7 @@ void ARACAgent::reset()
     actor.reset();
     critic.reset();
     averageReward.reset();
+    gradientCritic.zeros();
+    gradientActor.zeros();
 }
 

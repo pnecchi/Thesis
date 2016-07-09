@@ -86,4 +86,7 @@ void NPGPEAgent::learn()
 void NPGPEAgent::reset()
 {
     initializeParameters();
+    gradientMean.zeros();
+    gradientChol.zeros();
+    baseline.reset();
 }

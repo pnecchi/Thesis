@@ -183,6 +183,7 @@
 		<Unit filename="include/thesis/Policy.h" />
 		<Unit filename="include/thesis/ProbabilityDistribution.h" />
 		<Unit filename="include/thesis/RandomGenerator.h" />
+		<Unit filename="include/thesis/RiskSensitiveNpgpeAgent.h" />
 		<Unit filename="include/thesis/Statistics.h" />
 		<Unit filename="include/thesis/StochasticActor.h" />
 		<Unit filename="include/thesis/StochasticPolicy.h" />
@@ -204,6 +205,7 @@
 		<Unit filename="src/NpgpeAgent.cpp" />
 		<Unit filename="src/PgpePolicy.cpp" />
 		<Unit filename="src/RandomGenerator.cpp" />
+		<Unit filename="src/RiskSensitiveNpgpeAgent.cpp" />
 		<Unit filename="src/Statistics.cpp" />
 		<Extensions>
 			<code_completion />

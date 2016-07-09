@@ -90,5 +90,8 @@ void ARRSACAgent::reset()
     criticU.reset();
     averageReward.reset();
     averageSquareReward.reset();
+    gradientActor.zeros();
+    gradientCriticU.zeros();
+    gradientCriticV.zeros();
 }
 

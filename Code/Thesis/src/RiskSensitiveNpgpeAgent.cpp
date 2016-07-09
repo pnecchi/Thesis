@@ -82,8 +82,8 @@ void RiskSensitiveNPGPEAgent::learn()
         choleskyFactor.t();
 
     // 3) Update gradients
-    gradientMean = discountFactor * gradientMean + gradientMean;
-    gradientChol = discountFactor * gradientChol + gradientChol;
+    gradientMean = discountFactor * gradientMean + likelihoodMean;
+    gradientChol = discountFactor * gradientChol + likelihoodChol;
 
     arma::vec gradientRewardMean = (reward - rb) * gradientMean;
     arma::vec gradientSquareRewardMean = (reward * reward - r2b) * gradientMean;
@@ -105,5 +105,9 @@ void RiskSensitiveNPGPEAgent::learn()
 void RiskSensitiveNPGPEAgent::reset()
 {
     initializeParameters();
+    rewardBaseline.reset();
+    squareRewardBaseline.reset();
+    gradientMean.zeros();
+    gradientChol.zeros();
 }
 

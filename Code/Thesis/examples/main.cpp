@@ -132,7 +132,7 @@ int main()
     std::cout << ".. NPGPE Agent - ";
     RiskSensitiveNPGPEAgent agent(controller,
                                   alphaActor,
-                                  0.95);
+                                  0.9);
 
     std::cout << "done" << std::endl;
 
