@@ -63,7 +63,7 @@ alphaBaseline=0.2
 numExperiments=5
 
 # Number of epochs
-numEpochs=500
+numEpochs=1000
 
 # Number of training steps
 numTrainingSteps=3000
