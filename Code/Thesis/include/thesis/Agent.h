@@ -13,9 +13,6 @@
 class Agent
 {
     public:
-        // Default constructor
-        Agent() = default;
-
         // Virtual destructor
         virtual ~Agent() = default;
 

@@ -40,7 +40,7 @@ assetCumReturns[1:] = 100.0 * (np.cumprod(1.0 + assetSimpleReturns) - 1.0)
 dfPrices['Buy and Hold'] = 100.0 * (1.0 + assetCumReturns/100.0)
 
 # Extract allocation in the risky asset
-alloc = np.zeros(len(assetSimpleReturns))   # df['a_1'].values
+alloc = df['a_1'].values
 
 fig = plt.figure(figsize=(22,15), facecolor='white', edgecolor='black')
 
@@ -72,13 +72,9 @@ for i in xrange(nExperiments):
     # Plot cumulative profit for this experiment
     ax1.plot(np.arange(len(cumReturn)), cumReturn, lw=1, ls='--', c='grey')
 
-
-    alloc += df['a_1'].values
-
 meanCumReturn = sumCumReturn / float(nExperiments)
 stddevCumReturn = np.sqrt(sumSquaresCumReturn / float(nExperiments)
                           - meanCumReturn * meanCumReturn)
-meanAlloc = alloc / float(nExperiments)
 
 dfPrices['Average Experiment'] = 100 * (1.0 + meanCumReturn / 100.0)
 
@@ -91,7 +87,7 @@ ax1.grid()
 ax1.legend(loc=2)
 
 ax2 = fig.add_subplot(212)
-ax2.plot(np.arange(len(alloc)), meanAlloc, lw=2)
+ax2.plot(np.arange(len(alloc)), alloc, lw=2)
 ax2.set_ylabel('Allocation')
 ax2.set_xlabel('Time Step')
 ax2.set_ylim((-1.1, 1.1))

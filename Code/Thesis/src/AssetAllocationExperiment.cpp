@@ -86,8 +86,6 @@ void AssetAllocationExperiment::run()
 
                 debugFile << epoch + 1 << "," << stats[0][0] << "," << stats[0][1]
                           << "," << stats[0][2] << ",\n";
-
-                // experimentStats.reset();
             }
         }
         debugFile.close();

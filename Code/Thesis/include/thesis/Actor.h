@@ -13,12 +13,6 @@
 class Actor
 {
     public:
-        //! Default constructor
-        Actor() = default;
-
-        //! Default copy constructor
-        Actor(Actor const &rhs) = default;
-
         //! Default destructor
         virtual ~Actor() = default;
 

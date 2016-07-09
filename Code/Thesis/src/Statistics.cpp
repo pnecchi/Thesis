@@ -34,7 +34,8 @@ void StatisticsAverage::reset()
 
 StatisticsEMA::StatisticsEMA(double learningRate_)
     : EMA(0.0),
-      learningRate(learningRate_)
+      learningRate(learningRate_),
+      first(true)
 {
     /* Nothing to do */
 }
@@ -46,8 +47,13 @@ std::unique_ptr<Statistics> StatisticsEMA::clone() const
 
 void StatisticsEMA::dumpOneResult(double result)
 {
-    // TODO: check for first result dumped
-    EMA = (1.0 - learningRate) * EMA + learningRate * result;
+    if (first)
+    {
+        EMA = result;
+        first = false;
+    }
+    else
+        EMA = (1.0 - learningRate) * EMA + learningRate * result;
 }
 
 std::vector<std::vector<double>> StatisticsEMA::getStatistics() const
