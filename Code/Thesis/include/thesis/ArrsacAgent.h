@@ -56,6 +56,9 @@ class ARRSACAgent : public Agent
         // Learning step given previous experience
         virtual void learn();
 
+        // New epoch
+        virtual void newEpoch();
+
         // Reset
         virtual void reset();
 

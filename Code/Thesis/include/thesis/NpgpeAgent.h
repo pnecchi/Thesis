@@ -4,6 +4,7 @@
 #include <thesis/Agent.h>
 #include <thesis/Policy.h>
 #include <thesis/Statistics.h>
+#include <thesis/LearningRate.h>
 #include <memory>
 
 /*!
@@ -26,7 +27,7 @@ class NPGPEAgent : public Agent
          * \param discount_ discount factor
          */
         NPGPEAgent(Policy const &policy_,
-                   double alpha_,
+                   LearningRate const &learningRate_,
                    double discountFactor_);
 
         /*!
@@ -61,6 +62,9 @@ class NPGPEAgent : public Agent
         // Learning step given previous experience
         virtual void learn();
 
+        // New epoch
+        virtual void newEpoch();
+
         // Reset
         virtual void reset();
 
@@ -87,7 +91,7 @@ class NPGPEAgent : public Agent
         arma::mat gradientChol;
 
         //! Learning rate
-        double alpha;
+        std::unique_ptr<LearningRate> learningRatePtr;
 
         //! Discount factor
         double discountFactor;

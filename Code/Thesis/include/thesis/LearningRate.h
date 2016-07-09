@@ -2,6 +2,7 @@
 #define LEARNINGRATE_H
 
 #include <math.h>  /* pow */
+#include <memory>  /* unique_ptr */
 
 /**
  * LearningRate is an abstract class which implements a generic interface for a
@@ -12,11 +13,15 @@
 class LearningRate
 {
     public:
-        //! Constructor.
-        LearningRate() = default;
-
         //! Destructor.
         virtual ~LearningRate() = default;
+
+        /**
+         * Clone method.
+         * the class is clonable to allow for polymorphic copy.
+         * \return unique_ptr pointing to new LearningRate instance.
+         */
+        virtual std::unique_ptr<LearningRate> clone() const = 0;
 
         /**
          * Get learning rate current value.
@@ -28,6 +33,11 @@ class LearningRate
          * Update learning rate according to a certain schedule.
          */
         virtual double update() = 0;
+
+        /**
+         * Reset learning rate to initial conditions.
+         */
+        virtual void reset() = 0;
 };
 
 /**
@@ -42,11 +52,18 @@ class ConstantLearningRate : public LearningRate
          * Constructor.
          * \param learningRate_ constant learning rate value.
          */
-        ConstantLearningRate(double const learningRate_=0.1)
-            : LearningRate(learningRate_) {}
+        ConstantLearningRate(double learningRate_=0.1)
+            : learningRate(learningRate_) {}
 
         //! Destructor
         virtual ~ConstantLearningRate() = default;
+
+        /**
+         * Clone method.
+         * the class is clonable to allow for polymorphic copy.
+         * \return unique_ptr pointing to new ConstantLearningRate instance.
+         */
+        virtual std::unique_ptr<LearningRate> clone() const;
 
         /**
          * Get learning rate current value.
@@ -58,6 +75,11 @@ class ConstantLearningRate : public LearningRate
          * Update learning rate according to a certain schedule.
          */
         virtual double update() { /* Nothing to do */ }
+
+        /**
+         * Reset learning rate to initial conditions.
+         */
+        virtual void reset() { /* Nothing to do */ }
 
     private:
         double learningRate;
@@ -78,10 +100,17 @@ class DecayingLearningRate : public LearningRate
          * \param learningRate_ constant learning rate value.
          */
         DecayingLearningRate(double const c_=1.0, double const decayExp_=1.0)
-            : c(c_), decayExp(decayExp_) {}
+            : c(c_), decayExp(decayExp_), currentIteration(1ul) {}
 
         //! Destructor
         virtual ~DecayingLearningRate() = default;
+
+        /**
+         * Clone method.
+         * the class is clonable to allow for polymorphic copy.
+         * \return unique_ptr pointing to new DecayingLearningRate instance.
+         */
+        virtual std::unique_ptr<LearningRate> clone() const;
 
         /**
          * Get learning rate current value.
@@ -92,11 +121,12 @@ class DecayingLearningRate : public LearningRate
         /**
          * Update learning rate according to a power decay schedule.
          */
-        virtual double update()
-        {
-            ++currentIteration;
-            learningRate = c / pow(currentIteration, decayExp);
-        }
+        virtual double update();
+
+        /**
+         * Reset learning rate to initial conditions.
+         */
+        virtual void reset();
 
     private:
         double learningRate;

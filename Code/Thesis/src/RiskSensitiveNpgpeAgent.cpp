@@ -2,19 +2,19 @@
 #include <math.h>  /* sqrt */
 
 RiskSensitiveNPGPEAgent::RiskSensitiveNPGPEAgent(Policy const &policy_,
-                                                 double alpha_,
+                                                 LearningRate const &learningRate_,
                                                  double discountFactor_)
     : policyPtr(policy_.clone()),
+      learningRatePtr(learningRate_.clone()),
       mean(policy_.getDimParameters(), arma::fill::zeros),
       choleskyFactor(policy_.getDimParameters(), policy_.getDimParameters(), arma::fill::zeros),
       generator(215),
       gaussianDistr(0.0, 1.0),
       xi(policy_.getDimParameters()),
-      rewardBaseline(alpha_),
-      squareRewardBaseline(alpha_),
+      rewardBaseline(0.02),
+      squareRewardBaseline(0.02),
       gradientMean(policy_.getDimParameters(), arma::fill::zeros),
       gradientChol(policy_.getDimParameters(), policy_.getDimParameters(), arma::fill::zeros),
-      alpha(alpha_),
       discountFactor(discountFactor_),
       observation(policy_.getDimObservation()),
       action(policy_.getDimAction())
@@ -24,6 +24,7 @@ RiskSensitiveNPGPEAgent::RiskSensitiveNPGPEAgent(Policy const &policy_,
 
 RiskSensitiveNPGPEAgent::RiskSensitiveNPGPEAgent(RiskSensitiveNPGPEAgent const &other_)
     : policyPtr(other_.policyPtr->clone()),
+      learningRatePtr(other_.learningRatePtr->clone()),
       mean(other_.mean),
       choleskyFactor(other_.choleskyFactor),
       generator(other_.generator),
@@ -33,7 +34,6 @@ RiskSensitiveNPGPEAgent::RiskSensitiveNPGPEAgent(RiskSensitiveNPGPEAgent const &
       squareRewardBaseline(other_.squareRewardBaseline),
       gradientMean(other_.gradientMean),
       gradientChol(other_.gradientChol),
-      alpha(other_.alpha),
       discountFactor(other_.discountFactor),
       observation(other_.observation),
       action(other_.action)
@@ -98,16 +98,34 @@ void RiskSensitiveNPGPEAgent::learn()
         (var * stddev);
 
     // 4) Update hyperparameters
+    double alpha = learningRatePtr->get();
     mean += alpha * gradientSharpeMean;
     choleskyFactor += alpha * gradientSharpeChol;
 }
 
+void RiskSensitiveNPGPEAgent::newEpoch()
+{
+    // Update learning rate
+    learningRatePtr->update();
+}
+
 void RiskSensitiveNPGPEAgent::reset()
 {
+    // Reset deterministic policy
+    policyPtr->reset();
+
+    // Reset parameters
     initializeParameters();
-    rewardBaseline.reset();
-    squareRewardBaseline.reset();
+
+    // Reset cache variables
     gradientMean.zeros();
     gradientChol.zeros();
+
+    // Reset reward baseline
+    rewardBaseline.reset();
+    squareRewardBaseline.reset();
+
+    // Reset learning rate
+    learningRatePtr->reset();
 }
 

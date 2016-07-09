@@ -65,6 +65,9 @@ void AssetAllocationExperiment::run()
             task.reset();
             experimentStats.reset();
 
+            // Signal to agent that a new epoch has started
+            agentPtr->newEpoch();
+
             for (size_t step = 0; step < numTrainingSteps; ++step)
             {
                 // Interaction between the task and the agent

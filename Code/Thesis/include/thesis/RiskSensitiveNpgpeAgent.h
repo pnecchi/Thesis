@@ -4,6 +4,7 @@
 #include <thesis/Agent.h>
 #include <thesis/Policy.h>
 #include <thesis/Statistics.h>
+#include <thesis/LearningRate.h>
 #include <memory>
 
 /*!
@@ -21,11 +22,11 @@ class RiskSensitiveNPGPEAgent : public Agent
          * Constructor.
          * Initialize aRiskSensitiveNPGPEAgent given a deterministic policy.
          * \param policy_ deterministic controller.
-         * \param alpha_ learning rate.
+         * \param learningRate learning rate object.
          * \param discount_ discount factor
          */
         RiskSensitiveNPGPEAgent(Policy const &policy_,
-                                double alpha_,
+                                LearningRate const &learningRate_,
                                 double discountFactor_);
 
         /*!
@@ -60,6 +61,9 @@ class RiskSensitiveNPGPEAgent : public Agent
         // Learning step given previous experience
         virtual void learn();
 
+        // New epoch
+        virtual void newEpoch();
+
         // Reset
         virtual void reset();
 
@@ -87,7 +91,7 @@ class RiskSensitiveNPGPEAgent : public Agent
         arma::mat gradientChol;
 
         //! Learning rate
-        double alpha;
+        std::unique_ptr<LearningRate> learningRatePtr;
 
         //! Discount factor
         double discountFactor;

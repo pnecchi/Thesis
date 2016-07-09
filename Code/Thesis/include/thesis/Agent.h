@@ -37,6 +37,9 @@ class Agent
         // Learning step given previous experience
         virtual void learn()=0;
 
+        // New epoch
+        virtual void newEpoch()=0;
+
         // Reset agent
         virtual void reset()=0;
 };

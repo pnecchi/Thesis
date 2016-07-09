@@ -1,18 +1,18 @@
 #include "thesis/NpgpeAgent.h"
 
 NPGPEAgent::NPGPEAgent(Policy const &policy_,
-                       double alpha_,
+                       LearningRate const &learningRate_,
                        double discountFactor_)
     : policyPtr(policy_.clone()),
+      learningRatePtr(learningRate_.clone()),
       mean(policy_.getDimParameters(), arma::fill::zeros),
       choleskyFactor(policy_.getDimParameters(), policy_.getDimParameters(), arma::fill::zeros),
       generator(215),
       gaussianDistr(0.0, 1.0),
       xi(policy_.getDimParameters()),
-      baseline(alpha_),
+      baseline(0.02),
       gradientMean(policy_.getDimParameters(), arma::fill::zeros),
       gradientChol(policy_.getDimParameters(), policy_.getDimParameters(), arma::fill::zeros),
-      alpha(alpha_),
       discountFactor(discountFactor_),
       observation(policy_.getDimObservation()),
       action(policy_.getDimAction())
@@ -22,6 +22,7 @@ NPGPEAgent::NPGPEAgent(Policy const &policy_,
 
 NPGPEAgent::NPGPEAgent(NPGPEAgent const &other_)
     : policyPtr(other_.policyPtr->clone()),
+      learningRatePtr(other_.learningRatePtr->clone()),
       mean(other_.mean),
       choleskyFactor(other_.choleskyFactor),
       generator(other_.generator),
@@ -30,7 +31,6 @@ NPGPEAgent::NPGPEAgent(NPGPEAgent const &other_)
       baseline(other_.baseline),
       gradientMean(other_.gradientMean),
       gradientChol(other_.gradientChol),
-      alpha(other_.alpha),
       discountFactor(other_.discountFactor),
       observation(other_.observation),
       action(other_.action)
@@ -79,14 +79,34 @@ void NPGPEAgent::learn()
     gradientChol = discountFactor * gradientChol + likelihoodChol;
 
     // 4) Update hyperparameters
+    double alpha = learningRatePtr->get();
     mean += alpha * (reward - b) * gradientMean;
     choleskyFactor += alpha * (reward - b) * gradientChol;
 }
 
+void NPGPEAgent::newEpoch()
+{
+    // Update learning rate
+    learningRatePtr->update();
+
+    // TODO: print current parameters and gradient norm to file for debug purposess
+}
+
 void NPGPEAgent::reset()
 {
+    // Reset deterministic policy
+    policyPtr->reset();
+
+    // Reset parameters
     initializeParameters();
+
+    // Reset cache variables
     gradientMean.zeros();
     gradientChol.zeros();
+
+    // Reset reward baseline
     baseline.reset();
+
+    // Reset learning rate
+    learningRatePtr->reset();
 }

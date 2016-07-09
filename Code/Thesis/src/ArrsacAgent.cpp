@@ -83,6 +83,11 @@ void ARRSACAgent::learn()
     actor.setParameters(actor.getParameters() + alphaActor * coeffGradientSR * gradientActor);
 }
 
+void ARRSACAgent::newEpoch()
+{
+    /* Do nothing */
+}
+
 void ARRSACAgent::reset()
 {
     actor.reset();

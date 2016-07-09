@@ -13,12 +13,6 @@
 class ProbabilityDistribution
 {
     public:
-        //! Default constructor.
-        ProbabilityDistribution() = default;
-
-        //! Default copy constructor.
-        ProbabilityDistribution(ProbabilityDistribution const &other_) = default;
-
         //! Default destructor.
         virtual ~ProbabilityDistribution() = default;
 

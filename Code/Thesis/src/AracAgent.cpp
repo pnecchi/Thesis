@@ -69,6 +69,12 @@ void ARACAgent::learn()
     actor.setParameters(actor.getParameters() + alphaActor * tdErr * gradientActor);
 }
 
+void ARACAgent::newEpoch()
+{
+    /* Do nothing */
+}
+
+
 void ARACAgent::reset()
 {
     actor.reset();

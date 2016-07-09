@@ -4,19 +4,8 @@
 #include <thesis/ExperimentParameters.h>
 #include <thesis/MarketEnvironment.h>
 #include <thesis/AssetAllocationTask.h>
-#include <thesis/LinearRegressor.h>
-#include <thesis/Critic.h>
-#include <thesis/BoltzmannPolicy.h>
-#include <thesis/GaussianPolicy.h>
-#include <thesis/LogisticPolicy.h>
 #include <thesis/BinaryPolicy.h>
-#include <thesis/LogisticPolicy.h>
-#include <thesis/GaussianDistribution.h>
-#include <thesis/PgpePolicy.h>
-#include <thesis/NpgpePolicy.h>
-#include <thesis/StochasticActor.h>
-#include <thesis/ArrsacAgent.h>
-#include <thesis/AracAgent.h>
+#include <thesis/LearningRate.h>
 #include <thesis/NpgpeAgent.h>
 #include <thesis/AssetAllocationExperiment.h>
 
@@ -73,10 +62,16 @@ int main()
     BinaryPolicy controller(task.getDimObservation());
     std::cout << "done" << std::endl;
 
+    // Learning Rate
+    std::cout << ".. Learning Rate - ";
+    // ConstantLearningRate learningRate(alphaActor);
+    DecayingLearningRate learningRate(0.5, 0.7);
+    std::cout << "done" << std::endl;
+
     // NPGPE Agent
     std::cout << ".. NPGPE Agent - ";
     NPGPEAgent agent(controller,
-                     alphaActor,
+                     learningRate,
                      0.95);
 
     std::cout << "done" << std::endl;

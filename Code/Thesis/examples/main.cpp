@@ -15,6 +15,7 @@
 #include <thesis/PgpePolicy.h>
 #include <thesis/NpgpePolicy.h>
 #include <thesis/StochasticActor.h>
+#include <thesis/LearningRate.h>
 #include <thesis/ArrsacAgent.h>
 #include <thesis/AracAgent.h>
 #include <thesis/NpgpeAgent.h>
@@ -84,54 +85,16 @@ int main()
     Critic criticU(linearRegU);
     std::cout << "done" << std::endl;
 
-    // Boltzmann Policy
-//    std::cout << ".. Boltzmann stochastic policy - ";
-//    std::vector<double> possibleAction {-1.0, 1.0};
-//    BoltzmannPolicy policy(task.getDimObservation(), possibleAction);
-//    std::cout << "done" << std::endl;
-
-    // Gaussian Policy
-//    std::cout << ".. Gaussian stochastic policy - ";
-//    GaussianPolicy policy(task.getDimObservation(), task.getDimAction());
-//    std::cout << "done" << std::endl;
-
     // PGPE Binary policy
     BinaryPolicy controller(task.getDimObservation()); //, -10000.0, 10000.0);
-    // GaussianDistribution distribution(controller.getDimParameters());
-    // PGPEPolicy policy(controller, distribution, 1.0);
 
-    // NPGPEPolicy policy(controller, 0.2);
-
-    // Stochastic Actor
-//    std::cout << ".. Actor - ";
-//    StochasticActor actor(policy);
-//    std::cout << "done" << std::endl;
-
-    // ARSSAC Agent
-//    std::cout << ".. ARRSAC Agent - ";
-//    ARRSACAgent agent(actor,
-//                      criticV,
-//                      criticU,
-//                      lambda,
-//                      alphaActor,
-//                      alphaCritic,
-//                      alphaBaseline);
-//    std::cout << "done" << std::endl;
-
-    // ARAC Agent
-//    std::cout << ".. ARAC Agent - ";
-//    ARACAgent agent(actor,
-//                    criticV,
-//                    lambda,
-//                    alphaActor,
-//                    alphaCritic,
-//                    alphaBaseline);
-//    std::cout << "done" << std::endl;
+    // Learning Rate
+    DecayingLearningRate learningRate(1.0, 1.0);
 
     // NPGPE Agent
     std::cout << ".. NPGPE Agent - ";
     RiskSensitiveNPGPEAgent agent(controller,
-                                  alphaActor,
+                                  learningRate,
                                   0.9);
 
     std::cout << "done" << std::endl;

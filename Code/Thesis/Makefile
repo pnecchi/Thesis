@@ -432,6 +432,30 @@ src/GaussianPolicy.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/GaussianPolicy.cpp.s
 .PHONY : src/GaussianPolicy.cpp.s
 
+src/LearningRate.o: src/LearningRate.cpp.o
+.PHONY : src/LearningRate.o
+
+# target to build an object file
+src/LearningRate.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LearningRate.cpp.o
+.PHONY : src/LearningRate.cpp.o
+
+src/LearningRate.i: src/LearningRate.cpp.i
+.PHONY : src/LearningRate.i
+
+# target to preprocess a source file
+src/LearningRate.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LearningRate.cpp.i
+.PHONY : src/LearningRate.cpp.i
+
+src/LearningRate.s: src/LearningRate.cpp.s
+.PHONY : src/LearningRate.s
+
+# target to generate assembly for a file
+src/LearningRate.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LearningRate.cpp.s
+.PHONY : src/LearningRate.cpp.s
+
 src/LinearRegressor.o: src/LinearRegressor.cpp.o
 .PHONY : src/LinearRegressor.o
 
@@ -693,6 +717,9 @@ help:
 	@echo "... src/GaussianPolicy.o"
 	@echo "... src/GaussianPolicy.i"
 	@echo "... src/GaussianPolicy.s"
+	@echo "... src/LearningRate.o"
+	@echo "... src/LearningRate.i"
+	@echo "... src/LearningRate.s"
 	@echo "... src/LinearRegressor.o"
 	@echo "... src/LinearRegressor.i"
 	@echo "... src/LinearRegressor.s"
