@@ -1,5 +1,8 @@
 \begin{thebibliography}{10}
 
+\bibitem{}
+
+
 \bibitem{agarwal2010optimal}
 {\sc A.~Agarwal, P.~Bartlett, and M.~Dama}, {\em Optimal allocation strategies
   for the dark pool problem}, arXiv preprint arXiv:1003.2245,  (2010).
@@ -22,6 +25,11 @@
 \bibitem{bauerle2011markov}
 {\sc N.~B{\"a}uerle and U.~Rieder}, {\em Markov decision processes with
   applications to finance}, Springer Science \& Business Media, 2011.
+
+\bibitem{baxter2001infinite}
+{\sc J.~Baxter and P.~L. Bartlett}, {\em Infinite-horizon policy-gradient
+  estimation}, Journal of Artificial Intelligence Research, 15 (2001),
+  pp.~319--350.
 
 \bibitem{bekiros2010heterogeneouseltit}
 {\sc S.~D. Bekiros}, {\em Heterogeneous trading strategies with adaptive fuzzy
@@ -193,6 +201,11 @@
 {\sc V.~R. Konda and J.~N. Tsitsiklis}, {\em Actor-critic algorithms.}, in
   NIPS, vol.~13, 1999, pp.~1008--1014.
 
+\bibitem{kushner2003stochastic}
+{\sc H.~Kushner and G.~G. Yin}, {\em Stochastic approximation and recursive
+  algorithms and applications}, vol.~35, Springer Science \& Business Media,
+  2003.
+
 \bibitem{NIPS2013_4917}
 {\sc P.~L.A. and M.~Ghavamzadeh}, {\em Actor-critic algorithms for
   risk-sensitive mdps}, in Advances in Neural Information Processing Systems
@@ -219,6 +232,10 @@
 {\sc S.~Mahadevan}, {\em Average reward reinforcement learning: Foundations,
   algorithms, and empirical results}, Machine learning, 22 (1996),
   pp.~159--195.
+
+\bibitem{markowitz1952portfolio}
+{\sc H.~Markowitz}, {\em Portfolio selection}, The journal of finance, 7
+  (1952), pp.~77--91.
 
 \bibitem{miyamae2010natural}
 {\sc A.~Miyamae, Y.~Nagata, I.~Ono, and S.~Kobayashi}, {\em Natural policy
@@ -259,6 +276,10 @@
 {\sc J.~O, J.~Lee, J.~W. Lee, and B.-T. Zhang}, {\em Adaptive stock trading
   with dynamic asset allocation using reinforcement learning}, Information
   Sciences, 176 (2006), pp.~2121--2147.
+
+\bibitem{pages2016introduction}
+{\sc G.~Pages}, {\em Introduction to Numerical Probability for Finance},
+  LPMA-Université Pierre et Marie Curie, 2016.
 
 \bibitem{peters2010relative}
 {\sc J.~Peters, K.~M{\"u}lling, and Y.~Altun}, {\em Relative entropy policy
@@ -318,6 +339,10 @@
 \bibitem{sehnke2010parameter}
 \leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Parameter-exploring
   policy gradients}, Neural Networks, 23 (2010), pp.~551--559.
+
+\bibitem{sharpe1994sharpe}
+{\sc W.~F. Sharpe}, {\em The sharpe ratio}, The journal of portfolio
+  management, 21 (1994), pp.~49--58.
 
 \bibitem{silver2014deterministic}
 {\sc D.~Silver, G.~Lever, N.~Heess, T.~Degris, D.~Wierstra, and M.~Riedmiller},

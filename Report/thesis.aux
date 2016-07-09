@@ -32,9 +32,9 @@
 \newlabel{ch:discrete_time_stochastic_optimal_control}{{2}{3}{Discrete-Time Stochastic Optimal Control}{chapter.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Sequential Decision Problems}{3}{section.2.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Markov Decision Processes}{4}{section.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{5}{figure.caption.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{5}{figure.caption.6}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:sequential_decision_problem}{{2.1}{5}{Agent-environment interaction in sequential decision problems.\relax }{figure.caption.5}{}}
+\newlabel{fig:sequential_decision_problem}{{2.1}{5}{Agent-environment interaction in sequential decision problems.\relax }{figure.caption.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Policies}{5}{section.2.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Discounted Reward Formulation}{6}{section.2.4}}
 \newlabel{eq:bellman_expectation_eq_V}{{2.9}{7}{Bellman Expectation Equations}{equation.2.4.9}{}}
@@ -46,6 +46,7 @@
 \citation{prashanth2014actor}
 \newlabel{eq:VQ_equality}{{2.24}{10}{Average Reward Formulation}{equation.2.5.24}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.6}Risk-Sensitive Formulation}{10}{section.2.6}}
+\newlabel{sec:risk_sensitive_formulation}{{2.6}{10}{Risk-Sensitive Formulation}{section.2.6}{}}
 \newlabel{eq:UW_equality}{{2.33}{11}{Risk-Sensitive Formulation}{equation.2.6.33}{}}
 \newlabel{eq:risk_sensitive_problem}{{2.36}{12}{Risk-Sensitive Formulation}{equation.2.6.36}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.7}Policy Evaluation and Policy Iteration}{12}{section.2.7}}
@@ -59,8 +60,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}The Reinforcement Learning Problem}{14}{section.3.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Model-Free RL Methods}{14}{section.3.2}}
 \citation{wiering2012reinforcement}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{15}{figure.caption.6}}
-\newlabel{fig:control_dependences}{{3.1}{15}{Solution process for the control problem.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{15}{figure.caption.7}}
+\newlabel{fig:control_dependences}{{3.1}{15}{Solution process for the control problem.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Model Approximation}{16}{subsection.3.2.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Value Approximation}{16}{subsection.3.2.2}}
 \citation{sutton1999policy}
@@ -70,127 +71,172 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Policy Gradient}{19}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\citation{kushner2003stochastic}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Basics of Policy Gradient Methods}{20}{section.4.1}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {4.1}{\ignorespaces General setup for a policy gradient algorithm.\relax }}{21}{algorithm.4.1}}
-\newlabel{algo:policy_gradient}{{4.1}{21}{General setup for a policy gradient algorithm.\relax }{algorithm.4.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Finite Differences}{21}{section.4.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Monte Carlo Policy Gradient}{22}{section.4.3}}
-\newlabel{eq:reinforce_gradient}{{4.13}{23}{Monte Carlo Policy Gradient}{equation.4.3.13}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {4.2}{\ignorespaces Episodic REINFORCE policy gradient estimate\relax }}{24}{algorithm.4.2}}
-\newlabel{algo:reinforce}{{4.2}{24}{Episodic REINFORCE policy gradient estimate\relax }{algorithm.4.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Optimal Baseline}{24}{subsection.4.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Boltzmann Exploration Policy}{24}{subsection.4.3.2}}
-\citation{sutton1999policy}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Gaussian Exploration Policy}{25}{subsection.4.3.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Policy Gradient Theorem}{25}{section.4.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Actor-Critic Policy Gradient}{27}{subsection.4.4.1}}
-\citation{sehnke2008policy}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Natural Policy Gradient}{28}{section.4.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Policy Gradient with Parameter Exploration}{28}{section.4.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Episodic PGPE}{28}{subsection.4.6.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.6.1.1}Gaussian Parameter Distribution}{29}{subsubsection.4.6.1.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.6.1.2}Symmetric Sampling and Gain Normalization}{30}{subsubsection.4.6.1.2}}
-\citation{sehnke2012parameter}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Infinite Horizon PGPE}{31}{subsection.4.6.2}}
-\citation{sutton1999policy}
-\@writefile{toc}{\contentsline {section}{\numberline {4.7}Risk-Sensitive Policy Gradient}{32}{section.4.7}}
-\newlabel{eq:policy_gradient_theorem_Q}{{4.46}{32}{Policy Gradient}{equation.4.7.46}{}}
-\newlabel{eq:policy_gradient_theorem_W}{{4.47}{32}{Policy Gradient}{equation.4.7.47}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4.1}{\ignorespaces General setup for a policy gradient algorithm.\relax }}{20}{algorithm.4.1}}
+\newlabel{algo:policy_gradient}{{4.1}{20}{General setup for a policy gradient algorithm.\relax }{algorithm.4.1}{}}
+\citation{tamar2012policy}
 \citation{prashanth2014actor}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Risk-Neutral Framework}{21}{subsection.4.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Risk-Sensitive Framework}{21}{subsection.4.1.2}}
+\citation{markowitz1952portfolio}
+\citation{sharpe1994sharpe}
+\citation{pages2016introduction}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Finite Differences}{23}{section.4.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Likelihood Ratio Methods}{23}{section.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Monte Carlo Policy Gradient}{24}{subsection.4.3.1}}
+\newlabel{eq:gradient_MC}{{4.16}{24}{Monte Carlo Policy Gradient}{equation.4.3.16}{}}
+\newlabel{eq:likelihood_bias}{{4.18}{25}{Monte Carlo Policy Gradient}{equation.4.3.18}{}}
+\newlabel{eq:gradient_MC_baseline}{{4.19}{25}{Monte Carlo Policy Gradient}{equation.4.3.19}{}}
+\newlabel{eq:reinforce_gradient}{{4.20}{25}{Monte Carlo Policy Gradient}{equation.4.3.20}{}}
+\citation{baxter2001infinite}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4.2}{\ignorespaces Episodic REINFORCE policy gradient estimate\relax }}{26}{algorithm.4.2}}
+\newlabel{algo:reinforce}{{4.2}{26}{Episodic REINFORCE policy gradient estimate\relax }{algorithm.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1.1}Optimal Baseline}{26}{subsubsection.4.3.1.1}}
+\newlabel{eq:optimal_baseline}{{4.22}{26}{Optimal Baseline}{equation.4.3.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}GPOMDP}{26}{subsection.4.3.2}}
+\citation{tamar2012policy}
+\citation{tamar2013temporal}
+\citation{tamar2013variance}
+\citation{tamar2015policy}
+\citation{chow2015risk}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Risk-Sensitive Monte Carlo Policy Gradient}{27}{subsection.4.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Stochastic Policies}{27}{subsection.4.3.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.4.1}Boltzmann Exploration Policy}{27}{subsubsection.4.3.4.1}}
+\citation{sehnke2008policy}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.4.2}Gaussian Exploration Policy}{28}{subsubsection.4.3.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Policy Gradient with Parameter Exploration}{28}{subsection.4.3.5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.5.1}Episodic PGPE}{28}{subsubsection.4.3.5.1}}
+\citation{zhao2011analysis}
+\newlabel{eq:pgpe_gradient}{{4.31}{29}{Episodic PGPE}{equation.4.3.31}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4.3}{\ignorespaces Episodic PGPE algorithm\relax }}{30}{algorithm.4.3}}
+\newlabel{algo:episodic_pgpe}{{4.3}{30}{Episodic PGPE algorithm\relax }{algorithm.4.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{30}{section*.8}}
+\@writefile{toc}{\contentsline {paragraph}{Gaussian Parameter Distribution}{30}{section*.9}}
+\citation{sehnke2012parameter}
+\@writefile{toc}{\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{31}{section*.10}}
 \citation{sutton1999policy}
-\newlabel{eq:pg_advantage_Q}{{4.50}{33}{Risk-Sensitive Policy Gradient}{equation.4.7.50}{}}
-\newlabel{eq:pg_advantage_W}{{4.51}{33}{Risk-Sensitive Policy Gradient}{equation.4.7.51}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7.1}Risk-Sensitive Actor-Critic Algorithm}{33}{subsection.4.7.1}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Asset Allocation}{35}{chapter.5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.5.2}Infinite Horizon PGPE}{32}{subsubsection.4.3.5.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Policy Gradient Theorem}{32}{section.4.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Risk-Neutral Setting}{32}{subsection.4.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Risk-Sensitive Setting}{34}{subsection.4.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}GPOMDP from the Policy Gradient Theorem}{34}{subsection.4.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Compatible Function Approximation}{34}{subsection.4.4.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.5}Actor-Critic Policy Gradient}{34}{subsection.4.4.5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.5.1}QAC}{35}{subsubsection.4.4.5.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.5.2}ARRSAC}{35}{subsubsection.4.4.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.6}Natural Policy Gradient}{35}{subsection.4.4.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Risk-Sensitive Policy Gradient}{35}{section.4.5}}
+\newlabel{eq:policy_gradient_theorem_Q}{{4.46}{35}{Policy Gradient}{equation.4.5.46}{}}
+\citation{sutton1999policy}
+\citation{prashanth2014actor}
+\newlabel{eq:policy_gradient_theorem_W}{{4.47}{36}{Policy Gradient}{equation.4.5.47}{}}
+\newlabel{eq:pg_advantage_Q}{{4.50}{36}{Risk-Sensitive Policy Gradient}{equation.4.5.50}{}}
+\newlabel{eq:pg_advantage_W}{{4.51}{36}{Risk-Sensitive Policy Gradient}{equation.4.5.51}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Risk-Sensitive Actor-Critic Algorithm}{36}{subsection.4.5.1}}
+\citation{sutton1999policy}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Parameter-Based Policy Gradient Theorem}{37}{section.4.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Risk-Neutral Setting}{37}{subsection.4.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Risk-Sensitive Setting}{37}{subsection.4.6.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.3}Natural Policy Gradient}{37}{subsection.4.6.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.6.3.1}NPGPE}{37}{subsubsection.4.6.3.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.6.3.2}Risk-Sensitive NPGPE}{37}{subsubsection.4.6.3.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Asset Allocation}{39}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Reward Function}{35}{section.5.1}}
-\newlabel{eq:portfolio_return}{{5.1}{36}{Reward Function}{equation.5.1.1}{}}
-\newlabel{eq:portfolio_return_benchmark}{{5.3}{37}{Reward Function}{equation.5.1.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}States}{37}{section.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Actions}{38}{section.5.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Reward Function}{39}{section.5.1}}
+\newlabel{eq:portfolio_return}{{5.1}{40}{Reward Function}{equation.5.1.1}{}}
+\newlabel{eq:portfolio_return_benchmark}{{5.3}{41}{Reward Function}{equation.5.1.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}States}{41}{section.5.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Actions}{42}{section.5.3}}
 \citation{*}
 \bibstyle{siam}
 \bibdata{Bibliography/bibliography}
-\bibcite{agarwal2010optimal}{1}
-\bibcite{almgren2001optimal}{2}
-\bibcite{arapostathis1993discrete}{3}
-\bibcite{basu2008learning}{4}
-\bibcite{bauerle2011markov}{5}
-\bibcite{bekiros2010heterogeneouseltit}{6}
-\bibcite{bertoluzzo2012testing}{7}
-\bibcite{corazza2014q}{8}
-\bibcite{bertoluzzo2014reinforcement}{9}
-\bibcite{bertsekas1995dynamic}{10}
-\bibcite{bertsekas1978stochastic}{11}
-\bibcite{bertsekas1996neuro}{12}
-\bibcite{bhatnagar2009natural}{13}
-\bibcite{bishop2006pattern}{14}
-\bibcite{borkar2001sensitivity}{15}
-\bibcite{borkar2002q}{16}
-\bibcite{borkar2002risk}{17}
-\bibcite{busoniu2010reinforcement}{18}
-\bibcite{casqueiro2006neuro}{19}
-\bibcite{chapados2001cost}{20}
-\bibcite{choey1997nonlineareltit}{21}
-\bibcite{chow2015risk}{22}
-\bibcite{corazzaq}{23}
-\bibcite{cumming2015investigation}{24}
-\bibcite{dempster2006automated}{25}
-\bibcite{dempster2002intraday}{26}
-\bibcite{deng2016deep}{27}
-\bibcite{deng2015sparse}{28}
-\bibcite{du1algorithm}{29}
-\bibcite{eldercreating}{30}
-\bibcite{feldkamp1998enhanced}{31}
-\bibcite{ganchev2010censored}{32}
-\bibcite{gold2003FX}{33}
-\bibcite{Goodfellow-et-al-2016-Book}{34}
-\bibcite{hastie2009unsupervised}{35}
-\bibcite{hendricks2014reinforcement}{36}
-\bibcite{jaeger2002tutorial}{37}
-\bibcite{joshi2008c++}{38}
-\bibcite{kamijo1990stock}{39}
-\bibcite{kearns2013machine}{40}
-\bibcite{konda1999actor}{41}
-\bibcite{NIPS2013_4917}{42}
-\bibcite{laruelle2011optimal}{43}
-\bibcite{laruelle2013optimal}{44}
-\bibcite{li2007short}{45}
-\bibcite{mahadevan1996average}{46}
-\bibcite{miyamae2010natural}{47}
-\bibcite{moody2001learning}{48}
-\bibcite{moody2013reinforcement}{49}
-\bibcite{moody1997optimization}{50}
-\bibcite{moody1998performance}{51}
-\bibcite{nevmyvaka2006reinforcement}{52}
-\bibcite{nocedal2006numerical}{53}
-\bibcite{o2006adaptive}{54}
-\bibcite{peters2010relative}{55}
-\bibcite{peters2006policy}{56}
-\bibcite{peters2008reinforcement}{57}
-\bibcite{prashanth2014actor}{58}
-\bibcite{puterman1994markov}{59}
-\bibcite{Saad1998comparative}{60}
-\bibcite{sanderson2010armadillo}{61}
-\bibcite{sato2000variance}{62}
-\bibcite{Sato:2001:ARL:645530.757778}{63}
-\bibcite{sehnke2012parameter}{64}
-\bibcite{sehnke2008policy}{65}
-\bibcite{sehnke2010parameter}{66}
-\bibcite{silver2014deterministic}{67}
-\bibcite{sutton1998introduction}{68}
-\bibcite{sutton1999policy}{69}
-\bibcite{szepesvari2010algorithms}{70}
-\bibcite{tamar2013temporal}{71}
-\bibcite{tamar2015policy}{72}
-\bibcite{tamar2012policy}{73}
-\bibcite{tamar2013variance}{74}
-\bibcite{tan2011stock}{75}
-\bibcite{tsay2005analysis}{76}
-\bibcite{werbos1990backpropagation}{77}
-\bibcite{wiering2012reinforcement}{78}
-\bibcite{williams1989learning}{79}
-\bibcite{Yang2012behavior}{80}
-\bibcite{zhao2011analysis}{81}
-\bibcite{zhao2015regularized}{82}
+\bibcite{}{1}
+\bibcite{agarwal2010optimal}{2}
+\bibcite{almgren2001optimal}{3}
+\bibcite{arapostathis1993discrete}{4}
+\bibcite{basu2008learning}{5}
+\bibcite{bauerle2011markov}{6}
+\bibcite{baxter2001infinite}{7}
+\bibcite{bekiros2010heterogeneouseltit}{8}
+\bibcite{bertoluzzo2012testing}{9}
+\bibcite{corazza2014q}{10}
+\bibcite{bertoluzzo2014reinforcement}{11}
+\bibcite{bertsekas1995dynamic}{12}
+\bibcite{bertsekas1978stochastic}{13}
+\bibcite{bertsekas1996neuro}{14}
+\bibcite{bhatnagar2009natural}{15}
+\bibcite{bishop2006pattern}{16}
+\bibcite{borkar2001sensitivity}{17}
+\bibcite{borkar2002q}{18}
+\bibcite{borkar2002risk}{19}
+\bibcite{busoniu2010reinforcement}{20}
+\bibcite{casqueiro2006neuro}{21}
+\bibcite{chapados2001cost}{22}
+\bibcite{choey1997nonlineareltit}{23}
+\bibcite{chow2015risk}{24}
+\bibcite{corazzaq}{25}
+\bibcite{cumming2015investigation}{26}
+\bibcite{dempster2006automated}{27}
+\bibcite{dempster2002intraday}{28}
+\bibcite{deng2016deep}{29}
+\bibcite{deng2015sparse}{30}
+\bibcite{du1algorithm}{31}
+\bibcite{eldercreating}{32}
+\bibcite{feldkamp1998enhanced}{33}
+\bibcite{ganchev2010censored}{34}
+\bibcite{gold2003FX}{35}
+\bibcite{Goodfellow-et-al-2016-Book}{36}
+\bibcite{hastie2009unsupervised}{37}
+\bibcite{hendricks2014reinforcement}{38}
+\bibcite{jaeger2002tutorial}{39}
+\bibcite{joshi2008c++}{40}
+\bibcite{kamijo1990stock}{41}
+\bibcite{kearns2013machine}{42}
+\bibcite{konda1999actor}{43}
+\bibcite{kushner2003stochastic}{44}
+\bibcite{NIPS2013_4917}{45}
+\bibcite{laruelle2011optimal}{46}
+\bibcite{laruelle2013optimal}{47}
+\bibcite{li2007short}{48}
+\bibcite{mahadevan1996average}{49}
+\bibcite{markowitz1952portfolio}{50}
+\bibcite{miyamae2010natural}{51}
+\bibcite{moody2001learning}{52}
+\bibcite{moody2013reinforcement}{53}
+\bibcite{moody1997optimization}{54}
+\bibcite{moody1998performance}{55}
+\bibcite{nevmyvaka2006reinforcement}{56}
+\bibcite{nocedal2006numerical}{57}
+\bibcite{o2006adaptive}{58}
+\bibcite{pages2016introduction}{59}
+\bibcite{peters2010relative}{60}
+\bibcite{peters2006policy}{61}
+\bibcite{peters2008reinforcement}{62}
+\bibcite{prashanth2014actor}{63}
+\bibcite{puterman1994markov}{64}
+\bibcite{Saad1998comparative}{65}
+\bibcite{sanderson2010armadillo}{66}
+\bibcite{sato2000variance}{67}
+\bibcite{Sato:2001:ARL:645530.757778}{68}
+\bibcite{sehnke2012parameter}{69}
+\bibcite{sehnke2008policy}{70}
+\bibcite{sehnke2010parameter}{71}
+\bibcite{sharpe1994sharpe}{72}
+\bibcite{silver2014deterministic}{73}
+\bibcite{sutton1998introduction}{74}
+\bibcite{sutton1999policy}{75}
+\bibcite{szepesvari2010algorithms}{76}
+\bibcite{tamar2013temporal}{77}
+\bibcite{tamar2015policy}{78}
+\bibcite{tamar2012policy}{79}
+\bibcite{tamar2013variance}{80}
+\bibcite{tan2011stock}{81}
+\bibcite{tsay2005analysis}{82}
+\bibcite{werbos1990backpropagation}{83}
+\bibcite{wiering2012reinforcement}{84}
+\bibcite{williams1989learning}{85}
+\bibcite{Yang2012behavior}{86}
+\bibcite{zhao2011analysis}{87}
+\bibcite{zhao2015regularized}{88}

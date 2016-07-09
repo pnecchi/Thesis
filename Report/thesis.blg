@@ -3,6 +3,11 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: siam.bst
 Database file #1: Bibliography/bibliography.bib
+Warning--to sort, need author or key in 
+Warning--empty author in 
+Warning--empty title in 
+Warning--empty journal in 
+Warning--empty year in 
 Warning--can't use both volume and number fields in bertsekas1995dynamic
 Warning--can't use both author and editor fields in bishop2006pattern
 Warning--empty journal in corazzaq
@@ -11,45 +16,45 @@ Warning--empty journal in cumming2015investigation
 Warning--empty year in du1algorithm
 Warning--empty journal in eldercreating
 Warning--empty journal in sanderson2010armadillo
-You've used 82 entries,
+You've used 88 entries,
             2030 wiz_defined-function locations,
-            931 strings with 17655 characters,
-and the built_in function-call counts, 29784 in all, are:
-= -- 2825
-> -- 1273
+            957 strings with 18278 characters,
+and the built_in function-call counts, 31403 in all, are:
+= -- 2980
+> -- 1321
 < -- 0
-+ -- 510
-- -- 421
-* -- 2223
-:= -- 4487
-add.period$ -- 83
-call.type$ -- 82
-change.case$ -- 447
++ -- 531
+- -- 435
+* -- 2343
+:= -- 4730
+add.period$ -- 89
+call.type$ -- 88
+change.case$ -- 469
 chr.to.int$ -- 0
-cite$ -- 90
-duplicate$ -- 1432
-empty$ -- 2370
-format.name$ -- 421
-if$ -- 6487
+cite$ -- 101
+duplicate$ -- 1516
+empty$ -- 2506
+format.name$ -- 435
+if$ -- 6831
 int.to.chr$ -- 0
-int.to.str$ -- 82
-missing$ -- 95
-newline$ -- 250
-num.names$ -- 159
-pop$ -- 526
+int.to.str$ -- 88
+missing$ -- 101
+newline$ -- 268
+num.names$ -- 169
+pop$ -- 554
 preamble$ -- 1
-purify$ -- 379
+purify$ -- 398
 quote$ -- 0
-skip$ -- 1146
+skip$ -- 1213
 stack$ -- 0
-substring$ -- 2008
-swap$ -- 571
+substring$ -- 2119
+swap$ -- 601
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 298
-warning$ -- 8
-while$ -- 295
-width$ -- 84
-write$ -- 731
-(There were 8 warnings)
+type$ -- 320
+warning$ -- 13
+while$ -- 314
+width$ -- 90
+write$ -- 779
+(There were 13 warnings)

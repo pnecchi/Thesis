@@ -15,20 +15,29 @@
 \BOOKMARK [2][-]{subsection.3.2.3}{Policy Approximation}{section.3.2}% 15
 \BOOKMARK [0][-]{chapter.4}{Policy Gradient}{}% 16
 \BOOKMARK [1][-]{section.4.1}{Basics of Policy Gradient Methods}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.2}{Finite Differences}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.3}{Monte Carlo Policy Gradient}{chapter.4}% 19
-\BOOKMARK [2][-]{subsection.4.3.1}{Optimal Baseline}{section.4.3}% 20
-\BOOKMARK [2][-]{subsection.4.3.2}{Boltzmann Exploration Policy}{section.4.3}% 21
-\BOOKMARK [2][-]{subsection.4.3.3}{Gaussian Exploration Policy}{section.4.3}% 22
-\BOOKMARK [1][-]{section.4.4}{Policy Gradient Theorem}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.4.1}{Actor-Critic Policy Gradient}{section.4.4}% 24
-\BOOKMARK [1][-]{section.4.5}{Natural Policy Gradient}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.6}{Policy Gradient with Parameter Exploration}{chapter.4}% 26
-\BOOKMARK [2][-]{subsection.4.6.1}{Episodic PGPE}{section.4.6}% 27
-\BOOKMARK [2][-]{subsection.4.6.2}{Infinite Horizon PGPE}{section.4.6}% 28
-\BOOKMARK [1][-]{section.4.7}{Risk-Sensitive Policy Gradient}{chapter.4}% 29
-\BOOKMARK [2][-]{subsection.4.7.1}{Risk-Sensitive Actor-Critic Algorithm}{section.4.7}% 30
-\BOOKMARK [0][-]{chapter.5}{Asset Allocation}{}% 31
-\BOOKMARK [1][-]{section.5.1}{Reward Function}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.2}{States}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.3}{Actions}{chapter.5}% 34
+\BOOKMARK [2][-]{subsection.4.1.1}{Risk-Neutral Framework}{section.4.1}% 18
+\BOOKMARK [2][-]{subsection.4.1.2}{Risk-Sensitive Framework}{section.4.1}% 19
+\BOOKMARK [1][-]{section.4.2}{Finite Differences}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.3}{Likelihood Ratio Methods}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.3.1}{Monte Carlo Policy Gradient}{section.4.3}% 22
+\BOOKMARK [2][-]{subsection.4.3.2}{GPOMDP}{section.4.3}% 23
+\BOOKMARK [2][-]{subsection.4.3.3}{Risk-Sensitive Monte Carlo Policy Gradient}{section.4.3}% 24
+\BOOKMARK [2][-]{subsection.4.3.4}{Stochastic Policies}{section.4.3}% 25
+\BOOKMARK [2][-]{subsection.4.3.5}{Policy Gradient with Parameter Exploration}{section.4.3}% 26
+\BOOKMARK [1][-]{section.4.4}{Policy Gradient Theorem}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.4.1}{Risk-Neutral Setting}{section.4.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.2}{Risk-Sensitive Setting}{section.4.4}% 29
+\BOOKMARK [2][-]{subsection.4.4.3}{GPOMDP from the Policy Gradient Theorem}{section.4.4}% 30
+\BOOKMARK [2][-]{subsection.4.4.4}{Compatible Function Approximation}{section.4.4}% 31
+\BOOKMARK [2][-]{subsection.4.4.5}{Actor-Critic Policy Gradient}{section.4.4}% 32
+\BOOKMARK [2][-]{subsection.4.4.6}{Natural Policy Gradient}{section.4.4}% 33
+\BOOKMARK [1][-]{section.4.5}{Risk-Sensitive Policy Gradient}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.5.1}{Risk-Sensitive Actor-Critic Algorithm}{section.4.5}% 35
+\BOOKMARK [1][-]{section.4.6}{Parameter-Based Policy Gradient Theorem}{chapter.4}% 36
+\BOOKMARK [2][-]{subsection.4.6.1}{Risk-Neutral Setting}{section.4.6}% 37
+\BOOKMARK [2][-]{subsection.4.6.2}{Risk-Sensitive Setting}{section.4.6}% 38
+\BOOKMARK [2][-]{subsection.4.6.3}{Natural Policy Gradient}{section.4.6}% 39
+\BOOKMARK [0][-]{chapter.5}{Asset Allocation}{}% 40
+\BOOKMARK [1][-]{section.5.1}{Reward Function}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.2}{States}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.3}{Actions}{chapter.5}% 43

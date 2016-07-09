@@ -1,8 +1,8 @@
 \chapter{Policy Gradient}
 
 Policy gradient methods directly store and iteratively improve a parametric approximation of the optimal policy. This policy is commonly referred to as an $\emph{actor}$ and methods that directly approximate the policy without exploiting an approximation of the optimal value function are called $\emph{actor-only}$. Algorithms that combine an approximation of the optimal policy with an approximation of the value function are commonly called $\emph{actor-critic}$ methods.\\
-As discussed in Chapter \ref{ch:discrete_time_stochastic_optimal_control}, an optimal policy can be obtained by simply acting greedily with respect to the optimal action-value function. However, in large or continuous action spaces, this leads to a complex optimization problem that is computationally expensive to solve. Therefore, it can be beneficial to store an explicit estimation of the optimal policy from which we can select actions. Policy gradient methods have other advantages compared to standard value-based approaches. In many applications, a good policy has a more compact		representation than the value function so that it may be easier to approximate. Moreover, the policy parametrization can be chosen such that is relevant for the task and prior knowledge can be directly incorporated in the policy. Another advantage is that these methods can learn stochastic policies and not only deterministic ones, which might be useful in multiplayer frameworks or in partially observable environments. Finally, these methods have better convergence properties and are guaranteed to converge at least to a local optimum, which may be good enough in practice. On the other hand, policy gradient methods are typically characterized by a large variance which may hinder the converge speed.\\
-In the following sections, we present the basics of policy gradient methods closely following the thorough overviews provided in \cite{peters2008reinforcement}. Then, we discuss some state-of-the-art policy gradient algorithms and we propose some original extensions of these methods. 
+As discussed in Chapter \ref{ch:discrete_time_stochastic_optimal_control}, an optimal policy can be obtained by simply acting greedily with respect to the optimal action-value function. However, in large or continuous action spaces, this leads to a complex optimization problem that is computationally expensive to solve. Therefore, it can be beneficial to store an explicit estimation of the optimal policy from which we can select actions. Policy gradient methods have other advantages compared to standard value-based approaches. In many applications, a good policy has a more compact		representation than the value function so that it may be easier to approximate. Moreover, the policy parameterization can be chosen so as to be relevant for the task and to directly incorporate prior knowledge. Another advantage is that these methods can learn stochastic policies and not only deterministic ones, which might be useful in multiplayer frameworks or in partially observable environments. Finally, these methods have better convergence properties and are guaranteed to converge at least to a local optimum, which may be good enough in practice. On the other hand, policy gradient methods are typically characterized by a large variance which may hinder the converge speed.\\
+In the following sections, we present the basics of policy gradient methods closely following the thorough overviews provided in \cite{peters2008reinforcement}. Then, we discuss some state-of-the-art policy gradient algorithms and we propose some original extensions to these methods. 
 
 \section{Basics of Policy Gradient Methods}
 In policy gradient methods, the optimal policy is approximated using a parametrized 
@@ -10,66 +10,110 @@ policy $\pi: \S \times \calA \times \Theta \to \R$ such that, given a parameter 
 The general goal of policy optimization in reinforcement learning is to
 optimize the policy parameters $\theta \in \Theta$ so as to maximize a certain
 objective function $J: \Theta \to \R$
-\begin{equation}
-	\max_{\theta \in \Theta} J(\theta)
-\end{equation}
-Depending on the application, different objective functions can be used to measure the performance of a policy. In an episodic environment where the system always starts from an initial state $s^*$, the typical objective function is the start value.
-\begin{definition}[Start Value]
-	The start value is the expected return that can be obtained starting from the start state $s^* \in \S$ and following policy $\pi_\theta$
-	\begin{equation}
-		J_{\text{start}}(\theta) = V_{\pi_\theta}(s^*) = \E[\pi_\theta]{G_t\ |\
-		   S_t = s^*}
-	\end{equation}
-\end{definition}
-In a continuing environment, it is common to use either the average value or the average reward per time step.
-\begin{definition}[Average Value]
-	The average value is the expected value that can be obtained following policy $\pi_\theta$ 
-	\begin{equation}
-		J_{\text{avV}}(\theta) = \E[S \sim d^{\theta}]{V_{\pi_\theta}(S)} = \int_\S
-		d^{\theta}(s) V_{\pi_\theta}(s) ds
-	\end{equation}
-	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$.
-\end{definition}
-\begin{definition}[Average Reward per Time Step]
-	The average reward per time step is the expected reward that can be
-	obtained over a single time step by following policy $\pi_\theta$ 
-	\begin{equation}
-		J_{\text{avR}}(\theta) = \E[\substack{S \sim d^{\theta}\\A \sim \pi_\theta}]{\calR(S,A)} 
-		= \int_\S d^{\theta}(s) \int_\A \pi_\theta(s,a) \calR(s,a) da ds
-	\end{equation}
-	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$.
-\end{definition}
-Fortunately, the same methods apply to the three formulations. In the
-following, we will focus on gradient-based and model-free methods that exploit
+\begin{equation*}
+	\theta^* = \argmax_{\theta \in \Theta} J(\theta)
+\end{equation*}
+In the following, we will focus on gradient-based and model-free methods that exploit
 the sequential structure of the the reinforcement learning problem. The idea of
-policy gradient algorithms is to update the policy parameters using the
-gradient ascent direction of the objective function
+policy gradient algorithms is to update the policy parameters using the gradient ascent direction of the objective function
 \begin{equation}
 	\theta^{k+1} = \theta^k + \alpha_k \nabla_\theta J\left(\theta^k\right)
 \end{equation}
 where $\{\alpha_k\}_{k\geq 0}$ is a sequence of learning rates. Typically, the
-gradient of the objective function is not known and needs to be estimated. The general setup for a policy gradient algorithm is thus shown in Algorithm \ref{algo:policy_gradient}. It is a well-know result from stochastic optimization that, if the gradient estimate is unbiased and the learning rates satisfy the \emph{Robbins-Monro conditions}
+gradient of the objective function is not known and its approximation is the key component of every policy gradient algorithm, a general setup of which is schematized in Algorithm \ref{algo:policy_gradient}. It is a well-know result from stochastic optimization \cite{kushner2003stochastic} that, if the gradient estimate is unbiased and the learning rates satisfy the \emph{Robbins-Monro conditions}
 \begin{equation}
 	\sum_{k=0}^\infty \alpha_k = \infty \;\;\;\;\;\; \sum^{\infty}_{k=0}
 	\alpha_k^2 < \infty 
 \end{equation}
 the learning process is guaranteed to converge at least to a local optimum of
-the objective function. In the following sections, we describe various methods
-of approximating the gradient. 
+the objective function. Before describing various methods to approximate the gradient, let us give an overview of some standard objective functions and the situation in which they are commonly used. 
 
-\begin{algorithm}[t]
+\begin{algorithm}[h!]
 	\caption{General setup for a policy gradient algorithm.}
 	\label{algo:policy_gradient}
 	\begin{algorithmic}[1]
 		\Require Initial parameters $\theta_0$, learning rate $\{\alpha_k\}$
 		\Ensure Approximation of the optimal policy $\pi_*$
 		\Repeat
-			\State Obtain estimate $\widehat{g}$ of policy gradient $\nabla_\theta J\left(\theta^k\right)$
+			\State Approximate policy gradient $\widehat{g} \approx \nabla_\theta J\left(\theta^k\right)$
 			\State Update parameters using gradient ascent $\theta^{k+1} = \theta^k + \alpha_k \widehat{g}$
 			\State $k \leftarrow k + 1$
 		\Until{converged}
 	\end{algorithmic}
 \end{algorithm}
+
+\subsection{Risk-Neutral Framework}
+In the risk-neutral setting, the agent is only interested in maximizing his reward, without considering the risk he needs to take on to achieve it. In an episodic environment where the system always starts from an initial state $s_0$, the typical objective function is the start value.
+\begin{definition}[Start Value]
+	The start value is the expected return that can be obtained starting from the start state $s_0 \in \S$ and following policy $\pi_\theta$
+	\begin{equation}
+		J_{\text{start}}(\theta) = V_{\pi_\theta}(s_0) = \E[\pi_\theta]{G_0\ |\
+		   S_0 = s_0}
+	\end{equation}
+\end{definition}
+In a continuing environment, where no terminal state exists and the task might go on forever, it is common to use either the average value or the average reward per time step.
+\begin{definition}[Average Value]
+	The average value is the expected value that can be obtained following policy $\pi_\theta$ 
+	\begin{equation}
+		J_{\text{avV}}(\theta) = \E[S \sim d^{\theta}]{V_{\pi_\theta}(S)} = \int_\S
+		d^{\theta}(s) V_{\pi_\theta}(s) ds
+	\end{equation}
+	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$.	
+\end{definition}
+\begin{definition}[Average Reward per Time Step]
+	The average reward per time step is the expected reward that can be
+	obtained over a single time step by following policy $\pi_\theta$ 
+	\begin{equation}
+		J_{\text{avR}}(\theta) = \rho(\theta) = \E[\substack{S \sim d^{\theta}\\A \sim \pi_\theta}]{\calR(S,A)} 
+		= \int_\S d^{\theta}(s) \int_\A \pi_\theta(s,a) \calR(s,a) da ds
+	\end{equation}
+	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$.
+\end{definition}
+
+\subsection{Risk-Sensitive Framework}
+In the risk-sensitive framework, in addition to maximizing his reward, the agent also wants to control the risk he takes on to achieve it. Thus, it is necessary to introduce a function $\Lambda: \Theta \to \R$ such that $\Lambda(\theta)$ measures the risk associated with the policy $\pi_\theta$. In an episodic framework where the system always starts from the same initial state $s_0$, the variance of the total return can be used \cite{tamar2012policy}
+\begin{definition}[Start Variance]
+	The start variance is the variance of the return that can be obtained starting from the start state $s_0 \in \S$ and following policy $\pi_\theta$
+	\begin{equation}
+		\Lambda_{\text{start}}(\theta) = \Var[\pi_\theta]{G_0\ |\ S_0 = s_0}
+			= U_{\pi_\theta} (s_0) - V_{\pi_\theta} (s_0)^2 
+	\end{equation}
+\end{definition}
+In a continuing environment, we might consider the long-run variance \cite{prashanth2014actor} defined in Section \ref{sec:risk_sensitive_formulation}
+\begin{equation}
+	\begin{split}
+		\Lambda(\theta) &= \lim_{T \to \infty} \frac{1}{T} \E[\pi_\theta]{
+		\sum^{T-1}_{t=0} (R_{t+1} - \rho(\theta)^2} = \eta(\theta) - \rho(\theta)^2
+	\end{split}
+\end{equation}
+In order to formalize this trade-off between reward and risk from a mathematical point of view, we borrow from the financial literature two standard risk-sensitive performance measures: the mean-variance criterion \cite{markowitz1952portfolio} and the Sharpe ratio \cite{sharpe1994sharpe}.
+\begin{definition}[Mean-Variance Criterion]
+	The mean-variance criterion is defined as 
+	\begin{equation}
+		J_\text{MV}(\theta) = J(\theta) - \chi \Lambda(\theta)
+	\end{equation}
+	where $\chi \in \R$ is a constant that controls the reward-risk trade-off. 
+\end{definition} 
+
+\begin{definition}[Sharpe Ratio]
+	The Sharpe ratio is defined as 
+	\begin{equation}
+		\Sh(\theta) = \frac{J(\theta)}{\sqrt{\Lambda(\theta)}}
+	\end{equation}
+\end{definition} 
+In a risk-sensitive policy gradient algorithm, we try to approximate the optimal parameters that maximize these objective functions by updating the parameters following the gradient ascent directions. In the average-reward formulation, the ascent directions are given by 
+\begin{equation}
+	\nabla_\theta J_{\text{MV}}(\theta) = \nabla_\theta \rho(\theta) - \chi \nabla_\theta \Lambda_(\theta)
+\end{equation}
+for the mean-variance criterion, where 
+\begin{equation}
+	\nabla_\theta \Lambda(\theta) =	\nabla_\theta \eta(\theta) - 2 \rho(\theta) \nabla_\theta \rho(\theta)
+\end{equation} 
+and by 
+\begin{equation} 
+	\nabla_\theta \Sh(\theta) = \frac{\eta(\theta) \nabla_\theta \rho(\theta) - \frac{1}{2} \rho(\theta) \nabla_\theta \eta(\theta)}{\Lambda(\theta) \sqrt{\Lambda(\theta)}}
+\end{equation}
+for the Sharpe ratio. Hence, in the risk-sensitive framework it is necessary to estimate to different gradients: $\nabla_\theta \rho(\theta)$ and $\nabla_\theta \eta(\theta)$. Let us notice that the equivalent expressions for the episodic setting can be obtained by replacing $\rho(\theta)$ (resp. $\eta(\theta)$) with $V_\theta(s_0)$ (resp. $U_\theta(s_0)$). In the next sections, we will discuss several techniques to estimate these gradients.
 
 \section{Finite Differences}
 The most straightforward way to estimate the objective function gradient consists in replacing the partial derivatives with the corresponding finite differences. In other words, the $k$-th gradient component is approximated by
@@ -78,61 +122,76 @@ The most straightforward way to estimate the objective function gradient consist
 \end{equation}
 where $\epsilon$ is a small constant and $e_k \in \R^{D_\theta}$ is the $k$-th element of the canonical basis. Hence, to compute the gradient it is sufficient to estimate the objective function for $D_\theta + 1$ different parameters combinations. Since the objective function is unknown, it must be estimated from sample trajectories simulated following the policies associated to the parameterizations appearing in the finite differences. For this reason, this method is computationally demanding and the gradient estimate obtained in this way is extremely noisy, which may slow down or even prevent the convergence of the algorithm. Still, this approach is sometimes effective and works for arbitrary, even non-differentiable, policies. Moreover, finite differences are often used to check gradient estimates during debugging.
 
-\section{Monte Carlo Policy Gradient}
-In this section, we describe one of the oldest policy gradient methods which is based on a standard stochastic optimization technique called the \emph{likelihood trick}. 
-Let $h = {\{(s_t, a_t)\}}_{t\geq 0} \in \H$ be a given trajectory and let us 
-denote by $p_\theta(h) = \P[\pi_\theta]{H = h}$ the probability of obtaining 
-this trajectory by following policy $\pi_\theta$. Let $G(h)$ denote the expected
-return obtained on trajectory $h$
-\begin{equation}
-	G(h) = \E{G_0 | H_t = h} = \sum_{t=1}^\infty \gamma^k \calR(s_{t-1},
-	a_{t-1}) 
-\end{equation}
-For simplicity, let us consider the average value objective function which can
-be rewritten as an expectation over all possible trajectories
-\begin{equation}
-	J_{\text{avV}}(\theta) = \int_\H p_\theta(h) G(h) dh
-\end{equation}
-We can compute its gradient using the likelihood ratio trick 
-\begin{equation}
+\section{Likelihood Ratio Methods}
+In this section, we describe several methods based on the \emph{likelihood ratio} technique of stochastic optimization. Let $Z$ be a random variable with a parametric probability density $p_\theta$ and assume that $p_\theta$ is known, explicitly computable and differentiable with respect to the parameters. The likelihood ratio technique is used to compute the following gradient
+\begin{equation*}
+	\nabla_\theta \E[Z \sim p_\theta]{f(Z)} = \nabla_\theta \int p_\theta(z) f(z) dz
+\end{equation*}
+This type of problem appears in many domains, such as when computing the greeks of a  derivative product in computational finance \cite{pages2016introduction}. Under some regularity assumptions on the function $f$ and on the probability distribution $p_\theta$, this gradient can be rewritten in a more amenable way
+\begin{equation*}
 	\begin{split}
-		\nabla_\theta J(\theta) &= \int_\H \nabla_\theta p_\theta(h) G(h) dh\\
-								&= \int_\H p_\theta(h)\nabla_\theta \log
-									p_\theta(h)G(h)dh\\
-								&= \E{\nabla_\theta \log p_\theta(H)G(H)}
+		\nabla_\theta \E[Z \sim p_\theta]{f(Z)} &= \int \nabla_\theta p_\theta(z) f(z) dz\\
+		&= \int p_\theta(z) \frac{\nabla_\theta p_\theta(z)}{p_\theta(z)} f(z) dz\\
+		&= \int p_\theta(z) \nabla_\theta \log p_\theta(z) f(z) dz\\
+		&= \E[Z\sim p_\theta]{\nabla_\theta \log p_\theta(Z) f(Z)}
 	\end{split}
+\end{equation*}
+Thus, the likelihood ratio technique simply consists in the following equality
+\begin{equation}
+	\nabla_\theta \E[Z \sim p_\theta]{f(Z)} = \E[Z\sim p_\theta]{\nabla_\theta \log p_\theta(Z) f(Z)}
 \end{equation}
-where the expectation is taken over all possible trajectories. The crucial
-point is that $\nabla_\theta \log p_\theta(H)$ can be computed without
-knowledge of the transition probability kernel $\calP$. Indeed, by the Markov property
+where $\nabla_\theta \log p_\theta(Z)$ is usually called likelihood score. This result provides a simple way to approximate the gradient using a Monte Carlo estimate: let $\{Z^{(m)}\}_{m=1}^M$ be i.i.d. samples from $p_\theta$, then 
+\begin{equation}
+	\nabla_\theta \E[Z \sim p_\theta]{f(Z)} \approx \frac{1}{M} \sum_{m=1}^M \nabla_\theta \log p_\theta(Z^{(m)}) f(Z^{(m)})	
+\end{equation}
+As we will see in the following sections, this technique provides the basis for some of the most common policy gradient algorithms in the reinforcement learning literature. 
+
+\subsection{Monte Carlo Policy Gradient}
+Let $h = {\{(s_t, a_t)\}}_{t\geq 0} \in \H$ be a given trajectory of the MDP and let us 
+denote by $p_\theta(h) = \P[\pi_\theta]{H = h}$ the probability of obtaining 
+this trajectory under policy $\pi_\theta$. Let $G(h)$ denote the expected return obtained on trajectory $h$
+\begin{equation*}
+	G(h) = \E{G_0 | H = h} = \sum_{t=0}^\infty \gamma^t \calR(s_t,
+	a_t) 
+\end{equation*}
+Let us consider the average value objective function, which can be rewritten as an expectation over all possible trajectories
+\begin{equation*}
+	J_{\text{avV}}(\theta) = \E[H \sim p_\theta]{G(H)}
+\end{equation*}
+Applying the likelihood ratio technique, we obtain
+\begin{equation}
+\label{eq:gradient_MC}
+		\nabla_\theta J(\theta) = \E[H\sim p_\theta]{\nabla_\theta \log p_\theta(H)G(H)}
+\end{equation}
+The crucial point is that $\nabla_\theta \log p_\theta(H)$ can be computed without
+knowledge of the transition probability kernel $\calP$. Indeed, by a recursive application of the Markov property, we have
 \begin{equation*}
 	p_\theta(h) = \P{S_0 = s_0} \prod_{t=0}^\infty \pi_\theta(s_t, a_t)
 	\calP(s_t, a_t, s_{t+1})
 \end{equation*}
-hence
+from which we obtain
 \begin{equation*}
 	\log p_\theta(h) = \log \P{S_0 = s_0} + \sum_{t=0}^\infty \log 
 	\pi_\theta(s_t, a_t) + \sum_{t=0}^\infty \log \calP(s_t, a_t, s_{t+1})
 \end{equation*}
-The only term depending on the parameters $\theta$ is the policy term, so that
+Since the only term depending on the parameters $\theta$ is the policy term,
 \begin{equation}
 	\nabla_\theta \log p_\theta(H) = \sum_{t=0}^\infty \nabla_\theta \log 
 	\pi_\theta(s_t, a_t)
 \end{equation}
-So we do not need the transition model to compute the $\nabla_\theta \log 
-p_\theta(H)$. However, this trick only works if the policy is differentiable with respect to $\theta$ and it is stochastic. In most cases this is not a big problem, since stochastic policies are needed anyway to ensure sufficient exploration. Moreover, since
-\begin{equation*}
-	\int_\H \nabla_\theta p_\theta(h) dh = 0	
-\end{equation*}
-a constant baseline $b \in \R$ can always be added in the gradient formula
+Therefore, we do not need the transition model to compute the $\nabla_\theta \log 
+p_\theta(H)$. Moreover, it is easy to prove that
 \begin{equation}
-	\nabla_\theta J(\theta) = \E{\nabla_\theta \log p_\theta(H)(G(H)-b)}
+\label{eq:likelihood_bias}
+	\E[H\sim p_\theta]{\nabla_\theta \log p_\theta(H)} = 0	
 \end{equation}
-We will see how this baseline can be chosen in order to minimize the variance
-of the estimator. In an episodic environment, we can derive an estimate of the 
-objective function gradient by sampling $M$ trajectories $h^{(m)} = \{(s_t^{(m)},
-a_t^{(m)})\}_{t = 0}^{T^{(m)}}$ from the MDP and by approximating the expected 
-value via Monte Carlo
+Hence, a constant baseline $b \in \R$ can always be subtracted in Eq. \ref{eq:gradient_MC} without changing the gradient value
+\begin{equation}
+\label{eq:gradient_MC_baseline}
+	\nabla_\theta J(\theta) = \E[H \sim p_\theta]{\nabla_\theta \log p_\theta(H)(G(H)-b)}
+\end{equation}
+Intuitively, the baseline $b$ should measure the expected return under the policy, so that better (resp. worse) than average returns would produce a positive (resp. negative) gradient. A simple approach is to use a moving average of the returns observed while improving the policy. A more elaborate approach is to compute the baseline that minimizes the variance of the gradient estimator.\\
+In an episodic environment, we can derive an estimate of the gradient by sampling $M$ trajectories $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)})\}_{t = 0}^{T^{(m)}}$ under policy $\pi_\theta$ and by approximating the expected value via Monte Carlo
 \begin{equation}
 \label{eq:reinforce_gradient}
 	\widehat{g}_{\text{RF}} = \frac{1}{M} \sum^{M}_{m=1} \left[ \sum_{i=0}^{T^{(m)}} 
@@ -147,7 +206,24 @@ This method, synthetized in Algorithm \ref{algo:reinforce}, is known in the lite
 This method is very easy and works well on many problems. However, the gradient
 estimate is characterized by a large variance which can hamper the convergence
 rate of the algorithm. A first approach to address this issue is to optimally
-set the benchmark to reduce the estimate variance and will be discussed in detail in the next section.
+set the baseline to reduce the gradient variance.
+
+\subsubsection{Optimal Baseline}
+A standard variance reduction technique, called control variate, consists in setting the baseline so as to minimize the gradient estimate variance. More in detail, the optimal baseline for the $k$-th gradient component $\widehat{g}_{k}$ solves
+\begin{equation*}
+	b_k^* = \argmin_b \Var{\widehat{g}_{k}}
+\end{equation*} 
+It is easy to show that 
+\begin{equation*}
+	b_k^* = \frac{\E{G(H) \left(\partial_{\theta_k} \log p_\theta(H)\right)^2  }}{\E{\left(\partial_{\theta_k} \log p_\theta(H)\right)^2}}
+\end{equation*}
+which can be approximated by 
+\begin{equation}
+	\label{eq:optimal_baseline}
+	\widehat{b}_k^* = \frac{\sum^{M}_{m=1} \left[ \sum_{i=0}^{T^{(m)}} 
+		\partial_{\theta_k} \log \pi_\theta\left(s_i^{(m)}, a_i^{(m)}\right) \right]^2 
+		\sum^{T^{(m)}}_{j=0} \gamma^j r_{j+1}^{(m)}}{\sum^{M}_{m=1} \left[ \sum_{i=0}^{T^{(m)}} \partial_{\theta_k} \log \pi_\theta\left(s_i^{(m)}, a_i^{(m)}\right) \right]^2}
+\end{equation}
 
 \begin{algorithm}[t]
 	\caption{Episodic REINFORCE policy gradient estimate}
@@ -156,29 +232,42 @@ set the benchmark to reduce the estimate variance and will be discussed in detai
 		\Require Policy parameterization $\theta$, number of trajectories $M$
 		\Ensure REINFORCE policy gradient estimate $\widehat{g}_{RF} \approx \nabla_\theta J(\theta)$
 		\State Sample $M$ trajectories of the MDP following policy $\pi_\theta$
-		\State Compute the return baseline $b$
+		\State For all $k$, Compute the optimal baseline $b_k^*$ according to Eq. (\ref{eq:optimal_baseline})
 		\State Compute $\widehat{g}_{\text{RF}}$ according to Eq. (\ref{eq:reinforce_gradient})
 	\end{algorithmic}
 \end{algorithm}
 
-\subsection{Optimal Baseline}
-A standard variance reduction technique, called control variate, consists in setting the baseline so as to minimize the gradient estimate variance. More in detail, the optimal baseline for the $k$-th gradient component $\widehat{g}_{k}$ solves
+\subsection{GPOMDP}
+The Monte Carlo policy gradient estimate is typically characterized by a large variance, which may slow the method's convergence. To improve the estimate, it is sufficient to notice that future actions and past rewards are independent, unless the policy has been changed. Therefore, combining this observation with Eq. (\ref{eq:likelihood_bias}) yields
+\begin{equation*}
+	\E[\pi_\theta]{\nabla_\theta\log \pi_\theta(S_t, A_t) \calR(S_s, A_s)} = 0
+	\;\;\;\;\; \forall t>s
+\end{equation*}
+Plugging this equation in Eq. (\ref{eq:gradient_MC_baseline}) leads to the well-known GPOMDP algorithm \cite{baxter2001infinite} for generating an estimate of the gradient of
+the objective function
 \begin{equation}
-	b_k^* = \argmin_b \Var{\widehat{g}_{k}}
-\end{equation} 
-It is easy to show that 
-\begin{equation}
-	b_k^* = \frac{\E{G(H) \left(\partial_{\theta_k} \log p_\theta(H)\right)^2  }}{\E{\left(\partial_{\theta_k} \log p_\theta(H)\right)^2}}
+	\widehat{g}_{\text{GPOMDP}} = \frac{1}{M} \sum^{M}_{m=1} \sum_{i=0}^{T^{(m)}} 
+	\nabla_\theta \log \pi_\theta(s_i^{(m)}, a_i^{(m)}) \left( 
+	\sum^{T^{(m)}}_{j=i} \gamma^j r_{j+1}^{(m)} - b \right)
 \end{equation}
-which can be approximated by 
-\begin{equation}
-	\widehat{b}_k^* = \frac{\sum^{M}_{m=1} \left[ \sum_{i=0}^{T^{(m)}} 
-		\partial_{\theta_k} \log \pi_\theta\left(s_i^{(m)}, a_i^{(m)}\right) \right]^2 
-		\sum^{T^{(m)}}_{j=0} \gamma^j r_{j+1}^{(m)}}{\sum^{M}_{m=1} \left[ \sum_{i=0}^{T^{(m)}} \partial_{\theta_k} \log \pi_\theta\left(s_i^{(m)}, a_i^{(m)}\right) \right]^2}
-\end{equation}
+By removing almost half of the cross-products, this estimate typically has a smaller variance than the trivial REINFORCE policy gradient and can be further reduced by computing an optimal baseline. In the following sections we will see how this algorithm can be easily derived from a more general result: the policy gradient theorem. 
 
-\subsection{Boltzmann Exploration Policy}
-In discrete action spaces, the Boltzmann exploration policy, also known as softmax policy, is a common choice. In state $s$, this policy selects an action $a$ with probability 
+\subsection{Risk-Sensitive Monte Carlo Policy Gradient}
+For an episodic environment, the REINFORCE algorithm can be easily extended to the risk-sensitive framework described above. Indeed, it is sufficient to adapt its derivation for the average return to the second-moment of return
+\begin{equation*}
+	U(\theta) = \E[H\sim p_\theta]{G(H)^2}
+\end{equation*}
+Applying the likelihood ratio technique, we obtain
+\begin{equation*}
+	\nabla_\theta U(\theta) = \E[H\sim p_\theta]{\nabla_\theta \log p_\theta(H) G(H)^2}
+\end{equation*}
+From which we can easily derive a Monte Carlo estimate. Since the problems we will consider in the next chapters are not episodic, we will not investigate this approach further and we refer the interested reader to the extensive work of Tamar et Al. \cite{tamar2012policy}, \cite{tamar2013temporal}, \cite{tamar2013variance}, \cite{tamar2015policy}, \cite{chow2015risk}.
+
+\subsection{Stochastic Policies}
+The likelihood ratio technique is a powerful tool and it allows to derive some powerful policy gradient algorithms. However, this approach only works if the policy is  stochastic. In most cases this is not a big problem, since stochastic policies are needed anyway to ensure sufficient exploration of the state-action space. Moreover, stochastic policies might be beneficial in partially observable MDP to avoid state aliasing and in adversarial learning where the Pareto optimal strategies of different players are randomized, such as in the classical game ``rock-paper-scissors''. We introduce now two standard examples of stochastic policies for discrete and continuous action spaces respectively.  
+
+\subsubsection{Boltzmann Exploration Policy}
+In discrete action spaces, the Boltzmann exploration policy, also known as softmax policy, is a common choice. In state $s \in \S$, this policy selects an action $a \in \A$ with probability 
 \begin{equation}
 	\pi_\theta(s,a) = \frac{e^{\theta^T \Phi(s,a)}}{\sum_{b \in \A} e^{\theta^T \Phi(s,b)}}
 \end{equation}    
@@ -187,7 +276,7 @@ where $\Phi(s,a) \in \R^{D_\theta}$ is a given feature vector corresponding to s
 \nabla_\theta \log \pi_\theta(s,a) = \Phi(s,a) - \sum_{b\in\A} \pi_\theta(s,a) \Phi(s,b)
 \end{equation}
 
-\subsection{Gaussian Exploration Policy} 
+\subsubsection{Gaussian Exploration Policy} 
 In continuous action spaces, a Gaussian exploration policy is commonly used. According to this policy, in a state $s$, actions are sampled from a Gaussian distribution with a parametric state-dependent mean $\mu_\psi(s) \in \R^{D_a}$, with $\psi \in \R^{D_\psi}$, and a covariance matrix $\Sigma \in \R^{D_a \times D_a}$. The policy parameters consist of $\theta = {\psi, \Sigma}$ and the likelihood score are thus given by 
 \begin{equation}
 	\nabla_\psi \log \pi_\theta(s,a) = \left(\frac{\partial \mu_\psi(s)}{\partial \psi}\right)^T \Sigma^{-1} (a - \mu_\psi(s))
@@ -197,30 +286,188 @@ In continuous action spaces, a Gaussian exploration policy is commonly used. Acc
 \end{equation}
 where $\frac{\partial \mu_\psi(s)}{\partial \psi}$ denotes the Jacobian matrix of $\mu_\psi$ with respect to $\psi$.
 
+\subsection{Policy Gradient with Parameter Exploration}
+In Monte Carlo Policy Gradient, trajectories are generated by sampling at each
+time step an action according to a stochastic policy $\pi_\theta$ and the
+objective function gradient is estimated by differentiating the policy with
+respect to the parameters. However, sampling an action from the policy at each
+time step leads to a large variance in the sampled histories and therefore in 
+the gradient estimate, which can in turn slow down the convergence of the
+learning process. To address this issue, in \cite{sehnke2008policy} the authors
+propose the \emph{policy gradient with parameter-based exploration} (PGPE)
+method, in which the search in the policy space is replaced with a direct
+search in the model parameter space. We start by presenting the episodic case
+and we will later extend this approach to the infinite horizon setting.  
+
+\subsubsection{Episodic PGPE}
+Given an episodic MDP, PGPE considers a determinstic controller $F: \S \times
+\Theta \to \A$ that, given a set of parameters $\theta \in \Theta \subseteq
+\R^{D_\theta}$, maps a state $s \in \S$ to an action $a = F(s; \theta) =
+F_\theta(s) \in \A$. The policy parameters are drawn from a probability distribution $p_\xi$, with hyperparameters $\xi \in \Xi \subseteq \R^{D_\xi}$. Combining these two
+hypotheses, the agent follows a stochastic policy $\pi_\xi$ defined by
+\begin{equation*}
+	\forall B \in \calA ,\ \pi_\xi(s,B) = \pi(s, B; \xi) = \int_\Theta p_\xi(\theta) 
+	\ind{F_{\theta}(s)\in B} d\theta
+\end{equation*}
+The advantage of this approach is that the controller is deterministic and
+therefore the actions do not need to be sampled at each time step, with a
+consequent reduction of the gradient estimate variance. Indeed, It is
+sufficient to sample the parameters $\theta$ once at the beginning of the
+episode and then generate an entire trajectory following the deterministic 
+policy $F_\theta$. As an additional benefit, the parameter gradient is
+estimated by direct parameter perturbations, without having to backpropagate
+any derivatives, which allows to use non-differentiable controllers.\\
+The hyperparameters $\xi$ will be updated by following the gradient ascent direction of the gradient of the expected reward, which can be rewritten as 
+\begin{equation}
+	\begin{split}
+		J(\xi) = \E[\substack{\theta \sim p_\xi\\H \sim p_\theta}]{G(H)} =
+		\int_\Theta \int_\H p_\xi(\theta, h) G(h) dh d\theta\\
+	\end{split}
+\end{equation}
+By remarking that $h$ is conditionally independent from $\xi$ given $\theta$, so that $p_\xi(\theta, h) = p_\xi(\theta) p_\theta(h)$, and applying the likelihood ratio technique, we obtain
+\begin{equation}
+	\begin{split}
+		\nabla_\xi J(\xi) = \E[\substack{\theta \sim p_\xi\\H \sim p_\theta}]{\nabla_\xi \log p_\xi(\theta) G(H)}
+	\end{split}
+\end{equation}
+Again, we can subtract a constant baseline $b \in \R$ from the total return 
+\begin{equation}
+	\nabla_\xi J(\xi) = \E{\nabla_\xi \log p_\xi(\theta)\left(G(H) - b\right)}
+\end{equation}
+In an episodic environment, the gradient can be approximated via Monte Carlo by first drawing $M$ samples $\theta^{(m)} \sim p_\xi$ and then, for each combination of parameters, generating a trajectory $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)})\}_{t \geq 0}$ where actions are selected according to the deterministic controller $F_{\theta^{(m)}}$. This leads to the following estimate
+\begin{equation}
+\label{eq:pgpe_gradient}
+	\widehat{g}_{\text{PGPE}} = \frac{1}{M} \sum^{M}_{m=1} \nabla_\xi \log p_\xi\left(\theta^{(m)}\right) \left[G\left(h^{(m)}\right)-b\right] 
+\end{equation}
+In order to further reduce the estimate variance, an optimal baseline can be computed similarly to the REINFORCE case \cite{zhao2011analysis}. The episodic PGPE algorithm obtained in this way is reported in Algorithm \ref{algo:episodic_pgpe}. In the following paragraphs, we discuss some possible choices for the policy parameters distribution $p_\xi$, which is the last component of the algorithm. 
+
+\begin{algorithm}[t]
+	\caption{Episodic PGPE algorithm}
+	\label{algo:episodic_pgpe}
+	\begin{algorithmic}[1]
+		\Require Initial hyperparameters $\xi_0$, learning rate $\{\alpha_k\}$
+		\Ensure Approximation of the optimal policy $F_{\xi^*} \approx \pi_*$
+		\Repeat
+			\For {$m = 1, \ldots, M$}
+				\State Sample controller parameters $\theta^{(m)} \sim p_{\xi^k}$ 
+				\State Sample trajectory $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)})\}_{t \geq 0}$ under policy $F_{\theta^{(m)}}$
+			\EndFor
+			\State Approximate policy gradient $\nabla_\xi J(\xi) \approx \widehat{g}_\text{PGPE}$ according to Eq. \ref{eq:pgpe_gradient}
+			\State Update hyperparameters using gradient ascent $\xi^{k+1} = \xi^k + \alpha_k \widehat{g}_\text{PGPE}$
+			\State $k \leftarrow k + 1$
+		\Until{converged}
+	\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Independent Gaussian Parameter Distribution}
+A simple approach is to assume that all the components of the parameter vector
+$\theta$ are independent and normally distributed with mean $\mu_i$ and
+variance $\sigma_i^2$, i.e. $\theta_i \sim \mathcal{N}(\mu_i, \sigma_i^2)$, the
+gradient with respect to the hyperparameters $\xi = (\mu_1, \ldots, 
+\mu_{D_\theta}, \sigma_1, \ldots, \sigma_{D_\theta})^T$ is given by 
+\begin{equation}
+	\begin{split}
+		\pardev{\log p_\xi(\theta)}{\mu_i} &= \frac{\theta_i -
+		\mu_i}{\sigma_i^2}\\	
+		\pardev{\log p_\xi(\theta)}{\sigma_i} &= \frac{(\theta_i - \mu_i)^2 -
+		\sigma_i^2}{\sigma_i^3}
+	\end{split}
+\end{equation}
+Using a constant learning rate $\alpha_i = \alpha \sigma_i^2$, the gradient
+updates takes the following form
+\begin{equation}
+	\begin{split}
+		\mu_i^{k+1} &= \mu_i^k + \alpha \left[G(h) - b\right] (\theta_i - \mu_i)\\
+		\sigma_i^{k+1} &= \sigma_i^k + \alpha \left[G(h) - b\right] 
+		\frac{(\theta_i -\mu_i)^2}{\sigma_i}
+	\end{split}
+\end{equation}
+where $b$ can be computed as a moving average of the past returns. Intuitively,
+if $G(h) > b$ we adjust $\xi$ so as to increase the probability of $\theta$
+while if $G(h) < b$ we do the opposite. 
+
+\paragraph{Gaussian Parameter Distribution}
+A more elaborate approach is to assume a generic dependence among the controller parameters, i.e. $\theta \sim \calN(\mu, \Sigma)$. However, if we directly used the covariance matrix $\Sigma$ as an hyperparameter, it would be computationally difficult to enforce that it remains well-defined, i.e. symmetric and semidefinite positive, during the gradient ascent iterations. A simpler approach is to parameterize the distribution using the Cholesky factor $\Sigma$, i.e. the matrix $C$ such that $\Sigma = C^T C$. This choice has two advantages: first, $C$ makes explicit the $n(n+1)/2$ indpendent parameters determining the covariance matrix $\Sigma$; in addition, $C^T C$ is by construction a well-defined covariance matrix. Hence, the hyperparameters are $\xi =\{\mu, C\}$. The likelihood score for this distribution doesn't have a simple expression, but it becomes extremely easy in the Natural version of PGPE which will be discussed in the next sections.
+
+\paragraph{Symmetric Sampling and Gain Normalization} 
+In some settings, comparing the gain with a baseline can be misleading. In
+their original work, the authors propose a symmetric sampling technique similar
+to antithetic variates that further improves the convergence of the method.
+More in detail, a more robust gradient estimate can be obtained by measuring
+the difference in reward between two symmetric samples on either side of the
+current mean. That is, we sample a random perturbation $\epsilon \sim
+\mathcal{N}(0, \Sigma)$, where $\Sigma = \text{diag}(\sigma_1^2, \ldots,
+\sigma_{D_\theta}^2)$, and we define $\theta^+ = \mu + \epsilon$ and $\theta^- =
+\mu - \epsilon$. Denoting by $G^+$ (resp. $G^-$) the gains obtained on the
+trajectory associated to $\theta^+$ (resp. $\theta^-$), the objective function
+gradient can be approximated with
+\begin{equation}
+	\begin{split}
+		\nabla_{\mu_i} J(\xi) &\approx \frac{\epsilon_i (G^+ - G^-)}{2
+		\sigma_i^2}\\
+		\nabla_{\sigma_i} J(\xi) &\approx \frac{\epsilon_i^2 -
+	\sigma_i^2}{\sigma_i^3}\left(\frac{G^+ + G^-}{2} - b\right)
+	\end{split}
+\end{equation}
+Hence, by choosing $\alpha_i^k = 2 \alpha \sigma_i^2$, we have the following 
+update rules
+\begin{equation}
+	\begin{split}
+		\mu_i^{k+1} &= \mu_i^k + \alpha \epsilon_i (G^+ - G^-)\\
+		\sigma_i^{k+1} &= \sigma_i^k + \alpha \frac{\epsilon_i^2 - \sigma_i^2}
+		{\sigma_i}\left(G^+ + G^- - 2b\right)
+	\end{split}
+\end{equation}
+In addition, the authors propose to normalize the gains in order to make the
+updates independent of the scale of the rewards. For instance, we could modify
+the hyperparameters updates as follows
+\begin{equation}
+	\begin{split}
+		\mu_i^{k+1} &= \mu_i^k + \alpha \epsilon_i \frac{(G^+ - G^-)}{2m - G^+
+	- G^-}\\
+		\sigma_i^{k+1} &= \sigma_i^k + \alpha \frac{\epsilon_i^2 - \sigma_i^2}
+	{\sigma_i}\frac{\left(G^+ + G^- - 2b\right)}{m - b}
+	\end{split}
+\end{equation}
+where $m$ might be the maximum gain the agent can receive, if known, or
+alternatively the maximum gain achieved so far. Symmetric sampling and gain
+normalization can drastically improve the gradient estimate quality and 
+consequently the convergence time.  
+
+\subsubsection{Infinite Horizon PGPE}
+While in the episodic PGPE the parameters $\theta$ are sampled only at the beginning of each episode, in \emph{Infinite Horizon PGPE} (IHPGPE) \cite{sehnke2012parameter} the parameters and learning are carried out simultaneously, while interacting with the environmnent. Let $0 < \varepsilon < 1$ the probability of updating the policy parameters, the parameters $\theta_t$ can be sampled consecutively as follows
+\begin{equation}
+	p_\xi(\theta_{i,t+1}) = \varepsilon \mathcal{N}(\mu_{i,t}, \sigma_{i,t}^2) 
+							+ (1-\varepsilon) \delta_{\theta_{i,t}}
+\end{equation}
+In practice, $\varepsilon$ should be chosen so that the expected frequency of
+changing a single parameter is coherent with the typical episode length in the
+episodic framework. Alternatively, one could sample all the parameters at a
+certain time step simultaneously
+\begin{equation}
+	p_\xi(\theta_{t+1}) = \varepsilon \mathcal{N}(\mu_{t}, \Sigma_t) 
+							+ (1-\varepsilon) \delta_{\theta_{t}}
+\end{equation}
+This is equivalent to splitting the state-action space into artificial
+episodes. However, updating parameters asynchronously changes the policy only
+slightly thus introducing less noise in the process. Again, parameters can be
+updated at every time step by gradient ascent
+\begin{equation}
+	\begin{split}
+		\mu_{i,t+1} &= \mu_{i,t} + \alpha \left[G_t(h) - b\right] (\theta_{i,t}
+		- \mu_{i,t})\\
+		\sigma_{i,t+1} &= \sigma_{i,t} + \alpha \left[G_t(h) - b\right] 
+		\frac{(\theta_{i,t} -\mu_{i,t})^2}{\sigma_{i,t}}
+	\end{split}
+\end{equation}
+Similarly to the episodic case, we can improve the gradient estimate by
+symmetric sampling and gain normalization. 
+
 
 \section{Policy Gradient Theorem}
-In the last section, we said that the REINFORCE gradient estimate is
-characterized by a large variance, which may slow the method's convergence. 
-To improve the estimate, it is sufficient to notice that future actions do not
-depend on past rewards, unless the policy has been changed. Therefore, 
-\begin{equation}
-	\E[\pi_\theta]{\nabla_\theta\log \pi_\theta(S_t, A_t) \calR(S_s, A_s)} = 0
-	\;\;\;\;\; \forall t>s
-\end{equation}
-From this trivial remark, we can derive two estimates of the objective function
-gradient
-\begin{equation}
-	g_{\text{PG}} = \frac{1}{M} \sum^{M}_{m=1} \sum_{i=0}^{T^{(m)}} 
-	\nabla_\theta \log \pi_\theta(s_i^{(m)}, a_i^{(m)}) \left( 
-	\sum^{T^{(m)}}_{j=i} \gamma^j r_{j+1}^{(m)} - b \right)
-\end{equation}
-\begin{equation}
-	g_{\text{GPOMDP}} = \frac{1}{M} \sum^{M}_{m=1} \sum_{j=0}^{T^{(m)}} \left[ 
-	\sum_{i=j}^{T^{(m)}} \nabla_\theta \log \pi_\theta(s_i^{(m)}, a_i^{(m)})
-	\right] \left(\gamma^j r_{j+1}^{(m)} - b \right)  
-\end{equation}
-These two estimates are exactly equivalent. This simple trick greatly reduces the
-estimate variance and this can speed up convergence. These algorithms can be derived in an alternative way from a more general result: the policy gradient theorem \cite{sutton1999policy} 
+
+\subsection{Risk-Neutral Setting}
+These algorithms can be derived in an alternative way from a more general result: the policy gradient theorem \cite{sutton1999policy} 
 \begin{theorem}[Policy Gradient]
 	For any differentiable policy $\pi_\theta$, for any of the policy objective
 	functions $J = J_{\text{start}}$, $J_{\text{avV}}$, $J_{\text{avR}}$,
@@ -302,6 +549,12 @@ action-value function. However, the theorem can be used as the starting point
 to derive many other policy gradient methods that use different approximation
 of the action-value function.
 
+\subsection{Risk-Sensitive Setting}
+
+\subsection{GPOMDP from the Policy Gradient Theorem}
+
+\subsection{Compatible Function Approximation}
+
 \subsection{Actor-Critic Policy Gradient}
 Actor-Critic Policy Gradient employs a \emph{critic}, that is a parametric
 approximation $\widehat{Q}: \S \times \A \times \Psi \to \R$, where $\Psi \in
@@ -325,190 +578,13 @@ algorithm, for which the pseudo code is reported in \ref{algo:QAC}.
 compatible function approximation, advantage function and actor-critic policy
 gradient]
 
-\section{Natural Policy Gradient}
+\subsubsection{QAC}
 
-\section{Policy Gradient with Parameter Exploration}
-In Monte Carlo Policy Gradient, trajectories are generated by sampling at each
-time step an action according to a stochastic policy $\pi_\theta$ and the
-objective function gradient is estimated by differentiating the policy with
-respect to the parameters. However, sampling an action from the policy at each
-time step leads to a large variance in the sampled histories and therefore in 
-the gradient estimate, which can in turn slow down the convergence of the
-learning process. To address this issue, in \cite{sehnke2008policy} the authors
-propose the \emph{policy gradient with parameter-based exploration} (PGPE)
-method, in which the search in the policy space is replaced with a direct
-search in the model parameter space. We start by presenting the episodic case
-and we will later extend this approach to the infinite horizon setting.  
+\subsubsection{ARRSAC}
 
-\subsection{Episodic PGPE}
-Given an episodic MDP, PGPE considers a determinstic policy $F: \S \times
-\Theta \to \A$ that, given a set of parameters $\theta \in \Theta \subseteq
-\R^{D_\theta}$, maps a state $s \in \S$ to an action $a = F(s; \theta) =
-F_\theta(s) \in \A$. The policy parameters $\theta$ are random variables 
-distributed according to a probability distribution parametrized by some 
-hyperparameters $\xi \in \Xi \subseteq \R^{D_\xi}$, i.e.  $\theta \sim 
-p(\theta; \xi) = p_\xi(\theta)$. Combining these two hypotheses, we obtain a
-stochastic policy parametrized by the hyperparameters $\xi$ 
-\begin{equation}
-	\pi_\xi(s, a) = \pi(s, a; \xi) = \int_\Theta p_\xi(\theta)
-	\ind{F_\theta(s) = a} d\theta
-\end{equation}
-The advantage of this approach is that the policy is deterministic and
-therefore the actions do not need to be sampled at each time step, with a
-consequent reduction of the gradient estimate variance. Indeed, It is
-sufficient to sample the parameters $\theta$ once at the beginning of the
-episode and then generate an entire trajectory following the deterministic 
-policy $F_\theta$. As an additional benefit, the parameter gradient is
-estimated by direct parameter perturbations, without having to backpropagate
-any derivatives, which allows to use non-differentiable controllers. The 
-hyperparameters $\xi$ will be updated following the gradient of the expected 
-reward, which can be rewritten as 
-\begin{equation}
-	\begin{split}
-		J(\xi) &= \int_\Theta \int_\H p_\xi(\theta, h) G(h) dh d\theta\\
-	\end{split}
-\end{equation}
-Hence, using the fact that $h$ is conditionally independent from $\xi$ given
-$\theta$, so that $p_\xi(\theta, h) = p_\xi(\theta) p_\theta(h)$, and the 
-likelihood trick 
-\begin{equation}
-	\begin{split}
-		\nabla_\xi J(\xi) &= \int_\Theta \int_\H \nabla_\xi p_\xi(\theta) 
-						     p_\theta(h) G(h) dh d\theta\\
-						  &= \int_\Theta \int_\H p_\xi(\theta) p_\theta(h) 
-							 \nabla_\xi \log p_\xi(\theta) G(h) dh d\theta\\
-						  &= \E{\nabla_\xi \log p_\xi(\theta) G(H)}
-	\end{split}
-\end{equation}
-Again, we can subtract a constant baseline $b \in \R$ from the total return 
-\begin{equation}
-	\nabla_\xi J(\xi) = \E{\nabla_\xi \log p_\xi(\theta)\left(G(H) - b\right)}
-\end{equation}
-the hyperparameters can then be updated by gradient ascent
-\begin{equation}
-	\xi_{k+1} = \xi_k + \alpha_k \nabla_\xi J(\xi)
-\end{equation}
-The gradient can be approximated via Monte Carlo by sampling $\theta \sim
-p_\xi$ and then generating $M$ trajectories $h^{(m)} = \{(s_t^{(m)},
-a_t^{(m)})\}_{t \geq 0}$ following the deterministic policy $F_\theta$ 
-\begin{equation}
-	g_{\text{PGPE}} = \frac{1}{M} \sum^{M}_{m=1} \nabla_\xi \log p_\xi(\theta) 
-	\left[G\left(h^{(m)}\right)-b\right] 
-\end{equation}
-Alternatively, we can use a fully stochastic approximation by sampling a single
-trajectory and approximating the gradient as 
-\begin{equation}
-	g_{\text{PGPE}} = \nabla_\xi \log p_\xi(\theta) \left[G(h)-b\right] 
-\end{equation}
-In the following paragraphs, we discuss some possible choices for the policy
-parameters distribution $p_\xi$, which is the last component of the algorithm. 
+\subsection{Natural Policy Gradient}
 
-\subsubsection{Gaussian Parameter Distribution}
-A simple approach is to assume that all the components of the parameter vector
-$\theta$ are independent and normally distributed with mean $\mu_i$ and
-variance $\sigma_i^2$, i.e. $\theta_i \sim \mathcal{N}(\mu_i, \sigma_i^2)$, the
-gradient with respect to the hyperparameters $\xi = (\mu_1, \ldots, 
-\mu_{D_\theta}, \sigma_1, \ldots, \sigma_{D_\theta})^T$ is given by 
-\begin{equation}
-	\begin{split}
-		\pardev{\log p_\xi(\theta)}{\mu_i} &= \frac{\theta_i -
-		\mu_i}{\sigma_i^2}\\	
-		\pardev{\log p_\xi(\theta)}{\sigma_i} &= \frac{(\theta_i - \mu_i)^2 -
-		\sigma_i^2}{\sigma_i^3}
-	\end{split}
-\end{equation}
-Using a constant learning rate $\alpha_i = \alpha \sigma_i^2$, the gradient
-updates takes the following form
-\begin{equation}
-	\begin{split}
-		\mu_i^{k+1} &= \mu_i^k + \alpha \left[G(h) - b\right] (\theta_i - \mu_i)\\
-		\sigma_i^{k+1} &= \sigma_i^k + \alpha \left[G(h) - b\right] 
-		\frac{(\theta_i -\mu_i)^2}{\sigma_i}
-	\end{split}
-\end{equation}
-where $b$ can be computed as a moving average of the past returns. Intuitively,
-if $G(h) > b$ we adjust $\xi$ so as to increase the probability of $\theta$
-while if $G(h) < b$ we do the opposite. 
 
-\subsubsection{Symmetric Sampling and Gain Normalization} 
-In some settings, comparing the gain with a baseline can be misleading. In
-their original work, the authors propose a symmetric sampling technique similar
-to antithetic variates that further improves the convergence of the method.
-More in detail, a more robust gradient estimate can be obtained by measuring
-the difference in reward between two symmetric samples on either side of the
-current mean. That is, we sample a random perturbation $\epsilon \sim
-\mathcal{N}(0, \Sigma)$, where $\Sigma = \text{diag}(\sigma_1^2, \ldots,
-\sigma_{D_\theta}^2)$, and we define $\theta^+ = \mu + \epsilon$ and $\theta^- =
-\mu - \epsilon$. Denoting by $G^+$ (resp. $G^-$) the gains obtained on the
-trajectory associated to $\theta^+$ (resp. $\theta^-$), the objective function
-gradient can be approximated with
-\begin{equation}
-	\begin{split}
-		\nabla_{\mu_i} J(\xi) &\approx \frac{\epsilon_i (G^+ - G^-)}{2
-		\sigma_i^2}\\
-		\nabla_{\sigma_i} J(\xi) &\approx \frac{\epsilon_i^2 -
-	\sigma_i^2}{\sigma_i^3}\left(\frac{G^+ + G^-}{2} - b\right)
-	\end{split}
-\end{equation}
-Hence, by choosing $\alpha_i^k = 2 \alpha \sigma_i^2$, we have the following 
-update rules
-\begin{equation}
-	\begin{split}
-		\mu_i^{k+1} &= \mu_i^k + \alpha \epsilon_i (G^+ - G^-)\\
-		\sigma_i^{k+1} &= \sigma_i^k + \alpha \frac{\epsilon_i^2 - \sigma_i^2}
-		{\sigma_i}\left(G^+ + G^- - 2b\right)
-	\end{split}
-\end{equation}
-In addition, the authors propose to normalize the gains in order to make the
-updates independent of the scale of the rewards. For instance, we could modify
-the hyperparameters updates as follows
-\begin{equation}
-	\begin{split}
-		\mu_i^{k+1} &= \mu_i^k + \alpha \epsilon_i \frac{(G^+ - G^-)}{2m - G^+
-	- G^-}\\
-		\sigma_i^{k+1} &= \sigma_i^k + \alpha \frac{\epsilon_i^2 - \sigma_i^2}
-	{\sigma_i}\frac{\left(G^+ + G^- - 2b\right)}{m - b}
-	\end{split}
-\end{equation}
-where $m$ might be the maximum gain the agent can receive, if known, or
-alternatively the maximum gain achieved so far. Symmetric sampling and gain
-normalization can drastically improve the gradient estimate quality and 
-consequently the convergence time.  
-
-\subsection{Infinite Horizon PGPE}
-In this section we discuss the extension of the PGPE method to the infinite
-horizon case \cite{sehnke2012parameter}. While in the episodic PGPE the
-parameters $\theta$ are sampled only at the beginning of each episode, in
-\emph{Infinite Horizon PGPE} (IHPGPE) the parameters and learning are carried 
-out simultaneously, while interacting with the environmnent. Let $0 <
-\varepsilon < 1$ the probability of updating the policy parameters, the 
-parameters $\theta_t$ can be sampled consecutively as follows
-\begin{equation}
-	p_\xi(\theta_{i,t+1}) = \varepsilon \mathcal{N}(\mu_{i,t}, \sigma_{i,t}^2) 
-							+ (1-\varepsilon) \delta_{\theta_{i,t}}
-\end{equation}
-In practice, $\varepsilon$ should be chosen so that the expected frequency of
-changing a single parameter is coherent with the typical episode length in the
-episodic framework. Alternatively, one could sample all the parameters at a
-certain time step simultaneously
-\begin{equation}
-	p_\xi(\theta_{t+1}) = \varepsilon \mathcal{N}(\mu_{t}, \Sigma_t) 
-							+ (1-\varepsilon) \delta_{\theta_{t}}
-\end{equation}
-This is equivalent to splitting the state-action space into artificial
-episodes. However, updating parameters asynchronously changes the policy only
-slightly thus introducing less noise in the process. Again, parameters can be
-updated at every time step by gradient ascent
-\begin{equation}
-	\begin{split}
-		\mu_{i,t+1} &= \mu_{i,t} + \alpha \left[G_t(h) - b\right] (\theta_{i,t}
-		- \mu_{i,t})\\
-		\sigma_{i,t+1} &= \sigma_{i,t} + \alpha \left[G_t(h) - b\right] 
-		\frac{(\theta_{i,t} -\mu_{i,t})^2}{\sigma_{i,t}}
-	\end{split}
-\end{equation}
-Similarly to the episodic case, we can improve the gradient estimate by
-symmetric sampling and gain normalization. 
 
 
 \section{Risk-Sensitive Policy Gradient}
@@ -645,3 +721,16 @@ approximation algorithm whose pseudo-code is illustrated in Algorithm
 	%	test		
 	%\end{algorithmic}
 % \end{algorithm}
+
+\section{Parameter-Based Policy Gradient Theorem}
+
+\subsection{Risk-Neutral Setting}
+
+\subsection{Risk-Sensitive Setting}
+
+\subsection{Natural Policy Gradient}
+
+\subsubsection{NPGPE}
+
+\subsubsection{Risk-Sensitive NPGPE}
+
