@@ -37,7 +37,7 @@ deltaF=0.0
 deltaS=0.000
 
 # Number of past days observed by the agent
-numDaysObserved=10
+numDaysObserved=5
 
 ################
 # ARRSAC agent #
@@ -63,10 +63,10 @@ alphaBaseline=0.2
 numExperiments=5
 
 # Number of epochs
-numEpochs=300
+numEpochs=1000
 
 # Number of training steps
-numTrainingSteps=1000
+numTrainingSteps=3000
 
 # Number of test steps
 numTestSteps=1000

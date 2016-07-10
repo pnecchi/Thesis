@@ -10,7 +10,7 @@
 #include <thesis/GaussianDistribution.h>
 #include <thesis/PgpePolicy.h>
 #include <thesis/StochasticActor.h>
-#include <thesis/ArrsacAgent.h>
+#include <thesis/LearningRate.h>
 #include <thesis/AracAgent.h>
 #include <thesis/AssetAllocationExperiment.h>
 
@@ -73,12 +73,12 @@ int main()
 
     // Initialize critics
     std::cout << ".. Critics - ";
-    Critic criticV(linearRegV);
+    Critic critic(linearRegV);
     std::cout << "done" << std::endl;
 
     // Binary policy
     std::cout << ".. PGPE binary policy - ";
-    BinaryPolicy controller(task.getDimObservation(), -1000.0, 1000.0);
+    BinaryPolicy controller(task.getDimObservation());
     GaussianDistribution distribution(controller.getDimParameters());
     PGPEPolicy policy(controller, distribution, 0.2);
     std::cout << "done" << std::endl;
@@ -88,14 +88,21 @@ int main()
     StochasticActor actor(policy);
     std::cout << "done" << std::endl;
 
+    // Learning Rates
+    std::cout << ".. Learning Rates - ";
+    DecayingLearningRate baselineLearningRate(0.1, 0.6);
+    DecayingLearningRate criticLearningRate(0.1, 0.75);
+    DecayingLearningRate actorLearningRate(0.1, 0.9);
+    std::cout << "done" << std::endl;
+
     // ARSSAC Agent
     std::cout << ".. ARAC Agent - ";
     ARACAgent agent(actor,
-                    criticV,
-                    lambda,
-                    alphaActor,
-                    alphaCritic,
-                    alphaBaseline);
+                    critic,
+                    baselineLearningRate,
+                    criticLearningRate,
+                    actorLearningRate,
+                    lambda);
     std::cout << "done" << std::endl;
 
     // Asset allocation experiment

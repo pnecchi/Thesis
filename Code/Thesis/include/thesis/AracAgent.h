@@ -4,7 +4,7 @@
 #include <thesis/Agent.h>
 #include <thesis/StochasticActor.h>
 #include <thesis/Critic.h>
-#include <thesis/Statistics.h>
+#include <thesis/LearningRate.h>
 #include <armadillo>
 #include <memory>
 
@@ -19,10 +19,13 @@ class ARACAgent : public Agent
         // Default constructor
         ARACAgent(StochasticActor const & actor_,
                   Critic const & critic_,
-                  double lambda_=0.5,
-                  double alphaActor_=0.001,
-                  double alphaCritic_=0.01,
-                  double alphaBaseline_=0.1);
+                  LearningRate const & baselineLearningRate_,
+                  LearningRate const & criticLearningRate_,
+                  LearningRate const & actorLearningRate_,
+                  double lambda_=0.5);
+
+        // Copy constructor
+        ARACAgent(ARACAgent const & other_);
 
         // Default destructor
         virtual ~ARACAgent() = default;
@@ -55,20 +58,19 @@ class ARACAgent : public Agent
         virtual void reset();
 
     private:
-        // Actor
-        StochasticActor actor;
+        // Average reward baseline
+        double averageReward;
 
         // State-value function critic
         Critic critic;
 
-        // Average reward (Exponential Moving Average)
-        StatisticsEMA averageReward;
+        // Actor
+        StochasticActor actor;
 
         // Learning rates
-        // TODO: implement time-varying learning rates?
-        double alphaCritic;
-        double alphaActor;
-        double alphaBaseline;
+        std::unique_ptr<LearningRate> baselineLearningRatePtr;
+        std::unique_ptr<LearningRate> criticLearningRatePtr;
+        std::unique_ptr<LearningRate> actorLearningRatePtr;
 
         // Gradient cache vectors
         double lambda;

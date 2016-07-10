@@ -5,19 +5,19 @@
 ARRSACAgent::ARRSACAgent(StochasticActor const & actor_,
                          Critic const & criticV_,
                          Critic const & criticU_,
-                         double lambda_,
-                         double alphaActor_,
-                         double alphaCritic_,
-                         double alphaBaseline_)
-    : actor(actor_),
+                         LearningRate const & baselineLearningRate_,
+                         LearningRate const & criticLearningRate_,
+                         LearningRate const & actorLearningRate_,
+                         double lambda_)
+    : averageReward(0.0),
+      averageSquareReward(0.0),
       criticV(criticV_),
       criticU(criticU_),
+      actor(actor_),
+      baselineLearningRatePtr(baselineLearningRate_.clone()),
+      criticLearningRatePtr(criticLearningRate_.clone()),
+      actorLearningRatePtr(actorLearningRate_.clone()),
       lambda(lambda_),
-      alphaActor(alphaActor_),
-      alphaCritic(alphaCritic_),
-      alphaBaseline(alphaBaseline_),
-      averageReward(alphaBaseline_),
-      averageSquareReward(alphaBaseline_),
       gradientCriticV(criticV.getDimParameters(), arma::fill::zeros),
       gradientCriticU(criticU.getDimParameters(), arma::fill::zeros),
       gradientActor(actor.getDimParameters(), arma::fill::zeros),
@@ -27,6 +27,29 @@ ARRSACAgent::ARRSACAgent(StochasticActor const & actor_,
 {
     /* Nothing to do */
 }
+
+ARRSACAgent::ARRSACAgent(ARRSACAgent const &other_)
+    : averageReward(other_.averageReward),
+      averageSquareReward(other_.averageSquareReward),
+      criticV(other_.criticV),
+      criticU(other_.criticU),
+      actor(other_.actor),
+      baselineLearningRatePtr(other_.baselineLearningRatePtr->clone()),
+      criticLearningRatePtr(other_.criticLearningRatePtr->clone()),
+      actorLearningRatePtr(other_.actorLearningRatePtr->clone()),
+      lambda(other_.lambda),
+      gradientCriticV(other_.gradientCriticV),
+      gradientCriticU(other_.gradientCriticU),
+      gradientActor(other_.gradientActor),
+      observation(other_.observation),
+      action(other_.action),
+      nextObservation(other_.nextObservation),
+      reward(other_.reward),
+      rewardSquared(other_.rewardSquared)
+{
+    /* Nothing to do */
+}
+
 
 std::unique_ptr<Agent> ARRSACAgent::clone() const
 {
@@ -47,6 +70,7 @@ arma::vec ARRSACAgent::getAction()
 void ARRSACAgent::receiveReward(double reward_)
 {
     reward = reward_;
+    rewardSquared = reward_ * reward_;
 }
 
 void ARRSACAgent::receiveNextObservation(arma::vec const &nextObservation_)
@@ -57,44 +81,52 @@ void ARRSACAgent::receiveNextObservation(arma::vec const &nextObservation_)
 void ARRSACAgent::learn()
 {
     // 1) Update baselines
-    rewardSquared = reward * reward;
-    averageReward.dumpOneResult(reward);
-    averageSquareReward.dumpOneResult(rewardSquared);
-    double rho = averageReward.getStatistics()[0][0];
-    double eta = averageSquareReward.getStatistics()[0][0];
+    double alphaBaseline = baselineLearningRatePtr->get();
+    averageReward += alphaBaseline * (reward - averageReward);
+    averageSquareReward += alphaBaseline * (rewardSquared - averageSquareReward);
 
     // 2) Compute TD errors
-    double tdV = reward - rho + criticV.evaluate(nextObservation) -
+    double tdV = reward - averageReward +
+                 criticV.evaluate(nextObservation) -
                  criticV.evaluate(observation);
-    double tdU = rewardSquared - eta + criticU.evaluate(nextObservation) -
+    double tdU = rewardSquared - averageSquareReward +
+                 criticU.evaluate(nextObservation) -
                  criticU.evaluate(observation);
 
     // 3) Update critics
+    double alphaCritic = criticLearningRatePtr->get();
     gradientCriticV = lambda * gradientCriticV + criticV.gradient(observation);
     gradientCriticU = lambda * gradientCriticU + criticU.gradient(observation);
     criticV.setParameters(criticV.getParameters() + alphaCritic * tdV * gradientCriticV);
     criticU.setParameters(criticU.getParameters() + alphaCritic * tdU * gradientCriticU);
 
     // 4) Update actor
-    double var = eta - rho * rho;
+    double alphaActor = actorLearningRatePtr->get();
+    double var = averageSquareReward - averageReward * averageReward;
     double sqrtVar = sqrt(var);
-    double coeffGradientSR = (eta * tdV - 0.5 * rho * tdU) / (var * sqrtVar);
+    double coeffGradientSR = (averageSquareReward * tdV - 0.5 * averageReward * tdU) /
+                             (var * sqrtVar);
     gradientActor = lambda * gradientActor + actor.likelihoodScore(observation, action);
     actor.setParameters(actor.getParameters() + alphaActor * coeffGradientSR * gradientActor);
 }
 
 void ARRSACAgent::newEpoch()
 {
-    /* Do nothing */
+    baselineLearningRatePtr->update();
+    criticLearningRatePtr->update();
+    actorLearningRatePtr->update();
 }
 
 void ARRSACAgent::reset()
 {
-    actor.reset();
+    averageReward = 0.0;
+    averageSquareReward = 0.0;
     criticV.reset();
     criticU.reset();
-    averageReward.reset();
-    averageSquareReward.reset();
+    actor.reset();
+    baselineLearningRatePtr->reset();
+    criticLearningRatePtr->reset();
+    actorLearningRatePtr->reset();
     gradientActor.zeros();
     gradientCriticU.zeros();
     gradientCriticV.zeros();

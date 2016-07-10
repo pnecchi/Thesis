@@ -32,7 +32,7 @@ class LearningRate
         /**
          * Update learning rate according to a certain schedule.
          */
-        virtual double update() = 0;
+        virtual void update() = 0;
 
         /**
          * Reset learning rate to initial conditions.
@@ -74,7 +74,7 @@ class ConstantLearningRate : public LearningRate
         /**
          * Update learning rate according to a certain schedule.
          */
-        virtual double update() { /* Nothing to do */ }
+        virtual void update() { /* Nothing to do */ }
 
         /**
          * Reset learning rate to initial conditions.
@@ -121,7 +121,7 @@ class DecayingLearningRate : public LearningRate
         /**
          * Update learning rate according to a power decay schedule.
          */
-        virtual double update();
+        virtual void update();
 
         /**
          * Reset learning rate to initial conditions.

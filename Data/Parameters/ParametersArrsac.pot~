@@ -8,7 +8,7 @@
 ###############
 
 # Input filepath (relative to Thesis/Code/Thesis/examples/ directory) 
-inputDataPath=../../../Data/Input/test.csv
+inputDataPath=../../../Data/Input/synthetic.csv
 
 # Output filepath (relative to Thesis/Code/Thesis/examples/ directory)
 outputDataPath=../../../Data/Output/
@@ -21,7 +21,7 @@ debugDataPath=../../../Data/Debug/
 ##########
 
 # Risk-free rate
-riskFreeRate=0.001
+riskFreeRate=0.0
 
 #########################
 # Asset allocation task #
@@ -37,7 +37,7 @@ deltaF=0.00
 deltaS=0.000
 
 # Number of past days observed by the agent
-numDaysObserved=2
+numDaysObserved=5
 
 ################
 # ARRSAC agent #
@@ -63,10 +63,10 @@ alphaBaseline=0.2
 numExperiments=5
 
 # Number of epochs
-numEpochs=300
+numEpochs=1000
 
 # Number of training steps
-numTrainingSteps=1000
+numTrainingSteps=3000
 
 # Number of test steps
 numTestSteps=1000

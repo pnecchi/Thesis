@@ -60,7 +60,7 @@ alphaBaseline=0.2
 ##############
 
 # Number of experiments
-numExperiments=10
+numExperiments=5
 
 # Number of epochs
 numEpochs=300

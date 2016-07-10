@@ -4,7 +4,7 @@
 #include <thesis/Agent.h>
 #include <thesis/StochasticActor.h>
 #include <thesis/Critic.h>
-#include <thesis/Statistics.h>
+#include <thesis/LearningRate.h>
 #include <armadillo>
 #include <memory>
 
@@ -24,13 +24,13 @@ class ARRSACAgent : public Agent
         ARRSACAgent(StochasticActor const & actor_,
                     Critic const & criticV_,
                     Critic const & criticU_,
-                    double lambda_=0.5,
-                    double alphaActor_=0.001,
-                    double alphaCritic_=0.005,
-                    double alphaBaseline_=0.05);
+                    LearningRate const & baselineLearningRate_,
+                    LearningRate const & criticLearningRate_,
+                    LearningRate const & actorLearningRate_,
+                    double lambda_=0.5);
 
         // Copy constructor
-        ARRSACAgent(ARRSACAgent const &other_) = default;
+        ARRSACAgent(ARRSACAgent const &other_);
 
         // Default destructor
         virtual ~ARRSACAgent() = default;
@@ -63,8 +63,11 @@ class ARRSACAgent : public Agent
         virtual void reset();
 
     private:
-        // Actor
-        StochasticActor actor;
+        // Average reward (Exponential Moving Average)
+        double averageReward;
+
+        // Average square reward (Exponential Moving Average)
+        double averageSquareReward;
 
         // State-value function critic
         Critic criticV;
@@ -72,17 +75,13 @@ class ARRSACAgent : public Agent
         // Square state-value function critic
         Critic criticU;
 
-        // Average reward (Exponential Moving Average)
-        StatisticsEMA averageReward;
-
-        // Average square reward (Exponential Moving Average)
-        StatisticsEMA averageSquareReward;
+        // Actor
+        StochasticActor actor;
 
         // Learning rates
-        // TODO: implement time-varying learning rates?
-        double alphaActor;
-        double alphaCritic;
-        double alphaBaseline;
+        std::unique_ptr<LearningRate> baselineLearningRatePtr;
+        std::unique_ptr<LearningRate> criticLearningRatePtr;
+        std::unique_ptr<LearningRate> actorLearningRatePtr;
 
         // Gradient cache vectors
         double lambda;

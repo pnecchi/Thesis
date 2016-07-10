@@ -200,6 +200,7 @@
 		<Unit filename="src/ExperimentParameters.cpp" />
 		<Unit filename="src/GaussianDistribution.cpp" />
 		<Unit filename="src/GaussianPolicy.cpp" />
+		<Unit filename="src/LearningRate.cpp" />
 		<Unit filename="src/LinearRegressor.cpp" />
 		<Unit filename="src/LogisticPolicy.cpp" />
 		<Unit filename="src/MarketEnvironment.cpp" />

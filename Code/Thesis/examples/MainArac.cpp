@@ -8,6 +8,7 @@
 #include <thesis/Critic.h>
 #include <thesis/BoltzmannPolicy.h>
 #include <thesis/StochasticActor.h>
+#include <thesis/LearningRate.h>
 #include <thesis/AracAgent.h>
 #include <thesis/AssetAllocationExperiment.h>
 
@@ -70,7 +71,7 @@ int main()
 
     // Initialize critics
     std::cout << ".. Critics - ";
-    Critic criticV(linearRegV);
+    Critic critic(linearRegV);
     std::cout << "done" << std::endl;
 
     // Boltzmann Policy
@@ -84,14 +85,21 @@ int main()
     StochasticActor actor(policy);
     std::cout << "done" << std::endl;
 
+    // Learning Rates
+    std::cout << ".. Learning Rates - ";
+    DecayingLearningRate baselineLearningRate(0.1, 0.6);
+    DecayingLearningRate criticLearningRate(0.1, 0.7);
+    DecayingLearningRate actorLearningRate(0.1, 0.8);
+    std::cout << "done" << std::endl;
+
     // ARSSAC Agent
     std::cout << ".. ARAC Agent - ";
     ARACAgent agent(actor,
-                    criticV,
-                    lambda,
-                    alphaActor,
-                    alphaCritic,
-                    alphaBaseline);
+                    critic,
+                    baselineLearningRate,
+                    criticLearningRate,
+                    actorLearningRate,
+                    lambda);
     std::cout << "done" << std::endl;
 
     // Asset allocation experiment

@@ -10,7 +10,7 @@ std::unique_ptr<LearningRate> DecayingLearningRate::clone() const
     return std::unique_ptr<LearningRate>(new DecayingLearningRate(*this));
 }
 
-double DecayingLearningRate::update()
+void DecayingLearningRate::update()
 {
     ++currentIteration;
     learningRate = c / pow(currentIteration, decayExp);

@@ -8,7 +8,7 @@
 ###############
 
 # Input filepath (relative to Thesis/Code/Thesis/examples/ directory) 
-inputDataPath=../../../Data/Input/test.csv
+inputDataPath=../../../Data/Input/synthetic.csv
 
 # Output filepath (relative to Thesis/Code/Thesis/examples/ directory)
 outputDataPath=../../../Data/Output/

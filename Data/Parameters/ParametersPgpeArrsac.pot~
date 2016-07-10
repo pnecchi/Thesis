@@ -47,7 +47,7 @@ numDaysObserved=10
 lambda=0.9
 
 # Actor learning rate (0.05)
-alphaActor=0.05
+alphaActor=0.02
 
 # Critic learning rate (0.1)
 alphaCritic=0.1
@@ -63,7 +63,7 @@ alphaBaseline=0.2
 numExperiments=5
 
 # Number of epochs
-numEpochs=100
+numEpochs=500
 
 # Number of training steps
 numTrainingSteps=3000
