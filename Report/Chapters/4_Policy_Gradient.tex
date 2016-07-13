@@ -246,6 +246,7 @@ The Monte Carlo policy gradient estimate is typically characterized by a large v
 Plugging this equation in Eq. (\ref{eq:gradient_MC_baseline}) leads to the well-known GPOMDP algorithm \cite{baxter2001infinite} for generating an estimate of the gradient of
 the objective function
 \begin{equation}
+\label{eq:GPOMDP}
 	\widehat{g}_{\text{GPOMDP}} = \frac{1}{M} \sum^{M}_{m=1} \sum_{i=0}^{T^{(m)}} 
 	\nabla_\theta \log \pi_\theta(s_i^{(m)}, a_i^{(m)}) \left( 
 	\sum^{T^{(m)}}_{j=i} \gamma^j r_{j+1}^{(m)} - b \right)
@@ -464,19 +465,27 @@ Similarly to the episodic case, we can improve the gradient estimate by
 symmetric sampling and gain normalization. 
 
 
-\section{Policy Gradient Theorem}
+\section{Risk-Neutral Policy Gradient Theorem}
+In the previous sections, we saw that the core of a policy gradient algorithm consist in the approximation of the objective function gradient. In this section we present the \emph{policy gradient theorem} \cite{sutton1999policy}, which shows that the gradient can be rewritten in a form suitable for estimation from experience aided by an approximate action-value or advantage function. First, we will prove the theorem in the risk-neutral setting for which it was originally proposed. In particular, we will see how the GPOMDP algorithm can be easily derived by this result via a Monte Carlo approximation. Moreover, we will derive a class of actor-critic algorithms \cite{konda1999actor} that, in addition to a parametric approximation of the policy, also exploit an approximation of the action-value function or of an advantage function to reduce the variance of the gradient estimate. In particular, we review the powerful idea of compatible function approximation \cite{sutton1999policy} which assures the convergence to a local optimum of the objective function. Finally, we discuss the natural policy gradient idea \cite{kakade2001natural}, which forms the basis of many state-of-the-art algorithms. The extension to the risk-sensitive setting will be done in the next section. 
 
-\subsection{Risk-Neutral Setting}
-These algorithms can be derived in an alternative way from a more general result: the policy gradient theorem \cite{sutton1999policy} 
+\subsection{Theorem Statement and Proof}
 \begin{theorem}[Policy Gradient]
-	For any differentiable policy $\pi_\theta$, for any of the policy objective
-	functions $J = J_{\text{start}}$, $J_{\text{avV}}$, $J_{\text{avR}}$,
-	$\frac{1}{1-\gamma} J_{\text{avV}}$, the policy gradient is 
+	Let $\pi_\theta$ be a differentiable policy. The policy gradient for the average reward formulation is given by
 	\begin{equation}
-		\nabla_\theta J(\theta) =
+		\nabla_\theta \rho(\theta) =
 		\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
 		\pi_\theta(S,A) Q_{\pi_\theta}(S, A)}
 	\end{equation}
+	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$. The policy gradient for the start value formulation is given by
+	\begin{equation}
+		\nabla_\theta J_{\text{start}}(\theta) =
+		\E[\substack{S \sim d_\gamma^\theta(s_0, \cdot)\\A \sim \pi_\theta}]{\nabla_\theta\log
+		\pi_\theta(S,A) Q_{\pi_\theta}(S, A)}
+	\end{equation}
+	where $d_\gamma^\theta(s_0, \cdot)$ is the $\gamma$-discounted visiting distribution over states starting from the initial state $s_0$ and following policy $\pi_\theta$
+		\begin{equation}
+			d_\gamma^\theta(s, x) = \sum_{k=0}^{\infty} \gamma^k \calP_\theta^{(k)}(s, x)
+		\end{equation}
 \end{theorem}
 \begin{proof}
 	We first prove the result for the average-reward formulation and then for the start state formulation. From the basic relation between state-value function and action-value function, we have
@@ -512,14 +521,14 @@ These algorithms can be derived in an alternative way from a more general result
 				\pi_\theta(S,A) Q_{\pi_\theta}(S, A)} 
 		\end{split}
 	\end{equation*}
-	Let us now prove the theorem for the start state formulation. The first step is exactly the same. Using the Bellman expectation equation for $Q_\theta$, 
+	Let us now prove the theorem for the start state formulation. The first step is exactly the same. Hence, using the Bellman expectation equation for $Q_\theta$ 
 	\begin{equation*}
 		\begin{split}
 			\nabla_\theta Q_\theta(s,a) &= \nabla_\theta \left[ \calR(s,a) + \gamma \int_{\S} \calP(s,a,s') V_\theta(s') ds' \right]\\ 
 			&= \gamma \int_{\S} \calP(s,a,s') \nabla_\theta V_\theta(s') ds'
 		\end{split}
 	\end{equation*}
-	Hence,
+	we obtain
 	\begin{equation*}
 		\begin{split}
 			\nabla_\theta V_\theta(s) &= \int_{\A} \left[ \nabla_\theta \pi_\theta(s,a) Q_\theta(s,a) + \gamma \int_{\S} \calP(s,a,s') \nabla_\theta V_\theta(s') ds' \right] da\\
@@ -535,59 +544,117 @@ These algorithms can be derived in an alternative way from a more general result
 	\begin{equation*}
 		\begin{split}
 			\nabla_\theta V_\theta(s) &= \int_\S d_\gamma^\theta(s, x) \int_{\A} \nabla_\theta \pi_\theta(x,a) Q_\theta(x,a) da dx\\
-			&= \E[\substack{S \sim d_\gamma^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
-							\pi_\theta(S,A) Q_{\pi_\theta}(S, A)}  
+			&= \E[\substack{S \sim d_\gamma^\theta(s_0, \cdot)\\A \sim \pi_\theta}]{\nabla_\theta\log \pi_\theta(S,A) Q_{\pi_\theta}(S, A)}
 		\end{split}
 	\end{equation*} 
-	
 \end{proof}
+The action-value function is typically unknown and needs to be approximated. 
+As for the REINFORCE algorithm, we can subtract a state-dependent baseline from the action-value function without changing the value of the expectation. Indeed 
+\begin{equation*}
+	\begin{split}
+	\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
+			\pi_\theta(S,A) B_\theta(S)} 
+	&= \int_\S d^\theta(s) \int_\A \pi_\theta(s,a) \nabla_\theta\log
+				\pi_\theta(s,a) B_\theta(s) da ds\\
+	&= \int_\S d^\theta(s)  B_\theta(s) \int_\A \nabla_\theta \pi_\theta(s,a) da ds\\
+	&= \int_\S d^\theta(s)  B_\theta(s)  \nabla_\theta  \underbrace{\int_\A  \pi_\theta(s,a) da}_{= 1} ds = 0
+	\end{split}
+\end{equation*}
+Hence, we can rewrite the policy gradient for the average reward formulation as
+\begin{equation}
+\label{eq:pg_theorem_baseline}
+	\nabla_\theta \rho(\theta) =
+	\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
+	\pi_\theta(S,A) \left(Q_{\pi_\theta}(S, A) - B_\theta(S)\right)}
+\end{equation}
+and similarly for the start state formulation. This result can be used as the starting point to derive several policy gradient methods that use different approximation of the action-value function. 
 
-The action-value function is typically unknown and needs to
-be approximated. For instance, REINFORCE and GPOMDP replace it with the realized return
-achieved on a sample trajectory, that are an unbiased estimate of the
-action-value function. However, the theorem can be used as the starting point
-to derive many other policy gradient methods that use different approximation
-of the action-value function.
+\subsection{GPOMDP}
+For an episodic MDP, the action-value function can be estimated with the total return obtained on a sample trajectory
+\begin{equation*}
+	Q_\theta(s_0,a_0) \approx \sum_{t=0}^{T^{(m)}} \gamma^t r_{t+1}^{(m)}
+\end{equation*}
+Combining this remark with a Monte Carlo approximation of Eq. (\ref{eq:pg_theorem_baseline}), we obtain the GPOMDP gradient estimate (\ref{eq:GPOMDP}). Therefore, the GPOMDP algorithm is a simple application of the policy gradient algorithm, which is much more general than the likelihood ratio technique used to derive the algorithm in the previous sections. In the next subsections we present other ways to exploit the policy gradient theorem to design efficient learning algorithms.
 
-\subsection{Risk-Sensitive Setting}
+\subsection{Actor-Critic Policy Gradient}
+A baseline should ideally measure the typical return obtained by an agent in a certain state when following a certain policy. Therefore, it becomes natural to use the state-value function as a benchmark for the action-value function. Eq. (\ref{eq:pg_theorem_baseline}) thus becomes
+\begin{equation}
+\label{eq:actor_critic_pg}
+	\nabla_\theta \rho(\theta) =
+		\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
+		\pi_\theta(S,A) A_\theta(S,A)}
+\end{equation} 
+where we introduced the advantage function
+\begin{equation}
+	A_\theta(s,a) = Q_\theta(s,a) - V_\theta(s)
+\end{equation}
+which measures how good is to take action $a$ in state $s$ compared to simply following the policy $\pi_\theta$. The advantage function is unknown and should estimated from samples of the MDP. \emph{Actor-Critic} algorithms consist in all those methods that employ an approximation of the advantage function or of the value function, also known as critic, to estimate the policy gradient. These methods thus maintain two sets of parameters: a \emph{critic} that updates the action-value function parameters $\psi$ and an \emph{actor} that updates the policy parameters $\theta$ in the direction suggested by the critic. The general structure for an online actor-critic algorithm is reported in Algorithm \ref{algo:actor_critic}.\\
+\begin{algorithm}[t]
+	\caption{Generic structure for an online actor-critic algorithm.}
+	\label{algo:actor_critic}
+	\begin{algorithmic}[1]
+		\Require Initial actor $\theta^0$, initial critic $\psi^0$, learning rate $\{\alpha_k\}$
+		\Ensure Approximation of the optimal policy $\pi_{\theta^*} \approx \pi_*$
+		\Repeat
+			\State Observe tuple $<s_k, a_k, r_{k+1}, s_{k+1}>$ sampled from the MDP.
+			\State Update critic parameters $\psi^{k+1}$ using a value-based method. 
+			\State Estimate policy gradient as $\widehat{g}_\text{AC}^k = \nabla_\theta \log \pi_\theta(s_k, a_k) \widehat{A}_{\psi^{k+1}}(s_k, a_k)$
+			\State Update actor by gradient ascent $\theta^{k+1} = \theta^k + \alpha_k \widehat{g}_\text{AC}^k$. 
+			\State $k \leftarrow k + 1$
+		\Until{converged}
+	\end{algorithmic}
+\end{algorithm}
+There are two possible approaches to estimate the advantage function: the first one is to estimate both the state-value function $\widehat{V}_\psi \approx V_\theta$ and the action-value function $\widehat{Q}_\xi \approx Q_\theta$ and derive an estimate for the advantage function $\widehat{A}_{\psi, \xi} = \widehat{Q}_\xi - \widehat{V}_\psi \approx A_\theta$. The second approach directly approximates the advantage function $\widehat{A}_\psi \approx A_\theta$ and is usually preferred, since it allows us to maintain only one critic. Actor-critic algorithms typically use a temporal-difference algorithm to update an approximation of the value function $\widehat{V}_\psi \approx V_\theta$, from which we can derive an approximation for the advantage function. Assume that the true state-value function $V_\theta$ is given. Then the TD error 
+\begin{equation}
+	\delta_\theta = R - \rho_\theta + V_\theta(S') - V_\theta(S)
+\end{equation}
+is an unbiased estimate of the advantage function. Indeed 
+\begin{equation*}
+	\begin{split}
+		\E{\delta_\theta | S = s, A = a} &= \E{R - \rho_\theta + V_\theta(S') | S = s, A = a} - V_\theta(s)\\
+		&= Q_\theta(s,a) - V_\theta(s)\\
+		&= A_\theta(s,a)  
+	\end{split}
+\end{equation*}
+By a simple conditioning argument, the policy gradient can be rewritten as
+\begin{equation}
+	\nabla_\theta \rho(\theta) =
+			\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
+			\pi_\theta(S,A) \delta_\theta}
+\end{equation} 
+In practice, we can use an approximate TD error 
+\begin{equation*}
+	\widehat{\delta}_\psi^k = r_{k+1} - \widehat{\rho}_k + \widehat{V}_\psi(s_{k+1}) - \widehat{V}_\psi(s_k) 
+\end{equation*}
+where $\widehat{\rho}_k$ is an estimate of the average reward. Hence, we can easily obtain an approximation of the policy gradient by
+\begin{equation*}
+	\widehat{g}_\text{TD(0)}^k = \nabla_\theta\log \pi_\theta(s_k,a_k) \widehat{\delta}_\psi^k
+\end{equation*}
+which can be used to update the critic parameter in the gradient ascent direction. 
+On the other hand, the critic parameters can be updated using a TD(0) temporal difference scheme
+\begin{equation}
+	\psi^{k+1} = \psi^k + \alpha_k \widehat{\delta}_\psi^k \nabla_\psi \widehat{V}_\psi(s_k)
+\end{equation}
+In the case of a linear critic A
 
-\subsection{GPOMDP from the Policy Gradient Theorem}
+The discussion can be easily extended to more complex value-based methods for estimating the critic, such as forward-view and backward-view TD($\lambda$). 
+
+
+
+
 
 \subsection{Compatible Function Approximation}
 
-\subsection{Actor-Critic Policy Gradient}
-Actor-Critic Policy Gradient employs a \emph{critic}, that is a parametric
-approximation $\widehat{Q}: \S \times \A \times \Psi \to \R$, where $\Psi \in
-\R^{D_\psi}$ such that $\widehat{Q}_\psi(s, a) = \widehat{Q}(s, a; \psi)
-\approx Q_{\pi_\theta}(s,a)$. Therefore these methods maintain two sets of
-parameters: a \emph{critic} that updates the action-value function parameters
-$\psi$ and an \emph{actor} that updates the policy parameters $\theta$ in the
-direction suggested by the critic. More formally, given $\widehat{Q}_\psi$, the
-current state of the system $s_t$ and the action $a_t$ selected using policy
-$\pi_\theta$, the policy parameters are updated in the approximated gradient 
-direction
-\begin{equation}
-	\theta_{k+1} = \theta_k + \alpha_k \nabla_\theta \pi_\theta(s_t, a_t) 
-	\widehat{Q}_\psi(s_t, a_t) 
-\end{equation}
-On the other hand, the action-value function parameters $\psi$ can be updated
-using any value-based approach, for instance TD(0). This leads to the QAC
-algorithm, for which the pseudo code is reported in \ref{algo:QAC}.
-
-[TODO: TD policy gradient,
-compatible function approximation, advantage function and actor-critic policy
-gradient]
-
-\subsubsection{QAC}
-
-\subsubsection{ARRSAC}
 
 \subsection{Natural Policy Gradient}
 
 
 
 
-\section{Risk-Sensitive Policy Gradient}
+\section{Risk-Sensitive Policy Gradient Theorem}
+Next, following the line of \cite{prashanth2014actor}, we extend the policy gradient theorem to the risk-sensitive setting. This allows to design a series of risk-sensitive actor-critic algorithms that are analogous to their risk-neutral counterparts.\\
+Finally, we will reformulate the policy gradient theorem to the parameter-based framework. This extension will allow us to design several policy gradient algorithms, either risk-neutral or risk-sensitive, in which the search is performed in the parameter space and not in the policy space.   
+
 Let us consider a family of parametrized policies $\pi_\theta$, with $\theta
 \in \Theta \subseteq \R^{D_\theta}$. The optimization problem then becomes
 \begin{equation}

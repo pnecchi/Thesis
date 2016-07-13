@@ -1,8 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{}
-
-
 \bibitem{agarwal2010optimal}
 {\sc A.~Agarwal, P.~Bartlett, and M.~Dama}, {\em Optimal allocation strategies
   for the dark pool problem}, arXiv preprint arXiv:1003.2245,  (2010).
@@ -186,6 +183,10 @@
 \bibitem{joshi2008c++}
 {\sc M.~S. Joshi}, {\em C++ design patterns and derivatives pricing}, vol.~2,
   Cambridge University Press, 2008.
+
+\bibitem{kakade2001natural}
+{\sc S.~Kakade}, {\em A natural policy gradient.}, in NIPS, vol.~14, 2001,
+  pp.~1531--1538.
 
 \bibitem{kamijo1990stock}
 {\sc K.~Kamijo and T.~Tanigawa}, {\em Stock price pattern recognition-a

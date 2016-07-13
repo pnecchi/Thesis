@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  7 JUL 2016 18:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  13 JUL 2016 23:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1083,30 +1083,30 @@ LaTeX Info: Redefining \nameref on input line 5.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ] (./thesis.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 4.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 4.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 4.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 4.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 3.
  [3])
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
@@ -1178,71 +1178,81 @@ Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 32.
 
 [20] [21] [22] [23] [24] [25] [26] [27]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 310.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 311.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [28]
-Overfull \hbox (14.30917pt too wide) in paragraph at lines 363--368
+Overfull \hbox (14.30917pt too wide) in paragraph at lines 364--369
 \OT1/cmr/m/n/12 the gra-di-ent with re-spect to the hy-per-pa-ram-e-ters $\OML/
 cmm/m/it/12 ^^X \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 ^^V[]; [] ; ^^V[]; ^^[[]; [
 ] ; ^^[[]\OT1/cmr/m/n/12 )[]$
  []
 
 [29] [30] [31]
-Overfull \hbox (4.72786pt too wide) in paragraph at lines 450--455
+Overfull \hbox (4.72786pt too wide) in paragraph at lines 451--456
 \OT1/cmr/m/n/12 How-ever, up-dat-ing pa-ram-e-ters asyn-chronously changes the 
 pol-icy only slightly
  []
 
 [32]
-Overfull \hbox (16.28265pt too wide) in paragraph at lines 501--501
+Overfull \hbox (16.28265pt too wide) in paragraph at lines 510--510
 [] 
  []
 
-[33] [34]
+[33]
+Overfull \hbox (2.67339pt too wide) in paragraph at lines 551--553
+\OT1/cmr/m/n/12 mated. As for the RE-IN-FORCE al-go-rithm, we can sub-tract a s
+tate-dependent
+ []
 
-LaTeX Warning: Reference `algo:QAC' on page 35 undefined on input line 575.
-
-[35] [36]) (./Chapters/5_Asset_Allocation.tex [37] [38
-
-]
+[34] [35] [36] [37] [38]) (./Chapters/5_Asset_Allocation.tex [39] [40]
 Chapter 5.
 
 Underfull \vbox (badness 8132) has occurred while \output is active []
 
- [39]
-[40] [41]
+ [41
 
-LaTeX Warning: Reference `sec:softmax' on page 42 undefined on input line 139.
+]
+[42] [43]
 
-) [42] [43] [44
+LaTeX Warning: Reference `sec:softmax' on page 44 undefined on input line 139.
 
-] (./thesis.bbl [45
+) (./Chapters/6_Numerical_Results.tex [44] [45] [46
 
-] [46] [47] [48] [49] [50] [51]) [52]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 74.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 74.
+]
+Chapter 6.
+) (./Chapters/7_Conclusions.tex [47] [48
+
+]
+Chapter 7.
+) [49] [50
+
+] (./thesis.bbl [51
+
+] [52] [53] [54] [55] [56] [57]) [58]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 75.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
 
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 74.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 74.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 75.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 75.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: BCC2A54999D8B496818FAF742056481B;3139.
+(rerunfilecheck)             Checksum: BDED21BC842436FD4E970E7BADDB6488;3489.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 74.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 75.
  ) 
 Here is how much of TeX's memory you used:
- 20236 strings out of 495028
- 342700 string characters out of 6181497
- 427537 words of memory out of 5000000
- 22641 multiletter control sequences out of 15000+600000
+ 20269 strings out of 495028
+ 343194 string characters out of 6181497
+ 427816 words of memory out of 5000000
+ 22650 multiletter control sequences out of 15000+600000
  15533 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,20n,75p,2040b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,22n,75p,2040b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/pierpaolo/.texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/
@@ -1259,10 +1269,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (62 pages, 359701 bytes).
+Output written on thesis.pdf (68 pages, 370687 bytes).
 PDF statistics:
- 962 PDF objects out of 1000 (max. 8388607)
- 872 compressed objects within 9 object streams
- 367 named destinations out of 1000 (max. 500000)
- 357 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1036 PDF objects out of 1200 (max. 8388607)
+ 939 compressed objects within 10 object streams
+ 385 named destinations out of 1000 (max. 500000)
+ 405 words of extra memory for PDF output out of 10000 (max. 10000000)
 
