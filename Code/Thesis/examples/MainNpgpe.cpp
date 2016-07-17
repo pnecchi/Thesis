@@ -64,8 +64,8 @@ int main()
 
     // Learning Rate
     std::cout << ".. Learning Rate - ";
-    DecayingLearningRate baselineLearningRate(0.1, 0.6);
-    DecayingLearningRate hyperparamsLearningRate(0.1, 0.7);
+    DecayingLearningRate baselineLearningRate(0.5, 0.8);
+    DecayingLearningRate hyperparamsLearningRate(0.5, 1.0);
     std::cout << "done" << std::endl;
 
     // NPGPE Agent
