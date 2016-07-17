@@ -64,14 +64,15 @@ int main()
 
     // Learning Rate
     std::cout << ".. Learning Rate - ";
-    // ConstantLearningRate learningRate(alphaActor);
-    DecayingLearningRate learningRate(0.5, 0.7);
+    DecayingLearningRate baselineLearningRate(0.1, 0.6);
+    DecayingLearningRate hyperparamsLearningRate(0.1, 0.7);
     std::cout << "done" << std::endl;
 
     // NPGPE Agent
     std::cout << ".. NPGPE Agent - ";
     NPGPEAgent agent(controller,
-                     learningRate,
+                     baselineLearningRate,
+                     hyperparamsLearningRate,
                      0.95);
 
     std::cout << "done" << std::endl;

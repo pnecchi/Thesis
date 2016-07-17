@@ -1,19 +1,21 @@
 #include "thesis/NpgpeAgent.h"
 
 NPGPEAgent::NPGPEAgent(Policy const &policy_,
-                       LearningRate const &learningRate_,
-                       double discountFactor_)
+                       LearningRate const &baselineLearningRate_,
+                       LearningRate const &hyperparamsLearningRate_,
+                       double lambda_)
     : policyPtr(policy_.clone()),
-      learningRatePtr(learningRate_.clone()),
+      baselineLearningRatePtr(baselineLearningRate_.clone()),
+      hyperparamsLearningRatePtr(hyperparamsLearningRate_.clone()),
       mean(policy_.getDimParameters(), arma::fill::zeros),
       choleskyFactor(policy_.getDimParameters(), policy_.getDimParameters(), arma::fill::zeros),
       generator(215),
       gaussianDistr(0.0, 1.0),
       xi(policy_.getDimParameters()),
-      baseline(0.02),
+      baseline(0.0),
       gradientMean(policy_.getDimParameters(), arma::fill::zeros),
       gradientChol(policy_.getDimParameters(), policy_.getDimParameters(), arma::fill::zeros),
-      discountFactor(discountFactor_),
+      lambda(lambda_),
       observation(policy_.getDimObservation()),
       action(policy_.getDimAction())
 {
@@ -22,7 +24,8 @@ NPGPEAgent::NPGPEAgent(Policy const &policy_,
 
 NPGPEAgent::NPGPEAgent(NPGPEAgent const &other_)
     : policyPtr(other_.policyPtr->clone()),
-      learningRatePtr(other_.learningRatePtr->clone()),
+      baselineLearningRatePtr(other_.baselineLearningRatePtr->clone()),
+      hyperparamsLearningRatePtr(other_.hyperparamsLearningRatePtr->clone()),
       mean(other_.mean),
       choleskyFactor(other_.choleskyFactor),
       generator(other_.generator),
@@ -31,7 +34,7 @@ NPGPEAgent::NPGPEAgent(NPGPEAgent const &other_)
       baseline(other_.baseline),
       gradientMean(other_.gradientMean),
       gradientChol(other_.gradientChol),
-      discountFactor(other_.discountFactor),
+      lambda(other_.lambda),
       observation(other_.observation),
       action(other_.action)
 {
@@ -63,8 +66,8 @@ arma::vec NPGPEAgent::getAction()
 void NPGPEAgent::learn()
 {
     // 1) Update baseline
-    baseline.dumpOneResult(reward);
-    double b = baseline.getStatistics()[0][0];
+    double alphaBaseline = baselineLearningRatePtr->get();
+    baseline += alphaBaseline * (reward - baseline);
 
     // 2) Compute likelihood score
     arma::vec likelihoodMean = policyPtr->getParameters() - mean;
@@ -75,19 +78,20 @@ void NPGPEAgent::learn()
         choleskyFactor.t();
 
     // 3) Update gradients
-    gradientMean = discountFactor * gradientMean + likelihoodMean;
-    gradientChol = discountFactor * gradientChol + likelihoodChol;
+    gradientMean = lambda * gradientMean + likelihoodMean;
+    gradientChol = lambda * gradientChol + likelihoodChol;
 
     // 4) Update hyperparameters
-    double alpha = learningRatePtr->get();
-    mean += alpha * (reward - b) * gradientMean;
-    choleskyFactor += alpha * (reward - b) * gradientChol;
+    double alphaHyperparams = hyperparamsLearningRatePtr->get();
+    mean += alphaHyperparams * (reward - baseline) * gradientMean;
+    choleskyFactor += alphaHyperparams * (reward - baseline) * gradientChol;
 }
 
 void NPGPEAgent::newEpoch()
 {
     // Update learning rate
-    learningRatePtr->update();
+    baselineLearningRatePtr->update();
+    hyperparamsLearningRatePtr->update();
 
     // TODO: print current parameters and gradient norm to file for debug purposess
 }
@@ -105,8 +109,9 @@ void NPGPEAgent::reset()
     gradientChol.zeros();
 
     // Reset reward baseline
-    baseline.reset();
+    baseline = 0.0;
 
     // Reset learning rate
-    learningRatePtr->reset();
+    baselineLearningRatePtr->reset();
+    hyperparamsLearningRatePtr->reset();
 }

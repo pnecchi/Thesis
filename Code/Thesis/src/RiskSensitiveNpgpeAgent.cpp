@@ -1,11 +1,14 @@
 #include "thesis/RiskSensitiveNpgpeAgent.h"
 #include <math.h>  /* sqrt */
 
-RiskSensitiveNPGPEAgent::RiskSensitiveNPGPEAgent(Policy const &policy_,
-                                                 LearningRate const &learningRate_,
-                                                 double discountFactor_)
+RiskSensitiveNPGPEAgent::RiskSensitiveNPGPEAgent
+    (Policy const &policy_,
+     LearningRate const &baselineLearningRate_,
+     LearningRate const &hyperparamsLearningRate_,
+     double lambda_)
     : policyPtr(policy_.clone()),
-      learningRatePtr(learningRate_.clone()),
+      baselineLearningRatePtr(baselineLearningRate_.clone()),
+      hyperparamsLearningRatePtr(hyperparamsLearningRate_.clone()),
       mean(policy_.getDimParameters(), arma::fill::zeros),
       choleskyFactor(policy_.getDimParameters(), policy_.getDimParameters(), arma::fill::zeros),
       generator(215),
@@ -15,7 +18,7 @@ RiskSensitiveNPGPEAgent::RiskSensitiveNPGPEAgent(Policy const &policy_,
       squareRewardBaseline(0.02),
       gradientMean(policy_.getDimParameters(), arma::fill::zeros),
       gradientChol(policy_.getDimParameters(), policy_.getDimParameters(), arma::fill::zeros),
-      discountFactor(discountFactor_),
+      lambda(lambda_),
       observation(policy_.getDimObservation()),
       action(policy_.getDimAction())
 {
@@ -24,7 +27,8 @@ RiskSensitiveNPGPEAgent::RiskSensitiveNPGPEAgent(Policy const &policy_,
 
 RiskSensitiveNPGPEAgent::RiskSensitiveNPGPEAgent(RiskSensitiveNPGPEAgent const &other_)
     : policyPtr(other_.policyPtr->clone()),
-      learningRatePtr(other_.learningRatePtr->clone()),
+      baselineLearningRatePtr(other_.baselineLearningRatePtr->clone()),
+      hyperparamsLearningRatePtr(other_.hyperparamsLearningRatePtr->clone()),
       mean(other_.mean),
       choleskyFactor(other_.choleskyFactor),
       generator(other_.generator),
@@ -34,7 +38,7 @@ RiskSensitiveNPGPEAgent::RiskSensitiveNPGPEAgent(RiskSensitiveNPGPEAgent const &
       squareRewardBaseline(other_.squareRewardBaseline),
       gradientMean(other_.gradientMean),
       gradientChol(other_.gradientChol),
-      discountFactor(other_.discountFactor),
+      lambda(other_.lambda),
       observation(other_.observation),
       action(other_.action)
 {
@@ -66,11 +70,10 @@ arma::vec RiskSensitiveNPGPEAgent::getAction()
 void RiskSensitiveNPGPEAgent::learn()
 {
     // 1) Update baseline
-    rewardBaseline.dumpOneResult(reward);
-    squareRewardBaseline.dumpOneResult(reward * reward);
-    double rb = rewardBaseline.getStatistics()[0][0];
-    double r2b = squareRewardBaseline.getStatistics()[0][0];
-    double var = r2b - rb * rb;
+    double alphaBaseline = baselineLearningRatePtr->get();
+    rewardBaseline += alphaBaseline * (reward - rewardBaseline);
+    squareRewardBaseline += alphaBaseline * (reward * reward - squareRewardBaseline);
+    double var = squareRewardBaseline - rewardBaseline * rewardBaseline;
     double stddev = sqrt(var);
 
     // 2) Compute likelihood score
@@ -82,31 +85,32 @@ void RiskSensitiveNPGPEAgent::learn()
         choleskyFactor.t();
 
     // 3) Update gradients
-    gradientMean = discountFactor * gradientMean + likelihoodMean;
-    gradientChol = discountFactor * gradientChol + likelihoodChol;
+    gradientMean = lambda * gradientMean + likelihoodMean;
+    gradientChol = lambda * gradientChol + likelihoodChol;
 
-    arma::vec gradientRewardMean = (reward - rb) * gradientMean;
-    arma::vec gradientSquareRewardMean = (reward * reward - r2b) * gradientMean;
-    arma::mat gradientRewardChol = (reward - rb) * gradientChol;
-    arma::mat gradientSquareRewardChol = (reward * reward - r2b) * gradientChol;
+    arma::vec gradientRewardMean = (reward - rewardBaseline) * gradientMean;
+    arma::vec gradientSquareRewardMean = (reward * reward - squareRewardBaseline) * gradientMean;
+    arma::mat gradientRewardChol = (reward - rewardBaseline) * gradientChol;
+    arma::mat gradientSquareRewardChol = (reward * reward - squareRewardBaseline) * gradientChol;
 
     arma::vec gradientSharpeMean =
-        (r2b * gradientRewardMean - 0.5 * rb * gradientSquareRewardMean) /
-        (var * stddev);
+        (squareRewardBaseline * gradientRewardMean -
+        0.5 * rewardBaseline * gradientSquareRewardMean) / (var * stddev);
     arma::mat gradientSharpeChol =
-        (r2b * gradientRewardChol - 0.5 * rb * gradientSquareRewardChol)  /
-        (var * stddev);
+        (squareRewardBaseline * gradientRewardChol -
+        0.5 * rewardBaseline * gradientSquareRewardChol)  / (var * stddev);
 
     // 4) Update hyperparameters
-    double alpha = learningRatePtr->get();
-    mean += alpha * gradientSharpeMean;
-    choleskyFactor += alpha * gradientSharpeChol;
+    double alphaHyperparams = hyperparamsLearningRatePtr->get();
+    mean += alphaHyperparams * gradientSharpeMean;
+    choleskyFactor += alphaHyperparams * gradientSharpeChol;
 }
 
 void RiskSensitiveNPGPEAgent::newEpoch()
 {
     // Update learning rate
-    learningRatePtr->update();
+    baselineLearningRatePtr->update();
+    hyperparamsLearningRatePtr->update();
 }
 
 void RiskSensitiveNPGPEAgent::reset()
@@ -122,10 +126,11 @@ void RiskSensitiveNPGPEAgent::reset()
     gradientChol.zeros();
 
     // Reset reward baseline
-    rewardBaseline.reset();
-    squareRewardBaseline.reset();
+    rewardBaseline = 0.0;
+    squareRewardBaseline = 0.0;
 
-    // Reset learning rate
-    learningRatePtr->reset();
+    // Reset learning rates
+    baselineLearningRatePtr->reset();
+    hyperparamsLearningRatePtr->reset();
 }
 

@@ -89,13 +89,15 @@ int main()
     BinaryPolicy controller(task.getDimObservation()); //, -10000.0, 10000.0);
 
     // Learning Rate
-    DecayingLearningRate learningRate(0.1, 1.0);
+    DecayingLearningRate baselineLearningRate(0.1, 0.6);
+    DecayingLearningRate hyperparamsLearningRate(0.1, 0.7);
 
     // NPGPE Agent
     std::cout << ".. NPGPE Agent - ";
     RiskSensitiveNPGPEAgent agent(controller,
-                                  learningRate,
-                                  0.9);
+                                  baselineLearningRate,
+                                  hyperparamsLearningRate,
+                                  0.95);
 
     std::cout << "done" << std::endl;
 
