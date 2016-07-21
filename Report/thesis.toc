@@ -40,21 +40,22 @@
 \contentsline {subsection}{\numberline {4.4.1}Theorem Statement and Proof}{33}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}GPOMDP}{35}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Actor-Critic Policy Gradient}{35}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Compatible Function Approximation}{37}{subsection.4.4.4}
-\contentsline {subsection}{\numberline {4.4.5}Natural Policy Gradient}{37}{subsection.4.4.5}
-\contentsline {section}{\numberline {4.5}Risk-Sensitive Policy Gradient Theorem}{37}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Risk-Sensitive Actor-Critic Algorithm}{39}{subsection.4.5.1}
-\contentsline {section}{\numberline {4.6}Parameter-Based Policy Gradient Theorem}{40}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Risk-Neutral Setting}{40}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Risk-Sensitive Setting}{40}{subsection.4.6.2}
-\contentsline {subsection}{\numberline {4.6.3}Natural Policy Gradient}{40}{subsection.4.6.3}
-\contentsline {subsubsection}{\numberline {4.6.3.1}NPGPE}{40}{subsubsection.4.6.3.1}
-\contentsline {subsubsection}{\numberline {4.6.3.2}Risk-Sensitive NPGPE}{40}{subsubsection.4.6.3.2}
-\contentsline {chapter}{\numberline {5}Asset Allocation}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Reward Function}{41}{section.5.1}
-\contentsline {section}{\numberline {5.2}States}{43}{section.5.2}
-\contentsline {section}{\numberline {5.3}Actions}{44}{section.5.3}
-\contentsline {chapter}{\numberline {6}Numerical Results}{47}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusions}{49}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary}{49}{section.7.1}
-\contentsline {section}{\numberline {7.2}Further Developments}{49}{section.7.2}
+\contentsline {subsection}{\numberline {4.4.4}Compatible Function Approximation}{38}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Natural Policy Gradient}{39}{subsection.4.4.5}
+\contentsline {subsubsection}{\numberline {4.4.5.1}Formalism of Natural Policy Gradients}{39}{subsubsection.4.4.5.1}
+\contentsline {section}{\numberline {4.5}Risk-Sensitive Policy Gradient Theorem}{41}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Risk-Sensitive Actor-Critic Algorithm}{42}{subsection.4.5.1}
+\contentsline {section}{\numberline {4.6}Parameter-Based Policy Gradient Theorem}{43}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Risk-Neutral Setting}{43}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Risk-Sensitive Setting}{43}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Natural Policy Gradient}{43}{subsection.4.6.3}
+\contentsline {subsubsection}{\numberline {4.6.3.1}NPGPE}{43}{subsubsection.4.6.3.1}
+\contentsline {subsubsection}{\numberline {4.6.3.2}Risk-Sensitive NPGPE}{43}{subsubsection.4.6.3.2}
+\contentsline {chapter}{\numberline {5}Asset Allocation}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Reward Function}{45}{section.5.1}
+\contentsline {section}{\numberline {5.2}States}{47}{section.5.2}
+\contentsline {section}{\numberline {5.3}Actions}{48}{section.5.3}
+\contentsline {chapter}{\numberline {6}Numerical Results}{51}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusions}{53}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{53}{section.7.1}
+\contentsline {section}{\numberline {7.2}Further Developments}{53}{section.7.2}

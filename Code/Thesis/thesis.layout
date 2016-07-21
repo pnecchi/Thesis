@@ -1,169 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="main" />
-	<File name="include/thesis/MarketEnvironment.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1199" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/Actor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="317" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/StochasticPolicy.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2477" topLine="26" />
-		</Cursor>
-	</File>
-	<File name="src/ArrsacAgent.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1610" topLine="32" />
-		</Cursor>
-	</File>
-	<File name="src/BoltzmannPolicy.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="885" topLine="30" />
-		</Cursor>
-	</File>
-	<File name="src/LearningRate.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="450" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/GaussianPolicy.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="466" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="examples/MainPgpeArrsac.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3194" topLine="80" />
-		</Cursor>
-	</File>
-	<File name="src/LinearRegressor.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1033" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/Policy.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2542" topLine="54" />
-		</Cursor>
-	</File>
-	<File name="examples/main.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3318" topLine="77" />
-		</Cursor>
-	</File>
-	<File name="src/ExperimentParameters.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="799" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/FunctionApproximator.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2467" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="src/AracAgent.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2384" topLine="72" />
 		</Cursor>
 	</File>
-	<File name="src/BinaryPolicy.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/NpgpeAgent.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="597" topLine="9" />
+			<Cursor1 position="2061" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/LearningRate.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="examples/MainArac.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="417" topLine="98" />
+			<Cursor1 position="2665" topLine="71" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/AracAgent.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="examples/main.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1841" topLine="48" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/PgpePolicy.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2755" topLine="37" />
-		</Cursor>
-	</File>
-	<File name="src/AssetAllocationExperiment.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2315" topLine="35" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/BoltzmannPolicy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2671" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/BacktestLog.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="650" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/Agent.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1094" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/RiskSensitiveNpgpeAgent.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="929" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/AssetAllocationTask.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2944" topLine="145" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/NpgpePolicy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2621" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/GaussianPolicy.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2624" topLine="44" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/ArrsacAgent.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="163" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/LogisticPolicy.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="436" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/LinearRegressor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1585" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="examples/MainPgpeArac.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3496" topLine="83" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/ProbabilityDistribution.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="434" topLine="28" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/BinaryPolicy.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2282" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/AssetAllocationExperiment.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1184" topLine="25" />
+			<Cursor1 position="3331" topLine="77" />
 		</Cursor>
 	</File>
 	<File name="src/GaussianDistribution.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -171,34 +26,14 @@
 			<Cursor1 position="402" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/StochasticActor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/Statistics.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2341" topLine="42" />
+			<Cursor1 position="1120" topLine="9" />
 		</Cursor>
 	</File>
-	<File name="examples/MainArrsac.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/BacktestLog.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3517" topLine="66" />
-		</Cursor>
-	</File>
-	<File name="src/NpgpeAgent.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2855" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/MarketEnvironment.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1578" topLine="45" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/GaussianDistribution.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2484" topLine="50" />
-		</Cursor>
-	</File>
-	<File name="include/thesis/ExperimentParameters.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="308" topLine="0" />
+			<Cursor1 position="3048" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src/NPGPEPolicy.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -206,44 +41,69 @@
 			<Cursor1 position="2460" topLine="38" />
 		</Cursor>
 	</File>
+	<File name="src/AssetAllocationTask.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2981" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="src/ExperimentParameters.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="799" topLine="10" />
+		</Cursor>
+	</File>
+	<File name="examples/MainArrsac.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3517" topLine="66" />
+		</Cursor>
+	</File>
 	<File name="include/thesis/LogisticPolicy.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1118" topLine="9" />
+			<Cursor1 position="1120" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/BacktestLog.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/FunctionApproximator.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="300" topLine="0" />
+			<Cursor1 position="1120" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="examples/MainArac.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/NpgpePolicy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3380" topLine="50" />
+			<Cursor1 position="1120" topLine="95" />
 		</Cursor>
 	</File>
-	<File name="examples/MainNpgpe.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/RiskSensitiveNpgpeAgent.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2493" topLine="54" />
+			<Cursor1 position="1937" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/Statistics.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/BinaryPolicy.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="151" topLine="0" />
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/Critic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/AssetAllocationExperiment.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1741" topLine="12" />
+			<Cursor1 position="2315" topLine="35" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/NpgpeAgent.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src/BacktestLog.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2720" topLine="0" />
+			<Cursor1 position="650" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/RiskSensitiveNpgpeAgent.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/AracAgent.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4268" topLine="61" />
+			<Cursor1 position="5739" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/GaussianPolicy.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/ArrsacAgent.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2618" topLine="77" />
 		</Cursor>
 	</File>
 	<File name="src/PgpePolicy.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -251,14 +111,144 @@
 			<Cursor1 position="484" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/AssetAllocationTask.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/Critic.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2981" topLine="19" />
+			<Cursor1 position="1120" topLine="68" />
 		</Cursor>
 	</File>
-	<File name="include/thesis/Statistics.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/thesis/Agent.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3187" topLine="0" />
+			<Cursor1 position="1120" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/Statistics.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="151" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="examples/MainPgpeArac.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3496" topLine="83" />
+		</Cursor>
+	</File>
+	<File name="src/BoltzmannPolicy.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="885" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="src/MarketEnvironment.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1578" topLine="45" />
+		</Cursor>
+	</File>
+	<File name="src/RiskSensitiveNpgpeAgent.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4260" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/LinearRegressor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/LogisticPolicy.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="436" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/ExperimentParameters.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="84" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/Actor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/GaussianDistribution.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/NpgpeAgent.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3631" topLine="77" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/StochasticPolicy.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="examples/MainPgpeArrsac.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3194" topLine="80" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/PgpePolicy.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/Policy.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/LinearRegressor.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1033" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/ProbabilityDistribution.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/LearningRate.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/BinaryPolicy.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="597" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="examples/MainNpgpe.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2508" topLine="55" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/MarketEnvironment.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="631" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/GaussianPolicy.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="466" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/AssetAllocationExperiment.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3656" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/StochasticActor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/LearningRate.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="450" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/thesis/BoltzmannPolicy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1120" topLine="91" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

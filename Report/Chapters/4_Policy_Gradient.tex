@@ -623,37 +623,114 @@ By a simple conditioning argument, the policy gradient can be rewritten as
 			\pi_\theta(S,A) \delta_\theta}
 \end{equation} 
 In practice, we can use an approximate TD error 
-\begin{equation*}
+\begin{equation}
+\label{eq:td_error}
 	\widehat{\delta}_\psi^k = r_{k+1} - \widehat{\rho}_k + \widehat{V}_\psi(s_{k+1}) - \widehat{V}_\psi(s_k) 
-\end{equation*}
+\end{equation}
 where $\widehat{\rho}_k$ is an estimate of the average reward. Hence, we can easily obtain an approximation of the policy gradient by
-\begin{equation*}
+\begin{equation}
 	\widehat{g}_\text{TD(0)}^k = \nabla_\theta\log \pi_\theta(s_k,a_k) \widehat{\delta}_\psi^k
-\end{equation*}
+\end{equation}
 which can be used to update the critic parameter in the gradient ascent direction. 
 On the other hand, the critic parameters can be updated using a TD(0) temporal difference scheme
 \begin{equation}
 	\psi^{k+1} = \psi^k + \alpha_k \widehat{\delta}_\psi^k \nabla_\psi \widehat{V}_\psi(s_k)
 \end{equation}
-In the case of a linear critic A
-
-The discussion can be easily extended to more complex value-based methods for estimating the critic, such as forward-view and backward-view TD($\lambda$). 
-
-
-
+The discussion can be easily extended to more complex value-based methods for estimating the critic, such as the backward-view TD($\lambda$). This method employs eligibility traces to assign credit for the rewards obtained by the agent to all previous states and actions. More formally, the policy parameters update rule becomes
+\begin{equation}
+	\theta^{k+1} = \theta^k + \alpha_k \widehat{\delta}_\psi^k e^k
+\end{equation}
+where the eligibility trace $e_k$ is defined by the following recursive equation 
+\begin{equation}
+	e^{k+1} = \lambda e^k + \nabla_\theta\log \pi_\theta(s_k,a_k) 
+\end{equation} 
+$0 \leq \lambda \leq 1$ is a parameter that manages the amount of bootstrap: for $\lambda = 0$ the method is the standard temporal difference scheme while for $\lambda = 1$ the method is equivalent to Monte Carlo. The complete scheme is reported in Algorithm \ref{algo:actor_critic_td}. 
+\begin{algorithm}[t!]
+	\caption{TD($\lambda$) policy gradient algorithm.}
+	\label{algo:actor_critic_td}
+	\begin{algorithmic}[1]
+		\Require Initial actor $\theta^0$, initial critic $\psi^0$, learning rate $\{\alpha_k\}$
+		\Ensure Approximation of the optimal policy $\pi_{\theta^*} \approx \pi_*$
+		\Repeat
+			\State Observe tuple $<s_k, a_k, r_{k+1}, s_{k+1}>$ sampled from the MDP.
+			\State Update critic parameters $	\psi^{k+1} = \psi^k + \alpha_k \widehat{\delta}_\psi^k \nabla_\psi \widehat{V}_\psi(s_k)$ . 
+			\State Update actor parameters $\theta^{k+1} = \theta^k + \alpha_k \alpha_k \widehat{\delta}_\psi^k e^k $. 
+			\State Update eligibility trace $e^{k+1} = \lambda e^k + \nabla_\theta\log \pi_\theta(s_k,a_k)$
+			\State $k \leftarrow k + 1$
+		\Until{converged}
+	\end{algorithmic}
+\end{algorithm}
 
 
 \subsection{Compatible Function Approximation}
-
+In the previous sections we saw that a critic may reduce the variance of thew policy gradient estimate. However, this is achieved at the cost of introducing a bias in the approximation which, in certain cases, may endanger the convergence of the method to a good solution. Luckily, the \emph{compatible function approximation}  \cite{sutton1999policy} avoids introducing any bias by a careful choice of the critic. This technique consists in estimating the advantage function with a linear regression on a family of suitable basis functions consisting of the gradient of the likelihood score, i.e.
+\begin{equation}
+	\widehat{A}_\theta (s,a) = \psi^T \nabla_\theta \log \pi_\theta(s,a)
+\end{equation}
+The power of these basis functions becomes apparent in the following theorem
+\begin{theorem}[Compatible Function Approximation]
+	If 
+	\begin{enumerate}[label={\roman*)}]
+		\item the advantage function approximator is compatible to the policy, i.e. 
+		\begin{equation}
+			\nabla_\psi A_\psi(s,a) = \nabla_\theta \log \pi_\theta(s,a)
+		\end{equation}
+		\item the advantage function parameters $\psi$ minimize the mean square error 
+		\begin{equation}
+			\theta = \argmin_\psi \E[\pi_\theta]{\left( A_{\pi_\theta}(S,A) - \widehat{A}_\psi(S,A)\right)^2}
+		\end{equation}
+	\end{enumerate}
+	Then the policy gradient is exact
+	\begin{equation}
+		\nabla_\theta J(\theta) = \E[\pi_\theta]{\nabla_\theta \log \pi_\theta(S,A) \widehat{A}_\psi(S,A)}
+	\end{equation}
+\end{theorem} 
+Hence, the true advantage function in the policy gradient formula can be replaced by the compatible function approximation without changing the policy gradient value. A linear regression may seem a too simple representation of the advantage function. However, one must bear in mind that this approximation is only used to reduce the variance of the policy gradient estimate and should not be expected to provide an accurate representation of the true-value function. This technique has proved useful in many application. 
 
 \subsection{Natural Policy Gradient}
+Despite all the advances in the variance reduction of policy gradient methods, these methods still tend to perform surprisingly poorly. Even when applied to simple examples with rather few states, where the gradient can be determined very accurately, they turn out to be quite inefficient. One of the reason of this behavior is the presence of large plateaus in the expected return landscape where the gradients are small and often do not point directly towards the optimal solution. In this context, the steepest ascent with respect to the Fisher information metric, called the \emph{natural policy gradient}, turns out to be significantly more efficient than normal gradients for such
+plateaus. This technique was first proposed in the reinforcement learning setting in \cite{kakade2001natural} and later applied to actor-critic algorithms in in \cite{peters2008reinforcement}. The following properties of natural policy gradient make it one of the more reliable policy-based methods. 
+\begin{enumerate}[label={\roman*)}]
+	\item Convergence to a local minimum is guaranteed.
+	\item By choosing a more direct path to the optimal solution in parameter space, the natural gradient typically has faster convergence and avoids premature convergence of ‘vanilla gradients’.
+	\item  The natural policy gradient can be shown to be covariant, i.e. independent of the coordinate frame chosen for expressing the policy parameters.
+	\item As the natural gradient analytically averages out the influence of the stochastic policy (including the baseline of the function approximator), it requires fewer data points for a good gradient estimate than ‘vanilla gradients’.
+\end{enumerate}
 
-
-
+\subsubsection{Formalism of Natural Policy Gradients}
+Policy gradient methods improve the policy $\pi_\theta$ by iteratively applying ``small'' changes $\Delta \theta$ to the policy parameters $\theta$. However, the meaning of ``small'' is ambiguous. For instance, when working with an Euclidean metric, the size of this update $\norm{\Delta \theta} = \sqrt{\Delta\theta^T \Delta\theta}$ and hence the policy gradient depend on the parameterization of the policy, which often results in unnaturally slow learning even when higher-order gradient methods were employed. This problem poses the question whether we can achieve a covariant gradient descent, i.e. a gradient descent with respect to an invariant measure of the closeness
+between the current policy and the updated policy based upon the distribution of the paths generated by each of these. Standard measures of distance between probability distributions are the Kullbach-Leibler divergence $d_{\text{KL}}(p_\theta(h) || p_{\theta + \Delta \theta}(h)$ and the Hellinger distance. These two distances can be approximation in first instance by a second-order Taylor expansion
+\begin{equation*}
+	d_{\text{KL}}(p_\theta(h) || p_{\theta + \Delta \theta}(h) \approx \frac{1}{2} \Delta\theta^T F_\theta \Delta\theta
+\end{equation*} 
+where $F_\theta$ is the Fischer information matrix
+\begin{equation}
+	\begin{split}
+	F_\theta &= \int_{\H} p_\theta(h) \nabla_\theta\log p_\theta(h) \nabla_\theta\log p_\theta(h)^T dh\\
+		&= \E[H\sim p_\theta]{\nabla_\theta\log p_\theta(H) \nabla_\theta\log p_\theta(H)^T}
+	\end{split}
+\end{equation}
+We want to find the optimal update $\Delta \theta$ for the policy parameters so as to maximize the objective function, under the constraint that the new policy must be in a radius $\epsilon$ from the previous policy with respect to the Kullbach-Leibler divergence, i.e.
+\begin{equation*}
+	\begin{cases}
+		\max_\theta J(\theta + \Delta \theta) \approx J(\theta) + \Delta \theta \nabla_\theta J(\theta)\\
+		\text{s.t.}\ d_{\text{KL}}(p_\theta(h) || p_{\theta + \Delta \theta}(h) \approx \frac{1}{2} \Delta\theta^T F_\theta \Delta\theta < \epsilon\\  	
+	\end{cases}
+\end{equation*}
+The optimal solution is given by 
+\begin{equation*}
+	\Delta \theta = \alpha_n F_\theta^{-1} \nabla_\theta J(\theta)
+\end{equation*}
+with 
+\begin{equation*}
+	\alpha_n = \sqrt{\frac{\epsilon}{\nabla_\theta J(\theta)^T F_\theta^{-1} \nabla_\theta J(\theta)} }
+\end{equation*}
+The direction $\widetilde{\nabla}_\theta J(\theta) = \Delta \theta / \alpha_n$ is called the natural gradient and learning algorithms that use this gradient instead of the standard one are called natural policy gradient algorithms. The strongest theoretical advantage of this approach is that its performance no longer depends on the parameterization of the policy and it is therefore safe to use for arbitrary policies. In practice, the learning process converges significantly faster in most practical cases and requires less manual parameter tuning of the learning algorithm.
+\clearpage
 
 \section{Risk-Sensitive Policy Gradient Theorem}
 Next, following the line of \cite{prashanth2014actor}, we extend the policy gradient theorem to the risk-sensitive setting. This allows to design a series of risk-sensitive actor-critic algorithms that are analogous to their risk-neutral counterparts.\\
-Finally, we will reformulate the policy gradient theorem to the parameter-based framework. This extension will allow us to design several policy gradient algorithms, either risk-neutral or risk-sensitive, in which the search is performed in the parameter space and not in the policy space.   
+Finally, we will reformulate the policy gradient theorem to the parameter-based framework. This extension will allow us to design several policy gradient algorithms, either risk-neutral or risk-sensitive, in which the search is performed in the parameter space and not in the policy space. 
 
 Let us consider a family of parametrized policies $\pi_\theta$, with $\theta
 \in \Theta \subseteq \R^{D_\theta}$. The optimization problem then becomes
