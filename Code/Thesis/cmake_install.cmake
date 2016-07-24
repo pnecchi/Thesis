@@ -1,4 +1,4 @@
-# Install script for directory: /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis
+# Install script for directory: /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/cmake_install.cmake")
+  include("/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

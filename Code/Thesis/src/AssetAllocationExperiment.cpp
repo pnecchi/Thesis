@@ -6,7 +6,9 @@ AssetAllocationExperiment::AssetAllocationExperiment(AssetAllocationTask const &
                                                      size_t numExperiments_,
                                                      size_t numEpochs_,
                                                      size_t numTrainingSteps_,
-                                                     size_t numTestSteps_)
+                                                     size_t numTestSteps_,
+                                                     std::string outputDir_,
+                                                     std::string debugDir_)
     : task(task_),
       agentPtr(agent_.clone()),
       numExperiments(numExperiments_),
@@ -16,7 +18,9 @@ AssetAllocationExperiment::AssetAllocationExperiment(AssetAllocationTask const &
       blog(task.getDimAction(), task.getDimAction(), numTestSteps),
       observationCache(task.getDimObservation()),
       actionCache(task.getDimAction()),
-      rewardCache(0.0)
+      rewardCache(0.0),
+      outputDir(outputDir_),
+      debugDir(debugDir_)
 {
     /* Nothing to do */
 }
@@ -53,7 +57,7 @@ void AssetAllocationExperiment::run()
 
         // Open debugging file
         std::ostringstream stringStream;
-        stringStream << "../../../Data/Debug/debugExperiment" << exp << ".csv";
+        stringStream << debugDir << "experiment" << exp << ".csv";
         std::ofstream debugFile;
         debugFile.open(stringStream.str());
         debugFile << "epoch,average,stdev,sharpe,\n";
@@ -110,7 +114,7 @@ void AssetAllocationExperiment::run()
         }
 
         std::ostringstream stringStreamBacktest;
-        stringStreamBacktest << "../../../Data/Debug/backtestExperiment" << exp << ".csv";
+        stringStreamBacktest << outputDir << "experiment" << exp << ".csv";
         blog.save(stringStreamBacktest.str());
     }
 }

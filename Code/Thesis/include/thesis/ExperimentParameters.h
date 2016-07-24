@@ -47,19 +47,6 @@ class ExperimentParameters
         virtual ~ExperimentParameters() = default;
 
         /*!
-         * File paths
-         */
-
-        //! Input filepath
-        std::string inputDataPath;
-
-        //! Output filepath
-        std::string outputDataPath;
-
-        //! Debug filepath
-        std::string debugDataPath;
-
-        /*!
          * Market parameters
          */
 
@@ -83,20 +70,23 @@ class ExperimentParameters
         size_t numDaysObserved;
 
         /*!
-         * ARRSAC agent parameters
+         * Agent parameters
          */
 
         //! TD(lambda) parameter
         double lambda;
 
         //! Actor learning rate
-        double alphaActor;
+        double alphaConstActor;
+        double alphaExpActor;
 
         //! Critic learning rate
-        double alphaCritic;
+        double alphaConstCritic;
+        double alphaExpCritic;
 
         //! Baseline learning rate
-        double alphaBaseline;
+        double alphaConstBaseline;
+        double alphaExpBaseline;
 
         /*!
          * Experiment parameters

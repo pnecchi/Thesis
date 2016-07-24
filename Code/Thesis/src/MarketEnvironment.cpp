@@ -1,10 +1,12 @@
 #include <thesis/MarketEnvironment.h>
 #include <fstream>    /* std::ifstream */
 #include <sstream>    /* std::istringstream */
+#include <stdexcept>  /* std::invalid_argument */
 
 MarketEnvironment::MarketEnvironment (std::string inputFilePath)
 {
 	// Initialize filestream from inputFilePath
+	std::cout << inputFilePath << std::endl;
 	std::ifstream ifs(inputFilePath);
 	std::string line;
     char ch;
@@ -12,7 +14,7 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath)
     // Check file opening
     if (!ifs)
     {
-        std::cerr << "Error: input file doesn't exist";
+        throw std::invalid_argument("Input file doesn't exist");
     }
 
 	// Read number of days and number of risky assets from the first line

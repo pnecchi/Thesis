@@ -42,10 +42,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis
+CMAKE_SOURCE_DIR = /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis
+CMAKE_BINARY_DIR = /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(CMAKE_COMMAND) -E cmake_progress_start /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples/CMakeFiles/progress.marks
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles 0
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(CMAKE_COMMAND) -E cmake_progress_start /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/CMakeFiles/progress.marks
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/clean
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,92 +88,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-examples/CMakeFiles/MainArac.dir/rule:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/MainArac.dir/rule
-.PHONY : examples/CMakeFiles/MainArac.dir/rule
-
-# Convenience name for target.
-MainArac: examples/CMakeFiles/MainArac.dir/rule
-.PHONY : MainArac
-
-# fast build rule for target.
-MainArac/fast:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainArac.dir/build.make examples/CMakeFiles/MainArac.dir/build
-.PHONY : MainArac/fast
-
-# Convenience name for target.
-examples/CMakeFiles/MainArrsac.dir/rule:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/MainArrsac.dir/rule
-.PHONY : examples/CMakeFiles/MainArrsac.dir/rule
-
-# Convenience name for target.
-MainArrsac: examples/CMakeFiles/MainArrsac.dir/rule
-.PHONY : MainArrsac
-
-# fast build rule for target.
-MainArrsac/fast:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainArrsac.dir/build.make examples/CMakeFiles/MainArrsac.dir/build
-.PHONY : MainArrsac/fast
-
-# Convenience name for target.
-examples/CMakeFiles/MainNpgpe.dir/rule:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/MainNpgpe.dir/rule
-.PHONY : examples/CMakeFiles/MainNpgpe.dir/rule
-
-# Convenience name for target.
-MainNpgpe: examples/CMakeFiles/MainNpgpe.dir/rule
-.PHONY : MainNpgpe
-
-# fast build rule for target.
-MainNpgpe/fast:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainNpgpe.dir/build.make examples/CMakeFiles/MainNpgpe.dir/build
-.PHONY : MainNpgpe/fast
-
-# Convenience name for target.
-examples/CMakeFiles/MainPgpeArac.dir/rule:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/MainPgpeArac.dir/rule
-.PHONY : examples/CMakeFiles/MainPgpeArac.dir/rule
-
-# Convenience name for target.
-MainPgpeArac: examples/CMakeFiles/MainPgpeArac.dir/rule
-.PHONY : MainPgpeArac
-
-# fast build rule for target.
-MainPgpeArac/fast:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainPgpeArac.dir/build.make examples/CMakeFiles/MainPgpeArac.dir/build
-.PHONY : MainPgpeArac/fast
-
-# Convenience name for target.
-examples/CMakeFiles/MainPgpeArrsac.dir/rule:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/MainPgpeArrsac.dir/rule
-.PHONY : examples/CMakeFiles/MainPgpeArrsac.dir/rule
-
-# Convenience name for target.
-MainPgpeArrsac: examples/CMakeFiles/MainPgpeArrsac.dir/rule
-.PHONY : MainPgpeArrsac
-
-# fast build rule for target.
-MainPgpeArrsac/fast:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainPgpeArrsac.dir/build.make examples/CMakeFiles/MainPgpeArrsac.dir/build
-.PHONY : MainPgpeArrsac/fast
-
-# Convenience name for target.
 examples/CMakeFiles/main.dir/rule:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/main.dir/rule
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/main.dir/rule
 .PHONY : examples/CMakeFiles/main.dir/rule
 
 # Convenience name for target.
@@ -182,135 +112,15 @@ main: examples/CMakeFiles/main.dir/rule
 
 # fast build rule for target.
 main/fast:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
 .PHONY : main/fast
-
-MainArac.o: MainArac.cpp.o
-.PHONY : MainArac.o
-
-# target to build an object file
-MainArac.cpp.o:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainArac.dir/build.make examples/CMakeFiles/MainArac.dir/MainArac.cpp.o
-.PHONY : MainArac.cpp.o
-
-MainArac.i: MainArac.cpp.i
-.PHONY : MainArac.i
-
-# target to preprocess a source file
-MainArac.cpp.i:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainArac.dir/build.make examples/CMakeFiles/MainArac.dir/MainArac.cpp.i
-.PHONY : MainArac.cpp.i
-
-MainArac.s: MainArac.cpp.s
-.PHONY : MainArac.s
-
-# target to generate assembly for a file
-MainArac.cpp.s:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainArac.dir/build.make examples/CMakeFiles/MainArac.dir/MainArac.cpp.s
-.PHONY : MainArac.cpp.s
-
-MainArrsac.o: MainArrsac.cpp.o
-.PHONY : MainArrsac.o
-
-# target to build an object file
-MainArrsac.cpp.o:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainArrsac.dir/build.make examples/CMakeFiles/MainArrsac.dir/MainArrsac.cpp.o
-.PHONY : MainArrsac.cpp.o
-
-MainArrsac.i: MainArrsac.cpp.i
-.PHONY : MainArrsac.i
-
-# target to preprocess a source file
-MainArrsac.cpp.i:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainArrsac.dir/build.make examples/CMakeFiles/MainArrsac.dir/MainArrsac.cpp.i
-.PHONY : MainArrsac.cpp.i
-
-MainArrsac.s: MainArrsac.cpp.s
-.PHONY : MainArrsac.s
-
-# target to generate assembly for a file
-MainArrsac.cpp.s:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainArrsac.dir/build.make examples/CMakeFiles/MainArrsac.dir/MainArrsac.cpp.s
-.PHONY : MainArrsac.cpp.s
-
-MainNpgpe.o: MainNpgpe.cpp.o
-.PHONY : MainNpgpe.o
-
-# target to build an object file
-MainNpgpe.cpp.o:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainNpgpe.dir/build.make examples/CMakeFiles/MainNpgpe.dir/MainNpgpe.cpp.o
-.PHONY : MainNpgpe.cpp.o
-
-MainNpgpe.i: MainNpgpe.cpp.i
-.PHONY : MainNpgpe.i
-
-# target to preprocess a source file
-MainNpgpe.cpp.i:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainNpgpe.dir/build.make examples/CMakeFiles/MainNpgpe.dir/MainNpgpe.cpp.i
-.PHONY : MainNpgpe.cpp.i
-
-MainNpgpe.s: MainNpgpe.cpp.s
-.PHONY : MainNpgpe.s
-
-# target to generate assembly for a file
-MainNpgpe.cpp.s:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainNpgpe.dir/build.make examples/CMakeFiles/MainNpgpe.dir/MainNpgpe.cpp.s
-.PHONY : MainNpgpe.cpp.s
-
-MainPgpeArac.o: MainPgpeArac.cpp.o
-.PHONY : MainPgpeArac.o
-
-# target to build an object file
-MainPgpeArac.cpp.o:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainPgpeArac.dir/build.make examples/CMakeFiles/MainPgpeArac.dir/MainPgpeArac.cpp.o
-.PHONY : MainPgpeArac.cpp.o
-
-MainPgpeArac.i: MainPgpeArac.cpp.i
-.PHONY : MainPgpeArac.i
-
-# target to preprocess a source file
-MainPgpeArac.cpp.i:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainPgpeArac.dir/build.make examples/CMakeFiles/MainPgpeArac.dir/MainPgpeArac.cpp.i
-.PHONY : MainPgpeArac.cpp.i
-
-MainPgpeArac.s: MainPgpeArac.cpp.s
-.PHONY : MainPgpeArac.s
-
-# target to generate assembly for a file
-MainPgpeArac.cpp.s:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainPgpeArac.dir/build.make examples/CMakeFiles/MainPgpeArac.dir/MainPgpeArac.cpp.s
-.PHONY : MainPgpeArac.cpp.s
-
-MainPgpeArrsac.o: MainPgpeArrsac.cpp.o
-.PHONY : MainPgpeArrsac.o
-
-# target to build an object file
-MainPgpeArrsac.cpp.o:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainPgpeArrsac.dir/build.make examples/CMakeFiles/MainPgpeArrsac.dir/MainPgpeArrsac.cpp.o
-.PHONY : MainPgpeArrsac.cpp.o
-
-MainPgpeArrsac.i: MainPgpeArrsac.cpp.i
-.PHONY : MainPgpeArrsac.i
-
-# target to preprocess a source file
-MainPgpeArrsac.cpp.i:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainPgpeArrsac.dir/build.make examples/CMakeFiles/MainPgpeArrsac.dir/MainPgpeArrsac.cpp.i
-.PHONY : MainPgpeArrsac.cpp.i
-
-MainPgpeArrsac.s: MainPgpeArrsac.cpp.s
-.PHONY : MainPgpeArrsac.s
-
-# target to generate assembly for a file
-MainPgpeArrsac.cpp.s:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/MainPgpeArrsac.dir/build.make examples/CMakeFiles/MainPgpeArrsac.dir/MainPgpeArrsac.cpp.s
-.PHONY : MainPgpeArrsac.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.o
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -318,7 +128,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.i
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -326,7 +136,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.s
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -337,27 +147,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... MainArac"
 	@echo "... main"
-	@echo "... MainPgpeArac"
-	@echo "... MainArrsac"
-	@echo "... MainNpgpe"
-	@echo "... MainPgpeArrsac"
-	@echo "... MainArac.o"
-	@echo "... MainArac.i"
-	@echo "... MainArac.s"
-	@echo "... MainArrsac.o"
-	@echo "... MainArrsac.i"
-	@echo "... MainArrsac.s"
-	@echo "... MainNpgpe.o"
-	@echo "... MainNpgpe.i"
-	@echo "... MainNpgpe.s"
-	@echo "... MainPgpeArac.o"
-	@echo "... MainPgpeArac.i"
-	@echo "... MainPgpeArac.s"
-	@echo "... MainPgpeArrsac.o"
-	@echo "... MainPgpeArrsac.i"
-	@echo "... MainPgpeArrsac.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -372,6 +162,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

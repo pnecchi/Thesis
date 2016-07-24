@@ -1,4 +1,4 @@
-# Install script for directory: /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/examples
+# Install script for directory: /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

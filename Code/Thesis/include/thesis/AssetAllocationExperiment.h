@@ -25,6 +25,7 @@
 
 #include <armadillo>
 #include <memory>
+#include <string>
 #include <thesis/AssetAllocationTask.h>
 #include <thesis/Agent.h>
 #include <thesis/BacktestLog.h>
@@ -53,13 +54,17 @@ class AssetAllocationExperiment
          * \param numEpochs_ number of learning epochs per experiment.
          * \param numTrainingSteps_ number of training steps per epoch.
          * \param numTestSteps_ number of test steps per experiment.
+         * \param outputDir_ directory where output files will be written
+         * \param debugDir_ directory where debug files will be written
          */
         AssetAllocationExperiment(AssetAllocationTask const &task_,
                                   Agent const &agent_,
                                   size_t numExperiments_,
                                   size_t numEpochs_,
                                   size_t numTrainingSteps_,
-                                  size_t numTestSteps_);
+                                  size_t numTestSteps_,
+                                  std::string outputDir_,
+                                  std::string debugDir_);
 
         //! Default destructor
         virtual ~AssetAllocationExperiment() = default;
@@ -105,6 +110,12 @@ class AssetAllocationExperiment
         arma::vec observationCache;
         arma::vec actionCache;
         double rewardCache;
+
+        //! Output directory
+        std::string outputDir;
+
+        //! Debug directory
+        std::string debugDir;
 };
 
 #endif // ASSETALLOCATIONEXPERIMENT_H

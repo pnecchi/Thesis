@@ -42,10 +42,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis
+CMAKE_SOURCE_DIR = /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis
+CMAKE_BINARY_DIR = /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -113,71 +113,6 @@ thesis: cmake_check_build_system
 thesis/fast:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/build
 .PHONY : thesis/fast
-
-#=============================================================================
-# Target rules for targets named MainArac
-
-# Build rule for target.
-MainArac: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MainArac
-.PHONY : MainArac
-
-# fast build rule for target.
-MainArac/fast:
-	$(MAKE) -f examples/CMakeFiles/MainArac.dir/build.make examples/CMakeFiles/MainArac.dir/build
-.PHONY : MainArac/fast
-
-#=============================================================================
-# Target rules for targets named MainArrsac
-
-# Build rule for target.
-MainArrsac: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MainArrsac
-.PHONY : MainArrsac
-
-# fast build rule for target.
-MainArrsac/fast:
-	$(MAKE) -f examples/CMakeFiles/MainArrsac.dir/build.make examples/CMakeFiles/MainArrsac.dir/build
-.PHONY : MainArrsac/fast
-
-#=============================================================================
-# Target rules for targets named MainNpgpe
-
-# Build rule for target.
-MainNpgpe: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MainNpgpe
-.PHONY : MainNpgpe
-
-# fast build rule for target.
-MainNpgpe/fast:
-	$(MAKE) -f examples/CMakeFiles/MainNpgpe.dir/build.make examples/CMakeFiles/MainNpgpe.dir/build
-.PHONY : MainNpgpe/fast
-
-#=============================================================================
-# Target rules for targets named MainPgpeArac
-
-# Build rule for target.
-MainPgpeArac: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MainPgpeArac
-.PHONY : MainPgpeArac
-
-# fast build rule for target.
-MainPgpeArac/fast:
-	$(MAKE) -f examples/CMakeFiles/MainPgpeArac.dir/build.make examples/CMakeFiles/MainPgpeArac.dir/build
-.PHONY : MainPgpeArac/fast
-
-#=============================================================================
-# Target rules for targets named MainPgpeArrsac
-
-# Build rule for target.
-MainPgpeArrsac: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MainPgpeArrsac
-.PHONY : MainPgpeArrsac
-
-# fast build rule for target.
-MainPgpeArrsac/fast:
-	$(MAKE) -f examples/CMakeFiles/MainPgpeArrsac.dir/build.make examples/CMakeFiles/MainPgpeArrsac.dir/build
-.PHONY : MainPgpeArrsac/fast
 
 #=============================================================================
 # Target rules for targets named main
@@ -681,12 +616,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... thesis"
-	@echo "... MainArac"
 	@echo "... main"
-	@echo "... MainPgpeArac"
-	@echo "... MainArrsac"
-	@echo "... MainNpgpe"
-	@echo "... MainPgpeArrsac"
 	@echo "... src/AracAgent.o"
 	@echo "... src/AracAgent.i"
 	@echo "... src/AracAgent.s"

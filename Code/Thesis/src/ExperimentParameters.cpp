@@ -4,18 +4,18 @@
 #include <getpot.h>
 
 ExperimentParameters::ExperimentParameters()
-    : inputDataPath("../../../Data/Input/synthetic.csv"),
-      outputDataPath("../../../Data/Output/"),
-      debugDataPath("../../../Data/Debug/"),
-      riskFreeRate(0.0),
+    : riskFreeRate(0.0),
       deltaP(0.0),
       deltaF(0.0),
       deltaS(0.0),
       numDaysObserved(2),
       lambda(0.5),
-      alphaActor(0.005),
-      alphaCritic(0.01),
-      alphaBaseline(0.05),
+      alphaConstActor(0.02),
+      alphaExpActor(0.8),
+      alphaConstCritic(0.1),
+      alphaExpCritic(0.7),
+      alphaConstBaseline(0.2),
+      alphaExpBaseline(0.6),
       numExperiments(1),
       numEpochs(100),
       numTrainingSteps(1000),
@@ -43,18 +43,18 @@ ExperimentParameters::ExperimentParameters(std::string const &filename, bool ver
 
         // Read parameters from file using GetPot
         GetPot ifile(filename.c_str());
-        inputDataPath = ifile("inputDataPath", inputDataPath.c_str());
-        outputDataPath = ifile("outputDataPath", outputDataPath.c_str());
-        debugDataPath = ifile("debugDataPath", debugDataPath.c_str());
         riskFreeRate = ifile("riskFreeRate", riskFreeRate);
         deltaP = ifile("deltaP", deltaP);
         deltaF = ifile("deltaF", deltaF);
         deltaS = ifile("deltaS", deltaS);
         numDaysObserved = ifile("numDaysObserved", static_cast<int>(numDaysObserved));
         lambda = ifile("lambda", lambda);
-        alphaActor = ifile("alphaActor", alphaActor);
-        alphaCritic = ifile("alphaCritic", alphaCritic);
-        alphaBaseline = ifile("alphaBaseline", alphaBaseline);
+        alphaConstActor = ifile("alphaConstActor", alphaConstActor);
+        alphaExpActor = ifile("alphaExpActor", alphaExpActor);
+        alphaConstCritic = ifile("alphaConstCritic", alphaConstCritic);
+        alphaExpCritic = ifile("alphaExpCritic", alphaExpCritic);
+        alphaConstBaseline = ifile("alphaConstBaseline", alphaConstBaseline);
+        alphaExpBaseline = ifile("alphaExpBaseline", alphaExpBaseline);
         numExperiments = ifile("numExperiments", static_cast<int>(numExperiments));
         numEpochs = ifile("numEpochs", static_cast<int>(numEpochs));
         numTrainingSteps = ifile("numTrainingSteps", static_cast<int>(numTrainingSteps));
@@ -69,22 +69,22 @@ ExperimentParameters::ExperimentParameters(std::string const &filename, bool ver
 
 std::ostream &operator<<(std::ostream &os, ExperimentParameters const &params)
 {
-    std::cout << ".. inputDataPath:    " << params.inputDataPath << std::endl;
-    std::cout << ".. outputDataPath:   " << params.outputDataPath << std::endl;
-    std::cout << ".. debugDataPath:    " << params.debugDataPath << std::endl;
-    std::cout << ".. riskFreeRate:     " << params.riskFreeRate << std::endl;
-    std::cout << ".. deltaP:           " << params.deltaP << std::endl;
-    std::cout << ".. deltaF:           " << params.deltaF << std::endl;
-    std::cout << ".. deltaS:           " << params.deltaS << std::endl;
-    std::cout << ".. numDaysObserved:  " << params.numDaysObserved << std::endl;
-    std::cout << ".. lambda:           " << params.lambda << std::endl;
-    std::cout << ".. alphaActor:       " << params.alphaActor << std::endl;
-    std::cout << ".. alphaCritic:      " << params.alphaCritic << std::endl;
-    std::cout << ".. alphaBaseline:    " << params.alphaBaseline << std::endl;
-    std::cout << ".. numExperiments:   " << params.numExperiments << std::endl;
-    std::cout << ".. numEpochs:        " << params.numEpochs << std::endl;
-    std::cout << ".. numTrainingSteps: " << params.numTrainingSteps << std::endl;
-    std::cout << ".. numTestSteps:     " << params.numTestSteps << std::endl;
+    std::cout << ".. riskFreeRate:       " << params.riskFreeRate << std::endl;
+    std::cout << ".. deltaP:             " << params.deltaP << std::endl;
+    std::cout << ".. deltaF:             " << params.deltaF << std::endl;
+    std::cout << ".. deltaS:             " << params.deltaS << std::endl;
+    std::cout << ".. numDaysObserved:    " << params.numDaysObserved << std::endl;
+    std::cout << ".. lambda:             " << params.lambda << std::endl;
+    std::cout << ".. alphaConstActor:    " << params.alphaConstActor << std::endl;
+    std::cout << ".. alphaExpActor:      " << params.alphaExpActor << std::endl;
+    std::cout << ".. alphaConstCritic:   " << params.alphaConstCritic << std::endl;
+    std::cout << ".. alphaExpCritic:     " << params.alphaExpCritic << std::endl;
+    std::cout << ".. alphaConstBaseline: " << params.alphaConstBaseline << std::endl;
+    std::cout << ".. alphaExpBaseline:   " << params.alphaExpBaseline << std::endl;
+    std::cout << ".. numExperiments:     " << params.numExperiments << std::endl;
+    std::cout << ".. numEpochs:          " << params.numEpochs << std::endl;
+    std::cout << ".. numTrainingSteps:   " << params.numTrainingSteps << std::endl;
+    std::cout << ".. numTestSteps:       " << params.numTestSteps << std::endl;
 }
 
 
