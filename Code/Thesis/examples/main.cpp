@@ -29,6 +29,7 @@
 #include <string>
 #include <armadillo>
 #include <getpot.h>
+#include <memory>
 #include <thesis/ExperimentParameters.h>
 #include <thesis/MarketEnvironment.h>
 #include <thesis/AssetAllocationTask.h>
@@ -182,14 +183,15 @@ int main(int argc, char** argv)
     // 2.2) Agent |
     //------------|
 
-    Agent* agentPtr = 0;
-
     // Learning Rates
     std::cout << ".. Learning Rates - ";
     DecayingLearningRate baselineLearningRate(alphaConstBaseline, alphaExpBaseline);
     DecayingLearningRate criticLearningRate(alphaConstCritic, alphaExpCritic);
     DecayingLearningRate actorLearningRate(alphaConstActor, alphaExpActor);
     std::cout << "done" << std::endl;
+
+    // Pointer to Agent for poymorphic object handling
+    std::shared_ptr<Agent> agentPtr;
 
     if (algorithm == "ARAC")
     {
@@ -216,15 +218,13 @@ int main(int argc, char** argv)
 
         // ARAC Agent
         std::cout << ".. ARAC Agent - ";
-        ARACAgent agent(actor,
-                        critic,
-                        baselineLearningRate,
-                        criticLearningRate,
-                        actorLearningRate,
-                        lambda);
+        agentPtr = std::make_shared<ARACAgent>(actor,
+                                               critic,
+                                               baselineLearningRate,
+                                               criticLearningRate,
+                                               actorLearningRate,
+                                               lambda);
         std::cout << "done" << std::endl;
-
-        agentPtr = &agent;
     }
     else if (algorithm == "PGPE")
     {
@@ -252,15 +252,14 @@ int main(int argc, char** argv)
 
         // ARAC Agent
         std::cout << ".. ARAC Agent - ";
-        ARACAgent agent(actor,
-                        critic,
-                        baselineLearningRate,
-                        criticLearningRate,
-                        actorLearningRate,
-                        lambda);
+        agentPtr = std::make_shared<ARACAgent> (actor,
+                                                critic,
+                                                baselineLearningRate,
+                                                criticLearningRate,
+                                                actorLearningRate,
+                                                lambda);
         std::cout << "done" << std::endl;
 
-        agentPtr = &agent;
     }
     else if (algorithm == "NPGPE")
     {
@@ -271,13 +270,11 @@ int main(int argc, char** argv)
 
         // NPGPE Agent
         std::cout << ".. NPGPE Agent - ";
-        NPGPEAgent agent(controller,
-                         baselineLearningRate,
-                         actorLearningRate,
-                         lambda);
+        agentPtr = std::make_shared<NPGPEAgent> (controller,
+                                                 baselineLearningRate,
+                                                 actorLearningRate,
+                                                 lambda);
         std::cout << "done" << std::endl;
-
-        agentPtr = &agent;
     }
     else if (algorithm == "RSARAC")
     {
@@ -306,16 +303,15 @@ int main(int argc, char** argv)
 
         // ARSSAC Agent
         std::cout << ".. ARRSAC Agent - ";
-        ARRSACAgent agent(actor,
-                          criticV,
-                          criticU,
-                          baselineLearningRate,
-                          criticLearningRate,
-                          actorLearningRate,
-                          lambda);
+        agentPtr = std::make_shared<ARRSACAgent> (actor,
+                                                  criticV,
+                                                  criticU,
+                                                  baselineLearningRate,
+                                                  criticLearningRate,
+                                                  actorLearningRate,
+                                                  lambda);
         std::cout << "done" << std::endl;
 
-        agentPtr = &agent;
     }
     else if (algorithm == "RSPGPE")
     {
@@ -345,16 +341,15 @@ int main(int argc, char** argv)
 
         // ARSSAC Agent
         std::cout << ".. ARRSAC Agent - ";
-        ARRSACAgent agent(actor,
-                          criticV,
-                          criticU,
-                          baselineLearningRate,
-                          criticLearningRate,
-                          actorLearningRate,
-                          lambda);
+        agentPtr = std::make_shared<ARRSACAgent> (actor,
+                                                  criticV,
+                                                  criticU,
+                                                  baselineLearningRate,
+                                                  criticLearningRate,
+                                                  actorLearningRate,
+                                                  lambda);
         std::cout << "done" << std::endl;
 
-        agentPtr = &agent;
     }
     else if (algorithm == "RSNPGPE")
     {
@@ -365,13 +360,12 @@ int main(int argc, char** argv)
 
         // NPGPE Agent
         std::cout << ".. NPGPE Agent - ";
-        RiskSensitiveNPGPEAgent agent(controller,
-                                      baselineLearningRate,
-                                      actorLearningRate,
-                                      lambda);
+        agentPtr = std::make_shared<RiskSensitiveNPGPEAgent> (controller,
+                                                              baselineLearningRate,
+                                                              actorLearningRate,
+                                                              lambda);
         std::cout << "done" << std::endl;
 
-        agentPtr = &agent;
     }
     else
     {
@@ -385,7 +379,7 @@ int main(int argc, char** argv)
 
     std::cout << ".. Asset allocation experiment - ";
     AssetAllocationExperiment experiment(task,
-                                         agentPtr,
+                                         *agentPtr,
                                          numExperiments,
                                          numEpochs,
                                          numTrainingSteps,
@@ -403,6 +397,10 @@ int main(int argc, char** argv)
 
 	return 0;
 }
+
+
+
+
 
 
 
