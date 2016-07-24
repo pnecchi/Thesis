@@ -349,6 +349,10 @@
 {\sc D.~Silver, G.~Lever, N.~Heess, T.~Degris, D.~Wierstra, and M.~Riedmiller},
   {\em Deterministic policy gradient algorithms}, in ICML, 2014.
 
+\bibitem{sobel1982variance}
+{\sc M.~J. Sobel}, {\em The variance of discounted markov decision processes},
+  Journal of Applied Probability,  (1982), pp.~794--802.
+
 \bibitem{sutton1998introduction}
 {\sc R.~S. Sutton and A.~G. Barto}, {\em Introduction to reinforcement
   learning}, vol.~135, MIT Press Cambridge, 1998.

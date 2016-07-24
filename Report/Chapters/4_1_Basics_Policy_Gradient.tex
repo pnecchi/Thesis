@@ -1,0 +1,121 @@
+Policy gradient methods directly store and iteratively improve a parametric approximation of the optimal policy. This policy is commonly referred to as an $\emph{actor}$ and methods that directly approximate the policy without exploiting an approximation of the optimal value function are called $\emph{actor-only}$. Algorithms that combine an approximation of the optimal policy with an approximation of the value function are commonly called $\emph{actor-critic}$ methods.\\
+As discussed in Chapter \ref{ch:discrete_time_stochastic_optimal_control}, an optimal policy can be obtained by simply acting greedily with respect to the optimal action-value function. However, in large or continuous action spaces, this leads to a complex optimization problem that is computationally expensive to solve. Therefore, it can be beneficial to store an explicit estimation of the optimal policy from which we can select actions. Policy gradient methods have other advantages compared to standard value-based approaches. In many applications, a good policy has a more compact		representation than the value function so that it may be easier to approximate. Moreover, the policy parameterization can be chosen so as to be relevant for the task and to directly incorporate prior knowledge. Another advantage is that these methods can learn stochastic policies and not only deterministic ones, which might be useful in multiplayer frameworks or in partially observable environments. Finally, these methods have better convergence properties and are guaranteed to converge at least to a local optimum, which may be good enough in practice. On the other hand, policy gradient methods are typically characterized by a large variance which may hinder the converge speed.\\
+In the following sections, we present the basics of policy gradient methods closely following the thorough overviews provided in \cite{peters2008reinforcement}. Then, we discuss some state-of-the-art policy gradient algorithms and we propose some original extensions to these methods. 
+
+\section{Basics of Policy Gradient Methods}
+In policy gradient methods, the optimal policy is approximated using a parametrized 
+policy $\pi: \S \times \calA \times \Theta \to \R$ such that, given a parameter vector $\theta \in \Theta \subseteq \R^{D_\theta}$, $\pi(s, B; \theta) = \pi_\theta(s, B)$ gives the probability of selecting an action in $B \in \calA$ when the system is in state $s \in \S$.
+The general goal of policy optimization in reinforcement learning is to
+optimize the policy parameters $\theta \in \Theta$ so as to maximize a certain
+objective function $J: \Theta \to \R$
+\begin{equation*}
+	\theta^* = \argmax_{\theta \in \Theta} J(\theta)
+\end{equation*}
+In the following, we will focus on gradient-based and model-free methods that exploit
+the sequential structure of the the reinforcement learning problem. The idea of
+policy gradient algorithms is to update the policy parameters using the gradient ascent direction of the objective function
+\begin{equation}
+	\theta^{k+1} = \theta^k + \alpha_k \nabla_\theta J\left(\theta^k\right)
+\end{equation}
+where $\{\alpha_k\}_{k\geq 0}$ is a sequence of learning rates. Typically, the
+gradient of the objective function is not known and its approximation is the key component of every policy gradient algorithm, a general setup of which is schematized in Algorithm \ref{algo:policy_gradient}. It is a well-know result from stochastic optimization \cite{kushner2003stochastic} that, if the gradient estimate is unbiased and the learning rates satisfy the \emph{Robbins-Monro conditions}
+\begin{equation}
+	\sum_{k=0}^\infty \alpha_k = \infty \;\;\;\;\;\; \sum^{\infty}_{k=0}
+	\alpha_k^2 < \infty 
+\end{equation}
+the learning process is guaranteed to converge at least to a local optimum of
+the objective function. Before describing various methods to approximate the gradient, let us give an overview of some standard objective functions and the situation in which they are commonly used. 
+
+\begin{algorithm}[h!]
+	\caption{General setup for a policy gradient algorithm.}
+	\label{algo:policy_gradient}
+	\begin{algorithmic}[1]
+		\Require Initial parameters $\theta_0$, learning rate $\{\alpha_k\}$
+		\Ensure Approximation of the optimal policy $\pi_*$
+		\Repeat
+			\State Approximate policy gradient $\widehat{g} \approx \nabla_\theta J\left(\theta^k\right)$
+			\State Update parameters using gradient ascent $\theta^{k+1} = \theta^k + \alpha_k \widehat{g}$
+			\State $k \leftarrow k + 1$
+		\Until{converged}
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{Risk-Neutral Framework}
+In the risk-neutral setting, the agent is only interested in maximizing his reward, without considering the risk he needs to take on to achieve it. In an episodic environment where the system always starts from an initial state $s_0$, the typical objective function is the start value.
+\begin{definition}[Start Value]
+	The start value is the expected return that can be obtained starting from the start state $s_0 \in \S$ and following policy $\pi_\theta$
+	\begin{equation}
+		J_{\text{start}}(\theta) = V_{\pi_\theta}(s_0) = \E[\pi_\theta]{G_0\ |\
+		   S_0 = s_0}
+	\end{equation}
+\end{definition}
+In a continuing environment, where no terminal state exists and the task might go on forever, it is common to use either the average value or the average reward per time step.
+\begin{definition}[Average Value]
+	The average value is the expected value that can be obtained following policy $\pi_\theta$ 
+	\begin{equation}
+		J_{\text{avV}}(\theta) = \E[S \sim d^{\theta}]{V_{\pi_\theta}(S)} = \int_\S
+		d^{\theta}(s) V_{\pi_\theta}(s) ds
+	\end{equation}
+	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$.	
+\end{definition}
+\begin{definition}[Average Reward per Time Step]
+	The average reward per time step is the expected reward that can be
+	obtained over a single time step by following policy $\pi_\theta$ 
+	\begin{equation}
+		J_{\text{avR}}(\theta) = \rho(\theta) = \E[\substack{S \sim d^{\theta}\\A \sim \pi_\theta}]{\calR(S,A)} 
+		= \int_\S d^{\theta}(s) \int_\A \pi_\theta(s,a) \calR(s,a) da ds
+	\end{equation}
+	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$.
+\end{definition}
+
+\subsection{Risk-Sensitive Framework}
+In the risk-sensitive framework, in addition to maximizing his reward, the agent also wants to control the risk he takes on to achieve it. Thus, it is necessary to introduce a function $\Lambda: \Theta \to \R$ such that $\Lambda(\theta)$ measures the risk associated with the policy $\pi_\theta$. In an episodic framework where the system always starts from the same initial state $s_0$, the variance of the total return can be used \cite{tamar2012policy}
+\begin{definition}[Start Variance]
+	The start variance is the variance of the return that can be obtained starting from the start state $s_0 \in \S$ and following policy $\pi_\theta$
+	\begin{equation}
+		\Lambda_{\text{start}}(\theta) = \Var[\pi_\theta]{G_0\ |\ S_0 = s_0}
+			= U_{\pi_\theta} (s_0) - V_{\pi_\theta} (s_0)^2 
+	\end{equation}
+\end{definition}
+In a continuing environment, we might consider the long-run variance \cite{prashanth2014actor} defined in Section \ref{sec:risk_sensitive_formulation}
+\begin{equation}
+	\begin{split}
+		\Lambda(\theta) &= \lim_{T \to \infty} \frac{1}{T} \E[\pi_\theta]{
+		\sum^{T-1}_{t=0} (R_{t+1} - \rho(\theta)^2} = \eta(\theta) - \rho(\theta)^2
+	\end{split}
+\end{equation}
+In order to formalize this trade-off between reward and risk from a mathematical point of view, we borrow from the financial literature two standard risk-sensitive performance measures: the mean-variance criterion \cite{markowitz1952portfolio} and the Sharpe ratio \cite{sharpe1994sharpe}.
+\begin{definition}[Mean-Variance Criterion]
+	The mean-variance criterion is defined as 
+	\begin{equation}
+		J_\text{MV}(\theta) = J(\theta) - \chi \Lambda(\theta)
+	\end{equation}
+	where $\chi \in \R$ is a constant that controls the reward-risk trade-off. 
+\end{definition} 
+
+\begin{definition}[Sharpe Ratio]
+	The Sharpe ratio is defined as 
+	\begin{equation}
+		\Sh(\theta) = \frac{J(\theta)}{\sqrt{\Lambda(\theta)}}
+	\end{equation}
+\end{definition} 
+In a risk-sensitive policy gradient algorithm, we try to approximate the optimal parameters that maximize these objective functions by updating the parameters following the gradient ascent directions. In the average-reward formulation, the ascent directions are given by 
+\begin{equation}
+	\nabla_\theta J_{\text{MV}}(\theta) = \nabla_\theta \rho(\theta) - \chi \nabla_\theta \Lambda_(\theta)
+\end{equation}
+for the mean-variance criterion, where 
+\begin{equation}
+	\nabla_\theta \Lambda(\theta) =	\nabla_\theta \eta(\theta) - 2 \rho(\theta) \nabla_\theta \rho(\theta)
+\end{equation} 
+and by 
+\begin{equation} 
+	\nabla_\theta \Sh(\theta) = \frac{\eta(\theta) \nabla_\theta \rho(\theta) - \frac{1}{2} \rho(\theta) \nabla_\theta \eta(\theta)}{\Lambda(\theta) \sqrt{\Lambda(\theta)}}
+\end{equation}
+for the Sharpe ratio. Hence, in the risk-sensitive framework it is necessary to estimate to different gradients: $\nabla_\theta \rho(\theta)$ and $\nabla_\theta \eta(\theta)$. Let us notice that the equivalent expressions for the episodic setting can be obtained by replacing $\rho(\theta)$ (resp. $\eta(\theta)$) with $V_\theta(s_0)$ (resp. $U_\theta(s_0)$). In the next sections, we will discuss several techniques to estimate these gradients.
+
+\section{Finite Differences}
+The most straightforward way to estimate the objective function gradient consists in replacing the partial derivatives with the corresponding finite differences. In other words, the $k$-th gradient component is approximated by
+\begin{equation}
+	\frac{\partial J(\theta)}{\partial\theta_k} \approx \frac{J(\theta + \epsilon e_k) - J(\theta)}{\epsilon}
+\end{equation}
+where $\epsilon$ is a small constant and $e_k \in \R^{D_\theta}$ is the $k$-th element of the canonical basis. Hence, to compute the gradient it is sufficient to estimate the objective function for $D_\theta + 1$ different parameters combinations. Since the objective function is unknown, it must be estimated from sample trajectories simulated following the policies associated to the parameterizations appearing in the finite differences. For this reason, this method is computationally demanding and the gradient estimate obtained in this way is extremely noisy, which may slow down or even prevent the convergence of the algorithm. Still, this approach is sometimes effective and works for arbitrary, even non-differentiable, policies. Moreover, finite differences are often used to check gradient estimates during debugging.

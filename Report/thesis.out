@@ -6,44 +6,57 @@
 \BOOKMARK [1][-]{section.2.1}{Sequential Decision Problems}{chapter.2}% 6
 \BOOKMARK [1][-]{section.2.2}{Markov Decision Processes}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.3}{Policies}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.4}{Discounted Reward Formulation}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.5}{Average Reward Formulation}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.6}{Risk-Sensitive Formulation}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.7}{Policy Evaluation and Policy Iteration}{chapter.2}% 12
-\BOOKMARK [0][-]{chapter.3}{Reinforcement Learning}{}% 13
-\BOOKMARK [1][-]{section.3.1}{The Reinforcement Learning Problem}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.2}{Model-Free RL Methods}{chapter.3}% 15
-\BOOKMARK [2][-]{subsection.3.2.1}{Model Approximation}{section.3.2}% 16
-\BOOKMARK [2][-]{subsection.3.2.2}{Value Approximation}{section.3.2}% 17
-\BOOKMARK [2][-]{subsection.3.2.3}{Policy Approximation}{section.3.2}% 18
-\BOOKMARK [0][-]{chapter.4}{Policy Gradient}{}% 19
-\BOOKMARK [1][-]{section.4.1}{Basics of Policy Gradient Methods}{chapter.4}% 20
-\BOOKMARK [2][-]{subsection.4.1.1}{Risk-Neutral Framework}{section.4.1}% 21
-\BOOKMARK [2][-]{subsection.4.1.2}{Risk-Sensitive Framework}{section.4.1}% 22
-\BOOKMARK [1][-]{section.4.2}{Finite Differences}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.3}{Likelihood Ratio Methods}{chapter.4}% 24
-\BOOKMARK [2][-]{subsection.4.3.1}{Monte Carlo Policy Gradient}{section.4.3}% 25
-\BOOKMARK [2][-]{subsection.4.3.2}{GPOMDP}{section.4.3}% 26
-\BOOKMARK [2][-]{subsection.4.3.3}{Risk-Sensitive Monte Carlo Policy Gradient}{section.4.3}% 27
-\BOOKMARK [2][-]{subsection.4.3.4}{Stochastic Policies}{section.4.3}% 28
-\BOOKMARK [2][-]{subsection.4.3.5}{Policy Gradient with Parameter Exploration}{section.4.3}% 29
-\BOOKMARK [1][-]{section.4.4}{Risk-Neutral Policy Gradient Theorem}{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.4.1}{Theorem Statement and Proof}{section.4.4}% 31
-\BOOKMARK [2][-]{subsection.4.4.2}{GPOMDP}{section.4.4}% 32
-\BOOKMARK [2][-]{subsection.4.4.3}{Actor-Critic Policy Gradient}{section.4.4}% 33
-\BOOKMARK [2][-]{subsection.4.4.4}{Compatible Function Approximation}{section.4.4}% 34
-\BOOKMARK [2][-]{subsection.4.4.5}{Natural Policy Gradient}{section.4.4}% 35
-\BOOKMARK [1][-]{section.4.5}{Risk-Sensitive Policy Gradient Theorem}{chapter.4}% 36
-\BOOKMARK [2][-]{subsection.4.5.1}{Risk-Sensitive Actor-Critic Algorithm}{section.4.5}% 37
-\BOOKMARK [1][-]{section.4.6}{Parameter-Based Policy Gradient Theorem}{chapter.4}% 38
-\BOOKMARK [2][-]{subsection.4.6.1}{Risk-Neutral Setting}{section.4.6}% 39
-\BOOKMARK [2][-]{subsection.4.6.2}{Risk-Sensitive Setting}{section.4.6}% 40
-\BOOKMARK [2][-]{subsection.4.6.3}{Natural Policy Gradient}{section.4.6}% 41
-\BOOKMARK [0][-]{chapter.5}{Asset Allocation}{}% 42
-\BOOKMARK [1][-]{section.5.1}{Reward Function}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.2}{States}{chapter.5}% 44
-\BOOKMARK [1][-]{section.5.3}{Actions}{chapter.5}% 45
-\BOOKMARK [0][-]{chapter.6}{Numerical Results}{}% 46
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 47
-\BOOKMARK [1][-]{section.7.1}{Summary}{chapter.7}% 48
-\BOOKMARK [1][-]{section.7.2}{Further Developments}{chapter.7}% 49
+\BOOKMARK [1][-]{section.2.4}{Risk-Neutral Framework}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.4.1}{Discounted Reward Formulation}{section.2.4}% 10
+\BOOKMARK [2][-]{subsection.2.4.2}{Average Reward Formulation}{section.2.4}% 11
+\BOOKMARK [1][-]{section.2.5}{Risk-Sensitive Framework}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.5.1}{Discounted Reward Formulation}{section.2.5}% 13
+\BOOKMARK [2][-]{subsection.2.5.2}{Average Reward Formulation}{section.2.5}% 14
+\BOOKMARK [1][-]{section.2.6}{Dynamic Programming Algorithms}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.6.1}{Value Iteration}{section.2.6}% 16
+\BOOKMARK [2][-]{subsection.2.6.2}{Policy Iteration}{section.2.6}% 17
+\BOOKMARK [0][-]{chapter.3}{Reinforcement Learning}{}% 18
+\BOOKMARK [1][-]{section.3.1}{The Reinforcement Learning Problem}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.2}{Model-Free RL Methods}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.2.1}{Model Approximation}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.2}{Value Approximation}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.3}{Policy Approximation}{section.3.2}% 23
+\BOOKMARK [0][-]{chapter.4}{Policy Gradient}{}% 24
+\BOOKMARK [1][-]{section.4.1}{Basics of Policy Gradient Methods}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.1.1}{Risk-Neutral Framework}{section.4.1}% 26
+\BOOKMARK [2][-]{subsection.4.1.2}{Risk-Sensitive Framework}{section.4.1}% 27
+\BOOKMARK [1][-]{section.4.2}{Finite Differences}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.3}{Likelihood Ratio Methods}{chapter.4}% 29
+\BOOKMARK [2][-]{subsection.4.3.1}{Monte Carlo Policy Gradient}{section.4.3}% 30
+\BOOKMARK [2][-]{subsection.4.3.2}{GPOMDP}{section.4.3}% 31
+\BOOKMARK [2][-]{subsection.4.3.3}{Risk-Sensitive Monte Carlo Policy Gradient}{section.4.3}% 32
+\BOOKMARK [2][-]{subsection.4.3.4}{Stochastic Policies}{section.4.3}% 33
+\BOOKMARK [2][-]{subsection.4.3.5}{Policy Gradient with Parameter Exploration}{section.4.3}% 34
+\BOOKMARK [1][-]{section.4.4}{Risk-Neutral Policy Gradient Theorem}{chapter.4}% 35
+\BOOKMARK [2][-]{subsection.4.4.1}{Theorem Statement and Proof}{section.4.4}% 36
+\BOOKMARK [2][-]{subsection.4.4.2}{GPOMDP}{section.4.4}% 37
+\BOOKMARK [2][-]{subsection.4.4.3}{Actor-Critic Policy Gradient}{section.4.4}% 38
+\BOOKMARK [2][-]{subsection.4.4.4}{Compatible Function Approximation}{section.4.4}% 39
+\BOOKMARK [2][-]{subsection.4.4.5}{Natural Policy Gradient}{section.4.4}% 40
+\BOOKMARK [1][-]{section.4.5}{Risk-Sensitive Policy Gradient Theorem}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.5.1}{Risk-Sensitive Actor-Critic Algorithm}{section.4.5}% 42
+\BOOKMARK [1][-]{section.4.6}{Parameter-Based Policy Gradient Theorem}{chapter.4}% 43
+\BOOKMARK [2][-]{subsection.4.6.1}{Risk-Neutral Setting}{section.4.6}% 44
+\BOOKMARK [2][-]{subsection.4.6.2}{Risk-Sensitive Setting}{section.4.6}% 45
+\BOOKMARK [2][-]{subsection.4.6.3}{Natural Policy Gradient}{section.4.6}% 46
+\BOOKMARK [0][-]{chapter.5}{Financial Applications of Reinforcement Learning}{}% 47
+\BOOKMARK [1][-]{section.5.1}{Bibliographical Survey}{chapter.5}% 48
+\BOOKMARK [1][-]{section.5.2}{Asset Allocation}{chapter.5}% 49
+\BOOKMARK [2][-]{subsection.5.2.1}{Reward Function}{section.5.2}% 50
+\BOOKMARK [2][-]{subsection.5.2.2}{States}{section.5.2}% 51
+\BOOKMARK [2][-]{subsection.5.2.3}{Actions}{section.5.2}% 52
+\BOOKMARK [0][-]{chapter.6}{Numerical Results for the Asset Allocation Problem}{}% 53
+\BOOKMARK [1][-]{section.6.1}{Single Risky Asset Case}{chapter.6}% 54
+\BOOKMARK [2][-]{subsection.6.1.1}{Simulated Data}{section.6.1}% 55
+\BOOKMARK [2][-]{subsection.6.1.2}{Historic Data}{section.6.1}% 56
+\BOOKMARK [1][-]{section.6.2}{Multiple Risky Asset Case}{chapter.6}% 57
+\BOOKMARK [2][-]{subsection.6.2.1}{Simulated Data}{section.6.2}% 58
+\BOOKMARK [2][-]{subsection.6.2.2}{Historic Data}{section.6.2}% 59
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 60
+\BOOKMARK [1][-]{section.7.1}{Summary}{chapter.7}% 61
+\BOOKMARK [1][-]{section.7.2}{Further Developments}{chapter.7}% 62

@@ -116,13 +116,13 @@ following the mechanism described above.
 	$H_\pi = {\{(S_t, A_t)\}}_{t\geq 0}$ with values in $\S \times \A$, defined
 	on some probability space $(\Omega, \mathcal{F}, \mathbb{P})$, such that for 
 	$t = 0, 1, \ldots$
-	\begin{equation}
+	\begin{equation*}
 		\begin{cases}
 			S_0 = s_0\\
 			A_t \sim \pi(S_t, \cdot)\\
 			S_{t+1} \sim \calP(S_t, A_t, \cdot)\\
 		\end{cases}
-	\end{equation}
+	\end{equation*}
 	we will denote by $(\H, \calH)$ the measurable space of all possible
 	histories. 
 \end{definition}
@@ -134,26 +134,29 @@ Moreover, we observe that
 		  reward process $<\S, \calP_\pi, \calR_\pi, \gamma>$
 \end{enumerate}
 where we denoted 
-\begin{equation}
+\begin{equation*}
 	\begin{split}
 		\calP_\pi(s, s') &= \int_\A \pi(s, a) \calP(s, a, s') da\\
 		\calR_\pi(s) &= \int_\A \pi(s, a) \calR(s, a) da\\
 	\end{split}
-\end{equation}
+\end{equation*}
 In stochastic optimal control, the goal of the agent is to find a policy that
 maximizes a measure of the agent's long-term performance. In the next sections
 we discuss some objective functions that are commonly used in the infinite
 horizon framework. 
 
-\section{Discounted Reward Formulation}
+\section{Risk-Neutral Framework}
+In the risk-neutral setting, the agent is only interested in maximizing his reward, without considering the risk he needs to take on to achieve it. In an infinite horizon task, the agent's performance is typically measured either as the total discounted reward or as the average reward obtained at each time step. These two approaches are radically different both from a theoretical and an algorithmic point of view. For this reason, they will be always treated separately.  
+
+\subsection{Discounted Reward Formulation}
 In the discounted reward formulation, the agent's performance is measured as
 the expected return obtained following a specific policy.
 \begin{definition}[Return]
 	The return is the total discounted reward obtained by the agent starting 
 	from $t$  
-	\begin{equation}
+	\begin{equation*}
 		G_t = \sum^{\infty}_{t=0} \gamma^t R_{t+k+1} 
-	\end{equation}
+	\end{equation*}
 	where $0 < \gamma < 1$ is the discount factor.
 \end{definition}
 In some domains, such as economics, discounting can be used to represent
@@ -175,11 +178,7 @@ time step. Since the return is stochastic, we consider its expected value.
 		V_\pi(s) = \E[\pi]{G_t|S_t = s}
 	\end{equation}
 \end{definition}
-where $\mathbb{E}_{\pi}$ indicates that all the actions are selected according
-to policy $\pi$. The state-value function measures how good it is for the agent
-to be in a given state and follow a certain policy. Similarly, we can introduce
-an action-value function that measures how good it is for the agent to be in a 
-state, take a certain action and then follow the policy. 
+where the subscript in $\mathbb{E}_{\pi}$ indicates that all the actions are selected according to policy $\pi$. The state-value function measures how good it is for the agent to be in a given state and follow a certain policy. Similarly, we can introduce an action-value function that measures how good it is for the agent to be in a state, take a certain action and then follow the policy. 
 \begin{definition}[Action-Value Function]
 	The action-value function $Q_\pi: \S \times \A \to \R$ is the expected 
 	return that can be obtained starting from a state, taking an action and
@@ -192,7 +191,7 @@ We have the following relationship between $V_\pi$ and $Q_\pi$
 \begin{equation}
 	V_\pi(s) = \int_\A \pi(s,a) Q_\pi(s,a) da
 \end{equation}
-Almost all reinforcement learning algorithms are designed for estimating these 
+Almost all reinforcement learning algorithms are designed to estimate these 
 value functions and are typically based on the Bellman equations.
 \begin{proposition}[Bellman Expectation Equations]
 	\begin{equation}
@@ -200,31 +199,27 @@ value functions and are typically based on the Bellman equations.
 		\label{eq:bellman_expectation_eq_V}
 	\end{equation}
 	\begin{equation}
-		\begin{split}
-			Q_\pi(s,a) &= \calR(s,a) + \gamma T_a V_\pi(s)\\
-					   &= \calR(s,a) + \gamma \int_\S \calP(s,a,s') \int_\A
-			\pi(s',a') Q_\pi(s', a') da' ds'
+			Q_\pi(s,a) = \calR(s,a) + \gamma T_a V_\pi(s)
 			\label{eq:bellman_expectation_eq_Q}
-		\end{split}
 	\end{equation}
 	where we denoted by $T_a$ (resp. $T_\pi$) the transition operator for action 
 	$a$ (resp. for policy $\pi$)
-	\begin{equation}
+	\begin{equation*}
 		\begin{split}
-			T_a V(s) &= \int_\S \calP(s, a, s') V_\pi(s') ds'\\
-			T_\pi V(s) &= \int_\A \pi(s,a) \int_\S \calP(s,a,s') V_\pi(s') ds'
+			T_a F(s) &= \E{F(S_{t+1})|S_t = s, A_t = a} = \int_\S \calP(s, a, s') F(s') ds'\\
+			T_\pi F(s) &= \E[\pi]{F(S_{t+1})|S_t = s} = \int_\A \pi(s,a) \int_\S \calP(s,a,s') F(s') ds'
 			da\\ 
 		\end{split}
-	\end{equation}
+	\end{equation*}
 \end{proposition}
 If we introduce the Bellman expection operator $B_\pi$, defined as 
-\begin{equation}
+\begin{equation*}
 	B_\pi V_\pi(s) = \calR_\pi(s) + \gamma T_\pi V_\pi(s)	
-\end{equation}
+\end{equation*}
 Then Eq. (\ref{eq:bellman_expectation_eq_V}) can be written as a fixed-point equation
-\begin{equation}
+\begin{equation*}
 	V_\pi(s) = B_\pi V_\pi(s)
-\end{equation}
+\end{equation*}
 which, under some simple assumptions on the reward functions, admits a unique
 solution by the contraction mapping theorem. A similar argument applies to Eq.
 (\ref{eq:bellman_expectation_eq_Q}). The agent's goal is to select a policy
@@ -253,7 +248,7 @@ The optimal value functions satisfy the following Bellman equations.
 	\begin{equation}
 		\begin{split}
 			Q_*(s,a) &= \calR(s,a) + \gamma T_a V_*(s)\\
-					 &= \calR(s,a) + \gamma \int_\S \calP(s,a,s') \sup_a Q_*(s', a') ds'
+					 &= \calR(s,a) + \gamma \int_\S \calP(s,a,s') \sup_{a'} Q_*(s', a') ds'
 		\end{split}
 	\end{equation}
 \end{proposition}
@@ -278,13 +273,12 @@ following result
 \end{theorem}
 An optimal policy can be found by acting greedily with respect to $Q_*$, i.e. in each state $s$ the agent selects the action that maximizes the action-value function
 \begin{equation}
-	a = \argsup_a Q_*(s,a)
+	a_* = \argsup_a Q_*(s,a)
 \end{equation}
 We see that this policy is deterministic and only depends on the current state
-of the system. The Bellman equations provide the basis for the \emph{value iteration} and \emph{policy iteration} algorithms \cite{sutton1998introduction}, which however require knowledge of the Markov transition kernel.
+of the system.
 
-
-\section{Average Reward Formulation}
+\subsection{Average Reward Formulation}
 Most of the research in RL has studied a problem formulation where agents
 maximize the cumulative sum of rewards. However, this approach cannot handle
 infinite horizon tasks, where there are no absorbing goal states, without
@@ -341,22 +335,91 @@ action-value function
 The value functions satisfy the following Bellman equation 
 \begin{proposition}[Bellman Expectation Equations]
 	\begin{equation}
-		\rho_\pi + V_\pi(s) = \calR_\pi(s) + T_\pi V_\pi(s)
+		V_\pi(s) = \calR_\pi(s) - \rho_\pi + T_\pi V_\pi(s)
 	\end{equation}
 	\begin{equation}
-		\begin{split}
-			\rho_\pi + Q_\pi(s,a) &= \calR(s,a) + T_a V_\pi(s)\\
-			&= \calR(s,a) + \int_{\S} \calP(s,a,s') \int_\A \pi(s',a') Q_\pi(s',a') da' ds'
-		\end{split}
+			Q_\pi(s,a) = \calR(s,a) - \rho_\pi +  + T_a V_\pi(s)
 	\end{equation}
 \end{proposition}
 Again, by introducing opportune Bellman operators, these equations can be rewritten as fixed-point equations. In the discrete case, where the transition operator correspond to matrices, these Bellman equations become linear systems that can be solved to obtain the value functions. 
 
-\section{Risk-Sensitive Formulation}
+\section{Risk-Sensitive Framework}
 \label{sec:risk_sensitive_formulation}
 In many application, in addition to maximizing the average reward, the agent
-may want to control risk by minimizing some measure of variability in rewards.
-In \cite{prashanth2014actor}, the authors consider the long-run variance of $\pi$
+may want to control risk by minimizing some measure of variability in rewards. In the risk-sensitive framework, the goal of the agent is to find the policy that optimally solves the trade-off between reward and risk. Although risk-sensitive sequential decision-making has a long history in operations research and finance, it has only recently grabbed the attention of the machine learning community. Hence, the literatures offers many reference which approach the risk-sensitive control problem from the traditional stochastic optimal control perspective. On the other hand, there are only few references that attack the problem in the reinforcement learning setting. Again, we can consider the discounted formulation or the average formulation.    
+
+\subsection{Discounted Reward Formulation}
+A standard way to measure the risk associated with a policy $\pi$ is the variance of the total discounted reward obtained starting from a given state $s$
+\begin{equation}
+	\Lambda_\pi(s) = \Var[\pi]{G_t | S_t = s}
+\end{equation}
+This approach is the one considered in \cite{sobel1982variance}.
+\begin{definition}[Square State-Value Function]
+	The square state-value function $U_\pi(s)$ is the second moment of returns that can be obtained starting from a state $s$ and following policy $\pi$
+	\begin{equation}
+		U_\pi(s) = \E[\pi]{G_t^2 | S_t = s}
+	\end{equation}
+\end{definition}
+Then, the variance can be decomposed as 
+\begin{equation}
+	\Lambda_\pi(s) = U_\pi(s) - V_\pi(s)^2
+\end{equation}
+We would like to obtain a Bellman expectation equation for $U_\pi(s)$, in order to piggyback on the discussion about the standard state-value function. Let us introduce the square reward function 
+\begin{definition}[Square Reward Function]
+	The square reward function $\calM(s,a)$ is the second moment of the reward that can be obtained in state $s$ when taking action $a$
+	\begin{equation}
+		\calM(s,a) = \E[\pi]{R_{t+1}^2 | S_t = s, A_t = a}
+	\end{equation}
+	Let us also define 
+	\begin{equation}
+		\calM_\pi(s) = \E[\pi]{R_{t+1}^2|S_t = s} = \int_\A \pi(s,a) \calM(s,a) da
+	\end{equation}
+\end{definition}
+Then, it is easy to show that the square state-value function satisfies the following Bellman equation 
+\begin{proposition}[Bellman Expectation Equation]
+\begin{equation}
+	U_\pi(s) = \mathcal{K}_\pi(s) + \gamma^2 T_\pi U_\pi(s)
+\end{equation}
+where 
+\begin{equation}
+\label{eq:synthetic_reward_function}
+	\mathcal{K}_\pi(s) = \calM_\pi(s) + 2\gamma \E[\pi]{R_{t+1} G_{t+1} | S_t = s}
+\end{equation}
+\end{proposition}
+This equation is analogous to the Bellman expectation equation for the state-value function, with a synthetic reward function $\mathcal{K}_\pi(s)$ and a discount factor $\gamma^2$. However, this equation is completely useless in practice because the second term in Eq. (\ref{eq:synthetic_reward_function}), which represents the influence of the first day reward on all the future rewards, is very hard, if not impossible, to estimate. In \cite{tamar2012policy} and \cite{prashanth2014actor}, the authors implicitly assume that the reward $R_{t+1}$ is conditionally independent from the future rewards given the current state. Exploiting this assumption, it is easy to show that the return variance satisfies the following Bellman expectation equation 
+\begin{proposition}[Bellman Expectation Equation]
+	\begin{equation}
+		\Lambda_\pi(s) = \mathcal{V}_\pi(s) + \gamma^2 \Var[\pi]{V_\pi(S_{t+1}) | S_t = s} + \gamma^2 T_\pi \Lambda_\pi(s)	
+	\end{equation}
+	where $\mathcal{V}_\pi(s)$ denotes the conditional variance of the reward
+	\begin{equation}
+		\mathcal{V}_\pi(s) = \Var[\pi]{R_{t+1} | S_t = s} 
+	\end{equation}
+\end{proposition}
+\begin{proof}
+\begin{equation*}
+\begin{split}
+		\Lambda_\pi(s) &= \Var[\pi]{G_t | S_t = s}\\
+					   &= \Var[\pi]{R_{t+1} + \gamma G_{t+1} | S_t = s}\\
+					   &= \mathcal{V}_\pi(s) + 2 \gamma \Cov[\pi]{R_{t+1}, G_{t+1} | S_t = s} + \gamma^2 \Var[\pi]{G_{t+1} | S_t = s}\\
+\end{split}
+\end{equation*}
+Under the independence hypothetis, the second term is null. Applying the law of total variance we obtain
+\begin{equation*}
+	\begin{split}
+	\Var[\pi]{G_{t+1} | S_t = s} &= \E[\pi]{ \Var[\pi]{G_{t+1} | S_{t+1}} | S_t = s} + \Var[\pi]{\E[\pi]{G_{t+1} | S_{t+1}} | S_t = s}\\
+	&= T_\pi \Lambda_\pi(s) + \Var[\pi]{V_\pi(S_{t+1}) | S_t = s}
+	\end{split}
+\end{equation*}
+Plugging it into the first equality yields the result
+\begin{equation*}
+	\Lambda_\pi(s) = \Var[\pi]{R_{t+1} | S_t = s} + \Var[\pi]{V_\pi(S_{t+1}) | S_t = s} + \gamma^2 T_\pi \Lambda_\pi(s)
+\end{equation*}
+\end{proof}
+Again, even though this result is appealing from a theoretical point of view, it cannot be exploited to derive a reinforcement learning algorithm. Indeed, the variance of the state-value function would be extremely difficult or even impossible to estimate. For this reason, we will not develop further the discounted reward formulation in the risk-sensitive setting and we will focus instead on the average reward formulation. 
+
+\subsection{Average Reward Formulation}
+In \cite{prashanth2014actor}, the authors consider the long-run variance as a measure of the risk associated to a policy $\pi$
 \begin{definition}[Long-Run Variance]
 	The long-run variance $\Lambda_\pi$ under policy $\pi$ is defined as
 	\begin{equation}
@@ -411,12 +474,12 @@ The following relation between square state-value function and the square action
 The average adjusted square value functions satisfy the following Bellman equations
 \begin{proposition}[Bellman Expectation Equations]
 	\begin{equation}
-		\eta_\pi + U_\pi(s) = \calM_\pi(s) + T_\pi U_\pi(s)
+		U_\pi(s) = \calM_\pi(s) - \eta_\pi + T_\pi U_\pi(s)
 	\end{equation}
 	\begin{equation}
 		\begin{split}
-			\eta_\pi + W_\pi(s,a) &= \calM(s,a) + T_a U_\pi(s)\\
-			&= \calM(s,a) + \int_{\S} \calP(s,a,s') \int_{\A} \pi(s',a') W_\pi(s',a') da' ds'
+			W_\pi(s,a) &= \calM(s,a) - \eta_\pi + T_a U_\pi(s)\\
+			&= \calM(s,a) - \eta_\pi + \int_{\S} \calP(s,a,s') \int_{\A} \pi(s',a') W_\pi(s',a') da' ds'
 		\end{split}
 	\end{equation}
 \end{proposition}
@@ -436,10 +499,38 @@ recast (\ref{eq:risk_sensitive_problem}) to the following uncostrained problem
 \end{equation}
 Alternatively, the agent may want to optimize the Sharpe ratio, a risk-sensitive performance measure commonly used in finance
 \begin{equation}
-	\textbf{Sh}_\pi = \frac{\rho_\pi}{\sqrt{\Lambda_\pi}} 
+	\text{Sh}_\pi = \frac{\rho_\pi}{\sqrt{\Lambda_\pi}} 
 \end{equation}
-The algorithms that will be discussed in the next chapters apply equally to both optimization problems with only minor modifications. 
 
-\section{Policy Evaluation and Policy Iteration}
+\clearpage
+\section{Dynamic Programming Algorithms}
 \label{sec:policy_evaluation}
-TODO
+The Bellman equations provide the basis for the \emph{value iteration} and \emph{policy iteration} algorithms \cite{szepesvari2010algorithms}, which simply consist in iteratively applying the Bellman operators to an approximation of the value functions. 
+As we will see, these methods require knowledge of the MDP dynamics and typically they are only applicable to finite state MDPs, for which the value functions can be represented as vectors and the Bellman operators becomes matrices. However, these simple algorithm provide some useful insight that can be exploited to develop more advanced reinforcement learning algorithm 
+
+\subsection{Value Iteration}
+\emph{Value iteration} is an iterative method to compute the optimal state-value function $V_*(s)$. Starting from an arbitrary function $V_0(s)$, the algorithm iteratively updates the approximation by applying the Bellman optimality operator in a fixed-point scheme
+\begin{equation*}
+	V_{k+1}(s) = B_* V_k(s) = \sup_a \left\{\calR(s,a) + \gamma T_a V_*(s)\right\}
+\end{equation*}
+This algorithm is guaranteed to converge to the optimal value function $V_*$ by the contraction mapping theorem. Let us notice that the transition operator $T_a$ requires knowledge of the MDP dynamics, which is not available in the typical reinforcement learning framework. Moreover, the update involves an optimization with respect to all possible actions which can be carried out efficiently only in the case of finite action spaces. A drawback of this algorithm is that it does not provide an explicit representation of the optimal policy, which in many control problems is what we are looking for.  
+
+\subsection{Policy Iteration}
+Policy iteration is an iterative method to approximate both the optimal state-value function $V_*$ and the optimal policy $\pi_*$. This algorithm alternates an evaluation step, in which the current policy is evaluated using the state-value function, and an improvement step, in which the policy is improved by acting greedily with respect to the action-value function computed in the evaluation step. In the standard version of policy iteration, the state-value function for the current policy is evaluated starting from an arbitrary function $V_0(s)$ and iteratively applying the Bellman expectation operator in a fixed-point iteration scheme 
+\begin{equation*}
+	V_{k+1}(s) = B_{\pi_n} V_k(s)
+\end{equation*}
+This algorithm is guaranteed to converge to $V_{\pi_n}$. The new policy is then computed as 
+\begin{equation*}
+	\pi_{n+1} = \text{greedy}(V_{\pi_n})
+\end{equation*}
+and we go back to the evaluation step for this new policy. The algorithm is guaranteed to converge to $V_*$ and $\pi_*$. Let us notice that it is not necessary to perfectly evaluate to policy $\pi_n$ before performing the improvement step and the evaluation procedure can be stopped before convergence. This algorithm suffers from the same problem as above. However it provides the basic structure for most of the value-based reinforcement learning methods. In particular, in \emph{generalized policy iteration} the evaluation step is performed in an arbitrary way which does not necessarily employ the Bellman operator. This scheme is illustrated in Figure \ref{fig:policy_iteration},
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.3\textwidth]{Images/2_0_policy_iteration.png}
+	\caption[Policy iteration algorithm]{Policy iteration algorithm \cite{sutton1998introduction}.}
+	\label{fig:policy_iteration}
+\end{figure}
+  
+
+

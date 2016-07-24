@@ -11,45 +11,45 @@ Warning--empty journal in cumming2015investigation
 Warning--empty year in du1algorithm
 Warning--empty journal in eldercreating
 Warning--empty journal in sanderson2010armadillo
-You've used 88 entries,
+You've used 89 entries,
             2030 wiz_defined-function locations,
-            962 strings with 18345 characters,
-and the built_in function-call counts, 31704 in all, are:
-= -- 3018
-> -- 1327
+            969 strings with 18477 characters,
+and the built_in function-call counts, 32070 in all, are:
+= -- 3058
+> -- 1334
 < -- 0
-+ -- 534
-- -- 437
-* -- 2355
-:= -- 4771
-add.period$ -- 89
-call.type$ -- 88
-change.case$ -- 471
++ -- 538
+- -- 439
+* -- 2380
+:= -- 4822
+add.period$ -- 90
+call.type$ -- 89
+change.case$ -- 475
 chr.to.int$ -- 0
-cite$ -- 96
-duplicate$ -- 1531
-empty$ -- 2534
-format.name$ -- 437
-if$ -- 6910
+cite$ -- 97
+duplicate$ -- 1550
+empty$ -- 2563
+format.name$ -- 439
+if$ -- 6992
 int.to.chr$ -- 0
-int.to.str$ -- 88
-missing$ -- 101
-newline$ -- 268
-num.names$ -- 171
-pop$ -- 551
+int.to.str$ -- 89
+missing$ -- 102
+newline$ -- 271
+num.names$ -- 173
+pop$ -- 554
 preamble$ -- 1
-purify$ -- 399
+purify$ -- 402
 quote$ -- 0
-skip$ -- 1232
+skip$ -- 1250
 stack$ -- 0
-substring$ -- 2160
-swap$ -- 613
+substring$ -- 2198
+swap$ -- 623
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 320
+type$ -- 324
 warning$ -- 8
-while$ -- 319
-width$ -- 90
-write$ -- 785
+while$ -- 324
+width$ -- 91
+write$ -- 794
 (There were 8 warnings)
