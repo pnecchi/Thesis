@@ -10,6 +10,7 @@
 			<Target title="all">
 				<Option type="4" />
 				<Option compiler="gcc" />
+				<Option parameters="-a ARAC -p /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Parameters/Single_Synth_P0_F0_S0_N5.pot -i /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Input/synthetic.csv -o /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Single_Synth_P0_F0_S0_N5/ARAC/ -d /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Debug/Single_Synth_P0_F0_S0_N5/ARAC/" />
 				<Compiler>
 					<Add directory="include/thesis" />
 				</Compiler>
@@ -98,6 +99,7 @@
 				<Option object_output="./" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="-a ARAC -p /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Parameters/Single_Synth_P0_F0_S0_N5.pot -i /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Input/synthetic.csv -o /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Single_Synth_P0_F0_S0_N5/ARAC/ -d /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Debug/Single_Synth_P0_F0_S0_N5/ARAC/" />
 				<Compiler>
 					<Add directory="/home/pierpaolo/Documents/Università/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
 					<Add directory="/usr/local/include" />
@@ -155,11 +157,6 @@
 		<Unit filename="examples/CMakeLists.txt">
 			<Option virtualFolder="CMake Files/examples/" />
 		</Unit>
-		<Unit filename="examples/MainArac.cpp" />
-		<Unit filename="examples/MainArrsac.cpp" />
-		<Unit filename="examples/MainNpgpe.cpp" />
-		<Unit filename="examples/MainPgpeArac.cpp" />
-		<Unit filename="examples/MainPgpeArrsac.cpp" />
 		<Unit filename="examples/main.cpp" />
 		<Unit filename="include/thesis/Actor.h" />
 		<Unit filename="include/thesis/Agent.h" />

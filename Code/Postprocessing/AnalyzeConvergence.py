@@ -15,14 +15,14 @@ matplotlib.style.use('seaborn-colorblind')
 # Parameters #
 ##############
 
-inputDir = '../../Data/Debug/'
-nExperiments = 5
+inputDir = '../../Data/Debug/Single_Synth_RN_P0_F0_S0_N5/ARAC/'
+nExperiments = 10
 
 ########################
 # Visualize allocation #
 ########################
 
-df = pd.read_csv(inputDir + 'debugExperiment0.csv')
+df = pd.read_csv(inputDir + 'experiment0.csv')
 
 # Read backtest data
 
@@ -36,7 +36,7 @@ sh2Sum = np.zeros(len(df))
 
 for i in xrange(nExperiments):
 
-    df = pd.read_csv(inputDir + 'debugExperiment' + str(i) + '.csv')
+    df = pd.read_csv(inputDir + 'experiment' + str(i) + '.csv')
 
     rSum += df['average'].values
     r2Sum += df['average'].values * df['average'].values

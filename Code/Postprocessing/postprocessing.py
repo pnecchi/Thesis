@@ -37,52 +37,32 @@ def analyzeConvergence(filesList, algorithmName):
     """
 
     # Initialize output dataframes
-    temp = pd.read_csv(filesList[0], index_col=0)
+    temp = pd.read_csv(os.path.expanduser(filesList[0]), index_col=0)
+    dfRewardExp = pd.DataFrame(index=temp.index)
+    dfStddevExp = pd.DataFrame(index=temp.index)
+    dfSharpeExp = pd.DataFrame(index=temp.index)
+
+    # For all the files
+    for f in filesList:
+        expName = f[::-1].split('/', 1)[0][::-1][:-4]
+        df = pd.read_csv(os.path.expanduser(f), index_col=0)
+        dfRewardExp[expName] = df['average']
+        dfStddevExp[expName] = df['stdev']
+        dfSharpeExp[expName] = df['sharpe']
+
+    # Compute mean and stddev across experiments
     c1 = algorithmName
     c2 = algorithmName + '_delta'
     dfReward = pd.DataFrame(index=temp.index, columns=[c1, c2])
     dfStddev = pd.DataFrame(index=temp.index, columns=[c1, c2])
     dfSharpe = pd.DataFrame(index=temp.index, columns=[c1, c2])
 
-    # Temporary variables
-    rSum   = np.zeros(len(temp))
-    r2Sum  = np.zeros(len(temp))
-    sSum   = np.zeros(len(temp))
-    s2Sum  = np.zeros(len(temp))
-    shSum  = np.zeros(len(temp))
-    sh2Sum = np.zeros(len(temp))
-
-    # For all the files
-    for f in filesList:
-        df = pd.read_csv(filesList[0], index_col=0)
-        rSum += df['average'].values
-        r2Sum += df['average'].values * df['average'].values
-        sSum += df['stdev'].values
-        s2Sum += df['stdev'].values * df['stdev'].values
-        shSum += df['sharpe'].values
-        sh2Sum += df['sharpe'].values * df['sharpe'].values
-
-    # Compute statistics
-    nExperiments = len(filesList)
-    meanReward = rSum / float(nExperiments)
-    meanStddev = sSum / float(nExperiments)
-    meanSharpe = shSum / float(nExperiments)
-    deltaReward = r2Sum / float(nExperiments) - meanReward * meanReward
-    deltaStddev = np.sqrt(s2Sum / float(nExperiments) - meanStddev * meanStddev)
-    deltaSharpe = np.sqrt(sh2Sum / float(nExperiments) - meanSharpe * meanSharpe)
-    dfReward[c1] = meanReward
-    dfStddev[c1] = meanStddev
-    dfSharpe[c1] = meanSharpe
-    dfReward[c2] = deltaReward
-    dfStddev[c2] = deltaStddev
-    dfSharpe[c2] = deltaStddev
-
-    print meanReward
-    print deltaReward
-
-    print dfReward
-    print dfStddev
-    print dfSharpe
+    dfReward[c1] = dfRewardExp.mean(axis=1)
+    dfReward[c2] = dfRewardExp.std(axis=1)
+    dfStddev[c1] = dfStddevExp.mean(axis=1)
+    dfStddev[c2] = dfStddevExp.std(axis=1)
+    dfSharpe[c1] = dfSharpeExp.mean(axis=1)
+    dfSharpe[c2] = dfSharpeExp.std(axis=1)
 
     # Return
     return dfReward, dfStddev, dfSharpe
@@ -115,20 +95,54 @@ def compareAlgorithmConvergence(debugDir):
             dfStddev = pd.concat([dfStddev, dfStddevAlgo], axis=1)
             dfSharpe = pd.concat([dfSharpe, dfSharpeAlgo], axis=1)
 
-    fig, ax = plt.subplots()
-    dfReward[algorithmsList].plot(lw=3, ax=ax)
-
     algorithmsListDelta = [algo + '_delta' for algo in algorithmsList]
+    colorsList = ['steelblue', 'darkorange', 'seagreen']
+
+    fig = plt.figure(figsize=(15,5), facecolor='white', edgecolor='black')
+
+    # Average reward
+    ax1 = fig.add_subplot(131)
+    dfReward[algorithmsList].plot(lw=3, color=colorsList, ax=ax1)
     dfRewardUpperBound = pd.DataFrame(dfReward[algorithmsList].values + 2.0 * dfReward[algorithmsListDelta].values,
                                       columns=algorithmsList, index=dfReward.index)
     dfRewardLowerBound = pd.DataFrame(dfReward[algorithmsList].values - 2.0 * dfReward[algorithmsListDelta].values,
-                                      columns=algorithmsList, index=dfReward.index)
+                                      columns=algorithmsListDelta, index=dfReward.index)
+    dfRewardUpperBound.plot(lw=2, ls='--', color=colorsList, ax=ax1)
+    dfRewardLowerBound.plot(lw=2, ls='--', color=colorsList, ax=ax1)
 
-    dfRewardUpperBound.plot(lw=2, ls='--', ax=ax)
-    dfRewardLowerBound.plot(lw=2, ls='--', ax=ax)
+    ax1.set_ylabel('Average Reward')
+    ax1.set_xlabel('Training Epoch')
+    ax1.legend(algorithmsList, loc='upper left')
     plt.grid(True)
-    plt.show()
 
+    # Reward standard deviation
+    ax2 = fig.add_subplot(132)
+    dfStddev[algorithmsList].plot(lw=3, color=colorsList, legend=False, ax=ax2)
+    dfStddevUpperBound = pd.DataFrame(dfStddev[algorithmsList].values + 2.0 * dfStddev[algorithmsListDelta].values,
+                                      columns=algorithmsList, index=dfStddev.index)
+    dfStddevLowerBound = pd.DataFrame(dfStddev[algorithmsList].values - 2.0 * dfStddev[algorithmsListDelta].values,
+                                      columns=algorithmsListDelta, index=dfStddev.index)
+    dfStddevUpperBound.plot(lw=2, ls='--', color=colorsList, legend=False, ax=ax2)
+    dfStddevLowerBound.plot(lw=2, ls='--', color=colorsList, legend=False, ax=ax2)
+    ax2.set_title('Convergence of Learning Process', fontsize=18)
+    ax2.set_ylabel('Reward Standard Deviation')
+    ax2.set_xlabel('Training Epoch')
+    plt.grid(True)
+
+    # Sharpe ratio
+    ax3 = fig.add_subplot(133)
+    dfSharpe[algorithmsList].plot(lw=3, color=colorsList, legend=False, ax=ax3)
+    dfSharpeUpperBound = pd.DataFrame(dfSharpe[algorithmsList].values + 2.0 * dfSharpe[algorithmsListDelta].values,
+                                      columns=algorithmsList, index=dfSharpe.index)
+    dfSharpeLowerBound = pd.DataFrame(dfSharpe[algorithmsList].values - 2.0 * dfSharpe[algorithmsListDelta].values,
+                                      columns=algorithmsListDelta, index=dfSharpe.index)
+    dfSharpeUpperBound.plot(lw=2, ls='--', color=colorsList, legend=False, ax=ax3)
+    dfSharpeLowerBound.plot(lw=2, ls='--', color=colorsList, legend=False, ax=ax3)
+    ax3.set_ylabel('Sharpe Ratio')
+    ax3.set_xlabel('Training Epoch')
+    plt.grid(True)
+    plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
+    plt.show()
 
 compareAlgorithmConvergence(os.path.expanduser('~/Documents/University/6_Anno_Poli/7_Thesis/Data/Debug/Single_Synth_RN_P0_F0_S0_N5'))
 
