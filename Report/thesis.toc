@@ -63,17 +63,17 @@
 \contentsline {subsection}{\numberline {5.2.2}States}{52}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Actions}{52}{subsection.5.2.3}
 \contentsline {chapter}{\numberline {6}Numerical Results for the Asset Allocation Problem}{55}{chapter.6}
-\contentsline {section}{\numberline {6.1}Single Risky Asset Case}{55}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Simulated Data}{55}{subsection.6.1.1}
-\contentsline {subsubsection}{\numberline {6.1.1.1}ARAC}{55}{subsubsection.6.1.1.1}
+\contentsline {section}{\numberline {6.1}Synthetic Risky Asset}{55}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Learning Algorithm Specifications}{56}{subsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.1.1}ARAC}{56}{subsubsection.6.1.1.1}
 \contentsline {subsubsection}{\numberline {6.1.1.2}PGPE}{56}{subsubsection.6.1.1.2}
 \contentsline {subsubsection}{\numberline {6.1.1.3}NPGPE}{56}{subsubsection.6.1.1.3}
-\contentsline {subsubsection}{\numberline {6.1.1.4}Experimental Setup}{56}{subsubsection.6.1.1.4}
-\contentsline {subsubsection}{\numberline {6.1.1.5}Results}{56}{subsubsection.6.1.1.5}
-\contentsline {subsection}{\numberline {6.1.2}Historic Data}{56}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Multiple Risky Asset Case}{56}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Simulated Data}{56}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Historic Data}{56}{subsection.6.2.2}
-\contentsline {chapter}{\numberline {7}Conclusions}{59}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary}{59}{section.7.1}
-\contentsline {section}{\numberline {7.2}Further Developments}{59}{section.7.2}
+\contentsline {subsection}{\numberline {6.1.2}Experimental Setup}{57}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Risk-Neutral Framework}{57}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Risk-Sensitive Framework}{58}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}Historic Risky Asset}{61}{section.6.2}
+\contentsline {section}{\numberline {6.3}Multiple Synthetic Risky Assets}{61}{section.6.3}
+\contentsline {section}{\numberline {6.4}Historic Multiple Risky Assets}{61}{section.6.4}
+\contentsline {chapter}{\numberline {7}Conclusions}{63}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{63}{section.7.1}
+\contentsline {section}{\numberline {7.2}Further Developments}{63}{section.7.2}

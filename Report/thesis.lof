@@ -9,7 +9,8 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{44}{figure.caption.12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Learning process for one synthetic risky asset}}{57}{figure.caption.13}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{57}{figure.caption.14}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Backtest performance of NPGPE with one synthetic risky asset}}{58}{figure.caption.15}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{57}{figure.caption.13}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{58}{figure.caption.14}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{59}{figure.caption.16}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Backtest performance with one synthetic risky asset}}{60}{figure.caption.17}
 \addvspace {10\p@ }

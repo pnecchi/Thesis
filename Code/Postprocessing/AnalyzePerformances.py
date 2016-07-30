@@ -64,8 +64,7 @@ for i in xrange(nExperiments):
     # Compute cumulative profit
     logReturns = df['logReturn'].values
     cumReturn[0] = 0.0
-    cumReturn[1:] = 100.0 * (np.exp(np.cumsum(logReturns)) - 1.0)
-    dfPrices['Experiment ' + str(i)] = 100.0 * (1.0 + cumReturn/100.0)
+    cumReturn[1:] = 100.0 * (np.exp(np.cumsum(logReturns)) - 1.0)dfPrices['Experiment ' + str(i)] = 100.0 * (1.0 + cumReturn/100.0)
     sumCumReturn += cumReturn
     sumSquaresCumReturn += cumReturn * cumReturn
 

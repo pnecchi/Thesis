@@ -5,8 +5,8 @@
 # Imports #
 #---------#
 
+import sys
 import os
-import subprocess
 import errno
 
 #-------------------#
@@ -42,21 +42,21 @@ postProcessingDir = thesisBaseDir + 'Code/Postprocessing/'
 #-----------------------#
 
 params = {'riskFreeRate'      : 0.0,
-          'deltaP'            : 0.0,
+          'deltaP'            : 0.005,
           'deltaF'            : 0.0,
           'deltaS'            : 0.0,
           'numDaysObserved'   : 5,
           'lambda'            : 0.9,
-          'alphaConstActor'   : 0.02,
-          'alphaExpActor'     : 0.75,
-          'alphaConstCritic'  : 0.1,
+          'alphaConstActor'   : 0.1,
+          'alphaExpActor'     : 0.8,
+          'alphaConstCritic'  : 0.2,
           'alphaExpCritic'    : 0.7,
-          'alphaConstBaseline': 0.2,
-          'alphaExpBaseline'  : 0.65,
+          'alphaConstBaseline': 0.5,
+          'alphaExpBaseline'  : 0.6,
           'numExperiments'    : 10,
           'numEpochs'         : 500,
-          'numTrainingSteps'  : 1000,
-          'numTestSteps'      : 200}
+          'numTrainingSteps'  : 7000,
+          'numTestSteps'      : 2000}
 
 riskSensitive = False
 synthetic     = True
@@ -118,13 +118,14 @@ for algo in algorithmsList:
               " -o " + outputDirAlgo +
               " -d " + debugDirAlgo)
 
-    # subprocess.call([execPath,
-                     # "-a", algo,
-                     # "-p", parametersFile,
-                     # "-i", inputFile,
-                     # "-o", outputDirAlgo,
-                     # "-d", debugDirAlgo], shell=True)
+#-------------------------#
+# Postprocessing analysis #
+#-------------------------#
 
+sys.path.insert(0, "../Code/Postprocessing/")
+from postprocessing import postprocessing
+
+postprocessing(debugDir, outputDir)
 
 
 

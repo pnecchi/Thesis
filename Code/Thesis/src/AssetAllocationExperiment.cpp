@@ -82,7 +82,7 @@ void AssetAllocationExperiment::run()
             }
 
             // Print convergence summary
-            if ((epoch + 1) % static_cast<int>(numEpochs / 20) == 0)
+            if ((epoch + 1) % static_cast<int>(numEpochs / 50) == 0)
             {
                 std::vector<std::vector<double>> stats = experimentStats.getStatistics();
                 std::cout << "Experiment #" << exp

@@ -1,11 +1,9 @@
 \chapter{Numerical Results for the Asset Allocation Problem}
 
-\section{Single Risky Asset Case}
+In this chapter we present the numerical results of some of the policy gradient algorithms discussed in Chapter \ref{ch:policy_gradient} for the asset allocation problem. Two different type of markets are analyzed: a market with only one risky asset and a market where multiple risky assets are available, for which finding a trading strategy is more difficult since the state and action spaces are much larger. The learning algorithms are first applied both in their risk-neutral version and risk-sensitive formulation to synthetically generated data, which present profitably tradable features. Once the behavior of these algorithms is validated in this controlled environment, the various methods are also applied to historical price series. 
 
-
-\subsection{Simulated Data}
-To test the different reinforcement learning methods in a controlled environment, we generated log price series as random walks with autoregressive trend processes. The two-
-parameter model is thus given by
+\section{Synthetic Risky Asset}
+To test the different reinforcement learning methods in a controlled environment, we generated log-price series for the risky asset as random walks with autoregressive trend processes. The two-parameter model is thus given by
 \begin{equation*}
 	\begin{split}
 		z_t &= z_{t-1} + \beta_{t-1} + \kappa \epsilon_t\\
@@ -16,10 +14,13 @@ We then define the synthetic price series as
 \begin{equation*}
 	Z_t = \exp\left(\frac{z_t}{\max_t z_t - \min_t z_t}\right)
 \end{equation*}
-This process presents some patterns that can be profitably exploited and therefore we would expect our learning algorithms to perform well on this test case. In the following subsections we will compare the results of three long-short strategies obtained with ARAC, PGPE and NPGPE in both the risk-neutral and risk-sensitive framework. Let us describe the choice we made for each of the algorithms. 
+This model is often taken as a benchmark test in the automated trading literature \cite{moody1998performance}, because the price series generated in this way presents some patterns that can be profitably exploited. Moreover the model is stationary and therefore the policy learned on the training set should generalize well on the test set, also known as backtest in the financial jargon. Thus we would expect our learning algorithms to perform well on this test case. If this wasn't the case, we should go back and improve the learning algorithms.\\
+In this setting, we compare three the results of three long-short strategies obtained with ARAC, PGPE and NPGPE in both the risk-neutral and risk-sensitive framework. This means that the agent can either go long on the risky asset (i.e. $a_t^1 = 1$) or short the security (i.e. $a_t^1 = -1$) and invest the proceedings in the risk-less asset. Given the current conditions of the financial markets, we always assume a risk-free rate $X = 0$. Let us describe in more detail the the choice we made for each of the algorithms. 
+
+\subsection{Learning Algorithm Specifications}
 
 \subsubsection{ARAC} 
-For the ARAC algorithm we considered a Boltzmann exploration policy on the two actions $a_t^1 \in \{-1, 1\}$ and a linear critic. This critic is extremely simple and there is surely some work to be done to improve it. 
+For the ARAC algorithm we considered a Boltzmann exploration policy on the two actions $a_t^1 \in \{-1, 1\}$ and a linear critic in which the features coincide with the agent's observation of the system state. This critic is extremely simple and there is surely some work to be done to improve it. 
 
 \subsubsection{PGPE}
 For the PGPE algorithm we considered a binary deterministic controller 
@@ -38,42 +39,95 @@ In NPGPE, we used the same controller as for PGPE but we assumed that the contro
 \end{equation*}  
 
 
-\subsubsection{Experimental Setup}   
-All the algorithms were tested on the same price series of size $10000$, generated from the process described above using $\alpha = 0.9$ and $\kappa = 3$. The learning process consisted of $500$ training epochs on the first $7500$ days of the series with a learning rate that decreased at each epoch according to a polynomial schedule. The trained agents were subsequently backtested on the final $2500$ days, during which the agents kept learning online in order to try to adapt to the changing environment. The results that we present are the average of $10$ independent experiments that used slightly different random initialization of the policy parameters.   
+\subsection{Experimental Setup}   
+All the algorithms were tested on the same price series of size $9000$, generated from the process described above using $\alpha = 0.9$ and $\kappa = 3$. The learning process consisted of $500$ training epochs on the first $7000$ days of the series with a learning rate that decreased at each epoch according to a polynomial schedule. The trained agents were subsequently backtested on the final $2000$ days, during which the agents kept learning online in order to try to adapt to the changing environment. The results that we present are the average of $10$ independent experiments that used slightly different random initialization of the policy parameters.   
 
-\subsubsection{Results}
-
-\begin{figure}[t]
+\subsection{Risk-Neutral Framework}
+\begin{figure}[t!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Images/6_0_single_synthetic_convergence}
-	\caption[Learning process for one synthetic risky asset]{Learning process for the asset allocation problem with one synthetic risky asset.}
-	\label{fig:single_synthetic_convergence}
+	\includegraphics[width=1.0\textwidth]{Images/6_0_single_synthetic_neutral_convergence}
+	\caption[Risk-neutral learning process for one synthetic risky asset]{Risk-neutral learning process for the asset allocation problem with one synthetic risky asset.}
+	\label{fig:single_synthetic_neutral_convergence}
 \end{figure}
-
+Let us first discuss the case with no transaction costs. Figure \ref{fig:single_synthetic_neutral_convergence} shows the learning curves for the three risk-neutral algorithms in terms of average daily reward, which is the quantity being maximized by the algorithms, the daily reward standard deviation and the annualized Sharpe ratio. The first thing we observe is the ARAC algorithm seems not to be improving the trading strategy as the training epochs go by. The average reward obtained is close to zero and will be surely be negative once transaction costs are introduced. On the other hand, PGPE converges very quickly to a profitable strategy characterized by a large variance in the rewards. The learned policy is however suboptimal compared to the one found by NPGPE, which is better in all three measures considered. This confirms the fact that natural version of a policy gradient algorithm often outperforms its ``vanilla'' counterpart. It is interesting to notice that NPGPE yields a learning curve for the Sharpe ratio very similar to the one for the average reward. Even if the algorithm is risk-neutral, it manages to improve a risk-senitive measure at the same time of the average reward. This might be simply a peculiarity of the very simple model assumed for the risky asset.\\ 
+Figure \ref{fig:single_synthetic_neutral_performance} compares the backtest performances of the three learned policies and a Buy and Hold strategy, which simply consists in investing all the available capital in the risky asset. Let us repeat that the solid lines are the averages of $10$ independent experiments, which allows us to determine the $95\%$ confidence intervals represented with the dashed lines. We clearly see that PGPE and NPGPE easily beat the market, realizing a total profit of $101.0\%$ and $179.0\%$ respectively against the $7.8\%$ profit of the Buy and Hold strategy over the same period. More statistics of the trading strategies are reported in Table \ref{tab:single_synthetic_neutral_performance}
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Images/6_1_single_synthetic_performance}
+	\includegraphics[width=1.0\textwidth]{Images/6_1_single_synthetic_neutral_performance}
 	\caption[Backtest performance with one synthetic risky asset]{Backtest performance of trained trading systems for the asset allocation problem with one synthetic risky asset.}
-	\label{fig:single_synthetic_performance}
+	\label{fig:single_synthetic_neutral_performance}
+\end{figure}
+\begin{table}[t!]
+\centering
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+ & Buy and Hold     & ARAC & NPGPE & PGPE \\ \midrule
+Total Return        & 7.8\% & 2.4\% & 179.0\% & 101.0\% \\
+Daily Sharpe        & 0.27 & 0.09 & 3.49 & 2.43 \\
+Monthly Sharpe      & 0.19 & 0.08 & 2.32 & 1.50 \\
+Yearly Sharpe       & 0.23 & 0.08 & 1.36 & 0.87 \\
+Max Drawdown   & -22.4\% & -11.5\% & -4.6\% & -1.0\% \\
+Avg Drawdown    & -1.8\% & -1.5\% & -0.5\% & -0.9\% \\
+Avg Up Month    & 2.87\% & 1.1\% & 2.5\% & 2.6\% \\
+Avg Down Month  & -2.6\% & -1.0\% & -0.9\% & -1.5\% \\
+Win Year [       & 40.0\% & 48.0\% & 92.0\% & 84.0\% \\
+Win 12m         & 56.4\% & 51.3\% & 99.6\% & 92.9\% \\ \bottomrule
+\end{tabular}%
+\caption[Risk-neutral backtest statistics with one synthetic risky asset]{Backtest statistics of the risk-neutral trading strategies for the asset allocation problem with one synthetic risky asset.}
+\label{tab:single_synthetic_neutral_performance}
+\end{table}
+
+\subsection{Risk-Sensitive Framework}
+In this section we present the results in the risk-sensitive framework, in which all the algorithms optimize the Sharpe ratio of the policy. Figure \ref{fig:single_synthetic_sensitive_convergence} shows the learning curves for the three risk-sensitive algorithms RSARAC, RSPGPE and RSNPGPE, which show similar behaviors to their risk-neutral counterparts. However, it is surprising that the strategies learned by RSPGPE and RSNPGPE have smaller Sharpe ratio than in the risk-neutral version of these algorithms, which optimize a different quantity. Figure \ref{fig:single_synthetic_sensitive_performance} shows the backtest performances for the three risk-sensitive trading strategies. Again, RSPGPE and NPGPE beat the market even if in smaller measure than in the risk-neutral setting. 
+
+\begin{figure}[b!]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Images/6_2_single_synthetic_sensitive_convergence}
+	\caption[Risk-sensitive learning process for one synthetic risky asset]{Risk-sensitive learning process for the asset allocation problem with one synthetic risky asset.}
+	\label{fig:single_synthetic_sensitive_convergence}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[t!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Images/6_2_single_synthetic_NPGPE}
-	\caption[Backtest performance of NPGPE with one synthetic risky asset]{Backtest performance and allocation selected by the NPGPE algorithm for the asset allocation problem with one synthetic risky asset.}
-	\label{fig:single_synthetic_NPGPE}
+	\includegraphics[width=1.0\textwidth]{Images/6_3_single_synthetic_sensitive_performance}
+	\caption[Backtest performance with one synthetic risky asset]{Backtest performance of the risk-sensitive trading strategies for the asset allocation problem with one synthetic risky asset.}
+	\label{fig:single_synthetic_sensitive_performance}
 \end{figure}
+
+\begin{table}[h!]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+ & Buy and Hold & RSPGPE & RSNPGPE & RSARAC \\ \midrule
+Total Return & 7.8\% & 86.0\% & 106.5\% & 2.3\% \\
+Daily Sharpe & 0.27 & 1.77 & 2.40 & 0.09 \\
+Monthly Sharpe & 0.19 & 1.18 & 1.65 & 0.08 \\
+Yearly Sharpe & 0.23 & 0.70 & 0.95 & 0.07 \\
+Max Drawdown & -22.4\% & -13.8\% & -6.5\% & -11.5\% \\
+Avg Drawdown & -1.8\% & -1.2\% & -0.7\% & -1.5\% \\
+Avg Up Month & 2.9\% & 2.8\% & 2.2\% & 1.1\% \\
+Avg Down Month & -2.6\% & -1.6\% & -1.1\% & -1.0\% \\
+Win Year \% & 40.0\% & 70.0\% & 86.0\% & 48.0\% \\
+Win 12m \% & 56.4\% & 78.2\% & 96.9\% & 50.4\% \\ \bottomrule
+\end{tabular}%
+}
+\caption[Risk-sensitive backtest statistics with one synthetic risky asset]{Backtest statistics of the risk-sensitive trading strategies for the asset allocation problem with one synthetic risky asset.}
+\label{my-label}
+\end{table}
 
 %TODO: Reallocation frequence as a function of transaction costs
 %TODO: Comparative table with backtest statistics
 
-\subsection{Historic Data}
+
+\clearpage
+\section{Historic Risky Asset}
 
 
 
-\section{Multiple Risky Asset Case}
-
-\subsection{Simulated Data}
+\section{Multiple Synthetic Risky Assets}
 
 
-\subsection{Historic Data}
+
+
+\section{Historic Multiple Risky Assets}

@@ -51,12 +51,14 @@
 \BOOKMARK [2][-]{subsection.5.2.2}{States}{section.5.2}% 51
 \BOOKMARK [2][-]{subsection.5.2.3}{Actions}{section.5.2}% 52
 \BOOKMARK [0][-]{chapter.6}{Numerical Results for the Asset Allocation Problem}{}% 53
-\BOOKMARK [1][-]{section.6.1}{Single Risky Asset Case}{chapter.6}% 54
-\BOOKMARK [2][-]{subsection.6.1.1}{Simulated Data}{section.6.1}% 55
-\BOOKMARK [2][-]{subsection.6.1.2}{Historic Data}{section.6.1}% 56
-\BOOKMARK [1][-]{section.6.2}{Multiple Risky Asset Case}{chapter.6}% 57
-\BOOKMARK [2][-]{subsection.6.2.1}{Simulated Data}{section.6.2}% 58
-\BOOKMARK [2][-]{subsection.6.2.2}{Historic Data}{section.6.2}% 59
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 60
-\BOOKMARK [1][-]{section.7.1}{Summary}{chapter.7}% 61
-\BOOKMARK [1][-]{section.7.2}{Further Developments}{chapter.7}% 62
+\BOOKMARK [1][-]{section.6.1}{Synthetic Risky Asset}{chapter.6}% 54
+\BOOKMARK [2][-]{subsection.6.1.1}{Learning Algorithm Specifications}{section.6.1}% 55
+\BOOKMARK [2][-]{subsection.6.1.2}{Experimental Setup}{section.6.1}% 56
+\BOOKMARK [2][-]{subsection.6.1.3}{Risk-Neutral Framework}{section.6.1}% 57
+\BOOKMARK [2][-]{subsection.6.1.4}{Risk-Sensitive Framework}{section.6.1}% 58
+\BOOKMARK [1][-]{section.6.2}{Historic Risky Asset}{chapter.6}% 59
+\BOOKMARK [1][-]{section.6.3}{Multiple Synthetic Risky Assets}{chapter.6}% 60
+\BOOKMARK [1][-]{section.6.4}{Historic Multiple Risky Assets}{chapter.6}% 61
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 62
+\BOOKMARK [1][-]{section.7.1}{Summary}{chapter.7}% 63
+\BOOKMARK [1][-]{section.7.2}{Further Developments}{chapter.7}% 64
