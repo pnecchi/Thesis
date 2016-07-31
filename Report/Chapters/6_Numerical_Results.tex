@@ -43,13 +43,16 @@ In NPGPE, we used the same controller as for PGPE but we assumed that the contro
 All the algorithms were tested on the same price series of size $9000$, generated from the process described above using $\alpha = 0.9$ and $\kappa = 3$. The learning process consisted of $500$ training epochs on the first $7000$ days of the series with a learning rate that decreased at each epoch according to a polynomial schedule. The trained agents were subsequently backtested on the final $2000$ days, during which the agents kept learning online in order to try to adapt to the changing environment. The results that we present are the average of $10$ independent experiments that used slightly different random initialization of the policy parameters.   
 
 \subsection{Risk-Neutral Framework}
+\subsubsection{Convergence}
 \begin{figure}[t!]
 	\centering
 	\includegraphics[width=1.0\textwidth]{Images/6_0_single_synthetic_neutral_convergence}
 	\caption[Risk-neutral learning process for one synthetic risky asset]{Risk-neutral learning process for the asset allocation problem with one synthetic risky asset.}
 	\label{fig:single_synthetic_neutral_convergence}
 \end{figure}
-Let us first discuss the case with no transaction costs. Figure \ref{fig:single_synthetic_neutral_convergence} shows the learning curves for the three risk-neutral algorithms in terms of average daily reward, which is the quantity being maximized by the algorithms, the daily reward standard deviation and the annualized Sharpe ratio. The first thing we observe is the ARAC algorithm seems not to be improving the trading strategy as the training epochs go by. The average reward obtained is close to zero and will be surely be negative once transaction costs are introduced. On the other hand, PGPE converges very quickly to a profitable strategy characterized by a large variance in the rewards. The learned policy is however suboptimal compared to the one found by NPGPE, which is better in all three measures considered. This confirms the fact that natural version of a policy gradient algorithm often outperforms its ``vanilla'' counterpart. It is interesting to notice that NPGPE yields a learning curve for the Sharpe ratio very similar to the one for the average reward. Even if the algorithm is risk-neutral, it manages to improve a risk-senitive measure at the same time of the average reward. This might be simply a peculiarity of the very simple model assumed for the risky asset.\\ 
+Let us first discuss the case with no transaction costs. Figure \ref{fig:single_synthetic_neutral_convergence} shows the learning curves for the three risk-neutral algorithms in terms of average daily reward, which is the quantity being maximized by the algorithms, the daily reward standard deviation and the annualized Sharpe ratio. The first thing we observe is the ARAC algorithm seems not to be improving the trading strategy as the training epochs go by. The average reward obtained is close to zero and will be surely be negative once transaction costs are introduced. On the other hand, PGPE converges very quickly to a profitable strategy characterized by a large variance in the rewards. The learned policy is however suboptimal compared to the one found by NPGPE, which is better in all three measures considered. This confirms the fact that natural version of a policy gradient algorithm often outperforms its ``vanilla'' counterpart. It is interesting to notice that NPGPE yields a learning curve for the Sharpe ratio very similar to the one for the average reward. Even if the algorithm is risk-neutral, it manages to improve a risk-senitive measure at the same time of the average reward. This might be simply a peculiarity of the very simple model assumed for the risky asset.
+
+\subsubsection{Performances}
 Figure \ref{fig:single_synthetic_neutral_performance} compares the backtest performances of the three learned policies and a Buy and Hold strategy, which simply consists in investing all the available capital in the risky asset. Let us repeat that the solid lines are the averages of $10$ independent experiments, which allows us to determine the $95\%$ confidence intervals represented with the dashed lines. We clearly see that PGPE and NPGPE easily beat the market, realizing a total profit of $101.0\%$ and $179.0\%$ respectively against the $7.8\%$ profit of the Buy and Hold strategy over the same period. More statistics of the trading strategies are reported in Table \ref{tab:single_synthetic_neutral_performance}
 \begin{figure}[t]
 	\centering
@@ -59,23 +62,43 @@ Figure \ref{fig:single_synthetic_neutral_performance} compares the backtest perf
 \end{figure}
 \begin{table}[t!]
 \centering
-\begin{tabular}{@{}lcccc@{}}
+\begin{tabular}{@{}lllll@{}}
 \toprule
- & Buy and Hold     & ARAC & NPGPE & PGPE \\ \midrule
-Total Return        & 7.8\% & 2.4\% & 179.0\% & 101.0\% \\
-Daily Sharpe        & 0.27 & 0.09 & 3.49 & 2.43 \\
-Monthly Sharpe      & 0.19 & 0.08 & 2.32 & 1.50 \\
-Yearly Sharpe       & 0.23 & 0.08 & 1.36 & 0.87 \\
-Max Drawdown   & -22.4\% & -11.5\% & -4.6\% & -1.0\% \\
-Avg Drawdown    & -1.8\% & -1.5\% & -0.5\% & -0.9\% \\
-Avg Up Month    & 2.87\% & 1.1\% & 2.5\% & 2.6\% \\
-Avg Down Month  & -2.6\% & -1.0\% & -0.9\% & -1.5\% \\
-Win Year [       & 40.0\% & 48.0\% & 92.0\% & 84.0\% \\
-Win 12m         & 56.4\% & 51.3\% & 99.6\% & 92.9\% \\ \bottomrule
-\end{tabular}%
+                  & Buy and Hold & ARAC     & NPGPE    & PGPE     \\ \midrule
+Total Return      & 7.81\%       & 2.37\%   & 179.04\% & 109.99\% \\
+Daily Sharpe      & 0.27         & 0.09     & 3.49     & 2.43     \\
+Monthly Sharpe    & 0.19         & 0.08     & 2.32     & 1.50     \\
+Yearly Sharpe     & 0.23         & 0.08     & 1.36     & 0.87     \\
+Max Drawdown      & -22.35\%     & -11.50\% & -4.63\%  & -9.98\%  \\
+Avg Drawdown      & -1.75\%      & -1.52\%  & -0.55\%  & -0.87\%  \\
+Avg Up Month      & 2.87\%       & 1.13\%   & 2.45\%   & 2.59\%   \\
+Avg Down Month    & -2.58\%      & -1.03\%  & -0.90\%  & -1.52\%  \\
+Win Year \%       & 40.00\%      & 48.00\%  & 92.00\%  & 84.00\%  \\
+Win 12m \%        & 56.36\%      & 51.27\%  & 99.64\%  & 92.91\%  \\
+Reallocation Freq & 0.00\%       & 50.00\%  & 21.65\%  & 16.30\%  \\
+Short Freq        & 0.00\%       & 49.81\%  & 37.55\%  & 30.15\%  \\ \bottomrule
+\end{tabular}
 \caption[Risk-neutral backtest statistics with one synthetic risky asset]{Backtest statistics of the risk-neutral trading strategies for the asset allocation problem with one synthetic risky asset.}
 \label{tab:single_synthetic_neutral_performance}
 \end{table}
+
+\subsubsection{Impact of Transaction Costs}
+In the algorithmic trading literature there are many examples of strategies based on the prediction of future rewards starting from more or less complex indicators \cite{kamijo1990stock}, \cite{saad1998comparative}, \cite{liang2011stock}. However, as pointed out in \cite{deng2016deep}, the performances of these methods quickly degrade when transaction costs are considered as the cost for reallocating the portfolio or for shorting a security is not taken into account. On the other hand, reinforcement learning algorithms should learn to avoid frequent reallocations or shorts thanks to the feedback mechanism between the learning agent and the system, thus generating better trading performances. In this section we analyze how the strategies learned by PGPE and by NPGPE change when gradually increasing the proportional transaction costs and the short-selling fees, intuitively expecting a progressive reduction of the frequency of reallocation and of going short.\\
+Figure \ref{fig:impact_transaction_costs} shows the impact of proportional transaction costs on the trading strategies learned by PGPE and by NPGPE. As expected, the frequency of reallocation for the NPGPE strategy quickly drops to zero as the transaction costs increase, converging to the profitable buy and hold strategy. It is peculiar that the cumulative profit reaches a minimum when $\delta_P = 10$ bps, and then increases when increasing the fees further. Probably, when $\delta_P = 10$ bps, the transaction costs are not high enough to allow the algorithm to clearly identify reallocation as the cause for lower rewards. On the other hand, the frequency of reallocation in PGPE seems to remain roughly constant, leading to very negative performances. PGPE appears to not be able to identify reallocation as the cause for the lower rewards.\\
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Images/6_4_impact_transaction_costs}
+	\caption[Impact of proportional transaction costs]{Impact of proportional transaction costs on the trading strategies learned with PGPE and NPGPE.}
+	\label{fig:impact_transaction_costs}
+\end{figure}
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Images/6_4_impact_transaction_costs}
+	\caption[Impact of proportional transaction costs]{Impact of proportional transaction costs on the trading strategies learned with PGPE and NPGPE.}
+	\label{fig:impact_transaction_costs}
+\end{figure}
 
 \subsection{Risk-Sensitive Framework}
 In this section we present the results in the risk-sensitive framework, in which all the algorithms optimize the Sharpe ratio of the policy. Figure \ref{fig:single_synthetic_sensitive_convergence} shows the learning curves for the three risk-sensitive algorithms RSARAC, RSPGPE and RSNPGPE, which show similar behaviors to their risk-neutral counterparts. However, it is surprising that the strategies learned by RSPGPE and RSNPGPE have smaller Sharpe ratio than in the risk-neutral version of these algorithms, which optimize a different quantity. Figure \ref{fig:single_synthetic_sensitive_performance} shows the backtest performances for the three risk-sensitive trading strategies. Again, RSPGPE and NPGPE beat the market even if in smaller measure than in the risk-neutral setting. 

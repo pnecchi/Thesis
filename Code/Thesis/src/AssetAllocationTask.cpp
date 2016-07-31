@@ -135,8 +135,6 @@ double AssetAllocationTask::computePortfolioSimpleReturn () const
 	for(size_t i = 0; i < newAllocation.size(); ++i)
 		if (newAllocation(i) < 0.0)
 			shortPositionsWeight += - newAllocation(i);
-//	double shortPositionsWeight = - arma::sum(arma::clamp(newAllocation,
-//                                  std::numeric_limits<double>::min(), 0.0));
 	double shortTransactionCosts = deltaS * shortPositionsWeight;
 
 	// Trading profit & loss

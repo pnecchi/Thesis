@@ -229,6 +229,10 @@
   Symposium on Approximate Dynamic Programming and Reinforcement Learning,
   2007, pp.~233--240.
 
+\bibitem{liang2011stock}
+{\sc J.~Liang, W.~Song, and M.~Wang}, {\em Stock price prediction based on
+  procedural neural networks}, Adv. Artif. Neu. Sys., 2011 (2011), pp.~1--11.
+
 \bibitem{mahadevan1996average}
 {\sc S.~Mahadevan}, {\em Average reward reinforcement learning: Foundations,
   algorithms, and empirical results}, Machine learning, 22 (1996),
@@ -305,7 +309,7 @@
 {\sc M.~L. Puterman}, {\em Markov decision processes: discrete stochastic
   dynamic programming}, John Wiley \& Sons, 1994.
 
-\bibitem{Saad1998comparative}
+\bibitem{saad1998comparative}
 {\sc E.~W. Saad, D.~V. Prokhorov, and D.~C. Wunsch}, {\em Comparative study of
   stock trend prediction using time delay, recurrent and probabilistic neural
   networks}, IEEE Transactions on Neural Networks, 9 (1998), pp.~1456--1470.

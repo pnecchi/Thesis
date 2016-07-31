@@ -252,8 +252,9 @@ def analyzePerformance(filesList, algorithmName):
 
     # Compute frequency of reallocation
     reallocationFrequency = (dfAllocationExp.diff().dropna() != 0).mean(axis=0).mean(axis=0)
+    shortFrequency = (dfAllocationExp < 0).mean(axis=0).mean(axis=0)
 
-    return dfBuyHold, dfPerf, dfStatistics, reallocationFrequency
+    return dfBuyHold, dfPerf, dfStatistics, reallocationFrequency, shortFrequency
 
 
 def compareAlgorithmPerformance(outputDir, imagesDir):
@@ -286,7 +287,8 @@ def compareAlgorithmPerformance(outputDir, imagesDir):
 
         if len(filesList) > 0:
             # Compute aggregate performance statistics
-            dfBuyHold, dfPerfAlgo, dfStatAlgo, reallocationFreqAlgo = analyzePerformance(filesList, algorithmName)
+            dfBuyHold, dfPerfAlgo, dfStatAlgo, reallocationFreqAlgo, shortFreqAlgo = \
+                analyzePerformance(filesList, algorithmName)
 
             # Merge results
             dfPerf = pd.concat([dfPerf, dfPerfAlgo], axis=1)
@@ -299,8 +301,10 @@ def compareAlgorithmPerformance(outputDir, imagesDir):
             dfStatRed = extractBacktestStatistics(dfStatAlgo)
             dfStat['Buy and Hold'] = dfStatRed['Buy and Hold']
             dfStat.loc['Reallocation Freq', 'Buy and Hold'] = 0.0
+            dfStat.loc['Short Freq', 'Buy and Hold'] = 0.0
             dfStat[algorithmName]  = dfStatRed.ix[:, 1:].mean(axis=1)
             dfStat.loc['Reallocation Freq', algorithmName] = reallocationFreqAlgo
+            dfStat.loc['Short Freq', algorithmName] = shortFreqAlgo
 
     # Plot performance
     algorithmsListDelta = [algo + '_delta' for algo in algorithmsList]
@@ -368,6 +372,6 @@ def postprocessing(debugDir, outputDir):
 
 
 if __name__ == "__main__":
-    postprocessing('~/Documents/University/6_Anno_Poli/7_Thesis/Data/Debug/Single_Synth_RN_P20_F0_S0_N5/',
-                   '~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Single_Synth_RN_P20_F0_S0_N5/')
+    postprocessing('~/Documents/University/6_Anno_Poli/7_Thesis/Data/Debug/Single_Synth_RN_P50_F0_S0_N5/',
+                   '~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Single_Synth_RN_P50_F0_S0_N5/')
 

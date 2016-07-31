@@ -175,7 +175,7 @@ int main(int argc, char** argv)
                              riskFreeRate,
                              deltaP,
                              deltaF,
-                             deltaP,
+                             deltaS,
                              numDaysObserved);
     std::cout << "done" << std::endl;
 

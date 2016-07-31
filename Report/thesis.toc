@@ -70,10 +70,13 @@
 \contentsline {subsubsection}{\numberline {6.1.1.3}NPGPE}{56}{subsubsection.6.1.1.3}
 \contentsline {subsection}{\numberline {6.1.2}Experimental Setup}{57}{subsection.6.1.2}
 \contentsline {subsection}{\numberline {6.1.3}Risk-Neutral Framework}{57}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Risk-Sensitive Framework}{58}{subsection.6.1.4}
-\contentsline {section}{\numberline {6.2}Historic Risky Asset}{61}{section.6.2}
-\contentsline {section}{\numberline {6.3}Multiple Synthetic Risky Assets}{61}{section.6.3}
-\contentsline {section}{\numberline {6.4}Historic Multiple Risky Assets}{61}{section.6.4}
-\contentsline {chapter}{\numberline {7}Conclusions}{63}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary}{63}{section.7.1}
-\contentsline {section}{\numberline {7.2}Further Developments}{63}{section.7.2}
+\contentsline {subsubsection}{\numberline {6.1.3.1}Convergence}{57}{subsubsection.6.1.3.1}
+\contentsline {subsubsection}{\numberline {6.1.3.2}Performances}{58}{subsubsection.6.1.3.2}
+\contentsline {subsubsection}{\numberline {6.1.3.3}Impact of Transaction Costs}{59}{subsubsection.6.1.3.3}
+\contentsline {subsection}{\numberline {6.1.4}Risk-Sensitive Framework}{60}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}Historic Risky Asset}{63}{section.6.2}
+\contentsline {section}{\numberline {6.3}Multiple Synthetic Risky Assets}{63}{section.6.3}
+\contentsline {section}{\numberline {6.4}Historic Multiple Risky Assets}{63}{section.6.4}
+\contentsline {chapter}{\numberline {7}Conclusions}{65}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{65}{section.7.1}
+\contentsline {section}{\numberline {7.2}Further Developments}{65}{section.7.2}
