@@ -1,88 +1,81 @@
 \section{Risk-Sensitive Policy Gradient Theorem}
-In this section the policy gradient theorem is extended to the risk-sensitive framework. In the average reward formulation of the control problem, the result and its derivation are analogous to those presented in the last section for the risk-neutral framework. This will allow to derive in a trivial way the risk-sensitive versions of all the learning algorithms seen above. The risk-sensitive policy gradient theorem for the average-reward formulation was first derived in \cite{prashanth2014actor} and the presentation of this section closely follows the original article. Obtaining an equivalent theorem for the discounted reward formulation is more challenging. In the article cited above, the authors prove the theorem under a very strong assumption on the dependence of rewards obtained at different time steps which is not verified in many applications, among which is the asset allocation problem that we will consider in the next chapter. We will discuss the problems arising in the discounted setting and why it is not easy to derive a policy gradient theorem in this case. In the original article the authors mostly considered the mean-variance criterion since all the algorithms they propose are easily adapted to the Sharpe ratio criterion. Here we take the opposite direction and present the algorithms for the Sharpe ratio, referring to their article for the mean-variance counterparts.     
-
-
+In this section the policy gradient theorem is extended to the risk-sensitive framework. In the average reward formulation of the control problem, the theorem and its derivation are analogous to those presented in the last section for the risk-neutral framework. This will allow us to derive in a trivial way the risk-sensitive versions of all the learning algorithms seen above. The risk-sensitive policy gradient theorem for the average-reward formulation was first derived in \cite{prashanth2014actor} and the presentation of this section closely follows the original article. Obtaining an equivalent theorem for the discounted reward formulation is more challenging. In the article cited above, the authors prove the theorem under a very strong assumption on the dependence of rewards obtained at different time steps which is not verified in many applications, among which is the asset allocation problem that we will consider in the next chapter. We will discuss the problems arising in the discounted setting and why it is not easy to derive a policy gradient theorem in this case. In the original article the authors mostly considered the mean-variance criterion since all the algorithms they propose are easily adapted to the Sharpe ratio criterion. Here we take the opposite direction and present the algorithms for the Sharpe ratio, referring to their article for the mean-variance counterparts.\\   
 Let us consider a family of parametrized policies $\pi_\theta$, with $\theta
 \in \Theta \subseteq \R^{D_\theta}$. The optimization problem then becomes
 \begin{equation}
-	\max_\lambda \min_\theta L(\theta, \lambda) = - \rho(\theta) + \lambda
-	(\Lambda(\theta) - \alpha)
+	\max_\theta J(\theta) =  \text{Sh}(\theta) = \frac{\rho(\theta)}{\sqrt{\Lambda(\theta)}}
 \end{equation}
-Using a policy gradient approach, the policy parameters are updated following 
-the gradient ascent direction
+where we denoted by $\rho(\theta) = \rho_{\pi_\theta}$ and similarly for the other quantities. Using a policy gradient approach, the policy parameters are updated following the gradient ascent direction.
+
+\subsection{Average Reward Formulation}
+In the average reward formulation the gradient of the Sharpe ratio is
 \begin{equation}
-	\nabla_\theta L(\theta, \lambda) = - \nabla_\theta \rho(\theta) + \lambda
-	\nabla_\theta \Lambda(\theta)
+	\nabla_\theta J(\theta) = \frac{\eta(\theta) \nabla_\theta \rho(\theta) - \frac{1}{2} \rho(\theta) \nabla_\theta \eta(\theta)}{\Lambda(\theta) \sqrt{\Lambda(\theta)}}
 \end{equation}
-while the Lagrange multiplier is updated following the gradient descent
-direction  
-\begin{equation}
-	\nabla_\lambda L(\theta, \lambda) = \Lambda(\theta) - \alpha
-\end{equation}
-Since 
-\begin{equation}
-	\nabla_\theta \Lambda(\theta) = \nabla_\theta \eta(\theta) - 2 \rho(\theta)
-	\nabla_\theta \rho(\theta)
-\end{equation}
-it is enough to compute $\nabla_\theta \eta(\theta)$ and $\nabla_\theta
-\rho(\theta)$. These quantities are provided by the policy gradient theorem 
-\begin{theorem}[Policy Gradient]
-	\begin{equation}\label{eq:policy_gradient_theorem_Q}
-		\begin{split}
-			\nabla_\theta \rho(\theta) &= \E[\substack{S\sim d_\pi \\ 
-			A \sim \pi}]{\nabla_\theta \log \pi_\theta(S,A) Q_\theta(S,A)}\\
-			&= \int_\S d_\pi(s) \int_\A \pi(s,a) \nabla_\theta \log
-			\pi_\theta(s,a) Q_\theta(s,a) da ds	
-		\end{split}
-	\end{equation}
+Hence, to compute the update direction, it is sufficient to estimate the various quantities appearing in this formula. For instance, the average reward $\rho(\theta)$, the average square reward $\eta(\theta)$ and the reward variance $\Lambda(\theta)$ can be approximated using exponentially weighted moving averages. On the other hand, the gradient of the average reward $\nabla_\theta \rho(\theta)$ is given by the standard policy gradient theorem \ref{thm:risk_neutral_policy_gradient}. The only term remaining is the gradient of the average square reward $\nabla_\theta \eta(\theta)$, which is provided by the risk-sensitive policy gradient theorem 
+\begin{theorem}[Risk-Sensitive Policy Gradient]
+	Let $\pi_\theta$ be a differentiable policy. The policy gradient for the average square reward is given by
 	\begin{equation}\label{eq:policy_gradient_theorem_W}
 		\begin{split}
-			\nabla_\theta \eta(\theta) &= \E[\substack{S\sim d_\pi \\ 
-			A \sim \pi}]{\nabla_\theta \log \pi_\theta(S,A) W_\theta(S,A)}\\
-			&= \int_\S d_\pi(s) \int_\A \pi(s,a) \nabla_\theta \log
-			\pi_\theta(s,a) W_\theta(s,a) da ds	
+			\nabla_\theta \eta(\theta) &= \E[\substack{S\sim d_\theta \\ 
+			A \sim \pi_\theta}]{\nabla_\theta \log \pi_\theta(S,A) W_\theta(S,A)}
 		\end{split}
 	\end{equation}
+	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$. 
 \end{theorem}
 \begin{proof}
-	Eq. (\ref{eq:policy_gradient_theorem_Q}) is the standard policy gradient
-	and its proof can be found in the literature, e.g. \cite{sutton1999policy}.
-	Eq. (\ref{eq:policy_gradient_theorem_W}) can be shown in a similar fashion.
-	TODO
+	The proof is analogous to that of the risk-neutral version of theorem. From the basic relation between state-value function and action-value function, we have
+		\begin{equation*}
+			\begin{split}
+				\nabla_\theta U_\theta(s) &= \nabla_\theta \int_{\A} \pi_\theta(s,a) W_\theta(s,a) da\\
+					&= \int_{\A} \left[ \nabla_\theta \pi_\theta(s,a) W_\theta(s,a) + \pi_\theta(s,a) \nabla_\theta W_\theta(s,a)\right] da
+			\end{split}
+		\end{equation*} 
+		Using the Bellman expectation equation for $W_\theta$ 
+		\begin{equation*}
+			\begin{split}
+				\nabla_\theta W_\theta(s,a) &= \nabla_\theta \left[ \calM(s,a) - \eta_\theta + \int_{\S} \calP(s,a,s') U_\theta(s') ds' \right]\\
+				&= -\nabla_\theta \eta_\theta + \int_{\S} \calP(s,a,s') \nabla_\theta U_\theta(s') ds'
+			\end{split}
+		\end{equation*}
+		Hence, plugging in the first equation 
+		\begin{equation*}
+			\begin{split}
+				\nabla_\theta U_\theta(s) &= \int_{\A} \nabla_\theta \pi_\theta(s,a) W_\theta(s,a) da - \nabla_\theta \eta_\theta + \int_\A \pi_\theta(s,a) \int_{\S} \calP(s,a,s') \nabla_\theta U_\theta(s') ds' 
+			\end{split}
+		\end{equation*} 	
+		Integrating both sides with respect to the stationary distribution $d^\theta$ and noting that, because of stationarity,  
+		\begin{equation*}
+			\int_{\S} d^\theta(s) \int_{\A} \pi(s,a) \int_{\S} \calP(s,a,s') \nabla_\theta U(s') ds' da ds = \int_{\S} d^\theta(s) \nabla_\theta U_\theta(s) ds
+		\end{equation*}
+		we obtain the result 
+		\begin{equation*}
+			\begin{split}
+			\nabla_\theta \eta_\theta &= \int_{\S} d^\theta(s) \int_{\A} \nabla_\theta \pi_\theta(s,a) W_\theta(s,a) da ds\\
+			&= \int_{\S} d^\theta(s) \int_{\A} \pi_\theta(s,a) \nabla_\theta \log\pi_\theta(s,a) W_\theta(s,a) da ds\\
+			&= \E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
+					\pi_\theta(S,A) W_{\theta}(S, A)} 
+			\end{split}
+		\end{equation*}
 \end{proof}
-As in the standard risk-neutral case, a state-dependent baseline can be 
-introduced in both gradients without changing the result. In particular, by 
-using the average adjusted value functions as baseline, we can replace the 
-average adjusted action-value functions with the following advantage functions
-\begin{equation}
-	A_\theta(s,a) = Q_\theta(s,a) - V_\theta(s)
-\end{equation}
+The result is identical to that for the average reward, provided that we replace the action-value function $Q_\theta(s,a)$ by the square action-value function $W_\theta(s,a)$. As in the standard risk-neutral case, a state-dependent baseline can be introduced in the gradient without changing the result. In particular, by 
+using the average-adjusted square value function as baseline, we can replace the 
+average adjusted action-value functions with the following square advantage function
 \begin{equation}
 	B_\theta(s,a) = W_\theta(s,a) - U_\theta(s)
 \end{equation}
-Intuitively, the advantage functions measure how good is to take action $a$ in
-state $s$ compared to simply following the policy $\pi_\theta$. The use of a
-baseline also serves the purpose of reducing the variance of the gradient
-estimates. Thus, the gradients can be written as 
-\begin{equation}\label{eq:pg_advantage_Q}
-	\nabla_\theta \rho(\theta) = \E[\substack{S\sim d_\pi \\ 
-A \sim \pi}]{\nabla_\theta \log \pi_\theta(S,A) A_\theta(S,A)}
-\end{equation}
+Thus, the gradients can be written as 
 \begin{equation}\label{eq:pg_advantage_W}
 	\nabla_\theta \eta(\theta) = \E[\substack{S\sim d_\pi \\ 
 A \sim \pi}]{\nabla_\theta \log \pi_\theta(S,A) B_\theta(S,A)}
 \end{equation}
-Results of this type form the basis of many actor-critic algorithms, which
-employ an approximation of the advantage function to obtain a more accurate
-estimate of the objective function. 
+From this result, following the exact same reasoning used in the risk-neutral framework, we can design a variety of risk-sensitive actor-critic algorithms, which
+employ an approximation of the standard and of the square advantage functions to obtain a more accurate estimate of the objective function. 
 
 \subsection{Risk-Sensitive Actor-Critic Algorithm}
-In \cite{prashanth2014actor}, starting from (\ref{eq:pg_advantage_Q}) and 
-(\ref{eq:pg_advantage_W}), the authors derive a risk-sensitive actor-critic 
-algorithm for the average reward setting. In the algorithm proposed, the
-advantage functions are approximated using a temporal difference (TD) scheme in
-which a critic maintains a linear approximation of the value functions. More in
-detail, let $\delta_n^A$ and $\delta_n^B$ be the TD errors for residual value
+In \cite{prashanth2014actor}, starting from Eqs. (\ref{eq:actor_critic_pg}) and 
+(\ref{eq:pg_advantage_W}), the authors propose a TD(0) risk-sensitive actor-critic 
+algorithm for the average reward setting. The algorithm maintains two critics that estimate the average adjusted value-functions $V_\theta(S)$ and $U_\theta(S)$ respectively and are updated via a TD(0) temporal difference scheme. Let $\delta_n^A$ and $\delta_n^B$ be the TD errors for residual value
 and square value functions
 \begin{equation}
 	\begin{split}
@@ -96,42 +89,73 @@ where $\widehat{V}$, $\widehat{U}$, $\widehat{\rho}$ and $\widehat{\eta}$ are
 unbiased estimate of $V_\theta$, $U_\theta$, $\rho(\theta)$ and $\eta(\theta)$
 respectively. It is easy to show that $\delta_t^A$ and $\delta_t^B$ are
 unbiased estimates of the advantage functions.
-\begin{proposition}[Temporal Difference Errors]
-	\begin{equation}
-		\begin{split}
-			\E[\theta]{\delta_t^A|S_t = s, A_t = a} &= A_\theta(s, a)\\
-			\E[\theta]{\delta_t^B|S_t = s, A_t = a} &= B_\theta(s, a)\\
-		\end{split}
-	\end{equation}
-\end{proposition}
-\begin{proof}
-	TODO
-\end{proof}
-Denoting by $\psi_t = \psi(S_t, A_t) = \nabla_\theta \log \pi(S_t, A_t)$ the
-compatible feature \cite{sutton1999policy}, we can easily obtain an unbiased
-estimate of the gradients 
+\begin{equation*}
+	\begin{split}
+		\E[\theta]{\delta_t^A|S_t = s, A_t = a} &= A_\theta(s, a)\\
+		\E[\theta]{\delta_t^B|S_t = s, A_t = a} &= B_\theta(s, a)\\
+	\end{split}
+\end{equation*}
+An estimate of the gradients can be obtained by replacing the advantage functions with the TD errors
 \begin{equation}
 	\begin{split}
-		\nabla_\theta \rho(\theta) &\approx \psi_t \delta_t^A\\
-		\nabla_\theta \eta(\theta) &\approx \psi_t \delta_t^B\\
+		\nabla_\theta \rho(\theta) &\approx \nabla_\theta \log \pi_\theta(S_t, A_t) \delta_t^A\\
+		\nabla_\theta \eta(\theta) &\approx \nabla_\theta \log \pi_\theta(S_t, A_t) \delta_t^B\\
 	\end{split}
 \end{equation}
 The value functions are linearly approximated using some veatures vectors
 $\Phi_V: \S \to \R^{D_V}$ and $\Phi_U: \S \to \R^{D_U}$ as follows
 \begin{equation}
 	\begin{split}
-		\widehat{V}(s) &= v^T \Phi_V(s)\\
-		\widehat{U}(s) &= u^T \Phi_U(s)\\
+		\widehat{V}(s) &= \psi_V^T \Phi_V(s)\\
+		\widehat{U}(s) &= \psi_U^T \Phi_U(s)\\
 	\end{split}
 \end{equation}
-Given all these ingredients, the authors propose a three time-scale stochastic
-approximation algorithm whose pseudo-code is illustrated in Algorithm
-%\ref{algo:average_reward_risk_sensitive_actor_critic_algorithm}.
+Combining all these ingredients lead to the Risk-Sensitive Average Reward Actor-Critic algorithm (RSARAC), the pseudocode of which is reported in Algorithm \ref{algo:RSARAC}.
+Let us notice that the algorithm is a three time-scale stochastic approximation algorithm, where the learning rates, in addition to the usual Robbins-Monro conditions, should satisfy
+\begin{equation*}
+	\alpha_k < \beta_k < \gamma_k
+\end{equation*}
 
-% \begin{algorithm}
-	%\caption{Average Reward Risk-Sensitive Actor-Critic Algorithm}
-	% \label{algo:average_reward_risk_sensitive_actor_critic_algorithm}
-	%\begin{algorithmic}
-	%	test		
-	%\end{algorithmic}
-% \end{algorithm}
+\begin{algorithm}[t!]
+	\caption{Risk-Sensitive Average Reward Actor-Critic algorithm}
+	\label{algo:RSARAC}
+	\begin{algorithmic}[]
+		\Require {\\ 
+			\begin{itemize} 
+				\item Initial actor parameters $\theta^0$
+				\item Initial critics parameters $\psi_V^0$ and $\psi_U^0$
+				\item Actor learning rate $\{\alpha_k\}$
+				\item Critics learning rate $\{\beta_k\}$
+				\item Averages learning rate $\{\gamma_k\}$
+			\end{itemize}}
+		\Ensure Approximation of the optimal policy $\pi_{\theta^*} \approx \pi_*$
+		\begin{algorithmic}[1]
+		\Repeat
+			\State Observe tuple $<s_k, a_k, r_{k+1}, s_{k+1}>$ sampled from the MDP.
+			\State Update averages 
+				\begin{equation*}
+					\begin{split}
+					\widehat{\rho}_{k+1} &= (1 - \gamma_k) \widehat{\rho}_k + 	\gamma_k r_{k+1}\\
+					\widehat{\eta}_{k+1} &= (1 - \gamma_k) \widehat{\rho}_k + 	\gamma_k r_{k+1}^2\\
+					\end{split}
+				\end{equation*}
+			\State Compute TD errors	
+				\begin{equation*}
+					\begin{split}
+						\delta_k^A &= r_{k+1} - \widehat{\rho}_{k+1} + (\psi_V^k)^T \Phi_V(s_{k+1}) - (\psi_V^k)^T \Phi_V(s_k)\\
+						\delta_k^B &= r_{k+1}^2 - \widehat{\eta}_{k+1} + (\psi_U^k)^T \Phi_U(s_{k+1}) - (\psi_U^k)^T \Phi_U(s_k)\\
+					\end{split}
+				\end{equation*}
+			\State Update critic parameters 
+				\begin{equation*}
+					\begin{split}
+						\psi_V^{k+1} &= \psi_V^k + \beta_k \delta_k^A \Phi_V(s_k)\\
+						\psi_U^{k+1} &= \psi_U^k + \beta_k \delta_k^B \Phi_U(s_k)\\
+					\end{split}
+				\end{equation*}
+			\State Update actor parameters $\theta^{k+1} = \theta^k + \alpha_k \widehat{\text{Sh}}(\theta_k) $. 
+			\State $k \leftarrow k + 1$
+		\Until{converged}
+		\end{algorithmic}
+	\end{algorithmic}
+\end{algorithm}

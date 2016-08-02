@@ -20,6 +20,7 @@
 \@writefile{toc}{\select@language{english}}
 \@writefile{lof}{\select@language{english}}
 \@writefile{lot}{\select@language{english}}
+\@input{Acknowledgements/acknowledgements.aux}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -35,9 +36,9 @@
 \newlabel{ch:discrete_time_stochastic_optimal_control}{{2}{3}{Discrete-Time Stochastic Optimal Control}{chapter.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Sequential Decision Problems}{3}{section.2.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Markov Decision Processes}{4}{section.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{5}{figure.caption.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{5}{figure.caption.7}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:sequential_decision_problem}{{2.1}{5}{Agent-environment interaction in sequential decision problems.\relax }{figure.caption.6}{}}
+\newlabel{fig:sequential_decision_problem}{{2.1}{5}{Agent-environment interaction in sequential decision problems.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Policies}{5}{section.2.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Risk-Neutral Framework}{6}{section.2.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Discounted Reward Formulation}{6}{subsection.2.4.1}}
@@ -65,8 +66,8 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2}Policy Iteration}{15}{subsection.2.6.2}}
 \citation{sutton1998introduction}
 \citation{sutton1998introduction}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{16}{figure.caption.7}}
-\newlabel{fig:policy_iteration}{{2.2}{16}{Policy iteration algorithm}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{16}{figure.caption.8}}
+\newlabel{fig:policy_iteration}{{2.2}{16}{Policy iteration algorithm}{figure.caption.8}{}}
 \citation{sutton1998introduction}
 \citation{szepesvari2010algorithms}
 \citation{wiering2012reinforcement}
@@ -76,8 +77,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}The Reinforcement Learning Problem}{18}{section.3.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Model-Free RL Methods}{18}{section.3.2}}
 \citation{wiering2012reinforcement}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{19}{figure.caption.8}}
-\newlabel{fig:control_dependences}{{3.1}{19}{Solution process for the control problem.\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{19}{figure.caption.9}}
+\newlabel{fig:control_dependences}{{3.1}{19}{Solution process for the control problem.\relax }{figure.caption.9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Model Approximation}{20}{subsection.3.2.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Value Approximation}{20}{subsection.3.2.2}}
 \citation{sutton1999policy}
@@ -130,10 +131,10 @@
 \newlabel{eq:pgpe_gradient}{{4.31}{33}{Episodic PGPE}{equation.4.3.31}{}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {4.3}{\ignorespaces Episodic PGPE algorithm\relax }}{34}{algorithm.4.3}}
 \newlabel{algo:episodic_pgpe}{{4.3}{34}{Episodic PGPE algorithm\relax }{algorithm.4.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{34}{section*.9}}
-\@writefile{toc}{\contentsline {paragraph}{Gaussian Parameter Distribution}{34}{section*.10}}
+\@writefile{toc}{\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{34}{section*.10}}
+\@writefile{toc}{\contentsline {paragraph}{Gaussian Parameter Distribution}{34}{section*.11}}
 \citation{sehnke2012parameter}
-\@writefile{toc}{\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{35}{section*.11}}
+\@writefile{toc}{\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{35}{section*.12}}
 \citation{sutton1999policy}
 \citation{konda1999actor}
 \citation{sutton1999policy}
@@ -141,6 +142,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.5.2}Infinite Horizon PGPE}{36}{subsubsection.4.3.5.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Risk-Neutral Policy Gradient Theorem}{36}{section.4.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Theorem Statement and Proof}{37}{subsection.4.4.1}}
+\newlabel{thm:risk_neutral_policy_gradient}{{4.4.1}{37}{Risk-Neutral Policy Gradient}{theorem.4.4.1}{}}
 \newlabel{eq:pg_theorem_baseline}{{4.43}{39}{Theorem Statement and Proof}{equation.4.4.43}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}GPOMDP}{39}{subsection.4.4.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Actor-Critic Policy Gradient}{39}{subsection.4.4.3}}
@@ -154,77 +156,80 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Compatible Function Approximation}{42}{subsection.4.4.4}}
 \citation{kakade2001natural}
 \citation{peters2008reinforcement}
+\citation{peters2008reinforcement}
+\citation{peters2008reinforcement}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.5}Natural Policy Gradient}{43}{subsection.4.4.5}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.5.1}Formalism of Natural Policy Gradients}{43}{subsubsection.4.4.5.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{44}{figure.caption.12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{44}{figure.caption.13}}
 \citation{miyamae2010natural}
 \citation{prashanth2014actor}
 \@writefile{toc}{\contentsline {section}{\numberline {4.5}Risk-Sensitive Policy Gradient Theorem}{45}{section.4.5}}
-\citation{sutton1999policy}
-\newlabel{eq:policy_gradient_theorem_Q}{{4.62}{46}{Policy Gradient}{equation.4.5.62}{}}
-\newlabel{eq:policy_gradient_theorem_W}{{4.63}{46}{Policy Gradient}{equation.4.5.63}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Average Reward Formulation}{46}{subsection.4.5.1}}
+\newlabel{eq:policy_gradient_theorem_W}{{4.60}{46}{Risk-Sensitive Policy Gradient}{equation.4.5.60}{}}
 \citation{prashanth2014actor}
-\citation{sutton1999policy}
-\newlabel{eq:pg_advantage_Q}{{4.66}{47}{Risk-Sensitive Policy Gradient Theorem}{equation.4.5.66}{}}
-\newlabel{eq:pg_advantage_W}{{4.67}{47}{Risk-Sensitive Policy Gradient Theorem}{equation.4.5.67}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Risk-Sensitive Actor-Critic Algorithm}{47}{subsection.4.5.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Parameter-Based Policy Gradient Theorem}{48}{section.4.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Risk-Neutral Setting}{48}{subsection.4.6.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Risk-Sensitive Setting}{48}{subsection.4.6.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.3}Natural Policy Gradient}{48}{subsection.4.6.3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.6.3.1}NPGPE}{48}{subsubsection.4.6.3.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.6.3.2}Risk-Sensitive NPGPE}{48}{subsubsection.4.6.3.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Financial Applications of Reinforcement Learning}{49}{chapter.5}}
+\newlabel{eq:pg_advantage_W}{{4.62}{48}{Average Reward Formulation}{equation.4.5.62}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Risk-Sensitive Actor-Critic Algorithm}{48}{subsection.4.5.2}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4.6}{\ignorespaces Risk-Sensitive Average Reward Actor-Critic algorithm\relax }}{49}{algorithm.4.6}}
+\newlabel{algo:RSARAC}{{4.6}{49}{Risk-Sensitive Average Reward Actor-Critic algorithm\relax }{algorithm.4.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Parameter-Based Policy Gradient}{49}{section.4.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.1}Risk-Neutral Setting}{50}{subsection.4.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.2}Risk-Sensitive Setting}{50}{subsection.4.6.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6.3}Natural Policy Gradient}{50}{subsection.4.6.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.6.3.1}NPGPE}{50}{subsubsection.4.6.3.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.6.3.2}Risk-Sensitive NPGPE}{50}{subsubsection.4.6.3.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Financial Applications of Reinforcement Learning}{51}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Bibliographical Survey}{49}{section.5.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Asset Allocation}{49}{section.5.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Reward Function}{49}{subsection.5.2.1}}
-\newlabel{eq:portfolio_return}{{5.1}{50}{Reward Function}{equation.5.2.1}{}}
-\newlabel{eq:portfolio_return_benchmark}{{5.3}{51}{Reward Function}{equation.5.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}States}{52}{subsection.5.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Actions}{52}{subsection.5.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Bibliographical Survey}{51}{section.5.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Asset Allocation}{51}{section.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Reward Function}{51}{subsection.5.2.1}}
+\newlabel{eq:portfolio_return}{{5.1}{52}{Reward Function}{equation.5.2.1}{}}
+\newlabel{eq:portfolio_return_benchmark}{{5.3}{53}{Reward Function}{equation.5.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}States}{54}{subsection.5.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Actions}{54}{subsection.5.2.3}}
 \citation{moody1998performance}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Numerical Results for the Asset Allocation Problem}{55}{chapter.6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Numerical Results for the Asset Allocation Problem}{57}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Synthetic Risky Asset}{55}{section.6.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Learning Algorithm Specifications}{56}{subsection.6.1.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1.1}ARAC}{56}{subsubsection.6.1.1.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1.2}PGPE}{56}{subsubsection.6.1.1.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1.3}NPGPE}{56}{subsubsection.6.1.1.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{57}{figure.caption.13}}
-\newlabel{fig:single_synthetic_neutral_convergence}{{6.1}{57}{Risk-neutral learning process for one synthetic risky asset}{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Experimental Setup}{57}{subsection.6.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Risk-Neutral Framework}{57}{subsection.6.1.3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3.1}Convergence}{57}{subsubsection.6.1.3.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Synthetic Risky Asset}{57}{section.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Learning Algorithm Specifications}{58}{subsection.6.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1.1}ARAC}{58}{subsubsection.6.1.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1.2}PGPE}{58}{subsubsection.6.1.1.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1.3}NPGPE}{58}{subsubsection.6.1.1.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{59}{figure.caption.14}}
+\newlabel{fig:single_synthetic_neutral_convergence}{{6.1}{59}{Risk-neutral learning process for one synthetic risky asset}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Experimental Setup}{59}{subsection.6.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Risk-Neutral Framework}{59}{subsection.6.1.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3.1}Convergence}{59}{subsubsection.6.1.3.1}}
 \citation{kamijo1990stock}
 \citation{saad1998comparative}
 \citation{liang2011stock}
 \citation{deng2016deep}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{58}{figure.caption.14}}
-\newlabel{fig:single_synthetic_neutral_performance}{{6.2}{58}{Backtest performance with one synthetic risky asset}{figure.caption.14}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3.2}Performances}{58}{subsubsection.6.1.3.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Risk-neutral backtest statistics with one synthetic risky asset}}{59}{table.caption.15}}
-\newlabel{tab:single_synthetic_neutral_performance}{{6.1}{59}{Risk-neutral backtest statistics with one synthetic risky asset}{table.caption.15}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3.3}Impact of Transaction Costs}{59}{subsubsection.6.1.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Impact of proportional transaction costs}}{60}{figure.caption.16}}
-\newlabel{fig:impact_transaction_costs}{{6.3}{60}{Impact of proportional transaction costs}{figure.caption.16}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}Risk-Sensitive Framework}{60}{subsection.6.1.4}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Risk-sensitive backtest statistics with one synthetic risky asset}}{61}{table.caption.19}}
-\newlabel{my-label}{{6.2}{61}{Risk-sensitive backtest statistics with one synthetic risky asset}{table.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{61}{figure.caption.17}}
-\newlabel{fig:single_synthetic_sensitive_convergence}{{6.4}{61}{Risk-sensitive learning process for one synthetic risky asset}{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Backtest performance with one synthetic risky asset}}{62}{figure.caption.18}}
-\newlabel{fig:single_synthetic_sensitive_performance}{{6.5}{62}{Backtest performance with one synthetic risky asset}{figure.caption.18}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Historic Risky Asset}{63}{section.6.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Multiple Synthetic Risky Assets}{63}{section.6.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Historic Multiple Risky Assets}{63}{section.6.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{65}{chapter.7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{60}{figure.caption.15}}
+\newlabel{fig:single_synthetic_neutral_performance}{{6.2}{60}{Backtest performance with one synthetic risky asset}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3.2}Performances}{60}{subsubsection.6.1.3.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Risk-neutral backtest statistics with one synthetic risky asset}}{61}{table.caption.16}}
+\newlabel{tab:single_synthetic_neutral_performance}{{6.1}{61}{Risk-neutral backtest statistics with one synthetic risky asset}{table.caption.16}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3.3}Impact of Transaction Costs}{61}{subsubsection.6.1.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Impact of proportional transaction costs}}{62}{figure.caption.17}}
+\newlabel{fig:impact_transaction_costs}{{6.3}{62}{Impact of proportional transaction costs}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}Risk-Sensitive Framework}{62}{subsection.6.1.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Impact of short-selling fees}}{63}{figure.caption.18}}
+\newlabel{fig:impact_short_selling_fees}{{6.4}{63}{Impact of short-selling fees}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{63}{figure.caption.19}}
+\newlabel{fig:single_synthetic_sensitive_convergence}{{6.5}{63}{Risk-sensitive learning process for one synthetic risky asset}{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{64}{figure.caption.20}}
+\newlabel{fig:single_synthetic_sensitive_performance}{{6.6}{64}{Backtest performance with one synthetic risky asset}{figure.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Risk-sensitive backtest statistics with one synthetic risky asset}}{64}{table.caption.21}}
+\newlabel{my-label}{{6.2}{64}{Risk-sensitive backtest statistics with one synthetic risky asset}{table.caption.21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Historic Risky Asset}{65}{section.6.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Multiple Synthetic Risky Assets}{65}{section.6.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Historic Multiple Risky Assets}{65}{section.6.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{67}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary}{65}{section.7.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Further Developments}{65}{section.7.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Summary}{67}{section.7.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Further Developments}{67}{section.7.2}}
 \citation{*}
 \bibstyle{siam}
 \bibdata{Bibliography/bibliography}

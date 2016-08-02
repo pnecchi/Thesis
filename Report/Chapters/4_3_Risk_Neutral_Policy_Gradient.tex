@@ -2,18 +2,19 @@
 In the previous sections, we saw that the core of a policy gradient algorithm consist in the approximation of the objective function gradient. In this section we present the \emph{policy gradient theorem} \cite{sutton1999policy}, which shows that the gradient can be rewritten in a form suitable for estimation from experience aided by an approximate action-value or advantage function. First, we will prove the theorem in the risk-neutral setting for which it was originally proposed. In particular, we will see how the GPOMDP algorithm can be easily derived by this result via a Monte Carlo approximation. Moreover, we will derive a class of actor-critic algorithms \cite{konda1999actor} that, in addition to a parametric approximation of the policy, also exploit an approximation of the action-value function or of an advantage function to reduce the variance of the gradient estimate. In particular, we review the powerful idea of compatible function approximation \cite{sutton1999policy} which assures the convergence to a local optimum of the objective function. Finally, we discuss the natural policy gradient idea \cite{kakade2001natural}, which forms the basis of many state-of-the-art algorithms. The extension to the risk-sensitive setting will be done in the next section. 
 
 \subsection{Theorem Statement and Proof}
-\begin{theorem}[Policy Gradient]
+\begin{theorem}[Risk-Neutral Policy Gradient]
+\label{thm:risk_neutral_policy_gradient}
 	Let $\pi_\theta$ be a differentiable policy. The policy gradient for the average reward formulation is given by
 	\begin{equation}
 		\nabla_\theta \rho(\theta) =
 		\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
-		\pi_\theta(S,A) Q_{\pi_\theta}(S, A)}
+		\pi_\theta(S,A) Q_{\theta}(S, A)}
 	\end{equation}
 	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$. The policy gradient for the start value formulation is given by
 	\begin{equation}
 		\nabla_\theta J_{\text{start}}(\theta) =
 		\E[\substack{S \sim d_\gamma^\theta(s_0, \cdot)\\A \sim \pi_\theta}]{\nabla_\theta\log
-		\pi_\theta(S,A) Q_{\pi_\theta}(S, A)}
+		\pi_\theta(S,A) Q_{\theta}(S, A)}
 	\end{equation}
 	where $d_\gamma^\theta(s_0, \cdot)$ is the $\gamma$-discounted visiting distribution over states starting from the initial state $s_0$ and following policy $\pi_\theta$
 		\begin{equation}
@@ -43,7 +44,7 @@ In the previous sections, we saw that the core of a policy gradient algorithm co
 	\end{equation*} 	
 	Integrating both sides with respect to the stationary distribution $d^\theta$ and noting that, because of stationarity,  
 	\begin{equation*}
-		\int_{\S} d^\theta(s) \int_{\A} \pi(s,a) \int_{\S} \calP(s,a,s') \nabla_\theta(s') ds' da ds = \int_{\S} d^\theta(s) \nabla_\theta V_\theta(s) ds
+		\int_{\S} d^\theta(s) \int_{\A} \pi(s,a) \int_{\S} \calP(s,a,s') \nabla_\theta V(s') ds' da ds = \int_{\S} d^\theta(s) \nabla_\theta V_\theta(s) ds
 	\end{equation*}
 	we obtain the result 
 	\begin{equation*}
@@ -51,7 +52,7 @@ In the previous sections, we saw that the core of a policy gradient algorithm co
 		\nabla_\theta \rho_\theta &= \int_{\S} d^\theta(s) \int_{\A} \nabla_\theta \pi_\theta(s,a) Q_\theta(s,a) da ds\\
 		&= \int_{\S} d^\theta(s) \int_{\A} \pi_\theta(s,a) \nabla_\theta \log\pi_\theta(s,a) Q_\theta(s,a) da ds\\
 		&= \E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
-				\pi_\theta(S,A) Q_{\pi_\theta}(S, A)} 
+				\pi_\theta(S,A) Q_{\theta}(S, A)} 
 		\end{split}
 	\end{equation*}
 	Let us now prove the theorem for the start state formulation. The first step is exactly the same. Hence, using the Bellman expectation equation for $Q_\theta$ 
@@ -233,7 +234,7 @@ plateaus. This technique was first proposed in the reinforcement learning settin
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=1\linewidth]{Images/4_0_euclidean_vs_natural}
-	\caption[``Vanilla'' policy gradient vs. natural policy gradient]{``Vanilla'' policy gradient (left) vs. natural policy gradient (right). The main difference is how the two approaches punish the change in parameters. This distance is 	indicated by the blue ellipses in the contour plot while the dashed lines show the expected return. Obtaining a gradient then corresponds to finding a vector pointing from the center of the ellipses to the location with maximum expected return on the ellipse. A vanilla policy gradient (a) considers a change in all parameters as equally distant, thus, it is a search for a maximum on a circle while the natural gradient (b) uses scales determined by the Fisher information which results in a reduction in exploration. The slower reduction in exploration results into a faster convergence to the optimal policy.}
+	\caption[``Vanilla'' policy gradient vs. natural policy gradient]{``Vanilla'' policy gradient (left) vs. natural policy gradient (right). The main difference is how the two approaches punish the change in parameters. This distance is 	indicated by the blue ellipses in the contour plot while the dashed lines show the expected return. Obtaining a gradient then corresponds to finding a vector pointing from the center of the ellipses to the location with maximum expected return on the ellipse. A vanilla policy gradient (a) considers a change in all parameters as equally distant, thus, it is a search for a maximum on a circle while the natural gradient (b) uses scales determined by the Fisher information which results in a reduction in exploration. The slower reduction in exploration results into a faster convergence to the optimal policy \cite{peters2008reinforcement}.}
 \end{figure}
 
 \subsubsection{Formalism of Natural Policy Gradients}

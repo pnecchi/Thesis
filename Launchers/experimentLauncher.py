@@ -42,9 +42,9 @@ postProcessingDir = thesisBaseDir + 'Code/Postprocessing/'
 #-----------------------#
 
 params = {'riskFreeRate'      : 0.0,
-          'deltaP'            : 0.0001,
+          'deltaP'            : 0.000,
           'deltaF'            : 0.0,
-          'deltaS'            : 0.00,
+          'deltaS'            : 0.0050,
           'numDaysObserved'   : 5,
           'lambda'            : 0.9,
           'alphaConstActor'   : 0.1,
