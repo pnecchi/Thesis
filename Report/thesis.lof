@@ -4,15 +4,15 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{5}{figure.caption.7}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{16}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{19}{figure.caption.9}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{21}{figure.caption.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{44}{figure.caption.13}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{46}{figure.caption.13}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{59}{figure.caption.14}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{60}{figure.caption.15}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Impact of proportional transaction costs}}{62}{figure.caption.17}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Impact of short-selling fees}}{63}{figure.caption.18}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{63}{figure.caption.19}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{64}{figure.caption.20}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{61}{figure.caption.14}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{62}{figure.caption.15}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Impact of proportional transaction costs}}{64}{figure.caption.17}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Impact of short-selling fees}}{65}{figure.caption.18}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{65}{figure.caption.19}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{66}{figure.caption.20}
 \addvspace {10\p@ }

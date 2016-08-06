@@ -159,3 +159,15 @@ Let us notice that the algorithm is a three time-scale stochastic approximation 
 		\end{algorithmic}
 	\end{algorithmic}
 \end{algorithm}
+
+\subsection{Discounted Reward Formulation}
+In the discounted reward formulation, we need to adapt the definition of the Sharpe ratio associated to a policy. Let us suppose that the system always start in the same initial state $s_0$, then we can introduce the start-state Sharpe ratio that can be achieved following policy $\pi_\theta$ as
+\begin{equation}
+	\text{Sh}(\theta) = \frac{V_\theta(s_0)}{\sqrt{\Lambda_\theta(s_0)}}
+\end{equation}
+where $V_\theta$ and $\Lambda_\theta$ are the state-value function and the variance-function introduced in Chapter \ref{ch:discrete_time_stochastic_optimal_control}. 
+Hence, the gradient of the Sharpe ratio is given by
+\begin{equation}
+	\nabla_\theta \text{Sh}(\theta) = \frac{U_\theta(s_0) \nabla_\theta V_\theta(s_0) - \frac{1}{2} V_\theta(s_0) \nabla_\theta U_\theta(s_0)}{\Lambda_\theta(s_0) \sqrt{\Lambda_\theta(s_0)}}
+\end{equation}
+The gradient of the state-value function $\nabla_\theta V_\theta(s_0)$ is given by the risk-neutral policy gradient theorem. Therefore, in order to approximate the gradient of the Sharpe ratio, we need to estimate the value functions $V_\theta(s_0)$, $U_\theta(s_0)$, the variance $\Lambda_\theta(s_0$), and the gradient of the square state-value function $U_\theta (s_0)$. The first three terms might be easily approximated using moving averages. On the other hand, estimating $\nabla_\theta U_\theta(s_0)$ in the same spirit of the policy gradient theorem is much more delicate. 

@@ -1,6 +1,6 @@
-\contentsline {algorithm}{\numberline {4.1}{\ignorespaces General setup for a policy gradient algorithm.\relax }}{24}{algorithm.4.1}
-\contentsline {algorithm}{\numberline {4.2}{\ignorespaces Episodic REINFORCE policy gradient estimate\relax }}{30}{algorithm.4.2}
-\contentsline {algorithm}{\numberline {4.3}{\ignorespaces Episodic PGPE algorithm\relax }}{34}{algorithm.4.3}
-\contentsline {algorithm}{\numberline {4.4}{\ignorespaces Generic structure for an online actor-critic algorithm.\relax }}{40}{algorithm.4.4}
-\contentsline {algorithm}{\numberline {4.5}{\ignorespaces TD($\lambda $) policy gradient algorithm.\relax }}{42}{algorithm.4.5}
-\contentsline {algorithm}{\numberline {4.6}{\ignorespaces Risk-Sensitive Average Reward Actor-Critic algorithm\relax }}{49}{algorithm.4.6}
+\contentsline {algorithm}{\numberline {4.1}{\ignorespaces General setup for a policy gradient algorithm.\relax }}{26}{algorithm.4.1}
+\contentsline {algorithm}{\numberline {4.2}{\ignorespaces Episodic REINFORCE policy gradient estimate\relax }}{32}{algorithm.4.2}
+\contentsline {algorithm}{\numberline {4.3}{\ignorespaces Episodic PGPE algorithm\relax }}{36}{algorithm.4.3}
+\contentsline {algorithm}{\numberline {4.4}{\ignorespaces Generic structure for an online actor-critic algorithm.\relax }}{42}{algorithm.4.4}
+\contentsline {algorithm}{\numberline {4.5}{\ignorespaces TD($\lambda $) policy gradient algorithm.\relax }}{44}{algorithm.4.5}
+\contentsline {algorithm}{\numberline {4.6}{\ignorespaces Risk-Sensitive Average Reward Actor-Critic algorithm\relax }}{51}{algorithm.4.6}
