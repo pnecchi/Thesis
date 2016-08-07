@@ -82,16 +82,16 @@ void AssetAllocationExperiment::run()
             }
 
             // Print convergence summary
-            if ((epoch + 1) % static_cast<int>(numEpochs / 50) == 0)
+            if (epoch % static_cast<int>(numEpochs / 50) == 0)
             {
                 std::vector<std::vector<double>> stats = experimentStats.getStatistics();
                 std::cout << "Experiment #" << exp
-                          << " - Epoch #" << epoch + 1
+                          << " - Epoch #" << epoch
                           << " - Average: " << stats[0][0]
                           << " - Standard Deviation: " << stats[0][1]
                           << " - Sharpe Ratio: " << stats[0][2] << std::endl;
 
-                debugFile << epoch + 1 << "," << stats[0][0] << "," << stats[0][1]
+                debugFile << epoch << "," << stats[0][0] << "," << stats[0][1]
                           << "," << stats[0][2] << ",\n";
             }
         }

@@ -26,6 +26,7 @@
 #include <thesis/ProbabilityDistribution.h>
 #include <armadillo>  /* arma::vec */
 #include <memory>     /* std::unique_ptr */
+#include <fstream>
 
 /*!
  * GaussianDistribution defines an axis-aligned multivariate Gaussian

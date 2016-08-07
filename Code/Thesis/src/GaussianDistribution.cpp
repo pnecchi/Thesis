@@ -12,7 +12,7 @@ GaussianDistribution::GaussianDistribution(size_t dimOutput_)
 void GaussianDistribution::initializeParameters()
 {
     parameters.rows(0, dimOutput - 1).zeros();
-    parameters.rows(dimOutput, dimParameters - 1).ones();
+    parameters.rows(dimOutput, dimParameters - 1) = 0.01 * arma::ones(dimOutput);
 }
 
 std::unique_ptr<ProbabilityDistribution> GaussianDistribution::clone() const

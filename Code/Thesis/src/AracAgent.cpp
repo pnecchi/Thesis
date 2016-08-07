@@ -82,11 +82,13 @@ void ARACAgent::learn()
     // 3) Update critics
     double alphaCritic = criticLearningRatePtr->get();
     gradientCritic = lambda * gradientCritic + critic.gradient(observation);
+    gradientCritic /= arma::norm(gradientCritic, 2);
     critic.setParameters(critic.getParameters() + alphaCritic * tdErr * gradientCritic);
 
     // 4) Update actor
     double alphaActor = actorLearningRatePtr->get();
     gradientActor = lambda * gradientActor + actor.likelihoodScore(observation, action);
+    gradientActor /= arma::norm(gradientActor, 2);
     actor.setParameters(actor.getParameters() + alphaActor * tdErr * gradientActor);
 }
 

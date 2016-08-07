@@ -242,7 +242,7 @@ int main(int argc, char** argv)
         std::cout << ".. PGPE binary policy - ";
         BinaryPolicy controller(task.getDimObservation());
         GaussianDistribution distribution(controller.getDimParameters());
-        PGPEPolicy policy(controller, distribution, 0.2);
+        PGPEPolicy policy(controller, distribution, 1.0);
         std::cout << "done" << std::endl;
 
         // Stochastic Actor
