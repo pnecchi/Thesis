@@ -3,6 +3,7 @@
 #include <limits>  /* eps */
 #include <random>
 #include <iostream>
+#include <algorithm>  /* find */
 
 BoltzmannPolicy::BoltzmannPolicy(size_t dimObservation_,
                                  std::vector<double> possibleActions_)
@@ -10,9 +11,9 @@ BoltzmannPolicy::BoltzmannPolicy(size_t dimObservation_,
       possibleActions(possibleActions_),
       numPossibleActions(possibleActions.size()),
       dimParametersPerAction(dimObservation_ + 1),
-      dimParameters(dimParametersPerAction * numPossibleActions),
-      parametersMat(dimParametersPerAction, numPossibleActions),
-      paramatersVec(parametersMat.memptr(), dimParameters, false, false),
+      dimParameters(dimParametersPerAction * (numPossibleActions - 1)),
+      parametersMat(dimParametersPerAction, numPossibleActions - 1),
+      parametersVec(parametersMat.memptr(), dimParameters, false, false),
       generator(),
       boltzmannProbabilities(numPossibleActions)
 {
@@ -28,12 +29,12 @@ void BoltzmannPolicy::initializeParameters()
 
 arma::vec BoltzmannPolicy::getParameters() const
 {
-    return paramatersVec;
+    return parametersVec;
 }
 
 void BoltzmannPolicy::setParameters(arma::vec const &parameters)
 {
-    paramatersVec = parameters;
+    parametersVec = parameters;
 }
 
 arma::vec BoltzmannPolicy::getAction(arma::vec const &observation_) const
@@ -44,7 +45,8 @@ arma::vec BoltzmannPolicy::getAction(arma::vec const &observation_) const
     features.rows(1, features.n_elem - 1) = observation_;
 
     // Compute actions probabilities according to Boltzmann distribution
-    arma::vec boltzmannWeights = arma::exp(parametersMat.t() * features);
+    arma::vec boltzmannWeights(numPossibleActions, arma::fill::ones);
+    boltzmannWeights.rows(0, boltzmannWeights.n_elem - 2) = arma::exp(parametersMat.t() * features);
     std::discrete_distribution<int> boltzmannDistribution(boltzmannWeights.begin(),
                                                           boltzmannWeights.end());
 
@@ -66,21 +68,35 @@ arma::vec BoltzmannPolicy::likelihoodScore(arma::vec const &observation_,
     features(0) = 1.0;
     features.rows(1, features.n_elem - 1) = observation_;
 
+    // Find index of selected action
+    size_t actionIdx = std::distance(possibleActions.begin(),
+                                     std::find(possibleActions.begin(), possibleActions.end(), action_[0]));
+    double probabilityForAction = boltzmannProbabilities[actionIdx];
+
     // Compute likelihood score
     arma::vec likScore(dimParameters);
-    double coeff = 0.0;
-    for (size_t i = 0; i < numPossibleActions; ++i)
+    for (size_t i = 0; i < numPossibleActions - 1; ++i)
     {
-        // Compute coefficient for the different actions
-        if (std::abs(action_[0] - possibleActions[i]) < std::numeric_limits<double>::epsilon())
-            coeff = 1.0 - boltzmannProbabilities[i];
-        else
-            coeff = - boltzmannProbabilities[i];
-
-        // Compute likScore associated to the given action
         likScore.rows(i * dimParametersPerAction, (i + 1) * dimParametersPerAction - 1)
-            = coeff * features;
+            = - probabilityForAction * features;
     }
+    if (actionIdx != numPossibleActions - 1)
+        likScore.rows(actionIdx * dimParametersPerAction,
+                      (actionIdx + 1) * dimParametersPerAction - 1) += features;
+
+//    double coeff = 0.0;
+//    for (size_t i = 0; i < numPossibleActions; ++i)
+//    {
+//        // Compute coefficient for the different actions
+//        if (std::abs(action_[0] - possibleActions[i]) < std::numeric_limits<double>::epsilon())
+//            coeff = 1.0 - boltzmannProbabilities[i];
+//        else
+//            coeff = - boltzmannProbabilities[i];
+//
+//        // Compute likScore associated to the given action
+//        likScore.rows(i * dimParametersPerAction, (i + 1) * dimParametersPerAction - 1)
+//            = coeff * features;
+//    }
     return likScore;
 }
 

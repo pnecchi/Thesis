@@ -6,7 +6,6 @@
 MarketEnvironment::MarketEnvironment (std::string inputFilePath)
 {
 	// Initialize filestream from inputFilePath
-	std::cout << inputFilePath << std::endl;
 	std::ifstream ifs(inputFilePath);
 	std::string line;
     char ch;

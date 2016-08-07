@@ -118,7 +118,7 @@ class BoltzmannPolicy : public StochasticPolicy
 
         //! Policy parameters: Theta = [ theta_1 | thetha_2 | ... | theta_D ]
         arma::mat parametersMat;
-        arma::vec paramatersVec;  // Linearized matrix (shares memory)
+        arma::vec parametersVec;  // Linearized matrix (shares memory)
 
         /*!
          * Boltzmann probability distribution and random number generator
