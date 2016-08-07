@@ -4,3 +4,4 @@
 \contentsline {algorithm}{\numberline {4.4}{\ignorespaces Generic structure for an online actor-critic algorithm.\relax }}{42}{algorithm.4.4}
 \contentsline {algorithm}{\numberline {4.5}{\ignorespaces TD($\lambda $) policy gradient algorithm.\relax }}{44}{algorithm.4.5}
 \contentsline {algorithm}{\numberline {4.6}{\ignorespaces Risk-Sensitive Average Reward Actor-Critic algorithm\relax }}{51}{algorithm.4.6}
+\contentsline {algorithm}{\numberline {4.7}{\ignorespaces NPGPE\relax }}{58}{algorithm.4.7}

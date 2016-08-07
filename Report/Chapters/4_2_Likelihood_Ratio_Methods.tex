@@ -179,10 +179,10 @@ search in the model parameter space. We start by presenting the episodic case
 and we will later extend this approach to the infinite horizon setting.  
 
 \subsubsection{Episodic PGPE}
-Given an episodic MDP, PGPE considers a determinstic controller $F: \S \times
+Given an episodic MDP, PGPE considers a deterministic controller $F: \S \times
 \Theta \to \A$ that, given a set of parameters $\theta \in \Theta \subseteq
 \R^{D_\theta}$, maps a state $s \in \S$ to an action $a = F(s; \theta) =
-F_\theta(s) \in \A$. The policy parameters are drawn from a probability distribution $p_\xi$, with hyperparameters $\xi \in \Xi \subseteq \R^{D_\xi}$. Combining these two
+F_\theta(s) \in \A$. The policy parameters are drawn from a probability distribution $p_\xi$, with hyper-parameters $\xi \in \Xi \subseteq \R^{D_\xi}$. Combining these two
 hypotheses, the agent follows a stochastic policy $\pi_\xi$ defined by
 \begin{equation*}
 	\forall B \in \calA ,\ \pi_\xi(s,B) = \pi(s, B; \xi) = \int_\Theta p_\xi(\theta) 
@@ -196,7 +196,7 @@ episode and then generate an entire trajectory following the deterministic
 policy $F_\theta$. As an additional benefit, the parameter gradient is
 estimated by direct parameter perturbations, without having to backpropagate
 any derivatives, which allows to use non-differentiable controllers.\\
-The hyperparameters $\xi$ will be updated by following the gradient ascent direction of the gradient of the expected reward, which can be rewritten as 
+The hyper-parameters $\xi$ will be updated by following the gradient ascent direction of the gradient of the expected reward, which can be rewritten as 
 \begin{equation}
 	\begin{split}
 		J(\xi) = \E[\substack{\theta \sim p_\xi\\H \sim p_\theta}]{G(H)} =
@@ -224,7 +224,7 @@ In order to further reduce the estimate variance, an optimal baseline can be com
 	\caption{Episodic PGPE algorithm}
 	\label{algo:episodic_pgpe}
 	\begin{algorithmic}[1]
-		\Require Initial hyperparameters $\xi_0$, learning rate $\{\alpha_k\}$
+		\Require Initial hyper-parameters $\xi_0$, learning rate $\{\alpha_k\}$
 		\Ensure Approximation of the optimal policy $F_{\xi^*} \approx \pi_*$
 		\Repeat
 			\For {$m = 1, \ldots, M$}
@@ -242,7 +242,7 @@ In order to further reduce the estimate variance, an optimal baseline can be com
 A simple approach is to assume that all the components of the parameter vector
 $\theta$ are independent and normally distributed with mean $\mu_i$ and
 variance $\sigma_i^2$, i.e. $\theta_i \sim \mathcal{N}(\mu_i, \sigma_i^2)$, the
-gradient with respect to the hyperparameters $\xi = (\mu_1, \ldots, 
+gradient with respect to the hyper-parameters $\xi = (\mu_1, \ldots, 
 \mu_{D_\theta}, \sigma_1, \ldots, \sigma_{D_\theta})^T$ is given by 
 \begin{equation}
 	\begin{split}
@@ -266,7 +266,7 @@ if $G(h) > b$ we adjust $\xi$ so as to increase the probability of $\theta$
 while if $G(h) < b$ we do the opposite. 
 
 \paragraph{Gaussian Parameter Distribution}
-A more elaborate approach is to assume a generic dependence among the controller parameters, i.e. $\theta \sim \calN(\mu, \Sigma)$. However, if we directly used the covariance matrix $\Sigma$ as an hyperparameter, it would be computationally difficult to enforce that it remains well-defined, i.e. symmetric and semidefinite positive, during the gradient ascent iterations. A simpler approach is to parameterize the distribution using the Cholesky factor $\Sigma$, i.e. the matrix $C$ such that $\Sigma = C^T C$. This choice has two advantages: first, $C$ makes explicit the $n(n+1)/2$ indpendent parameters determining the covariance matrix $\Sigma$; in addition, $C^T C$ is by construction a well-defined covariance matrix. Hence, the hyperparameters are $\xi =\{\mu, C\}$. The likelihood score for this distribution doesn't have a simple expression, but it becomes extremely easy in the Natural version of PGPE which will be discussed in the next sections.
+A more elaborate approach is to assume a generic dependence among the controller parameters, i.e. $\theta \sim \calN(\mu, \Sigma)$. However, if we directly used the covariance matrix $\Sigma$ as an hyper-parameter, it would be computationally difficult to enforce that it remains well-defined, i.e. symmetric and semidefinite positive, during the gradient ascent iterations. A simpler approach is to parameterize the distribution using the Cholesky factor $\Sigma$, i.e. the matrix $C$ such that $\Sigma = C^T C$. This choice has two advantages: first, $C$ makes explicit the $n(n+1)/2$ independent parameters determining the covariance matrix $\Sigma$; in addition, $C^T C$ is by construction a well-defined covariance matrix. Hence, the hyper-parameters are $\xi =\{\mu, C\}$. The likelihood score for this distribution doesn't have a simple expression, but it becomes extremely easy in the Natural version of PGPE which will be discussed in the next sections.
 
 \paragraph{Symmetric Sampling and Gain Normalization} 
 In some settings, comparing the gain with a baseline can be misleading. In
@@ -314,7 +314,7 @@ normalization can drastically improve the gradient estimate quality and
 consequently the convergence time.  
 
 \subsubsection{Infinite Horizon PGPE}
-While in the episodic PGPE the parameters $\theta$ are sampled only at the beginning of each episode, in \emph{Infinite Horizon PGPE} (IHPGPE) \cite{sehnke2012parameter} the parameters and learning are carried out simultaneously, while interacting with the environmnent. Let $0 < \varepsilon < 1$ the probability of updating the policy parameters, the parameters $\theta_t$ can be sampled consecutively as follows
+While in the episodic PGPE the parameters $\theta$ are sampled only at the beginning of each episode, in \emph{Infinite Horizon PGPE} (IHPGPE) \cite{sehnke2012parameter} the parameters and learning are carried out simultaneously, while interacting with the environment. Let $0 < \varepsilon < 1$ the probability of updating the policy parameters, the parameters $\theta_t$ can be sampled consecutively as follows
 \begin{equation}
 	p_\xi(\theta_{i,t+1}) = \varepsilon \mathcal{N}(\mu_{i,t}, \sigma_{i,t}^2) 
 							+ (1-\varepsilon) \delta_{\theta_{i,t}}

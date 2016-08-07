@@ -1,12 +1,199 @@
 \section{Parameter-Based Policy Gradient}
-TODO
+The learning algorithms derived from the policy gradient theorems look for a set of optimal controller parameters by perturbing the control signal. Indeed, the policy gradient theorem holds only for stochastic policies, which explore in the action space.
+However, a significant problem with this sampling strategy is that the high variance in their gradient estimates leads to slow convergence. On the other hand, parameter-based algorithms such as PGPE look for an optimal solution to the control problem by directly perturbing the controller parameters. These algorithm thus employ a deterministic controller and explore in the parameters space. However, in its original version, PGPE was conceived for episodic environments and extended to continuing environment by artificially truncating the experiments lifespan. In this section we propose a parameter-based version of the policy gradient theorem, which can be used to derive online learning algorithms. The following discussion starts from and generalizes the results presented in \cite{miyamae2010natural}, where the authors propose an online natural PGPE algorithm. Given the difficulties to extend the policy gradient theorem to the risk-sensitive discounted formulation, here we consider only the averge reward formulation. 
 
 \subsection{Risk-Neutral Setting}
+Let us consider a deterministic controller $F: \S \times
+\Theta \to \A$ that, given a set of parameters $\theta \in \Theta \subseteq
+\R^{D_\theta}$, maps a state $s \in \S$ to an action $a = F(s; \theta) =
+F_\theta(s) \in \A$. The policy parameters are drawn from a probability distribution $p_\xi$, with hyper-parameters $\xi \in \Xi \subseteq \R^{D_\xi}$. Combining these two
+hypotheses, the agent follows a stochastic policy $\pi_\xi$ defined by
+\begin{equation}
+	\forall B \in \calA ,\ \pi_\xi(s,B) = \pi(s, B; \xi) = \int_\Theta p_\xi(\theta) 
+	\ind{F_{\theta}(s)\in B} d\theta
+\end{equation}
+In the risk-neutral setting, the goal of the agent is to find a set of hyper-parameters $\xi_*$ that maximizes the average reward obtained over a single time-step 
+\begin{equation*}
+	\xi_* = \argmax_\xi \rho(\xi)
+\end{equation*}
+Following the policy gradient approach, we iteratively update the parameters in the gradient ascent direction 
+\begin{equation*}
+	\xi^{k+1} = \xi^k + \alpha_k \nabla_\xi \rho(\xi_k)
+\end{equation*}
+\begin{theorem}[Risk-Neutral Parameter-Based Policy Gradient]
+	Let $p_\xi$ be differentiable with respect to $\xi$, then the gradient of the average reward is given by
+	\begin{equation}
+		\nabla_\xi \rho(\xi) = \E[\substack{S \sim d^\xi\\\theta \sim p_\xi}]{\nabla_\xi \log p_\xi(\theta) Q_{\pi_\xi}(S, \theta)}
+	\end{equation}
+	where we denoted $Q_\xi(S, \theta) = Q_\xi(S, F_\theta(S))$.
+\end{theorem}
+\begin{proof}
+Thanks to the likelihood ratio technique, we have
+\begin{equation*}
+	\begin{split}
+	\nabla_\xi \pi_\xi(s,a) &= \int_\Theta \nabla_\xi p_\xi(\theta) \ind{F_\theta(s)=a} d\theta
+		\\
+		&= \int_\Theta p_\xi(\theta) \nabla_\xi \log p_\xi(\theta) \ind{F_\theta(s)=a} d\theta
+		\\
+		&= \E[\theta \sim p_\xi]{\nabla_\xi \log p_\xi(\theta) \ind{F_\theta(s)=a}}
+	\end{split}
+\end{equation*}
+hence, the policy $\pi_\xi$ is differentiable with respect to $\xi$ and the standard policy gradient theorem holds
+\begin{equation*}\label{eq:policy_gradient}
+	\begin{split}
+		\nabla_\xi \rho(\xi) &= \E[\substack{S \sim d^\xi\\A \sim \pi_\xi}]{\nabla_\theta\log
+				\pi_\theta(S,A) Q_{\theta}(S, A)}\\
+						  &= \int_{\S} d^\xi(s) \int_{\A} \pi_{\xi}(s, a)
+		\nabla_{\xi} \log \pi_{\xi}(s,a) Q_{\pi_\xi}(s,a) da ds\\
+		&= \int_{\S} d^\xi(s) \int_{\A}
+				\nabla_{\xi} \pi_{\xi}(s,a) Q_{\pi_\xi}(s,a) da ds
+	\end{split}
+\end{equation*}
+Plugging the first equation in the inner integral and exchanging the integral over the action space with the expectation yields
+\begin{equation*}
+	\begin{split}
+		 \int_{\A} \nabla_{\xi} \pi_{\xi}(s,a) Q_{\pi_\xi}(s,a) da
+			&= \E[\theta \sim p_\xi]{\nabla_\xi \log p_\xi(\theta) \int_\A \ind{F_\theta(s)=a}
+			Q_{\pi_\xi}(s,a) da}\\
+			&= \E[\theta \sim p_\xi]{\nabla_\xi \log p_\xi(\theta) Q_{\pi_\xi}(s, F_\theta(s))}\\
+			&= \E[\theta \sim p_\xi]{\nabla_\xi \log p_\xi(\theta) Q_{\pi_\xi}(s, \theta))}
+	\end{split}
+\end{equation*}
+Finally, plugging this equation in the policy gradient theorem, we obtain the result
+\begin{equation*}
+	\nabla_\xi \rho(\xi) = \E[\substack{S \sim d^\xi\\\theta \sim p_\xi}]{\nabla_\xi \log p_\xi(\theta) Q_{\pi_\xi}(S, \theta)}
+\end{equation*}
+\end{proof}
+This expression is very similar to the original policy gradient theorem, but
+the expectation is taken over the controller parameters and not on the actions.
+Thus, we might interpret this result as if the agent directly selected the parameters
+$\theta$ according to a policy $p_\xi$, which then lead to an action through the deterministic mapping $F_\theta$. Therefore, it is as if the agent's policy was in the parameters space and not in the control space. As in the standard policy gradient methods, we can add a state-dependent baseline $B_\xi(S)$ to the gradient without increasing the bias
+\begin{equation}
+	\nabla_\xi \rho(\xi) = \E{\nabla_\xi \log p_\xi(\theta) \left(Q_{\pi_\xi}(S,
+						\theta) - B_\xi(S)\right)}
+\end{equation}
+Indeed, 
+\begin{equation*}
+	\begin{split}
+		\E{\nabla_\xi \log p_\xi(\theta) B(S)} 
+			&= \int_\S d^\xi(s) \int_\Theta p_\xi(\theta) \nabla_\xi \log
+		p_\xi(\theta) B_\xi(s) d\theta ds\\
+		&= \int_\S d^\xi(s) B_\xi(s) ds \underbrace{\int_\Theta \nabla_\xi p_\xi(\theta)
+	d\theta}_{\nabla_\xi 1 = 0} = 0
+	\end{split}
+\end{equation*}
+This result can be used to design several actor-only or actor-critic algorithms that are the parameter-based equivalents of the traditional control-based policy-gradient algorithms discussed in the previous sections. 
 
-\subsection{Risk-Sensitive Setting}
-
-\subsection{Natural Policy Gradient}
+\subsection{Parameter-Based Natural Policy Gradient}
+Given the interpretation of $p_\xi$ as a parameter-based stochastic policy, we can easily generalize the natural policy gradient methods by introducing the parameter-based Fischer information matrix
+\begin{equation}
+	F_\xi = \E[\theta\sim p_\xi]{\nabla_\xi\log p_\xi(\theta) \nabla_\theta\log p_\xi(\theta)^T}
+\end{equation}
+Natural parameter-based policy gradient methods update the hyper-parameters following the natural gradient direction 
+\begin{equation}
+	\widetilde{\nabla}_\xi \rho(\xi) = F_\xi^{-1} \nabla_\xi \rho(\xi)
+\end{equation}
+The advantage of this approach is that, for some particular probability distributions, the inverse of the Fisher information matrix can be computed analytically, as described in the next section. 
 
 \subsubsection{NPGPE}
+In \cite{miyamae2010natural}, the authors show that if the controller parameters are normally distributed the Fisher information matrix and its inverse can be computed analytically. This leads to an efficient online algorithm called \emph{Natural Policy Gradient with Parameter-Based Exploration} (NPGPE). More in detail, suppose that
+\begin{equation*}
+	\theta \sim \calN(\mu, \Gamma^T \Gamma)
+\end{equation*} 
+where $\mu\in\R^n$ is the controller parameters mean and $\Gamma \in \R^{n\times n}$ denotes the Cholesky factor of the distribution covariance matrix $\Sigma$. The hyper-parameters are thus given by 
+\begin{equation*}
+	\xi = (\mu, \Gamma_{1:n,1}^T, \Gamma_{2:n,2}^T, ... , \Gamma_{n:n,n}^T) \in \R^\frac{n^2 + 3n}{2}
+\end{equation*}
+For this distribution, the parameter-based policy gradient is given by
+\begin{equation}
+	\nabla_\mu \log p_\xi(\theta) = \Sigma^{-1} (\theta - \mu)
+\end{equation}
+\begin{equation}
+	\nabla_{\Gamma_k} \log p_\xi(\theta) = \begin{bmatrix} 0 & I_{\bar{k}} \end{bmatrix} \left(\Gamma^{-1} Y - \diag\left(\Gamma^{-1}\right)\right) e_k
+\end{equation}
+where $\Gamma_k = \Gamma_{k,k:n}^T$ and $Y = \Gamma^{-T} (\theta - \mu) (\theta - \mu)^T \Gamma^{-1}$. These formulas might be used in a standard PGPE algorithm. However, the inversion of $\Gamma$ is computationally expensive except for some very simple cases, for instance when $Sigma$ is a diagonal matrix. In \cite{sun2009efficient}, the authors proved that the Fisher information matrix for this distribution is a block diagonal matrix $F_\xi = \diag\{B_0, B_1, ..., B_n\}$ where
+\begin{equation*}
+	\begin{cases}
+		B_0 &= \Sigma^{-1}\\	
+		B_k &= \begin{bmatrix}
+				0 & I_{\bar{k}}
+		\end{bmatrix} \Gamma^{-1} (e_k e_k^T + I) \Gamma^{-T} \begin{bmatrix}
+						0 \\ I_{\bar{k}}
+				\end{bmatrix}
+	\end{cases}
+\end{equation*}
+where $e_k$ is the $k$-th element of the canonical basis of $\R^n$ and $I_{\bar{k}}$ is $n - k + 1$-dimensional identity matrix. In \cite{akimoto2010bidirectional}, the authors found the following analytical expression for the inverse of each block
+\begin{equation*}
+	\begin{cases}
+		B_0^{-1} &= \Sigma\\	
+		B_k^{-1} &= \begin{bmatrix}
+				0 & I_{\bar{k}}
+		\end{bmatrix} \Gamma^T \left(\begin{bmatrix}
+			0 & 0 \\
+			0 & I_{\bar{k}}\\
+		\end{bmatrix}   -\frac{1}{2} e_k e_k^T\right) \Gamma \begin{bmatrix}
+						0 \\ I_{\bar{k}}
+				\end{bmatrix}
+	\end{cases}
+\end{equation*}
+Multiplying the policy gradients by the inverse Fisher informatio matrix $F_\xi^{-1} = \diag\{B_0^{-1}, B_1^{-1}, ..., B_n^{-1}\}$, we obtain the following natural policy gradients
+\begin{equation}
+	\widetilde{\nabla}_\mu \log p_\xi(\theta) = \theta - \mu
+\end{equation}
+\begin{equation}
+	\widetilde{\nabla}_\Gamma \log p_\xi(\theta) = \left(\triu(Y) - \frac{1}{2} \diag(Y) - \frac{1}{2} I \right) \Gamma
+\end{equation}
+The natural policy gradients can be computed in $O(n^3)$, which is a sensible improvement compared to the $O(n^6)$ complexity for the standard PGPE updates. Let us remark that for an independent multi-variate Gaussian distribution, i.e. a diagonal covariance matrix $\Sigma$, the updates can be performed in $O(n)$. However, this approach neglects the dependences among parameters and could lead to suboptimal performances. Still, this simplified approach remains relevant for high-dimensional controllers. Putting everything together yields the NPGPE algorithm, which is reported in Algorithm \ref{algo:NPGPE}
+\begin{algorithm}[t!]
+	\caption{NPGPE}
+	\label{algo:NPGPE}
+	\begin{algorithmic}[1]
+		\Require{\\ 
+			\begin{itemize} 
+				\item Deterministic controller $F: \S \times \Theta \to \A$
+				\item Initial hyper-parameters $\xi^0$
+				\item Learning rate $\{\alpha_k\}$
+				\item Momentum parameter $\lambda$
+			\end{itemize}} 
+		\Ensure Approximation of the optimal hyper-parameters $\xi_*$
+		\State Initialize $k = 0$, eligibility trace $e_0 = 0$
+		\Repeat
+			\State Draw $\zeta_k \sim \calN(0, I_n)$
+			\State Compute controller parameters $\theta_k = \mu_k + \Gamma^T \zeta_k$
+			\State Perform action $a_k = F_{\theta_k}(s_k)$ and receive reward $r_{k+1}$
+			\State Update baseline $b_k$
+			\State Compute natural policy gradients
+				\begin{equation*}
+					\begin{split}
+						\widetilde{\nabla}_\mu \log p_\xi(\theta_k) &= \theta_k - \mu_k\\
+						\widetilde{\nabla}_\Gamma \log p_\xi(\theta_k) &= \left(\triu(\zeta_k \zeta_k^T) - \frac{1}{2} \diag(\zeta_k \zeta_k^T) - \frac{1}{2} I \right) \Gamma
+					\end{split}
+				\end{equation*}
+			\State Update eligibility trace $e_{k} = \lambda e_{k-1} + \nabla_\xi \log p_\xi(\theta_k)$
+			\State Update hyper-parameters $\xi_{k+1} = \xi_k + \alpha_k (r_{k+1} - b_k) e_k$
+			\State $k \leftarrow k + 1$
+		\Until{converged}
+	\end{algorithmic}
+\end{algorithm}  
+
+
+\subsection{Risk-Sensitive Setting}
+In the risk-sensitive setting, the agent tries to find a policy that maximizes the Sharpe ratio. Following the same reasoning of the control-based approach, we simply need to estimate the gradient of the average square reward $\eta(\xi)$. The parameter-based policy gradient generalizes without any additional effort
+\begin{theorem}[Risk-Sensitive Parameter-Based Policy Gradient]
+	Let $p_\xi$ be differentiable with respect to $\xi$, then the gradient of the average square reward is given by
+	\begin{equation}
+		\nabla_\xi \eta(\xi) = \E[\substack{S \sim d^\xi\\\theta \sim p_\xi}]{\nabla_\xi \log p_\xi(\theta) W_{\pi_\xi}(S, \theta)}
+	\end{equation}
+	where we denoted $W_\xi(S, \theta) = W_\xi(S, F_\theta(S))$.
+\end{theorem}
+Again, we can add a state-dependent baseline $B_\xi(S)$ to the gradient without increasing the bias
+\begin{equation}
+	\nabla_\xi \eta(\xi) = \E{\nabla_\xi \log p_\xi(\theta) \left(W_{\pi_\xi}(S,
+						\theta) - B_\xi(S)\right)}
+\end{equation}
+
+
+
+
 
 \subsubsection{Risk-Sensitive NPGPE}

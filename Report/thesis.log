@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  6 AUG 2016 18:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  7 AUG 2016 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1189,23 +1189,13 @@ m/m/it/12 ; ^^M >$\OT1/cmr/m/it/12 ,
  []
 
 [4] [5] [6] [7] [8] [9] [10] [11]
-Overfull \hbox (3.97038pt too wide) in paragraph at lines 398--399
+Overfull \hbox (3.97038pt too wide) in paragraph at lines 399--400
 [][]\OT1/cmr/bx/n/12 Definition 2.5.5 \OT1/cmr/m/n/12 (Re-ward-Re-turn Ac-tion-
 -Co-vari-ance Func-tion)\OT1/cmr/bx/n/12 . []\OT1/cmr/m/it/12 The reward-
  []
 
-! Misplaced alignment tab character &.
-l.416 	\calK_\pi(s, a) = \calM(s,a) &
-                                     + 2\gamma \calR(s,a) T_a V_\pi(s) + 2 \...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
 [12]
-Overfull \hbox (21.59264pt too wide) in paragraph at lines 449--449
+Overfull \hbox (21.59264pt too wide) in paragraph at lines 462--462
 [] 
  []
 
@@ -1214,11 +1204,12 @@ Overfull \hbox (21.59264pt too wide) in paragraph at lines 449--449
 File: Images/2_0_policy_iteration.png Graphic file (type png)
 
 <use Images/2_0_policy_iteration.png>
-Package pdftex.def Info: Images/2_0_policy_iteration.png used on input line 569
+Package pdftex.def Info: Images/2_0_policy_iteration.png used on input line 582
 .
 (pdftex.def)             Requested size: 116.94202pt x 161.44145pt.
- [16 <./Images/2_0_policy_iteration.png>]) (./Chapters/3_Reinforcement_Learning
-.tex [17] [18
+ [16])
+(./Chapters/3_Reinforcement_Learning.tex [17 <./Images/2_0_policy_iteration.png
+>] [18
 
 ]
 Chapter 3.
@@ -1249,10 +1240,10 @@ LaTeX Font Info:    Try loading font information for U+bbm on input line 189.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [34]
-Overfull \hbox (14.30917pt too wide) in paragraph at lines 242--247
-\OT1/cmr/m/n/12 the gra-di-ent with re-spect to the hy-per-pa-ram-e-ters $\OML/
-cmm/m/it/12 ^^X \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 ^^V[]; [] ; ^^V[]; ^^[[]; [
-] ; ^^[[]\OT1/cmr/m/n/12 )[]$
+Overfull \hbox (18.2258pt too wide) in paragraph at lines 242--247
+\OT1/cmr/m/n/12 the gra-di-ent with re-spect to the hyper-parameters $\OML/cmm/
+m/it/12 ^^X \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 ^^V[]; [] ; ^^V[]; ^^[[]; [] ; 
+^^[[]\OT1/cmr/m/n/12 )[]$
  []
 
 [35] [36] [37]
@@ -1273,7 +1264,7 @@ tate-dependent
  []
 
 [40] [41] [42] [43] [44]
-<Images/4_0_euclidean_vs_natural.png, id=903, 2434.09375pt x 768.8725pt>
+<Images/4_0_euclidean_vs_natural.png, id=906, 2434.09375pt x 768.8725pt>
 File: Images/4_0_euclidean_vs_natural.png Graphic file (type png)
 
 <use Images/4_0_euclidean_vs_natural.png>
@@ -1282,29 +1273,51 @@ Package pdftex.def Info: Images/4_0_euclidean_vs_natural.png used on input line
 (pdftex.def)             Requested size: 389.80276pt x 123.1277pt.
  [45] [46 <./Images/4_0_euclidean_vs_natural.png>]) (./Chapters/4_4_Risk_Sensit
 ive_Policy_Gradient.tex [47] [48]
-Overfull \hbox (20.06664pt too wide) in paragraph at lines 46--46
-[] 
+Overfull \hbox (9.40013pt too wide) detected at line 44
+\OMS/cmsy/m/n/12 r[]\OML/cmm/m/it/12 U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s\OT1
+/cmr/m/n/12 ) = [][] \OMS/cmsy/m/n/12 r[]\OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 
+(\OML/cmm/m/it/12 s; a\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 W[]\OT1/cmr/m/n/12 (\OM
+L/cmm/m/it/12 s; a\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 da \OMS/cmsy/m/n/12 ^^@ r[]
+\OML/cmm/m/it/12 ^^Q[] \OT1/cmr/m/n/12 + [][] \OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 s; a\OT1/cmr/m/n/12 ) [][] \OMS/cmsy/m/n/12 P\OT1/cmr/m/
+n/12 (\OML/cmm/m/it/12 s; a; s[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 r[]\OML/cmm/m
+/it/12 U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/1
+2 ds[]
  []
 
 [49]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 125.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 123.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 125.
- [50] [51])
-(./Chapters/4_5_Parameter_Based_Policy_Gradient.tex))
-(./Chapters/5_Asset_Allocation.tex [52]
-Chapter 5.
-[53
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 123.
+ [50] [51]
+Overfull \hbox (3.20358pt too wide) in paragraph at lines 201--201
+[] 
+ []
 
-] [54] [55]) (./Chapters/6_Numerical_Results.tex [56] [57] [58
+[52]
+Overfull \hbox (8.13344pt too wide) in paragraph at lines 215--215
+[] 
+ []
+
+) (./Chapters/4_5_Parameter_Based_Policy_Gradient.tex [53] [54] [55]
+Overfull \hbox (10.8639pt too wide) in paragraph at lines 91--93
+\OT1/cmr/m/n/12 Natural parameter-based pol-icy gra-di-ent meth-ods up-date the
+ hyper-parameters
+ []
+
+[56] [57])) (./Chapters/5_Asset_Allocation.tex [58] [59] [60
+
+]
+Chapter 5.
+[61] [62] [63]) (./Chapters/6_Numerical_Results.tex [64] [65] [66
 
 ]
 Chapter 6.
-[59] [60]
+[67] [68]
 Package epstopdf Info: Source file: <Images/6_0_single_synthetic_neutral_conver
 gence.eps>
 (epstopdf)                    date: 2016-07-30 16:36:57
@@ -1319,7 +1332,7 @@ convergence.eps>
 (epstopdf)             \includegraphics on input line 49.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=1016,
+<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=1077,
  1445.4pt x 722.7pt>
 File: Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1329,7 +1342,7 @@ Package pdftex.def Info: Images/6_0_single_synthetic_neutral_convergence-eps-co
 nverted-to.pdf used on input line 49.
 (pdftex.def)             Requested size: 389.80276pt x 194.90002pt.
 
-[61 <./Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf>]
+[69 <./Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Images/6_1_single_synthetic_neutral_perfor
 mance.eps>
 (epstopdf)                    date: 2016-07-30 16:36:59
@@ -1344,7 +1357,7 @@ performance.eps>
 (epstopdf)             \includegraphics on input line 59.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=1077,
+<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=1137,
  1445.4pt x 722.7pt>
 File: Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1365,7 +1378,7 @@ ion_costs-eps-converted-to.pdf Images/6_2_impact_transaction_costs.eps>
 (epstopdf)             \includegraphics on input line 91.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=1083, 1445.4pt x 
+<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=1143, 1445.4pt x 
 722.7pt>
 File: Images/6_2_impact_transaction_costs-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1385,7 +1398,7 @@ lling_fees-eps-converted-to.pdf Images/6_3_impact_short_selling_fees.eps>
 (epstopdf)             \includegraphics on input line 98.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=1085, 1445.4pt x
+<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=1145, 1445.4pt x
  722.7pt>
 File: Images/6_3_impact_short_selling_fees-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1396,16 +1409,16 @@ pdf used on input line 98.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [62 <./Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf>]
+ [70 <./Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf>]
 Underfull \vbox (badness 2932) has occurred while \output is active []
 
- [63]
+ [71]
 Overfull \hbox (3.45107pt too wide) in paragraph at lines 104--105
 \OT1/cmr/m/n/12 coun-ter-parts. How-ever, it is sur-pris-ing that the strate-gi
 es learned by RSPGPE
  []
 
-[64 <./Images/6_2_impact_transaction_costs-eps-converted-to.pdf>]
+[72 <./Images/6_2_impact_transaction_costs-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Images/6_4_single_synthetic_sensitive_conv
 ergence.eps>
 (epstopdf)                    date: 2016-07-30 16:06:47
@@ -1420,8 +1433,8 @@ ive_convergence.eps>
 (epstopdf)             \includegraphics on input line 108.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf, id=120
-3, 1445.4pt x 722.7pt>
+<Images/6_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf, id=126
+2, 1445.4pt x 722.7pt>
 File: Images/6_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
@@ -1443,8 +1456,8 @@ ive_performance.eps>
 (epstopdf)             \includegraphics on input line 115.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_5_single_synthetic_sensitive_performance-eps-converted-to.pdf, id=120
-4, 1445.4pt x 722.7pt>
+<Images/6_5_single_synthetic_sensitive_performance-eps-converted-to.pdf, id=126
+3, 1445.4pt x 722.7pt>
 File: Images/6_5_single_synthetic_sensitive_performance-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
@@ -1456,20 +1469,20 @@ converted-to.pdf used on input line 115.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[65 <./Images/6_3_impact_short_selling_fees-eps-converted-to.pdf> <./Images/6_4
-_single_synthetic_sensitive_convergence-eps-converted-to.pdf>] [66 <./Images/6_
+[73 <./Images/6_3_impact_short_selling_fees-eps-converted-to.pdf> <./Images/6_4
+_single_synthetic_sensitive_convergence-eps-converted-to.pdf>] [74 <./Images/6_
 5_single_synthetic_sensitive_performance-eps-converted-to.pdf>])
-(./Chapters/7_Conclusions.tex [67
+(./Chapters/7_Conclusions.tex [75
 
-] [68
+] [76
 
 ]
 Chapter 7.
-) [69] [70
+) [77] [78
 
-] (./thesis.bbl [71
+] (./thesis.bbl [79
 
-] [72] [73] [74] [75] [76] [77]) [78]
+] [80] [81] [82] [83] [84] [85]) [86]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
 
@@ -1477,14 +1490,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 70.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 70.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F710D860FF95EA56B3298BC5D7405532;4840.
+(rerunfilecheck)             Checksum: FE52C4811300196510FD5AB348CEF9CC;4856.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
  ) 
 Here is how much of TeX's memory you used:
- 20504 strings out of 495028
- 348957 string characters out of 6181497
- 433719 words of memory out of 5000000
- 22745 multiletter control sequences out of 15000+600000
+ 20539 strings out of 495028
+ 349438 string characters out of 6181497
+ 433972 words of memory out of 5000000
+ 22753 multiletter control sequences out of 15000+600000
  16139 words of font info for 63 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  63i,22n,75p,2040b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1505,10 +1518,10 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (90 pages, 1644579 bytes).
+Output written on thesis.pdf (98 pages, 1669131 bytes).
 PDF statistics:
- 1634 PDF objects out of 1728 (max. 8388607)
- 1229 compressed objects within 13 object streams
- 475 named destinations out of 1000 (max. 500000)
+ 1698 PDF objects out of 1728 (max. 8388607)
+ 1285 compressed objects within 13 object streams
+ 502 named destinations out of 1000 (max. 500000)
  586 words of extra memory for PDF output out of 10000 (max. 10000000)
 

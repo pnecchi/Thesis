@@ -44,8 +44,8 @@
 \BOOKMARK [2][-]{subsection.4.5.3}{Discounted Reward Formulation}{section.4.5}% 44
 \BOOKMARK [1][-]{section.4.6}{Parameter-Based Policy Gradient}{chapter.4}% 45
 \BOOKMARK [2][-]{subsection.4.6.1}{Risk-Neutral Setting}{section.4.6}% 46
-\BOOKMARK [2][-]{subsection.4.6.2}{Risk-Sensitive Setting}{section.4.6}% 47
-\BOOKMARK [2][-]{subsection.4.6.3}{Natural Policy Gradient}{section.4.6}% 48
+\BOOKMARK [2][-]{subsection.4.6.2}{Parameter-Based Natural Policy Gradient}{section.4.6}% 47
+\BOOKMARK [2][-]{subsection.4.6.3}{Risk-Sensitive Setting}{section.4.6}% 48
 \BOOKMARK [0][-]{chapter.5}{Financial Applications of Reinforcement Learning}{}% 49
 \BOOKMARK [1][-]{section.5.1}{Bibliographical Survey}{chapter.5}% 50
 \BOOKMARK [1][-]{section.5.2}{Asset Allocation}{chapter.5}% 51

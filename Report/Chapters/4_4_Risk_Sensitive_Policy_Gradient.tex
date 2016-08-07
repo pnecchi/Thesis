@@ -40,9 +40,7 @@ Hence, to compute the update direction, it is sufficient to estimate the various
 		\end{equation*}
 		Hence, plugging in the first equation 
 		\begin{equation*}
-			\begin{split}
-				\nabla_\theta U_\theta(s) &= \int_{\A} \nabla_\theta \pi_\theta(s,a) W_\theta(s,a) da - \nabla_\theta \eta_\theta + \int_\A \pi_\theta(s,a) \int_{\S} \calP(s,a,s') \nabla_\theta U_\theta(s') ds' 
-			\end{split}
+				\nabla_\theta U_\theta(s) = \int_{\A} \nabla_\theta \pi_\theta(s,a) W_\theta(s,a) da - \nabla_\theta \eta_\theta + \int_\A \pi_\theta(s,a) \int_{\S} \calP(s,a,s') \nabla_\theta U_\theta(s') ds' 
 		\end{equation*} 	
 		Integrating both sides with respect to the stationary distribution $d^\theta$ and noting that, because of stationarity,  
 		\begin{equation*}
@@ -171,3 +169,62 @@ Hence, the gradient of the Sharpe ratio is given by
 	\nabla_\theta \text{Sh}(\theta) = \frac{U_\theta(s_0) \nabla_\theta V_\theta(s_0) - \frac{1}{2} V_\theta(s_0) \nabla_\theta U_\theta(s_0)}{\Lambda_\theta(s_0) \sqrt{\Lambda_\theta(s_0)}}
 \end{equation}
 The gradient of the state-value function $\nabla_\theta V_\theta(s_0)$ is given by the risk-neutral policy gradient theorem. Therefore, in order to approximate the gradient of the Sharpe ratio, we need to estimate the value functions $V_\theta(s_0)$, $U_\theta(s_0)$, the variance $\Lambda_\theta(s_0$), and the gradient of the square state-value function $U_\theta (s_0)$. The first three terms might be easily approximated using moving averages. On the other hand, estimating $\nabla_\theta U_\theta(s_0)$ in the same spirit of the policy gradient theorem is much more delicate. 
+\begin{theorem}[Risk-Sensitive Policy Gradient]
+	Let $\pi_\theta$ be a differentiable policy. The policy gradient for the square state-value function is given by
+	\begin{equation}
+		\begin{split}
+			\nabla_\theta U_\theta(s_0) =
+			\mathbb{E}_{\substack{S \sim d_{\gamma^2}^\theta(s_0, \cdot)\\A \sim \pi_\theta(S,\cdot)\\S' \sim \calP(S,A,\cdot)}} [\nabla_\theta &\log	\pi_\theta(S,A) W_{\theta}(S, A)\\
+			&+ 2 \gamma \calR(S,A) \nabla_\theta V_\theta(S') + 2 \gamma C_\theta(S, A) ]
+		\end{split}
+	\end{equation}
+	where $d_{\gamma^2}^\theta(s_0, \cdot)$ is the $\gamma^2$-discounted visiting distribution over states starting from the initial state $s_0$ and following policy $\pi_\theta$
+		\begin{equation}
+			d_{\gamma^2}^\theta(s_0, x) = \sum_{k=0}^{\infty} \gamma^{2k} \calP_\theta^{(k)}(s_0, x)
+		\end{equation}
+\end{theorem}
+\begin{proof}
+	From the basic relation between square state-value function and the square action-value function, we have
+	\begin{equation*}
+		\begin{split}
+			\nabla_\theta U_\theta(s) &= \nabla_\theta \int_{\A} \pi_\theta(s,a) W_\theta(s,a) da\\
+				&= \int_{\A} \left[ \nabla_\theta \pi_\theta(s,a) W_\theta(s,a) + \pi_\theta(s,a) \nabla_\theta W_\theta(s,a)\right] da
+		\end{split}
+	\end{equation*} 
+	Hence, using the Bellman expectation equation for $W_\theta$ 
+	\begin{equation*}
+		\begin{split}
+			\nabla_\theta W_\theta(s,a) &= \nabla_\theta \left[ \calM(s,a) + 2 \gamma \calR(s,a) T_a V_\pi(s) + 2 \gamma C_\theta(s, a) + \gamma^2 T_a U_\theta(s)\right]\\ 
+			&= 2 \gamma \calR(s,a) \nabla_\theta T_a V_\theta(s) + 2 \gamma \nabla_\theta C_\theta(s, a) + \gamma^2 \nabla_\theta T_a U_\theta(s)\\
+			&= \int_{\S} \calP(s,a,s') \left[2 \gamma \calR(s,a) \nabla_\theta V_\theta(s') + 2 \gamma \nabla_\theta C_\theta(s, a) + \nabla_\theta U_\theta(s')\right] ds'
+		\end{split}
+	\end{equation*}
+	where we assumed to be able to exchange the gradient and the integral. Plugging in the first equation and exploiting the fact that $\int_\S \calP(s,a,s') ds' = 1$, we obtain
+	\begin{equation*}
+		\begin{split}
+			\nabla_\theta U_\theta(s) = \int_{\A} \pi_\theta(s,a) &\int_{\S} \calP(s,a,s') [ \nabla_\theta \log \pi_\theta(s,a) W_\theta(s,a)\\ 
+			&+ 2 \gamma \calR(s,a) \nabla_\theta V_\theta(s') + 2 \gamma \nabla_\theta C_\theta(s, a) + \nabla_\theta U_\theta(s') ] ds' da
+		\end{split}
+	\end{equation*} 
+	Unrolling $\nabla_\theta U_\theta$ infinite times and denoting by $\calP_\theta^{(k)}(s, x)$ the probability of going from state $s$ to state $x$ in $k$ steps under policy $\pi_\theta$, we obtain
+	\begin{equation*}
+		\begin{split}
+			\nabla_\theta U_\theta(s) = \sum_{k=0}^\infty \gamma^{2k} \int_\S \calP_\theta^{(k)}(s, x) &\int_\A \pi_\theta(x,a) \int_{\S} \calP(x,a,x') [\nabla_\theta \log \pi_\theta(x,a) W_\theta(x,a)\\ 
+						&+ 2 \gamma \calR(x,a) \nabla_\theta V_\theta(x') + 2 \gamma \nabla_\theta C_\theta(x, a)]  dx' da dx
+		\end{split}
+	\end{equation*} 
+	Defining the $\gamma^2$-discounted visiting distribution of state $x$ starting from state $s$ as
+	\begin{equation*}
+		d_{\gamma^2}^\theta(s, x) = \sum_{k=0}^{\infty} \gamma^{2k} \calP_\theta^{(k)}(s, x)
+	\end{equation*}
+	we have the result
+	\begin{equation*}
+		\begin{split}
+			\begin{split}
+				\nabla_\theta U_\theta(s) = \int_\S d_{\gamma^2}^\theta(s, x) &\int_\A \pi_\theta(x,a) \int_{\S} \calP(x,a,x') [\nabla_\theta \log \pi_\theta(x,a) W_\theta(x,a)\\ 
+							&+ 2 \gamma \calR(x,a) \nabla_\theta V_\theta(x') + 2 \gamma \nabla_\theta C_\theta(x, a)]  dx' da dx
+			\end{split}
+		\end{split}
+	\end{equation*} 
+\end{proof}
+Compared to risk-sensitive policy gradient theorem in the average reward formulation, we have two additional terms: one term depending on the gradient of the state-value function at the next state and another term depending on the covariance between the one-step reward and the successive return. These terms are very difficult to approximate online in a continuing environment. Therefore, the result is of practical interest only for an episodic environment where the experiments have a finite (possible random) lifespan. Since the application we considered does not fall in this category, we won't discuss any risk-sensitive algorithm for the discounted formulation. 

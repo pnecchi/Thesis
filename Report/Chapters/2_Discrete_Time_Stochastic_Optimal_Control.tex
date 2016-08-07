@@ -353,35 +353,36 @@ A standard way to measure the risk associated with a policy $\pi$ is the varianc
 \begin{equation}
 	\Lambda_\pi(s) = \Var[\pi]{G_t | S_t = s}
 \end{equation}
-This approach is the one considered in \cite{sobel1982variance}.
+This approach is the one considered in \cite{sobel1982variance}. The variance can be decomposed as 
+\begin{equation}
+	\label{eq:variance_decomposition}
+	\Lambda_\pi(s) = U_\pi(s) - V_\pi(s)^2
+\end{equation}
+where we denoted by $U_\pi$ the square state-value function.
 \begin{definition}[Square State-Value Function]
-	The square state-value function $U_\pi(s)$ is the second moment of returns that can be obtained starting from a state $s$ and following policy $\pi$
+	The square state-value function $U_\pi(s)$ is the second moment of the return that can be obtained under policy $\pi$ starting from a state $s$ 
 	\begin{equation}
 		U_\pi(s) = \E[\pi]{G_t^2 | S_t = s}
 	\end{equation}
 \end{definition}
-Then, the variance can be decomposed as 
-\begin{equation}
-	\Lambda_\pi(s) = U_\pi(s) - V_\pi(s)^2
-\end{equation}
 As for the risk-neutral formulation, it comes in handy to introduce a square action-value function
 \begin{definition}[Square Action-Value Function]
-	The square action-value function $W_\pi(s)$ is the second moment of returns that can be obtained starting from a state $s$, taking action $a$ and then following policy $\pi$
+	The square action-value function $W_\pi(s)$ is the second moment of the return that can be obtained starting from a state $s$, taking action $a$ and then following policy $\pi$
 	\begin{equation}
-		W_\pi(s) = \E[\pi]{G_t^2 | S_t = s, A_t = a}
+		W_\pi(s, a) = \E[\pi]{G_t^2 | S_t = s, A_t = a}
 	\end{equation}
 \end{definition}
 Clearly, the two square value functions are related by the following equation
 \begin{equation}
 	U_\pi(s) = \int_{\A} \pi(s,a) W_\pi(s,a) da
 \end{equation}
-We would like to obtain a Bellman expectation equation for $U_\pi(s)$ and $W_\pi(s,a)$, in order to piggyback on the discussion about the standard value functions. Let us introduce the square reward function 
+We would like to obtain a Bellman expectation equation for $U_\pi(s)$ and $W_\pi(s,a)$, in order to piggyback on the discussion about the standard value functions. To do so, let us introduce the square reward function 
 \begin{definition}[Square Reward Function]
 	The square reward function $\calM(s,a)$ is the second moment of the reward that can be obtained in state $s$ when taking action $a$
 	\begin{equation}
 		\calM(s,a) = \E[\pi]{R_{t+1}^2 | S_t = s, A_t = a}
 	\end{equation}
-	Let us also define 
+	let us also define the state-reward function $\calM_\pi(s)$ 
 	\begin{equation}
 		\calM_\pi(s) = \E[\pi]{R_{t+1}^2|S_t = s} = \int_\A \pi(s,a) \calM(s,a) da
 	\end{equation}
@@ -393,14 +394,13 @@ Moreover, we will need the reward-return state-covariance function
 		C_\pi(s) = \Cov[\pi]{R_{t+1}, G_{t+1} | S_t = s}
 	\end{equation}
 \end{definition}
-and the reward-return action-covariance function 
+again, it comes in handy to also introduce the reward-return action-covariance function 
 \begin{definition}[Reward-Return Action-Covariance Function]
 	The reward-return action-covariance function $C_\pi(s,a)$ is the covariance between the first day reward and the successive returns starting from state $s$, taking action $a$ and then following policy $\pi$
 	\begin{equation}
 		C_\pi(s,a) = \Cov[\pi]{R_{t+1}, G_{t+1} | S_t = s, A_t = a}
 	\end{equation}
 \end{definition}
-
 Then, it is easy to show that the square state-value function satisfies the following Bellman equation 
 \begin{proposition}[Bellman Expectation Equation]
 \begin{equation}
@@ -413,19 +413,31 @@ Then, it is easy to show that the square state-value function satisfies the foll
 \end{equation}
 where we denoted
 \begin{equation}
-	\calK_\pi(s, a) = \calM(s,a) &+ 2\gamma \calR(s,a) T_a V_\pi(s) + 2 \gamma C_\pi(s, a)
-\end{equation}
-\begin{equation}
 	\mathcal{K}_\pi(s) = \calM_\pi(s) + 2\gamma \calR_\pi(s) T_\pi V_\pi(s) + 2 \gamma C_\pi(s)
 \end{equation}
+\begin{equation}
+	\calK_\pi(s, a) = \calM(s,a) + 2\gamma \calR(s,a) T_a V_\pi(s) + 2 \gamma C_\pi(s, a)
+\end{equation}
 \end{proposition}
-These equation are analogous to the Bellman expectation equations for the state-value function, with a synthetic reward function $\mathcal{K}_\pi(s)$ and a discount factor $\gamma^2$. It is possible to combine the Bellman expectation equation for $V_\pi(s)$ and for $U_\pi(s)$ to obtain a Bellman equation for the return variance $\Lambda_\pi(s)$
+\begin{proof}
+	Let us prove the Bellman expectation equation for the square action-value function. The proof for the square state-value function is analogous. 
+	\begin{equation*}
+		\begin{split}
+			W_\pi(s,a) &= \E[\pi]{G_t^2 | S_t = s, A_t = a}\\
+					   &= \E[\pi]{(R_{t+1} + \gamma G_{t+1})^2 | S_t = s, A_t = a}\\
+					   &= \calM(s,a) + 2\gamma \E[\pi]{R_{t+1}G_{t+1} | S_t = s, A_t = a} + \gamma^2 T_a U_\pi(s)
+		\end{split}
+	\end{equation*}
+	By the definition of covariance
+	\begin{equation*}
+			C_\pi(s,a) = \E[\pi]{R_{t+1}G_{t+1} | S_t = s, A_t = a} - \calR(s,a) T_a V_\pi(s)
+	\end{equation*}
+	Plugging in the first equation leads to the result.
+\end{proof}
+These equation are analogous to the Bellman expectation equations for the state-value function, with a synthetic reward function $\mathcal{K}_\pi(s)$ and a discount factor $\gamma^2$. It is possible to combine the Bellman expectation equation for $V_\pi(s)$ and for $U_\pi(s)$ to obtain a Bellman equation for the return variance $\Lambda_\pi(s)$.
 \begin{proposition}[Bellman Expectation Equation]
 	\begin{equation}
-		\begin{split}
-			\Lambda_\pi(s) = \mathcal{V}_\pi(s) &+ 2 \gamma \Cov[\pi]{R_{t+1}, G_{t+1} | S_t = s}\\
-			 &+ \gamma^2 \Var[\pi]{V_\pi(S_{t+1}) | S_t = s} + \gamma^2 T_\pi \Lambda_\pi(s)	
-		\end{split}
+			\Lambda_\pi(s) = \mathcal{V}_\pi(s) + 2 \gamma C_\pi(s) + \gamma^2 \Var[\pi]{V_\pi(S_{t+1}) | S_t = s} + \gamma^2 T_\pi \Lambda_\pi(s)	
 	\end{equation}
 	where $\mathcal{V}_\pi(s)$ denotes the conditional variance of the reward
 	\begin{equation}
@@ -433,6 +445,7 @@ These equation are analogous to the Bellman expectation equations for the state-
 	\end{equation}
 \end{proposition}
 \begin{proof}
+The result can be proved starting from Eq. (\ref{eq:variance_decomposition}) and exploiting the Bellman equations for $U_\pi$ and $V_\pi$. Here we follow an alternative way based on the law of total variance.
 \begin{equation*}
 \begin{split}
 		\Lambda_\pi(s) &= \Var[\pi]{G_t | S_t = s}\\

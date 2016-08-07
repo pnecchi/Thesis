@@ -4,6 +4,12 @@
 {\sc A.~Agarwal, P.~Bartlett, and M.~Dama}, {\em Optimal allocation strategies
   for the dark pool problem}, arXiv preprint arXiv:1003.2245,  (2010).
 
+\bibitem{akimoto2010bidirectional}
+{\sc Y.~Akimoto, Y.~Nagata, I.~Ono, and S.~Kobayashi}, {\em Bidirectional
+  relation between cma evolution strategies and natural evolution strategies},
+  in International Conference on Parallel Problem Solving from Nature,
+  Springer, 2010, pp.~154--163.
+
 \bibitem{almgren2001optimal}
 {\sc R.~Almgren and N.~Chriss}, {\em Optimal execution of portfolio
   transactions}, Journal of Risk, 3 (2001), pp.~5--40.
@@ -356,6 +362,11 @@
 \bibitem{sobel1982variance}
 {\sc M.~J. Sobel}, {\em The variance of discounted markov decision processes},
   Journal of Applied Probability,  (1982), pp.~794--802.
+
+\bibitem{sun2009efficient}
+{\sc Y.~Sun, D.~Wierstra, T.~Schaul, and J.~Schmidhuber}, {\em Efficient
+  natural evolution strategies}, in Proceedings of the 11th Annual conference
+  on Genetic and evolutionary computation, ACM, 2009, pp.~539--546.
 
 \bibitem{sutton1998introduction}
 {\sc R.~S. Sutton and A.~G. Barto}, {\em Introduction to reinforcement
