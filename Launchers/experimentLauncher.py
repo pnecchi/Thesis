@@ -54,11 +54,11 @@ params = {'riskFreeRate'      : 0.0,
           'alphaConstBaseline': 0.5,
           'alphaExpBaseline'  : 0.6,
           'numExperiments'    : 10,
-          'numEpochs'         : 500,
+          'numEpochs'         : 101, # 1001,
           'numTrainingSteps'  : 7000,
           'numTestSteps'      : 2000}
 
-riskSensitive = False
+riskSensitive = True
 synthetic     = True
 multiAsset    = False
 

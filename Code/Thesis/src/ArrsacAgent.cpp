@@ -97,6 +97,8 @@ void ARRSACAgent::learn()
     double alphaCritic = criticLearningRatePtr->get();
     gradientCriticV = lambda * gradientCriticV + criticV.gradient(observation);
     gradientCriticU = lambda * gradientCriticU + criticU.gradient(observation);
+    gradientCriticV /= arma::norm(gradientCriticV);
+    gradientCriticU /= arma::norm(gradientCriticU);
     criticV.setParameters(criticV.getParameters() + alphaCritic * tdV * gradientCriticV);
     criticU.setParameters(criticU.getParameters() + alphaCritic * tdU * gradientCriticU);
 
@@ -107,6 +109,7 @@ void ARRSACAgent::learn()
     double coeffGradientSR = (averageSquareReward * tdV - 0.5 * averageReward * tdU) /
                              (var * sqrtVar);
     gradientActor = lambda * gradientActor + actor.likelihoodScore(observation, action);
+    gradientActor /= arma::norm(gradientActor, 2);
     actor.setParameters(actor.getParameters() + alphaActor * coeffGradientSR * gradientActor);
 }
 

@@ -163,12 +163,6 @@ int main(int argc, char** argv)
     market.setEvaluationInterval(startDate, endDate);
     std::cout << "done" << std::endl;
 
-    arma::vec a(market.getDimAction());
-    market.getState().print();
-    market.performAction(a);
-    market.getState().print();
-    market.performAction(a);
-
     // Asset allocation task
     std::cout << ".. Asset allocation task - ";
 	AssetAllocationTask task(market,

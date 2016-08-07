@@ -1,4 +1,5 @@
 #include "thesis/NpgpeAgent.h"
+#include <math.h>       /* sqrt */
 
 NPGPEAgent::NPGPEAgent(Policy const &policy_,
                        LearningRate const &baselineLearningRate_,
@@ -8,7 +9,7 @@ NPGPEAgent::NPGPEAgent(Policy const &policy_,
       baselineLearningRatePtr(baselineLearningRate_.clone()),
       hyperparamsLearningRatePtr(hyperparamsLearningRate_.clone()),
       mean(policy_.getDimParameters(), arma::fill::zeros),
-      choleskyFactor(policy_.getDimParameters(), policy_.getDimParameters(), arma::fill::zeros),
+      choleskyFactor(policy_.getDimParameters(), policy_.getDimParameters(), arma::fill::eye),
       generator(215),
       gaussianDistr(0.0, 1.0),
       xi(policy_.getDimParameters()),
@@ -44,8 +45,7 @@ NPGPEAgent::NPGPEAgent(NPGPEAgent const &other_)
 void NPGPEAgent::initializeParameters()
 {
     mean.zeros();
-    choleskyFactor.zeros();
-    choleskyFactor.diag().ones();
+    choleskyFactor.eye();
 }
 
 std::unique_ptr<Agent> NPGPEAgent::clone() const
