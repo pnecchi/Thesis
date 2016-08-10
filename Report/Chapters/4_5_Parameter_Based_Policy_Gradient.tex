@@ -18,7 +18,7 @@ In the risk-neutral setting, the goal of the agent is to find a set of hyper-par
 \end{equation*}
 Following the policy gradient approach, we iteratively update the parameters in the gradient ascent direction 
 \begin{equation*}
-	\xi^{k+1} = \xi^k + \alpha_k \nabla_\xi \rho(\xi_k)
+	\xi_{k+1} = \xi_k + \alpha_k \nabla_\xi \rho(\xi_k)
 \end{equation*}
 \begin{theorem}[Risk-Neutral Parameter-Based Policy Gradient]
 	Let $p_\xi$ be differentiable with respect to $\xi$, then the gradient of the average reward is given by
@@ -65,9 +65,7 @@ Finally, plugging this equation in the policy gradient theorem, we obtain the re
 \end{equation*}
 \end{proof}
 This expression is very similar to the original policy gradient theorem, but
-the expectation is taken over the controller parameters and not on the actions.
-Thus, we might interpret this result as if the agent directly selected the parameters
-$\theta$ according to a policy $p_\xi$, which then lead to an action through the deterministic mapping $F_\theta$. Therefore, it is as if the agent's policy was in the parameters space and not in the control space. As in the standard policy gradient methods, we can add a state-dependent baseline $B_\xi(S)$ to the gradient without increasing the bias
+the expectation is taken over the controller parameters instead of the action space and we have the likelihood score the controller parameters distribution instead of that of the stochastic policy. Thus, we might interpret this result as if the agent directly selected the parameters $\theta$ according to a policy $p_\xi$, which then lead to an action through the deterministic mapping $F_\theta$. Therefore, it is as if the agent's policy was in the parameters space and not in the control space. As in the standard policy gradient methods, we can add a state-dependent baseline $B_\xi(S)$ to the gradient without increasing the bias
 \begin{equation}
 	\nabla_\xi \rho(\xi) = \E{\nabla_\xi \log p_\xi(\theta) \left(Q_{\pi_\xi}(S,
 						\theta) - B_\xi(S)\right)}
@@ -82,7 +80,37 @@ Indeed,
 	d\theta}_{\nabla_\xi 1 = 0} = 0
 	\end{split}
 \end{equation*}
-This result can be used to design several actor-only or actor-critic algorithms that are the parameter-based equivalents of the traditional control-based policy-gradient algorithms discussed in the previous sections. 
+This result can be used to design several actor-only or actor-critic algorithms that are the parameter-based equivalents of the traditional control-based policy-gradient algorithms discussed in the previous sections. Algorithm \ref{algo:ACPGPE} reports the pseudocode for a parameter-based TD(0) actor-critic algorithm, which is one of the learning methods that will be used in the numerical applications. 
+
+\begin{algorithm}[t!]
+	\caption{Actor-Critic PGPE}
+	\label{algo:ACPGPE}
+	\begin{algorithmic}[0]
+			\Require{\\ 
+				\begin{itemize} 
+					\item Deterministic controller $F: \S \times \Theta \to \A$
+					\item Initial hyper-parameters $\xi_0$
+					\item Initial critic parameters $\psi_0$
+					\item Learning rate $\{\alpha_k\}$
+					\item Momentum parameter $\lambda$
+				\end{itemize}} 
+			\Ensure Approximation of the optimal hyper-parameters $\xi_*$
+			\begin{algorithmic}[1]
+			\State Initialize $k = 0$, average reward $\widehat{\rho}_0 = 0$ and eligibility trace $e_{-1} = 0$
+			\Repeat
+				\State Observe current state $s_k$
+				\State Simulate controller parameters $\theta_k \sim p_{\xi_k}$
+				\State Perform action $a_k = F_{\theta_k}(s_k)$ and receive reward $r_{k+1}$
+				\State Update average reward estimate $\widehat{\rho}_{k+1} = \widehat{\rho}_{k} + \alpha_k (r_{k+1} - \widehat{\rho}_{k})$
+				\State Compute TD error $\widehat{\delta}_k = r_{k+1} - \widehat{\rho}_{k+1} + \widehat{V}_{\psi_k}(s_{k+1}) - \widehat{V}_{\psi_k}(s_k)$
+				\State Update critic parameters $	\psi_{k+1} = \psi_k + \alpha_k \widehat{\delta}_k \nabla_\psi \widehat{V}_{\psi_k}(s_k)$ . 
+				\State Update eligibility trace $e_k = \lambda e_{k-1} + \nabla_\xi\log p_\xi(\theta_k)$
+				\State Update hyper-parameters $\xi_{k+1} = \xi_k + \alpha_k \widehat{\delta}_{\psi_k}^k e_k $. 
+				\State $k \leftarrow k + 1$
+			\Until{converged}
+		\end{algorithmic}
+	\end{algorithmic}
+\end{algorithm}  
 
 \subsection{Parameter-Based Natural Policy Gradient}
 Given the interpretation of $p_\xi$ as a parameter-based stochastic policy, we can easily generalize the natural policy gradient methods by introducing the parameter-based Fischer information matrix
@@ -143,11 +171,11 @@ Multiplying the policy gradients by the inverse Fisher informatio matrix $F_\xi^
 \begin{equation}
 	\widetilde{\nabla}_\Gamma \log p_\xi(\theta) = \left(\triu(Y) - \frac{1}{2} \diag(Y) - \frac{1}{2} I \right) \Gamma
 \end{equation}
-The natural policy gradients can be computed in $O(n^3)$, which is a sensible improvement compared to the $O(n^6)$ complexity for the standard PGPE updates. Let us remark that for an independent multi-variate Gaussian distribution, i.e. a diagonal covariance matrix $\Sigma$, the updates can be performed in $O(n)$. However, this approach neglects the dependences among parameters and could lead to suboptimal performances. Still, this simplified approach remains relevant for high-dimensional controllers. Putting everything together yields the NPGPE algorithm, which is reported in Algorithm \ref{algo:NPGPE}
+
 \begin{algorithm}[t!]
 	\caption{NPGPE}
 	\label{algo:NPGPE}
-	\begin{algorithmic}[1]
+	\begin{algorithmic}[0]
 		\Require{\\ 
 			\begin{itemize} 
 				\item Deterministic controller $F: \S \times \Theta \to \A$
@@ -156,27 +184,68 @@ The natural policy gradients can be computed in $O(n^3)$, which is a sensible im
 				\item Momentum parameter $\lambda$
 			\end{itemize}} 
 		\Ensure Approximation of the optimal hyper-parameters $\xi_*$
-		\State Initialize $k = 0$, eligibility trace $e_0 = 0$
+		\begin{algorithmic}[1]
+		\State Initialize $k = 0$, average reward $\widehat{\rho}_0 = 0$ and eligibility trace $e_{-1} = 0$
 		\Repeat
+			\State Observe current state $s_k$
 			\State Draw $\zeta_k \sim \calN(0, I_n)$
 			\State Compute controller parameters $\theta_k = \mu_k + \Gamma^T \zeta_k$
 			\State Perform action $a_k = F_{\theta_k}(s_k)$ and receive reward $r_{k+1}$
-			\State Update baseline $b_k$
+			\State Update average reward estimate $\widehat{\rho}_{k+1} = \widehat{\rho}_{k} + \alpha_k (r_{k+1} - \widehat{\rho}_{k})$
 			\State Compute natural policy gradients
 				\begin{equation*}
 					\begin{split}
-						\widetilde{\nabla}_\mu \log p_\xi(\theta_k) &= \theta_k - \mu_k\\
-						\widetilde{\nabla}_\Gamma \log p_\xi(\theta_k) &= \left(\triu(\zeta_k \zeta_k^T) - \frac{1}{2} \diag(\zeta_k \zeta_k^T) - \frac{1}{2} I \right) \Gamma
+						\widetilde{\nabla}_\mu \log p_{\xi_k}(\theta_k) &= \theta_k - \mu_k\\
+						\widetilde{\nabla}_\Gamma \log p_{\xi_k}(\theta_k) &= \left(\triu(\zeta_k \zeta_k^T) - \frac{1}{2} \diag(\zeta_k \zeta_k^T) - \frac{1}{2} I \right) \Gamma
 					\end{split}
 				\end{equation*}
-			\State Update eligibility trace $e_{k} = \lambda e_{k-1} + \nabla_\xi \log p_\xi(\theta_k)$
-			\State Update hyper-parameters $\xi_{k+1} = \xi_k + \alpha_k (r_{k+1} - b_k) e_k$
+			\State Update eligibility trace $e_{k} = \lambda e_{k-1} + \nabla_\xi \log p_{\xi_k}(\theta_k)$
+			\State Update hyper-parameters $\xi_{k+1} = \xi_k + \alpha_k (r_{k+1} - \widehat{\rho}_{k}) e_k$
 			\State $k \leftarrow k + 1$
 		\Until{converged}
+		\end{algorithmic}
 	\end{algorithmic}
 \end{algorithm}  
-
-
+The natural policy gradients can be computed in $O(n^3)$, which is a sensible improvement compared to the $O(n^6)$ complexity for the standard PGPE updates. Let us remark that for an independent multi-variate Gaussian distribution, i.e. a diagonal covariance matrix $\Sigma$, the updates can be performed in $O(n)$. However, this approach neglects the dependences among parameters and could lead to suboptimal performances. The resulting NPGPE algorithm is reported in Algorithm \ref{algo:NPGPE}. Given the parameter-based policy gradient algorithm, we can easily combine the actor-critic approach and the natural gradient technique in a parameter-based natural actor-critic algorithm, which is outlined in Algorithm \ref{algo:NACPGPE}.
+\begin{algorithm}[t!]
+	\caption{Natural Actor-Critic PGPE}
+	\label{algo:NACPGPE}
+	\begin{algorithmic}[0]
+		\Require{\\ 
+			\begin{itemize} 
+				\item Deterministic controller $F: \S \times \Theta \to \A$
+				\item Initial hyper-parameters $\xi^0$
+				\item Initial critic parameters $\psi_0$
+				\item Actor learning rate $\{\alpha_k\}$
+				\item Critics learning rate $\{\beta_k\}$
+				\item Momentum parameter $\lambda$
+			\end{itemize}} 
+		\Ensure Approximation of the optimal hyper-parameters $\xi_*$
+		\begin{algorithmic}[1]
+		\State Initialize $k = 0$, average reward $\widehat{\rho}_0 = 0$ and eligibility trace $e_{-1} = 0$
+		\Repeat
+			\State Observe current state $s_k$
+			\State Draw $\zeta_k \sim \calN(0, I_n)$
+			\State Compute controller parameters $\theta_k = \mu_k + \Gamma^T \zeta_k$
+			\State Perform action $a_k = F_{\theta_k}(s_k)$ and receive reward $r_{k+1}$
+			\State Update average reward estimate $\widehat{\rho}_{k+1} = \widehat{\rho}_{k} + \alpha_k (r_{k+1} - \widehat{\rho}_{k})$
+			\State Compute TD error $\widehat{\delta}_k = r_{k+1} - \widehat{\rho}_{k+1} + \widehat{V}_{\psi_k}(s_{k+1}) - \widehat{V}_{\psi_k}(s_k)$
+			\State Update critic parameters $	\psi_{k+1} = \psi_k + \alpha_k \widehat{\delta}_k \nabla_\psi \widehat{V}_{\psi_k}(s_k)$ . 
+			\State Compute natural policy gradients
+				\begin{equation*}
+					\begin{split}
+						\widetilde{\nabla}_\mu \log p_{\xi_k}(\theta_k) &= \theta_k - \mu_k\\
+						\widetilde{\nabla}_\Gamma \log p_{\xi_k}(\theta_k) &= \left(\triu(\zeta_k \zeta_k^T) - \frac{1}{2} \diag(\zeta_k \zeta_k^T) - \frac{1}{2} I \right) \Gamma
+					\end{split}
+				\end{equation*}
+			\State Update eligibility trace $e_{k} = \lambda e_{k-1} + \widetilde{\nabla}_\xi \log p_{\xi_k}(\theta_k)$
+			\State Update hyper-parameters $\xi_{k+1} = \xi_k + \alpha_k \widehat{\delta}_k e_k$. 
+			\State $k \leftarrow k + 1$
+		\Until{converged}
+		\end{algorithmic}
+	\end{algorithmic}
+\end{algorithm}  
+\clearpage
 \subsection{Risk-Sensitive Setting}
 In the risk-sensitive setting, the agent tries to find a policy that maximizes the Sharpe ratio. Following the same reasoning of the control-based approach, we simply need to estimate the gradient of the average square reward $\eta(\xi)$. The parameter-based policy gradient generalizes without any additional effort
 \begin{theorem}[Risk-Sensitive Parameter-Based Policy Gradient]

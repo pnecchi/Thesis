@@ -155,7 +155,7 @@ where $\Phi(s,a) \in \R^{D_\theta}$ is a given feature vector corresponding to s
 \end{equation}
 
 \subsubsection{Gaussian Exploration Policy} 
-\ref{sec:softmax}
+\label{sec:gaussian_policy}
 In continuous action spaces, a Gaussian exploration policy is commonly used. According to this policy, in a state $s$, actions are sampled from a Gaussian distribution with a parametric state-dependent mean $\mu_\psi(s) \in \R^{D_a}$, with $\psi \in \R^{D_\psi}$, and a covariance matrix $\Sigma \in \R^{D_a \times D_a}$. The policy parameters consist of $\theta = {\psi, \Sigma}$ and the likelihood score are thus given by 
 \begin{equation}
 	\nabla_\psi \log \pi_\theta(s,a) = \left(\frac{\partial \mu_\psi(s)}{\partial \psi}\right)^T \Sigma^{-1} (a - \mu_\psi(s))
@@ -228,11 +228,11 @@ In order to further reduce the estimate variance, an optimal baseline can be com
 		\Ensure Approximation of the optimal policy $F_{\xi^*} \approx \pi_*$
 		\Repeat
 			\For {$m = 1, \ldots, M$}
-				\State Sample controller parameters $\theta^{(m)} \sim p_{\xi^k}$ 
+				\State Sample controller parameters $\theta^{(m)} \sim p_{\xi_k}$ 
 				\State Sample trajectory $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)})\}_{t \geq 0}$ under policy $F_{\theta^{(m)}}$
 			\EndFor
-			\State Approximate policy gradient $\nabla_\xi J(\xi) \approx \widehat{g}_\text{PGPE}$ according to Eq. \ref{eq:pgpe_gradient}
-			\State Update hyperparameters using gradient ascent $\xi^{k+1} = \xi^k + \alpha_k \widehat{g}_\text{PGPE}$
+			\State Approximate policy gradient $\nabla_\xi J(\xi_k) \approx \widehat{g}_\text{PGPE}$ using Eq. (\ref{eq:pgpe_gradient})
+			\State Update hyperparameters using gradient ascent $\xi_{k+1} = \xi_k + \alpha_k \widehat{g}_\text{PGPE}$
 			\State $k \leftarrow k + 1$
 		\Until{converged}
 	\end{algorithmic}

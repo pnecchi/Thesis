@@ -37,9 +37,9 @@
 \contentsline {subsubsection}{\numberline {4.3.4.2}Gaussian Exploration Policy}{34}{subsubsection.4.3.4.2}
 \contentsline {subsection}{\numberline {4.3.5}Policy Gradient with Parameter Exploration}{34}{subsection.4.3.5}
 \contentsline {subsubsection}{\numberline {4.3.5.1}Episodic PGPE}{34}{subsubsection.4.3.5.1}
-\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{36}{section*.10}
-\contentsline {paragraph}{Gaussian Parameter Distribution}{36}{section*.11}
-\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{37}{section*.12}
+\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{36}{section*.9}
+\contentsline {paragraph}{Gaussian Parameter Distribution}{36}{section*.10}
+\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{37}{section*.11}
 \contentsline {subsubsection}{\numberline {4.3.5.2}Infinite Horizon PGPE}{38}{subsubsection.4.3.5.2}
 \contentsline {section}{\numberline {4.4}Risk-Neutral Policy Gradient Theorem}{38}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Theorem Statement and Proof}{39}{subsection.4.4.1}
@@ -55,9 +55,9 @@
 \contentsline {section}{\numberline {4.6}Parameter-Based Policy Gradient}{53}{section.4.6}
 \contentsline {subsection}{\numberline {4.6.1}Risk-Neutral Setting}{54}{subsection.4.6.1}
 \contentsline {subsection}{\numberline {4.6.2}Parameter-Based Natural Policy Gradient}{56}{subsection.4.6.2}
-\contentsline {subsubsection}{\numberline {4.6.2.1}NPGPE}{56}{subsubsection.4.6.2.1}
-\contentsline {subsection}{\numberline {4.6.3}Risk-Sensitive Setting}{58}{subsection.4.6.3}
-\contentsline {subsubsection}{\numberline {4.6.3.1}Risk-Sensitive NPGPE}{59}{subsubsection.4.6.3.1}
+\contentsline {subsubsection}{\numberline {4.6.2.1}NPGPE}{57}{subsubsection.4.6.2.1}
+\contentsline {subsection}{\numberline {4.6.3}Risk-Sensitive Setting}{60}{subsection.4.6.3}
+\contentsline {subsubsection}{\numberline {4.6.3.1}Risk-Sensitive NPGPE}{60}{subsubsection.4.6.3.1}
 \contentsline {chapter}{\numberline {5}Financial Applications of Reinforcement Learning}{61}{chapter.5}
 \contentsline {section}{\numberline {5.1}Bibliographical Survey}{61}{section.5.1}
 \contentsline {section}{\numberline {5.2}Asset Allocation}{61}{section.5.2}

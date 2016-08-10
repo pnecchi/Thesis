@@ -126,16 +126,24 @@ which measures how good is to take action $a$ in state $s$ compared to simply fo
 \begin{algorithm}[t]
 	\caption{Generic structure for an online actor-critic algorithm.}
 	\label{algo:actor_critic}
-	\begin{algorithmic}[1]
-		\Require Initial actor $\theta^0$, initial critic $\psi^0$, learning rate $\{\alpha_k\}$
+	\begin{algorithmic}[0]
+		\Require{\\
+			\begin{itemize}
+				\item Initial actor parameters $\theta_0$, 
+				\item Initial critic parameters $\psi_0$, 
+				\item Learning rate $\{\alpha_k\}$
+			\end{itemize}
+		} 
 		\Ensure Approximation of the optimal policy $\pi_{\theta^*} \approx \pi_*$
+		\begin{algorithmic}[1]
 		\Repeat
 			\State Observe tuple $<s_k, a_k, r_{k+1}, s_{k+1}>$ sampled from the MDP.
-			\State Update critic parameters $\psi^{k+1}$ using a value-based method. 
-			\State Estimate policy gradient as $\widehat{g}_\text{AC}^k = \nabla_\theta \log \pi_\theta(s_k, a_k) \widehat{A}_{\psi^{k+1}}(s_k, a_k)$
-			\State Update actor by gradient ascent $\theta^{k+1} = \theta^k + \alpha_k \widehat{g}_\text{AC}^k$. 
+			\State Update critic parameters $\psi_{k+1}$ using a value-based method. 
+			\State Estimate policy gradient as $\widehat{g}_k^\text{AC} = \nabla_\theta \log \pi_{\theta_k}(s_k, a_k) \widehat{A}_{\psi_{k+1}}(s_k, a_k)$
+			\State Update actor by gradient ascent $\theta_{k+1} = \theta_k + \alpha_k \widehat{g}_k^\text{AC}$. 
 			\State $k \leftarrow k + 1$
 		\Until{converged}
+		\end{algorithmic}
 	\end{algorithmic}
 \end{algorithm}
 There are two possible approaches to estimate the advantage function: the first one is to estimate both the state-value function $\widehat{V}_\psi \approx V_\theta$ and the action-value function $\widehat{Q}_\xi \approx Q_\theta$ and derive an estimate for the advantage function $\widehat{A}_{\psi, \xi} = \widehat{Q}_\xi - \widehat{V}_\psi \approx A_\theta$. The second approach directly approximates the advantage function $\widehat{A}_\psi \approx A_\theta$ and is usually preferred, since it allows us to maintain only one critic. Actor-critic algorithms typically use a temporal-difference algorithm to update an approximation of the value function $\widehat{V}_\psi \approx V_\theta$, from which we can derive an approximation for the advantage function. Assume that the true state-value function $V_\theta$ is given. Then the TD error 
@@ -159,39 +167,50 @@ By a simple conditioning argument, the policy gradient can be rewritten as
 In practice, we can use an approximate TD error 
 \begin{equation}
 \label{eq:td_error}
-	\widehat{\delta}_\psi^k = r_{k+1} - \widehat{\rho}_k + \widehat{V}_\psi(s_{k+1}) - \widehat{V}_\psi(s_k) 
+	\widehat{\delta}_k = r_{k+1} - \widehat{\rho}_k + \widehat{V}_{\psi_k}(s_{k+1}) - \widehat{V}_{\psi_k}(s_k) 
 \end{equation}
 where $\widehat{\rho}_k$ is an estimate of the average reward. Hence, we can easily obtain an approximation of the policy gradient by
 \begin{equation}
-	\widehat{g}_\text{TD(0)}^k = \nabla_\theta\log \pi_\theta(s_k,a_k) \widehat{\delta}_\psi^k
+	\widehat{g}_\text{TD(0)}^k = \nabla_\theta\log \pi_\theta(s_k,a_k) \widehat{\delta}_k
 \end{equation}
 which can be used to update the critic parameter in the gradient ascent direction. 
 On the other hand, the critic parameters can be updated using a TD(0) temporal difference scheme
 \begin{equation}
-	\psi^{k+1} = \psi^k + \alpha_k \widehat{\delta}_\psi^k \nabla_\psi \widehat{V}_\psi(s_k)
+	\psi_{k+1} = \psi_k + \alpha_k \widehat{\delta}_k \nabla_\psi \widehat{V}_{\psi_k}(s_k)
 \end{equation}
 The discussion can be easily extended to more complex value-based methods for estimating the critic, such as the backward-view TD($\lambda$). This method employs eligibility traces to assign credit for the rewards obtained by the agent to all previous states and actions. More formally, the policy parameters update rule becomes
 \begin{equation}
-	\theta^{k+1} = \theta^k + \alpha_k \widehat{\delta}_\psi^k e^k
+	\theta_{k+1} = \theta_k + \alpha_k \widehat{\delta}_k e_k
 \end{equation}
 where the eligibility trace $e_k$ is defined by the following recursive equation 
 \begin{equation}
-	e^{k+1} = \lambda e^k + \nabla_\theta\log \pi_\theta(s_k,a_k) 
+	e_{k+1} = \lambda e_k + \nabla_\theta\log \pi_{\theta_k}(s_k,a_k) 
 \end{equation} 
 $0 \leq \lambda \leq 1$ is a parameter that manages the amount of bootstrap: for $\lambda = 0$ the method is the standard temporal difference scheme while for $\lambda = 1$ the method is equivalent to Monte Carlo. The complete scheme is reported in Algorithm \ref{algo:actor_critic_td}. 
 \begin{algorithm}[t!]
 	\caption{TD($\lambda$) policy gradient algorithm.}
 	\label{algo:actor_critic_td}
-	\begin{algorithmic}[1]
-		\Require Initial actor $\theta^0$, initial critic $\psi^0$, learning rate $\{\alpha_k\}$
+	\begin{algorithmic}[0]
+		\Require{\\
+			\begin{itemize}
+				\item Initial actor parameters $\theta_0$, 
+				\item Initial critic parameters $\psi_0$, 
+				\item Learning rate $\{\alpha_k\}$
+			\end{itemize}
+		} 
 		\Ensure Approximation of the optimal policy $\pi_{\theta^*} \approx \pi_*$
+		\begin{algorithmic}[1]
+		\State Initialize $k = 0$ and the eligibility trace $e_{-1} = 0$
 		\Repeat
 			\State Observe tuple $<s_k, a_k, r_{k+1}, s_{k+1}>$ sampled from the MDP.
-			\State Update critic parameters $	\psi^{k+1} = \psi^k + \alpha_k \widehat{\delta}_\psi^k \nabla_\psi \widehat{V}_\psi(s_k)$ . 
-			\State Update actor parameters $\theta^{k+1} = \theta^k + \alpha_k \alpha_k \widehat{\delta}_\psi^k e^k $. 
-			\State Update eligibility trace $e^{k+1} = \lambda e^k + \nabla_\theta\log \pi_\theta(s_k,a_k)$
+			\State Compute TD error $\widehat{\delta}_k = r_{k+1} - \widehat{\rho}_k + \widehat{V}_{\psi_k}(s_{k+1}) - \widehat{V}_{\psi_k}(s_k) $
+			\State Update critic parameters $	\psi_{k+1} = \psi_k + \alpha_k \widehat{\delta}_k \nabla_\psi \widehat{V}_{\psi_k}(s_k)$ 
+			\State Update eligibility trace $e_{k+1} = \lambda e_k + \nabla_\theta\log \pi_{\theta_k}(s_k,a_k)$
+			\State Update actor parameters $\theta_{k+1} = \theta_k + \alpha_k \widehat{\delta}_k e_k $. 
+			
 			\State $k \leftarrow k + 1$
 		\Until{converged}
+		\end{algorithmic}
 	\end{algorithmic}
 \end{algorithm}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  7 AUG 2016 16:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  10 AUG 2016 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1073,39 +1073,15 @@ LaTeX Info: Redefining \nameref on input line 5.
 \@outlinefile=\write6
 \openout6 = `thesis.out'.
 
- (./Cover/cover.tex
-Package epstopdf Info: Source file: <Cover/PolimiLogo.eps>
-(epstopdf)                    date: 2016-06-20 14:48:29
-(epstopdf)                    size: 149991 bytes
-(epstopdf)             Output file: <Cover/PolimiLogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-06-20 14:48:29
-(epstopdf)                    size: 28259 bytes
-(epstopdf)             Command: <repstopdf --outfile=Cover/PolimiLogo-eps-conve
-rted-to.pdf Cover/PolimiLogo.eps>
-(epstopdf)             \includegraphics on input line 5.
-Package epstopdf Info: Output file is already uptodate.
-
-<Cover/PolimiLogo-eps-converted-to.pdf, id=272, 173.64874pt x 175.65625pt>
-File: Cover/PolimiLogo-eps-converted-to.pdf Graphic file (type pdf)
-
-<use Cover/PolimiLogo-eps-converted-to.pdf>
-Package pdftex.def Info: Cover/PolimiLogo-eps-converted-to.pdf used on input li
-ne 5.
-(pdftex.def)             Requested size: 170.71652pt x 172.69675pt.
- [1
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Cover/PolimiLogo-eps-con
-verted-to.pdf>]) [2
-
-]
 \openout2 = `Acknowledgements/acknowledgements.aux'.
 
+ (./Acknowledgements/acknowledgements.tex)
+[1
 
-(./Acknowledgements/acknowledgements.tex) [1
 
 
-] [2
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 
 ] (./thesis.toc
@@ -1160,20 +1136,9 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 ]
 (./Chapters/1_Introduction.tex
 Chapter 1.
-) (./Chapters/2_Discrete_Time_Stochastic_Optimal_Control.texpdfTeX warning (ext
-4): destination with the same identifier (name{page.1}) has been already used, 
-duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 \chapter
-            {Discrete-Time Stochastic Optimal Control} [1
+) (./Chapters/2_Discrete_Time_Stochastic_Optimal_Control.tex [1
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 \chapter
-            {Discrete-Time Stochastic Optimal Control} [2
+] [2
 
 ]
 Chapter 2.
@@ -1200,7 +1165,7 @@ Overfull \hbox (21.59264pt too wide) in paragraph at lines 462--462
  []
 
 [13] [14] [15]
-<Images/2_0_policy_iteration.png, id=628, 474.77374pt x 655.44875pt>
+<Images/2_0_policy_iteration.png, id=622, 474.77374pt x 655.44875pt>
 File: Images/2_0_policy_iteration.png Graphic file (type png)
 
 <use Images/2_0_policy_iteration.png>
@@ -1263,13 +1228,22 @@ Overfull \hbox (2.67339pt too wide) in paragraph at lines 85--87
 tate-dependent
  []
 
-[40] [41] [42] [43] [44]
-<Images/4_0_euclidean_vs_natural.png, id=906, 2434.09375pt x 768.8725pt>
+[40] [41]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 132.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
+ [42]
+[43] [44]
+<Images/4_0_euclidean_vs_natural.png, id=899, 2434.09375pt x 768.8725pt>
 File: Images/4_0_euclidean_vs_natural.png Graphic file (type png)
 
 <use Images/4_0_euclidean_vs_natural.png>
 Package pdftex.def Info: Images/4_0_euclidean_vs_natural.png used on input line
- 236.
+ 255.
 (pdftex.def)             Requested size: 389.80276pt x 123.1277pt.
  [45] [46 <./Images/4_0_euclidean_vs_natural.png>]) (./Chapters/4_4_Risk_Sensit
 ive_Policy_Gradient.tex [47] [48]
@@ -1285,15 +1259,7 @@ n/12 (\OML/cmm/m/it/12 s; a; s[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 r[]\OML/cmm/m
 2 ds[]
  []
 
-[49]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 123.
-
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 123.
- [50] [51]
+[49] [50] [51]
 Overfull \hbox (3.20358pt too wide) in paragraph at lines 201--201
 [] 
  []
@@ -1303,36 +1269,38 @@ Overfull \hbox (8.13344pt too wide) in paragraph at lines 215--215
 [] 
  []
 
-) (./Chapters/4_5_Parameter_Based_Policy_Gradient.tex [53] [54] [55]
-Overfull \hbox (10.8639pt too wide) in paragraph at lines 91--93
+) (./Chapters/4_5_Parameter_Based_Policy_Gradient.tex [53] [54] [55] [56]
+Overfull \hbox (10.8639pt too wide) in paragraph at lines 119--121
 \OT1/cmr/m/n/12 Natural parameter-based pol-icy gra-di-ent meth-ods up-date the
  hyper-parameters
  []
 
-[56] [57])) (./Chapters/5_Asset_Allocation.tex [58] [59] [60
+[57] [58] [59])) (./Chapters/5_Asset_Allocation.tex [60
 
 ]
 Chapter 5.
-[61] [62] [63]) (./Chapters/6_Numerical_Results.tex [64] [65] [66
+[61
+
+] [62] [63]) (./Chapters/6_Numerical_Results.tex [64] [65] [66
 
 ]
 Chapter 6.
 [67] [68]
 Package epstopdf Info: Source file: <Images/6_0_single_synthetic_neutral_conver
 gence.eps>
-(epstopdf)                    date: 2016-07-30 16:36:57
-(epstopdf)                    size: 85887 bytes
+(epstopdf)                    date: 2016-08-09 22:45:33
+(epstopdf)                    size: 83834 bytes
 (epstopdf)             Output file: <Images/6_0_single_synthetic_neutral_conver
 gence-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-07-30 16:52:50
-(epstopdf)                    size: 33350 bytes
+(epstopdf)                    date: 2016-08-09 22:50:31
+(epstopdf)                    size: 33501 bytes
 (epstopdf)             Command: <repstopdf --outfile=Images/6_0_single_syntheti
 c_neutral_convergence-eps-converted-to.pdf Images/6_0_single_synthetic_neutral_
 convergence.eps>
 (epstopdf)             \includegraphics on input line 49.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=1077,
+<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=1072,
  1445.4pt x 722.7pt>
 File: Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1343,21 +1311,23 @@ nverted-to.pdf used on input line 49.
 (pdftex.def)             Requested size: 389.80276pt x 194.90002pt.
 
 [69 <./Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf>]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 56.
 Package epstopdf Info: Source file: <Images/6_1_single_synthetic_neutral_perfor
 mance.eps>
-(epstopdf)                    date: 2016-07-30 16:36:59
-(epstopdf)                    size: 403143 bytes
+(epstopdf)                    date: 2016-08-09 22:45:36
+(epstopdf)                    size: 356963 bytes
 (epstopdf)             Output file: <Images/6_1_single_synthetic_neutral_perfor
 mance-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-07-30 16:52:51
-(epstopdf)                    size: 121931 bytes
+(epstopdf)                    date: 2016-08-09 22:50:32
+(epstopdf)                    size: 109623 bytes
 (epstopdf)             Command: <repstopdf --outfile=Images/6_1_single_syntheti
 c_neutral_performance-eps-converted-to.pdf Images/6_1_single_synthetic_neutral_
 performance.eps>
 (epstopdf)             \includegraphics on input line 59.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=1137,
+<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=1133,
  1445.4pt x 722.7pt>
 File: Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1367,44 +1337,24 @@ Package pdftex.def Info: Images/6_1_single_synthetic_neutral_performance-eps-co
 nverted-to.pdf used on input line 59.
 (pdftex.def)             Requested size: 389.80276pt x 194.90002pt.
 Package epstopdf Info: Source file: <Images/6_2_impact_transaction_costs.eps>
-(epstopdf)                    date: 2016-07-31 11:00:27
-(epstopdf)                    size: 54664 bytes
+(epstopdf)                    date: 2016-08-10 22:00:13
+(epstopdf)                    size: 53615 bytes
 (epstopdf)             Output file: <Images/6_2_impact_transaction_costs-eps-co
 nverted-to.pdf>
-(epstopdf)                    date: 2016-07-31 16:58:30
-(epstopdf)                    size: 25868 bytes
+(epstopdf)                    date: 2016-08-10 22:07:31
+(epstopdf)                    size: 24454 bytes
 (epstopdf)             Command: <repstopdf --outfile=Images/6_2_impact_transact
 ion_costs-eps-converted-to.pdf Images/6_2_impact_transaction_costs.eps>
-(epstopdf)             \includegraphics on input line 91.
+(epstopdf)             \includegraphics on input line 92.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=1143, 1445.4pt x 
+<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=1140, 1445.4pt x 
 722.7pt>
 File: Images/6_2_impact_transaction_costs-eps-converted-to.pdf Graphic file (ty
 pe pdf)
  <use Images/6_2_impact_transaction_costs-eps-converted-to.pdf>
 Package pdftex.def Info: Images/6_2_impact_transaction_costs-eps-converted-to.p
-df used on input line 91.
-(pdftex.def)             Requested size: 389.80276pt x 194.90002pt.
-Package epstopdf Info: Source file: <Images/6_3_impact_short_selling_fees.eps>
-(epstopdf)                    date: 2016-08-01 23:12:18
-(epstopdf)                    size: 54488 bytes
-(epstopdf)             Output file: <Images/6_3_impact_short_selling_fees-eps-c
-onverted-to.pdf>
-(epstopdf)                    date: 2016-08-01 23:13:24
-(epstopdf)                    size: 25777 bytes
-(epstopdf)             Command: <repstopdf --outfile=Images/6_3_impact_short_se
-lling_fees-eps-converted-to.pdf Images/6_3_impact_short_selling_fees.eps>
-(epstopdf)             \includegraphics on input line 98.
-Package epstopdf Info: Output file is already uptodate.
-
-<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=1145, 1445.4pt x
- 722.7pt>
-File: Images/6_3_impact_short_selling_fees-eps-converted-to.pdf Graphic file (t
-ype pdf)
- <use Images/6_3_impact_short_selling_fees-eps-converted-to.pdf>
-Package pdftex.def Info: Images/6_3_impact_short_selling_fees-eps-converted-to.
-pdf used on input line 98.
+df used on input line 92.
 (pdftex.def)             Requested size: 389.80276pt x 194.90002pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1413,65 +1363,86 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 2932) has occurred while \output is active []
 
  [71]
-Overfull \hbox (3.45107pt too wide) in paragraph at lines 104--105
+Package epstopdf Info: Source file: <Images/6_3_impact_short_selling_fees.eps>
+(epstopdf)                    date: 2016-08-10 22:00:13
+(epstopdf)                    size: 56116 bytes
+(epstopdf)             Output file: <Images/6_3_impact_short_selling_fees-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2016-08-10 22:07:32
+(epstopdf)                    size: 25218 bytes
+(epstopdf)             Command: <repstopdf --outfile=Images/6_3_impact_short_se
+lling_fees-eps-converted-to.pdf Images/6_3_impact_short_selling_fees.eps>
+(epstopdf)             \includegraphics on input line 99.
+Package epstopdf Info: Output file is already uptodate.
+
+<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=1203, 1445.4pt x
+ 722.7pt>
+File: Images/6_3_impact_short_selling_fees-eps-converted-to.pdf Graphic file (t
+ype pdf)
+ <use Images/6_3_impact_short_selling_fees-eps-converted-to.pdf>
+Package pdftex.def Info: Images/6_3_impact_short_selling_fees-eps-converted-to.
+pdf used on input line 99.
+(pdftex.def)             Requested size: 389.80276pt x 194.90002pt.
+
+Overfull \hbox (3.45107pt too wide) in paragraph at lines 105--106
 \OT1/cmr/m/n/12 coun-ter-parts. How-ever, it is sur-pris-ing that the strate-gi
 es learned by RSPGPE
  []
 
-[72 <./Images/6_2_impact_transaction_costs-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Images/6_4_single_synthetic_sensitive_conv
 ergence.eps>
-(epstopdf)                    date: 2016-07-30 16:06:47
-(epstopdf)                    size: 64559 bytes
+(epstopdf)                    date: 2016-08-10 22:26:08
+(epstopdf)                    size: 86683 bytes
 (epstopdf)             Output file: <Images/6_4_single_synthetic_sensitive_conv
 ergence-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-01 23:06:17
-(epstopdf)                    size: 27883 bytes
+(epstopdf)                    date: 2016-08-10 22:47:44
+(epstopdf)                    size: 33633 bytes
 (epstopdf)             Command: <repstopdf --outfile=Images/6_4_single_syntheti
 c_sensitive_convergence-eps-converted-to.pdf Images/6_4_single_synthetic_sensit
 ive_convergence.eps>
-(epstopdf)             \includegraphics on input line 108.
+(epstopdf)             \includegraphics on input line 109.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf, id=126
-2, 1445.4pt x 722.7pt>
+<Images/6_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf, id=120
+6, 1445.4pt x 722.7pt>
 File: Images/6_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
 <use Images/6_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf>
 Package pdftex.def Info: Images/6_4_single_synthetic_sensitive_convergence-eps-
-converted-to.pdf used on input line 108.
+converted-to.pdf used on input line 109.
 (pdftex.def)             Requested size: 389.80276pt x 194.90002pt.
 Package epstopdf Info: Source file: <Images/6_5_single_synthetic_sensitive_perf
 ormance.eps>
-(epstopdf)                    date: 2016-07-30 16:06:49
-(epstopdf)                    size: 391726 bytes
+(epstopdf)                    date: 2016-08-10 22:26:10
+(epstopdf)                    size: 420002 bytes
 (epstopdf)             Output file: <Images/6_5_single_synthetic_sensitive_perf
 ormance-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-01 23:06:17
-(epstopdf)                    size: 117442 bytes
+(epstopdf)                    date: 2016-08-10 22:47:44
+(epstopdf)                    size: 125994 bytes
 (epstopdf)             Command: <repstopdf --outfile=Images/6_5_single_syntheti
 c_sensitive_performance-eps-converted-to.pdf Images/6_5_single_synthetic_sensit
 ive_performance.eps>
-(epstopdf)             \includegraphics on input line 115.
+(epstopdf)             \includegraphics on input line 116.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_5_single_synthetic_sensitive_performance-eps-converted-to.pdf, id=126
-3, 1445.4pt x 722.7pt>
+<Images/6_5_single_synthetic_sensitive_performance-eps-converted-to.pdf, id=120
+7, 1445.4pt x 722.7pt>
 File: Images/6_5_single_synthetic_sensitive_performance-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
 <use Images/6_5_single_synthetic_sensitive_performance-eps-converted-to.pdf>
 Package pdftex.def Info: Images/6_5_single_synthetic_sensitive_performance-eps-
-converted-to.pdf used on input line 115.
+converted-to.pdf used on input line 116.
 (pdftex.def)             Requested size: 389.80276pt x 194.90002pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[73 <./Images/6_3_impact_short_selling_fees-eps-converted-to.pdf> <./Images/6_4
-_single_synthetic_sensitive_convergence-eps-converted-to.pdf>] [74 <./Images/6_
-5_single_synthetic_sensitive_performance-eps-converted-to.pdf>])
+[72 <./Images/6_2_impact_transaction_costs-eps-converted-to.pdf>] [73 <./Images
+/6_3_impact_short_selling_fees-eps-converted-to.pdf> <./Images/6_4_single_synth
+etic_sensitive_convergence-eps-converted-to.pdf>] [74 <./Images/6_5_single_synt
+hetic_sensitive_performance-eps-converted-to.pdf>])
 (./Chapters/7_Conclusions.tex [75
 
 ] [76
@@ -1494,13 +1465,13 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
  ) 
 Here is how much of TeX's memory you used:
- 20539 strings out of 495028
- 349438 string characters out of 6181497
- 433972 words of memory out of 5000000
- 22753 multiletter control sequences out of 15000+600000
- 16139 words of font info for 63 fonts, out of 8000000 for 9000
+ 20574 strings out of 495028
+ 350043 string characters out of 6181497
+ 438247 words of memory out of 5000000
+ 22790 multiletter control sequences out of 15000+600000
+ 15533 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,22n,75p,2040b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,22n,76p,2040b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/pierpaolo/.texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/
@@ -1510,18 +1481,17 @@ onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (98 pages, 1669131 bytes).
+m/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (96 pages, 1634110 bytes).
 PDF statistics:
- 1698 PDF objects out of 1728 (max. 8388607)
+ 1692 PDF objects out of 1728 (max. 8388607)
  1285 compressed objects within 13 object streams
- 502 named destinations out of 1000 (max. 500000)
- 586 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 505 named destinations out of 1000 (max. 500000)
+ 581 words of extra memory for PDF output out of 10000 (max. 10000000)
 
