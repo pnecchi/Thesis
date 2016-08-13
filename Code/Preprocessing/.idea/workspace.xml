@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9dcdd4-0c88-446a-95c0-440f8746c1a1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Prototype/marketdataio.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Input/AAPL.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Input/ESTX50.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Input/GOOG.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Input/GS.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Input/IBM.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Input/JPM.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Input/SPY.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Input/Synthetic/generate_synthetic_series.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Input/Synthetic/synthetic.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Statistics/.~lock.backtest.csv#" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Postprocessing/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Postprocessing/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/market_data_io.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/synthetic.csv" afterPath="" />
     </list>
     <ignored path="Preprocessing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,30 +26,7 @@
     <favorites_list name="Preprocessing" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="market_data_io.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/market_data_io.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
-              <folding>
-                <element signature="e#339#348#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generate_synthetic_series.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generate_synthetic_series.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -68,6 +35,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/market_data_io.py" />
+        <option value="$PROJECT_DIR$/generate_cointegrated_series.py" />
       </list>
     </option>
   </component>
@@ -128,10 +96,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.market_data_io">
+  <component name="RunManager" selected="Python.generate_cointegrated_series">
     <configuration default="false" name="market_data_io" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,6 +113,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Preprocessing" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/market_data_io.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="generate_cointegrated_series" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Preprocessing" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_cointegrated_series.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -283,12 +268,14 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.market_data_io" />
+      <item index="1" class="java.lang.String" itemvalue="Python.generate_cointegrated_series" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.market_data_io" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.generate_cointegrated_series" />
+        <item index="1" class="java.lang.String" itemvalue="Python.market_data_io" />
       </list>
     </recent_temporary>
   </component>
@@ -319,7 +306,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="89" y="-6" width="3111" height="1806" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2497561" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939714" sideWeight="0.4988618" order="6" side_tool="false" content_ui="tabs" />
@@ -331,7 +318,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939714" sideWeight="0.4988618" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3996271" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3996271" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -353,23 +340,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="13" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="collector" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="924" column="40" selection-start-line="924" selection-start-column="40" selection-end-line="924" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/synthetic.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -378,20 +353,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate_synthetic_series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/market_data_io.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
           <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="937" column="0" selection-start-line="937" selection-start-column="0" selection-end-line="937" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/market_data_collector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_cointegrated_series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding>
-            <element signature="e#339#348#0" expanded="true" />
+            <element signature="e#1#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_synthetic_series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding>
+            <element signature="e#429#439#0" expanded="true" />
           </folding>
         </state>
       </provider>
