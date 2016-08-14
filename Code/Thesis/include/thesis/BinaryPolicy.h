@@ -87,9 +87,6 @@ class BinaryPolicy : public Policy
         virtual void reset();
 
     private:
-        //! Virtual inner clone method
-        virtual std::unique_ptr<Policy> cloneImpl() const;
-
         //! Initialize BinaryPolicy parameters
         void initializeParameters();
 
@@ -105,6 +102,9 @@ class BinaryPolicy : public Policy
          */
         double paramMinValue;
         double paramMaxValue;
+
+        //! Virtual inner clone method
+        virtual std::unique_ptr<Policy> cloneImpl() const;
 };
 
 #endif // BINARYPOLICY_H

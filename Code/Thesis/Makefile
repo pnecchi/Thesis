@@ -476,6 +476,30 @@ src/LogisticPolicy.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LogisticPolicy.cpp.s
 .PHONY : src/LogisticPolicy.cpp.s
 
+src/LongShortPolicy.o: src/LongShortPolicy.cpp.o
+.PHONY : src/LongShortPolicy.o
+
+# target to build an object file
+src/LongShortPolicy.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LongShortPolicy.cpp.o
+.PHONY : src/LongShortPolicy.cpp.o
+
+src/LongShortPolicy.i: src/LongShortPolicy.cpp.i
+.PHONY : src/LongShortPolicy.i
+
+# target to preprocess a source file
+src/LongShortPolicy.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LongShortPolicy.cpp.i
+.PHONY : src/LongShortPolicy.cpp.i
+
+src/LongShortPolicy.s: src/LongShortPolicy.cpp.s
+.PHONY : src/LongShortPolicy.s
+
+# target to generate assembly for a file
+src/LongShortPolicy.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/LongShortPolicy.cpp.s
+.PHONY : src/LongShortPolicy.cpp.s
+
 src/MarketEnvironment.o: src/MarketEnvironment.cpp.o
 .PHONY : src/MarketEnvironment.o
 
@@ -697,6 +721,9 @@ help:
 	@echo "... src/LogisticPolicy.o"
 	@echo "... src/LogisticPolicy.i"
 	@echo "... src/LogisticPolicy.s"
+	@echo "... src/LongShortPolicy.o"
+	@echo "... src/LongShortPolicy.i"
+	@echo "... src/LongShortPolicy.s"
 	@echo "... src/MarketEnvironment.o"
 	@echo "... src/MarketEnvironment.i"
 	@echo "... src/MarketEnvironment.s"

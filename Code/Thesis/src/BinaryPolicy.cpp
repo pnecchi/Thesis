@@ -47,3 +47,5 @@ std::unique_ptr<Policy> BinaryPolicy::cloneImpl() const
 {
     return std::unique_ptr<Policy>(new BinaryPolicy(*this));
 }
+
+
