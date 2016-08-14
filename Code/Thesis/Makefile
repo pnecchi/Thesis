@@ -127,6 +127,19 @@ main/fast:
 	$(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named main_thesis
+
+# Build rule for target.
+main_thesis: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main_thesis
+.PHONY : main_thesis
+
+# fast build rule for target.
+main_thesis/fast:
+	$(MAKE) -f examples/CMakeFiles/main_thesis.dir/build.make examples/CMakeFiles/main_thesis.dir/build
+.PHONY : main_thesis/fast
+
 src/AracAgent.o: src/AracAgent.cpp.o
 .PHONY : src/AracAgent.o
 
@@ -617,6 +630,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... thesis"
 	@echo "... main"
+	@echo "... main_thesis"
 	@echo "... src/AracAgent.o"
 	@echo "... src/AracAgent.i"
 	@echo "... src/AracAgent.s"

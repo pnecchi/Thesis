@@ -115,6 +115,20 @@ main/fast:
 	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+# Convenience name for target.
+examples/CMakeFiles/main_thesis.dir/rule:
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/main_thesis.dir/rule
+.PHONY : examples/CMakeFiles/main_thesis.dir/rule
+
+# Convenience name for target.
+main_thesis: examples/CMakeFiles/main_thesis.dir/rule
+.PHONY : main_thesis
+
+# fast build rule for target.
+main_thesis/fast:
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_thesis.dir/build.make examples/CMakeFiles/main_thesis.dir/build
+.PHONY : main_thesis/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -139,6 +153,30 @@ main.cpp.s:
 	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+main_thesis.o: main_thesis.cpp.o
+.PHONY : main_thesis.o
+
+# target to build an object file
+main_thesis.cpp.o:
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_thesis.dir/build.make examples/CMakeFiles/main_thesis.dir/main_thesis.cpp.o
+.PHONY : main_thesis.cpp.o
+
+main_thesis.i: main_thesis.cpp.i
+.PHONY : main_thesis.i
+
+# target to preprocess a source file
+main_thesis.cpp.i:
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_thesis.dir/build.make examples/CMakeFiles/main_thesis.dir/main_thesis.cpp.i
+.PHONY : main_thesis.cpp.i
+
+main_thesis.s: main_thesis.cpp.s
+.PHONY : main_thesis.s
+
+# target to generate assembly for a file
+main_thesis.cpp.s:
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_thesis.dir/build.make examples/CMakeFiles/main_thesis.dir/main_thesis.cpp.s
+.PHONY : main_thesis.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -148,9 +186,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... main_thesis"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main_thesis.o"
+	@echo "... main_thesis.i"
+	@echo "... main_thesis.s"
 .PHONY : help
 
 

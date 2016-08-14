@@ -58,15 +58,26 @@ params = {'riskFreeRate'      : 0.0,
           'numTrainingSteps'  : 7000,
           'numTestSteps'      : 2000}
 
-riskSensitive = True
+riskSensitive = False
 synthetic     = True
-multiAsset    = False
+multiAsset    = True
 
 #--------------------------------------#
 # Input, Output and Debug destinations #
 #--------------------------------------#
 
-inputFile = inputBaseDir + 'synthetic.csv'
+if synthetic:
+    if not multiAsset:
+        inputFile = 'synthetic.csv'
+    else:
+        inputFile = 'cointegrated.csv'
+else:
+    if not multiAsset:
+        inputFilte = 'historical_single.csv'
+    else:
+        inputFile = 'historical_multi.csv'
+
+inputFilePath = inputBaseDir + inputFile
 
 experimentCode = ('Multi_' if multiAsset else 'Single_') + \
                  ('Synth_' if synthetic else 'Hist_') + \
@@ -101,7 +112,7 @@ else:
 # Run learning algorithms #
 #-------------------------#
 
-execPath = thesisBaseDir + 'Code/Thesis/examples/main'
+execPath = thesisBaseDir + 'Code/Thesis/examples/main_thesis'
 
 for algo in algorithmsList:
 
@@ -114,7 +125,7 @@ for algo in algorithmsList:
     os.system(execPath +
               " -a " + algo +
               " -p " + parametersFile +
-              " -i " + inputFile +
+              " -i " + inputFilePath +
               " -o " + outputDirAlgo +
               " -d " + debugDirAlgo)
 

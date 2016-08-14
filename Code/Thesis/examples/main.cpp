@@ -64,61 +64,31 @@
 #include <thesis/RiskSensitiveNpgpeAgent.h>
 
 
-/*!
- * Helper function that prints usage of main executable.
- */
-void printHelp()
-{
-  std::cout << "USAGE: main [-h] [-v] -a algorithm -p parametersFile -i inputFile -o outputDirectory -d debugDirectory" << std::endl
-            << "-h this help" << std::endl
-            << "-v verbose" << std::endl
-            << "-a reinforcement learning algorithm to use" << std::endl
-            << "-p absolute path to the file containing the experiment parameters" << std::endl
-            << "-i absolute path to the file containing the return series" << std::endl
-            << "-o absolute path to the directory where the output file will be written." << std::endl
-            << std::endl;
-}
-
-/*!
- * Main function. It reads the execution option from command line and the
- * parameters from file, than dispatch the execution to the correct algorithm.
+/*! Main function used for debugging. It doesn't not take options from the command
+    line and the paths to the parameters file and output directories is hard-coded.
  */
 
-int main(int argc, char** argv)
+int main()
 {
-    //-----------------|
-    // Helper function |
-    //-----------------|
-
-    GetPot cl(argc, argv);
-    if( cl.search(2, "-h", "--help") )
-    {
-      printHelp();
-      return 0;
-    }
-
     std::cout << "----------------------------------------------" << std::endl;
     std::cout << "-        Algorithmic Asset Allocation        -" << std::endl;
     std::cout << "----------------------------------------------" << std::endl;
     std::cout << std::endl;
 
-    // Check if we want verbosity
-	bool verbose = cl.search(1, "-v");
-
-	// Get algorithm
-	std::string algorithm = cl.follow("ARAC", "-a");
+    // Get algorithm
+	std::string algorithm = "ARAC";
 
 	// Get file with parameter values
-	std::string parametersFilepath = cl.follow("~/Documents/University/6_Anno_Poli/Thesis/Data/Parameters/parametersArac.pot", "-p");
+	std::string parametersFilepath = "~/Documents/University/6_Anno_Poli/Thesis/Data/Parameters/Single_Synth_RN_P0_F0_S0_N5.pot";
 
     // Read input file path
-    const std::string inputFile = cl.follow("~/Documents/University/6_Anno_Poli/7_Thesis/Data/Input/synthetic.csv", "-i");
+    const std::string inputFile = "~/Documents/University/6_Anno_Poli/7_Thesis/Data/Input/synthetic.csv";
 
     // Read output directory path
-    const std::string outputDir = cl.follow("~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Default/", "-o");
+    const std::string outputDir = "~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Default/";
 
     // Read debug directory path
-    const std::string debugDir = cl.follow("~/Documents/University/6_Anno_Poli/7_Thesis/Data/Debug/Default/", "-d");
+    const std::string debugDir = "~/Documents/University/6_Anno_Poli/7_Thesis/Data/Debug/Default/";
 
     //---------------|
     // 1) Parameters |
