@@ -79,16 +79,16 @@ int main()
 	std::string algorithm = "ARAC";
 
 	// Get file with parameter values
-	std::string parametersFilepath = "~/Documents/University/6_Anno_Poli/Thesis/Data/Parameters/Single_Synth_RN_P0_F0_S0_N5.pot";
+	std::string parametersFilepath = "/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Parameters/Single_Synth_RN_P0_F0_S0_N5.pot";
 
     // Read input file path
-    const std::string inputFile = "~/Documents/University/6_Anno_Poli/7_Thesis/Data/Input/synthetic.csv";
+    const std::string inputFile = "/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Input/historical_single.csv";
 
     // Read output directory path
-    const std::string outputDir = "~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Default/";
+    const std::string outputDir = "/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Default/";
 
     // Read debug directory path
-    const std::string debugDir = "~/Documents/University/6_Anno_Poli/7_Thesis/Data/Debug/Default/";
+    const std::string debugDir = "/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Data/Debug/Default/";
 
     //---------------|
     // 1) Parameters |

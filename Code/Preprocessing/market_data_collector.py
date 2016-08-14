@@ -78,7 +78,8 @@ class MarketDataCollector(object):
 
 
 if __name__ == "__main__":
-    assets = ['IBM', 'JPM', 'GS']
-    collector = MarketDataCollector(assets)
+    start_date = pd.to_datetime('2000/01/01')
+    assets = ['BMPS.MI']
+    collector = MarketDataCollector(assets, start_date)
     collector.run()
     collector.to_csv()

@@ -47,20 +47,20 @@ params = {'riskFreeRate'      : 0.0,
           'deltaS'            : 0.0000,
           'numDaysObserved'   : 5,
           'lambda'            : 0.9,
-          'alphaConstActor'   : 0.1,
+          'alphaConstActor'   : 1.0,
           'alphaExpActor'     : 0.8,
-          'alphaConstCritic'  : 0.2,
+          'alphaConstCritic'  : 1.0,
           'alphaExpCritic'    : 0.7,
-          'alphaConstBaseline': 0.5,
+          'alphaConstBaseline': 1.0,
           'alphaExpBaseline'  : 0.6,
-          'numExperiments'    : 10,
+          'numExperiments'    : 5,
           'numEpochs'         : 1001,
-          'numTrainingSteps'  : 7000,
-          'numTestSteps'      : 2000}
+          'numTrainingSteps'  : 1000,
+          'numTestSteps'      : 100}
 
 riskSensitive = False
-synthetic     = True
-multiAsset    = True
+synthetic     = False
+multiAsset    = False
 
 #--------------------------------------#
 # Input, Output and Debug destinations #
@@ -73,11 +73,12 @@ if synthetic:
         inputFile = 'cointegrated.csv'
 else:
     if not multiAsset:
-        inputFilte = 'historical_single.csv'
+        inputFile = 'historical_single.csv'
     else:
         inputFile = 'historical_multi.csv'
 
 inputFilePath = inputBaseDir + inputFile
+print inputFilePath
 
 experimentCode = ('Multi_' if multiAsset else 'Single_') + \
                  ('Synth_' if synthetic else 'Hist_') + \

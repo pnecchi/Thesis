@@ -43,6 +43,7 @@
 
 #include <thesis/LinearRegressor.h>
 #include <thesis/Critic.h>
+#include <thesis/GaussianPolicy.h>
 #include <thesis/BoltzmannPolicy.h>
 #include <thesis/StochasticActor.h>
 #include <thesis/AracAgent.h>
@@ -199,8 +200,8 @@ int main(int argc, char** argv)
         Critic critic(linearRegV);
         std::cout << "done" << std::endl;
 
-        // Boltzmann Policy
-        std::cout << ".. Boltzmann stochastic policy - ";
+        // Boltzmann policy
+        std::cout << ".. boltzmann stochastic policy - ";
         std::vector<double> possibleAction {-1.0, 1.0};
         BoltzmannPolicy policy(task.getDimObservation(), possibleAction);
         std::cout << "done" << std::endl;

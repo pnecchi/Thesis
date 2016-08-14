@@ -4,6 +4,7 @@
 #include <random>
 #include <iostream>
 #include <algorithm>  /* find */
+#include <fstream>
 
 BoltzmannPolicy::BoltzmannPolicy(size_t dimObservation_,
                                  std::vector<double> possibleActions_)
@@ -24,7 +25,7 @@ void BoltzmannPolicy::initializeParameters()
 {
     parametersMat.randu();
     parametersMat -= 0.5;
-    parametersMat *= 0.001;
+    parametersMat *= 0.1;
 }
 
 arma::vec BoltzmannPolicy::getParameters() const
@@ -49,7 +50,6 @@ arma::vec BoltzmannPolicy::getAction(arma::vec const &observation_) const
     boltzmannWeights.rows(0, boltzmannWeights.n_elem - 2) = arma::exp(parametersMat.t() * features);
     std::discrete_distribution<int> boltzmannDistribution(boltzmannWeights.begin(),
                                                           boltzmannWeights.end());
-
     // Cache action probabilities
     boltzmannProbabilities = boltzmannDistribution.probabilities();
 
@@ -71,32 +71,17 @@ arma::vec BoltzmannPolicy::likelihoodScore(arma::vec const &observation_,
     // Find index of selected action
     size_t actionIdx = std::distance(possibleActions.begin(),
                                      std::find(possibleActions.begin(), possibleActions.end(), action_[0]));
-    double probabilityForAction = boltzmannProbabilities[actionIdx];
 
     // Compute likelihood score
     arma::vec likScore(dimParameters);
     for (size_t i = 0; i < numPossibleActions - 1; ++i)
     {
         likScore.rows(i * dimParametersPerAction, (i + 1) * dimParametersPerAction - 1)
-            = - probabilityForAction * features;
+            = - boltzmannProbabilities[i] * features;
     }
     if (actionIdx != numPossibleActions - 1)
         likScore.rows(actionIdx * dimParametersPerAction,
                       (actionIdx + 1) * dimParametersPerAction - 1) += features;
-
-//    double coeff = 0.0;
-//    for (size_t i = 0; i < numPossibleActions; ++i)
-//    {
-//        // Compute coefficient for the different actions
-//        if (std::abs(action_[0] - possibleActions[i]) < std::numeric_limits<double>::epsilon())
-//            coeff = 1.0 - boltzmannProbabilities[i];
-//        else
-//            coeff = - boltzmannProbabilities[i];
-//
-//        // Compute likScore associated to the given action
-//        likScore.rows(i * dimParametersPerAction, (i + 1) * dimParametersPerAction - 1)
-//            = coeff * features;
-//    }
     return likScore;
 }
 
