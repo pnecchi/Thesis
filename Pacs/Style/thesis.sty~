@@ -1,0 +1,78 @@
+\ProvidesPackage{thesis}
+
+% Useful packages 
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[top=43mm, bottom=44mm, left=41mm, right=32mm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}  
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{latexsym} 
+\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{changebar}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+% Fancyhdr settings
+\fancyfoot{}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\itshape\nouppercase{\leftmark}}
+\fancyhead[RE]{\itshape\nouppercase{\rightmark}}
+\setlength{\headheight}{15.0pt}
+\renewcommand{\headrulewidth}{0.2pt}
+\pagestyle{fancy}
+
+% Redefine the plain page style used by chapter pages
+\fancypagestyle{plain}{%
+	\fancyhead{}
+	\fancyfoot{}
+	\renewcommand{\headrulewidth}{0pt}
+}
+
+% User-defined environments 
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemmma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{note}{Note}[section]
+
+% Modify interline for enumerate environment 
+\setlist{nosep}
+
+% User-defined commands
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argsup}{arg\,sup}
+\DeclareMathOperator*{\arginf}{arg\,inf}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\ind}[1]{\mathbbm{1}_{#1}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\calA}{\mathcal{A}}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\E}[2][]{\mathbb{E}_{#1}\left[ #2 \right]}
+\renewcommand{\P}[2][]{\mathbb{P}_{#1}\left( #2 \right)}
+\newcommand{\Var}[2][]{\text{Var}_{#1}\left( #2 \right)}
+\newcommand{\pardev}[2]{\frac{\partial #1}{\partial #2}}

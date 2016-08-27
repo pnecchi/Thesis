@@ -1,250 +1,241 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_project_file>
-   <FileVersion major="1" minor="6" />
-   <Project>
-      <Option title="thesis" />
-      <Option makefile_is_custom="1" />
-      <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\examples\;" />
-      <Build>
-      <Target title="all">
-         <Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="edit_cache">
-         <Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 edit_cache" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="rebuild_cache">
-         <Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 rebuild_cache" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="thesis">
-         <Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/libthesis.a" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis" />
-         <Option object_output="./" />
-         <Option type="2" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 thesis" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="thesis/fast">
-         <Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/libthesis.a" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis" />
-         <Option object_output="./" />
-         <Option type="2" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 thesis/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="main">
-         <Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples" />
-         <Option object_output="./" />
-         <Option type="1" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 main" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="main/fast">
-         <Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples" />
-         <Option object_output="./" />
-         <Option type="1" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 main/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="main_thesis">
-         <Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main_thesis" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples" />
-         <Option object_output="./" />
-         <Option type="1" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 main_thesis" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="main_thesis/fast">
-         <Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main_thesis" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples" />
-         <Option object_output="./" />
-         <Option type="1" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 main_thesis/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      </Build>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main_thesis.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/AracAgent.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/ArrsacAgent.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/AssetAllocationExperiment.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/AssetAllocationTask.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/BacktestLog.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/BinaryPolicy.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/BoltzmannPolicy.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/ExperimentParameters.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/GaussianDistribution.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/GaussianPolicy.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/LearningRate.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/LinearRegressor.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/LogisticPolicy.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/MarketEnvironment.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/NPGPEPolicy.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/NpgpeAgent.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/PgpePolicy.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/RandomGenerator.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/RiskSensitiveNpgpeAgent.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/src/Statistics.cpp">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/Actor.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/Agent.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/AracAgent.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/ArrsacAgent.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/AssetAllocationExperiment.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/AssetAllocationTask.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/BacktestLog.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/BinaryPolicy.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/BoltzmannPolicy.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/Critic.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/ExperimentParameters.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/FunctionApproximator.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/GaussianDistribution.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/GaussianPolicy.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/LearningRate.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/LinearRegressor.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/LogisticPolicy.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/MarketEnvironment.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/NpgpeAgent.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/NpgpePolicy.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/PgpePolicy.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/Policy.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/ProbabilityDistribution.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/RandomGenerator.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/RiskSensitiveNpgpeAgent.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/Statistics.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/StochasticActor.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include/thesis/StochasticPolicy.h">
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/CMakeLists.txt">
-          <Option virtualFolder="CMake Files\" />
-      </Unit>
-      <Unit filename="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/CMakeLists.txt">
-          <Option virtualFolder="CMake Files\examples\" />
-      </Unit>
-   </Project>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="thesis" />
+		<Option makefile_is_custom="1" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="CMake Files/;CMake Files/examples/;" />
+		<Build>
+			<Target title="all">
+				<Option type="4" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="include/thesis" />
+				</Compiler>
+				<MakeCommands>
+					<Build command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 all' />
+					<CompileFile command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;' />
+					<Clean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean' />
+					<DistClean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean' />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option type="4" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="include/thesis" />
+				</Compiler>
+				<MakeCommands>
+					<Build command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 edit_cache' />
+					<CompileFile command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;' />
+					<Clean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean' />
+					<DistClean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean' />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option type="4" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="include/thesis" />
+				</Compiler>
+				<MakeCommands>
+					<Build command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 rebuild_cache' />
+					<CompileFile command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;' />
+					<Clean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean' />
+					<DistClean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean' />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="thesis">
+				<Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/libthesis.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="./" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
+					<Add directory="/usr/local/include" />
+					<Add directory="include/thesis" />
+				</Compiler>
+				<MakeCommands>
+					<Build command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 thesis' />
+					<CompileFile command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;' />
+					<Clean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean' />
+					<DistClean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean' />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="thesis/fast">
+				<Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/libthesis.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="./" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
+					<Add directory="/usr/local/include" />
+					<Add directory="include/thesis" />
+				</Compiler>
+				<MakeCommands>
+					<Build command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 thesis/fast' />
+					<CompileFile command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 &quot;$file&quot;' />
+					<Clean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean' />
+					<DistClean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/Makefile&quot;  VERBOSE=1 clean' />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="main">
+				<Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples" />
+				<Option object_output="./" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
+					<Add directory="/usr/local/include" />
+					<Add directory="include/thesis" />
+				</Compiler>
+				<MakeCommands>
+					<Build command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 main' />
+					<CompileFile command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;' />
+					<Clean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean' />
+					<DistClean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean' />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="main/fast">
+				<Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples" />
+				<Option object_output="./" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
+					<Add directory="/usr/local/include" />
+					<Add directory="include/thesis" />
+				</Compiler>
+				<MakeCommands>
+					<Build command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 main/fast' />
+					<CompileFile command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;' />
+					<Clean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean' />
+					<DistClean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean' />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="main_thesis">
+				<Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main_thesis" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples" />
+				<Option object_output="./" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
+					<Add directory="/usr/local/include" />
+					<Add directory="include/thesis" />
+				</Compiler>
+				<MakeCommands>
+					<Build command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 main_thesis' />
+					<CompileFile command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;' />
+					<Clean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean' />
+					<DistClean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean' />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="main_thesis/fast">
+				<Option output="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/main_thesis" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples" />
+				<Option object_output="./" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/include" />
+					<Add directory="/usr/local/include" />
+					<Add directory="include/thesis" />
+				</Compiler>
+				<MakeCommands>
+					<Build command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 main_thesis/fast' />
+					<CompileFile command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 &quot;$file&quot;' />
+					<Clean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean' />
+					<DistClean command='/usr/bin/make -f &quot;/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis/examples/Makefile&quot;  VERBOSE=1 clean' />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="CMakeLists.txt">
+			<Option virtualFolder="CMake Files/" />
+		</Unit>
+		<Unit filename="examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files/examples/" />
+		</Unit>
+		<Unit filename="examples/main.cpp" />
+		<Unit filename="examples/main_thesis.cpp" />
+		<Unit filename="include/thesis/Actor.h" />
+		<Unit filename="include/thesis/Agent.h" />
+		<Unit filename="include/thesis/ArAgent.h" />
+		<Unit filename="include/thesis/AracAgent.h" />
+		<Unit filename="include/thesis/ArrsacAgent.h" />
+		<Unit filename="include/thesis/AssetAllocationExperiment.h" />
+		<Unit filename="include/thesis/AssetAllocationTask.h" />
+		<Unit filename="include/thesis/BacktestLog.h" />
+		<Unit filename="include/thesis/BinaryPolicy.h" />
+		<Unit filename="include/thesis/BoltzmannPolicy.h" />
+		<Unit filename="include/thesis/Critic.h" />
+		<Unit filename="include/thesis/ExperimentParameters.h" />
+		<Unit filename="include/thesis/FunctionApproximator.h" />
+		<Unit filename="include/thesis/GaussianDistribution.h" />
+		<Unit filename="include/thesis/GaussianPolicy.h" />
+		<Unit filename="include/thesis/LearningRate.h" />
+		<Unit filename="include/thesis/LinearRegressor.h" />
+		<Unit filename="include/thesis/LogisticPolicy.h" />
+		<Unit filename="include/thesis/LongShortPolicy.h" />
+		<Unit filename="include/thesis/MarketEnvironment.h" />
+		<Unit filename="include/thesis/NpgpeAgent.h" />
+		<Unit filename="include/thesis/NpgpePolicy.h" />
+		<Unit filename="include/thesis/PgpePolicy.h" />
+		<Unit filename="include/thesis/Policy.h" />
+		<Unit filename="include/thesis/ProbabilityDistribution.h" />
+		<Unit filename="include/thesis/RandomGenerator.h" />
+		<Unit filename="include/thesis/RiskSensitiveNpgpeAgent.h" />
+		<Unit filename="include/thesis/Statistics.h" />
+		<Unit filename="include/thesis/StochasticActor.h" />
+		<Unit filename="include/thesis/StochasticPolicy.h" />
+		<Unit filename="src/ArAgent.cpp" />
+		<Unit filename="src/AracAgent.cpp" />
+		<Unit filename="src/ArrsacAgent.cpp" />
+		<Unit filename="src/AssetAllocationExperiment.cpp" />
+		<Unit filename="src/AssetAllocationTask.cpp" />
+		<Unit filename="src/BacktestLog.cpp" />
+		<Unit filename="src/BinaryPolicy.cpp" />
+		<Unit filename="src/BoltzmannPolicy.cpp" />
+		<Unit filename="src/ExperimentParameters.cpp" />
+		<Unit filename="src/GaussianDistribution.cpp" />
+		<Unit filename="src/GaussianPolicy.cpp" />
+		<Unit filename="src/LearningRate.cpp" />
+		<Unit filename="src/LinearRegressor.cpp" />
+		<Unit filename="src/LogisticPolicy.cpp" />
+		<Unit filename="src/LongShortPolicy.cpp" />
+		<Unit filename="src/MarketEnvironment.cpp" />
+		<Unit filename="src/NPGPEPolicy.cpp" />
+		<Unit filename="src/NpgpeAgent.cpp" />
+		<Unit filename="src/PgpePolicy.cpp" />
+		<Unit filename="src/RandomGenerator.cpp" />
+		<Unit filename="src/RiskSensitiveNpgpeAgent.cpp" />
+		<Unit filename="src/Statistics.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
 </CodeBlocks_project_file>

@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Basics of Reinforcement Learning}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Markov Decision Processes}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Policy Gradient Methods}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Policy Gradient Theorem}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Parameter-Based Policy Gradient Methods}{subsection.2.2}% 6
+\BOOKMARK [1][-]{section.3}{Application to Systematic Trading}{}% 7
+\BOOKMARK [1][-]{section.4}{Python Prototype}{}% 8
+\BOOKMARK [1][-]{section.5}{C++ Implementation}{}% 9
+\BOOKMARK [1][-]{section.6}{Execution Pipeline}{}% 10
+\BOOKMARK [1][-]{section.7}{Numerical Results}{}% 11
+\BOOKMARK [1][-]{section.8}{Conclusion}{}% 12

@@ -1,0 +1,49 @@
+\begin{thebibliography}{1}
+
+\bibitem{sutton1998introduction}
+Richard~S Sutton and Andrew~G Barto.
+\newblock {\em Introduction to reinforcement learning}, volume 135.
+\newblock MIT Press Cambridge, 1998.
+
+\bibitem{szepesvari2010algorithms}
+Csaba Szepesv{\'a}ri.
+\newblock Algorithms for reinforcement learning.
+\newblock {\em Synthesis lectures on artificial intelligence and machine
+  learning}, 4(1):1--103, 2010.
+
+\bibitem{wiering2012reinforcement}
+Marco Wiering and Martijn Van~Otterlo.
+\newblock {\em Reinforcement Learning: State-of-the-Art}, volume~12 of {\em
+  Adaptation, Learning, and Optimization}.
+\newblock Springer, 1 edition, 2012.
+
+\bibitem{peters2008reinforcement}
+Jan Peters and Stefan Schaal.
+\newblock Reinforcement learning of motor skills with policy gradients.
+\newblock {\em Neural networks}, 21(4):682--697, 2008.
+
+\bibitem{kushner2003stochastic}
+Harold Kushner and G~George Yin.
+\newblock {\em Stochastic approximation and recursive algorithms and
+  applications}, volume~35.
+\newblock Springer Science \& Business Media, 2003.
+
+\bibitem{sutton1999policy}
+Richard~S Sutton, David~A McAllester, Satinder~P Singh, Yishay Mansour, et~al.
+\newblock Policy gradient methods for reinforcement learning with function
+  approximation.
+\newblock In {\em NIPS}, volume~99, pages 1057--1063, 1999.
+
+\bibitem{baxter2001infinite}
+Jonathan Baxter and Peter~L. Bartlett.
+\newblock Infinite-horizon policy-gradient estimation.
+\newblock {\em Journal of Artificial Intelligence Research}, 15:319--350, 2001.
+
+\bibitem{sehnke2008policy}
+Frank Sehnke, Christian Osendorfer, Thomas R{\"u}ckstie{\ss}, Alex Graves, Jan
+  Peters, and J{\"u}rgen Schmidhuber.
+\newblock Policy gradients with parameter-based exploration for control.
+\newblock In {\em Artificial Neural Networks-ICANN 2008}, pages 387--396.
+  Springer, 2008.
+
+\end{thebibliography}
