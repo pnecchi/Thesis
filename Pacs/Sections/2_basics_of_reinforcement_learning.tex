@@ -168,14 +168,14 @@ The baseline can be chosen so as to minimize the variance of the gradient estima
 \begin{equation}
 	Q_\theta(s_0,a_0) \approx \sum_{t=0}^{T^{(m)}} \gamma^t r_{t+1}^{(m)}
 \end{equation}
-Combining this remark with a Monte Carlo approximation of Eq. (\ref{eq:pg_theorem_baseline}), we obtain the GPOMDP algorithm \cite{baxter2001infinite} (also known as \emph{Monte Carlo Policy Gradient}) for which the pseudocode is reported in Algorithm \ref{algo:GPOMDP}.
+Combining this remark with a Monte Carlo approximation of Eq. (\ref{eq:pg_theorem_baseline}), we obtain the \emph{Monte Carlo Policy Gradient} algorithm \cite{baxter2001infinite} (also known as GPOMDP) for which the pseudocode is reported in Algorithm \ref{algo:GPOMDP}.
 \begin{algorithm}[t]
 	\caption{GPOMDP}
 	\label{algo:GPOMDP}
 	\begin{algorithmic}[0]
 		\Require{\\
 			\begin{itemize}
-				\item Initial policy parameters $\theta_0$
+				\item Initial policy parameters $\theta_0 = (\theta_0^1, \ldots, \theta_0^{D_\theta})^T$
 				\item Learning rate $\{\alpha_k\}$
 				\item Number of trajectories $M$
 			\end{itemize}
@@ -184,18 +184,18 @@ Combining this remark with a Monte Carlo approximation of Eq. (\ref{eq:pg_theore
 		\begin{algorithmic}[1]
 		\State Initialize $k = 0$
 		\Repeat
-			\State Sample $M$ trajectories $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)})\}_{t = 0}^{T^{(m)}}$ of the MDP under policy $\pi_{\theta_k}$
+			\State Sample $M$ trajectories $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)}, r_{t+1}^{(m)}\}_{t = 0}^{T^{(m)}}$ of the MDP under policy $\pi_{\theta_k}$
 			\State Compute the optimal baseline 
 			\begin{equation}
-				\widehat{b}_k^* = \frac{\sum^{M}_{m=1} \left[ \sum_{i=0}^{T^{(m)}} 
+				\widehat{b}_k^n = \frac{\sum^{M}_{m=1} \left[ \sum_{i=0}^{T^{(m)}} 
 									\partial_{\theta_k} \log \pi_\theta\left(s_i^{(m)}, a_i^{(m)}\right) \right]^2 
 									\sum^{T^{(m)}}_{j=0} \gamma^j r_{j+1}^{(m)}}{\sum^{M}_{m=1} \left[ \sum_{i=0}^{T^{(m)}} \partial_{\theta_k} \log \pi_\theta\left(s_i^{(m)}, a_i^{(m)}\right) \right]^2}
 			\end{equation}
 			\State Approximate policy gradient
 			\begin{equation}
-				\nabla_\theta J_{\text{start}}(\theta_k) \approx \widehat{g}_k = \frac{1}{M} \sum^{M}_{m=1} \sum_{i=0}^{T^{(m)}} 
-					\nabla_\theta \log \pi_{\theta_k}\left(s_i^{(m)}, a_i^{(m)}\right) \left( 
-					\sum^{T^{(m)}}_{j=i} \gamma^j r_{j+1}^{(m)} - \widehat{b}_k^* \right)
+				\frac{\partial}{\partial\theta^n} J_{\text{start}}(\theta_k) \approx \widehat{g}_k^n = \frac{1}{M} \sum^{M}_{m=1} \sum_{i=0}^{T^{(m)}} 
+					\frac{\partial}{\partial\theta^n} \log \pi_{\theta_k}\left(s_i^{(m)}, a_i^{(m)}\right) \left( 
+					\sum^{T^{(m)}}_{j=i} \gamma^j r_{j+1}^{(m)} - \widehat{b}_k^n \right)
 			\end{equation}
 			\State Update actor parameters $\theta_{k+1} = \theta_k + \alpha_k \widehat{g}_k $. 
 			
@@ -212,14 +212,7 @@ objective function gradient is estimated by differentiating the policy with
 respect to the parameters. However, sampling an action from the policy at each
 time step leads to a large variance in the sampled histories and therefore in 
 the gradient estimate, which can in turn slow down the convergence of the
-learning process. To address this issue, in \cite{sehnke2008policy} the authors
-propose the \emph{policy gradient with parameter-based exploration} (PGPE)
-method, in which the search in the policy space is replaced with a direct
-search in the model parameter space. Given an episodic MDP, PGPE considers a deterministic controller $F: \S \times
-\Theta \to \A$ that, given a set of parameters $\theta \in \Theta \subseteq
-\R^{D_\theta}$, maps a state $s \in \S$ to an action $a = F(s; \theta) =
-F_\theta(s) \in \A$. The policy parameters are drawn from a probability distribution $p_\xi$, with hyper-parameters $\xi \in \Xi \subseteq \R^{D_\xi}$. Combining these two
-hypotheses, the agent follows a stochastic policy $\pi_\xi$ defined by
+learning process. To address this issue, the \emph{policy gradient with parameter-based exploration} (PGPE) method \cite{sehnke2008policy} replaces the search in the policy space with a direct search in the model parameter space. Given an episodic MDP, PGPE considers a deterministic controller $F: \S \times \Theta \to \A$ that, given a set of parameters $\theta \in \Theta \subseteq \R^{D_\theta}$, maps a state $s \in \S$ to an action $a = F(s; \theta) = F_\theta(s) \in \A$. The policy parameters are drawn from a probability distribution $p_\xi$, with hyper-parameters $\xi \in \Xi \subseteq \R^{D_\xi}$. Combining these two hypotheses, the agent follows a stochastic policy $\pi_\xi$ defined by
 \begin{equation}
 	\forall B \in \calA ,\ \pi_\xi(s,B) = \pi(s, B; \xi) = \int_\Theta p_\xi(\theta) 
 	\ind{F_{\theta}(s)\in B} d\theta
@@ -233,22 +226,21 @@ In this setting, the policy gradient theorem can be reformulated in the followin
 	where we denoted $Q_\xi(S, \theta) = Q_\xi(S, F_\theta(S))$.
 \end{theorem}
 This expression is very similar to the original policy gradient theorem, but
-the expectation is taken over the controller parameters instead of the action space and we have the likelihood score the controller parameters distribution instead of that of the stochastic policy. Thus, we might interpret this result as if the agent directly selected the parameters $\theta$ according to a policy $p_\xi$, which then lead to an action through the deterministic mapping $F_\theta$. Therefore, it is as if the agent's policy was in the parameters space and not in the control space. As in the standard policy gradient methods, we can subtract a state-dependent baseline $B_\xi(S)$ to the gradient without increasing the bias
+the expectation is taken over the controller parameters instead of the action space and we have the likelihood score of the controller parameters distribution instead of that of the stochastic policy. Thus, we might interpret this result as if the agent directly selected the parameters $\theta$ according to a policy $p_\xi$, which then lead to an action through the deterministic mapping $F_\theta$. Therefore, it is as if the agent's policy was in the parameters space and not in the control space. As in the standard policy gradient methods, we can subtract a state-dependent baseline $B_\xi(S)$ to the gradient without increasing the bias
 \begin{equation}
 	\nabla_\xi J(\xi) = \E{\nabla_\xi \log p_\xi(\theta) \left(Q_{\pi_\xi}(S,
 						\theta) - B_\xi(S)\right)}
 \end{equation}
-The gradient can be replaced by its Monte Carlo approximation, where the action-value function is estimated using the returns on a sampled trajectory of the MDP. This leads to the standard PGPE algorithm which is outlined in Algorithm \ref{algo:PGPE}. The advantage of this approach is that the controller is deterministic and therefore the actions do not need to be sampled at each time step, with a consequent reduction of the gradient estimate variance. Indeed, It is sufficient to sample the parameters $\theta$ once at the beginning of the episode and then generate an entire trajectory following the deterministic policy $F_\theta$. As an additional benefit, the parameter gradient is
+The PGPE algorithm, which is outlined in Algorithm \ref{algo:PGPE}, employs a Monte Carlo approximation of this gradient, where the action-value function is estimated using the returns on a sampled trajectory of the MDP. The benefit of this approach is that the controller is deterministic and therefore the actions do not need to be sampled at each time step, with a consequent reduction of the gradient estimate variance. Indeed, It is sufficient to sample the parameters $\theta$ once at the beginning of the episode and then generate an entire trajectory following the deterministic policy $F_\theta$. As an additional benefit, the parameter gradient is
 estimated by direct parameter perturbations, without having to backpropagate
-any derivatives, which allows to use non-differentiable controllers.\\
-
-\begin{algorithm}[t]
+any derivatives, which allows to use non-differentiable controllers. Again the baseline can be chosen so as to minimize the gradient estimate variance \cite{zhao2011analysis}.
+\begin{algorithm}[t!]
 	\caption{Episodic PGPE algorithm}
 	\label{algo:PGPE}
 	\begin{algorithmic}[0]
 		\Require{\\
 			\begin{itemize}
-				\item Initial policy parameters $\theta_0$
+				\item Initial hyper-parameters $\xi_0 = (\xi_0^1, \ldots, \xi_0^{D_\xi})^T$
 				\item Learning rate $\{\alpha_k\}$
 				\item Number of trajectories $M$
 			\end{itemize}
@@ -259,13 +251,23 @@ any derivatives, which allows to use non-differentiable controllers.\\
 			\Repeat
 				\For {$m = 1, \ldots, M$}
 					\State Sample controller parameters $\theta^{(m)} \sim p_{\xi_k}$ 
-					\State Sample trajectory $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)})\}_{t \geq 0}$ under policy $F_{\theta^{(m)}}$
+					\State Sample trajectory $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)}, r_{t+1}^{(m)}\}_{t = 0}^{T^{(m)}}$ under policy $F_{\theta^{(m)}}$
 				\EndFor
-				\State Approximate policy gradient $\nabla_\xi J(\xi_k) \approx \widehat{g}_\text{PGPE}$ using Eq. (\ref{eq:pgpe_gradient})
-				\State Update hyperparameters using gradient ascent $\xi_{k+1} = \xi_k + \alpha_k \widehat{g}_\text{PGPE}$
+				\State Compute optimal baseline 
+				\begin{equation}
+					\widehat{b}_k^n = \frac{\sum^{M}_{m=1} \left[\partial_{\xi^n} \log p_{\xi_k} \left(\theta^{(m)}\right)\right]^2 \sum^{T^{(m)}}_{j=0} \gamma^j r_{j+1}^{(m)}}{\sum^{M}_{m=1} \left[\partial_{\xi^n} \log p_{\xi_k} \left(\theta^{(m)}\right)\right]^2}
+				\end{equation}
+				\State Approximate policy gradient
+				\begin{equation}
+					\frac{\partial}{\partial\xi^n} J_{\text{start}}(\xi_k) \approx \widehat{g}_k^n = \frac{1}{M} \sum^{M}_{m=1}
+						\frac{\partial}{\partial\xi^n} \log p_{\xi_k}\left(\theta^{(m)}\right) \left( 
+						\sum^{T^{(m)}}_{j=i} \gamma^j r_{j+1}^{(m)} - \widehat{b}_k^n \right)
+				\end{equation}
+				\State Update hyperparameters using gradient ascent $\xi_{k+1} = \xi_k + \alpha_k \widehat{g}_k^n$
 				\State $k \leftarrow k + 1$
 			\Until{converged}
 		\end{algorithmic}
 	\end{algorithmic}
 \end{algorithm}
+
 

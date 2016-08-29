@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  27 AUG 2016 18:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  28 AUG 2016 11:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1101,23 +1101,19 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
  [5]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 225.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 218.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
-Underfull \hbox (badness 10000) in paragraph at lines 240--244
-
- []
-
-
-LaTeX Warning: Reference `eq:pgpe_gradient' on page 6 undefined on input line 2
-64.
-
-) (./Sections/3_application_to_systematic_trading.tex)
+))
+(./Sections/3_application_to_systematic_trading.tex)
 (./Sections/4_python_prototype.tex) (./Sections/5_c++_implementation.tex)
 (./Sections/6_execution_pipeline.tex) (./Sections/7_numerical_results.tex)
-(./Sections/8_conclusion.tex) (./pacs.bbl [6]) [7]
+(./Sections/8_conclusion.tex)
+Underfull \vbox (badness 1158) has occurred while \output is active []
+
+ [6]
+(./pacs.bbl [7]) [8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
  (./pacs.aux)
@@ -1125,16 +1121,12 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 Package rerunfilecheck Info: File `pacs.out' has not changed.
 (rerunfilecheck)             Checksum: 0BBAF566CFA876FD79B5DC3982FEBFAC;765.
-
-
-LaTeX Warning: There were undefined references.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  ) 
 Here is how much of TeX's memory you used:
- 19553 strings out of 495028
- 332160 string characters out of 6181497
- 412667 words of memory out of 5000000
+ 19557 strings out of 495028
+ 332213 string characters out of 6181497
+ 415665 words of memory out of 5000000
  22247 multiletter control sequences out of 15000+600000
  25546 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1156,10 +1148,10 @@ xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on pacs.pdf (7 pages, 192105 bytes).
+Output written on pacs.pdf (8 pages, 196708 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
- 67 named destinations out of 1000 (max. 500000)
+ 246 PDF objects out of 1000 (max. 8388607)
+ 216 compressed objects within 3 object streams
+ 71 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,2 +1,20 @@
 \section{Application to Systematic Trading}
 \label{sec:application_to_systematic_trading}
+
+The asset allocation problem consists of determining how to dynamically invest
+the available capital in a portfolio of different assets in order to maximize
+the expected total return or another relevant performance measure. Let us
+consider a financial market consisting of $I+1$ different stocks that are
+traded only at discrete times $t \in \{0, 1, 2, \ldots\}$ and denote by
+${Z}_t = {(Z_t^0, Z_t^1, \ldots, Z_t^I)}^T$ their prices at time $t$.
+Typically, $Z_t^0$ refers to a riskless asset whose dynamic is given by $Z_t^0
+= {(1 + X)}^t$ where $X$ is the deterministic risk-free interest rate. The
+investment process works as follows: at time $t$, the investor observes the
+state of the market $S_t$, consisting for example of the past asset prices and
+other relevant economic variables, and subsequently chooses how to rebalance
+his portfolio, by specifying the units of each stock ${n}_t = {(n_t^0 ,
+n_t^1 , \ldots , n_t^I)}^T$ to be held between $t$ and $t+1$. In doing so, he
+needs to take into account the transaction costs that he has to pay to the
+broker to change his position.  At time $t+1$, the investor realizes a profit
+or a loss from his investment due to the stochastic variation of the stock
+values. The investor’s goal is to maximize a given performance measure.

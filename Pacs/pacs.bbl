@@ -46,4 +46,10 @@ Frank Sehnke, Christian Osendorfer, Thomas R{\"u}ckstie{\ss}, Alex Graves, Jan
 \newblock In {\em Artificial Neural Networks-ICANN 2008}, pages 387--396.
   Springer, 2008.
 
+\bibitem{zhao2011analysis}
+Tingting Zhao, Hirotaka Hachiya, Gang Niu, and Masashi Sugiyama.
+\newblock Analysis and improvement of policy gradient estimation.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  262--270, 2011.
+
 \end{thebibliography}

@@ -36,34 +36,7 @@
 #include <thesis/Agent.h>
 #include <thesis/AssetAllocationExperiment.h>
 #include <thesis/LearningRate.h>
-
-//-----------------|
-// ARAC and RSARAC |
-//-----------------|
-
-#include <thesis/LinearRegressor.h>
-#include <thesis/Critic.h>
-#include <thesis/GaussianPolicy.h>
-#include <thesis/BoltzmannPolicy.h>
-#include <thesis/StochasticActor.h>
-#include <thesis/AracAgent.h>
-#include <thesis/ArrsacAgent.h>
-
-//-----------------|
-// PGPE and RSPGPE |
-//-----------------|
-
-#include <thesis/BinaryPolicy.h>
-#include <thesis/GaussianDistribution.h>
-#include <thesis/PgpePolicy.h>
-
-//-------------------|
-// NPGPE and RSNPGPE |
-//-------------------|
-
-#include <thesis/NpgpeAgent.h>
-#include <thesis/RiskSensitiveNpgpeAgent.h>
-
+#include <thesis/FactoryOfAgents.h>
 
 /*!
  * Helper function that prints usage of main executable.
@@ -185,188 +158,17 @@ int main(int argc, char** argv)
     DecayingLearningRate actorLearningRate(alphaConstActor, alphaExpActor);
     std::cout << "done" << std::endl;
 
+    // Initialize Agent factory
+    auto & factory(FactoryOfAgents::instance(task.getDimObservation(),
+                                             baselineLearningRate,
+                                             criticLearningRate,
+                                             actorLearningRate,
+                                             lambda));
+
     // Pointer to Agent for poymorphic object handling
-    std::shared_ptr<Agent> agentPtr;
+    std::unique_ptr<Agent> agentPtr = factory.make(algorithm);
 
-    if (algorithm == "ARAC")
-    {
-        // State-value function critic
-        std::cout << ".. Linear regressors - ";
-        LinearRegressor linearRegV(task.getDimObservation());
-        std::cout << "done" << std::endl;
 
-        // Initialize critics
-        std::cout << ".. Critics - ";
-        Critic critic(linearRegV);
-        std::cout << "done" << std::endl;
-
-        // Boltzmann policy
-        std::cout << ".. boltzmann stochastic policy - ";
-        std::vector<double> possibleAction {-1.0, 1.0};
-        BoltzmannPolicy policy(task.getDimObservation(), possibleAction);
-        std::cout << "done" << std::endl;
-
-        // Stochastic Actor
-        std::cout << ".. Actor - ";
-        StochasticActor actor(policy);
-        std::cout << "done" << std::endl;
-
-        // ARAC Agent
-        std::cout << ".. ARAC Agent - ";
-        agentPtr = std::make_shared<ARACAgent>(actor,
-                                               critic,
-                                               baselineLearningRate,
-                                               criticLearningRate,
-                                               actorLearningRate,
-                                               lambda);
-        std::cout << "done" << std::endl;
-    }
-    else if (algorithm == "PGPE")
-    {
-        // State-value function critic
-        std::cout << ".. Linear regressors - ";
-        LinearRegressor linearRegV(task.getDimObservation());
-        std::cout << "done" << std::endl;
-
-        // Initialize critics
-        std::cout << ".. Critics - ";
-        Critic critic(linearRegV);
-        std::cout << "done" << std::endl;
-
-        // Binary policy
-        std::cout << ".. PGPE binary policy - ";
-        BinaryPolicy controller(task.getDimObservation());
-        GaussianDistribution distribution(controller.getDimParameters());
-        PGPEPolicy policy(controller, distribution, 1.0);
-        std::cout << "done" << std::endl;
-
-        // Stochastic Actor
-        std::cout << ".. Actor - ";
-        StochasticActor actor(policy);
-        std::cout << "done" << std::endl;
-
-        // ARAC Agent
-        std::cout << ".. ARAC Agent - ";
-        agentPtr = std::make_shared<ARACAgent> (actor,
-                                                critic,
-                                                baselineLearningRate,
-                                                criticLearningRate,
-                                                actorLearningRate,
-                                                lambda);
-        std::cout << "done" << std::endl;
-
-    }
-    else if (algorithm == "NPGPE")
-    {
-        // PGPE Binary policy
-        std::cout << ".. Policy - ";
-        BinaryPolicy controller(task.getDimObservation());
-        std::cout << "done" << std::endl;
-
-        // NPGPE Agent
-        std::cout << ".. NPGPE Agent - ";
-        agentPtr = std::make_shared<NPGPEAgent> (controller,
-                                                 baselineLearningRate,
-                                                 actorLearningRate,
-                                                 lambda);
-        std::cout << "done" << std::endl;
-    }
-    else if (algorithm == "RSARAC")
-    {
-        // State-value function critic
-        std::cout << ".. Linear regressors - ";
-        LinearRegressor linearRegV(task.getDimObservation());
-        LinearRegressor linearRegU(task.getDimObservation());
-        std::cout << "done" << std::endl;
-
-        // Initialize critics
-        std::cout << ".. Critics - ";
-        Critic criticV(linearRegV);
-        Critic criticU(linearRegU);
-        std::cout << "done" << std::endl;
-
-        // Boltzmann Policy
-        std::cout << ".. Boltzmann stochastic policy - ";
-        std::vector<double> possibleAction {-1.0, 1.0};
-        BoltzmannPolicy policy(task.getDimObservation(), possibleAction);
-        std::cout << "done" << std::endl;
-
-        // Stochastic Actor
-        std::cout << ".. Actor - ";
-        StochasticActor actor(policy);
-        std::cout << "done" << std::endl;
-
-        // ARSSAC Agent
-        std::cout << ".. ARRSAC Agent - ";
-        agentPtr = std::make_shared<ARRSACAgent> (actor,
-                                                  criticV,
-                                                  criticU,
-                                                  baselineLearningRate,
-                                                  criticLearningRate,
-                                                  actorLearningRate,
-                                                  lambda);
-        std::cout << "done" << std::endl;
-
-    }
-    else if (algorithm == "RSPGPE")
-    {
-        // State-value function critic
-        std::cout << ".. Linear regressors - ";
-        LinearRegressor linearRegV(task.getDimObservation());
-        LinearRegressor linearRegU(task.getDimObservation());
-        std::cout << "done" << std::endl;
-
-        // Initialize critics
-        std::cout << ".. Critics - ";
-        Critic criticV(linearRegV);
-        Critic criticU(linearRegU);
-        std::cout << "done" << std::endl;
-
-        // Binary policy
-        std::cout << ".. PGPE binary policy - ";
-        BinaryPolicy controller(task.getDimObservation());
-        GaussianDistribution distribution(controller.getDimParameters());
-        PGPEPolicy policy(controller, distribution, 1.0);
-        std::cout << "done" << std::endl;
-
-        // Stochastic Actor
-        std::cout << ".. Actor - ";
-        StochasticActor actor(policy);
-        std::cout << "done" << std::endl;
-
-        // ARSSAC Agent
-        std::cout << ".. ARRSAC Agent - ";
-        agentPtr = std::make_shared<ARRSACAgent> (actor,
-                                                  criticV,
-                                                  criticU,
-                                                  baselineLearningRate,
-                                                  criticLearningRate,
-                                                  actorLearningRate,
-                                                  lambda);
-        std::cout << "done" << std::endl;
-
-    }
-    else if (algorithm == "RSNPGPE")
-    {
-        // Binary policy
-        std::cout << ".. Policy - ";
-        BinaryPolicy controller(task.getDimObservation());
-        std::cout << "done" << std::endl;
-
-        // NPGPE Agent
-        std::cout << ".. NPGPE Agent - ";
-        agentPtr = std::make_shared<RiskSensitiveNPGPEAgent> (controller,
-                                                              baselineLearningRate,
-                                                              actorLearningRate,
-                                                              lambda);
-        std::cout << "done" << std::endl;
-
-    }
-    else
-    {
-        throw std::invalid_argument("Unknown learning algorithm " + algorithm);
-        return 1;
-    }
 
     //----------------------------------|
     // 2.3) Asset Allocation Experiment |

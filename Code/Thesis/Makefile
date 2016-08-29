@@ -356,6 +356,30 @@ src/ExperimentParameters.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/ExperimentParameters.cpp.s
 .PHONY : src/ExperimentParameters.cpp.s
 
+src/FactoryOfAgents.o: src/FactoryOfAgents.cpp.o
+.PHONY : src/FactoryOfAgents.o
+
+# target to build an object file
+src/FactoryOfAgents.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/FactoryOfAgents.cpp.o
+.PHONY : src/FactoryOfAgents.cpp.o
+
+src/FactoryOfAgents.i: src/FactoryOfAgents.cpp.i
+.PHONY : src/FactoryOfAgents.i
+
+# target to preprocess a source file
+src/FactoryOfAgents.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/FactoryOfAgents.cpp.i
+.PHONY : src/FactoryOfAgents.cpp.i
+
+src/FactoryOfAgents.s: src/FactoryOfAgents.cpp.s
+.PHONY : src/FactoryOfAgents.s
+
+# target to generate assembly for a file
+src/FactoryOfAgents.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/FactoryOfAgents.cpp.s
+.PHONY : src/FactoryOfAgents.cpp.s
+
 src/GaussianDistribution.o: src/GaussianDistribution.cpp.o
 .PHONY : src/GaussianDistribution.o
 
@@ -706,6 +730,9 @@ help:
 	@echo "... src/ExperimentParameters.o"
 	@echo "... src/ExperimentParameters.i"
 	@echo "... src/ExperimentParameters.s"
+	@echo "... src/FactoryOfAgents.o"
+	@echo "... src/FactoryOfAgents.i"
+	@echo "... src/FactoryOfAgents.s"
 	@echo "... src/GaussianDistribution.o"
 	@echo "... src/GaussianDistribution.i"
 	@echo "... src/GaussianDistribution.s"
