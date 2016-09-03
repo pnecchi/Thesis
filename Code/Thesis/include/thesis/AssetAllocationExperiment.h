@@ -23,13 +23,15 @@
 #ifndef ASSETALLOCATIONEXPERIMENT_H
 #define ASSETALLOCATIONEXPERIMENT_H
 
-#include <armadillo>
-#include <memory>
-#include <string>
+#include <thesis/Experiment.h>
 #include <thesis/AssetAllocationTask.h>
 #include <thesis/Agent.h>
 #include <thesis/BacktestLog.h>
 #include <thesis/Statistics.h>
+#include <armadillo>
+#include <memory>
+#include <string>
+
 
 /**
  * An AssetAllocationExperiment handles the learning process. In particular, it
@@ -38,10 +40,7 @@
  * independent experiments.
  */
 
-// TODO: Match experiment cache variables with agent inner cache variables in
-// order to avoid useless copies
-
-class AssetAllocationExperiment
+class AssetAllocationExperiment : public Experiment
 {
     public:
         /*!
@@ -59,15 +58,21 @@ class AssetAllocationExperiment
          */
         AssetAllocationExperiment(AssetAllocationTask const &task_,
                                   Agent const &agent_,
-                                  size_t numExperiments_,
-                                  size_t numEpochs_,
-                                  size_t numTrainingSteps_,
-                                  size_t numTestSteps_,
-                                  std::string outputDir_,
-                                  std::string debugDir_);
+                                  size_t const &numExperiments_,
+                                  size_t const &numEpochs_,
+                                  size_t const &numTrainingSteps_,
+                                  size_t const &numTestSteps_,
+                                  std::string const &outputDir_,
+                                  std::string const &debugDir_);
+
+        //! Copy constructor
+        AssetAllocationExperiment(AssetAllocationExperiment const &other_);
 
         //! Default destructor
         virtual ~AssetAllocationExperiment() = default;
+
+        //! Clone method
+        virtual std::unique_ptr<Experiment> clone() const;
 
         //! Run experiment
         void run();
@@ -87,12 +92,6 @@ class AssetAllocationExperiment
         size_t numEpochs;
         size_t numTrainingSteps;
         size_t numTestSteps;
-
-        //! Asset allocation task
-        AssetAllocationTask task;
-
-        //! Trading system
-        std::unique_ptr<Agent> agentPtr;
 
         /*!
          * Data structure storing the information relevant for the analysis of

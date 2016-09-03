@@ -3,21 +3,20 @@
 
 AssetAllocationExperiment::AssetAllocationExperiment(AssetAllocationTask const &task_,
                                                      Agent const &agent_,
-                                                     size_t numExperiments_,
-                                                     size_t numEpochs_,
-                                                     size_t numTrainingSteps_,
-                                                     size_t numTestSteps_,
-                                                     std::string outputDir_,
-                                                     std::string debugDir_)
-    : task(task_),
-      agentPtr(agent_.clone()),
+                                                     size_t const &numExperiments_,
+                                                     size_t const &numEpochs_,
+                                                     size_t const &numTrainingSteps_,
+                                                     size_t const &numTestSteps_,
+                                                     std::string const &outputDir_,
+                                                     std::string const &debugDir_)
+    : Experiment(task_, agent_),
       numExperiments(numExperiments_),
       numEpochs(numEpochs_),
       numTrainingSteps(numTrainingSteps_),
       numTestSteps(numTestSteps_),
-      blog(task.getDimAction(), task.getDimAction(), numTestSteps),
-      observationCache(task.getDimObservation()),
-      actionCache(task.getDimAction()),
+      blog(taskPtr->getDimAction(), taskPtr->getDimAction(), numTestSteps),
+      observationCache(taskPtr->getObservation()),
+      actionCache(taskPtr->getDimAction()),
       rewardCache(0.0),
       outputDir(outputDir_),
       debugDir(debugDir_)
@@ -25,21 +24,42 @@ AssetAllocationExperiment::AssetAllocationExperiment(AssetAllocationTask const &
     /* Nothing to do */
 }
 
+AssetAllocationExperiment::AssetAllocationExperiment(AssetAllocationExperiment const &other_)
+    : Experiment(*other_.taskPtr, *other_.agentPtr),
+      numExperiments(other_.numExperiments),
+      numEpochs(other_.numEpochs),
+      numTrainingSteps(other_.numTrainingSteps),
+      numTestSteps(other_.numTestSteps),
+      blog(taskPtr->getDimAction(), taskPtr->getDimAction(), numTestSteps),
+      observationCache(taskPtr->getObservation()),
+      actionCache(taskPtr->getDimAction()),
+      rewardCache(0.0),
+      outputDir(other_.outputDir),
+      debugDir(other_.debugDir)
+{
+    /* Nothing to do */
+}
+
+std::unique_ptr<Experiment> AssetAllocationExperiment::clone() const
+{
+    return std::unique_ptr<Experiment>(new AssetAllocationExperiment(*this));
+}
+
 void AssetAllocationExperiment::oneInteraction()
 {
     // 1) Get observation
-    agentPtr->receiveObservation(task.getObservation());
+    agentPtr->receiveObservation(observationCache);
 
     // 2) Perform action
     actionCache = agentPtr->getAction();
-    task.performAction(actionCache);
+    taskPtr->performAction(actionCache);
 
     // 3) Receive reward
-    rewardCache = task.getReward();
+    rewardCache = taskPtr->getReward();
     agentPtr->receiveReward(rewardCache);
 
     // 4) Receive next observation
-    observationCache = task.getObservation();
+    observationCache = taskPtr->getObservation();
     agentPtr->receiveNextObservation(observationCache);
 
     // 5) Dump results in statistics gatherer
@@ -66,7 +86,7 @@ void AssetAllocationExperiment::run()
         for (size_t epoch = 0; epoch < numEpochs; ++epoch)
         {
             // Reset task
-            task.reset();
+            taskPtr->reset();
             experimentStats.reset();
 
             // Signal to agent that a new epoch has started
@@ -108,8 +128,8 @@ void AssetAllocationExperiment::run()
 
             // Log (action, reward) tuple
             arma::vec stateCache =
-                observationCache.rows(observationCache.size() - 2 * task.getDimAction(),
-                                      observationCache.size() - task.getDimAction() - 1);
+                observationCache.rows(observationCache.size() - 2 * taskPtr->getDimAction(),
+                                      observationCache.size() - taskPtr->getDimAction() - 1);
             blog.insertRecord(stateCache, actionCache, rewardCache);
         }
 

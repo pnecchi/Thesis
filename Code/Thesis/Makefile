@@ -332,6 +332,30 @@ src/BoltzmannPolicy.cpp.s:
 	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/BoltzmannPolicy.cpp.s
 .PHONY : src/BoltzmannPolicy.cpp.s
 
+src/Experiment.o: src/Experiment.cpp.o
+.PHONY : src/Experiment.o
+
+# target to build an object file
+src/Experiment.cpp.o:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/Experiment.cpp.o
+.PHONY : src/Experiment.cpp.o
+
+src/Experiment.i: src/Experiment.cpp.i
+.PHONY : src/Experiment.i
+
+# target to preprocess a source file
+src/Experiment.cpp.i:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/Experiment.cpp.i
+.PHONY : src/Experiment.cpp.i
+
+src/Experiment.s: src/Experiment.cpp.s
+.PHONY : src/Experiment.s
+
+# target to generate assembly for a file
+src/Experiment.cpp.s:
+	$(MAKE) -f CMakeFiles/thesis.dir/build.make CMakeFiles/thesis.dir/src/Experiment.cpp.s
+.PHONY : src/Experiment.cpp.s
+
 src/ExperimentParameters.o: src/ExperimentParameters.cpp.o
 .PHONY : src/ExperimentParameters.o
 
@@ -751,6 +775,9 @@ help:
 	@echo "... src/BoltzmannPolicy.o"
 	@echo "... src/BoltzmannPolicy.i"
 	@echo "... src/BoltzmannPolicy.s"
+	@echo "... src/Experiment.o"
+	@echo "... src/Experiment.i"
+	@echo "... src/Experiment.s"
 	@echo "... src/ExperimentParameters.o"
 	@echo "... src/ExperimentParameters.i"
 	@echo "... src/ExperimentParameters.s"

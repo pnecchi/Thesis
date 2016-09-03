@@ -92,8 +92,6 @@ void NPGPEAgent::newEpoch()
     // Update learning rate
     baselineLearningRatePtr->update();
     hyperparamsLearningRatePtr->update();
-
-    // TODO: print current parameters and gradient norm to file for debug purposess
 }
 
 void NPGPEAgent::reset()
