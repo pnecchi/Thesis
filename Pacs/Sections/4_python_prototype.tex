@@ -1,2 +1,36 @@
 \section{Python Prototype}
 \label{sec:python_prototype}
+
+In this section, we start discussing the implementation details of this project. 
+The first step of this project has been to implement a prototype in Python, a high-level, general-purpose, interpreted, dynamic programming language which is gaining a widespread popularity both in the academic world and in the industry. Python natively supports the object-oriented paradigm which makes it perfect to quickly develop a prototype of the class architecture, which can then be translated in C++. Moreover, thanks to external libraries such as Numpy, Scipy and Pandas, Python offers an open-source alternative to Matlab for scientific computing applications.\\
+\begin{figure}[t!]
+	\centering
+	\begin{tikzpicture}[node distance = 6em, auto, thick]
+		\node (rect) at (0,0) [draw,thick,minimum width=8cm,minimum height=6cm] (Experiment) {};
+		\node (rect) at (0,1.4) [draw,thick,minimum width=6cm,minimum height=2cm] (Task) {};
+		\node (rect) at (0,1.4) [draw,thick,minimum width=3cm,minimum height=1cm] (Environment) {\lstinline{Environment}};
+		\node (rect) at (0,-1.4) [draw,thick,minimum width=6cm,minimum height=2cm] (Agent) {};
+		\node (rect) at (-1.9,-1.4) [draw,thick,minimum width=1.6cm,minimum height=1cm] (Critic) {\lstinline{Critic}};
+		\node (rect) at (1.9,-1.4) [draw,thick,minimum width=1.6cm,minimum height=1cm] (Learner) {\lstinline{Learner}};
+		\node (rect) at (0,-1.4) [draw,thick,minimum width=1.6cm,minimum height=1cm] (Actor) {\lstinline{Actor}};
+		
+		\draw (-2.8,3.3) node {\lstinline{Experiment}};
+		\draw (-2.4,2.7) node {\lstinline{Task}};
+		\draw (0.8,0) node {\lstinline{Action}};
+		\draw (-2.25,1.7) node {\lstinline{State}};	
+		\draw (2.7,0) node {\lstinline{Reward}};
+		\draw (-2.4,-2.7) node {\lstinline{Agent}};
+	
+		\path [line] (Task.180) --++ (-0.5cm,0cm) |- node [near start]{\lstinline{Observation}} (Agent.180);
+		\path [line] (Task.0) --++ (+0.5cm,0cm) |- (Agent.0);
+		\draw[line] (Environment.180) -- (Task.180);
+		\draw[line] (Agent.90) -- (Task.270); 
+				
+
+	\end{tikzpicture}
+	\caption{PyBrain standard architecture for an RL problem.}
+	\label{fig:pybrain}
+\end{figure}
+For the basic RL algorithms we exploited PyBrain\footnote{\url{http://pybrain.org/}}, a modular ML library for Python whose goal is to offer flexible, easy-to-use yet still powerful algorithms for ML tasks and a variety of predefined environments to test and compare different algorithms \cite{pybrain2010jmlr}. An RL task in PyBrain always consists of an \lstinline{Environment}, an \lstinline{Agent}, a \lstinline{Task} and an \lstinline{Experiment} interacting with each other as illustrated in Figure \ref{fig:pybrain}.\\
+The \lstinline{Environment} is the world in which the \lstinline{Agent} acts and is characterized by a state which can be accessed through the \lstinline{getSensors()} method. The \lstinline{Agent} receives an observation of this state through the \lstinline{integrateObservation()} method and selects an action through the \lstinline{getAction()} method. This action is applied to the \lstinline{Environment} with the \lstinline{performAction()} method. However, the interactions between the \lstinline{Environment} and the \lstinline{Agent} are not direct but are mediated by the \lstinline{Task}. The \lstinline{Task} specifies what the goal is in an \lstinline{Environment} and how the agent is rewarded for its actions. Hence, the composition of an \lstinline{Environment} and a \lstinline{Task} fully defines the MDP. An \lstinline{Agent} always contains an \lstinline{Actor}, which represents the policy used to select actions. Based on the rewards that the \lstinline{Agent} receives via the \lstinline{getReward()} method, the \lstinline{Learner} improves the policy via a \lstinline{learn()} procedure. In this step, an \lstinline{Actor} may be used to evaluate a state with the goal of reducing the variance of the learning process. This entire learning process is controlled by an \lstinline{Experiment} object.\\ 
+This structure is quite standard for a RL problem and can be easily adapted to the problem at hand and extended to the learning algorithms developed in this thesis. Based on this architecture, we thus developed a fully-working Python prototype of the asset allocation problem. This prototype yielded some interesting results both on simulated data and on historical data, in particular for the PGPE algorithm. However, the learning process resulted too slow to be run systematically for a large number of time-steps and training epochs. By consequent, we quickly decided to pass to C++.

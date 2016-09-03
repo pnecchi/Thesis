@@ -1,20 +1,108 @@
-\section{Application to Systematic Trading}
+\section{Reinforcement Learning for Systematic Trading}
 \label{sec:application_to_systematic_trading}
 
-The asset allocation problem consists of determining how to dynamically invest
-the available capital in a portfolio of different assets in order to maximize
-the expected total return or another relevant performance measure. Let us
-consider a financial market consisting of $I+1$ different stocks that are
-traded only at discrete times $t \in \{0, 1, 2, \ldots\}$ and denote by
-${Z}_t = {(Z_t^0, Z_t^1, \ldots, Z_t^I)}^T$ their prices at time $t$.
-Typically, $Z_t^0$ refers to a riskless asset whose dynamic is given by $Z_t^0
-= {(1 + X)}^t$ where $X$ is the deterministic risk-free interest rate. The
-investment process works as follows: at time $t$, the investor observes the
-state of the market $S_t$, consisting for example of the past asset prices and
-other relevant economic variables, and subsequently chooses how to rebalance
-his portfolio, by specifying the units of each stock ${n}_t = {(n_t^0 ,
-n_t^1 , \ldots , n_t^I)}^T$ to be held between $t$ and $t+1$. In doing so, he
-needs to take into account the transaction costs that he has to pay to the
-broker to change his position.  At time $t+1$, the investor realizes a profit
-or a loss from his investment due to the stochastic variation of the stock
-values. The investor’s goal is to maximize a given performance measure.
+Many financial problems can be seen as sequential decision problems which naturally fall in the stochastic optimal control framework introduced above. In this section we discuss how the reinforcement learning algorithms can be applied to the asset allocation problem, where an agent invests his capital on various assets available in the market.  
+
+\subsection{Asset Allocation With Transaction Costs} 
+The asset allocation problem consists of determining how to dynamically invest the available capital in a portfolio of different assets in order to maximize the expected total return or another relevant performance measure. Let us consider a financial market consisting of $I+1$ different stocks that are traded only at discrete times $t \in \{0, 1, 2, \ldots\}$ and denote by ${Z}_t = {(Z_t^0, Z_t^1, \ldots, Z_t^I)}^T$ their prices at time $t$. Typically, $Z_t^0$ refers to a riskless asset whose dynamic is given by $Z_t^0 = {(1 + X)}^t$ where $X$ is the deterministic risk-free interest rate. The investment process works as follows: at time $t$, the investor observes the
+state of the market $S_t$, consisting for example of the past asset prices and other relevant economic variables, and subsequently chooses how to rebalance his portfolio, by specifying the units of each stock ${n}_t = {(n_t^0 , n_t^1 , \ldots , n_t^I)}^T$ to be held between $t$ and $t+1$. In doing so, he needs to take into account the transaction costs that he has to pay to the broker to change his position.  At time $t+1$, the investor realizes a profit or a loss from his investment due to the stochastic variation of the stock values. The investor’s goal is to maximize a given performance measure. Let $W_t$ denote the wealth of the investor at time $t$. The profit realized between $t$ and $t+1$ is simply given by the difference between the trading results and the transaction costs payed to the broker. More formally
+\begin{equation*}
+	\Delta W_{t+1} = W_{t+1} - W_t = \text{PNL}_{t+1} - \text{TC}_{t}	
+\end{equation*}
+where $\text{PNL}_{t+1}$ denotes the profit due to the variation of the
+portfolio asset prices between $t$ and $t+1$
+\begin{equation*}
+	\text{PNL}_{t+1} = {n}_t \cdot \Delta{Z}_{t+1} = \sum^{I}_{i=0} 
+	n_t^i (Z_{t+1}^i - Z_t^i) 
+\end{equation*}
+and $\text{TC}_t$ denotes the fees payed to the broker to change the portfolio
+allocation and on the short positions
+\begin{equation*}
+	\text{TC}_t = \sum^{I}_{i=0} \delta_p^i \left| n_t^i - n_{t-1}^i\right| Z_t^i 
+				- \delta_f W_t \ind{{n}_t \neq {n}_{t-1}} 
+				- \sum^{I}_{i=0} \delta_s^i {(n_t^i)}^{-} Z_t^i
+\end{equation*}
+The transaction costs consist of three different components. The first term 
+represent a transaction cost that is proportional to the change in value of the 
+position in each asset. The second term is a fixed fraction of the total value
+of the portfolio which is payed only if the allocation is changed. The last
+term represents the fees payed to the broker for the shares borrowed to build a
+short position. The portfolio return between $t$ and $t+1$ is thus given by
+\begin{equation}\label{eq:portfolio_return}
+	X_{t+1} = \frac{\Delta W_{t+1}}{W_t} = \sum^{I}_{i=0} \left[ a_t^i
+	X_{t+1}^i - \delta_i \left| a_t^i - \tilde{a}_t^i \right| - \delta_s
+	{(a_t^i)}^- \right] - \delta_f \ind{{a}_t \neq \tilde{{a}}_{t-1}}  
+\end{equation}
+where 
+\begin{equation*}
+	X_{t+1}^i = \frac{\Delta Z_{t+1}^i}{Z_t^i}
+\end{equation*}
+is the return of the $i$-th stock between $t$ and $t+1$, 
+\begin{equation*}
+	a_t^i = \frac{n_t^i Z_t^i}{W_t}
+\end{equation*}
+is the fraction of wealth invested in the $i$-th stock between time $t$ and
+$t+1$ and finally 
+\begin{equation*}
+	\tilde{a}_t^i = \frac{n_{t-1}^i Z_t^i}{W_t} = \frac{a_{t-1}^i (1+X_t^i)}
+	{1 + X_t}
+\end{equation*}
+is the fraction of wealth invested in the $i$-th stock just before the 
+reallocation. We assume that the agent invests all his wealth at each step, so 
+that $W_t$ can be also interpreted as the value of his portfolio. This 
+assumption leads to the following constraint on the portfolio weights
+\begin{equation}
+	\sum^{I}_{i=0} a_t^i = 1 \;\;\;\;\; \forall t \in \{0, 1, 2, \ldots\}
+\end{equation}
+We notice that we are neglecting the typical margin requirements on the short
+positions, which would reduce the available capital at time $t$. Considering
+margin requirements would lead to a more complex constraint on the portfolio
+weights which would be difficult to treat in the reinforcement learning
+framework. Plugging this constraint into Eq. (\ref{eq:portfolio_return}), we
+obtain
+\begin{equation}\label{eq:portfolio_return_benchmark}
+	X_{t+1} = X + \sum^{I}_{i=1} a_t^i (X_{t+1}^i - X) - \sum^{I}_{i=0}
+	\left[\delta_i \left| a_t^i - \tilde{a}_t^i \right| - \delta_s^i
+	{(a_t^i)}^-\right] - \delta_f \ind{{a}_t \neq \tilde{{a}}_{t-1}}   
+\end{equation}
+which highlights the role of the risk-free asset as a benchmark for the 
+portfolio returns. The total profit realized by the investor between $t=0$ and
+$T$ is 
+\begin{equation*}
+	\Pi_T = W_T - W_0 = \sum^{T}_{t=1} \Delta W_t = \sum^{T}_{t=1} W_t X_t  
+\end{equation*}
+The portfolio return between $t=0$ and $T$ is given by
+\begin{equation*}
+	X_{0,T} = \frac{W_T}{W_0} - 1 = \prod_{t=1}^T (1+X_t) - 1
+\end{equation*}
+In order to cast the asset allocation problem in the reinforcement learning
+framework, we consider the log-return of the portfolio between $t=0$ and $T$
+\begin{equation}
+	R_{0,T} = \log \frac{W_T}{W_0} = \sum^{T}_{t=1} \log(1+X_t) = \sum_{t=1}^T
+	R_t
+\end{equation}
+where $R_{t+1}$ is the log-return of the portfolio between $t$ and $t+1$
+\begin{equation}
+	R_{t+1} = \log \left\{ 1 + \sum^{I}_{i=0} \left[ a_t^i X_{t+1}^i - \delta_i
+	\left| a_t^i - \tilde{a}_t^i \right| - \delta_s {(a_t^i)}^- \right] -
+	\delta_f \ind{{a}_t \neq \tilde{{a}}_{t-1}}\right\}
+\end{equation}
+The portfolio return and log-return can be used as the reward function of a
+RL algorithm, either in a offline or in an online approach.
+
+\subsection{Reinforcement Learning Application}
+In the previous section we derived the reward function for the asset allocation problem with transaction costs. In order to apply the policy gradient algorithms discussed in the previous sections we still need to define the state space, the action space and the agent's policy. For simplicity, we limit ourselves to the case of a single risky asset, i.e. $I = 1$, but the discussion could be generalized to the multi-asset case.\\
+We assume that at each time step the agent considers the $P+1$ past returns of the risky asset, i.e. $\{X_t, X_{t-1}, \ldots, X_{t-P}\}$. In order to properly incorporate the effects of transaction costs into his decision process, the agent must keep track of its current position $\tilde{a}_t$. The state of the system is thus given by 
+\begin{equation}
+	S_t = \{X_t, X_{t-1}, \ldots, X_{t-P}, \tilde{a}_t\}
+\end{equation}
+We might also include some external variables $Y_t$ that may be relevant to the trader, such as the common technical indicator used in practice. Furthermore, these input variables may be used to construct more complex features for example using some deep learning techniques, such as a deep auto-encoder.\\
+The agent, or trading system, specifies the portfolio weights $a_t = (a_t^0, a_t^1)^T$ according to a long-short strategy, i.e. the agent may be long ($a_t^1 = +1$) or short ($a_t^1 = -1$) on the risky-asset while $a_t^0 = 1 - a_t^1$ since the agents invests all the available capital at each time step. In the GPOMDP framework we assume that the agent selects $a_t^1$ according to a Boltzmann policy, i.e.
+\begin{equation}
+	\pi_\theta(s, +1) = \frac{e^{\theta^T s}}{1 + e^{\theta^T s}} \;\;\;\;\; \pi_\theta(s, -1) = \frac{1}{1 + e^{\theta^T s}}
+\end{equation}
+where we included a bias term in the parameters and in the state. In the parameter-based formulation, we assume that agent selects actions according to the binary controller
+\begin{equation}
+	F_\theta(s) = \sign(\theta^T s)
+\end{equation}
+where the controller parameters are normally distributed $\theta \sim \calN(\mu, \diag(\sigma))$. 

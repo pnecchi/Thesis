@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  28 AUG 2016 11:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  3 SEP 2016 12:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -967,6 +967,7 @@ LaTeX Info: Redefining \bm on input line 204.
 \c@example=\count180
 \c@remark=\count181
 \c@note=\count182
+Package hyperref Info: Option `colorlinks' set `true' on input line 97.
 ) (./pacs.aux)
 \openout1 = `pacs.aux'.
 
@@ -1026,7 +1027,7 @@ Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count189
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring ON on input line 25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1106,31 +1107,32 @@ LaTeX Font Info:    Try loading font information for U+bbm on input line 218.
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ))
-(./Sections/3_application_to_systematic_trading.tex)
-(./Sections/4_python_prototype.tex) (./Sections/5_c++_implementation.tex)
-(./Sections/6_execution_pipeline.tex) (./Sections/7_numerical_results.tex)
-(./Sections/8_conclusion.tex)
-Underfull \vbox (badness 1158) has occurred while \output is active []
-
- [6]
-(./pacs.bbl [7]) [8]
+(./Sections/3_application_to_systematic_trading.tex [6] [7] [8])
+(./Sections/4_python_prototype.tex
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 34.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 34.
+) (./Sections/5_c++_implementation.tex
+[9]) (./Sections/6_execution_pipeline.tex) (./Sections/7_numerical_results.tex)
+(./Sections/8_conclusion.tex) (./pacs.bbl [10]) [11]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
  (./pacs.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 Package rerunfilecheck Info: File `pacs.out' has not changed.
-(rerunfilecheck)             Checksum: 0BBAF566CFA876FD79B5DC3982FEBFAC;765.
+(rerunfilecheck)             Checksum: 79162CBE87C08169BD7004D656191682;950.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  ) 
 Here is how much of TeX's memory you used:
- 19557 strings out of 495028
- 332213 string characters out of 6181497
- 415665 words of memory out of 5000000
- 22247 multiletter control sequences out of 15000+600000
- 25546 words of font info for 64 fonts, out of 8000000 for 9000
+ 19936 strings out of 495028
+ 335870 string characters out of 6181497
+ 416891 words of memory out of 5000000
+ 22591 multiletter control sequences out of 15000+600000
+ 33400 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,22n,75p,1564b,673s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,22n,75p,1564b,1640s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/pierpaolo/.texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk>{/usr/sha
 re/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/font
@@ -1148,10 +1150,10 @@ xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on pacs.pdf (8 pages, 196708 bytes).
+Output written on pacs.pdf (11 pages, 219027 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 286 PDF objects out of 1000 (max. 8388607)
+ 253 compressed objects within 3 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

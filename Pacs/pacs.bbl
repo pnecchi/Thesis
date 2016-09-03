@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{sutton1998introduction}
 Richard~S Sutton and Andrew~G Barto.
@@ -51,5 +51,11 @@ Tingting Zhao, Hirotaka Hachiya, Gang Niu, and Masashi Sugiyama.
 \newblock Analysis and improvement of policy gradient estimation.
 \newblock In {\em Advances in Neural Information Processing Systems}, pages
   262--270, 2011.
+
+\bibitem{pybrain2010jmlr}
+Tom Schaul, Justin Bayer, Daan Wierstra, Yi~Sun, Martin Felder, Frank Sehnke,
+  Thomas R{\"u}ckstie{\ss}, and J{\"u}rgen Schmidhuber.
+\newblock {PyBrain}.
+\newblock {\em Journal of Machine Learning Research}, 11:743--746, 2010.
 
 \end{thebibliography}

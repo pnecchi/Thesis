@@ -193,6 +193,7 @@
 		<Unit filename="include/thesis/BoltzmannPolicy.h" />
 		<Unit filename="include/thesis/Critic.h" />
 		<Unit filename="include/thesis/ExperimentParameters.h" />
+		<Unit filename="include/thesis/FactoryOfAgents.h" />
 		<Unit filename="include/thesis/FunctionApproximator.h" />
 		<Unit filename="include/thesis/GaussianDistribution.h" />
 		<Unit filename="include/thesis/GaussianPolicy.h" />
@@ -220,6 +221,7 @@
 		<Unit filename="src/BinaryPolicy.cpp" />
 		<Unit filename="src/BoltzmannPolicy.cpp" />
 		<Unit filename="src/ExperimentParameters.cpp" />
+		<Unit filename="src/FactoryOfAgents.cpp" />
 		<Unit filename="src/GaussianDistribution.cpp" />
 		<Unit filename="src/GaussianPolicy.cpp" />
 		<Unit filename="src/LearningRate.cpp" />
