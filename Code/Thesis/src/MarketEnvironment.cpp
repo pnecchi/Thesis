@@ -4,6 +4,7 @@
 #include <stdexcept>  /* std::invalid_argument */
 
 MarketEnvironment::MarketEnvironment (std::string inputFilePath)
+    : Environment()
 {
 	// Initialize filestream from inputFilePath
 	std::ifstream ifs(inputFilePath);
@@ -31,7 +32,7 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath)
 
 		for(size_t i = 0; i < numRiskyAssets && linestream >> symbol; i++)
 		{
-            assetSymbols.push_back(symbol);
+            assetsSymbols.push_back(symbol);
             if (linestream.peek() == ',')
                 linestream.ignore();
 		}
@@ -60,6 +61,21 @@ MarketEnvironment::MarketEnvironment (std::string inputFilePath)
     startDate = 0;
     currentDate = startDate;
     endDate = numDays - 1;
+}
+
+MarketEnvironment::MarketEnvironment(MarketEnvironment const &market_)
+    : Environment(),
+      assetsSymbols(market_.assetsSymbols),
+      assetsReturns(market_.assetsReturns),
+      numDays(market_.numDays),
+      numRiskyAssets(market_.numRiskyAssets),
+      dimState(market_.dimState),
+      dimAction(market_.dimAction),
+      startDate(market_.startDate),
+      currentDate(market_.currentDate),
+      endDate(market_.endDate)
+{
+    /* Nothing to do. */
 }
 
 arma::vec MarketEnvironment::getState() const

@@ -23,6 +23,7 @@
 #ifndef MARKETENVIRONMENT_H
 #define MARKETENVIRONMENT_H
 
+#include <thesis/Environment.h>
 #include <armadillo>
 #include <vector>
 #include <string>
@@ -36,7 +37,7 @@
  * the asset allocation task.
  */
 
-class MarketEnvironment
+class MarketEnvironment : public Environment
 {
     public:
         /**
@@ -47,13 +48,13 @@ class MarketEnvironment
          * \param startDate_ initial time step
          * \param endDate_ final time step
          */
-        MarketEnvironment (std::string inputFilePath);
+        MarketEnvironment(std::string inputFilePath);
 
         //! Default copy constructor.
-        MarketEnvironment (MarketEnvironment const &market_) = default;
+        MarketEnvironment(MarketEnvironment const &market_);
 
-        //! Default destructor.
-        virtual ~MarketEnvironment () = default;
+        //! Virtual destructor.
+        virtual ~MarketEnvironment() = default;
 
         /**
          * Get system state.
@@ -61,7 +62,7 @@ class MarketEnvironment
          * current time step.
          * \return current time step risky assets log-returns.
          */
-        arma::vec getState() const;
+        virtual arma::vec getState() const;
 
         /**
          * Perform Action on the system.
@@ -70,10 +71,10 @@ class MarketEnvironment
          * agent.
          * \param action portfolio allocation
          */
-        void performAction(arma::vec const &action);
+        virtual void performAction(arma::vec const &action);
 
         //!Get assets ticker symbols.
-        std::vector<std::string> getAssetsSymbols() const { return assetSymbols; }
+        std::vector<std::string> getAssetsSymbols() const { return assetsSymbols; }
 
         //! Get total number of days in the time series.
         size_t getNumDays() const { return numDays; }
@@ -82,10 +83,10 @@ class MarketEnvironment
         size_t getNumRiskyAssets() const { return numRiskyAssets; }
 
         //! Get dimension of the state space.
-        size_t getDimState() const { return dimState; }
+        virtual size_t getDimState() const { return dimState; }
 
         //! Get dimension of the action space.
-        size_t getDimAction() const { return dimAction; }
+        virtual size_t getDimAction() const { return dimAction; }
 
         //! Get initial time step.
         size_t getStartDate() const { return startDate; }
@@ -106,11 +107,11 @@ class MarketEnvironment
         void setEvaluationInterval(size_t startDate_, size_t endDate_);
 
         //! Reset market environment to initial condition.
-        void reset();
+        virtual void reset();
 
     private:
         //! Asset ticker symbols.
-        std::vector<std::string> assetSymbols;
+        std::vector<std::string> assetsSymbols;
 
         /**
          * Log-return time series.
