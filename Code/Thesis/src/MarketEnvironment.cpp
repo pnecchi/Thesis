@@ -78,6 +78,11 @@ MarketEnvironment::MarketEnvironment(MarketEnvironment const &market_)
     /* Nothing to do. */
 }
 
+std::unique_ptr<Environment> MarketEnvironment::clone() const
+{
+    return std::unique_ptr<Environment>(new MarketEnvironment(*this));
+}
+
 arma::vec MarketEnvironment::getState() const
 {
 	return assetsReturns.col(currentDate);

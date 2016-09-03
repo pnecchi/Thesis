@@ -23,6 +23,7 @@
 #ifndef ASSETALLOCATIONTASK_H
 #define ASSETALLOCATIONTASK_H
 
+#include <thesis/Task.h>
 #include <thesis/MarketEnvironment.h>
 #include <armadillo>
 
@@ -38,7 +39,7 @@
 // Write class responsible for feature engineering, e.g. technical indicators,
 // deep auto-encoder, deep neural network for predicting risky-asset returns.
 
-class AssetAllocationTask
+class AssetAllocationTask : public Task
 {
     public:
         /**
@@ -52,39 +53,39 @@ class AssetAllocationTask
          * \param deltaS_ short-selling fees
          * \param numDaysObserved_ nb of days observed by the agent (today excl)
          */
-        AssetAllocationTask (MarketEnvironment const & market_,
-                             double riskFreeRate_,
-                             double deltaP_,
-                             double deltaF_,
-                             double deltaS_,
-                             size_t numDaysObserved_);
+        AssetAllocationTask(MarketEnvironment const & market_,
+                            double riskFreeRate_,
+                            double deltaP_,
+                            double deltaF_,
+                            double deltaS_,
+                            size_t numDaysObserved_);
 
         //! Copy constructor.
-        AssetAllocationTask(AssetAllocationTask const &other_) = default;
+        AssetAllocationTask(AssetAllocationTask const &other_);
 
         //! Destructor.
-        virtual ~AssetAllocationTask () = default;
+        virtual ~AssetAllocationTask() = default;
+
+        //! Clone method for polymorphic composition.
+        virtual std::unique_ptr<Task> clone() const;
 
         //! Get market risk-free rate.
         double getRiskFreeRate() const { return riskFreeRate; }
 
         //! Get proportional transaction cost fee.
-        double getDeltaP () const { return deltaP; }
+        double getDeltaP() const { return deltaP; }
 
         //! Get fixed transaction cost fee.
-        double getDeltaF () const { return deltaF; }
+        double getDeltaF() const { return deltaF; }
 
         //! Get short-selling fee.
-        double getDeltaS () const { return deltaS; }
+        double getDeltaS() const { return deltaS; }
 
         //! Get number of days observed by the agent.
-        size_t getNumDaysObserved () const { return numDaysObserved; }
+        size_t getNumDaysObserved() const { return numDaysObserved; }
 
         //! Get observation space size.
-        size_t getDimObservation () const { return dimObservation; }
-
-        //! Get action space size.
-        size_t getDimAction () const { return dimAction; }
+        virtual size_t getDimObservation() const { return dimObservation; }
 
         /**
          * Provide state observation.
@@ -92,7 +93,7 @@ class AssetAllocationTask
          * assets, the risk-free rate and the current allocation.
          * \return observation of the system state.
          */
-        arma::vec getObservation () const;
+        virtual arma::vec getObservation() const;
 
         /**
          * Perform action.
@@ -100,20 +101,20 @@ class AssetAllocationTask
          * that the portfolio weight on the risk-free asset is 1 - sum(u_i).
          * \param action portfolio allocation.
          */
-        void performAction (arma::vec const &action);
+        virtual void performAction(arma::vec const &action);
 
         /**
          * Provide reward.
          * The agent receives the log-return of his portfolio as a feedback.
          * \return portfolio log-return
          */
-        double getReward ();
+        virtual double getReward() const;
 
         //! Reset asset allocation task to initial condition.
-        void reset();
+        virtual void reset();
 
         //! Set evaluation interval for the allocation task
-        void setEvaluationInterval (size_t startDate_, size_t endDate_);
+        void setEvaluationInterval(size_t startDate_, size_t endDate_);
 
     private:
         //-----------------//
@@ -121,26 +122,23 @@ class AssetAllocationTask
         //-----------------//
 
         //! Initialize state cache vector with the past log-returns.
-        void initializeStatesCache ();
+        void initializeStatesCache();
 
         /**
          * Initialize allocation cache vector.
          * The entire capital is initially invested in the risk-free asset.
          */
-        void initializeAllocationCache ();
+        void initializeAllocationCache();
 
         /**
          * Compute the simple return for the portfolio allocation selected.
          * \return portfolio simple return.
          */
-        double computePortfolioSimpleReturn () const;
+        double computePortfolioSimpleReturn() const;
 
         //-----------------//
         // Private Members //
         //-----------------//
-
-        //! Underlying market environment.
-        MarketEnvironment market;
 
         //! Risk-free rate.
         double riskFreeRate;
@@ -166,20 +164,17 @@ class AssetAllocationTask
         //! Observation space size.
         size_t dimObservation;
 
-        //! Action space size.
-        size_t dimAction;
-
         //! Past states cache vector.
-        arma::vec pastStates;
+        mutable arma::vec pastStates;
 
         //! Current state cache vector.
-        arma::vec currentState;
+        mutable arma::vec currentState;
 
         //! Current allocations cache vector.
-        arma::vec currentAllocation;
+        mutable arma::vec currentAllocation;
 
         //! New allocation cache vector.
-        arma::vec newAllocation;
+        mutable arma::vec newAllocation;
 };
 
 #endif /* end of include guard: ASSETALLOCATIONTASK_H */

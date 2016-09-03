@@ -56,6 +56,9 @@ class MarketEnvironment : public Environment
         //! Virtual destructor.
         virtual ~MarketEnvironment() = default;
 
+        //! Clone method for polymorphic composition.
+        virtual std::unique_ptr<Environment> clone() const;
+
         /**
          * Get system state.
          * The function returns a vector of the risky assets log-returns for the

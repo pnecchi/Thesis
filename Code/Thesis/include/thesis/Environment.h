@@ -24,6 +24,7 @@
 #define ENVIRONMENT_H
 
 #include <armadillo>
+#include <memory>
 
 /** The general interface for an environment in which an agents acts and learns.
  * The environment is characterized by a state that can be (partially) accessed
@@ -42,6 +43,9 @@ class Environment
 
         //! Virtual destructor.
         virtual ~Environment() = default;
+
+        //! Clone method for polymorphic composition.
+        virtual std::unique_ptr<Environment> clone() const = 0;
 
         /**
          * Get system state.
@@ -68,7 +72,7 @@ class Environment
         virtual size_t getDimAction() const = 0;
 
         /**
-         * Reset market environment to initial condition. This method is used in
+         * Reset environment to initial condition. This method is used in
          * episodic tasks to reset the environment when a terminal state is
          * reached.
          */

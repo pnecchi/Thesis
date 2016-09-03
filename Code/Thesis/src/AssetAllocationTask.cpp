@@ -5,18 +5,19 @@
 void AssetAllocationTask::initializeStatesCache()
 {
 	// Initialize past market states
-	arma::vec proxyAction(dimAction);
+	arma::vec proxyAction(environmentPtr->getDimAction());
 	for(size_t i = 0; i < numDaysObserved; ++i)
 	{
         // Get market state
-        pastStates.rows(i * dimState, (i + 1) * dimState - 1) = market.getState();
+        pastStates.rows(i * dimState, (i + 1) * dimState - 1) =
+            environmentPtr->getState();
 
 		// Move to the next time step
-		market.performAction(proxyAction);
+		environmentPtr->performAction(proxyAction);
 	}
 
 	// Initialize current market state
-    currentState = market.getState();
+    currentState = environmentPtr->getState();
 }
 
 void AssetAllocationTask::initializeAllocationCache()
@@ -30,7 +31,7 @@ AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_,
 										  double deltaF_,
 										  double deltaS_,
 										  size_t numDaysObserved_)
-	: market(market_),
+	: Task(market_),
 	  riskFreeRate(riskFreeRate_),
 	  deltaP(deltaP_),
 	  deltaF(deltaF_),
@@ -38,10 +39,9 @@ AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_,
 	  numDaysObserved(numDaysObserved_)
 {
 	// Dimensions of observation and action spaces
-	dimState = market.getDimState();
-	dimAction = market.getDimAction();
+	dimState = environmentPtr->getDimState();
 	dimPastStates = numDaysObserved * dimState;
-	dimObservation = 1 + dimPastStates + dimState + dimAction;
+	dimObservation = 1 + dimPastStates + dimState + environmentPtr->getDimAction();
 
 	// Initialize state cache variables
 	pastStates.set_size(dimPastStates);
@@ -49,9 +49,32 @@ AssetAllocationTask::AssetAllocationTask (MarketEnvironment const & market_,
 	initializeStatesCache();
 
 	// Initialize allocation cache variables
-	currentAllocation.set_size(dimAction);
-	newAllocation.set_size(dimAction);
+	currentAllocation.set_size(environmentPtr->getDimAction());
+	newAllocation.set_size(environmentPtr->getDimAction());
 	initializeAllocationCache();
+}
+
+AssetAllocationTask::AssetAllocationTask(AssetAllocationTask const &other_)
+    : Task(*other_.environmentPtr),
+      riskFreeRate(other_.riskFreeRate),
+      deltaP(other_.deltaP),
+      deltaF(other_.deltaF),
+      deltaS(other_.deltaS),
+      numDaysObserved(other_.numDaysObserved),
+      dimState(other_.dimState),
+      dimPastStates(other_.dimPastStates),
+      dimObservation(other_.dimObservation),
+      pastStates(other_.pastStates),
+      currentState(other_.currentState),
+      currentAllocation(other_.currentAllocation),
+      newAllocation(other_.newAllocation)
+{
+    /* Nothing to do */
+}
+
+std::unique_ptr<Task> AssetAllocationTask::clone() const
+{
+    return std::unique_ptr<Task>(new AssetAllocationTask(*this));
 }
 
 arma::vec AssetAllocationTask::getObservation () const
@@ -79,10 +102,10 @@ void AssetAllocationTask::performAction (arma::vec const &action)
 	newAllocation = action;
 
 	// Broadcast action to underlying environment
-	market.performAction(newAllocation);
+	environmentPtr->performAction(newAllocation);
 }
 
-double AssetAllocationTask::getReward ()
+double AssetAllocationTask::getReward () const
 {
 	// Update past states with current state
 	if (numDaysObserved > 1)
@@ -92,7 +115,7 @@ double AssetAllocationTask::getReward ()
 		currentState;
 
 	// Observe new market state
-	currentState = market.getState();
+	currentState = environmentPtr->getState();
 
 	// Compute portfolio simple return
 	double portfolioSimpleReturn = computePortfolioSimpleReturn();
@@ -107,7 +130,7 @@ double AssetAllocationTask::getReward ()
 
 void AssetAllocationTask::reset()
 {
-    market.reset();
+    environmentPtr->reset();
     initializeStatesCache();
     initializeAllocationCache();
 }
@@ -115,7 +138,9 @@ void AssetAllocationTask::reset()
 void AssetAllocationTask::setEvaluationInterval (size_t startDate_,
 												 size_t endDate_)
 {
-	market.setEvaluationInterval(startDate_, endDate_);
+	MarketEnvironment* marketEvironmentPtr =
+        dynamic_cast<MarketEnvironment*>(environmentPtr.get());
+	marketEvironmentPtr->setEvaluationInterval(startDate_, endDate_);
     reset();
 }
 
