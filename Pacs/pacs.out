@@ -9,6 +9,8 @@
 \BOOKMARK [2][-]{subsection.3.2}{Reinforcement Learning Application}{section.3}% 9
 \BOOKMARK [1][-]{section.4}{Python Prototype}{}% 10
 \BOOKMARK [1][-]{section.5}{C++ Implementation}{}% 11
-\BOOKMARK [1][-]{section.6}{Execution Pipeline}{}% 12
-\BOOKMARK [1][-]{section.7}{Numerical Results}{}% 13
-\BOOKMARK [1][-]{section.8}{Conclusion}{}% 14
+\BOOKMARK [2][-]{subsection.5.1}{Environment, Task, Agent and Experiment}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{ARACAgent}{section.5}% 13
+\BOOKMARK [1][-]{section.6}{Execution Pipeline}{}% 14
+\BOOKMARK [1][-]{section.7}{Numerical Results}{}% 15
+\BOOKMARK [1][-]{section.8}{Conclusion}{}% 16

@@ -58,4 +58,9 @@ Tom Schaul, Justin Bayer, Daan Wierstra, Yi~Sun, Martin Felder, Frank Sehnke,
 \newblock {PyBrain}.
 \newblock {\em Journal of Machine Learning Research}, 11:743--746, 2010.
 
+\bibitem{joshi2008c++}
+Mark~Suresh Joshi.
+\newblock {\em C++ design patterns and derivatives pricing}, volume~2.
+\newblock Cambridge University Press, 2008.
+
 \end{thebibliography}

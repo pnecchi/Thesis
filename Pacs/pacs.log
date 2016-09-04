@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  4 SEP 2016 13:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  4 SEP 2016 20:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -987,11 +987,7 @@ Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 \c@remark=\count183
 \c@note=\count184
 Package hyperref Info: Option `colorlinks' set `true' on input line 99.
-) (./pacs.aux
-
-LaTeX Warning: Label `fig:PropProf' multiply defined.
-
-)
+) (./pacs.aux)
 \openout1 = `pacs.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -1009,7 +1005,8 @@ LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \AtBeginShipoutBox=\box46
@@ -1138,48 +1135,91 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 34.
 ) (./Sections/5_c++_implementation.tex
-[9] <Images/agent_environment_interaction.png, id=197, 1583.9175pt x 600.06pt>
+[9]
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 6.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\lstinline' on input line 6.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\lstinline' on input line 6.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\lstinline' on input line 6.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\lstinline' on input line 6.
+
+<Images/agent_environment_interaction.png, id=209, 1583.9175pt x 600.06pt>
 File: Images/agent_environment_interaction.png Graphic file (type png)
 
 <use Images/agent_environment_interaction.png>
 Package pdftex.def Info: Images/agent_environment_interaction.png used on input
- line 7.
-(pdftex.def)             Requested size: 397.48499pt x 150.5823pt.
+ line 9.
+(pdftex.def)             Requested size: 650.43pt x 246.41075pt.
 
-<Images/agent.png, id=198, 1667.685pt x 885.3075pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10] [11 <./Images/agent_environment_interaction.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\lstinline' on input line 17.
+
+<Images/agent.png, id=227, 1667.685pt x 885.3075pt>
 File: Images/agent.png Graphic file (type png)
  <use Images/agent.png>
-Package pdftex.def Info: Images/agent.png used on input line 13.
+Package pdftex.def Info: Images/agent.png used on input line 24.
 (pdftex.def)             Requested size: 650.43pt x 345.29555pt.
 
-[10 <./Images/agent_environment_interaction.png>] [11 <./Images/agent.png>])
-(./Sections/6_execution_pipeline.tex) (./Sections/7_numerical_results.tex)
-(./Sections/8_conclusion.tex) (./pacs.bbl) [12
+Underfull \hbox (badness 1303) in paragraph at lines 18--28
+\OT1/ptm/m/n/10 in-ter-face for a prob-a-bil-ity dis-tri-bu-tion. This prob-a-b
+il-ity dis-tri-bu-tion rep-re-sents the hyper-
+ []
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 18--28
+\OT1/ptm/m/n/10 method of [][][] sim-ply broad-casts the call to the [][][] met
+hod
+ []
+
+
+Underfull \hbox (badness 5970) in paragraph at lines 18--28
+\OT1/ptm/m/n/10 of its un-der-ly-ing [][][]. A con-crete im-ple-men-ta-tion of 
+a
+ []
+
+[12
+
+] [13 <./Images/agent.png>]) (./Sections/6_execution_pipeline.tex)
+(./Sections/7_numerical_results.tex) (./Sections/8_conclusion.tex) (./pacs.bbl)
+[14
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
  (./pacs.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
 Package rerunfilecheck Info: File `pacs.out' has not changed.
-(rerunfilecheck)             Checksum: 79162CBE87C08169BD7004D656191682;950.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
+(rerunfilecheck)             Checksum: A8CDDF255854A4A4F53E7BB39E578DDF;1098.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
  ) 
 Here is how much of TeX's memory you used:
- 20083 strings out of 495028
- 338113 string characters out of 6181497
- 419623 words of memory out of 5000000
- 22720 multiletter control sequences out of 15000+600000
- 33400 words of font info for 92 fonts, out of 8000000 for 9000
+ 20100 strings out of 495028
+ 338343 string characters out of 6181497
+ 419731 words of memory out of 5000000
+ 22728 multiletter control sequences out of 15000+600000
+ 33915 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,22n,75p,1564b,1640s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/pierpaolo/.texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk>{/usr/sha
-re/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dis
+ 63i,22n,75p,1850b,1640s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/pierpaolo/
+.texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
@@ -1191,14 +1231,14 @@ cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
-es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-
-Output written on pacs.pdf (12 pages, 1047693 bytes).
+xmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on pacs.pdf (14 pages, 1068247 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
- 258 compressed objects within 3 object streams
- 90 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
+ 97 named destinations out of 1000 (max. 500000)
+ 151 words of extra memory for PDF output out of 10000 (max. 10000000)
 
