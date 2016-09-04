@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  3 SEP 2016 12:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  4 SEP 2016 13:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -959,16 +959,39 @@ Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
 LaTeX Info: Redefining \bm on input line 204.
 )
-\c@theorem=\count175
-\c@lemmma=\count176
-\c@proposition=\count177
-\c@corollary=\count178
-\c@definition=\count179
-\c@example=\count180
-\c@remark=\count181
-\c@note=\count182
-Package hyperref Info: Option `colorlinks' set `true' on input line 97.
-) (./pacs.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen198
+\WF@size=\dimen199
+\c@WF@wrappedlines=\count175
+\WF@box=\box44
+\WF@everypar=\toks44
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+\c@r@tfl@t=\count176
+\rotFPtop=\skip69
+\rotFPbot=\skip70
+\rot@float@box=\box45
+\rot@mess@toks=\toks45
+)
+\c@theorem=\count177
+\c@lemmma=\count178
+\c@proposition=\count179
+\c@corollary=\count180
+\c@definition=\count181
+\c@example=\count182
+\c@remark=\count183
+\c@note=\count184
+Package hyperref Info: Option `colorlinks' set `true' on input line 99.
+) (./pacs.aux
+
+LaTeX Warning: Label `fig:PropProf' multiply defined.
+
+)
 \openout1 = `pacs.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -986,25 +1009,24 @@ LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-\AtBeginShipoutBox=\box44
+\AtBeginShipoutBox=\box46
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count183
-\scratchdimen=\dimen198
-\scratchbox=\box45
-\nofMPsegments=\count184
-\nofMParguments=\count185
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count186
-\MPscratchDim=\dimen199
-\MPnumerator=\count187
-\makeMPintoPDFobject=\count188
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count185
+\scratchdimen=\dimen200
+\scratchbox=\box47
+\nofMPsegments=\count186
+\nofMParguments=\count187
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count188
+\MPscratchDim=\dimen201
+\MPnumerator=\count189
+\makeMPintoPDFobject=\count190
+\everyMPtoPDFconversion=\toks47
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1023,10 +1045,12 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
+Package caption Info: rotating package is loaded.
+Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count189
+\c@lstlisting=\count191
 Package hyperref Info: Link coloring ON on input line 25.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1035,7 +1059,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count190
+\c@section@level=\count192
 )
 LaTeX Info: Redefining \ref on input line 25.
 LaTeX Info: Redefining \pageref on input line 25.
@@ -1114,8 +1138,25 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 34.
 ) (./Sections/5_c++_implementation.tex
-[9]) (./Sections/6_execution_pipeline.tex) (./Sections/7_numerical_results.tex)
-(./Sections/8_conclusion.tex) (./pacs.bbl [10]) [11]
+[9] <Images/agent_environment_interaction.png, id=197, 1583.9175pt x 600.06pt>
+File: Images/agent_environment_interaction.png Graphic file (type png)
+
+<use Images/agent_environment_interaction.png>
+Package pdftex.def Info: Images/agent_environment_interaction.png used on input
+ line 7.
+(pdftex.def)             Requested size: 397.48499pt x 150.5823pt.
+
+<Images/agent.png, id=198, 1667.685pt x 885.3075pt>
+File: Images/agent.png Graphic file (type png)
+ <use Images/agent.png>
+Package pdftex.def Info: Images/agent.png used on input line 13.
+(pdftex.def)             Requested size: 650.43pt x 345.29555pt.
+
+[10 <./Images/agent_environment_interaction.png>] [11 <./Images/agent.png>])
+(./Sections/6_execution_pipeline.tex) (./Sections/7_numerical_results.tex)
+(./Sections/8_conclusion.tex) (./pacs.bbl) [12
+
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
  (./pacs.aux)
@@ -1123,13 +1164,17 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 Package rerunfilecheck Info: File `pacs.out' has not changed.
 (rerunfilecheck)             Checksum: 79162CBE87C08169BD7004D656191682;950.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  ) 
 Here is how much of TeX's memory you used:
- 19936 strings out of 495028
- 335870 string characters out of 6181497
- 416891 words of memory out of 5000000
- 22591 multiletter control sequences out of 15000+600000
+ 20083 strings out of 495028
+ 338113 string characters out of 6181497
+ 419623 words of memory out of 5000000
+ 22720 multiletter control sequences out of 15000+600000
  33400 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  63i,22n,75p,1564b,1640s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1150,10 +1195,10 @@ xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 
-Output written on pacs.pdf (11 pages, 219027 bytes).
+Output written on pacs.pdf (12 pages, 1047693 bytes).
 PDF statistics:
- 286 PDF objects out of 1000 (max. 8388607)
- 253 compressed objects within 3 object streams
- 87 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 294 PDF objects out of 1000 (max. 8388607)
+ 258 compressed objects within 3 object streams
+ 90 named destinations out of 1000 (max. 500000)
+ 135 words of extra memory for PDF output out of 10000 (max. 10000000)
 
