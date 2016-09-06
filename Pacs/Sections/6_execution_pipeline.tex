@@ -1,3 +1,49 @@
 \section{Execution Pipeline}
 \label{sec:execution_pipeline}
 
+In this section we describe the full execution pipeline the program. 
+
+
+
+\begin{sidewaysfigure}[t!]
+	\centering
+	\begin{tikzpicture}[node distance = 6em, auto, thick]
+		\node (rect) at (-9.5,-2) [draw,thick,minimum width=3cm,minimum height=3cm] (generate_synthetic_series) {};
+		\node (rect) at (0,0) [draw,thick,minimum width=15cm,minimum height=10cm] (experimentLauncher) {};
+		\node (rect) at (+9,-2) [draw,thick,minimum width=2cm,minimum height=3cm] (convergence) {};
+		\node (rect) at (+9,+2) [draw,thick,minimum width=2cm,minimum height=3cm] (performance) {};
+		\node (rect) at (-6,2) [draw,thick,minimum width=2cm,minimum height=3cm] (input) {};
+		\node (rect) at (-6,-2) [draw,thick,minimum width=2cm,minimum height=3cm] (synthetic) {};
+		\node (rect) at (-2,0) [draw,thick,minimum width=4cm,minimum height=8cm] (main_thesis) {\lstinline{main_thesis}};
+		\node (rect) at (2,2) [draw,thick,minimum width=2cm,minimum height=3cm] (output) {};
+		\node (rect) at (2,-2) [draw,thick,minimum width=2cm,minimum height=3cm] (debug) {};
+		\node (rect) at (5.5,0) [draw,thick,minimum width=3cm,minimum height=3cm] (postprocessing) {};
+		
+		\draw (0,5.5) node {\lstinline{experimentLauncher.py}};
+		\draw (-9.5,0) node {\lstinline{generate_synthetic_series.py}};
+		\draw (-6,-4) node {\lstinline{synthetic.csv}};
+		\draw (-7.8,4) node {\lstinline{Single_Synth_RN_P0_F0_S0_N5.pot}};	
+		\draw (5.5,2) node {\lstinline{postprocessing.py}};
+		\draw (2,4) node {\lstinline{output.csv}};
+		\draw (2,-4) node {\lstinline{debug.csv}};
+		\draw (9.5,4) node {\lstinline{performance.csv}};
+		\draw (9.5,-4) node {\lstinline{convergence.csv}};
+				
+	
+		\draw[line] (generate_synthetic_series.0) -- (synthetic.180);
+		\draw[line] (debug.0) -- (postprocessing.180);
+		\draw[line] (output.0) -- (postprocessing.180);
+		\draw[line] (postprocessing.0) -- (performance.180);
+		\draw[line] (postprocessing.0) -- (convergence.180);
+		\draw[line] (input.0) -- (main_thesis.135);
+		\draw[line] (synthetic.0) -- (main_thesis.225);
+		\draw[line] (main_thesis.45) -- (output.180);
+		\draw[line] (main_thesis.315) -- (debug.180);
+			
+
+	\end{tikzpicture}
+	\caption{Execution flow of an asset allocation experiment via the \lstinline{experimentLauncher.py} script}
+	\label{fig:pybrain}
+\end{sidewaysfigure}
+
+\clearpage
