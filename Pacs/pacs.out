@@ -13,4 +13,9 @@
 \BOOKMARK [2][-]{subsection.5.2}{ARACAgent}{section.5}% 13
 \BOOKMARK [1][-]{section.6}{Execution Pipeline}{}% 14
 \BOOKMARK [1][-]{section.7}{Numerical Results}{}% 15
-\BOOKMARK [1][-]{section.8}{Conclusion}{}% 16
+\BOOKMARK [2][-]{subsection.7.1}{Synthetic Asset}{section.7}% 16
+\BOOKMARK [2][-]{subsection.7.2}{Experimental Setup}{section.7}% 17
+\BOOKMARK [2][-]{subsection.7.3}{Convergence}{section.7}% 18
+\BOOKMARK [2][-]{subsection.7.4}{Performances}{section.7}% 19
+\BOOKMARK [2][-]{subsection.7.5}{Impact of Transaction Costs}{section.7}% 20
+\BOOKMARK [1][-]{section.8}{Conclusion}{}% 21

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  7 SEP 2016 00:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  8 SEP 2016 21:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1158,7 +1158,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\lstinline' on input line 6.
 
-<Images/agent_environment_interaction.png, id=210, 1583.9175pt x 600.06pt>
+<Images/agent_environment_interaction.png, id=230, 1583.9175pt x 600.06pt>
 File: Images/agent_environment_interaction.png Graphic file (type png)
 
 <use Images/agent_environment_interaction.png>
@@ -1174,7 +1174,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\lstinline' on input line 17.
 
-<Images/agent.png, id=228, 1667.685pt x 885.3075pt>
+<Images/agent.png, id=248, 1667.685pt x 885.3075pt>
 File: Images/agent.png Graphic file (type png)
  <use Images/agent.png>
 Package pdftex.def Info: Images/agent.png used on input line 24.
@@ -1200,37 +1200,140 @@ a
 [12
 
 ] [13 <./Images/agent.png>]) (./Sections/6_execution_pipeline.tex
-Overfull \hbox (25.83807pt too wide) in paragraph at lines 44--45
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+ [][][][][][][] \OT1/ptm/m/n/10 This Python script pro-cesses the var-i-ous fil
+es pro-duced by
+ []
+
+
+Overfull \hbox (25.83807pt too wide) in paragraph at lines 53--54
  [][] 
  []
 
 [14
 
-] [15]) (./Sections/7_numerical_results.tex) (./Sections/8_conclusion.tex)
-(./pacs.bbl) [16
+] [15]) (./Sections/7_numerical_results.tex
+Package epstopdf Info: Source file: <Images/6_0_single_synthetic_neutral_conver
+gence.eps>
+(epstopdf)                    date: 2016-08-09 22:45:33
+(epstopdf)                    size: 83834 bytes
+(epstopdf)             Output file: <Images/6_0_single_synthetic_neutral_conver
+gence-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-08-09 22:50:31
+(epstopdf)                    size: 33501 bytes
+(epstopdf)             Command: <repstopdf --outfile=Images/6_0_single_syntheti
+c_neutral_convergence-eps-converted-to.pdf Images/6_0_single_synthetic_neutral_
+convergence.eps>
+(epstopdf)             \includegraphics on input line 27.
+Package epstopdf Info: Output file is already uptodate.
+
+<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=276, 
+1445.4pt x 722.7pt>
+File: Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf Grap
+hic file (type pdf)
+
+<use Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf>
+Package pdftex.def Info: Images/6_0_single_synthetic_neutral_convergence-eps-co
+nverted-to.pdf used on input line 27.
+(pdftex.def)             Requested size: 397.4752pt x 170.71672pt.
+Package epstopdf Info: Source file: <Images/6_1_single_synthetic_neutral_perfor
+mance.eps>
+(epstopdf)                    date: 2016-08-09 22:45:36
+(epstopdf)                    size: 356963 bytes
+(epstopdf)             Output file: <Images/6_1_single_synthetic_neutral_perfor
+mance-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-08-09 22:50:32
+(epstopdf)                    size: 109623 bytes
+(epstopdf)             Command: <repstopdf --outfile=Images/6_1_single_syntheti
+c_neutral_performance-eps-converted-to.pdf Images/6_1_single_synthetic_neutral_
+performance.eps>
+(epstopdf)             \includegraphics on input line 36.
+Package epstopdf Info: Output file is already uptodate.
+
+<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=279, 
+1445.4pt x 722.7pt>
+File: Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf Grap
+hic file (type pdf)
+
+<use Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf>
+Package pdftex.def Info: Images/6_1_single_synthetic_neutral_performance-eps-co
+nverted-to.pdf used on input line 36.
+(pdftex.def)             Requested size: 397.4752pt x 170.71672pt.
+Package epstopdf Info: Source file: <Images/6_2_impact_transaction_costs.eps>
+(epstopdf)                    date: 2016-08-10 22:00:13
+(epstopdf)                    size: 53615 bytes
+(epstopdf)             Output file: <Images/6_2_impact_transaction_costs-eps-co
+nverted-to.pdf>
+(epstopdf)                    date: 2016-08-10 22:07:31
+(epstopdf)                    size: 24454 bytes
+(epstopdf)             Command: <repstopdf --outfile=Images/6_2_impact_transact
+ion_costs-eps-converted-to.pdf Images/6_2_impact_transaction_costs.eps>
+(epstopdf)             \includegraphics on input line 69.
+Package epstopdf Info: Output file is already uptodate.
+
+<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=286, 1445.4pt x 7
+22.7pt>
+File: Images/6_2_impact_transaction_costs-eps-converted-to.pdf Graphic file (ty
+pe pdf)
+ <use Images/6_2_impact_transaction_costs-eps-converted-to.pdf>
+Package pdftex.def Info: Images/6_2_impact_transaction_costs-eps-converted-to.p
+df used on input line 69.
+(pdftex.def)             Requested size: 397.4752pt x 170.71672pt.
+ [16
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
+
+LaTeX Warning: Text page 17 contains only floats.
+
+[17 <./Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf> <.
+/Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Images/6_3_impact_short_selling_fees.eps>
+(epstopdf)                    date: 2016-08-10 22:00:13
+(epstopdf)                    size: 56116 bytes
+(epstopdf)             Output file: <Images/6_3_impact_short_selling_fees-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2016-08-10 22:07:32
+(epstopdf)                    size: 25218 bytes
+(epstopdf)             Command: <repstopdf --outfile=Images/6_3_impact_short_se
+lling_fees-eps-converted-to.pdf Images/6_3_impact_short_selling_fees.eps>
+(epstopdf)             \includegraphics on input line 76.
+Package epstopdf Info: Output file is already uptodate.
+
+<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=400, 1445.4pt x 
+722.7pt>
+File: Images/6_3_impact_short_selling_fees-eps-converted-to.pdf Graphic file (t
+ype pdf)
+ <use Images/6_3_impact_short_selling_fees-eps-converted-to.pdf>
+Package pdftex.def Info: Images/6_3_impact_short_selling_fees-eps-converted-to.
+pdf used on input line 76.
+(pdftex.def)             Requested size: 397.4752pt x 170.71672pt.
+)
+(./Sections/8_conclusion.tex) [18 <./Images/6_2_impact_transaction_costs-eps-co
+nverted-to.pdf>] [19 <./Images/6_3_impact_short_selling_fees-eps-converted-to.p
+df>] (./pacs.bbl) [20
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 55.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 55.
  (./pacs.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 55.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 55.
 Package rerunfilecheck Info: File `pacs.out' has not changed.
-(rerunfilecheck)             Checksum: A8CDDF255854A4A4F53E7BB39E578DDF;1098.
+(rerunfilecheck)             Checksum: 08FEE5A3FEBD49F6EF2D27ADA19646D9;1431.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 55.
  ) 
 Here is how much of TeX's memory you used:
- 20191 strings out of 495028
- 340216 string characters out of 6181497
- 419773 words of memory out of 5000000
- 22816 multiletter control sequences out of 15000+600000
+ 20264 strings out of 495028
+ 342231 string characters out of 6181497
+ 421479 words of memory out of 5000000
+ 22848 multiletter control sequences out of 15000+600000
  33915 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,22n,75p,1850b,1687s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,22n,75p,1850b,1683s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/pierpaolo/
 .texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/font
@@ -1248,10 +1351,10 @@ xmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
 imes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pacs.pdf (16 pages, 1070406 bytes).
+Output written on pacs.pdf (20 pages, 1267456 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 100 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 609 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
+ 125 named destinations out of 1000 (max. 500000)
+ 211 words of extra memory for PDF output out of 10000 (max. 10000000)
 

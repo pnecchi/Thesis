@@ -63,4 +63,34 @@ Mark~Suresh Joshi.
 \newblock {\em C++ design patterns and derivatives pricing}, volume~2.
 \newblock Cambridge University Press, 2008.
 
+\bibitem{moody1998performance}
+John Moody, L.~Wu, Y.~Liao, and M.~Saffell.
+\newblock Performance functions and reinforcement learning for trading systems
+  and portfolios.
+\newblock {\em Journal of Forecasting}, 17:441--470, 1998.
+
+\bibitem{kamijo1990stock}
+Ken'ichi Kamijo and Tetsuji Tanigawa.
+\newblock Stock price pattern recognition-a recurrent neural network approach.
+\newblock In {\em IEEE 1990 IJCNN International Joint Conference on Neural
+  Networks}, 1990.
+
+\bibitem{saad1998comparative}
+Emad~W. Saad, Danil~V. Prokhorov, and Donald~C. Wunsch.
+\newblock Comparative study of stock trend prediction using time delay,
+  recurrent and probabilistic neural networks.
+\newblock {\em IEEE Transactions on Neural Networks}, 9(6):1456--1470, 1998.
+
+\bibitem{liang2011stock}
+Jiuzhen Liang, Wei Song, and Mei Wang.
+\newblock Stock price prediction based on procedural neural networks.
+\newblock {\em Adv. Artif. Neu. Sys.}, 2011:1--11, 2011.
+
+\bibitem{deng2016deep}
+Yue Deng, Feng Bao, Youyong Kong, Zhiquan Ren, and Qionghai Dai.
+\newblock Deep direct reinforcement learning for financial signal
+  representation and trading.
+\newblock {\em IEEE Transactions on Neural Networks and Learning Systems},
+  2016.
+
 \end{thebibliography}
