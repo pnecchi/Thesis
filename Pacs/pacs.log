@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  8 SEP 2016 21:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  10 SEP 2016 18:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1158,7 +1158,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\lstinline' on input line 6.
 
-<Images/agent_environment_interaction.png, id=230, 1583.9175pt x 600.06pt>
+<Images/agent_environment_interaction.png, id=239, 1583.9175pt x 600.06pt>
 File: Images/agent_environment_interaction.png Graphic file (type png)
 
 <use Images/agent_environment_interaction.png>
@@ -1174,7 +1174,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\lstinline' on input line 17.
 
-<Images/agent.png, id=248, 1667.685pt x 885.3075pt>
+<Images/agent.png, id=257, 1667.685pt x 885.3075pt>
 File: Images/agent.png Graphic file (type png)
  <use Images/agent.png>
 Package pdftex.def Info: Images/agent.png used on input line 24.
@@ -1227,7 +1227,7 @@ convergence.eps>
 (epstopdf)             \includegraphics on input line 27.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=276, 
+<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=285, 
 1445.4pt x 722.7pt>
 File: Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1250,7 +1250,7 @@ performance.eps>
 (epstopdf)             \includegraphics on input line 36.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=279, 
+<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=288, 
 1445.4pt x 722.7pt>
 File: Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1271,7 +1271,7 @@ ion_costs-eps-converted-to.pdf Images/6_2_impact_transaction_costs.eps>
 (epstopdf)             \includegraphics on input line 69.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=286, 1445.4pt x 7
+<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=295, 1445.4pt x 7
 22.7pt>
 File: Images/6_2_impact_transaction_costs-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1299,7 +1299,7 @@ lling_fees-eps-converted-to.pdf Images/6_3_impact_short_selling_fees.eps>
 (epstopdf)             \includegraphics on input line 76.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=400, 1445.4pt x 
+<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=409, 1445.4pt x 
 722.7pt>
 File: Images/6_3_impact_short_selling_fees-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1327,13 +1327,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 55.
  ) 
 Here is how much of TeX's memory you used:
- 20264 strings out of 495028
- 342231 string characters out of 6181497
- 421479 words of memory out of 5000000
- 22848 multiletter control sequences out of 15000+600000
+ 20266 strings out of 495028
+ 342276 string characters out of 6181497
+ 421521 words of memory out of 5000000
+ 22849 multiletter control sequences out of 15000+600000
  33915 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,22n,75p,1850b,1683s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,22n,75p,2569b,1683s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/pierpaolo/
 .texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/font
@@ -1351,10 +1351,10 @@ xmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
 imes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on pacs.pdf (20 pages, 1267456 bytes).
+Output written on pacs.pdf (20 pages, 1270733 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
- 378 compressed objects within 4 object streams
- 125 named destinations out of 1000 (max. 500000)
+ 618 PDF objects out of 1000 (max. 8388607)
+ 387 compressed objects within 4 object streams
+ 126 named destinations out of 1000 (max. 500000)
  211 words of extra memory for PDF output out of 10000 (max. 10000000)
 

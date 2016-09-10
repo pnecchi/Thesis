@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{silver2016mastering}
+David Silver, Aja Huang, Chris~J Maddison, Arthur Guez, Laurent Sifre, George
+  Van Den~Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda
+  Panneershelvam, Marc Lanctot, et~al.
+\newblock Mastering the game of go with deep neural networks and tree search.
+\newblock {\em Nature}, 529(7587):484--489, 2016.
+
 \bibitem{sutton1998introduction}
 Richard~S Sutton and Andrew~G Barto.
 \newblock {\em Introduction to reinforcement learning}, volume 135.
