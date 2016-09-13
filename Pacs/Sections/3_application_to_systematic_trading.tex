@@ -1,7 +1,7 @@
-\section{Reinforcement Learning for Systematic Trading}
+\section{Reinforcement Learning for Automated Trading}
 \label{sec:application_to_systematic_trading}
 
-Many financial problems can be seen as sequential decision problems which naturally fall in the stochastic optimal control framework introduced above. In this section we discuss how the reinforcement learning algorithms can be applied to the asset allocation problem, where an agent invests his capital on various assets available in the market.  
+Many financial applications can be seen as sequential decision problems which naturally fall in the stochastic optimal control framework introduced above. In this section we discuss how reinforcement learning algorithms can be applied to the asset allocation problem, where an agent invests his capital on various assets available in the market.  
 
 \subsection{Asset Allocation With Transaction Costs} 
 The asset allocation problem consists of determining how to dynamically invest the available capital in a portfolio of different assets in order to maximize the expected total return or another relevant performance measure. Let us consider a financial market consisting of $I+1$ different stocks that are traded only at discrete times $t \in \{0, 1, 2, \ldots\}$ and denote by ${Z}_t = {(Z_t^0, Z_t^1, \ldots, Z_t^I)}^T$ their prices at time $t$. Typically, $Z_t^0$ refers to a riskless asset whose dynamic is given by $Z_t^0 = {(1 + X)}^t$ where $X$ is the deterministic risk-free interest rate. The investment process works as follows: at time $t$, the investor observes the
@@ -87,7 +87,7 @@ where $R_{t+1}$ is the log-return of the portfolio between $t$ and $t+1$
 	\left| a_t^i - \tilde{a}_t^i \right| - \delta_s {(a_t^i)}^- \right] -
 	\delta_f \ind{{a}_t \neq \tilde{{a}}_{t-1}}\right\}
 \end{equation}
-The portfolio return and log-return can be used as the reward function of a
+The portfolio log-return can be used as the reward function of a
 RL algorithm, either in a offline or in an online approach.
 
 \subsection{Reinforcement Learning Application}

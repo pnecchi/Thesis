@@ -76,6 +76,13 @@ John Moody, L.~Wu, Y.~Liao, and M.~Saffell.
   and portfolios.
 \newblock {\em Journal of Forecasting}, 17:441--470, 1998.
 
+\bibitem{miyamae2010natural}
+Atsushi Miyamae, Yuichi Nagata, Isao Ono, and Shigenobu Kobayashi.
+\newblock Natural policy gradient methods with parameter-based exploration for
+  control tasks.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1660--1668, 2010.
+
 \bibitem{kamijo1990stock}
 Ken'ichi Kamijo and Tetsuji Tanigawa.
 \newblock Stock price pattern recognition-a recurrent neural network approach.
