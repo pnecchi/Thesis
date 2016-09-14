@@ -92,11 +92,7 @@ RL algorithm, either in a offline or in an online approach.
 
 \subsection{Reinforcement Learning Application}
 In the previous section we derived the reward function for the asset allocation problem with transaction costs. In order to apply the policy gradient algorithms discussed in the previous sections we still need to define the state space, the action space and the agent's policy. For simplicity, we limit ourselves to the case of a single risky asset, i.e. $I = 1$, but the discussion could be generalized to the multi-asset case.\\
-We assume that at each time step the agent considers the $P+1$ past returns of the risky asset, i.e. $\{X_t, X_{t-1}, \ldots, X_{t-P}\}$. In order to properly incorporate the effects of transaction costs into his decision process, the agent must keep track of its current position $\tilde{a}_t$. The state of the system is thus given by 
-\begin{equation}
-	S_t = \{X_t, X_{t-1}, \ldots, X_{t-P}, \tilde{a}_t\}
-\end{equation}
-We might also include some external variables $Y_t$ that may be relevant to the trader, such as the common technical indicator used in practice. Furthermore, these input variables may be used to construct more complex features for example using some deep learning techniques, such as a deep auto-encoder.\\
+We assume that at each time step the agent considers the $P+1$ past returns of the risky asset, i.e. $\{X_t, X_{t-1}, \ldots, X_{t-P}\}$. In order to properly incorporate the effects of transaction costs into his decision process, the agent must keep track of its current position $\tilde{a}_t$. The state of the system is thus given by $S_t = \{X_t, X_{t-1}, \ldots, X_{t-P}, \tilde{a}_t\}$ We might also include some external variables $Y_t$ that may be relevant to the trader, such as the common technical indicator used in practice. Furthermore, these input variables may be used to construct more complex features for example using some deep learning techniques, such as a deep auto-encoder.\\
 The agent, or trading system, specifies the portfolio weights $a_t = (a_t^0, a_t^1)^T$ according to a long-short strategy, i.e. the agent may be long ($a_t^1 = +1$) or short ($a_t^1 = -1$) on the risky-asset while $a_t^0 = 1 - a_t^1$ since the agents invests all the available capital at each time step. In the GPOMDP framework we assume that the agent selects $a_t^1$ according to a Boltzmann policy, i.e.
 \begin{equation}
 	\pi_\theta(s, +1) = \frac{e^{\theta^T s}}{1 + e^{\theta^T s}} \;\;\;\;\; \pi_\theta(s, -1) = \frac{1}{1 + e^{\theta^T s}}
@@ -105,4 +101,4 @@ where we included a bias term in the parameters and in the state. In the paramet
 \begin{equation}
 	F_\theta(s) = \sign(\theta^T s)
 \end{equation}
-where the controller parameters are normally distributed $\theta \sim \calN(\mu, \diag(\sigma))$. 
+where the controller parameters are normally distributed $\theta \sim \calN(\mu, \diag(\sigma))$. Since the formulation of the asset allocation problem given above is non-episodic, we actually applied the online version of the algorithms discussed above. The main considerations made above still hold and we refer to the full thesis for the details. 
