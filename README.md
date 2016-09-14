@@ -1,4 +1,4 @@
-# Reinforcement Learning for Systematic Trading
+# Reinforcement Learning for Automated Trading
 
 This thesis has been realized for the obtention of the Master's in Mathematical 
 Engineering at the Politecnico di Milano. The goal of this project was to apply
@@ -14,7 +14,7 @@ The repository is organized as follows:
 	* **Preprocessing** contains various Python scripts to generate the input
 	  data used by the learning algorithms. 
 	* **Prototype** contains the Python prototype for this project. It is based
-	  on the [PyBrain][http://pybrain.org/ "PyBrain"] library. 
+	  on the [PyBrain](http://pybrain.org/ "PyBrain") library. 
 	* **Thesis** contains the C++ implementation for this project.
 * **Data**: contains the data used during the execution of the program. 
 	* **Debug** contains some files produces by the learning algorithms for
@@ -32,7 +32,9 @@ The repository is organized as follows:
 
 ## Authors
 
-* **Pierpaolo Necchi** 
+* **Pierpaolo Necchi** - [LinkedIn](https://uk.linkedin.com/in/pierpaolonecchi/en)
+
+
 
 ## License
 
