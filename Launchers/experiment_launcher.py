@@ -1,6 +1,83 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+#===============================================================================
+
+#-------------------------------------------------------------------------------
+# The experiment parameters can be set by modifying the variables below
+#-------------------------------------------------------------------------------
+
+#----------------------------------------------------------------------------------------------------|
+# Working Directories:                                                                               |
+#  * paramBaseDir: the directory in which the parameters.pot file will be written                    |
+#  * inputBaseDir: the directory in which the C++ program will look for the input file               |
+#  * outputBaseDir: the base directory in which the C++ program will write the output files          |
+#  * debugBaseDir: the base directory in which the C++ program will write the debug files            |
+#  * postProcessingDir: the base directory in which the output of the postprocessing will be written |
+#----------------------------------------------------------------------------------------------------|
+
+thesisBaseDir     = '/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/'
+paramBaseDir      = thesisBaseDir + 'Data/Parameters/'
+inputBaseDir      = thesisBaseDir + 'Data/Input/'
+outputBaseDir     = thesisBaseDir + 'Data/Output/'
+debugBaseDir      = thesisBaseDir + 'Data/Debug/'
+postProcessingDir = thesisBaseDir + 'Code/Postprocessing/'
+
+#------------------------------------------------------------------------------|
+# Experiment parameters                                                        |
+#  * riskFreeRate: risk-free rate available on the market                      |
+#  * deltaP: proportional transaction costs                                    |
+#  * deltaF: fixed transaction costs                                           |
+#  * deltaS: short-selling fee                                                 |
+#  * numDaysObserved: number of past days observed by the agent                |
+#  * lambda: decay factor for policy gradient algorithms                       |
+#  * alphaConstActor: constant factor for the actor's decaying learning rate   |
+#  * alphaExpActor: exponent for the actor's decaying learning rate            |
+#  * alphaConstCritic: constant factor for the critic's decaying learning rate |
+#  * alphaExpCritic: exponent for the critic's decaying learning rate          |
+#  * alphaConstBaseline: constant factor for the baseline's learning rate      |
+#  * alphaExpBaseline: exponent for the baseline's learning rate               |
+#  * numExperiments: number of independent experiments to run                  |
+#  * numEpochs: number of training epochs for each experiment                  |
+#  * numTrainingSteps: number of time-steps used for training                  |
+#  * numTestSteps: number of time-steps used for backtest                      |
+#------------------------------------------------------------------------------|
+
+params = {'riskFreeRate'      : 0.0,
+          'deltaP'            : 0.0000,
+          'deltaF'            : 0.0,
+          'deltaS'            : 0.0000,
+          'numDaysObserved'   : 5,
+          'lambda'            : 0.9,
+          'alphaConstActor'   : 1.0,
+          'alphaExpActor'     : 0.8,
+          'alphaConstCritic'  : 1.0,
+          'alphaExpCritic'    : 0.7,
+          'alphaConstBaseline': 1.0,
+          'alphaExpBaseline'  : 0.6,
+          'numExperiments'    : 5,
+          'numEpochs'         : 1001,
+          'numTrainingSteps'  : 1000,
+          'numTestSteps'      : 100}
+
+
+#------------------------------------------------------------------------------------------------------|
+# Framework selection:                                                                                 |
+#  * riskSensitive: if True (resp. False), use risk-sensitive (resp. risk-neutral) learning algorithms |
+#  * synthetic: if True (resp. False) use synthetic (resp. historical) asset returns                   |
+#  * multiAsset: if True (resp. False) run the multi-asset (resp. single asset) case                   |
+#------------------------------------------------------------------------------------------------------|
+
+riskSensitive = False
+synthetic     = False
+multiAsset    = False  # Attention: multiAsset case not implemented yet
+
+#===============================================================================
+
+#-------------------------------------------------------------------------------
+# Do not modify the code below this line
+#-------------------------------------------------------------------------------
+
 #---------#
 # Imports #
 #---------#
@@ -26,41 +103,6 @@ def createDirectory(dirPath):
             if exc.errno != errno.EEXIST:
                 raise
 
-#---------------------#
-# Working Directories #
-#---------------------#
-
-thesisBaseDir     = '/home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/'
-paramBaseDir      = thesisBaseDir + 'Data/Parameters/'
-inputBaseDir      = thesisBaseDir + 'Data/Input/'
-outputBaseDir     = thesisBaseDir + 'Data/Output/'
-debugBaseDir      = thesisBaseDir + 'Data/Debug/'
-postProcessingDir = thesisBaseDir + 'Code/Postprocessing/'
-
-#-----------------------#
-# Experiment parameters #
-#-----------------------#
-
-params = {'riskFreeRate'      : 0.0,
-          'deltaP'            : 0.0000,
-          'deltaF'            : 0.0,
-          'deltaS'            : 0.0000,
-          'numDaysObserved'   : 5,
-          'lambda'            : 0.9,
-          'alphaConstActor'   : 1.0,
-          'alphaExpActor'     : 0.8,
-          'alphaConstCritic'  : 1.0,
-          'alphaExpCritic'    : 0.7,
-          'alphaConstBaseline': 1.0,
-          'alphaExpBaseline'  : 0.6,
-          'numExperiments'    : 5,
-          'numEpochs'         : 1001,
-          'numTrainingSteps'  : 1000,
-          'numTestSteps'      : 100}
-
-riskSensitive = False
-synthetic     = False
-multiAsset    = False
 
 #--------------------------------------#
 # Input, Output and Debug destinations #
