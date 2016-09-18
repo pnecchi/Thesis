@@ -1,0 +1,178 @@
+\ProvidesPackage{style}
+
+\mode<presentation> {%
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+\setbeamertemplate{footline}[frame number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+\setbeamertemplate{blocks}[rounded][shadow=True]
+
+\usepackage[]{xcolor}
+\usepackage[english]{babel}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{remreset}% tiny package containing just the \@removefromreset command
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{caption}
+
+% Tikz settings
+\tikzstyle{block} = [rectangle, draw, 
+    text width=8em, text centered, rounded corners, minimum height=4em]
+	    
+\tikzstyle{line} = [draw, -latex]
+
+\definecolor{WhiteSmoke}{RGB}{245,245,245}
+\definecolor{Gainsboro}{RGB}{220,220,220}
+\definecolor{DimGray}{RGB}{105,105,105}
+\definecolor{DarkGray}{RGB}{64,64,64}
+\definecolor{SteelBlue}{RGB}{70,130,180}
+\definecolor{IndianRed}{RGB}{205,92,92}
+
+
+\setbeamercolor{section in toc}{fg=DarkGray}
+\setbeamercolor{subsection in toc}{fg=DimGray}
+\setbeamercolor{normal text}{fg=DarkGray}
+\setbeamercolor{title}{bg=Gainsboro,fg=SteelBlue}
+\setbeamercolor{frametitle}{bg=Gainsboro,fg=SteelBlue}
+\setbeamercolor{block title}{bg=Gainsboro,fg=SteelBlue}
+\setbeamercolor{block body}{bg=WhiteSmoke, fg=DarkGray}
+\setbeamercolor*{enumerate item}{fg=SteelBlue}
+
+%------------------------------------------------------------------------------
+% Show toc before any section
+%------------------------------------------------------------------------------
+
+%\AtBeginSection[]
+%{%
+% \begin{frame}<beamer>
+% \frametitle{Plan}
+% \tableofcontents[currentsection]
+% \end{frame}
+%}
+
+%------------------------------------------------------------------------------
+% Define commands for backup slides
+%------------------------------------------------------------------------------
+
+\newcommand{\backupbegin}{%
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+
+\newcommand{\backupend}{%
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+\makeatletter
+\@removefromreset{subsection}{section}
+\makeatother
+\setcounter{subsection}{1}
+
+%------------------------------------------------------------------------------
+% Bibliography style
+%------------------------------------------------------------------------------
+
+% Bibliography
+\bibliographystyle{apalike}
+
+%-----------------------
+% User-defined commands 
+%-------------------------
+
+% User-defined commands
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\triu}{triu}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argsup}{arg\,sup}
+\DeclareMathOperator*{\arginf}{arg\,inf}
+\DeclareMathOperator*{\Sh}{Sh}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\ind}[1]{\mathbbm{1}_{#1}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\calA}{\mathcal{A}}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\E}[2][]{\mathbb{E}_{#1}\left[ #2 \right]}
+\renewcommand{\P}[2][]{\mathbb{P}_{#1}\left( #2 \right)}
+\newcommand{\Var}[2][]{\operatorname{Var}_{#1}\left( #2 \right)}
+\newcommand{\Cov}[2][]{\operatorname{Cov}_{#1}\left( #2 \right)}
+
+\newcommand{\pardev}[2]{\frac{\partial #1}{\partial #2}}
+
+% Algorithmic - rename require/ensure to input/output
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  keepspaces=true,
+}

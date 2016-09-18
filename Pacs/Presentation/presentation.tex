@@ -1,0 +1,80 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\usepackage{Style/style}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+% The short title appears at the bottom of every slide, the full title is only on the title page
+\title[]{Reinforcement Learning for Automated Trading} 
+
+\author[P.\,Necchi]
+{%
+  \texorpdfstring{
+    \begin{columns}%[onlytextwidth]
+      \column{1\linewidth}
+      \centering
+      Pierpaolo Necchi\\
+      \href{mailto:pierpaolo.necchi@gmail.com}{pierpaolo.necchi@gmail.com}
+    \end{columns}
+  }
+  {Pierpaolo Necchi}
+}
+		 
+\institute[Polimi] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{%
+%Politecnico di Milano%\\ % Your institution for the title page
+%\medskip
+%\textit{john@smith.com} % Your email address
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+	\begin{figure}[htpb]
+		\centering
+		\includegraphics[width=0.5\linewidth]{Images/polimi_name}
+	\end{figure}
+	\titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Indice 
+%------------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Plan} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Corpo della presentazione 
+%------------------------------------------------------------------------------
+
+\input{Sections/2_reinforcement_learning.tex}
+\input{Sections/3_asset_allocation.tex}
+\input{Sections/4_implementation.tex}
+\input{Sections/6_numerical_results.tex}
+\input{Sections/7_conclusions.tex}
+
+%------------------------------------------------------------------------------
+% Appendice
+%------------------------------------------------------------------------------
+
+%\appendix
+%\backupbegin
+%
+%\begin{frame}
+%\frametitle{\refname}
+%\bibliography{Bibliography/bibliography}
+%\end{frame}
+%
+%\backupend
+
+\end{document}
