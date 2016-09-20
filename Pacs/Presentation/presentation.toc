@@ -2,6 +2,6 @@
 \select@language {english}
 \beamer@sectionintoc {1}{Basics of Reinforcement Learning}{3}{0}{1}
 \beamer@sectionintoc {2}{Asset Allocation with Transaction Costs}{8}{0}{2}
-\beamer@sectionintoc {3}{Implementation}{8}{0}{3}
-\beamer@sectionintoc {4}{Numerical Results}{12}{0}{4}
-\beamer@sectionintoc {5}{Conclusions and Future Developments}{16}{0}{5}
+\beamer@sectionintoc {3}{Implementation}{9}{0}{3}
+\beamer@sectionintoc {4}{Numerical Results}{13}{0}{4}
+\beamer@sectionintoc {5}{Conclusions and Future Developments}{17}{0}{5}

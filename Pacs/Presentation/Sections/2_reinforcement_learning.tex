@@ -32,15 +32,41 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}{Policy and Objective Function}
-
+\begin{frame}{Policy and Value Function}
+	\begin{block}{Policy}
+		 A policy is a function $\pi: \S \times \A \to \R$ such that, $\forall s \in \S$, $C \mapsto \pi(s,C)$ is a probability distribution over $(\A, \calA)$
+	\end{block}
+	\begin{block}{Return}
+		\begin{equation*}
+			G_t = \sum^{\infty}_{t=0} \gamma^t R_{t+k+1} 
+		\end{equation*}
+	\end{block}
+	\begin{block}{Value Function}
+		\begin{equation*}
+			V_\pi(s) = \E[\pi]{G_t|S_t = s}
+		\end{equation*}
+	\end{block}
+	\begin{block}{Agent's goal}
+		Select a policy $\pi^*$ that maximizes his expected return in all possible states. This policy is called \emph{optimal}.
+	\end{block}
 \end{frame}
 
-\begin{frame}{Policy Gradient Theorem}
+\begin{frame}{Policy Gradient Methods}
+	\begin{block}{Key idea}
+	$\pi_*$ is approximated using a parametrized policy $\pi_{\theta^*}(s,a)$, where
+	\begin{equation*}
+		\theta^* = \argmax_{\theta \in \Theta} J(\theta) = V_{\pi_\theta}(s_0)
+	\end{equation*}
+	Using gradient descent, we have the following update scheme
+	\begin{equation*}
+		\theta_{k+1} = \theta_k + \alpha_k \nabla_\theta J\left(\theta_k\right)
+	\end{equation*}
+	\end{block}
+
 	\begin{block}{Policy Gradient Theorem}
 			Let $\pi_\theta$ be a differentiable policy. The policy gradient for the average reward formulation is given by
 			\begin{equation*}
-				\nabla_\theta \rho(\theta) =
+				\nabla_\theta J(\theta) =
 				\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
 				\pi_\theta(S,A) Q_{\theta}(S, A)}
 			\end{equation*}

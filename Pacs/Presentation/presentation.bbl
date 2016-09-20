@@ -1,3 +1,24 @@
 \begin{thebibliography}{}
 
+\bibitem[Joshi, 2008]{joshi2008c++}
+Joshi, M.~S. (2008).
+\newblock {\em C++ design patterns and derivatives pricing}, volume~2.
+\newblock Cambridge University Press.
+
+\bibitem[Moody et~al., 1998]{moody1998performance}
+Moody, J., Wu, L., Liao, Y., and Saffell, M. (1998).
+\newblock Performance functions and reinforcement learning for trading systems
+  and portfolios.
+\newblock {\em Journal of Forecasting}, 17:441--470.
+
+\bibitem[Peters and Schaal, 2008]{peters2008reinforcement}
+Peters, J. and Schaal, S. (2008).
+\newblock Reinforcement learning of motor skills with policy gradients.
+\newblock {\em Neural networks}, 21(4):682--697.
+
+\bibitem[Sutton and Barto, 1998]{sutton1998introduction}
+Sutton, R.~S. and Barto, A.~G. (1998).
+\newblock {\em Introduction to reinforcement learning}, volume 135.
+\newblock MIT Press Cambridge.
+
 \end{thebibliography}

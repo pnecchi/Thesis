@@ -19,37 +19,46 @@
 \headcommand {\sectionentry {2}{Asset Allocation with Transaction Costs}{8}{Asset Allocation with Transaction Costs}{0}}
 \headcommand {\beamer@sectionpages {3}{7}}
 \headcommand {\beamer@subsectionpages {3}{7}}
-\headcommand {\sectionentry {3}{Implementation}{8}{Implementation}{0}}
-\headcommand {\beamer@sectionpages {8}{7}}
-\headcommand {\beamer@subsectionpages {8}{7}}
-\headcommand {\slideentry {3}{1}{8}{8/8}{}{0}}
+\headcommand {\slideentry {2}{1}{8}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
+\headcommand {\sectionentry {3}{Implementation}{9}{Implementation}{0}}
+\headcommand {\beamer@sectionpages {8}{8}}
+\headcommand {\beamer@subsectionpages {8}{8}}
 \headcommand {\slideentry {3}{1}{9}{9/9}{}{0}}
 \headcommand {\beamer@framepages {9}{9}}
 \headcommand {\slideentry {3}{1}{10}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
 \headcommand {\slideentry {3}{1}{11}{11/11}{}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\sectionentry {4}{Numerical Results}{12}{Numerical Results}{0}}
-\headcommand {\beamer@sectionpages {8}{11}}
-\headcommand {\beamer@subsectionpages {8}{11}}
-\headcommand {\slideentry {4}{1}{12}{12/12}{}{0}}
+\headcommand {\slideentry {3}{1}{12}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
+\headcommand {\sectionentry {4}{Numerical Results}{13}{Numerical Results}{0}}
+\headcommand {\beamer@sectionpages {9}{12}}
+\headcommand {\beamer@subsectionpages {9}{12}}
 \headcommand {\slideentry {4}{1}{13}{13/13}{}{0}}
 \headcommand {\beamer@framepages {13}{13}}
 \headcommand {\slideentry {4}{1}{14}{14/14}{}{0}}
 \headcommand {\beamer@framepages {14}{14}}
 \headcommand {\slideentry {4}{1}{15}{15/15}{}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\sectionentry {5}{Conclusions and Future Developments}{16}{Conclusions and Future Developments}{0}}
-\headcommand {\beamer@sectionpages {12}{15}}
-\headcommand {\beamer@subsectionpages {12}{15}}
-\headcommand {\slideentry {5}{1}{16}{16/16}{}{0}}
+\headcommand {\slideentry {4}{1}{16}{16/16}{}{0}}
 \headcommand {\beamer@framepages {16}{16}}
+\headcommand {\sectionentry {5}{Conclusions and Future Developments}{17}{Conclusions and Future Developments}{0}}
+\headcommand {\beamer@sectionpages {13}{16}}
+\headcommand {\beamer@subsectionpages {13}{16}}
 \headcommand {\slideentry {5}{1}{17}{17/17}{}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\beamer@partpages {1}{17}}
-\headcommand {\beamer@subsectionpages {16}{17}}
-\headcommand {\beamer@sectionpages {16}{17}}
-\headcommand {\beamer@documentpages {17}}
-\headcommand {\def \inserttotalframenumber {17}}
+\headcommand {\slideentry {5}{1}{18}{18/18}{}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\partentry {Appendix}{1}}
+\headcommand {\beamer@partpages {1}{18}}
+\headcommand {\beamer@sectionpages {17}{18}}
+\headcommand {\beamer@subsectionpages {17}{18}}
+\headcommand {\beamer@appendixpages {19}}
+\headcommand {\slideentry {5}{0}{19}{19/19}{}{1}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@partpages {19}{19}}
+\headcommand {\beamer@subsectionpages {19}{19}}
+\headcommand {\beamer@sectionpages {19}{19}}
+\headcommand {\beamer@documentpages {19}}
+\headcommand {\def \inserttotalframenumber {18}}
