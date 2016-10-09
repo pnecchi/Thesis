@@ -73,6 +73,7 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{caption}
+\usepackage{hyperref}
 
 % Tikz settings
 \tikzstyle{block} = [rectangle, draw, 
@@ -99,18 +100,22 @@
 \setbeamercolor{block title alerted}{bg=LightCoral,fg=IndianRed}
 \setbeamercolor{block body alerted}{bg=MistyRose, fg=DarkGray}
 \setbeamercolor*{enumerate item}{fg=SteelBlue}
+\setbeamercolor{bibliography entry author}{fg=SteelBlue}
+\setbeamercolor{bibliography entry title}{fg=DarkGray} 
+\setbeamercolor{bibliography entry location}{fg=DimGray} 
+
 
 %------------------------------------------------------------------------------
 % Show toc before any section
 %------------------------------------------------------------------------------
 
-%\AtBeginSection[]
-%{%
-% \begin{frame}<beamer>
-% \frametitle{Plan}
-% \tableofcontents[currentsection]
-% \end{frame}
-%}
+\AtBeginSection[]
+{%
+ \begin{frame}<beamer>
+ \frametitle{Plan}
+ \tableofcontents[currentsection]
+ \end{frame}
+}
 
 %------------------------------------------------------------------------------
 % Define commands for backup slides

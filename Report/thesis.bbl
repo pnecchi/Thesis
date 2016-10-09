@@ -151,6 +151,10 @@
 {\sc T.~Elder}, {\em Creating algorithmic traders with hierarchical
   reinforcement learning},  (2008).
 
+\bibitem{fama1991efficient}
+{\sc E.~F. Fama}, {\em Efficient capital markets: Ii}, The journal of finance,
+  46 (1991), pp.~1575--1617.
+
 \bibitem{feldkamp1998enhanced}
 {\sc L.~A. Feldkamp, D.~V. Prokhorov, C.~F. Eagen, and F.~Yuan}, {\em Enhanced
   multi-stream kalman filter training for recurrent networks}, in Nonlinear
@@ -185,6 +189,10 @@
 {\sc H.~Jaeger}, {\em Tutorial on training recurrent neural networks, covering
   BPPT, RTRL, EKF and the echo state network approach}, GMD-Forschungszentrum
   Informationstechnik, 2002.
+
+\bibitem{jensen1978some}
+{\sc M.~C. Jensen}, {\em Some anomalous evidence regarding market efficiency},
+  Journal of financial economics, 6 (1978), pp.~95--101.
 
 \bibitem{joshi2008c++}
 {\sc M.~S. Joshi}, {\em C++ design patterns and derivatives pricing}, vol.~2,
@@ -243,6 +251,14 @@
 {\sc S.~Mahadevan}, {\em Average reward reinforcement learning: Foundations,
   algorithms, and empirical results}, Machine learning, 22 (1996),
   pp.~159--195.
+
+\bibitem{malkiel1970efficient}
+{\sc B.~G. Malkiel and E.~F. Fama}, {\em Efficient capital markets: A review of
+  theory and empirical work}, The journal of Finance, 25 (1970), pp.~383--417.
+
+\bibitem{mallaby2010more}
+{\sc S.~Mallaby}, {\em More money than god: Hedge funds and the making of the
+  new elite}, A\&C Black, 2010.
 
 \bibitem{markowitz1952portfolio}
 {\sc H.~Markowitz}, {\em Portfolio selection}, The journal of finance, 7
@@ -337,6 +353,11 @@
   ICML '01, San Francisco, CA, USA, 2001, Morgan Kaufmann Publishers Inc.,
   pp.~473--480.
 
+\bibitem{pybrain2010jmlr}
+{\sc T.~Schaul, J.~Bayer, D.~Wierstra, Y.~Sun, M.~Felder, F.~Sehnke,
+  T.~R{\"u}ckstie{\ss}, and J.~Schmidhuber}, {\em {PyBrain}}, Journal of
+  Machine Learning Research, 11 (2010), pp.~743--746.
+
 \bibitem{sehnke2012parameter}
 {\sc F.~Sehnke et~al.}, {\em Parameter exploring policy gradients and their
   implications}, PhD thesis, Technische Universit{\"a}t M{\"u}nchen, 2012.
@@ -354,6 +375,12 @@
 \bibitem{sharpe1994sharpe}
 {\sc W.~F. Sharpe}, {\em The sharpe ratio}, The journal of portfolio
   management, 21 (1994), pp.~49--58.
+
+\bibitem{silver2016mastering}
+{\sc D.~Silver, A.~Huang, C.~J. Maddison, A.~Guez, L.~Sifre, G.~Van
+  Den~Driessche, J.~Schrittwieser, I.~Antonoglou, V.~Panneershelvam,
+  M.~Lanctot, et~al.}, {\em Mastering the game of go with deep neural networks
+  and tree search}, Nature, 529 (2016), pp.~484--489.
 
 \bibitem{silver2014deterministic}
 {\sc D.~Silver, G.~Lever, N.~Heess, T.~Degris, D.~Wierstra, and M.~Riedmiller},
@@ -405,6 +432,10 @@
 {\sc Z.~Tan, C.~Quek, and P.~Y. Cheng}, {\em Stock trading with cycles: A
   financial application of anfis and reinforcement learning}, Expert Systems
   with Applications, 38 (2011), pp.~4741--4755.
+
+\bibitem{timmermann2004efficient}
+{\sc A.~Timmermann and C.~W. Granger}, {\em Efficient market hypothesis and
+  forecasting}, International Journal of forecasting, 20 (2004), pp.~15--27.
 
 \bibitem{tsay2005analysis}
 {\sc R.~S. Tsay}, {\em Analysis of financial time series}, vol.~543, John Wiley

@@ -13,16 +13,19 @@ This type of problem appears in many domains, such as when computing the greeks 
 	\end{split}
 \end{equation*}
 Thus, the likelihood ratio technique simply consists in the following equality
+\begin{proposition}[Likelihood Ratio Technique]
 \begin{equation}
 	\nabla_\theta \E[Z \sim p_\theta]{f(Z)} = \E[Z\sim p_\theta]{\nabla_\theta \log p_\theta(Z) f(Z)}
 \end{equation}
-where $\nabla_\theta \log p_\theta(Z)$ is usually called likelihood score. This result provides a simple way to approximate the gradient using a Monte Carlo estimate: let $\{Z^{(m)}\}_{m=1}^M$ be i.i.d. samples from $p_\theta$, then 
+\end{proposition}
+The quantity $\nabla_\theta \log p_\theta(Z)$ is usually called likelihood score. This result provides a simple way to approximate the gradient using a Monte Carlo estimate: let $\{Z^{(m)}\}_{m=1}^M$ be i.i.d. samples from $p_\theta$, then 
 \begin{equation}
 	\nabla_\theta \E[Z \sim p_\theta]{f(Z)} \approx \frac{1}{M} \sum_{m=1}^M \nabla_\theta \log p_\theta(Z^{(m)}) f(Z^{(m)})	
 \end{equation}
 As we will see in the following sections, this technique provides the basis for some of the most common policy gradient algorithms in the reinforcement learning literature. 
 
 \subsection{Monte Carlo Policy Gradient}
+\label{sec:MCPG}
 Let $h = {\{(s_t, a_t)\}}_{t\geq 0} \in \H$ be a given trajectory of the MDP and let us 
 denote by $p_\theta(h) = \P[\pi_\theta]{H = h}$ the probability of obtaining 
 this trajectory under policy $\pi_\theta$. Let $G(h)$ denote the expected return obtained on trajectory $h$
@@ -30,9 +33,9 @@ this trajectory under policy $\pi_\theta$. Let $G(h)$ denote the expected return
 	G(h) = \E{G_0 | H = h} = \sum_{t=0}^\infty \gamma^t \calR(s_t,
 	a_t) 
 \end{equation*}
-Let us consider the average value objective function, which can be rewritten as an expectation over all possible trajectories
+Let us consider the start value objective function, which can be rewritten as an expectation over all possible trajectories
 \begin{equation*}
-	J_{\text{avV}}(\theta) = \E[H \sim p_\theta]{G(H)}
+	J_{\text{start}}(\theta) = \E[H \sim p_\theta]{G(H)}
 \end{equation*}
 Applying the likelihood ratio technique, we obtain
 \begin{equation}
@@ -45,7 +48,7 @@ knowledge of the transition probability kernel $\calP$. Indeed, by a recursive a
 	p_\theta(h) = \P{S_0 = s_0} \prod_{t=0}^\infty \pi_\theta(s_t, a_t)
 	\calP(s_t, a_t, s_{t+1})
 \end{equation*}
-from which we obtain
+taking the logarithm yields
 \begin{equation*}
 	\log p_\theta(h) = \log \P{S_0 = s_0} + \sum_{t=0}^\infty \log 
 	\pi_\theta(s_t, a_t) + \sum_{t=0}^\infty \log \calP(s_t, a_t, s_{t+1})
@@ -85,7 +88,7 @@ rate of the algorithm. A first approach to address this issue is to optimally
 set the baseline to reduce the gradient variance.
 
 \subsubsection{Optimal Baseline}
-A standard variance reduction technique, called control variate, consists in setting the baseline so as to minimize the gradient estimate variance. More in detail, the optimal baseline for the $k$-th gradient component $\widehat{g}_{k}$ solves
+A standard variance reduction technique consists in setting the baseline so as to minimize the gradient estimate variance. More in detail, the optimal baseline for the $k$-th gradient component $\widehat{g}_{k}$ solves
 \begin{equation*}
 	b_k^* = \argmin_b \Var{\widehat{g}_{k}}
 \end{equation*} 
@@ -114,7 +117,7 @@ which can be approximated by
 \end{algorithm}
 
 \subsection{GPOMDP}
-The Monte Carlo policy gradient estimate is typically characterized by a large variance, which may slow the method's convergence. To improve the estimate, it is sufficient to notice that future actions and past rewards are independent, unless the policy has been changed. Therefore, combining this observation with Eq. (\ref{eq:likelihood_bias}) yields
+The Monte Carlo policy gradient estimate is typically characterized by a large variance, which may slow down the method's convergence. To improve the estimate, it is sufficient to notice that future actions and past rewards are independent, unless the policy has been changed. Therefore, combining this observation with Eq. (\ref{eq:likelihood_bias}) yields
 \begin{equation*}
 	\E[\pi_\theta]{\nabla_\theta\log \pi_\theta(S_t, A_t) \calR(S_s, A_s)} = 0
 	\;\;\;\;\; \forall t>s
@@ -128,17 +131,6 @@ the objective function
 	\sum^{T^{(m)}}_{j=i} \gamma^j r_{j+1}^{(m)} - b \right)
 \end{equation}
 By removing almost half of the cross-products, this estimate typically has a smaller variance than the trivial REINFORCE policy gradient and can be further reduced by computing an optimal baseline. In the following sections we will see how this algorithm can be easily derived from a more general result: the policy gradient theorem. 
-
-\subsection{Risk-Sensitive Monte Carlo Policy Gradient}
-For an episodic environment, the REINFORCE algorithm can be easily extended to the risk-sensitive framework described above. Indeed, it is sufficient to adapt its derivation for the average return to the second-moment of return
-\begin{equation*}
-	U(\theta) = \E[H\sim p_\theta]{G(H)^2}
-\end{equation*}
-Applying the likelihood ratio technique, we obtain
-\begin{equation*}
-	\nabla_\theta U(\theta) = \E[H\sim p_\theta]{\nabla_\theta \log p_\theta(H) G(H)^2}
-\end{equation*}
-From which we can easily derive a Monte Carlo estimate. Since the problems we will consider in the next chapters are not episodic, we will not investigate this approach further and we refer the interested reader to the extensive work of Tamar et Al. \cite{tamar2012policy}, \cite{tamar2013temporal}, \cite{tamar2013variance}, \cite{tamar2015policy}, \cite{chow2015risk}.
 
 \subsection{Stochastic Policies}
 The likelihood ratio technique is a powerful tool and it allows to derive some powerful policy gradient algorithms. However, this approach only works if the policy is  stochastic. In most cases this is not a big problem, since stochastic policies are needed anyway to ensure sufficient exploration of the state-action space. Moreover, stochastic policies might be beneficial in partially observable MDP to avoid state aliasing and in adversarial learning where the Pareto optimal strategies of different players are randomized, such as in the classical game ``rock-paper-scissors''. We introduce now two standard examples of stochastic policies for discrete and continuous action spaces respectively.  
@@ -156,7 +148,7 @@ where $\Phi(s,a) \in \R^{D_\theta}$ is a given feature vector corresponding to s
 
 \subsubsection{Gaussian Exploration Policy} 
 \label{sec:gaussian_policy}
-In continuous action spaces, a Gaussian exploration policy is commonly used. According to this policy, in a state $s$, actions are sampled from a Gaussian distribution with a parametric state-dependent mean $\mu_\psi(s) \in \R^{D_a}$, with $\psi \in \R^{D_\psi}$, and a covariance matrix $\Sigma \in \R^{D_a \times D_a}$. The policy parameters consist of $\theta = {\psi, \Sigma}$ and the likelihood score are thus given by 
+In continuous action spaces, a Gaussian exploration policy is commonly used. According to this policy, in a state $s$, actions are sampled from a Gaussian distribution with a parametric state-dependent mean $\mu_\psi(s) \in \R^{D_a}$, with $\psi \in \R^{D_\psi}$, and a covariance matrix $\Sigma \in \R^{D_a \times D_a}$. The policy parameters consist of $\theta = \{\psi, \Sigma\}$ and the likelihood score are thus given by 
 \begin{equation}
 	\nabla_\psi \log \pi_\theta(s,a) = \left(\frac{\partial \mu_\psi(s)}{\partial \psi}\right)^T \Sigma^{-1} (a - \mu_\psi(s))
 \end{equation}

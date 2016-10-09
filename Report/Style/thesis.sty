@@ -1,5 +1,6 @@
 % Useful packages 
 \usepackage[utf8]{inputenc}
+\usepackage[]{xcolor}
 \usepackage[english]{babel}
 \usepackage[top=43mm, bottom=44mm, left=41mm, right=32mm]{geometry}
 \usepackage{float}
@@ -83,6 +84,7 @@
 \newcommand{\calM}{\mathcal{M}}
 \newcommand{\calN}{\mathcal{N}}
 \newcommand{\calK}{\mathcal{K}}
+\newcommand{\calF}{\mathcal{F}}
 \newcommand{\E}[2][]{\mathbb{E}_{#1}\left[ #2 \right]}
 \renewcommand{\P}[2][]{\mathbb{P}_{#1}\left( #2 \right)}
 \newcommand{\Var}[2][]{\operatorname{Var}_{#1}\left( #2 \right)}
@@ -99,3 +101,14 @@
 % Algorithmic - rename require/ensure to input/output
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+% Hyperref settings 
+\definecolor{SteelBlue}{RGB}{70,130,180}
+\definecolor{Blue}{RGB}{0,63,106}
+\hypersetup{
+	linkcolor  = SteelBlue,
+    citecolor  = SteelBlue,
+    urlcolor   = SteelBlue,
+    colorlinks = true,
+    linkbordercolor = {white}
+}

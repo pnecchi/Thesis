@@ -1,5 +1,117 @@
-\section{Risk-Sensitive Policy Gradient Theorem}
-In this section the policy gradient theorem is extended to the risk-sensitive framework. In the average reward formulation of the control problem, the theorem and its derivation are analogous to those presented in the last section for the risk-neutral framework. This will allow us to derive in a trivial way the risk-sensitive versions of all the learning algorithms seen above. The risk-sensitive policy gradient theorem for the average-reward formulation was first derived in \cite{prashanth2014actor} and the presentation of this section closely follows the original article. Obtaining an equivalent theorem for the discounted reward formulation is more challenging. In the article cited above, the authors prove the theorem under a very strong assumption on the dependence of rewards obtained at different time steps which is not verified in many applications, among which is the asset allocation problem that we will consider in the next chapter. We will discuss the problems arising in the discounted setting and why it is not easy to derive a policy gradient theorem in this case. In the original article the authors mostly considered the mean-variance criterion since all the algorithms they propose are easily adapted to the Sharpe ratio criterion. Here we take the opposite direction and present the algorithms for the Sharpe ratio, referring to their article for the mean-variance counterparts.\\   
+\chapter{Risk-Sensitive Policy Gradient}
+
+Risk aware decision making plays a crucial role in many fields, such as finance and process control. In this chapter we discuss some policy gradient methods for the risk-sensitive formulation of a sequential decision problem. This extension presents some difficulties which have attracted the interest of many researchers in the last years. In particular, while in the risk-neutral framework the policy gradient theorem represents the keystone for all the learning algorithms, in the risk-sensitive framework the approaches for the episodic setting, the discounted reward and the average reward formulations are quite different. The goal of this chapter is to give an overview of the methods found in the literature and to try to unify them in a way similar to the risk-neutral framework. This chapter and the following represent the main contribution of this thesis to the policy gradient literature.    
+
+\section{Risk-Sensitive Framework}
+In the risk-sensitive framework, in addition to maximizing his reward, the agent also wants to control the risk he takes on to achieve it. It is thus necessary to introduce a function $\Lambda: \Theta \to \R$ such that $\Lambda(\theta)$ measures the risk associated with the policy $\pi_\theta$. In an episodic framework where the system always starts from the same initial state $s_0$, the variance of the total return can be used \cite{tamar2012policy}
+\begin{definition}[Start Variance]
+	The start variance is the variance of the return that can be obtained starting from the start state $s_0 \in \S$ and following policy $\pi_\theta$
+	\begin{equation}
+		\Lambda_{\text{start}}(\theta) = \Var[\pi_\theta]{G_0\ |\ S_0 = s_0}
+			= U_{\pi_\theta} (s_0) - V_{\pi_\theta} (s_0)^2 
+	\end{equation}
+\end{definition}
+In many application one may want control only the downside risk, that is the risk of the actual return being below the expected return or the uncertainty about the magnitude of that difference. This risk may be measured by the semivariance
+\begin{definition}[Semivariance]
+	\begin{equation}
+		\Lambda_\textbf{down}(\theta) = \text{SVar}(\theta) = \E[\pi_\theta]{\min\left\{G_0 - \E[\pi_\theta]{G_0}, 0\right\}^2 | S_0 = s_0}
+	\end{equation}
+\end{definition}	
+Is square root is called semideviation. In a continuing environment, we might consider the long-run variance \cite{prashanth2014actor} defined in Section \ref{sec:risk_sensitive_formulation}
+\begin{definition}[Long-Run Variance]
+	The long-run variance $\Lambda_\pi$ under policy $\pi$ is defined as
+	\begin{equation}
+		\begin{split}
+			\Lambda_{\text{long-run}}(\theta) &= \lim_{T \to \infty} \frac{1}{T} \E[\pi_\theta]{
+			\sum^{T-1}_{t=0} \left(R_{t+1} - \rho(\theta)\right)^2}\\
+		\end{split}
+	\end{equation}
+\end{definition}
+In order to formalize the trade-off between reward and risk from a mathematical point of view, we borrow two standard risk-sensitive performance measures from the financial literature: the mean-variance criterion \cite{markowitz1952portfolio} and the Sharpe ratio \cite{sharpe1994sharpe}.
+\begin{definition}[Mean-Variance Criterion]
+	The mean-variance criterion is defined as 
+	\begin{equation}
+		J_\text{MV}(\theta) = J(\theta) - \chi \Lambda(\theta)
+	\end{equation}
+	where $\chi > 0$ is a constant that controls the trade-off between reward and risk. 
+\end{definition} 
+
+\begin{definition}[Sharpe Ratio]
+	The Sharpe ratio is defined as 
+	\begin{equation}
+		\Sh(\theta) = \frac{J(\theta)}{\sqrt{\Lambda(\theta)}}
+	\end{equation}
+\end{definition} 
+Let us remark that in the financial literature the ratio of the expected return and the semideviation is called Sortino ratio. In a risk-sensitive policy gradient algorithm, we try to approximate the optimal parameters that maximize these objective functions by updating the parameters following the gradient ascent directions. In the average-reward formulation, the ascent directions are given by 
+\begin{equation}
+	\label{eq:gradient_mean_variance}
+	\nabla_\theta J_{\text{MV}}(\theta) = \nabla_\theta \rho(\theta) - \chi \nabla_\theta \Lambda(\theta)
+\end{equation}
+for the mean-variance criterion, where 
+\begin{equation}
+	\nabla_\theta \Lambda(\theta) =	\nabla_\theta \eta(\theta) - 2 \rho(\theta) \nabla_\theta \rho(\theta)
+\end{equation} 
+and by 
+\begin{equation} 
+	\label{eq:gradient_sharpe_ratio}
+	\nabla_\theta \Sh(\theta) = \frac{\eta(\theta) \nabla_\theta \rho(\theta) - \frac{1}{2} \rho(\theta) \nabla_\theta \eta(\theta)}{\Lambda(\theta) \sqrt{\Lambda(\theta)}}
+\end{equation}
+for the Sharpe ratio. Hence, in the risk-sensitive framework it is necessary to estimate to different gradients: $\nabla_\theta \rho(\theta)$ and $\nabla_\theta \eta(\theta)$. The equivalent expressions for the episodic setting can be obtained by replacing $\rho(\theta)$ (resp. $\eta(\theta)$) with $V_\theta(s_0)$ (resp. $U_\theta(s_0)$). The estimation of $\nabla_\theta \rho(\theta)$ (resp. $V_\theta(s_0)$) has been the focus of the last chapter. In the next sections, we discuss instead several techniques to estimate the new gradient $\eta(\theta)$ (resp. $U_\theta(s_0)$).
+
+\section{Monte Carlo Policy Gradient}
+For an episodic environment, the REINFORCE algorithm can be easily extended to the risk-sensitive framework described above \cite{tamar2012policy}. Indeed, it is sufficient to adapt its derivation for the average return to the second-moment of return
+\begin{equation}
+	U(\theta) = \E[H\sim p_\theta]{G(H)^2}
+\end{equation}
+Applying the likelihood ratio technique, we obtain
+\begin{equation}
+	\nabla_\theta U(\theta) = \E[H\sim p_\theta]{\nabla_\theta \log p_\theta(H) G(H)^2}
+\end{equation}
+Similarly to the risk-neutral framework, we can introduce a baseline without affecting the value of the gradient
+\begin{equation}
+	\nabla_\theta U(\theta) = \E[H\sim p_\theta]{\nabla_\theta \log p_\theta(H) (G(H)^2 - b)}
+\end{equation}
+In an episodic environment, we can estimate the gradient via its Monte Carlo estimate
+\begin{equation}
+	\label{eq:reinforce_gradient_2}
+	\nabla_\theta U(\theta) \approx \frac{1}{M} \sum_{m = 0}^{M} \nabla_\theta \log p_\theta\left(h^{(m)}\right) \left[G\left(h^{(m)}\right)^2 - b\right]
+\end{equation}
+where $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)})\}_{t = 0}^{T^{(m)}}$ are $M$ trajectories of the MDP sampled under policy $\pi_\theta$. When using a single trajectory, we obtain the following stochastic gradient estimate 
+\begin{equation}
+	\nabla_\theta U(\theta) \approx \nabla_\theta \log p_\theta\left(h\right) \left[G\left(h\right)^2 - b\right]
+\end{equation}
+Again the baseline can be set so as to minimize the variance of the gradient estimate
+\begin{equation}
+	\label{eq:optimal_baseline_2}
+	\widehat{b}_k^* = \frac{\sum^{M}_{m=1} \left[\partial_{\theta_k} \log p_\theta\left(h^{(m)}\right)\right]^2 G(h^{(m)})^2}{\sum^{M}_{m=1} \left[ \partial_{\theta_k} \log p_\theta\left(h^{(m)}\right)\right]^2}
+\end{equation}
+Combining this estimate with the one for the average return discussed in Section \ref{sec:MCPG} yields the risk-sensitive Monte Carlo Policy Gradient method, which is outlined in Algorithm \ref{algo:RSreinforce}.\\
+In an episodic setting, as long as we can rewrite the objective function as expected values on all possible trajectories of the MDP, the likelihood ratio technique yields an analytical expression for its gradient. Hence, this approach can be generalized to more complex measures of risk commonly used in finance, such as the semivariance introduced above. Indeed, the semivariance can be rewritten as 
+\begin{equation}
+	\text{SVar}(\theta) = \E[H \sim p_\theta]{\min\left\{G(H) - \E[H \sim p_\theta]{G(H)}, 0\right\}^2}
+\end{equation}
+Hence, by the likelihood ratio technique
+\begin{equation}
+	\nabla_\theta \text{SVar}(\theta) = \E[H \sim p_\theta]{\nabla_\theta \log p_\theta(H) \min\left\{G(H) - \E[H \sim p_\theta]{G(H)}, 0\right\}^2}
+\end{equation}
+From which we can easily derive a Monte Carlo estimate. Since the problems we will consider in the next chapters are not episodic. In the episodic setting, the extension of policy gradient algorithms to the risk-sensitive formulation doesn't present particular difficulties. For a more thorough presentation as well as some more advanced learning algorithms, we refer the interested reader to the extensive work of Tamar et Al.  \cite{tamar2013temporal}, \cite{tamar2013variance}, \cite{tamar2015policy}, \cite{chow2015risk}.
+\begin{algorithm}[t]
+	\caption{Risk-sensitive REINFORCE policy gradient estimate}
+	\label{algo:RSreinforce}
+	\begin{algorithmic}[1]
+		\Require Policy parameterization $\theta$, number of trajectories $M$
+		\Ensure Risk-sensitive REINFORCE policy gradient estimate
+		\State Sample $M$ trajectories of the MDP following policy $\pi_\theta$
+		\State Compute the optimal baseline for the return via Eq. (\ref{eq:optimal_baseline})
+		\State Compute the optimal baseline for the squared return via Eq. (\ref{eq:optimal_baseline_2})
+		\State Compute the gradient of the expected return via Eq. (\ref{eq:reinforce_gradient})
+		\State Compute the gradient of the expected squared return via Eq. (\ref{eq:reinforce_gradient_2})
+		\State Compute the risk-sensitive policy gradient via either Eq. (\ref{eq:gradient_mean_variance}) or (\ref{eq:gradient_sharpe_ratio})
+	\end{algorithmic}
+\end{algorithm}
+
+\section{Policy Gradient Theorem}
+In this section the policy gradient theorem is extended to the risk-sensitive framework. In the average reward formulation of the control problem, the theorem and its derivation are analogous to those presented in the last section for the risk-neutral framework. This will allow us to derive in a trivial way the risk-sensitive versions of all the learning algorithms seen in the previous chapter. The risk-sensitive policy gradient theorem for the average-reward formulation was first derived in \cite{prashanth2014actor} and the presentation of this section closely follows the original article. Obtaining an equivalent theorem for the discounted reward formulation is more challenging. In the article cited above, the authors prove the theorem under a very strong assumption on the dependence of rewards obtained at different time steps which is not verified in many applications, among which is the asset allocation problem that we will consider in the next chapter. We will discuss the problems arising in the discounted setting and why it is not easy to derive a policy gradient theorem in this case. In the original article the authors mostly considered the mean-variance criterion since all the algorithms they propose are easily adapted to the Sharpe ratio criterion. Here we take the opposite direction and present the algorithms for the Sharpe ratio, referring to their article for the mean-variance counterparts.\\   
 Let us consider a family of parametrized policies $\pi_\theta$, with $\theta
 \in \Theta \subseteq \R^{D_\theta}$. The optimization problem then becomes
 \begin{equation}
@@ -227,4 +339,4 @@ The gradient of the state-value function $\nabla_\theta V_\theta(s_0)$ is given 
 		\end{split}
 	\end{equation*} 
 \end{proof}
-Compared to risk-sensitive policy gradient theorem in the average reward formulation, we have two additional terms: one term depending on the gradient of the state-value function at the next state and another term depending on the covariance between the one-step reward and the successive return. These terms are very difficult to approximate online in a continuing environment. Therefore, the result is of practical interest only for an episodic environment where the experiments have a finite (possible random) lifespan. Since the application we considered does not fall in this category, we won't discuss any risk-sensitive algorithm for the discounted formulation. 
+Compared to risk-sensitive policy gradient theorem in the average reward formulation, we have two additional terms: one term depending on the gradient of the state-value function at the next state and another term depending on the covariance between the one-step reward and the successive return. These terms are very difficult to approximate online in a continuing environment. Therefore, the result is of practical interest only for an episodic environment where the experiments have a finite (possibly random) lifespan. Since the application we considered does not fall in this category, we won't discuss any risk-sensitive algorithm for the discounted formulation. 

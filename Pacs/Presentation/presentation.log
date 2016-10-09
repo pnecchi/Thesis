@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  21 SEP 2016 00:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  26 SEP 2016 08:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1060,17 +1060,20 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 
 [2
 
-] (./Sections/2_reinforcement_learning.tex [3
+] (./Sections/2_reinforcement_learning.tex (./presentation.toc) [3
 
 ] [4
 
-] [5
+]
+[5
+
+] [6
 
 ]
 Overfull \vbox (2.39381pt too high) detected at line 75
  []
 
-[6
+[7
 
 ]
 Package epstopdf Info: Source file: <Images/gpomdp.eps>
@@ -1083,43 +1086,50 @@ Package epstopdf Info: Source file: <Images/gpomdp.eps>
 d-to.pdf Images/gpomdp.eps>
 (epstopdf)             \includegraphics on input line 82.
 Package epstopdf Info: Output file is already uptodate.
- <Images/gpomdp-eps-converted-to.pdf, id=96, 1956.30875pt x 1367.1075pt>
+ <Images/gpomdp-eps-converted-to.pdf, id=107, 1956.30875pt x 1367.1075pt>
 File: Images/gpomdp-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Images/gpomdp-eps-converted-to.pdf>
 Package pdftex.def Info: Images/gpomdp-eps-converted-to.pdf used on input line 
 82.
 (pdftex.def)             Requested size: 307.28987pt x 214.73648pt.
- [7
+ [8
 
- <./Images/gpomdp-eps-converted-to.pdf>]) (./Sections/3_asset_allocation.tex [8
+ <./Images/gpomdp-eps-converted-to.pdf>]) (./Sections/3_asset_allocation.tex (.
+/presentation.toc) [9
 
-]) (./Sections/4_implementation.tex
-[9
+] [10
+
+])
+(./Sections/4_implementation.tex (./presentation.toc) [11
+
+] [12
 
 ]
-<Images/AgentEnvironmentInteractionReduced.png, id=118, 602.25pt x 251.3025pt>
+<Images/AgentEnvironmentInteractionReduced.png, id=148, 602.25pt x 251.3025pt>
 File: Images/AgentEnvironmentInteractionReduced.png Graphic file (type png)
 
 <use Images/AgentEnvironmentInteractionReduced.png>
 Package pdftex.def Info: Images/AgentEnvironmentInteractionReduced.png used on 
 input line 43.
 (pdftex.def)             Requested size: 307.28987pt x 128.22775pt.
- [10
+ [13
 
  <./Images/AgentEnvironmentInteractionReduced.png>]
-<Images/agent_reduced.png, id=124, 1255.965pt x 749.5275pt>
+<Images/agent_reduced.png, id=155, 1255.965pt x 749.5275pt>
 File: Images/agent_reduced.png Graphic file (type png)
 
 <use Images/agent_reduced.png>
 Package pdftex.def Info: Images/agent_reduced.png used on input line 50.
 (pdftex.def)             Requested size: 307.28987pt x 183.37851pt.
- [11
+ [14
 
- <./Images/agent_reduced.png>] [12
+ <./Images/agent_reduced.png>] [15
 
 ])
-(./Sections/6_numerical_results.tex [13
+(./Sections/6_numerical_results.tex (./presentation.toc) [16
+
+] [17
 
 ]
 Package epstopdf Info: Source file: <Images/6_0_single_synthetic_neutral_conver
@@ -1136,7 +1146,7 @@ convergence.eps>
 (epstopdf)             \includegraphics on input line 26.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=142, 
+<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=183, 
 1445.4pt x 722.7pt>
 File: Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1146,7 +1156,7 @@ Package pdftex.def Info: Images/6_0_single_synthetic_neutral_convergence-eps-co
 nverted-to.pdf used on input line 26.
 (pdftex.def)             Requested size: 307.29231pt x 142.26576pt.
 
-[14
+[18
 
  <./Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Images/6_1_single_synthetic_neutral_perfor
@@ -1163,7 +1173,7 @@ performance.eps>
 (epstopdf)             \includegraphics on input line 34.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=199, 
+<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=240, 
 1445.4pt x 722.7pt>
 File: Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1173,7 +1183,7 @@ Package pdftex.def Info: Images/6_1_single_synthetic_neutral_performance-eps-co
 nverted-to.pdf used on input line 34.
 (pdftex.def)             Requested size: 307.29231pt x 170.71672pt.
 
-[15
+[19
 
  <./Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Images/6_2_impact_transaction_costs.eps>
@@ -1188,7 +1198,7 @@ ion_costs-eps-converted-to.pdf Images/6_2_impact_transaction_costs.eps>
 (epstopdf)             \includegraphics on input line 45.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=252, 1445.4pt x 7
+<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=294, 1445.4pt x 7
 22.7pt>
 File: Images/6_2_impact_transaction_costs-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1208,7 +1218,7 @@ lling_fees-eps-converted-to.pdf Images/6_3_impact_short_selling_fees.eps>
 (epstopdf)             \includegraphics on input line 45.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=253, 1445.4pt x 
+<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=295, 1445.4pt x 
 722.7pt>
 File: Images/6_3_impact_short_selling_fees-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1217,17 +1227,19 @@ Package pdftex.def Info: Images/6_3_impact_short_selling_fees-eps-converted-to.
 pdf used on input line 45.
 (pdftex.def)             Requested size: 307.29231pt x 85.35284pt.
 
-[16
+[20
 
  <./Images/6_2_impact_transaction_costs-eps-converted-to.pdf> <./Images/6_3_imp
-act_short_selling_fees-eps-converted-to.pdf>]) (./Sections/7_conclusions.tex [1
-7
+act_short_selling_fees-eps-converted-to.pdf>]) (./Sections/7_conclusions.tex (.
+/presentation.toc) [21
 
-] [18
+] [22
+
+] [23
 
 ])
 \c@finalframe=\count196
- (./presentation.bbl) [19
+ (./presentation.bbl) [24
 
  </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
 \tf@nav=\write6
@@ -1254,10 +1266,10 @@ LaTeX Font Warning: Size substitutions with differences
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 82.
  ) 
 Here is how much of TeX's memory you used:
- 21423 strings out of 495028
- 395914 string characters out of 6181497
- 480979 words of memory out of 5000000
- 24063 multiletter control sequences out of 15000+600000
+ 21465 strings out of 495028
+ 396640 string characters out of 6181497
+ 481248 words of memory out of 5000000
+ 24085 multiletter control sequences out of 15000+600000
  12384 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  50i,16n,60p,401b,1508s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1277,10 +1289,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (19 pages, 1178943 bytes).
+Output written on presentation.pdf (24 pages, 1182871 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 508 PDF objects out of 1000 (max. 8388607)
+ 261 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
  137 words of extra memory for PDF output out of 10000 (max. 10000000)
 

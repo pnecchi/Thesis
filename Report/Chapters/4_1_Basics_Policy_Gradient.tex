@@ -1,6 +1,6 @@
 Policy gradient methods directly store and iteratively improve a parametric approximation of the optimal policy. This policy is commonly referred to as an $\emph{actor}$ and methods that directly approximate the policy without exploiting an approximation of the optimal value function are called $\emph{actor-only}$. Algorithms that combine an approximation of the optimal policy with an approximation of the value function are commonly called $\emph{actor-critic}$ methods.\\
-As discussed in Chapter \ref{ch:discrete_time_stochastic_optimal_control}, an optimal policy can be obtained by simply acting greedily with respect to the optimal action-value function. However, in large or continuous action spaces, this leads to a complex optimization problem that is computationally expensive to solve. Therefore, it can be beneficial to store an explicit estimation of the optimal policy from which we can select actions. Policy gradient methods have other advantages compared to standard value-based approaches. In many applications, a good policy has a more compact		representation than the value function so that it may be easier to approximate. Moreover, the policy parameterization can be chosen so as to be relevant for the task and to directly incorporate prior knowledge. Another advantage is that these methods can learn stochastic policies and not only deterministic ones, which might be useful in multiplayer frameworks or in partially observable environments. Finally, these methods have better convergence properties and are guaranteed to converge at least to a local optimum, which may be good enough in practice. On the other hand, policy gradient methods are typically characterized by a large variance which may hinder the converge speed.\\
-In the following sections, we present the basics of policy gradient methods closely following the thorough overviews provided in \cite{peters2008reinforcement}. Then, we discuss some state-of-the-art policy gradient algorithms and we propose some original extensions to these methods. 
+As discussed in Chapter \ref{ch:discrete_time_stochastic_optimal_control}, an optimal policy can be obtained by simply acting greedily with respect to the optimal action-value function. However, in large or continuous action spaces, this leads to a complex optimization problem that is computationally expensive to solve. Therefore, it can be beneficial to store an explicit estimation of the optimal policy from which we can select actions. Policy gradient methods have other advantages compared to standard value-based approaches. In many applications, a good policy has a more compact		representation than the value function so that it may be easier to approximate. Moreover, the policy parameterization can be chosen so as to be relevant for the task and to directly incorporate prior knowledge. Another advantage is that these methods can learn stochastic policies and not only deterministic ones, which might be useful in multi-player frameworks or in partially observable environments. Finally, these methods are guaranteed to converge at least to a local optimum, which may be good enough in practice. On the other hand, policy gradient methods are typically characterized by a large variance which may hinder the converge speed.\\
+In the following sections, we present the basics of policy gradient methods closely following the thorough overview provided in \cite{peters2008reinforcement}. Then, we discuss some state-of-the-art policy gradient algorithms. In particular, we focus on the risk-neutral framework postponing the analysis of the risk-sensitive framework to the next chapter. 
 
 \section{Basics of Policy Gradient Methods}
 In policy gradient methods, the optimal policy is approximated using a parametrized 
@@ -40,7 +40,7 @@ the objective function. Before describing various methods to approximate the gra
 	\end{algorithmic}
 \end{algorithm}
 
-\subsection{Risk-Neutral Framework}
+\section{Risk-Neutral Objective Functions}
 In the risk-neutral setting, the agent is only interested in maximizing his reward, without considering the risk he needs to take on to achieve it. In an episodic environment where the system always starts from an initial state $s_0$, the typical objective function is the start value.
 \begin{definition}[Start Value]
 	The start value is the expected return that can be obtained starting from the start state $s_0 \in \S$ and following policy $\pi_\theta$
@@ -67,54 +67,6 @@ In a continuing environment, where no terminal state exists and the task might g
 	\end{equation}
 	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$.
 \end{definition}
-
-\subsection{Risk-Sensitive Framework}
-In the risk-sensitive framework, in addition to maximizing his reward, the agent also wants to control the risk he takes on to achieve it. It is thus necessary to introduce a function $\Lambda: \Theta \to \R$ such that $\Lambda(\theta)$ measures the risk associated with the policy $\pi_\theta$. In an episodic framework where the system always starts from the same initial state $s_0$, the variance of the total return can be used \cite{tamar2012policy}
-\begin{definition}[Start Variance]
-	The start variance is the variance of the return that can be obtained starting from the start state $s_0 \in \S$ and following policy $\pi_\theta$
-	\begin{equation}
-		\Lambda_{\text{start}}(\theta) = \Var[\pi_\theta]{G_0\ |\ S_0 = s_0}
-			= U_{\pi_\theta} (s_0) - V_{\pi_\theta} (s_0)^2 
-	\end{equation}
-\end{definition}
-In a continuing environment, we might consider the long-run variance \cite{prashanth2014actor} defined in Section \ref{sec:risk_sensitive_formulation}
-\begin{definition}[Long-Run Variance]
-	The long-run variance $\Lambda_\pi$ under policy $\pi$ is defined as
-	\begin{equation}
-		\begin{split}
-			\Lambda_{\text{long-run}}(\theta) &= \lim_{T \to \infty} \frac{1}{T} \E[\pi_\theta]{
-			\sum^{T-1}_{t=0} \left(R_{t+1} - \rho(\theta)\right)^2}\\
-		\end{split}
-	\end{equation}
-\end{definition}
-In order to formalize this trade-off between reward and risk from a mathematical point of view, we borrow from the financial literature two standard risk-sensitive performance measures: the mean-variance criterion \cite{markowitz1952portfolio} and the Sharpe ratio \cite{sharpe1994sharpe}.
-\begin{definition}[Mean-Variance Criterion]
-	The mean-variance criterion is defined as 
-	\begin{equation}
-		J_\text{MV}(\theta) = J(\theta) - \chi \Lambda(\theta)
-	\end{equation}
-	where $\chi > 0$ is a constant that controls the trade-off between reward and risk. 
-\end{definition} 
-
-\begin{definition}[Sharpe Ratio]
-	The Sharpe ratio is defined as 
-	\begin{equation}
-		\Sh(\theta) = \frac{J(\theta)}{\sqrt{\Lambda(\theta)}}
-	\end{equation}
-\end{definition} 
-In a risk-sensitive policy gradient algorithm, we try to approximate the optimal parameters that maximize these objective functions by updating the parameters following the gradient ascent directions. In the average-reward formulation, the ascent directions are given by 
-\begin{equation}
-	\nabla_\theta J_{\text{MV}}(\theta) = \nabla_\theta \rho(\theta) - \chi \nabla_\theta \Lambda(\theta)
-\end{equation}
-for the mean-variance criterion, where 
-\begin{equation}
-	\nabla_\theta \Lambda(\theta) =	\nabla_\theta \eta(\theta) - 2 \rho(\theta) \nabla_\theta \rho(\theta)
-\end{equation} 
-and by 
-\begin{equation} 
-	\nabla_\theta \Sh(\theta) = \frac{\eta(\theta) \nabla_\theta \rho(\theta) - \frac{1}{2} \rho(\theta) \nabla_\theta \eta(\theta)}{\Lambda(\theta) \sqrt{\Lambda(\theta)}}
-\end{equation}
-for the Sharpe ratio. Hence, in the risk-sensitive framework it is necessary to estimate to different gradients: $\nabla_\theta \rho(\theta)$ and $\nabla_\theta \eta(\theta)$. Let us notice that the equivalent expressions for the episodic setting can be obtained by replacing $\rho(\theta)$ (resp. $\eta(\theta)$) with $V_\theta(s_0)$ (resp. $U_\theta(s_0)$). In the next sections, we will discuss several techniques to estimate these gradients.
 
 \section{Finite Differences}
 The most straightforward way to estimate the objective function gradient consists in replacing the partial derivatives with the corresponding finite differences. In other words, the $k$-th gradient component is approximated by
