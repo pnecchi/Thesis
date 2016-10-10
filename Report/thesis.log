@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  9 OCT 2016 21:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.25)  10 OCT 2016 22:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1166,7 +1166,7 @@ Overfull \hbox (21.59264pt too wide) in paragraph at lines 461--461
  []
 
 [12] [13] [14]
-<Images/2_0_policy_iteration.png, id=633, 474.77374pt x 655.44875pt>
+<Images/2_0_policy_iteration.png, id=648, 474.77374pt x 655.44875pt>
 File: Images/2_0_policy_iteration.png Graphic file (type png)
 
 <use Images/2_0_policy_iteration.png>
@@ -1239,7 +1239,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
  [37] [38]
 [39] [40]
-<Images/4_0_euclidean_vs_natural.png, id=874, 2434.09375pt x 768.8725pt>
+<Images/4_0_euclidean_vs_natural.png, id=889, 2434.09375pt x 768.8725pt>
 File: Images/4_0_euclidean_vs_natural.png Graphic file (type png)
 
 <use Images/4_0_euclidean_vs_natural.png>
@@ -1296,20 +1296,24 @@ Chapter 7.
 
 ] [63]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 37.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 35.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 37.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 35.
 
-Overfull \hbox (2.34189pt too wide) in paragraph at lines 39--40
+Overfull \hbox (2.34189pt too wide) in paragraph at lines 37--38
 []\OT1/cmr/m/n/12 Renaissance Tech-nolo-gies LLC is an in-vest-ment man-age-men
 t com-
  []
 
-[64] [65] [66] [67]) (./Chapters/8_Numerical_Results.tex [68]
-Chapter 8.
-[69
+[64]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-] [70]
+ [65]
+[66] [67] [68]) (./Chapters/8_Numerical_Results.tex [69] [70]
+Chapter 8.
+[71
+
+] [72]
 Package epstopdf Info: Source file: <Images/6_0_single_synthetic_neutral_conver
 gence.eps>
 (epstopdf)                    date: 2016-08-09 22:45:33
@@ -1324,7 +1328,7 @@ convergence.eps>
 (epstopdf)             \includegraphics on input line 49.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=1140,
+<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=1175,
  1445.4pt x 722.7pt>
 File: Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1334,7 +1338,7 @@ Package pdftex.def Info: Images/6_0_single_synthetic_neutral_convergence-eps-co
 nverted-to.pdf used on input line 49.
 (pdftex.def)             Requested size: 389.80276pt x 194.90002pt.
 
-[71 <./Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf>]
+[73 <./Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf>]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
 ine 56.
 Package epstopdf Info: Source file: <Images/6_1_single_synthetic_neutral_perfor
@@ -1351,7 +1355,7 @@ performance.eps>
 (epstopdf)             \includegraphics on input line 59.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=1202,
+<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=1235,
  1445.4pt x 722.7pt>
 File: Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1372,7 +1376,7 @@ ion_costs-eps-converted-to.pdf Images/6_2_impact_transaction_costs.eps>
 (epstopdf)             \includegraphics on input line 92.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=1209, 1445.4pt x 
+<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=1242, 1445.4pt x 
 722.7pt>
 File: Images/6_2_impact_transaction_costs-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1383,10 +1387,10 @@ df used on input line 92.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [72 <./Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf>]
+ [74 <./Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf>]
 Underfull \vbox (badness 2932) has occurred while \output is active []
 
- [73]
+ [75]
 Package epstopdf Info: Source file: <Images/6_3_impact_short_selling_fees.eps>
 (epstopdf)                    date: 2016-08-10 22:00:13
 (epstopdf)                    size: 56116 bytes
@@ -1399,7 +1403,7 @@ lling_fees-eps-converted-to.pdf Images/6_3_impact_short_selling_fees.eps>
 (epstopdf)             \includegraphics on input line 99.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=1272, 1445.4pt x
+<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=1302, 1445.4pt x
  722.7pt>
 File: Images/6_3_impact_short_selling_fees-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1427,7 +1431,7 @@ ive_convergence.eps>
 (epstopdf)             \includegraphics on input line 109.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf, id=127
+<Images/6_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf, id=130
 5, 1445.4pt x 722.7pt>
 File: Images/6_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf Gr
 aphic file (type pdf)
@@ -1450,7 +1454,7 @@ ive_performance.eps>
 (epstopdf)             \includegraphics on input line 116.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_5_single_synthetic_sensitive_performance-eps-converted-to.pdf, id=127
+<Images/6_5_single_synthetic_sensitive_performance-eps-converted-to.pdf, id=130
 6, 1445.4pt x 722.7pt>
 File: Images/6_5_single_synthetic_sensitive_performance-eps-converted-to.pdf Gr
 aphic file (type pdf)
@@ -1463,35 +1467,40 @@ converted-to.pdf used on input line 116.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[74 <./Images/6_2_impact_transaction_costs-eps-converted-to.pdf>] [75 <./Images
+[76 <./Images/6_2_impact_transaction_costs-eps-converted-to.pdf>] [77 <./Images
 /6_3_impact_short_selling_fees-eps-converted-to.pdf> <./Images/6_4_single_synth
-etic_sensitive_convergence-eps-converted-to.pdf>] [76 <./Images/6_5_single_synt
+etic_sensitive_convergence-eps-converted-to.pdf>] [78 <./Images/6_5_single_synt
 hetic_sensitive_performance-eps-converted-to.pdf>])
-(./Chapters/9_Conclusions.tex [77
+(./Chapters/9_Conclusions.tex [79
 
 ]
 Chapter 9.
-) [78
+) [80
 
-] (./thesis.bbl [79
+] (./thesis.bbl [81
 
 
-] [80] [81] [82] [83] [84] [85] [86]) [87]
+] [82] [83] [84] [85] [86]
+Underfull \hbox (badness 1242) in paragraph at lines 377--379
+[]|\OT1/cmr/m/n/12 , \OT1/cmr/m/it/12 Parameter-exploring pol-icy gra-di-ents\O
+T1/cmr/m/n/12 , Neu-ral Net-works, 23
+ []
+
+[87] [88]) [89]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
-
-(./thesis.aux (./Acknowledgements/acknowledgements.aux))
+ (./thesis.aux (./Acknowledgements/acknowledgements.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: ACCB583E7266C9DB3C1BC730275C9D58;5143.
+(rerunfilecheck)             Checksum: 5554F969BF9328E59F46BEE1572642C3;5429.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 20685 strings out of 495028
- 351610 string characters out of 6181497
- 442024 words of memory out of 5000000
- 22854 multiletter control sequences out of 15000+600000
+ 20695 strings out of 495028
+ 351767 string characters out of 6181497
+ 442065 words of memory out of 5000000
+ 22858 multiletter control sequences out of 15000+600000
  22548 words of font info for 92 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  63i,22n,76p,2040b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1514,10 +1523,10 @@ t/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (95 pages, 1681905 bytes).
+Output written on thesis.pdf (97 pages, 1686762 bytes).
 PDF statistics:
- 1772 PDF objects out of 2073 (max. 8388607)
- 1362 compressed objects within 14 object streams
- 533 named destinations out of 1000 (max. 500000)
- 613 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1803 PDF objects out of 2073 (max. 8388607)
+ 1391 compressed objects within 14 object streams
+ 539 named destinations out of 1000 (max. 500000)
+ 637 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{agarwal2010optimal}
 {\sc A.~Agarwal, P.~Bartlett, and M.~Dama}, {\em Optimal allocation strategies
@@ -246,6 +246,11 @@
 \bibitem{liang2011stock}
 {\sc J.~Liang, W.~Song, and M.~Wang}, {\em Stock price prediction based on
   procedural neural networks}, Adv. Artif. Neu. Sys., 2011 (2011), pp.~1--11.
+
+\bibitem{lo2000foundations}
+{\sc A.~W. Lo, H.~Mamaysky, and J.~Wang}, {\em Foundations of technical
+  analysis: Computational algorithms, statistical inference, and empirical
+  implementation}, The journal of finance, 55 (2000), pp.~1705--1770.
 
 \bibitem{mahadevan1996average}
 {\sc S.~Mahadevan}, {\em Average reward reinforcement learning: Foundations,

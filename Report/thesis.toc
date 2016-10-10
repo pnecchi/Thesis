@@ -62,25 +62,28 @@
 \contentsline {subsection}{\numberline {7.1.1}Formal Definitions of the EMH}{63}{subsection.7.1.1}
 \contentsline {subsection}{\numberline {7.1.2}Critics to the EMH}{64}{subsection.7.1.2}
 \contentsline {section}{\numberline {7.2}Bibliographical Survey}{64}{section.7.2}
-\contentsline {section}{\numberline {7.3}Asset Allocation with Transaction Costs}{64}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Reward Function}{65}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}States}{67}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}Actions}{67}{subsection.7.3.3}
-\contentsline {chapter}{\numberline {8}Numerical Results for the Asset Allocation Problem}{69}{chapter.8}
-\contentsline {section}{\numberline {8.1}Synthetic Risky Asset}{69}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Learning Algorithm Specifications}{70}{subsection.8.1.1}
-\contentsline {subsubsection}{\numberline {8.1.1.1}ARAC}{70}{subsubsection.8.1.1.1}
-\contentsline {subsubsection}{\numberline {8.1.1.2}PGPE}{70}{subsubsection.8.1.1.2}
-\contentsline {subsubsection}{\numberline {8.1.1.3}NPGPE}{70}{subsubsection.8.1.1.3}
-\contentsline {subsection}{\numberline {8.1.2}Experimental Setup}{71}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Risk-Neutral Framework}{71}{subsection.8.1.3}
-\contentsline {subsubsection}{\numberline {8.1.3.1}Convergence}{71}{subsubsection.8.1.3.1}
-\contentsline {subsubsection}{\numberline {8.1.3.2}Performances}{72}{subsubsection.8.1.3.2}
-\contentsline {subsubsection}{\numberline {8.1.3.3}Impact of Transaction Costs}{73}{subsubsection.8.1.3.3}
-\contentsline {subsection}{\numberline {8.1.4}Risk-Sensitive Framework}{74}{subsection.8.1.4}
-\contentsline {section}{\numberline {8.2}Historic Risky Asset}{77}{section.8.2}
-\contentsline {section}{\numberline {8.3}Multiple Synthetic Risky Assets}{77}{section.8.3}
-\contentsline {section}{\numberline {8.4}Historic Multiple Risky Assets}{77}{section.8.4}
-\contentsline {chapter}{\numberline {9}Conclusions}{78}{chapter.9}
-\contentsline {section}{\numberline {9.1}Summary}{78}{section.9.1}
-\contentsline {section}{\numberline {9.2}Further Developments}{78}{section.9.2}
+\contentsline {subsection}{\numberline {7.2.1}Asset Allocation with Transaction Costs}{66}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Optimal Order Execution in Limit-Order Book}{66}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Optimal Order Allocation Across Dark Pools}{66}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3}Asset Allocation with Transaction Costs}{66}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Reward Function}{67}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}States}{69}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Actions}{69}{subsection.7.3.3}
+\contentsline {chapter}{\numberline {8}Numerical Results for the Asset Allocation Problem}{71}{chapter.8}
+\contentsline {section}{\numberline {8.1}Synthetic Risky Asset}{71}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Learning Algorithm Specifications}{72}{subsection.8.1.1}
+\contentsline {subsubsection}{\numberline {8.1.1.1}ARAC}{72}{subsubsection.8.1.1.1}
+\contentsline {subsubsection}{\numberline {8.1.1.2}PGPE}{72}{subsubsection.8.1.1.2}
+\contentsline {subsubsection}{\numberline {8.1.1.3}NPGPE}{72}{subsubsection.8.1.1.3}
+\contentsline {subsection}{\numberline {8.1.2}Experimental Setup}{73}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Risk-Neutral Framework}{73}{subsection.8.1.3}
+\contentsline {subsubsection}{\numberline {8.1.3.1}Convergence}{73}{subsubsection.8.1.3.1}
+\contentsline {subsubsection}{\numberline {8.1.3.2}Performances}{74}{subsubsection.8.1.3.2}
+\contentsline {subsubsection}{\numberline {8.1.3.3}Impact of Transaction Costs}{75}{subsubsection.8.1.3.3}
+\contentsline {subsection}{\numberline {8.1.4}Risk-Sensitive Framework}{76}{subsection.8.1.4}
+\contentsline {section}{\numberline {8.2}Historic Risky Asset}{79}{section.8.2}
+\contentsline {section}{\numberline {8.3}Multiple Synthetic Risky Assets}{79}{section.8.3}
+\contentsline {section}{\numberline {8.4}Historic Multiple Risky Assets}{79}{section.8.4}
+\contentsline {chapter}{\numberline {9}Conclusions}{80}{chapter.9}
+\contentsline {section}{\numberline {9.1}Summary}{80}{section.9.1}
+\contentsline {section}{\numberline {9.2}Further Developments}{80}{section.9.2}

@@ -52,19 +52,22 @@
 \BOOKMARK [2][-]{subsection.7.1.1}{Formal Definitions of the EMH}{section.7.1}% 52
 \BOOKMARK [2][-]{subsection.7.1.2}{Critics to the EMH}{section.7.1}% 53
 \BOOKMARK [1][-]{section.7.2}{Bibliographical Survey}{chapter.7}% 54
-\BOOKMARK [1][-]{section.7.3}{Asset Allocation with Transaction Costs}{chapter.7}% 55
-\BOOKMARK [2][-]{subsection.7.3.1}{Reward Function}{section.7.3}% 56
-\BOOKMARK [2][-]{subsection.7.3.2}{States}{section.7.3}% 57
-\BOOKMARK [2][-]{subsection.7.3.3}{Actions}{section.7.3}% 58
-\BOOKMARK [0][-]{chapter.8}{Numerical Results for the Asset Allocation Problem}{}% 59
-\BOOKMARK [1][-]{section.8.1}{Synthetic Risky Asset}{chapter.8}% 60
-\BOOKMARK [2][-]{subsection.8.1.1}{Learning Algorithm Specifications}{section.8.1}% 61
-\BOOKMARK [2][-]{subsection.8.1.2}{Experimental Setup}{section.8.1}% 62
-\BOOKMARK [2][-]{subsection.8.1.3}{Risk-Neutral Framework}{section.8.1}% 63
-\BOOKMARK [2][-]{subsection.8.1.4}{Risk-Sensitive Framework}{section.8.1}% 64
-\BOOKMARK [1][-]{section.8.2}{Historic Risky Asset}{chapter.8}% 65
-\BOOKMARK [1][-]{section.8.3}{Multiple Synthetic Risky Assets}{chapter.8}% 66
-\BOOKMARK [1][-]{section.8.4}{Historic Multiple Risky Assets}{chapter.8}% 67
-\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 68
-\BOOKMARK [1][-]{section.9.1}{Summary}{chapter.9}% 69
-\BOOKMARK [1][-]{section.9.2}{Further Developments}{chapter.9}% 70
+\BOOKMARK [2][-]{subsection.7.2.1}{Asset Allocation with Transaction Costs}{section.7.2}% 55
+\BOOKMARK [2][-]{subsection.7.2.2}{Optimal Order Execution in Limit-Order Book}{section.7.2}% 56
+\BOOKMARK [2][-]{subsection.7.2.3}{Optimal Order Allocation Across Dark Pools}{section.7.2}% 57
+\BOOKMARK [1][-]{section.7.3}{Asset Allocation with Transaction Costs}{chapter.7}% 58
+\BOOKMARK [2][-]{subsection.7.3.1}{Reward Function}{section.7.3}% 59
+\BOOKMARK [2][-]{subsection.7.3.2}{States}{section.7.3}% 60
+\BOOKMARK [2][-]{subsection.7.3.3}{Actions}{section.7.3}% 61
+\BOOKMARK [0][-]{chapter.8}{Numerical Results for the Asset Allocation Problem}{}% 62
+\BOOKMARK [1][-]{section.8.1}{Synthetic Risky Asset}{chapter.8}% 63
+\BOOKMARK [2][-]{subsection.8.1.1}{Learning Algorithm Specifications}{section.8.1}% 64
+\BOOKMARK [2][-]{subsection.8.1.2}{Experimental Setup}{section.8.1}% 65
+\BOOKMARK [2][-]{subsection.8.1.3}{Risk-Neutral Framework}{section.8.1}% 66
+\BOOKMARK [2][-]{subsection.8.1.4}{Risk-Sensitive Framework}{section.8.1}% 67
+\BOOKMARK [1][-]{section.8.2}{Historic Risky Asset}{chapter.8}% 68
+\BOOKMARK [1][-]{section.8.3}{Multiple Synthetic Risky Assets}{chapter.8}% 69
+\BOOKMARK [1][-]{section.8.4}{Historic Multiple Risky Assets}{chapter.8}% 70
+\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 71
+\BOOKMARK [1][-]{section.9.1}{Summary}{chapter.9}% 72
+\BOOKMARK [1][-]{section.9.2}{Further Developments}{chapter.9}% 73
