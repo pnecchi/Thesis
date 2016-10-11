@@ -1,4 +1,4 @@
-\begin{thebibliography}{100}
+\begin{thebibliography}{10}
 
 \bibitem{agarwal2010optimal}
 {\sc A.~Agarwal, P.~Bartlett, and M.~Dama}, {\em Optimal allocation strategies
@@ -142,10 +142,6 @@
 {\sc Y.~Deng, Y.~Kong, F.~Bao, and Q.~Dai}, {\em Sparse coding inspired optimal
   trading system for hft industry}, IEEE Transactions on Industrial
   Informatics, 11 (2015), pp.~467--475.
-
-\bibitem{du1algorithm}
-{\sc X.~Du, J.~Zhai, and K.~Lv}, {\em Algorithm trading using q-learning and
-  recurrent reinforcement learning}, positions, 1, p.~1.
 
 \bibitem{eldercreating}
 {\sc T.~Elder}, {\em Creating algorithmic traders with hierarchical

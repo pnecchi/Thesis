@@ -18,3 +18,8 @@
 \contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{77}{figure.caption.19}
 \contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{78}{figure.caption.20}
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{82}{figure.caption.22}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the learning process in the asset allocation problem.\relax }}{84}{figure.caption.23}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }}{87}{figure.caption.24}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }}{90}{figure.caption.30}

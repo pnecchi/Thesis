@@ -71,3 +71,9 @@
 \BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 71
 \BOOKMARK [1][-]{section.9.1}{Summary}{chapter.9}% 72
 \BOOKMARK [1][-]{section.9.2}{Further Developments}{chapter.9}% 73
+\BOOKMARK [0][-]{appendix.A}{Implementation}{}% 74
+\BOOKMARK [1][-]{section.A.1}{Python Prototype}{appendix.A}% 75
+\BOOKMARK [1][-]{section.A.2}{C++ Implementation}{appendix.A}% 76
+\BOOKMARK [2][-]{subsection.A.2.1}{Environment, Task, Agent and Experiment}{section.A.2}% 77
+\BOOKMARK [2][-]{subsection.A.2.2}{ARACAgent}{section.A.2}% 78
+\BOOKMARK [1][-]{section.A.3}{Execution Pipeline}{appendix.A}% 79

@@ -63,12 +63,12 @@
 \contentsline {subsection}{\numberline {7.1.2}Critics to the EMH}{64}{subsection.7.1.2}
 \contentsline {section}{\numberline {7.2}Bibliographical Survey}{64}{section.7.2}
 \contentsline {subsection}{\numberline {7.2.1}Asset Allocation with Transaction Costs}{66}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Optimal Order Execution in Limit-Order Book}{66}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Optimal Order Allocation Across Dark Pools}{66}{subsection.7.2.3}
-\contentsline {section}{\numberline {7.3}Asset Allocation with Transaction Costs}{66}{section.7.3}
+\contentsline {subsection}{\numberline {7.2.2}Optimal Order Execution in Limit-Order Book}{67}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Optimal Order Allocation Across Dark Pools}{67}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3}Asset Allocation with Transaction Costs}{67}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}Reward Function}{67}{subsection.7.3.1}
 \contentsline {subsection}{\numberline {7.3.2}States}{69}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}Actions}{69}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.3}Actions}{70}{subsection.7.3.3}
 \contentsline {chapter}{\numberline {8}Numerical Results for the Asset Allocation Problem}{71}{chapter.8}
 \contentsline {section}{\numberline {8.1}Synthetic Risky Asset}{71}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Learning Algorithm Specifications}{72}{subsection.8.1.1}
@@ -87,3 +87,14 @@
 \contentsline {chapter}{\numberline {9}Conclusions}{80}{chapter.9}
 \contentsline {section}{\numberline {9.1}Summary}{80}{section.9.1}
 \contentsline {section}{\numberline {9.2}Further Developments}{80}{section.9.2}
+\contentsline {chapter}{\numberline {A}Implementation}{81}{appendix.A}
+\contentsline {section}{\numberline {A.1}Python Prototype}{81}{section.A.1}
+\contentsline {section}{\numberline {A.2}C++ Implementation}{82}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}\lstinline {Environment}, \lstinline {Task}, \lstinline {Agent} and \lstinline {Experiment}}{83}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}\lstinline {ARACAgent}}{85}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}Execution Pipeline}{88}{section.A.3}
+\contentsline {paragraph}{Compilation}{88}{section*.25}
+\contentsline {paragraph}{\lstinline {generate_synthetic_series.py}}{88}{section*.26}
+\contentsline {paragraph}{\lstinline {experiment_launcher.py}}{88}{section*.27}
+\contentsline {paragraph}{\lstinline {main_thesis}}{88}{section*.28}
+\contentsline {paragraph}{\lstinline {postprocessing.py}}{89}{section*.29}
