@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{agarwal2010optimal}
 {\sc A.~Agarwal, P.~Bartlett, and M.~Dama}, {\em Optimal allocation strategies
@@ -96,6 +96,10 @@
   learning and dynamic programming using function approximators}, vol.~39, CRC
   press, 2010.
 
+\bibitem{cartea2015algorithmic}
+{\sc {\'A}.~Cartea, S.~Jaimungal, and J.~Penalva}, {\em Algorithmic and
+  high-frequency trading}, Cambridge University Press, 2015.
+
 \bibitem{casqueiro2006neuro}
 {\sc P.~X. Casqueiro and A.~J. Rodrigues}, {\em Neuro-dynamic trading methods},
   European Journal of Operational Research, 175 (2006), pp.~1400--1412.
@@ -161,6 +165,10 @@
   exploration and the dark pool problem}, Communications of the ACM, 53 (2010),
   pp.~99--107.
 
+\bibitem{gittins2011multi}
+{\sc J.~Gittins, K.~Glazebrook, and R.~Weber}, {\em Multi-armed bandit
+  allocation indices}, John Wiley \& Sons, 2011.
+
 \bibitem{gold2003FX}
 {\sc C.~Gold}, {\em Fx trading via recurrent reinforcement learning}, in IEEE
   2003 IEEE International Conference on Computational Intelligence for
@@ -189,6 +197,10 @@
 \bibitem{jensen1978some}
 {\sc M.~C. Jensen}, {\em Some anomalous evidence regarding market efficiency},
   Journal of financial economics, 6 (1978), pp.~95--101.
+
+\bibitem{johnson2010algorithmic}
+{\sc B.~Johnson}, {\em Algorithmic Trading \& DMA: An introduction to direct
+  access trading strategies}, vol.~200, 4Myeloma Press London, 2010.
 
 \bibitem{joshi2008c++}
 {\sc M.~S. Joshi}, {\em C++ design patterns and derivatives pricing}, vol.~2,
@@ -252,6 +264,10 @@
 {\sc S.~Mahadevan}, {\em Average reward reinforcement learning: Foundations,
   algorithms, and empirical results}, Machine learning, 22 (1996),
   pp.~159--195.
+
+\bibitem{malkiel2003efficient}
+{\sc B.~G. Malkiel}, {\em The efficient market hypothesis and its critics}, The
+  Journal of Economic Perspectives, 17 (2003), pp.~59--82.
 
 \bibitem{malkiel1970efficient}
 {\sc B.~G. Malkiel and E.~F. Fama}, {\em Efficient capital markets: A review of

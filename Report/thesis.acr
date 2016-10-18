@@ -1,0 +1,17 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{B}\relax \glsresetentrylist %
+\glossentry{BPTT}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{67}}}\glsgroupskip
+\glsgroupheading{D}\relax \glsresetentrylist %
+\glossentry{DL}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{66}}}\glsgroupskip
+\glsgroupheading{E}\relax \glsresetentrylist %
+\glossentry{EMH}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{62}}}\glsgroupskip
+\glsgroupheading{R}\relax \glsresetentrylist %
+\glossentry{RRL}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{67}}}%
+\glossentry{RTRL}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{67}}}%
+\end{theglossary}\glossarypostamble

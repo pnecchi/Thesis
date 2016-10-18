@@ -1,25 +1,25 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{4}{figure.caption.6}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{16}{figure.caption.7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{4}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{16}{figure.caption.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{19}{figure.caption.8}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{19}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{41}{figure.caption.12}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{41}{figure.caption.14}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{73}{figure.caption.13}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{74}{figure.caption.15}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Impact of proportional transaction costs}}{76}{figure.caption.17}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Impact of short-selling fees}}{77}{figure.caption.18}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{77}{figure.caption.19}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{78}{figure.caption.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{82}{figure.caption.22}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the learning process in the asset allocation problem.\relax }}{84}{figure.caption.23}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }}{87}{figure.caption.24}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }}{90}{figure.caption.30}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{76}{figure.caption.15}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{77}{figure.caption.17}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Impact of proportional transaction costs}}{79}{figure.caption.19}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Impact of short-selling fees}}{80}{figure.caption.20}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{80}{figure.caption.21}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{81}{figure.caption.22}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{85}{figure.caption.24}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the learning process in the asset allocation problem.\relax }}{87}{figure.caption.25}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }}{90}{figure.caption.26}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }}{93}{figure.caption.32}

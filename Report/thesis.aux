@@ -17,6 +17,13 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \@input{Acknowledgements/acknowledgements.aux}
+\providecommand\@newglossary[4]{}
+\@newglossary{main}{glg}{gls}{glo}
+\@newglossary{acronym}{alg}{acr}{acn}
+\providecommand\@glsorder[1]{}
+\providecommand\@istfilename[1]{}
+\@istfilename{thesis.ist}
+\@glsorder{word}
 \select@language{english}
 \@writefile{toc}{\select@language{english}}
 \@writefile{lof}{\select@language{english}}
@@ -36,9 +43,9 @@
 \newlabel{ch:discrete_time_stochastic_optimal_control}{{2}{2}{Discrete-Time Stochastic Optimal Control}{chapter.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Markov Decision Processes}{2}{section.2.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Policies}{3}{section.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{4}{figure.caption.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{4}{figure.caption.8}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:sequential_decision_problem}{{2.1}{4}{Agent-environment interaction in sequential decision problems.\relax }{figure.caption.6}{}}
+\newlabel{fig:sequential_decision_problem}{{2.1}{4}{Agent-environment interaction in sequential decision problems.\relax }{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Risk-Neutral Framework}{5}{section.2.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Discounted Reward Formulation}{5}{subsection.2.3.1}}
 \newlabel{eq:bellman_expectation_eq_V}{{2.6}{6}{Bellman Expectation Equations}{equation.2.3.6}{}}
@@ -64,8 +71,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.5}Dynamic Programming Algorithms}{15}{section.2.5}}
 \newlabel{sec:policy_evaluation}{{2.5}{15}{Dynamic Programming Algorithms}{section.2.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Value Iteration}{15}{subsection.2.5.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{16}{figure.caption.7}}
-\newlabel{fig:policy_iteration}{{2.2}{16}{Policy iteration algorithm}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{16}{figure.caption.9}}
+\newlabel{fig:policy_iteration}{{2.2}{16}{Policy iteration algorithm}{figure.caption.9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Policy Iteration}{16}{subsection.2.5.2}}
 \citation{sutton1998introduction}
 \citation{szepesvari2010algorithms}
@@ -76,8 +83,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}The Reinforcement Learning Problem}{18}{section.3.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Model-Free RL Methods}{18}{section.3.2}}
 \citation{wiering2012reinforcement}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{19}{figure.caption.8}}
-\newlabel{fig:control_dependences}{{3.1}{19}{Solution process for the control problem.\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{19}{figure.caption.10}}
+\newlabel{fig:control_dependences}{{3.1}{19}{Solution process for the control problem.\relax }{figure.caption.10}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Model Approximation}{20}{subsection.3.2.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Value Approximation}{20}{subsection.3.2.2}}
 \citation{sutton1999policy}
@@ -121,9 +128,9 @@
 \@writefile{loa}{\contentsline {algorithm}{\numberline {4.3}{\ignorespaces Episodic PGPE algorithm\relax }}{31}{algorithm.4.3}}
 \newlabel{algo:episodic_pgpe}{{4.3}{31}{Episodic PGPE algorithm\relax }{algorithm.4.3}{}}
 \newlabel{eq:pgpe_gradient}{{4.24}{31}{Episodic PGPE}{equation.4.4.24}{}}
-\@writefile{toc}{\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{31}{section*.9}}
-\@writefile{toc}{\contentsline {paragraph}{Gaussian Parameter Distribution}{32}{section*.10}}
-\@writefile{toc}{\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{32}{section*.11}}
+\@writefile{toc}{\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{31}{section*.11}}
+\@writefile{toc}{\contentsline {paragraph}{Gaussian Parameter Distribution}{32}{section*.12}}
+\@writefile{toc}{\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{32}{section*.13}}
 \citation{sehnke2012parameter}
 \citation{sutton1999policy}
 \citation{konda1999actor}
@@ -149,7 +156,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5.5}Natural Policy Gradient}{40}{subsection.4.5.5}}
 \citation{peters2008reinforcement}
 \citation{peters2008reinforcement}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{41}{figure.caption.12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{41}{figure.caption.14}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.5.1}Formalism of Natural Policy Gradients}{41}{subsubsection.4.5.5.1}}
 \citation{miyamae2010natural}
 \citation{tamar2012policy}
@@ -214,112 +221,123 @@
 \citation{malkiel1970efficient}
 \citation{fama1991efficient}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.1.1}Formal Definitions of the EMH}{63}{subsection.7.1.1}}
+\citation{malkiel2003efficient}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.2}Critics to the EMH}{64}{subsection.7.1.2}}
 \citation{mallaby2010more}
 \citation{lo2000foundations}
 \citation{Goodfellow-et-al-2016-Book}
 \citation{kamijo1990stock}
 \citation{saad1998comparative}
 \citation{liang2011stock}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.2}Critics to the EMH}{64}{subsection.7.1.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Bibliographical Survey}{64}{section.7.2}}
-\newlabel{sec:bibliographical_survey}{{7.2}{64}{Bibliographical Survey}{section.7.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Bibliographical Survey}{65}{section.7.2}}
+\newlabel{sec:bibliographical_survey}{{7.2}{65}{Bibliographical Survey}{section.7.2}{}}
 \citation{moody1997optimization}
+\citation{jaeger2002tutorial}
 \citation{werbos1990backpropagation}
 \citation{williams1989learning}
 \citation{moody2001learning}
 \citation{choey1997nonlineareltit}
+\citation{chapados2001cost}
 \citation{gold2003FX}
 \citation{casqueiro2006neuro}
 \citation{dempster2006automated}
-\citation{chapados2001cost}
-\citation{bekiros2010heterogeneouseltit}
+\citation{li2007short}
 \citation{deng2016deep}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Asset Allocation with Transaction Costs}{66}{subsection.7.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Optimal Order Execution in Limit-Order Book}{67}{subsection.7.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.3}Optimal Order Allocation Across Dark Pools}{67}{subsection.7.2.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Asset Allocation with Transaction Costs}{67}{section.7.3}}
-\newlabel{sec:asset_allocation_with_transaction_costs}{{7.3}{67}{Asset Allocation with Transaction Costs}{section.7.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.1}Reward Function}{67}{subsection.7.3.1}}
-\newlabel{eq:portfolio_return}{{7.1}{68}{Reward Function}{equation.7.3.1}{}}
-\newlabel{eq:portfolio_return_benchmark}{{7.3}{69}{Reward Function}{equation.7.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.2}States}{69}{subsection.7.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.3}Actions}{70}{subsection.7.3.3}}
+\citation{almgren2001optimal}
+\citation{johnson2010algorithmic}
+\citation{nevmyvaka2006reinforcement}
+\citation{hendricks2014reinforcement}
+\citation{almgren2001optimal}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Asset Allocation with Transaction Costs}{67}{subsection.7.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Optimal Order Execution in Limit Order Book}{68}{subsection.7.2.2}}
+\citation{cartea2015algorithmic}
+\citation{ganchev2010censored}
+\citation{gittins2011multi}
+\citation{kearns2013machine}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.3}Smart Order Routing Across Dark Pools}{69}{subsection.7.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Asset Allocation with Transaction Costs}{70}{section.7.3}}
+\newlabel{sec:asset_allocation_with_transaction_costs}{{7.3}{70}{Asset Allocation with Transaction Costs}{section.7.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.1}Reward Function}{70}{subsection.7.3.1}}
+\newlabel{eq:portfolio_return}{{7.1}{71}{Reward Function}{equation.7.3.1}{}}
+\newlabel{eq:portfolio_return_benchmark}{{7.3}{71}{Reward Function}{equation.7.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.2}States}{72}{subsection.7.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.3}Actions}{72}{subsection.7.3.3}}
 \citation{moody1998performance}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Numerical Results for the Asset Allocation Problem}{71}{chapter.8}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Numerical Results for the Asset Allocation Problem}{74}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}Synthetic Risky Asset}{71}{section.8.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Learning Algorithm Specifications}{72}{subsection.8.1.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1.1}ARAC}{72}{subsubsection.8.1.1.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1.2}PGPE}{72}{subsubsection.8.1.1.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1.3}NPGPE}{72}{subsubsection.8.1.1.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{73}{figure.caption.13}}
-\newlabel{fig:single_synthetic_neutral_convergence}{{8.1}{73}{Risk-neutral learning process for one synthetic risky asset}{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}Experimental Setup}{73}{subsection.8.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}Risk-Neutral Framework}{73}{subsection.8.1.3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.3.1}Convergence}{73}{subsubsection.8.1.3.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}Synthetic Risky Asset}{74}{section.8.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Learning Algorithm Specifications}{75}{subsection.8.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1.1}ARAC}{75}{subsubsection.8.1.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1.2}PGPE}{75}{subsubsection.8.1.1.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1.3}NPGPE}{75}{subsubsection.8.1.1.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{76}{figure.caption.15}}
+\newlabel{fig:single_synthetic_neutral_convergence}{{8.1}{76}{Risk-neutral learning process for one synthetic risky asset}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}Experimental Setup}{76}{subsection.8.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}Risk-Neutral Framework}{76}{subsection.8.1.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.3.1}Convergence}{76}{subsubsection.8.1.3.1}}
 \citation{kamijo1990stock}
 \citation{saad1998comparative}
 \citation{liang2011stock}
 \citation{deng2016deep}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{74}{figure.caption.15}}
-\newlabel{fig:single_synthetic_neutral_performance}{{8.2}{74}{Backtest performance with one synthetic risky asset}{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.3.2}Performances}{74}{subsubsection.8.1.3.2}}
-\@writefile{tdo}{\contentsline {todo}{Describe statistics meaning}{74}{section*.14}}
-\pgfsyspdfmark {pgfid3}{14907995}{8261935}
-\pgfsyspdfmark {pgfid4}{2608255}{8276680}
-\pgfsyspdfmark {pgfid5}{5475455}{8007983}
-\@writefile{lot}{\contentsline {table}{\numberline {8.1}{\ignorespaces Backtest statistics for risk-neutral learning with one synthetic risky asset}}{75}{table.caption.16}}
-\newlabel{tab:single_synthetic_neutral_performance}{{8.1}{75}{Backtest statistics for risk-neutral learning with one synthetic risky asset}{table.caption.16}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.3.3}Impact of Transaction Costs}{75}{subsubsection.8.1.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.3}{\ignorespaces Impact of proportional transaction costs}}{76}{figure.caption.17}}
-\newlabel{fig:impact_transaction_costs}{{8.3}{76}{Impact of proportional transaction costs}{figure.caption.17}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.4}Risk-Sensitive Framework}{76}{subsection.8.1.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces Impact of short-selling fees}}{77}{figure.caption.18}}
-\newlabel{fig:impact_short_selling_fees}{{8.4}{77}{Impact of short-selling fees}{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{77}{figure.caption.19}}
-\newlabel{fig:single_synthetic_sensitive_convergence}{{8.5}{77}{Risk-sensitive learning process for one synthetic risky asset}{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{78}{figure.caption.20}}
-\newlabel{fig:single_synthetic_sensitive_performance}{{8.6}{78}{Backtest performance with one synthetic risky asset}{figure.caption.20}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8.2}{\ignorespaces Backtest statistics for risk-sensitive learning with one synthetic risky asset}}{78}{table.caption.21}}
-\newlabel{my-label}{{8.2}{78}{Backtest statistics for risk-sensitive learning with one synthetic risky asset}{table.caption.21}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}Historic Risky Asset}{79}{section.8.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.3}Multiple Synthetic Risky Assets}{79}{section.8.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.4}Historic Multiple Risky Assets}{79}{section.8.4}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusions}{80}{chapter.9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{77}{figure.caption.17}}
+\newlabel{fig:single_synthetic_neutral_performance}{{8.2}{77}{Backtest performance with one synthetic risky asset}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.3.2}Performances}{77}{subsubsection.8.1.3.2}}
+\@writefile{tdo}{\contentsline {todo}{Describe statistics meaning}{77}{section*.16}}
+\pgfsyspdfmark {pgfid3}{16586207}{8261935}
+\pgfsyspdfmark {pgfid6}{36517253}{8276680}
+\pgfsyspdfmark {pgfid7}{39384453}{8007983}
+\@writefile{lot}{\contentsline {table}{\numberline {8.1}{\ignorespaces Backtest statistics for risk-neutral learning with one synthetic risky asset}}{78}{table.caption.18}}
+\newlabel{tab:single_synthetic_neutral_performance}{{8.1}{78}{Backtest statistics for risk-neutral learning with one synthetic risky asset}{table.caption.18}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.3.3}Impact of Transaction Costs}{78}{subsubsection.8.1.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.3}{\ignorespaces Impact of proportional transaction costs}}{79}{figure.caption.19}}
+\newlabel{fig:impact_transaction_costs}{{8.3}{79}{Impact of proportional transaction costs}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.4}Risk-Sensitive Framework}{79}{subsection.8.1.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces Impact of short-selling fees}}{80}{figure.caption.20}}
+\newlabel{fig:impact_short_selling_fees}{{8.4}{80}{Impact of short-selling fees}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{80}{figure.caption.21}}
+\newlabel{fig:single_synthetic_sensitive_convergence}{{8.5}{80}{Risk-sensitive learning process for one synthetic risky asset}{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{81}{figure.caption.22}}
+\newlabel{fig:single_synthetic_sensitive_performance}{{8.6}{81}{Backtest performance with one synthetic risky asset}{figure.caption.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8.2}{\ignorespaces Backtest statistics for risk-sensitive learning with one synthetic risky asset}}{81}{table.caption.23}}
+\newlabel{my-label}{{8.2}{81}{Backtest statistics for risk-sensitive learning with one synthetic risky asset}{table.caption.23}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Historic Risky Asset}{82}{section.8.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.3}Multiple Synthetic Risky Assets}{82}{section.8.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.4}Historic Multiple Risky Assets}{82}{section.8.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusions}{83}{chapter.9}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {9.1}Summary}{80}{section.9.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.2}Further Developments}{80}{section.9.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.1}Summary}{83}{section.9.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.2}Further Developments}{83}{section.9.2}}
 \citation{pybrain2010jmlr}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Implementation}{81}{appendix.A}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Implementation}{84}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Python Prototype}{81}{section.A.1}}
-\newlabel{sec:python_prototype}{{A.1}{81}{Python Prototype}{section.A.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Python Prototype}{84}{section.A.1}}
+\newlabel{sec:python_prototype}{{A.1}{84}{Python Prototype}{section.A.1}{}}
 \citation{joshi2008c++}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{82}{figure.caption.22}}
-\newlabel{fig:pybrain}{{A.1}{82}{PyBrain standard architecture for an RL problem.\relax }{figure.caption.22}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}C++ Implementation}{82}{section.A.2}}
-\newlabel{sec:c++_implementation}{{A.2}{82}{C++ Implementation}{section.A.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.1}\lstinline {Environment}, \lstinline {Task}, \lstinline {Agent} and \lstinline {Experiment}}{83}{subsection.A.2.1}}
-\newlabel{RF1}{84}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the learning process in the asset allocation problem.\relax }}{84}{figure.caption.23}}
-\newlabel{fig:class_architecture_base}{{A.2}{84}{Class architecture for the learning process in the asset allocation problem.\relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.2}\lstinline {ARACAgent}}{85}{subsection.A.2.2}}
-\newlabel{RF2}{87}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }}{87}{figure.caption.24}}
-\newlabel{fig:class_architecture_arac}{{A.3}{87}{Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }{figure.caption.24}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.3}Execution Pipeline}{88}{section.A.3}}
-\newlabel{sec:execution_pipeline}{{A.3}{88}{Execution Pipeline}{section.A.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Compilation}{88}{section*.25}}
-\@writefile{toc}{\contentsline {paragraph}{\lstinline {generate_synthetic_series.py}}{88}{section*.26}}
-\@writefile{toc}{\contentsline {paragraph}{\lstinline {experiment_launcher.py}}{88}{section*.27}}
-\@writefile{toc}{\contentsline {paragraph}{\lstinline {main_thesis}}{88}{section*.28}}
-\@writefile{toc}{\contentsline {paragraph}{\lstinline {postprocessing.py}}{89}{section*.29}}
-\newlabel{RF3}{90}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }}{90}{figure.caption.30}}
-\newlabel{fig:pybrain}{{A.4}{90}{Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }{figure.caption.30}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{85}{figure.caption.24}}
+\newlabel{fig:pybrain}{{A.1}{85}{PyBrain standard architecture for an RL problem.\relax }{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}C++ Implementation}{85}{section.A.2}}
+\newlabel{sec:c++_implementation}{{A.2}{85}{C++ Implementation}{section.A.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.1}\lstinline {Environment}, \lstinline {Task}, \lstinline {Agent} and \lstinline {Experiment}}{86}{subsection.A.2.1}}
+\newlabel{RF1}{87}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the learning process in the asset allocation problem.\relax }}{87}{figure.caption.25}}
+\newlabel{fig:class_architecture_base}{{A.2}{87}{Class architecture for the learning process in the asset allocation problem.\relax }{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2.2}\lstinline {ARACAgent}}{88}{subsection.A.2.2}}
+\newlabel{RF2}{90}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }}{90}{figure.caption.26}}
+\newlabel{fig:class_architecture_arac}{{A.3}{90}{Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.3}Execution Pipeline}{91}{section.A.3}}
+\newlabel{sec:execution_pipeline}{{A.3}{91}{Execution Pipeline}{section.A.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Compilation}{91}{section*.27}}
+\@writefile{toc}{\contentsline {paragraph}{\lstinline {generate_synthetic_series.py}}{91}{section*.28}}
+\@writefile{toc}{\contentsline {paragraph}{\lstinline {experiment_launcher.py}}{91}{section*.29}}
+\@writefile{toc}{\contentsline {paragraph}{\lstinline {main_thesis}}{91}{section*.30}}
+\@writefile{toc}{\contentsline {paragraph}{\lstinline {postprocessing.py}}{92}{section*.31}}
+\newlabel{RF3}{93}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }}{93}{figure.caption.32}}
+\newlabel{fig:pybrain}{{A.4}{93}{Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }{figure.caption.32}{}}
 \citation{*}
 \bibstyle{siam}
 \bibdata{Bibliography/bibliography}
@@ -343,82 +361,86 @@
 \bibcite{borkar2002q}{18}
 \bibcite{borkar2002risk}{19}
 \bibcite{busoniu2010reinforcement}{20}
-\bibcite{casqueiro2006neuro}{21}
-\bibcite{chapados2001cost}{22}
-\bibcite{choey1997nonlineareltit}{23}
-\bibcite{chow2015risk}{24}
-\bibcite{corazzaq}{25}
-\bibcite{cumming2015investigation}{26}
-\bibcite{dempster2006automated}{27}
-\bibcite{dempster2002intraday}{28}
-\bibcite{deng2016deep}{29}
-\bibcite{deng2015sparse}{30}
-\bibcite{eldercreating}{31}
-\bibcite{fama1991efficient}{32}
-\bibcite{feldkamp1998enhanced}{33}
-\bibcite{ganchev2010censored}{34}
-\bibcite{gold2003FX}{35}
-\bibcite{Goodfellow-et-al-2016-Book}{36}
-\bibcite{hastie2009unsupervised}{37}
-\bibcite{hendricks2014reinforcement}{38}
-\bibcite{jaeger2002tutorial}{39}
-\bibcite{jensen1978some}{40}
-\bibcite{joshi2008c++}{41}
-\bibcite{kakade2001natural}{42}
-\bibcite{kamijo1990stock}{43}
-\bibcite{kearns2013machine}{44}
-\bibcite{konda1999actor}{45}
-\bibcite{kushner2003stochastic}{46}
-\bibcite{NIPS2013_4917}{47}
-\bibcite{laruelle2011optimal}{48}
-\bibcite{laruelle2013optimal}{49}
-\bibcite{li2007short}{50}
-\bibcite{liang2011stock}{51}
-\bibcite{lo2000foundations}{52}
-\bibcite{mahadevan1996average}{53}
-\bibcite{malkiel1970efficient}{54}
-\bibcite{mallaby2010more}{55}
-\bibcite{markowitz1952portfolio}{56}
-\bibcite{miyamae2010natural}{57}
-\bibcite{moody2001learning}{58}
-\bibcite{moody2013reinforcement}{59}
-\bibcite{moody1997optimization}{60}
-\bibcite{moody1998performance}{61}
-\bibcite{nevmyvaka2006reinforcement}{62}
-\bibcite{nocedal2006numerical}{63}
-\bibcite{o2006adaptive}{64}
-\bibcite{pages2016introduction}{65}
-\bibcite{peters2010relative}{66}
-\bibcite{peters2006policy}{67}
-\bibcite{peters2008reinforcement}{68}
-\bibcite{prashanth2014actor}{69}
-\bibcite{puterman1994markov}{70}
-\bibcite{saad1998comparative}{71}
-\bibcite{sanderson2010armadillo}{72}
-\bibcite{sato2000variance}{73}
-\bibcite{Sato:2001:ARL:645530.757778}{74}
-\bibcite{pybrain2010jmlr}{75}
-\bibcite{sehnke2012parameter}{76}
-\bibcite{sehnke2008policy}{77}
-\bibcite{sehnke2010parameter}{78}
-\bibcite{sharpe1994sharpe}{79}
-\bibcite{silver2016mastering}{80}
-\bibcite{silver2014deterministic}{81}
-\bibcite{sobel1982variance}{82}
-\bibcite{sun2009efficient}{83}
-\bibcite{sutton1998introduction}{84}
-\bibcite{sutton1999policy}{85}
-\bibcite{szepesvari2010algorithms}{86}
-\bibcite{tamar2013temporal}{87}
-\bibcite{tamar2015policy}{88}
-\bibcite{tamar2012policy}{89}
-\bibcite{tamar2013variance}{90}
-\bibcite{tan2011stock}{91}
-\bibcite{timmermann2004efficient}{92}
-\bibcite{tsay2005analysis}{93}
-\bibcite{werbos1990backpropagation}{94}
-\bibcite{wiering2012reinforcement}{95}
-\bibcite{williams1989learning}{96}
-\bibcite{Yang2012behavior}{97}
-\bibcite{zhao2011analysis}{98}
-\bibcite{zhao2015regularized}{99}
+\bibcite{cartea2015algorithmic}{21}
+\bibcite{casqueiro2006neuro}{22}
+\bibcite{chapados2001cost}{23}
+\bibcite{choey1997nonlineareltit}{24}
+\bibcite{chow2015risk}{25}
+\bibcite{corazzaq}{26}
+\bibcite{cumming2015investigation}{27}
+\bibcite{dempster2006automated}{28}
+\bibcite{dempster2002intraday}{29}
+\bibcite{deng2016deep}{30}
+\bibcite{deng2015sparse}{31}
+\bibcite{eldercreating}{32}
+\bibcite{fama1991efficient}{33}
+\bibcite{feldkamp1998enhanced}{34}
+\bibcite{ganchev2010censored}{35}
+\bibcite{gittins2011multi}{36}
+\bibcite{gold2003FX}{37}
+\bibcite{Goodfellow-et-al-2016-Book}{38}
+\bibcite{hastie2009unsupervised}{39}
+\bibcite{hendricks2014reinforcement}{40}
+\bibcite{jaeger2002tutorial}{41}
+\bibcite{jensen1978some}{42}
+\bibcite{johnson2010algorithmic}{43}
+\bibcite{joshi2008c++}{44}
+\bibcite{kakade2001natural}{45}
+\bibcite{kamijo1990stock}{46}
+\bibcite{kearns2013machine}{47}
+\bibcite{konda1999actor}{48}
+\bibcite{kushner2003stochastic}{49}
+\bibcite{NIPS2013_4917}{50}
+\bibcite{laruelle2011optimal}{51}
+\bibcite{laruelle2013optimal}{52}
+\bibcite{li2007short}{53}
+\bibcite{liang2011stock}{54}
+\bibcite{lo2000foundations}{55}
+\bibcite{mahadevan1996average}{56}
+\bibcite{malkiel2003efficient}{57}
+\bibcite{malkiel1970efficient}{58}
+\bibcite{mallaby2010more}{59}
+\bibcite{markowitz1952portfolio}{60}
+\bibcite{miyamae2010natural}{61}
+\bibcite{moody2001learning}{62}
+\bibcite{moody2013reinforcement}{63}
+\bibcite{moody1997optimization}{64}
+\bibcite{moody1998performance}{65}
+\bibcite{nevmyvaka2006reinforcement}{66}
+\bibcite{nocedal2006numerical}{67}
+\bibcite{o2006adaptive}{68}
+\bibcite{pages2016introduction}{69}
+\bibcite{peters2010relative}{70}
+\bibcite{peters2006policy}{71}
+\bibcite{peters2008reinforcement}{72}
+\bibcite{prashanth2014actor}{73}
+\bibcite{puterman1994markov}{74}
+\bibcite{saad1998comparative}{75}
+\bibcite{sanderson2010armadillo}{76}
+\bibcite{sato2000variance}{77}
+\bibcite{Sato:2001:ARL:645530.757778}{78}
+\bibcite{pybrain2010jmlr}{79}
+\bibcite{sehnke2012parameter}{80}
+\bibcite{sehnke2008policy}{81}
+\bibcite{sehnke2010parameter}{82}
+\bibcite{sharpe1994sharpe}{83}
+\bibcite{silver2016mastering}{84}
+\bibcite{silver2014deterministic}{85}
+\bibcite{sobel1982variance}{86}
+\bibcite{sun2009efficient}{87}
+\bibcite{sutton1998introduction}{88}
+\bibcite{sutton1999policy}{89}
+\bibcite{szepesvari2010algorithms}{90}
+\bibcite{tamar2013temporal}{91}
+\bibcite{tamar2015policy}{92}
+\bibcite{tamar2012policy}{93}
+\bibcite{tamar2013variance}{94}
+\bibcite{tan2011stock}{95}
+\bibcite{timmermann2004efficient}{96}
+\bibcite{tsay2005analysis}{97}
+\bibcite{werbos1990backpropagation}{98}
+\bibcite{wiering2012reinforcement}{99}
+\bibcite{williams1989learning}{100}
+\bibcite{Yang2012behavior}{101}
+\bibcite{zhao2011analysis}{102}
+\bibcite{zhao2015regularized}{103}
