@@ -91,6 +91,16 @@
   markov decision processes with monotone cost}, Mathematics of Operations
   Research, 27 (2002), pp.~192--209.
 
+\bibitem{browne1995optimal}
+{\sc S.~Browne}, {\em Optimal investment policies for a firm with a random risk
+  process: exponential utility and minimizing the probability of ruin},
+  Mathematics of operations research, 20 (1995), pp.~937--958.
+
+\bibitem{browne1999reaching}
+{\sc S.~Browne et~al.}, {\em Reaching goals by a deadline: Digital options and
+  continuous-time active portfolio management}, Advances in Applied
+  Probability, 31 (1999), pp.~551--577.
+
 \bibitem{busoniu2010reinforcement}
 {\sc L.~Busoniu, R.~Babuska, B.~De~Schutter, and D.~Ernst}, {\em Reinforcement
   learning and dynamic programming using function approximators}, vol.~39, CRC

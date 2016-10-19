@@ -40,7 +40,7 @@ This seems to be contradicted by the numerous examples of successful quantitativ
 Renaissance Technologies LLC is an investment management company dedicated to producing superior returns for its clients and employees by adhering to mathematical and statistical methods
 \end{quote}
 This doesn't shed any light on how RenTech achieves its extraordinary results and the fact that almost nobody leaves the firm made its strategies one of the best-kept secret in the world. Some may argue that using successful hedge funds as a counterexample to market efficiency is affected by the well-known \emph{survivorship bias}, that is the logical error of concentrating on the people or things that ``survived'' some process and inadvertently overlooking those that did not because of their lack of visibility. This bias can lead to overly optimistic beliefs because failures are ignored and to the false belief that the successes in a group have some special property, rather than just coincidence. In our opinion, RenTech's success is not a coincidence and perfectly shows how difficult it is to identify and profitably exploit market inefficiencies. For a richer account of this (and other) legendary hedge fund, the reader may refer to \cite{mallaby2010more}.\\
-It is often argued that there is a ``file drawer'' bias in published studies due to the difficulty associated with publishing empirical studies that find insignificant effects. In studies of market efficiency, a reverse bias may be present. A researcher who genuinely believes he or she has identified a method for predicting the market has little incentive to publish the method in an academic journal and would presumably be tempted to sell it to an investment bank or to an hedge fund.\\
+There is another important point that is worth mentioning. It is often argued that there is a ``file drawer'' bias in published studies due to the difficulty associated with publishing empirical studies that find insignificant effects. In studies of market efficiency, a reverse bias may be present. A researcher who genuinely believes he or she has identified a method for predicting the market has little incentive to publish the method in an academic journal and would presumably be tempted to sell it to an investment bank or to an hedge fund.\\
 
 \section{Bibliographical Survey}
 \label{sec:bibliographical_survey}
@@ -66,35 +66,16 @@ The last sections gave an overview of the financial applications of reinforcemen
 \section{Asset Allocation with Transaction Costs}
 \label{sec:asset_allocation_with_transaction_costs}
 
-The asset allocation problem consists of determining how to dynamically invest
-the available capital in a portfolio of different assets in order to maximize
-the expected total return or another relevant performance measure. Let us
-consider a financial market consisting of $I+1$ different stocks that are
-traded only at discrete times $t \in \{0, 1, 2, \ldots\}$ and denote by
-${Z}_t = {(Z_t^0, Z_t^1, \ldots, Z_t^I)}^T$ their prices at time $t$.
-Typically, $Z_t^0$ refers to a riskless asset whose dynamic is given by $Z_t^0
-= {(1 + X)}^t$ where $X$ is the deterministic risk-free interest rate. The
-investment process works as follows: at time $t$, the investor observes the
-state of the market $S_t$, consisting for example of the past asset prices and
-other relevant economic variables, and subsequently chooses how to rebalance
-his portfolio, by specifying the units of each stock ${n}_t = {(n_t^0 ,
-n_t^1 , \ldots , n_t^I)}^T$ to be held between $t$ and $t+1$. In doing so, he
-needs to take into account the transaction costs that he has to pay to the
-broker to change his position.  At time $t+1$, the investor realizes a profit
-or a loss from his investment due to the stochastic variation of the stock
-values. The investor’s goal is to maximize a given performance measure.
+The asset allocation problem consists in determining how to dynamically invest the available capital in a portfolio of different assets in order to maximize the expected total return or another relevant performance measure. Let us consider a financial market consisting of $I+1$ different stocks that are traded only at discrete times $t \in \{0, 1, 2, \ldots\}$ and denote by ${Z}_t = {(Z_t^0, Z_t^1, \ldots, Z_t^I)}^T$ their prices at time $t$. Typically, $Z_t^0$ refers to a risk-free asset whose dynamic is given by $Z_t^0 = {(1 + X)}^t$ where $X$ is the deterministic risk-free interest rate. The investment process works as follows: at time $t$, the investor observes the state of the market $S_t$, consisting for example of the past asset prices and other relevant economic variables, and subsequently chooses how to rebalance his portfolio, by specifying the units of each stock ${n}_t = {(n_t^0 , n_t^1 , \ldots , n_t^I)}^T$ to be held between $t$ and $t+1$. In doing so, he needs to take into account the transaction costs that he has to pay to the broker to change his position.  At time $t+1$, the investor realizes a profit or a loss from his investment due to the stochastic variation of the stock values. The investor's goal is to maximize a given performance measure.
 
-\subsection{Reward Function}
-Let $W_t$ denote the wealth of the investor at time $t$. The profit realized
-between $t$ and $t+1$ is simply given by the difference between the trading
-results and the transaction costs payed to the broker. More formally
+\subsection{Wealth Dynamics}
+Let $W_t$ denote the wealth of the investor at time $t$. The profit realized between $t$ and $t+1$ is simply given by the difference between the trading results and the transaction costs payed to the broker. More formally
 \begin{equation*}
-	\Delta W_{t+1} = W_{t+1} - W_t = \text{NL}_{t+1} - \text{TC}_{t}	
+	\Delta W_{t+1} = W_{t+1} - W_t = \text{TP}_{t+1} - \text{TC}_{t}	
 \end{equation*}
-where $\text{PNL}_{t+1}$ denotes the profit due to the variation of the
-portfolio asset prices between $t$ and $t+1$
+where $\text{TP}_{t+1}$ denotes the profit due to the variation of the asset prices between $t$ and $t+1$
 \begin{equation*}
-	\text{PNL}_{t+1} = {n}_t \cdot \Delta{Z}_{t+1} = \sum^{I}_{i=0} 
+	\text{TP}_{t+1} = {n}_t \cdot \Delta{Z}_{t+1} = \sum^{I}_{i=0} 
 	n_t^i (Z_{t+1}^i - Z_t^i) 
 \end{equation*}
 and $\text{TC}_t$ denotes the fees payed to the broker to change the portfolio
@@ -165,12 +146,39 @@ framework, we consider the log-return of the portfolio between $t=0$ and $T$
 \end{equation}
 where $R_{t+1}$ is the log-return of the portfolio between $t$ and $t+1$
 \begin{equation}
+	\label{eq:portfolio_daily_logreturn}
 	R_{t+1} = \log \left\{ 1 + \sum^{I}_{i=0} \left[ a_t^i X_{t+1}^i - \delta_i
 	\left| a_t^i - \tilde{a}_t^i \right| - \delta_s {(a_t^i)}^- \right] -
 	\delta_f \ind{{a}_t \neq \tilde{{a}}_{t-1}}\right\}
 \end{equation}
-The portfolio return and log-return can be used as the reward function of a
-RL algorithm, either in a offline or in an online approach.
+The portfolio log-return can be directly used as the reward function of the asset allocation problem. However, more sophisticated approaches can be followed.
+
+\subsection{Rewards and Objective Functions}
+In the previous section we showed that the portfolio log-return between $t=0$ and a maturity $T$ is given by
+\begin{equation*}
+	R_{0,T} = \sum_{t=0}^{T-1} R_{t+1}
+\end{equation*}
+where $R_{t+1}$ is given in Eq. (\ref{eq:portfolio_daily_logreturn}). The maturity $T$ is arbitrary and one may be tempted to let $T \to \infty$. In addition to posing some convergence issues, this would be rather unrealistic as traders are typically evaluated on the short-run. As discussed in Chapter \ref{ch:discrete_time_stochastic_optimal_control}, the typical solution in this situation is to consider the discounted rewards
+\begin{equation*}
+	G_\gamma = \sum_{t=0}^{T-1} \gamma^t R_{t+1}
+\end{equation*}
+where $0 < \gamma < 1$ is the discount factor. This choice leads to the classical formulation for infinite horizon optimal control problems, which can be addressed in a fairly standard way using value-based or policy-based reinforcement learning algorithms. However, as discussed in Chapter \ref{ch:risk_sensitive_policy_gradient}, for the discounted rewards formulation it is difficult to extend the policy gradient theorem to the risk-sensitive framework. On the other hand, this is easier for the average reward formulation. In this case, the gain is measured as 
+\begin{equation*}
+	G_\text{avg} = \lim_{T\to\infty} \frac{1}{T} \sum_{t=0}^{T-1} R_{t+1} 
+\end{equation*} 
+The risk-sensitive performance measures defined as in the previous chapters.\\
+Both formulations discussed above treat the asset allocation problem on an infinite horizon. On the other hand, it would be interesting to formulate this problem as an episodic task, for which many policy gradient algorithms are available as discussed in  in Chapter \ref{ch:policy_gradient}. To achieve this, we can follow the idea of \cite{browne1995optimal}. Given an initial capital $W_0$ and two constants $L < 1 < U$, the goal of the trader is to increase his wealth to $U W_0$, before going down to $L W_0$. Let us reformulate this goal in terms of log-returns. First, let $l = \log L$ and $u = \log U$. We introduce first time step at which the portfolio log-return breeches these threshold 
+\begin{equation}
+	\tau_u = \inf\{t > 0: R_{0,t} \geq u\}
+\end{equation}
+\begin{equation}
+	\tau_l = \inf\{t > 0: R_{0,t} \leq l\}
+\end{equation}
+Hence, the goal of the agent can be formalized as follows 
+\begin{equation}
+	\max_\pi \P[\pi]{\tau_u < \tau_l} = \E[\pi]{\ind{\tau_u < \tau_l}}
+\end{equation}
+This control problem can be interpreted as an episodic task in which the agent receives a reward either $1$ if $R_{0,t} > u$ or $0$ if $R_{0,t} < l$ and then terminates. 
 
 \subsection{States}
 At each time step, the agent observes the state of the system to  make his decisions. First, we consider the $P+1$ past returns of all risky assets, i.e. $\{X_t, X_{t-1}, \ldots, X_{t-P}\}$. These input variables may be used to construct more complex features for example using some deep learning techniques, such as a deep auto-encoder. In order to properly incorporate the effects of transaction costs into his decision process, the agent must keep track of its current position $\tilde{a}_t$. Finally, we might consider some external variables $Y_t$ that may be relevant to the trader, such as the common technical indicator used in practice. Summing up, we assume that the state of the system is composed in the following way 
