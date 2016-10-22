@@ -154,7 +154,10 @@ where $R_{t+1}$ is the log-return of the portfolio between $t$ and $t+1$
 The portfolio log-return can be directly used as the reward function of the asset allocation problem. However, more sophisticated approaches can be followed.
 
 \subsection{Rewards and Objective Functions}
-In the previous section we showed that the portfolio log-return between $t=0$ and a maturity $T$ is given by
+The results of the previous sections need to be adapted to the typical reinforcement learning formulation. Two distinct routes can be followed: first the asset allocation problem is seen as an infinite horizon task, either in the discounted or in the average reward formulation. Second, an episodic formulation is proposed. As discussed in the previous chapters, these scenarios require different learning algorithms. 
+
+\subsubsection{Infinite Horizon Task}
+The portfolio log-return between $t=0$ and a maturity $T$ is given by
 \begin{equation*}
 	R_{0,T} = \sum_{t=0}^{T-1} R_{t+1}
 \end{equation*}
@@ -166,8 +169,11 @@ where $0 < \gamma < 1$ is the discount factor. This choice leads to the classica
 \begin{equation*}
 	G_\text{avg} = \lim_{T\to\infty} \frac{1}{T} \sum_{t=0}^{T-1} R_{t+1} 
 \end{equation*} 
-The risk-sensitive performance measures defined as in the previous chapters.\\
-Both formulations discussed above treat the asset allocation problem on an infinite horizon. On the other hand, it would be interesting to formulate this problem as an episodic task, for which many policy gradient algorithms are available as discussed in  in Chapter \ref{ch:policy_gradient}. To achieve this, we can follow the idea of \cite{browne1995optimal}. Given an initial capital $W_0$ and two constants $L < 1 < U$, the goal of the trader is to increase his wealth to $U W_0$, before going down to $L W_0$. Let us reformulate this goal in terms of log-returns. First, let $l = \log L$ and $u = \log U$. We introduce first time step at which the portfolio log-return breeches these threshold 
+The relevant risk-neutral and risk-sensitive performance measures can be defined as in the previous chapters.\\
+
+\subsubsection{Episodic Task}
+Both formulations discussed above treat the asset allocation problem on an infinite horizon. On the other hand, it would be interesting to formulate this problem as an episodic task, for which many policy gradient algorithms are available as discussed in  in Chapter \ref{ch:policy_gradient}. To achieve this, we can follow the idea of \cite{browne1995optimal}.\\
+Given an initial capital $W_0$ and two constants $L < 1 < U$, the goal of the trader is to increase his wealth to $U W_0$, before going down to $L W_0$. Let us reformulate this goal in terms of log-returns. First, let $l = \log L$ and $u = \log U$. We introduce the first time when the portfolio log-return breaches these thresholds 
 \begin{equation}
 	\tau_u = \inf\{t > 0: R_{0,t} \geq u\}
 \end{equation}
@@ -178,13 +184,43 @@ Hence, the goal of the agent can be formalized as follows
 \begin{equation}
 	\max_\pi \P[\pi]{\tau_u < \tau_l} = \E[\pi]{\ind{\tau_u < \tau_l}}
 \end{equation}
-This control problem can be interpreted as an episodic task in which the agent receives a reward either $1$ if $R_{0,t} > u$ or $0$ if $R_{0,t} < l$ and then terminates. 
+This control problem can be interpreted as an episodic task in which the agent receives a reward either $1$ if $R_{0,t} > u$ or $0$ if $R_{0,t} < l$ and then terminates. This mechanism is illustrated in Figure \ref{fig:episodic_asset_alloc}. The upper cumulative log-return hits the upper barrier before hitting the lower barrier and consequently the agent receives a reward of $1$. On the other hand, the lower path hits the lower barrier before and the agent thus receives zero reward.\\
+This formulation may appear simple, but it offers a nice practical interpretation. The lower barrier can be seen as a stop-loss order, which forces the trader to exit from his position when the losses exceed a given threshold. We remark that the reward does not depend on the the time step at which one of the two barrier is achieved. This could lead to extremely conservative policies which maximize the probability of success taking however a long time to achieve it. To attenuate this issue we might introduce a discount factor to represent the trader's greed, i.e. his preference to succeed as soon as possible. Formally, the optimization problem becomes  
+\begin{equation}
+	\max_\pi \E[\pi]{\gamma^\tau_u \ind{\tau_u < \tau_l}}
+\end{equation}
+where $0 < \gamma < 1$ denotes as usual the discount factor. 
+
+\begin{figure}[t]
+\centering 
+\begin{tikzpicture}
+	\draw[help lines, step=1.0, color=gray!30, dashed] (-5,-3) grid (5,3);
+	\draw[->,ultra thick] (-5,0)--(5,0) node[right]{$t$};
+	\draw[->,ultra thick] (-5,-3)--(-5,3) node[above]{$R_{0,t}$};
+	\draw[GloriousGreen, ultra thick, name path=upper] (-5, 2) node[left]{$u$} -- (5, 2) ; 
+	\draw[RealRed, ultra thick, name path=lower] (-5, -2) node[left]{$l$} --(5, -2);  
+	\draw[SteelBlue, ultra thick, name path=rw1] (-5, 0) -- (-4, 0.7) -- (-3, 0.2) -- (-2, 1.1) -- (-1, 0.2) -- (0, 1.0) -- (1, 2.5);
+	\draw[dashed, ultra thick] (1,2.5) node[above]{$1$} -- (1,0) node[below]{$\tau_u$};
+	\draw[SteelBlue, ultra thick, name path=rw2] (-5, 0) -- (-4, -0.2) -- (-3, -0.4) -- (-2, -1.1) -- (-1, -0.4) -- (0, -1.2) -- (1, -0.5) -- (2, -0.6) -- (3, -0.9) -- (4, -2.7);
+	\draw[dashed, thick] (4,-2.7) node[below]{$0$} -- (4,0) node[above]{$\tau_l$};
+	\fill[GloriousGreen, name intersections={of=rw1 and upper}] (intersection-1) circle (3pt);
+	\fill[RealRed, name intersections={of=rw2 and lower}] (intersection-1) circle (3pt);
+\end{tikzpicture}
+\caption{Episodic formulation for the asset allocation problem.}
+\label{fig:episodic_asset_alloc}
+\end{figure}
 
 \subsection{States}
-At each time step, the agent observes the state of the system to  make his decisions. First, we consider the $P+1$ past returns of all risky assets, i.e. $\{X_t, X_{t-1}, \ldots, X_{t-P}\}$. These input variables may be used to construct more complex features for example using some deep learning techniques, such as a deep auto-encoder. In order to properly incorporate the effects of transaction costs into his decision process, the agent must keep track of its current position $\tilde{a}_t$. Finally, we might consider some external variables $Y_t$ that may be relevant to the trader, such as the common technical indicator used in practice. Summing up, we assume that the state of the system is composed in the following way 
+At each time step, the agent observes the state of the system to make his decisions. First, we consider the $P+1$ past returns of all risky assets, i.e. $\{X_t, X_{t-1}, \ldots, X_{t-P}\}$. These input variables may be used to construct more complex features for example using some deep learning techniques, such as a deep auto-encoder.\\
+In order to properly incorporate the effects of transaction costs into his decision process, the agent must keep track of its current position $\tilde{a}_t$. For simplicity, we consider the past action as frozen and we will neglect the dependence from the policy, which will lead to the recurrent formulation proposed in \cite{moody1997optimization}.\\
+Finally, we might consider some external variables $Y_t$ that may be relevant to the trader, such as the common technical indicator used in practice. Summing up, the state of the system is given by
 \begin{equation}
 	S_t = \{X_t, X_{t-1}, \ldots, X_{t-P}, \tilde{a}_t, Y_t, Y_{t-1}, \ldots,
 	Y_{t-P}\}
+\end{equation}
+In the episodic formulation, we might also include some feature measuring the distance of the cumulative log-return from the barriers, i.e.
+\begin{equation}
+	Y_t^u = u - R_{0,t} \;\;\;\;\;\; Y_t^d = R_{0,t} - d
 \end{equation}
 
 \subsection{Actions}

@@ -1,4 +1,5 @@
 \select@language {english}
+\contentsline {chapter}{Sommario}{v}{chapter*.4}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}The March of the Machines}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Artificial Intelligence and Finance}{1}{section.1.2}
@@ -34,9 +35,9 @@
 \contentsline {subsubsection}{\numberline {4.4.3.2}Gaussian Exploration Policy}{32}{subsubsection.4.4.3.2}
 \contentsline {subsection}{\numberline {4.4.4}Policy Gradient with Parameter Exploration}{33}{subsection.4.4.4}
 \contentsline {subsubsection}{\numberline {4.4.4.1}Episodic PGPE}{33}{subsubsection.4.4.4.1}
-\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{34}{section*.11}
-\contentsline {paragraph}{Gaussian Parameter Distribution}{35}{section*.12}
-\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{35}{section*.13}
+\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{34}{section*.14}
+\contentsline {paragraph}{Gaussian Parameter Distribution}{35}{section*.15}
+\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{35}{section*.16}
 \contentsline {subsubsection}{\numberline {4.4.4.2}Infinite Horizon PGPE}{36}{subsubsection.4.4.4.2}
 \contentsline {section}{\numberline {4.5}Risk-Neutral Policy Gradient Theorem}{37}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Theorem Statement and Proof}{37}{subsection.4.5.1}
@@ -68,8 +69,10 @@
 \contentsline {section}{\numberline {7.3}Asset Allocation with Transaction Costs}{75}{section.7.3}
 \contentsline {subsection}{\numberline {7.3.1}Wealth Dynamics}{75}{subsection.7.3.1}
 \contentsline {subsection}{\numberline {7.3.2}Rewards and Objective Functions}{77}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}States}{78}{subsection.7.3.3}
-\contentsline {subsection}{\numberline {7.3.4}Actions}{79}{subsection.7.3.4}
+\contentsline {subsubsection}{\numberline {7.3.2.1}Infinite Horizon Task}{77}{subsubsection.7.3.2.1}
+\contentsline {subsubsection}{\numberline {7.3.2.2}Episodic Task}{78}{subsubsection.7.3.2.2}
+\contentsline {subsection}{\numberline {7.3.3}States}{79}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Actions}{80}{subsection.7.3.4}
 \contentsline {chapter}{\numberline {8}Numerical Results for the Asset Allocation Problem}{81}{chapter.8}
 \contentsline {section}{\numberline {8.1}Synthetic Risky Asset}{81}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Learning Algorithm Specifications}{82}{subsection.8.1.1}
@@ -94,8 +97,8 @@
 \contentsline {subsection}{\numberline {A.2.1}\lstinline {Environment}, \lstinline {Task}, \lstinline {Agent} and \lstinline {Experiment}}{95}{subsection.A.2.1}
 \contentsline {subsection}{\numberline {A.2.2}\lstinline {ARACAgent}}{97}{subsection.A.2.2}
 \contentsline {section}{\numberline {A.3}Execution Pipeline}{100}{section.A.3}
-\contentsline {paragraph}{Compilation}{100}{section*.27}
-\contentsline {paragraph}{\lstinline {generate_synthetic_series.py}}{100}{section*.28}
-\contentsline {paragraph}{\lstinline {experiment_launcher.py}}{100}{section*.29}
-\contentsline {paragraph}{\lstinline {main_thesis}}{100}{section*.30}
-\contentsline {paragraph}{\lstinline {postprocessing.py}}{101}{section*.31}
+\contentsline {paragraph}{Compilation}{100}{section*.31}
+\contentsline {paragraph}{\lstinline {generate_synthetic_series.py}}{100}{section*.32}
+\contentsline {paragraph}{\lstinline {experiment_launcher.py}}{100}{section*.33}
+\contentsline {paragraph}{\lstinline {main_thesis}}{100}{section*.34}
+\contentsline {paragraph}{\lstinline {postprocessing.py}}{101}{section*.35}

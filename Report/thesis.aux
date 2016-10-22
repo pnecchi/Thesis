@@ -16,7 +16,6 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\@input{Acknowledgements/acknowledgements.aux}
 \providecommand\@newglossary[4]{}
 \@newglossary{main}{glg}{gls}{glo}
 \@newglossary{acronym}{alg}{acr}{acn}
@@ -28,6 +27,8 @@
 \@writefile{toc}{\select@language{english}}
 \@writefile{lof}{\select@language{english}}
 \@writefile{lot}{\select@language{english}}
+\@input{Acknowledgements/acknowledgements.aux}
+\@input{Abstract/abstract.aux}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -43,9 +44,9 @@
 \newlabel{ch:discrete_time_stochastic_optimal_control}{{2}{3}{Discrete-Time Stochastic Optimal Control}{chapter.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Markov Decision Processes}{3}{section.2.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Policies}{4}{section.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{5}{figure.caption.8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{5}{figure.caption.11}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:sequential_decision_problem}{{2.1}{5}{Agent-environment interaction in sequential decision problems.\relax }{figure.caption.8}{}}
+\newlabel{fig:sequential_decision_problem}{{2.1}{5}{Agent-environment interaction in sequential decision problems.\relax }{figure.caption.11}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Risk-Neutral Framework}{6}{section.2.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Discounted Reward Formulation}{6}{subsection.2.3.1}}
 \newlabel{eq:bellman_expectation_eq_V}{{2.6}{7}{Bellman Expectation Equations}{equation.2.3.6}{}}
@@ -71,8 +72,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.5}Dynamic Programming Algorithms}{16}{section.2.5}}
 \newlabel{sec:policy_evaluation}{{2.5}{16}{Dynamic Programming Algorithms}{section.2.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Value Iteration}{16}{subsection.2.5.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{17}{figure.caption.9}}
-\newlabel{fig:policy_iteration}{{2.2}{17}{Policy iteration algorithm}{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{17}{figure.caption.12}}
+\newlabel{fig:policy_iteration}{{2.2}{17}{Policy iteration algorithm}{figure.caption.12}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Policy Iteration}{17}{subsection.2.5.2}}
 \citation{sutton1998introduction}
 \citation{szepesvari2010algorithms}
@@ -83,8 +84,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}The Reinforcement Learning Problem}{20}{section.3.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Model-Free RL Methods}{20}{section.3.2}}
 \citation{wiering2012reinforcement}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{21}{figure.caption.10}}
-\newlabel{fig:control_dependences}{{3.1}{21}{Solution process for the control problem.\relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{21}{figure.caption.13}}
+\newlabel{fig:control_dependences}{{3.1}{21}{Solution process for the control problem.\relax }{figure.caption.13}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Model Approximation}{22}{subsection.3.2.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Value Approximation}{22}{subsection.3.2.2}}
 \citation{sutton1999policy}
@@ -128,9 +129,9 @@
 \@writefile{loa}{\contentsline {algorithm}{\numberline {4.3}{\ignorespaces Episodic PGPE algorithm\relax }}{34}{algorithm.4.3}}
 \newlabel{algo:episodic_pgpe}{{4.3}{34}{Episodic PGPE algorithm\relax }{algorithm.4.3}{}}
 \newlabel{eq:pgpe_gradient}{{4.24}{34}{Episodic PGPE}{equation.4.4.24}{}}
-\@writefile{toc}{\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{34}{section*.11}}
-\@writefile{toc}{\contentsline {paragraph}{Gaussian Parameter Distribution}{35}{section*.12}}
-\@writefile{toc}{\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{35}{section*.13}}
+\@writefile{toc}{\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{34}{section*.14}}
+\@writefile{toc}{\contentsline {paragraph}{Gaussian Parameter Distribution}{35}{section*.15}}
+\@writefile{toc}{\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{35}{section*.16}}
 \citation{sehnke2012parameter}
 \citation{sutton1999policy}
 \citation{konda1999actor}
@@ -156,7 +157,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5.5}Natural Policy Gradient}{43}{subsection.4.5.5}}
 \citation{peters2008reinforcement}
 \citation{peters2008reinforcement}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{44}{figure.caption.14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{44}{figure.caption.17}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.5.1}Formalism of Natural Policy Gradients}{44}{subsubsection.4.5.5.1}}
 \citation{miyamae2010natural}
 \citation{tamar2012policy}
@@ -263,9 +264,14 @@
 \newlabel{eq:portfolio_return_benchmark}{{7.3}{76}{Wealth Dynamics}{equation.7.3.3}{}}
 \newlabel{eq:portfolio_daily_logreturn}{{7.5}{77}{Wealth Dynamics}{equation.7.3.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.3.2}Rewards and Objective Functions}{77}{subsection.7.3.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.2.1}Infinite Horizon Task}{77}{subsubsection.7.3.2.1}}
 \citation{browne1995optimal}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.3}States}{78}{subsection.7.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.4}Actions}{79}{subsection.7.3.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.3.2.2}Episodic Task}{78}{subsubsection.7.3.2.2}}
+\citation{moody1997optimization}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces Episodic formulation for the asset allocation problem.\relax }}{79}{figure.caption.18}}
+\newlabel{fig:episodic_asset_alloc}{{7.1}{79}{Episodic formulation for the asset allocation problem.\relax }{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.3}States}{79}{subsection.7.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.4}Actions}{80}{subsection.7.3.4}}
 \citation{moody1998performance}
 \@writefile{toc}{\contentsline {chapter}{\numberline {8}Numerical Results for the Asset Allocation Problem}{81}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -275,8 +281,8 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1.1}ARAC}{82}{subsubsection.8.1.1.1}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1.2}PGPE}{82}{subsubsection.8.1.1.2}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.1.3}NPGPE}{82}{subsubsection.8.1.1.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{83}{figure.caption.15}}
-\newlabel{fig:single_synthetic_neutral_convergence}{{8.1}{83}{Risk-neutral learning process for one synthetic risky asset}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{83}{figure.caption.19}}
+\newlabel{fig:single_synthetic_neutral_convergence}{{8.1}{83}{Risk-neutral learning process for one synthetic risky asset}{figure.caption.19}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1.2}Experimental Setup}{83}{subsection.8.1.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1.3}Risk-Neutral Framework}{83}{subsection.8.1.3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.3.1}Convergence}{83}{subsubsection.8.1.3.1}}
@@ -284,27 +290,27 @@
 \citation{saad1998comparative}
 \citation{liang2011stock}
 \citation{deng2016deep}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{84}{figure.caption.17}}
-\newlabel{fig:single_synthetic_neutral_performance}{{8.2}{84}{Backtest performance with one synthetic risky asset}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{84}{figure.caption.21}}
+\newlabel{fig:single_synthetic_neutral_performance}{{8.2}{84}{Backtest performance with one synthetic risky asset}{figure.caption.21}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.3.2}Performances}{84}{subsubsection.8.1.3.2}}
-\@writefile{tdo}{\contentsline {todo}{Describe statistics meaning}{84}{section*.16}}
-\pgfsyspdfmark {pgfid3}{14907995}{8261935}
-\pgfsyspdfmark {pgfid4}{2608255}{8276680}
-\pgfsyspdfmark {pgfid5}{5475455}{8007983}
-\@writefile{lot}{\contentsline {table}{\numberline {8.1}{\ignorespaces Backtest statistics for risk-neutral learning with one synthetic risky asset}}{85}{table.caption.18}}
-\newlabel{tab:single_synthetic_neutral_performance}{{8.1}{85}{Backtest statistics for risk-neutral learning with one synthetic risky asset}{table.caption.18}{}}
+\@writefile{tdo}{\contentsline {todo}{Describe statistics meaning}{84}{section*.20}}
+\pgfsyspdfmark {pgfid4}{14907995}{8261935}
+\pgfsyspdfmark {pgfid5}{2608255}{8276680}
+\pgfsyspdfmark {pgfid6}{5475455}{8007983}
+\@writefile{lot}{\contentsline {table}{\numberline {8.1}{\ignorespaces Backtest statistics for risk-neutral learning with one synthetic risky asset}}{85}{table.caption.22}}
+\newlabel{tab:single_synthetic_neutral_performance}{{8.1}{85}{Backtest statistics for risk-neutral learning with one synthetic risky asset}{table.caption.22}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {8.1.3.3}Impact of Transaction Costs}{85}{subsubsection.8.1.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.3}{\ignorespaces Impact of proportional transaction costs}}{86}{figure.caption.19}}
-\newlabel{fig:impact_transaction_costs}{{8.3}{86}{Impact of proportional transaction costs}{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.3}{\ignorespaces Impact of proportional transaction costs}}{86}{figure.caption.23}}
+\newlabel{fig:impact_transaction_costs}{{8.3}{86}{Impact of proportional transaction costs}{figure.caption.23}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {8.1.4}Risk-Sensitive Framework}{86}{subsection.8.1.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces Impact of short-selling fees}}{87}{figure.caption.20}}
-\newlabel{fig:impact_short_selling_fees}{{8.4}{87}{Impact of short-selling fees}{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{87}{figure.caption.21}}
-\newlabel{fig:single_synthetic_sensitive_convergence}{{8.5}{87}{Risk-sensitive learning process for one synthetic risky asset}{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{88}{figure.caption.22}}
-\newlabel{fig:single_synthetic_sensitive_performance}{{8.6}{88}{Backtest performance with one synthetic risky asset}{figure.caption.22}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8.2}{\ignorespaces Backtest statistics for risk-sensitive learning with one synthetic risky asset}}{88}{table.caption.23}}
-\newlabel{my-label}{{8.2}{88}{Backtest statistics for risk-sensitive learning with one synthetic risky asset}{table.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.4}{\ignorespaces Impact of short-selling fees}}{87}{figure.caption.24}}
+\newlabel{fig:impact_short_selling_fees}{{8.4}{87}{Impact of short-selling fees}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{87}{figure.caption.25}}
+\newlabel{fig:single_synthetic_sensitive_convergence}{{8.5}{87}{Risk-sensitive learning process for one synthetic risky asset}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{88}{figure.caption.26}}
+\newlabel{fig:single_synthetic_sensitive_performance}{{8.6}{88}{Backtest performance with one synthetic risky asset}{figure.caption.26}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8.2}{\ignorespaces Backtest statistics for risk-sensitive learning with one synthetic risky asset}}{88}{table.caption.27}}
+\newlabel{my-label}{{8.2}{88}{Backtest statistics for risk-sensitive learning with one synthetic risky asset}{table.caption.27}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {8.2}Historic Risky Asset}{89}{section.8.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {8.3}Multiple Synthetic Risky Assets}{89}{section.8.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {8.4}Historic Multiple Risky Assets}{89}{section.8.4}}
@@ -320,28 +326,28 @@
 \@writefile{toc}{\contentsline {section}{\numberline {A.1}Python Prototype}{93}{section.A.1}}
 \newlabel{sec:python_prototype}{{A.1}{93}{Python Prototype}{section.A.1}{}}
 \citation{joshi2008c++}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{94}{figure.caption.24}}
-\newlabel{fig:pybrain}{{A.1}{94}{PyBrain standard architecture for an RL problem.\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{94}{figure.caption.28}}
+\newlabel{fig:pybrain}{{A.1}{94}{PyBrain standard architecture for an RL problem.\relax }{figure.caption.28}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A.2}C++ Implementation}{94}{section.A.2}}
 \newlabel{sec:c++_implementation}{{A.2}{94}{C++ Implementation}{section.A.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.2.1}\lstinline {Environment}, \lstinline {Task}, \lstinline {Agent} and \lstinline {Experiment}}{95}{subsection.A.2.1}}
 \newlabel{RF1}{96}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the learning process in the asset allocation problem.\relax }}{96}{figure.caption.25}}
-\newlabel{fig:class_architecture_base}{{A.2}{96}{Class architecture for the learning process in the asset allocation problem.\relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the learning process in the asset allocation problem.\relax }}{96}{figure.caption.29}}
+\newlabel{fig:class_architecture_base}{{A.2}{96}{Class architecture for the learning process in the asset allocation problem.\relax }{figure.caption.29}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.2.2}\lstinline {ARACAgent}}{97}{subsection.A.2.2}}
 \newlabel{RF2}{99}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }}{99}{figure.caption.26}}
-\newlabel{fig:class_architecture_arac}{{A.3}{99}{Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }}{99}{figure.caption.30}}
+\newlabel{fig:class_architecture_arac}{{A.3}{99}{Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }{figure.caption.30}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A.3}Execution Pipeline}{100}{section.A.3}}
 \newlabel{sec:execution_pipeline}{{A.3}{100}{Execution Pipeline}{section.A.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Compilation}{100}{section*.27}}
-\@writefile{toc}{\contentsline {paragraph}{\lstinline {generate_synthetic_series.py}}{100}{section*.28}}
-\@writefile{toc}{\contentsline {paragraph}{\lstinline {experiment_launcher.py}}{100}{section*.29}}
-\@writefile{toc}{\contentsline {paragraph}{\lstinline {main_thesis}}{100}{section*.30}}
-\@writefile{toc}{\contentsline {paragraph}{\lstinline {postprocessing.py}}{101}{section*.31}}
+\@writefile{toc}{\contentsline {paragraph}{Compilation}{100}{section*.31}}
+\@writefile{toc}{\contentsline {paragraph}{\lstinline {generate_synthetic_series.py}}{100}{section*.32}}
+\@writefile{toc}{\contentsline {paragraph}{\lstinline {experiment_launcher.py}}{100}{section*.33}}
+\@writefile{toc}{\contentsline {paragraph}{\lstinline {main_thesis}}{100}{section*.34}}
+\@writefile{toc}{\contentsline {paragraph}{\lstinline {postprocessing.py}}{101}{section*.35}}
 \newlabel{RF3}{102}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }}{102}{figure.caption.32}}
-\newlabel{fig:pybrain}{{A.4}{102}{Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }}{102}{figure.caption.36}}
+\newlabel{fig:pybrain}{{A.4}{102}{Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }{figure.caption.36}{}}
 \citation{*}
 \bibstyle{siam}
 \bibdata{Bibliography/bibliography}
