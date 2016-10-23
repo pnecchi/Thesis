@@ -187,7 +187,7 @@ Hence, the goal of the agent can be formalized as follows
 This control problem can be interpreted as an episodic task in which the agent receives a reward either $1$ if $R_{0,t} > u$ or $0$ if $R_{0,t} < l$ and then terminates. This mechanism is illustrated in Figure \ref{fig:episodic_asset_alloc}. The upper cumulative log-return hits the upper barrier before hitting the lower barrier and consequently the agent receives a reward of $1$. On the other hand, the lower path hits the lower barrier before and the agent thus receives zero reward.\\
 This formulation may appear simple, but it offers a nice practical interpretation. The lower barrier can be seen as a stop-loss order, which forces the trader to exit from his position when the losses exceed a given threshold. We remark that the reward does not depend on the the time step at which one of the two barrier is achieved. This could lead to extremely conservative policies which maximize the probability of success taking however a long time to achieve it. To attenuate this issue we might introduce a discount factor to represent the trader's greed, i.e. his preference to succeed as soon as possible. Formally, the optimization problem becomes  
 \begin{equation}
-	\max_\pi \E[\pi]{\gamma^\tau_u \ind{\tau_u < \tau_l}}
+	\max_\pi \E[\pi]{\gamma^{\tau_u} \ind{\tau_u < \tau_l}}
 \end{equation}
 where $0 < \gamma < 1$ denotes as usual the discount factor. 
 

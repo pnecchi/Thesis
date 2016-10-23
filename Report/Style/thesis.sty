@@ -93,7 +93,8 @@
 \renewcommand{\P}[2][]{\mathbb{P}_{#1}\left( #2 \right)}
 \newcommand{\Var}[2][]{\operatorname{Var}_{#1}\left( #2 \right)}
 \newcommand{\Cov}[2][]{\operatorname{Cov}_{#1}\left( #2 \right)}
-
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
 \newcommand{\pardev}[2]{\frac{\partial #1}{\partial #2}}
 
 % Tikz settings
