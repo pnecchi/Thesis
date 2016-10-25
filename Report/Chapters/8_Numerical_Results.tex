@@ -232,9 +232,27 @@ where the noises are a Gaussain white noise with the following structure
 	\end{bmatrix}	
 	\right)
 \end{equation}
-For the considerations above, the two risky assets can be traded profitably using an approach similar to the well-known pairs trading technique for cointegrated assets. For this reasons, we expect the RL algorithms discussed in the previous chapters to be able to spot this pattern and exploit it to generate a profit. 
+We expect to be possible to trade the two risky assets profitably using an approach similar to the well-known pairs trading technique for cointegrated assets. Intuitively, because of the mean-reversion of the stochastic spread, we should be able to generate a profit by betting on the convergence of the prices of the two assets when they are far apart by selling the more expensive asset and buying the cheaper one. For these considerations, we expect the RL algorithms discussed in the previous chapters to be able to spot this pattern and exploit it to generate a profit. 
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Images/8_cointegrated_series}
+	\caption[Sample paths for the risky assets with a mean-reverting spread.]{Sample paths for the risky assets with a mean-reverting spread.}
+	\label{fig:cointegrated_series}
+\end{figure}
 
 \subsection{Specifications of the Learning Algorithms}
-%TODO: Describe Long-Short strategy on two risky assets
-The parametric policies used in Section \ref{sec:synthetic_risky_asset} can be directly used in this setting by interpreting one of the two assets as the risky 
+The parametric policies used in Section \ref{sec:synthetic_risky_asset} can be directly used in this setting to select the weight of one of the assets. Given the poor results obtained with ARAC, we only focus on the PGPE and NPGPE algorithms. The weight on the first asset is selected using The following controller 
+\begin{equation*}
+	a^1 = F_\theta(s) = \sign(\theta \cdot s)
+\end{equation*}
+where in PGPE the parameters are sampled from a multi-variate Gaussian distribution
+\begin{equation*}
+	\theta \sim \calN(\mu, \diag(\sigma))
+\end{equation*}  
+while in NPGPE the controller parameters are sampled from a Gaussian distribution parameterized by its mean and Cholesky factor
+\begin{equation*}
+	\theta \sim \calN(\mu, C^T C)
+\end{equation*}  
+The long-short strategy is completed by selecting $a^2 = - a^1$. In this case we notice that $a^1 + a^2 = 0$, which means that the long position on one asset is entirely financed by the short position on the other asset. Clearly, this assumption is simplistic as it neglects all the practical constraints on short-selling. Given that we will always be short on one of the two assets, we will also neglect short-selling fees, i.e. $\delta_s = 0$. 
 

@@ -19,9 +19,10 @@
 \contentsline {figure}{\numberline {8.4}{\ignorespaces Impact of short-selling fees}}{87}{figure.caption.26}
 \contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{88}{figure.caption.27}
 \contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{88}{figure.caption.28}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Sample paths for the risky assets with a mean-reverting spread.}}{92}{figure.caption.30}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{96}{figure.caption.30}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the learning process in the asset allocation problem.\relax }}{98}{figure.caption.31}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }}{101}{figure.caption.32}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }}{104}{figure.caption.38}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{96}{figure.caption.31}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the learning process in the asset allocation problem.\relax }}{98}{figure.caption.32}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an Average Reward Actor-Critic agent (ARAC).\relax }}{101}{figure.caption.33}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution flow of an asset allocation experiment. Black boxes denote Python scripts, blue boxes executables while red boxes input/output files.\relax }}{104}{figure.caption.39}
