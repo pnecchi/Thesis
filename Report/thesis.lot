@@ -10,5 +10,6 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {8.1}{\ignorespaces Backtest statistics for risk-neutral learning with one synthetic risky asset}}{85}{table.caption.24}
 \contentsline {table}{\numberline {8.2}{\ignorespaces Backtest statistics for risk-sensitive learning with one synthetic risky asset}}{89}{table.caption.29}
+\contentsline {table}{\numberline {8.3}{\ignorespaces Comparison of NPGPE and RSNPGPE for the asset allocation problem with one synthetic risky asset.\relax }}{90}{table.caption.30}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

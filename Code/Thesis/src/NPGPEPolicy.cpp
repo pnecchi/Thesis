@@ -21,6 +21,7 @@ void NPGPEPolicy::initializeParameters()
 {
     parameters.zeros();
     cholFactor.diag().ones();
+    cholFactor *= 0.1;
 }
 
 NPGPEPolicy::NPGPEPolicy(NPGPEPolicy const &other_)

@@ -5,14 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9dcdd4-0c88-446a-95c0-440f8746c1a1" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Images/convergence.eps" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Images/performance.eps" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment0.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment3.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment4.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment5.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment6.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment7.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment8.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment9.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment0.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment3.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment4.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment5.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment6.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment7.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment8.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment9.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment0.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment3.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment4.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment5.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment6.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment7.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment8.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment9.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Statistics/backtest.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Statistics/backtestRSARAC.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Statistics/backtestRSNPGPE.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Statistics/backtestRSPGPE.csv" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.pdf" afterPath="$PROJECT_DIR$/../../Report/thesis.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.synctex.gz" afterPath="$PROJECT_DIR$/../../Report/thesis.synctex.gz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate_cointegrated_series.py" afterPath="$PROJECT_DIR$/generate_cointegrated_series.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Chapters/8_Numerical_Results.tex" afterPath="$PROJECT_DIR$/../../Report/Chapters/8_Numerical_Results.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate_synthetic_series.py" afterPath="$PROJECT_DIR$/generate_synthetic_series.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Data/Parameters/Single_Synth_RS_P0_F0_S0_N5.pot" afterPath="$PROJECT_DIR$/../../Data/Parameters/Single_Synth_RS_P0_F0_S0_N5.pot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Launchers/experiment_launcher.py" afterPath="$PROJECT_DIR$/../../Launchers/experiment_launcher.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Appendix/A_Implementation.tex" afterPath="$PROJECT_DIR$/../../Report/Appendix/A_Implementation.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.aux" afterPath="$PROJECT_DIR$/../../Report/thesis.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.ist" afterPath="$PROJECT_DIR$/../../Report/thesis.ist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.lof" afterPath="$PROJECT_DIR$/../../Report/thesis.lof" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.log" afterPath="$PROJECT_DIR$/../../Report/thesis.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.out" afterPath="$PROJECT_DIR$/../../Report/thesis.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.toc" afterPath="$PROJECT_DIR$/../../Report/thesis.toc" />
     </list>
     <ignored path="Preprocessing.iws" />
@@ -33,24 +73,12 @@
     <favorites_list name="Preprocessing" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="generate_cointegrated_series.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/generate_cointegrated_series.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
+      <file leaf-file-name="experiment_launcher.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../Launchers/experiment_launcher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-              <folding>
-                <element signature="e#1#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backend_ps.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/matplotlib/backends/backend_ps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="1221" column="0" selection-start-line="1221" selection-start-column="0" selection-end-line="1221" selection-end-column="0" />
+            <state relative-caret-position="1015">
+              <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -66,14 +94,15 @@
       <list>
         <option value="$PROJECT_DIR$/market_data_io.py" />
         <option value="$PROJECT_DIR$/generate_cointegrated_series.py" />
+        <option value="$PROJECT_DIR$/../../Launchers/experiment_launcher.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="89" />
-    <option name="y" value="-6" />
+    <option name="y" value="33" />
     <option name="width" value="3111" />
-    <option name="height" value="1806" />
+    <option name="height" value="1767" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -100,8 +129,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -110,22 +139,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Preprocessing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Preprocessing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Launchers/experiment_launcher.py" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
@@ -335,13 +354,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="89" y="-6" width="3111" height="1806" extended-state="6" />
+    <frame x="89" y="33" width="3111" height="1767" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2497561" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.4988618" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939714" sideWeight="0.5011382" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32877564" sideWeight="0.4988618" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939714" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -354,6 +372,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -397,6 +416,24 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/generate_cointegrated_series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/matplotlib/backends/backend_ps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35235">
+          <caret line="1221" column="0" selection-start-line="1221" selection-start-column="0" selection-end-line="1221" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/synthetic.csv" />
     <entry file="file://$PROJECT_DIR$/market_data_io.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
@@ -420,6 +457,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/generate_cointegrated_series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1373">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/matplotlib/backends/backend_ps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -428,13 +475,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate_cointegrated_series.py">
+    <entry file="file://$PROJECT_DIR$/../../Launchers/experiment_launcher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1015">
+          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>

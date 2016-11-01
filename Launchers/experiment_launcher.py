@@ -48,17 +48,17 @@ params = {'riskFreeRate'      : 0.0,
           'deltaF'            : 0.0,
           'deltaS'            : 0.0000,
           'numDaysObserved'   : 5,
-          'lambda'            : 0.9,
-          'alphaConstActor'   : 1.0,
+          'lambda'            : 0.1,
+          'alphaConstActor'   : 0.5,
           'alphaExpActor'     : 0.8,
-          'alphaConstCritic'  : 1.0,
+          'alphaConstCritic'  : 0.5,
           'alphaExpCritic'    : 0.7,
-          'alphaConstBaseline': 1.0,
+          'alphaConstBaseline': 0.5,
           'alphaExpBaseline'  : 0.6,
           'numExperiments'    : 5,
-          'numEpochs'         : 1001,
-          'numTrainingSteps'  : 1000,
-          'numTestSteps'      : 100}
+          'numEpochs'         : 1000,
+          'numTrainingSteps'  : 7000,
+          'numTestSteps'      : 2000}
 
 
 #------------------------------------------------------------------------------------------------------|
@@ -68,9 +68,12 @@ params = {'riskFreeRate'      : 0.0,
 #  * multiAsset: if True (resp. False) run the multi-asset (resp. single asset) case                   |
 #------------------------------------------------------------------------------------------------------|
 
-riskSensitive = False
-synthetic     = False
-multiAsset    = False  # Attention: multiAsset case not implemented yet
+riskSensitive = True
+synthetic     = True
+multiAsset    = True
+
+if not synthetic and multiAsset:
+    raise ValueError('ERROR: multi asset case not implemented for historical data.')
 
 #===============================================================================
 
@@ -147,7 +150,7 @@ with open(os.path.expanduser(parametersFile), 'w+') as f:
 #----------------------------------#
 
 if riskSensitive:
-    algorithmsList = ['RSARAC', 'RSPGPE', 'RSNPGPE']
+    algorithmsList = ['RSPGPE', 'RSNPGPE']
 else:
     algorithmsList = ['ARAC', 'PGPE', 'NPGPE']
 
@@ -155,7 +158,13 @@ else:
 # Run learning algorithms #
 #-------------------------#
 
-execPath = thesisBaseDir + 'Code/Thesis/examples/main_thesis'
+if multiAsset:
+    execPath = thesisBaseDir + 'Code/Thesis/examples/main_multiple'
+
+    # TODO: Remove this line when other algorithms will be implemented as well
+    algorithmsList = ['PGPE']
+else:
+    execPath = thesisBaseDir + 'Code/Thesis/examples/main_thesis'
 
 for algo in algorithmsList:
 

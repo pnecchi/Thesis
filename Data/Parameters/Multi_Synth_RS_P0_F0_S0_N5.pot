@@ -1,0 +1,16 @@
+deltaP = 0.0
+deltaS = 0.0
+numDaysObserved = 5
+numExperiments = 5
+alphaExpActor = 0.8
+alphaConstCritic = 0.5
+alphaExpCritic = 0.7
+alphaExpBaseline = 0.6
+numEpochs = 1000
+alphaConstActor = 0.5
+riskFreeRate = 0.0
+deltaF = 0.0
+numTestSteps = 2000
+alphaConstBaseline = 0.5
+numTrainingSteps = 7000
+lambda = 0.1

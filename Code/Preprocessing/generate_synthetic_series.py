@@ -10,7 +10,7 @@ import csv
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-plt.style.use('ggplot')
+plt.style.use('seaborn-colorblind')
 
 
 class PriceGenerator(object):
@@ -26,7 +26,7 @@ class PriceGenerator(object):
     alpha = 0.9
 
     # Price standard deviation
-    sigma = 3.0
+    sigma = 10.0
 
     def __init__(self):
         """ Initialize price generator. """
@@ -89,7 +89,7 @@ def main():
     daily_returns = daily_returns.ix[1:]
 
     # Write df to csv file
-    with open('synthetic.csv', 'w') as f:
+    with open('synthetic_high_vol.csv', 'w') as f:
         a = csv.writer(f, delimiter=',', lineterminator='\n')
         a.writerows([[daily_returns.shape[0], daily_returns.shape[1]]])
         daily_returns.to_csv(f, index=False)

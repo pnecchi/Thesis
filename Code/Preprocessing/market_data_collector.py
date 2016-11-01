@@ -79,7 +79,7 @@ class MarketDataCollector(object):
 
 if __name__ == "__main__":
     start_date = pd.to_datetime('2000/01/01')
-    assets = ['BMPS.MI']
+    assets = ['JPM']
     collector = MarketDataCollector(assets, start_date)
     collector.run()
     collector.to_csv()

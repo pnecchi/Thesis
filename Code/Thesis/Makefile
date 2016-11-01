@@ -128,6 +128,19 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
+# Target rules for targets named main_multiple
+
+# Build rule for target.
+main_multiple: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main_multiple
+.PHONY : main_multiple
+
+# fast build rule for target.
+main_multiple/fast:
+	$(MAKE) -f examples/CMakeFiles/main_multiple.dir/build.make examples/CMakeFiles/main_multiple.dir/build
+.PHONY : main_multiple/fast
+
+#=============================================================================
 # Target rules for targets named main_thesis
 
 # Build rule for target.
@@ -750,6 +763,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... thesis"
 	@echo "... main"
+	@echo "... main_multiple"
 	@echo "... main_thesis"
 	@echo "... src/ArAgent.o"
 	@echo "... src/ArAgent.i"

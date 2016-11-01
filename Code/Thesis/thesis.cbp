@@ -180,6 +180,7 @@
 			<Option virtualFolder="CMake Files/examples/" />
 		</Unit>
 		<Unit filename="examples/main.cpp" />
+		<Unit filename="examples/main_multiple.cpp" />
 		<Unit filename="examples/main_thesis.cpp" />
 		<Unit filename="include/thesis/Actor.h" />
 		<Unit filename="include/thesis/Agent.h" />

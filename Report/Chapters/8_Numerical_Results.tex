@@ -48,7 +48,7 @@ All the algorithms were tested on the same price series of size $9000$, generate
 \subsubsection{Convergence}
 \begin{figure}[t!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Images/6_0_single_synthetic_neutral_convergence}
+	\includegraphics[height=6cm,width=1.0\textwidth]{Images/6_0_single_synthetic_neutral_convergence}
 	\caption[Risk-neutral learning process for one synthetic risky asset]{Risk-neutral learning process for the asset allocation problem with one synthetic risky asset.}
 	\label{fig:single_synthetic_neutral_convergence}
 \end{figure}
@@ -67,21 +67,21 @@ Table \ref{tab:single_synthetic_neutral_performance} reports more performance st
 
 \begin{table}[t!]
 \centering
-\begin{tabular}{@{}lllll@{}}
+\begin{tabular}{@{}lrrrr@{}}
 \toprule
  & \multicolumn{1}{c}{Buy and Hold} & \multicolumn{1}{c}{ARAC} & \multicolumn{1}{c}{NPGPE} & \multicolumn{1}{c}{PGPE} \\ \midrule
-Total Return & 7.81\% & -0.86\% & 231.63\% & 314.34\% \\
-Daily Sharpe & 0.27 & -0.02 & 4.13 & 4.95 \\
-Monthly Sharpe & 0.19 & -0.07 & 2.90 & 3.26 \\
-Yearly Sharpe & 0.23 & -0.10 & 1.55 & 1.76 \\
-Max Drawdown & -22.35\% & -12.60\% & -3.72\% & -3.27\% \\
-Avg Drawdown & -1.75\% & -1.81\% & -0.49\% & -0.43\% \\
-Avg Up Month & 2.87\% & 1.14\% & 2.47\% & 2.74\% \\
-Avg Down Month & -2.58\% & -1.10\% & -0.73\% & -0.67\% \\
-Win Year \% & 40.00\% & 44.00\% & 98.00\% & 100.00\% \\
-Win 12m \% & 56.36\% & 48.00\% & 100.00\% & 100.00\% \\
-Reallocation Freq & 0.00\% & 50.01\% & 19.99\% & 15.43\% \\
-Short Freq & 0.00\% & 50.13\% & 41.59\% & 44.25\% \\ \bottomrule
+Total Return 		& 7.81\% 	& -0.86\% 	& 231.63\% 	& 314.34\% \\
+Daily Sharpe 		& 0.27 		& -0.02 	& 4.13 		& 4.95 \\
+Monthly Sharpe 		& 0.19 		& -0.07 	& 2.90 		& 3.26 \\
+Yearly Sharpe 		& 0.23 		& -0.10 	& 1.55 		& 1.76 \\
+Max Drawdown 		& -22.35\% 	& -12.60\% 	& -3.72\% 	& -3.27\% \\
+Avg Drawdown 		& -1.75\% 	& -1.81\% 	& -0.49\% 	& -0.43\% \\
+Avg Up Month 		& 2.87\% 	& 1.14\% 	& 2.47\% 	& 2.74\% \\
+Avg Down Month 		& -2.58\%	& -1.10\% 	& -0.73\% 	& -0.67\% \\
+Win Year \% 		& 40.00\% 	& 44.00\% 	& 98.00\% 	& 100.00\% \\
+Win 12m \% 			& 56.36\% 	& 48.00\% 	& 100.00\% 	& 100.00\% \\
+Reallocation Freq 	& 0.00\% 	& 50.01\% 	& 19.99\% 	& 15.43\% \\
+Short Freq 			& 0.00\% 	& 50.13\% 	& 41.59\% 	& 44.25\% \\ \bottomrule
 \end{tabular}
 \caption[Backtest statistics for risk-neutral learning with one synthetic risky asset]{Backtest statistics of the risk-neutral trading strategies for the asset allocation problem with one synthetic risky asset. \emph{Total Return} is the cumulative return obtained following the strategy. \emph{Daily Sharpe} is the daily Sharpe ratio, annualized. \emph{Monthly Sharpe} is the monthly Sharpe ratio, annualized. \emph{Yearly Sharpe} is the yearly Sharpe ratio. \emph{Max Drawdown} is the maximum drawdown observed, i.e. the maximum loss from a peak to a trough of a portfolio, before a new peak is attained. \emph{Avg Drawdown} is the average drawdown observed, i.e. the average loss from a peak to a through of a portfolio. \emph{Avg Up Month} is the average profit on a positive month. \emph{Avf Down Month} is the average loss on a negative month. \emph{Win Year \%} is the percentage of positive years. \emph{Win 12\%} is the percentage of profitable consecutive 12 months. \emph{Reallocation Freq} is the frequency with which the agent changes its position. \emph{Short Freq} is the frequency with which the agent shorts the risky asset.}
 \label{tab:single_synthetic_neutral_performance}
@@ -92,68 +92,137 @@ In the algorithmic trading literature there are many examples of strategies base
 Figure \ref{fig:impact_transaction_costs} shows the impact of proportional transaction costs on the trading strategies learned by PGPE and by NPGPE. 
 \begin{figure}[t!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Images/6_2_impact_transaction_costs}
-	\caption[Impact of proportional transaction costs]{Impact of proportional transaction costs on the trading strategies learned by PGPE and NPGPE.}
+	\includegraphics[height=6cm,width=1.0\textwidth]{Images/6_2_impact_transaction_costs}
+	\caption[Proportional transaction costs and risk-neutral strategies]{Impact of proportional transaction costs on the trading strategies learned by PGPE and NPGPE.}
 	\label{fig:impact_transaction_costs}
 \end{figure}
 As expected, the frequency of reallocation for both strategies quickly drops to zero as the transaction costs increase, converging to the profitable buy and hold strategy. It is peculiar that the reallocation frequency for the PGPE strategy initially drops more quickly than for the NPGPE strategy, but then slows down and even increases when $\delta_P = 20$ bps. In summary, both algorithms are able to identify reallocation as the cause for lower rewards and to subsequently reduce the rate of reallocation. However, it seems that both algorithms prescribe a zero return buy and hold strategy on the risk-free asset, instead of the more profitable buy and hold strategy on the risky asset.\\
 Figure \ref{fig:impact_short_selling_fees} shows the impact of short-selling fees on the trading strategies learned by PGPE and NPGPE. Both algorithms behave as expected, displaying a progressive reduction of the frequency of short positions as the fees increase. For large values of short-selling fees, both strategies converge to the profitable buy and hold strategy, which completely avoids paying the fees. In particular, PGPE quickly replicates the buy and hold strategy. On the other hand, NPGPE is not able to exactly reproduce the buy and hold strategy but it seems to converge to it for very large values of the short-selling fee. 
 \begin{figure}[t!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Images/6_3_impact_short_selling_fees}
-	\caption[Impact of short-selling fees]{Impact of short-selling fees on the trading strategies learned by PGPE and NPGPE.}
+	\includegraphics[height=6cm,width=1.0\textwidth]{Images/6_3_impact_short_selling_fees}
+	\caption[Short-selling fees and risk-neutral strategies]{Impact of short-selling fees on the trading strategies learned by PGPE and NPGPE.}
 	\label{fig:impact_short_selling_fees}
 \end{figure}
 
 \subsection{Risk-Sensitive Framework}
-In this section we present the results in the risk-sensitive framework, in which all the algorithms optimize the Sharpe ratio of the policy. Figure \ref{fig:single_synthetic_sensitive_convergence} shows the learning curves for the three risk-sensitive algorithms RSARAC, RSPGPE and RSNPGPE, which show similar behaviors to their risk-neutral counterparts. However, it is surprising that the strategies learned by RSPGPE and RSNPGPE have smaller Sharpe ratio than in the risk-neutral version of these algorithms, which optimize a different quantity. Figure \ref{fig:single_synthetic_sensitive_performance} shows the backtest performances for the three risk-sensitive trading strategies. Again, RSPGPE and NPGPE beat the market even if in smaller measure than in the risk-neutral setting. 
+In this section we present the results in the risk-sensitive framework, in which the learning algorithms optimize the Sharpe ratio of the policy. Figure \ref{fig:single_synthetic_sensitive_convergence} shows the learning curves for the three risk-sensitive algorithms RSPGPE and RSNPGPE. We observe that the natural-gradient algorithm converges to a larger Sharpe ratio compared to the non-natural algorithm, which converges very quickly to a suboptimal policy. It is interesting that the risk-sensitive algorithms converge faster than their risk-neutral counterparts. Surprisingly, the strategies learned by the risk-sensitive algorithms have smaller Sharpe ratio than those learned in the risk-neutral version, in which we don't explicitly control risk. We still don't have a clear explanation for this counter-intuitive behavior. A first hypothesis is that, for the stationary dynamics considered to generate the price series, the optimal policy in the risk-neutral sense also minimize risk, but directly optimizing the Sharpe ratio is more difficult as more parameters and noise are involved in the learning process. Further research should be carried out to investigate this issue in more depth. Figure \ref{fig:single_synthetic_sensitive_performance} shows the backtest performances for the risk-sensitive trading strategies, which both outperform the simple buy-and-hold strategy. More statistics are reported in Table \ref{tab:single_synthetic_sensitive_performance}. We notice that, contrarily to the risk-neutral setting, NPGPE performs better than PGPE with respect to all the performance measures. In particular, the policy learned by PGPE takes much less short positions, which negatively impacts the performance of the strategy.
 
 \begin{figure}[t!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Images/6_4_single_synthetic_sensitive_convergence}
+	\includegraphics[height=6cm,width=1.0\textwidth]{Images/8_4_single_synthetic_sensitive_convergence}
 	\caption[Risk-sensitive learning process for one synthetic risky asset]{Risk-sensitive learning process for the asset allocation problem with one synthetic risky asset.}
 	\label{fig:single_synthetic_sensitive_convergence}
 \end{figure}
 
 \begin{figure}[t!]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Images/6_5_single_synthetic_sensitive_performance}
+	\includegraphics[width=1.0\textwidth]{Images/8_5_single_synthetic_sensitive_performance}
 	\caption[Backtest performance with one synthetic risky asset]{Backtest performance of the risk-sensitive trading strategies for the asset allocation problem with one synthetic risky asset.}
 	\label{fig:single_synthetic_sensitive_performance}
 \end{figure}
 
-\begin{table}[t!]
+\begin{table}[h!]
 \centering
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}lcccc@{}}
+\begin{tabular}{@{}lrrr@{}}
 \toprule
- & \multicolumn{1}{c}{Buy and Hold} & \multicolumn{1}{c}{RSARAC} & \multicolumn{1}{c}{RSNPGPE} & \multicolumn{1}{c}{RSPGPE} \\ \midrule
-Total Return & 7.81\% & -0.88\% & 113.42\% & 93.51\% \\
-Daily Sharpe & 0.27 & -0.03 & 2.55 & 2.15 \\
-Monthly Sharpe & 0.19 & -0.07 & 1.77 & 1.32 \\
-Yearly Sharpe & 0.23 & -0.09 & 1.05 & 0.78 \\
-Max Drawdown & -22.35\% & -12.62\% & -5.95\% & -9.26\% \\
-Avg Drawdown & -1.75\% & -1.77\% & -0.63\% & -0.95\% \\
-Avg Up Month & 2.87\% & 1.14\% & 2.22\% & 2.59\% \\
-Avg Down Month & -2.58\% & -1.11\% & -1.00\% & -1.35\% \\
-Win Year \% & 40.00\% & 44.00\% & 92.00\% & 80.00\% \\
-Win 12m \% & 56.36\% & 48.00\% & 98.55\% & 91.64\% \\
-Reallocation Freq & 0.00\% & 49.99\% & 35.78\% & 16.15\% \\
-Short Freq & 0.00\% & 50.12\% & 33.17\% & 21.84\% \\ \bottomrule
-\end{tabular}%
-}
+                  & Buy and Hold & RSPGPE   & RSNPGPE  \\ \midrule
+Total Return      & 7.81\%       & 82.29\%  & 219.81\% \\
+Daily Sharpe      & 0.27         & 1.95     & 3.97     \\
+Monthly Sharpe    & 0.19         & 1.19     & 2.84     \\
+Yearly Sharpe     & 0.23         & 0.67     & 1.71     \\
+Max Drawdown      & -22.35\%     & -11.56\% & -3.60\%  \\
+Avg Drawdown      & -1.75\%      & -1.00\%  & -0.47\%  \\
+Avg Up Month      & 2.87\%       & 2.65\%   & 2.41\%   \\
+Avg Down Month    & -2.58\%      & -1.48\%  & -0.71\%  \\
+Win Year \%       & 40.00\%      & 76.00\%  & 100.00\% \\
+Win 12m \%        & 56.36\%      & 87.45\%  & 100.00\% \\
+Reallocation Freq & 0.00\%       & 15.50\%  & 28.00\%  \\
+Short Freq        & 0.00\%       & 16.17\%  & 45.77\%  \\ \bottomrule
+\end{tabular}
 \caption[Backtest statistics for risk-sensitive learning with one synthetic risky asset]{Backtest statistics of the risk-sensitive trading strategies for the asset allocation problem with one synthetic risky asset.}
-\label{my-label}
+\label{tab:single_synthetic_sensitive_performance}
 \end{table}
 
-%TODO: Reallocation frequence as a function of transaction costs
-%TODO: Comparative table with backtest statistics
+\subsubsection{Risk-Neutral vs. Risk-Sensitive}
+The risk-neutral NPGPE and the risk-sensitive NPGPE strategies achieve very similar backtest performances. A natural question that arises is if the two algorithms are actually learning the same policy. The two versions of the NPGPE algorithm are compared in Table \ref{tab:comparison_NPGPE}. The statistics for the two algorithms are similar. Again, we point out the counter-intuitive fact that risk-neutral version produces higher Sharpe ratios, even if it is not the quantity directly being optimized. On the other hand, the risk-sensitive version seems to perform slightly better in terms of drawdowns. The most interesting feature is the different behavior of the two policies in terms of reallocation and short-selling frequencies. The risk-sensitive policy reshuffle the portfolio more frequently than the risk-neutral policy, also resorting more often to short positions. This shows that the policies learned by the two algorithms are actually different, leading however to very similar performances. 
 
+\begin{table}[t!]
+\centering
+\begin{tabular}{@{}lrr@{}}
+\toprule
+                  & NPGPE   & RSNPGPE  \\ \midrule
+Total Return      & 231.63\%  & 219.81\% \\
+Daily Sharpe      & 4.13     & 3.97     \\
+Monthly Sharpe    & 2.90     & 2.84     \\
+Yearly Sharpe     & 1.55     & 1.71     \\
+Max Drawdown      & -3.72\% & -3.60\%  \\
+Avg Drawdown      & -0.49\%  & -0.47\%  \\
+Avg Up Month      & 2.47\%   & 2.41\%   \\
+Avg Down Month    & -0.73\%  & -0.71\%  \\
+Win Year \%       & 98.00\%  & 100.00\% \\
+Win 12m \%        & 100.00\%  & 100.00\% \\
+Reallocation Freq & 19.99\%  & 28.00\%  \\
+Short Freq        & 41.59\%  & 45.77\%  \\ \bottomrule
+\end{tabular}
+\caption{Comparison of NPGPE and RSNPGPE for the asset allocation problem with one synthetic risky asset.}
+\label{tab:omparison_NPGPE}
+\end{table}
+
+\subsubsection{Impact of Transaction Costs}
+Once again we study the sensitivity of the trading strategies learned by RSPGPE and RSNPGPE with respect to transaction costs and short-selling fees. Intuitively, as the transaction costs increase we expect a progressive reduction of the frequency of reallocation and of shorting the risky asset.\\
+Figure \ref{fig:8_6_impact_transaction_costs_RS} shows the impact of proportional transaction costs on the trading strategies learned while Figure \ref{fig:8_7_impact_short_selling_fees_RS} shows that of short-selling fees. We observe that RSNPGPE quickly converge to the profitable Buy and Hold strategy in both situations. This was not the case in the risk-neutral framework, where NPGPE underperformed the benchmark when the transaction costs were large enough. Disappointingly, RSPGPE doesn't adapt to the increasing transaction costs as expected, leading to large losses. While, the reallocation frequency decreases (but not enough to avoid a loss), the frequency of short position appears to be independent of the short-selling fees. Further analysis is necessary to explain this unexpected behavior of RSPGPE which is not observed in the risk-neutral framework. 
+
+\begin{figure}[t!]
+\centering
+\includegraphics[height=6cm,width=1\linewidth]{Images/8_6_impact_transaction_costs_RS}
+\caption[Proportional transaction costs and risk-sensitive strategies]{Impact of proportional transaction costs on the trading strategies learned by RSPGPE and RSNPGPE.}
+\label{fig:8_6_impact_transaction_costs_RS}
+\end{figure}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[height=6cm,width=1\linewidth]{Images/8_7_impact_short_selling_fees_RS}
+\caption[Short-selling fees and risk-sensitive strategies]{Impact of short-selling fees on the trading strategies learned by RSPGPE and RSNPGPE.}
+\label{fig:8_7_impact_short_selling_fees_RS}
+\end{figure}
 
 \clearpage
 \section{Historic Risky Asset}
+In this section we discuss the attempt to apply the algorithms above to an historical price series. As a test case, we considered a stock of Banca Monte dei Paschi di Siena (BMPS IM) as the risky asset. In this case, the algorithms perform poorly and are not able to identify a profitable trading strategy. In some measure, this was expected given the simplicity of the parametric policy considered. When working on historical price series, there are multiple challenges to be addressed. First, it is not clear if the price series contains some patterns that could be traded profitably. This is the central issue of the \gls{EMH} which was discussed in Section \ref{sec:efficient_market_hypothesis}. Now, even if the prices contained a certain degree of predictability, the parametric policy should be sufficiently expressive to capture these patterns. This is clearly an issue of the current state of work, as the policy considered here is so simple that it would be surprising that the policy managed to capture a profitably tradable structure in the prices of a liquid stock. A possible development would be to employ a much more complex parametric policy, such as a neural network, in order to automatically extract more powerful features from the raw price series. Another related issue is the signal-to-noise ratio of financial time-series. 
 
 
+assuming that the 
+
+the parametric policy 
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[height=6cm,width=1.0\textwidth]{Images/8_8_single_hist_neutral_convergence}
+	\caption[]{}
+	\label{fig:}
+\end{figure}
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[height=6cm,width=1.0\textwidth]{Images/8_9_single_hist_neutral_performance}
+	\caption[]{}
+	\label{fig:}
+\end{figure}
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[height=6cm,width=1.0\textwidth]{Images/8_10_single_hist_sensitive_convergence}
+	\caption[]{}
+	\label{fig:}
+\end{figure}
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[height=6cm,width=1.0\textwidth]{Images/8_11_single_hist_sensitive_performance}
+	\caption[]{}
+	\label{fig:}
+\end{figure}
 
 \section{Multiple Synthetic Risky Assets}
 In this section we present an application of the learning algorithms considered above to a multi-asset allocation problem. Given the difficulties of learning a profitable strategy for historical data, we consider once again synthetic price series that can be traded profitably. To define the generative model, we start from a continuous-time formulation and then derive a discrete-time model using standard discretization techniques. In particular, we assume that the market consists of two risky asset $\{S_t^1, S_t^2\}$, whose prices evolve according to the following dynamics

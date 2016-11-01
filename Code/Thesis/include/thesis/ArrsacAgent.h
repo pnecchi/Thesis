@@ -183,6 +183,7 @@ class ARRSACAgent : public Agent
         arma::vec gradientCriticV;
         arma::vec gradientCriticU;
         arma::vec gradientActor;
+        arma::vec gradientSharpe;
 
         //! Cache variables for observations, action and reward.
         arma::vec observation;

@@ -99,4 +99,55 @@ class FactoryOfAgents
         double lambda;
 };
 
+
+class FactoryOfAgentsForTwoAssetsProblem
+{
+    public:
+        /*!
+         * instance method for creating a Singleton using Meyers' trick.
+         * @return a reference to the unique instance of a FactoryOfAgentsForTwoAssetsProblem object.
+         */
+        static FactoryOfAgentsForTwoAssetsProblem& instance(size_t const &dimObservation_,
+                                                            LearningRate const &baselineLearningRate_,
+                                                            LearningRate const &criticLearningRate_,
+                                                            LearningRate const &actorLearningRate_,
+                                                            double const &lambda_);
+
+        /*!
+         * make method for creating an agent of the given type.
+         * @param type of the Agent to create
+         * @return unique pointer to the instance of the agent
+         */
+        std::unique_ptr<Agent> make(std::string const &agentId) const;
+
+    private:
+        //! Standard constructor
+        FactoryOfAgentsForTwoAssetsProblem() = default;
+
+        //! Constructor
+        FactoryOfAgentsForTwoAssetsProblem(size_t const &dimObservation_,
+                                           LearningRate const &baselineLearningRate_,
+                                           LearningRate const &criticLearningRate_,
+                                           LearningRate const &actorLearningRate_,
+                                           double const &lambda_);
+
+        FactoryOfAgentsForTwoAssetsProblem(FactoryOfAgents const &)=delete;
+        FactoryOfAgentsForTwoAssetsProblem& operator=(FactoryOfAgents const &)=delete;
+
+        //! Default destructor
+        virtual ~FactoryOfAgentsForTwoAssetsProblem() = default;
+
+        //! Builder for PGPE Agent
+        std::unique_ptr<ARACAgent> makePGPEAgent() const;
+
+        //! Builder for RSNPGPE Agent
+        std::unique_ptr<RiskSensitiveNPGPEAgent> makeRSNPGPEAgent() const;
+
+        size_t dimObservation;
+        std::unique_ptr<LearningRate> baselineLearningRatePtr;
+        std::unique_ptr<LearningRate> criticLearningRatePtr;
+        std::unique_ptr<LearningRate> actorLearningRatePtr;
+        double lambda;
+};
+
 #endif // FACTORYOFAGENTS_H

@@ -21,6 +21,7 @@ ARRSACAgent::ARRSACAgent(StochasticActor const & actor_,
       gradientCriticV(criticV.getDimParameters(), arma::fill::zeros),
       gradientCriticU(criticU.getDimParameters(), arma::fill::zeros),
       gradientActor(actor.getDimParameters(), arma::fill::zeros),
+      gradientSharpe(actor.getDimParameters(), arma::fill::zeros),
       observation(actor_.getDimObservation()),
       action(actor_.getDimAction()),
       nextObservation(actor_.getDimObservation())
@@ -41,6 +42,7 @@ ARRSACAgent::ARRSACAgent(ARRSACAgent const &other_)
       gradientCriticV(other_.gradientCriticV),
       gradientCriticU(other_.gradientCriticU),
       gradientActor(other_.gradientActor),
+      gradientSharpe(other_.gradientSharpe),
       observation(other_.observation),
       action(other_.action),
       nextObservation(other_.nextObservation),
@@ -95,10 +97,12 @@ void ARRSACAgent::learn()
 
     // 3) Update critics
     double alphaCritic = criticLearningRatePtr->get();
-    gradientCriticV = lambda * gradientCriticV + criticV.gradient(observation);
-    gradientCriticU = lambda * gradientCriticU + criticU.gradient(observation);
-    gradientCriticV /= arma::norm(gradientCriticV);
-    gradientCriticU /= arma::norm(gradientCriticU);
+    // gradientCriticV = lambda * gradientCriticV + criticV.gradient(observation);
+    // gradientCriticU = lambda * gradientCriticU + criticU.gradient(observation);
+    //gradientCriticV /= arma::norm(gradientCriticV);
+    //gradientCriticU /= arma::norm(gradientCriticU);
+    gradientCriticV = criticV.gradient(observation);
+    gradientCriticU = criticU.gradient(observation);
     criticV.setParameters(criticV.getParameters() + alphaCritic * tdV * gradientCriticV);
     criticU.setParameters(criticU.getParameters() + alphaCritic * tdU * gradientCriticU);
 
@@ -108,8 +112,11 @@ void ARRSACAgent::learn()
     double sqrtVar = sqrt(var);
     double coeffGradientSR = (averageSquareReward * tdV - 0.5 * averageReward * tdU) /
                              (var * sqrtVar);
-    gradientActor = lambda * gradientActor + actor.likelihoodScore(observation, action);
-    gradientActor /= arma::norm(gradientActor, 2);
+    // gradientActor = lambda * gradientActor + actor.likelihoodScore(observation, action);
+    //gradientActor /= arma::norm(gradientActor, 2);
+    gradientActor = actor.likelihoodScore(observation, action);
+    gradientSharpe = lambda * gradientSharpe + coeffGradientSR * gradientActor;
+    gradientSharpe /= arma::norm(gradientSharpe, 2);
     actor.setParameters(actor.getParameters() + alphaActor * coeffGradientSR * gradientActor);
 }
 

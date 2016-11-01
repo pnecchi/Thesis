@@ -116,6 +116,20 @@ main/fast:
 .PHONY : main/fast
 
 # Convenience name for target.
+examples/CMakeFiles/main_multiple.dir/rule:
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/main_multiple.dir/rule
+.PHONY : examples/CMakeFiles/main_multiple.dir/rule
+
+# Convenience name for target.
+main_multiple: examples/CMakeFiles/main_multiple.dir/rule
+.PHONY : main_multiple
+
+# fast build rule for target.
+main_multiple/fast:
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_multiple.dir/build.make examples/CMakeFiles/main_multiple.dir/build
+.PHONY : main_multiple/fast
+
+# Convenience name for target.
 examples/CMakeFiles/main_thesis.dir/rule:
 	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/main_thesis.dir/rule
 .PHONY : examples/CMakeFiles/main_thesis.dir/rule
@@ -153,6 +167,30 @@ main.cpp.s:
 	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main.dir/build.make examples/CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+main_multiple.o: main_multiple.cpp.o
+.PHONY : main_multiple.o
+
+# target to build an object file
+main_multiple.cpp.o:
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_multiple.dir/build.make examples/CMakeFiles/main_multiple.dir/main_multiple.cpp.o
+.PHONY : main_multiple.cpp.o
+
+main_multiple.i: main_multiple.cpp.i
+.PHONY : main_multiple.i
+
+# target to preprocess a source file
+main_multiple.cpp.i:
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_multiple.dir/build.make examples/CMakeFiles/main_multiple.dir/main_multiple.cpp.i
+.PHONY : main_multiple.cpp.i
+
+main_multiple.s: main_multiple.cpp.s
+.PHONY : main_multiple.s
+
+# target to generate assembly for a file
+main_multiple.cpp.s:
+	cd /home/pierpaolo/Documents/University/6_Anno_Poli/7_Thesis/Code/Thesis && $(MAKE) -f examples/CMakeFiles/main_multiple.dir/build.make examples/CMakeFiles/main_multiple.dir/main_multiple.cpp.s
+.PHONY : main_multiple.cpp.s
+
 main_thesis.o: main_thesis.cpp.o
 .PHONY : main_thesis.o
 
@@ -186,10 +224,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... main_multiple"
 	@echo "... main_thesis"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main_multiple.o"
+	@echo "... main_multiple.i"
+	@echo "... main_multiple.s"
 	@echo "... main_thesis.o"
 	@echo "... main_thesis.i"
 	@echo "... main_thesis.s"
