@@ -1,106 +1,106 @@
 \select@language {english}
 \contentsline {chapter}{Sommario}{v}{chapter*.4}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}The March of the Machines}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Artificial Intelligence and Finance}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}Structure}{1}{section.1.3}
-\contentsline {chapter}{\numberline {2}Discrete-Time Stochastic Optimal Control}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Markov Decision Processes}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Policies}{4}{section.2.2}
-\contentsline {section}{\numberline {2.3}Risk-Neutral Framework}{6}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Discounted Reward Formulation}{6}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Average Reward Formulation}{9}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Risk-Sensitive Framework}{10}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Discounted Reward Formulation}{11}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Average Reward Formulation}{14}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}Dynamic Programming Algorithms}{16}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Value Iteration}{16}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Policy Iteration}{17}{subsection.2.5.2}
-\contentsline {chapter}{\numberline {3}Reinforcement Learning}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}The Reinforcement Learning Problem}{20}{section.3.1}
-\contentsline {section}{\numberline {3.2}Model-Free RL Methods}{20}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Model Approximation}{22}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Value Approximation}{22}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Policy Approximation}{23}{subsection.3.2.3}
-\contentsline {chapter}{\numberline {4}Risk-Neutral Policy Gradient}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Basics of Policy Gradient Methods}{26}{section.4.1}
-\contentsline {section}{\numberline {4.2}Risk-Neutral Objective Functions}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}Finite Differences}{27}{section.4.3}
-\contentsline {section}{\numberline {4.4}Likelihood Ratio Methods}{28}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Monte Carlo Policy Gradient}{29}{subsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.1.1}Optimal Baseline}{30}{subsubsection.4.4.1.1}
-\contentsline {subsection}{\numberline {4.4.2}GPOMDP}{31}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Stochastic Policies}{32}{subsection.4.4.3}
-\contentsline {subsubsection}{\numberline {4.4.3.1}Boltzmann Exploration Policy}{32}{subsubsection.4.4.3.1}
-\contentsline {subsubsection}{\numberline {4.4.3.2}Gaussian Exploration Policy}{32}{subsubsection.4.4.3.2}
-\contentsline {subsection}{\numberline {4.4.4}Policy Gradient with Parameter Exploration}{33}{subsection.4.4.4}
-\contentsline {subsubsection}{\numberline {4.4.4.1}Episodic PGPE}{33}{subsubsection.4.4.4.1}
-\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{34}{section*.14}
-\contentsline {paragraph}{Gaussian Parameter Distribution}{35}{section*.15}
-\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{35}{section*.16}
-\contentsline {subsubsection}{\numberline {4.4.4.2}Infinite Horizon PGPE}{36}{subsubsection.4.4.4.2}
-\contentsline {section}{\numberline {4.5}Risk-Neutral Policy Gradient Theorem}{37}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Theorem Statement and Proof}{37}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}GPOMDP}{39}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Actor-Critic Policy Gradient}{40}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Compatible Function Approximation}{42}{subsection.4.5.4}
-\contentsline {subsection}{\numberline {4.5.5}Natural Policy Gradient}{43}{subsection.4.5.5}
-\contentsline {subsubsection}{\numberline {4.5.5.1}Formalism of Natural Policy Gradients}{44}{subsubsection.4.5.5.1}
-\contentsline {chapter}{\numberline {5}Risk-Sensitive Policy Gradient}{47}{chapter.5}
-\contentsline {section}{\numberline {5.1}Risk-Sensitive Framework}{47}{section.5.1}
-\contentsline {section}{\numberline {5.2}Monte Carlo Policy Gradient}{49}{section.5.2}
-\contentsline {section}{\numberline {5.3}Policy Gradient Theorem}{50}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Average Reward Formulation}{51}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Risk-Sensitive Actor-Critic Algorithm}{53}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Discounted Reward Formulation}{54}{subsection.5.3.3}
-\contentsline {chapter}{\numberline {6}Parameter-Based Policy Gradient}{57}{chapter.6}
-\contentsline {section}{\numberline {6.1}Risk-Neutral Framework}{57}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Parameter-Based Natural Policy Gradient}{59}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}Risk-Sensitive Framework}{64}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Parameter-Based Natural Policy Gradient}{64}{subsection.6.2.1}
-\contentsline {chapter}{\numberline {7}Financial Applications of Reinforcement Learning}{67}{chapter.7}
-\contentsline {section}{\numberline {7.1}Efficient Market Hypothesis}{67}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Formal Definitions of the EMH}{68}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Critics to the EMH}{69}{subsection.7.1.2}
-\contentsline {section}{\numberline {7.2}Bibliographical Survey}{70}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Asset Allocation with Transaction Costs}{72}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Optimal Order Execution in Limit Order Book}{73}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Smart Order Routing Across Dark Pools}{74}{subsection.7.2.3}
-\contentsline {section}{\numberline {7.3}Asset Allocation with Transaction Costs}{75}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Wealth Dynamics}{75}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}Rewards and Objective Functions}{77}{subsection.7.3.2}
-\contentsline {subsubsection}{\numberline {7.3.2.1}Infinite Horizon Task}{77}{subsubsection.7.3.2.1}
-\contentsline {subsubsection}{\numberline {7.3.2.2}Episodic Task}{78}{subsubsection.7.3.2.2}
-\contentsline {subsection}{\numberline {7.3.3}States}{79}{subsection.7.3.3}
-\contentsline {subsection}{\numberline {7.3.4}Actions}{80}{subsection.7.3.4}
-\contentsline {chapter}{\numberline {8}Numerical Results for the Asset Allocation Problem}{81}{chapter.8}
-\contentsline {section}{\numberline {8.1}Synthetic Risky Asset}{81}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Specifications of the Learning Algorithms}{82}{subsection.8.1.1}
-\contentsline {paragraph}{ARAC}{82}{section*.19}
-\contentsline {paragraph}{PGPE}{82}{section*.20}
-\contentsline {paragraph}{NPGPE}{82}{section*.21}
-\contentsline {subsection}{\numberline {8.1.2}Experimental Setup}{83}{subsection.8.1.2}
-\contentsline {subsection}{\numberline {8.1.3}Risk-Neutral Framework}{83}{subsection.8.1.3}
-\contentsline {subsubsection}{\numberline {8.1.3.1}Convergence}{83}{subsubsection.8.1.3.1}
-\contentsline {subsubsection}{\numberline {8.1.3.2}Performances}{84}{subsubsection.8.1.3.2}
-\contentsline {subsubsection}{\numberline {8.1.3.3}Impact of Transaction Costs}{86}{subsubsection.8.1.3.3}
-\contentsline {subsection}{\numberline {8.1.4}Risk-Sensitive Framework}{87}{subsection.8.1.4}
-\contentsline {subsubsection}{\numberline {8.1.4.1}Risk-Neutral vs. Risk-Sensitive}{89}{subsubsection.8.1.4.1}
-\contentsline {subsubsection}{\numberline {8.1.4.2}Impact of Transaction Costs}{89}{subsubsection.8.1.4.2}
-\contentsline {section}{\numberline {8.2}Historic Risky Asset}{92}{section.8.2}
-\contentsline {section}{\numberline {8.3}Multiple Synthetic Risky Assets}{92}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Specifications of the Learning Algorithms}{96}{subsection.8.3.1}
-\contentsline {chapter}{\numberline {9}Conclusions}{97}{chapter.9}
-\contentsline {section}{\numberline {9.1}Summary}{97}{section.9.1}
-\contentsline {section}{\numberline {9.2}Further Developments}{97}{section.9.2}
-\contentsline {chapter}{\numberline {A}Implementation}{99}{appendix.A}
-\contentsline {section}{\numberline {A.1}Python Prototype}{99}{section.A.1}
-\contentsline {section}{\numberline {A.2}C++ Implementation}{101}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}\lstinline {Environment}, \lstinline {Task}, \lstinline {Agent} and \lstinline {Experiment}}{101}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}\lstinline {ARACAgent}}{103}{subsection.A.2.2}
-\contentsline {section}{\numberline {A.3}Execution Pipeline}{106}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Compilation}{106}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}\lstinline {generate_synthetic_series.py}}{106}{subsection.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}\lstinline {experiment_launcher.py}}{106}{subsection.A.3.3}
-\contentsline {subsection}{\numberline {A.3.4}\lstinline {main_thesis}}{106}{subsection.A.3.4}
-\contentsline {subsection}{\numberline {A.3.5}\lstinline {postprocessing.py}}{107}{subsection.A.3.5}
+\contentsline {section}{\numberline {1.1}The Computerization of Finance}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}A Brief History of Artificial Intelligence}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Structure}{3}{section.1.3}
+\contentsline {chapter}{\numberline {2}Discrete-Time Stochastic Optimal Control}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Markov Decision Processes}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Policies}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Risk-Neutral Framework}{8}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Discounted Reward Formulation}{8}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Average Reward Formulation}{11}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Risk-Sensitive Framework}{13}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Discounted Reward Formulation}{13}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Average Reward Formulation}{16}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Dynamic Programming Algorithms}{18}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Value Iteration}{18}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Policy Iteration}{19}{subsection.2.5.2}
+\contentsline {chapter}{\numberline {3}Reinforcement Learning}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}The Reinforcement Learning Problem}{22}{section.3.1}
+\contentsline {section}{\numberline {3.2}Model-Free RL Methods}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Model Approximation}{24}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Value Approximation}{24}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Policy Approximation}{25}{subsection.3.2.3}
+\contentsline {chapter}{\numberline {4}Risk-Neutral Policy Gradient}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Basics of Policy Gradient Methods}{28}{section.4.1}
+\contentsline {section}{\numberline {4.2}Risk-Neutral Objective Functions}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}Finite Differences}{29}{section.4.3}
+\contentsline {section}{\numberline {4.4}Likelihood Ratio Methods}{30}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Monte Carlo Policy Gradient}{31}{subsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.1.1}Optimal Baseline}{32}{subsubsection.4.4.1.1}
+\contentsline {subsection}{\numberline {4.4.2}GPOMDP}{33}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Stochastic Policies}{34}{subsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.3.1}Boltzmann Exploration Policy}{34}{subsubsection.4.4.3.1}
+\contentsline {subsubsection}{\numberline {4.4.3.2}Gaussian Exploration Policy}{34}{subsubsection.4.4.3.2}
+\contentsline {subsection}{\numberline {4.4.4}Policy Gradient with Parameter Exploration}{35}{subsection.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.4.1}Episodic PGPE}{35}{subsubsection.4.4.4.1}
+\contentsline {paragraph}{Independent Gaussian Parameter Distribution}{36}{section*.14}
+\contentsline {paragraph}{Gaussian Parameter Distribution}{37}{section*.15}
+\contentsline {paragraph}{Symmetric Sampling and Gain Normalization}{37}{section*.16}
+\contentsline {subsubsection}{\numberline {4.4.4.2}Infinite Horizon PGPE}{38}{subsubsection.4.4.4.2}
+\contentsline {section}{\numberline {4.5}Risk-Neutral Policy Gradient Theorem}{39}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Theorem Statement and Proof}{39}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}GPOMDP}{41}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Actor-Critic Policy Gradient}{42}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Compatible Function Approximation}{44}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}Natural Policy Gradient}{45}{subsection.4.5.5}
+\contentsline {subsubsection}{\numberline {4.5.5.1}Formalism of Natural Policy Gradients}{46}{subsubsection.4.5.5.1}
+\contentsline {chapter}{\numberline {5}Risk-Sensitive Policy Gradient}{49}{chapter.5}
+\contentsline {section}{\numberline {5.1}Risk-Sensitive Framework}{49}{section.5.1}
+\contentsline {section}{\numberline {5.2}Monte Carlo Policy Gradient}{51}{section.5.2}
+\contentsline {section}{\numberline {5.3}Policy Gradient Theorem}{52}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Average Reward Formulation}{53}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Risk-Sensitive Actor-Critic Algorithm}{55}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Discounted Reward Formulation}{56}{subsection.5.3.3}
+\contentsline {chapter}{\numberline {6}Parameter-Based Policy Gradient}{59}{chapter.6}
+\contentsline {section}{\numberline {6.1}Risk-Neutral Framework}{59}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Parameter-Based Natural Policy Gradient}{61}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}Risk-Sensitive Framework}{66}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Parameter-Based Natural Policy Gradient}{66}{subsection.6.2.1}
+\contentsline {chapter}{\numberline {7}Financial Applications of Reinforcement Learning}{69}{chapter.7}
+\contentsline {section}{\numberline {7.1}Efficient Market Hypothesis}{69}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Formal Definitions of the EMH}{70}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Critics to the EMH}{71}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}Bibliographical Survey}{72}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Asset Allocation with Transaction Costs}{74}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Optimal Order Execution in Limit Order Book}{75}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Smart Order Routing Across Dark Pools}{76}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3}Asset Allocation with Transaction Costs}{77}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Wealth Dynamics}{77}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Rewards and Objective Functions}{79}{subsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.2.1}Infinite Horizon Task}{79}{subsubsection.7.3.2.1}
+\contentsline {subsubsection}{\numberline {7.3.2.2}Episodic Task}{80}{subsubsection.7.3.2.2}
+\contentsline {subsection}{\numberline {7.3.3}States}{81}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Actions}{82}{subsection.7.3.4}
+\contentsline {chapter}{\numberline {8}Numerical Results for the Asset Allocation Problem}{83}{chapter.8}
+\contentsline {section}{\numberline {8.1}Synthetic Risky Asset}{83}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Specifications of the Learning Algorithms}{84}{subsection.8.1.1}
+\contentsline {paragraph}{ARAC}{84}{section*.19}
+\contentsline {paragraph}{PGPE}{84}{section*.20}
+\contentsline {paragraph}{NPGPE}{84}{section*.21}
+\contentsline {subsection}{\numberline {8.1.2}Experimental Setup}{85}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Risk-Neutral Framework}{85}{subsection.8.1.3}
+\contentsline {subsubsection}{\numberline {8.1.3.1}Convergence}{85}{subsubsection.8.1.3.1}
+\contentsline {subsubsection}{\numberline {8.1.3.2}Performances}{86}{subsubsection.8.1.3.2}
+\contentsline {subsubsection}{\numberline {8.1.3.3}Impact of Transaction Costs}{88}{subsubsection.8.1.3.3}
+\contentsline {subsection}{\numberline {8.1.4}Risk-Sensitive Framework}{89}{subsection.8.1.4}
+\contentsline {subsubsection}{\numberline {8.1.4.1}Risk-Neutral vs. Risk-Sensitive}{91}{subsubsection.8.1.4.1}
+\contentsline {subsubsection}{\numberline {8.1.4.2}Impact of Transaction Costs}{91}{subsubsection.8.1.4.2}
+\contentsline {section}{\numberline {8.2}Historic Risky Asset}{94}{section.8.2}
+\contentsline {section}{\numberline {8.3}Multiple Synthetic Risky Assets}{95}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Specifications of the Learning Algorithms}{98}{subsection.8.3.1}
+\contentsline {chapter}{\numberline {9}Conclusions}{101}{chapter.9}
+\contentsline {section}{\numberline {9.1}Summary}{101}{section.9.1}
+\contentsline {section}{\numberline {9.2}Further Developments}{101}{section.9.2}
+\contentsline {chapter}{\numberline {A}Implementation}{103}{appendix.A}
+\contentsline {section}{\numberline {A.1}Python Prototype}{103}{section.A.1}
+\contentsline {section}{\numberline {A.2}C++ Implementation}{105}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}\lstinline {Environment}, \lstinline {Task}, \lstinline {Agent} and \lstinline {Experiment}}{105}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}\lstinline {ARACAgent}}{107}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}Execution Pipeline}{110}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Compilation}{110}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}\lstinline {generate_synthetic_series.py}}{110}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}\lstinline {experiment_launcher.py}}{110}{subsection.A.3.3}
+\contentsline {subsection}{\numberline {A.3.4}\lstinline {main_thesis}}{110}{subsection.A.3.4}
+\contentsline {subsection}{\numberline {A.3.5}\lstinline {postprocessing.py}}{111}{subsection.A.3.5}

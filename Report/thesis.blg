@@ -2,6 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: Acknowledgements/acknowledgements.aux
+A level-1 auxiliary file: Abstract/abstract.aux
 The style file: siam.bst
 Database file #1: Bibliography/bibliography.bib
 Warning--can't use both volume and number fields in bertsekas1995dynamic
@@ -10,46 +11,47 @@ Warning--empty journal in corazzaq
 Warning--empty year in corazzaq
 Warning--empty journal in cumming2015investigation
 Warning--empty journal in eldercreating
+Warning--empty publisher in pages2016introduction
 Warning--empty journal in sanderson2010armadillo
-You've used 105 entries,
+You've used 110 entries,
             2030 wiz_defined-function locations,
-            1057 strings with 21278 characters,
-and the built_in function-call counts, 38394 in all, are:
-= -- 3675
-> -- 1616
+            1077 strings with 21790 characters,
+and the built_in function-call counts, 39620 in all, are:
+= -- 3787
+> -- 1651
 < -- 0
-+ -- 651
-- -- 535
-* -- 2866
-:= -- 5777
-add.period$ -- 106
-call.type$ -- 105
-change.case$ -- 565
++ -- 667
+- -- 545
+* -- 2944
+:= -- 5962
+add.period$ -- 114
+call.type$ -- 110
+change.case$ -- 585
 chr.to.int$ -- 0
-cite$ -- 112
-duplicate$ -- 1837
-empty$ -- 3029
-format.name$ -- 535
-if$ -- 8358
+cite$ -- 118
+duplicate$ -- 1898
+empty$ -- 3154
+format.name$ -- 545
+if$ -- 8627
 int.to.chr$ -- 0
-int.to.str$ -- 105
-missing$ -- 122
-newline$ -- 319
-num.names$ -- 205
-pop$ -- 645
+int.to.str$ -- 110
+missing$ -- 125
+newline$ -- 337
+num.names$ -- 213
+pop$ -- 681
 preamble$ -- 1
-purify$ -- 480
+purify$ -- 496
 quote$ -- 0
-skip$ -- 1503
+skip$ -- 1549
 stack$ -- 0
-substring$ -- 2671
-swap$ -- 751
+substring$ -- 2729
+swap$ -- 767
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 380
-warning$ -- 7
-while$ -- 393
-width$ -- 108
-write$ -- 937
-(There were 7 warnings)
+type$ -- 398
+warning$ -- 8
+while$ -- 404
+width$ -- 113
+write$ -- 982
+(There were 8 warnings)

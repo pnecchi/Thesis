@@ -2,29 +2,29 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{5}{figure.caption.11}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{17}{figure.caption.12}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{7}{figure.caption.11}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{19}{figure.caption.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{21}{figure.caption.13}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{23}{figure.caption.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{44}{figure.caption.17}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Episodic formulation for the asset allocation problem.\relax }}{79}{figure.caption.18}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{83}{figure.caption.22}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{84}{figure.caption.23}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Proportional transaction costs and risk-neutral strategies}}{86}{figure.caption.25}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Short-selling fees and risk-neutral strategies}}{87}{figure.caption.26}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{88}{figure.caption.27}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{88}{figure.caption.28}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Proportional transaction costs and risk-sensitive strategies}}{91}{figure.caption.31}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Short-selling fees and risk-sensitive strategies}}{91}{figure.caption.32}
-\contentsline {figure}{\numberline {8.13}{\ignorespaces Sample paths for the risky assets with a mean-reverting spread.}}{96}{figure.caption.37}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{46}{figure.caption.17}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{100}{figure.caption.38}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the asset allocation problem.}}{102}{figure.caption.39}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an ARAC agent}}{105}{figure.caption.40}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution pipeline of an asset allocation experiment}}{108}{figure.caption.41}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Episodic formulation for the asset allocation problem.\relax }}{81}{figure.caption.18}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{85}{figure.caption.22}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{86}{figure.caption.23}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Proportional transaction costs and risk-neutral strategies}}{88}{figure.caption.25}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Short-selling fees and risk-neutral strategies}}{89}{figure.caption.26}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{90}{figure.caption.27}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{90}{figure.caption.28}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Proportional transaction costs and risk-sensitive strategies}}{93}{figure.caption.31}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Short-selling fees and risk-sensitive strategies}}{93}{figure.caption.32}
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Sample paths for the risky assets with a mean-reverting spread.}}{98}{figure.caption.37}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{104}{figure.caption.38}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the asset allocation problem.}}{106}{figure.caption.39}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an ARAC agent}}{109}{figure.caption.40}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution pipeline of an asset allocation experiment}}{112}{figure.caption.41}

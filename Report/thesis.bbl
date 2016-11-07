@@ -157,6 +157,15 @@
   trading system for hft industry}, IEEE Transactions on Industrial
   Informatics, 11 (2015), pp.~467--475.
 
+\bibitem{economist2016march}
+{\sc T.~Economist}, {\em March of the machines}.
+\newblock The Economist, June 2016.
+
+\bibitem{economist2016return}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em The return of the
+  machinery question}.
+\newblock Special report on artificial intelligence., June 2016.
+
 \bibitem{eldercreating}
 {\sc T.~Elder}, {\em Creating algorithmic traders with hierarchical
   reinforcement learning},  (2008).
@@ -220,6 +229,11 @@
 {\sc S.~Kakade}, {\em A natural policy gradient.}, in NIPS, vol.~14, 2001,
   pp.~1531--1538.
 
+\bibitem{kakade2001optimizing}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Optimizing average
+  reward using discounted rewards}, in International Conference on
+  Computational Learning Theory, Springer, 2001, pp.~605--615.
+
 \bibitem{kamijo1990stock}
 {\sc K.~Kamijo and T.~Tanigawa}, {\em Stock price pattern recognition-a
   recurrent neural network approach}, in IEEE 1990 IJCNN International Joint
@@ -264,6 +278,10 @@
 \bibitem{liang2011stock}
 {\sc J.~Liang, W.~Song, and M.~Wang}, {\em Stock price prediction based on
   procedural neural networks}, Adv. Artif. Neu. Sys., 2011 (2011), pp.~1--11.
+
+\bibitem{littman1996algorithms}
+{\sc M.~L. Littman}, {\em Algorithms for sequential decision making}, PhD
+  thesis, Brown University, 1996.
 
 \bibitem{lo2000foundations}
 {\sc A.~W. Lo, H.~Mamaysky, and J.~Wang}, {\em Foundations of technical
@@ -332,8 +350,7 @@
   Sciences, 176 (2006), pp.~2121--2147.
 
 \bibitem{pages2016introduction}
-{\sc G.~Pages}, {\em Introduction to Numerical Probability for Finance},
-  LPMA-Université Pierre et Marie Curie, 2016.
+{\sc G.~Pages}, {\em Introduction to Numerical Probability for Finance}, 2016.
 
 \bibitem{peters2010relative}
 {\sc J.~Peters, K.~M{\"u}lling, and Y.~Altun}, {\em Relative entropy policy
@@ -357,6 +374,10 @@
 \bibitem{puterman1994markov}
 {\sc M.~L. Puterman}, {\em Markov decision processes: discrete stochastic
   dynamic programming}, John Wiley \& Sons, 1994.
+
+\bibitem{bloomberg2016hft}
+{\sc C.~Russo and J.~Detrixhe}, {\em Wall street’s speed demons are heroes}.
+\newblock Bloomberg, October 2016.
 
 \bibitem{saad1998comparative}
 {\sc E.~W. Saad, D.~V. Prokhorov, and D.~C. Wunsch}, {\em Comparative study of
