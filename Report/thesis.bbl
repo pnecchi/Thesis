@@ -91,6 +91,10 @@
   markov decision processes with monotone cost}, Mathematics of Operations
   Research, 27 (2002), pp.~192--209.
 
+\bibitem{brogaard2014high}
+{\sc J.~Brogaard, T.~Hendershott, and R.~Riordan}, {\em High-frequency trading
+  and price discovery}, Review of Financial Studies, 27 (2014), pp.~2267--2306.
+
 \bibitem{browne1995optimal}
 {\sc S.~Browne}, {\em Optimal investment policies for a firm with a random risk
   process: exponential utility and minimizing the probability of ruin},
@@ -268,6 +272,9 @@
 \leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Optimal posting
   price of limit orders: learning by trading}, Mathematics and Financial
   Economics, 7 (2013), pp.~359--403.
+
+\bibitem{lewis2014flash}
+{\sc M.~Lewis and D.~Baker}, {\em Flash boys}, Allen Lane, 2014.
 
 \bibitem{li2007short}
 {\sc H.~Li, C.~H. Dagli, and D.~Enke}, {\em Short-term stock market timing

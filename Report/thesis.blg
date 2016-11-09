@@ -1,8 +1,8 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
-A level-1 auxiliary file: Acknowledgements/acknowledgements.aux
 A level-1 auxiliary file: Abstract/abstract.aux
+A level-1 auxiliary file: Acknowledgements/acknowledgements.aux
 The style file: siam.bst
 Database file #1: Bibliography/bibliography.bib
 Warning--can't use both volume and number fields in bertsekas1995dynamic
@@ -13,45 +13,45 @@ Warning--empty journal in cumming2015investigation
 Warning--empty journal in eldercreating
 Warning--empty publisher in pages2016introduction
 Warning--empty journal in sanderson2010armadillo
-You've used 110 entries,
+You've used 112 entries,
             2030 wiz_defined-function locations,
-            1077 strings with 21790 characters,
-and the built_in function-call counts, 39620 in all, are:
-= -- 3787
-> -- 1651
+            1087 strings with 22033 characters,
+and the built_in function-call counts, 40328 in all, are:
+= -- 3854
+> -- 1682
 < -- 0
-+ -- 667
-- -- 545
-* -- 2944
-:= -- 5962
-add.period$ -- 114
-call.type$ -- 110
-change.case$ -- 585
++ -- 679
+- -- 555
+* -- 2996
+:= -- 6069
+add.period$ -- 116
+call.type$ -- 112
+change.case$ -- 595
 chr.to.int$ -- 0
-cite$ -- 118
-duplicate$ -- 1898
-empty$ -- 3154
-format.name$ -- 545
-if$ -- 8627
+cite$ -- 120
+duplicate$ -- 1932
+empty$ -- 3209
+format.name$ -- 555
+if$ -- 8780
 int.to.chr$ -- 0
-int.to.str$ -- 110
-missing$ -- 125
-newline$ -- 337
-num.names$ -- 213
-pop$ -- 681
+int.to.str$ -- 112
+missing$ -- 128
+newline$ -- 343
+num.names$ -- 217
+pop$ -- 694
 preamble$ -- 1
-purify$ -- 496
+purify$ -- 505
 quote$ -- 0
-skip$ -- 1549
+skip$ -- 1577
 stack$ -- 0
-substring$ -- 2729
-swap$ -- 767
+substring$ -- 2779
+swap$ -- 781
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 398
+type$ -- 404
 warning$ -- 8
-while$ -- 404
-width$ -- 113
-write$ -- 982
+while$ -- 411
+width$ -- 115
+write$ -- 999
 (There were 8 warnings)
