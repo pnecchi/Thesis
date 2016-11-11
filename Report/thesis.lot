@@ -7,8 +7,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Backtest statistics for risk-neutral learning with one synthetic risky asset}}{87}{table.caption.24}
-\contentsline {table}{\numberline {8.2}{\ignorespaces Backtest statistics for risk-sensitive learning with one synthetic risky asset}}{91}{table.caption.29}
-\contentsline {table}{\numberline {8.3}{\ignorespaces Comparison of NPGPE and RSNPGPE for the asset allocation problem with one synthetic risky asset.\relax }}{92}{table.caption.30}
+\contentsline {table}{\numberline {8.1}{\ignorespaces Backtest statistics for risk-neutral learning with one synthetic risky asset}}{81}{table.caption.24}
+\contentsline {table}{\numberline {8.2}{\ignorespaces Backtest statistics for risk-sensitive learning with one synthetic risky asset}}{84}{table.caption.29}
+\contentsline {table}{\numberline {8.3}{\ignorespaces Comparison of NPGPE and RSNPGPE for the asset allocation problem with one synthetic risky asset.\relax }}{85}{table.caption.30}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

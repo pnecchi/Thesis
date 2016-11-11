@@ -144,7 +144,7 @@ Short Freq        & 0.00\%       & 16.17\%  & 45.77\%  \\ \bottomrule
 \caption[Backtest statistics for risk-sensitive learning with one synthetic risky asset]{Backtest statistics of the risk-sensitive trading strategies for the asset allocation problem with one synthetic risky asset.}
 \label{tab:single_synthetic_sensitive_performance}
 \end{table}
-
+\clearpage
 \subsubsection{Risk-Neutral vs. Risk-Sensitive}
 The risk-neutral NPGPE and the risk-sensitive NPGPE strategies achieve very similar backtest performances. A natural question that arises is if the two algorithms are actually learning the same policy. The two versions of the NPGPE algorithm are compared in Table \ref{tab:comparison_NPGPE}. The statistics for the two algorithms are similar. Again, we point out the counter-intuitive fact that risk-neutral version produces higher Sharpe ratios, even if it is not the quantity directly being optimized. On the other hand, the risk-sensitive version seems to perform slightly better in terms of drawdowns. The most interesting feature is the different behavior of the two policies in terms of reallocation and short-selling frequencies. The risk-sensitive policy reshuffle the portfolio more frequently than the risk-neutral policy, also resorting more often to short positions. This shows that the policies learned by the two algorithms are actually different, leading however to very similar performances. 
 

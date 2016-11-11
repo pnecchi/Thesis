@@ -13,45 +13,45 @@ Warning--empty journal in cumming2015investigation
 Warning--empty journal in eldercreating
 Warning--empty publisher in pages2016introduction
 Warning--empty journal in sanderson2010armadillo
-You've used 112 entries,
+You've used 113 entries,
             2030 wiz_defined-function locations,
-            1087 strings with 22033 characters,
-and the built_in function-call counts, 40328 in all, are:
-= -- 3854
-> -- 1682
+            1091 strings with 22125 characters,
+and the built_in function-call counts, 40573 in all, are:
+= -- 3875
+> -- 1695
 < -- 0
-+ -- 679
-- -- 555
-* -- 2996
-:= -- 6069
-add.period$ -- 116
-call.type$ -- 112
-change.case$ -- 595
++ -- 684
+- -- 559
+* -- 3013
+:= -- 6109
+add.period$ -- 118
+call.type$ -- 113
+change.case$ -- 600
 chr.to.int$ -- 0
-cite$ -- 120
-duplicate$ -- 1932
-empty$ -- 3209
-format.name$ -- 555
-if$ -- 8780
+cite$ -- 121
+duplicate$ -- 1941
+empty$ -- 3231
+format.name$ -- 559
+if$ -- 8831
 int.to.chr$ -- 0
-int.to.str$ -- 112
+int.to.str$ -- 113
 missing$ -- 128
-newline$ -- 343
-num.names$ -- 217
-pop$ -- 694
+newline$ -- 347
+num.names$ -- 219
+pop$ -- 702
 preamble$ -- 1
-purify$ -- 505
+purify$ -- 509
 quote$ -- 0
-skip$ -- 1577
+skip$ -- 1585
 stack$ -- 0
-substring$ -- 2779
-swap$ -- 781
+substring$ -- 2784
+swap$ -- 783
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 404
+type$ -- 408
 warning$ -- 8
-while$ -- 411
-width$ -- 115
-write$ -- 999
+while$ -- 413
+width$ -- 116
+write$ -- 1008
 (There were 8 warnings)

@@ -252,6 +252,10 @@
 {\sc V.~R. Konda and J.~N. Tsitsiklis}, {\em Actor-critic algorithms.}, in
   NIPS, vol.~13, 1999, pp.~1008--1014.
 
+\bibitem{bloomberg2016ml}
+{\sc N.~Kumar and T.~Hall}, {\em Why mmachine still can't learn so good}.
+\newblock Bloomberg, November 2016.
+
 \bibitem{kushner2003stochastic}
 {\sc H.~Kushner and G.~G. Yin}, {\em Stochastic approximation and recursive
   algorithms and applications}, vol.~35, Springer Science \& Business Media,

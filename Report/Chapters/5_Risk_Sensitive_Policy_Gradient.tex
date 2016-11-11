@@ -4,7 +4,7 @@
 Risk aware decision making plays a crucial role in many fields, such as finance and process control. In this chapter we discuss some policy gradient methods for the risk-sensitive formulation of a sequential decision problem. This extension presents some difficulties which have attracted the interest of many researchers in the last years. In particular, while in the risk-neutral framework the policy gradient theorem represents the keystone for all the learning algorithms, in the risk-sensitive framework the approaches for the episodic setting, the discounted reward and the average reward formulations are quite different. The goal of this chapter is to give an overview of the methods found in the literature and to try to unify them in a way similar to the risk-neutral framework. This chapter and the following represent the main contribution of this thesis to the policy gradient literature.    
 
 \section{Risk-Sensitive Framework}
-In the risk-sensitive framework, in addition to maximizing his reward, the agent also wants to control the risk he takes on to achieve it. It is thus necessary to introduce a function $\Lambda: \Theta \to \R$ such that $\Lambda(\theta)$ measures the risk associated with the policy $\pi_\theta$. In an episodic framework where the system always starts from the same initial state $s_0$, the variance of the total return can be used \cite{tamar2012policy}
+In the risk-sensitive framework, in addition to maximizing the rewards, the agent also wants to control the risk necessary to achieve it. It is thus necessary to introduce a function $\Lambda: \Theta \to \R$ such that $\Lambda(\theta)$ measures the risk associated with the policy $\pi_\theta$. In an episodic framework where the system always starts from the same initial state $s_0$, the variance of the total return can be used \cite{tamar2012policy}.
 \begin{definition}[Start Variance]
 	The start variance is the variance of the return that can be obtained starting from the start state $s_0 \in \S$ and following policy $\pi_\theta$
 	\begin{equation}
@@ -12,13 +12,13 @@ In the risk-sensitive framework, in addition to maximizing his reward, the agent
 			= U_{\pi_\theta} (s_0) - V_{\pi_\theta} (s_0)^2 
 	\end{equation}
 \end{definition}
-In many application one may want control only the downside risk, that is the risk of the actual return being below the expected return or the uncertainty about the magnitude of that difference. This risk may be measured by the semivariance
+In many application one may want control only the downside risk, that is the risk of the actual return being below the expected return or the uncertainty about the magnitude of that difference. This risk may be measured by the semivariance.
 \begin{definition}[Semivariance]
 	\begin{equation}
 		\Lambda_\textbf{down}(\theta) = \text{SVar}(\theta) = \E[\pi_\theta]{\min\left\{G_0 - \E[\pi_\theta]{G_0}, 0\right\}^2 | S_0 = s_0}
 	\end{equation}
 \end{definition}	
-Is square root is called semideviation. In a continuing environment, we might consider the long-run variance \cite{prashanth2014actor} defined in Section \ref{sec:risk_sensitive_formulation}
+The square root of this quantity is called semideviation. In a continuing environment, we might consider the long-run variance \cite{prashanth2014actor} defined in Section \ref{sec:risk_sensitive_formulation}.
 \begin{definition}[Long-Run Variance]
 	The long-run variance $\Lambda_\pi$ under policy $\pi$ is defined as
 	\begin{equation}
@@ -112,18 +112,20 @@ From which we can easily derive a Monte Carlo estimate. Since the problems we wi
 \end{algorithm}
 
 \section{Policy Gradient Theorem}
-In this section the policy gradient theorem is extended to the risk-sensitive framework. In the average reward formulation of the control problem, the theorem and its derivation are analogous to those presented in the last section for the risk-neutral framework. This will allow us to derive in a trivial way the risk-sensitive versions of all the learning algorithms seen in the previous chapter. The risk-sensitive policy gradient theorem for the average-reward formulation was first derived in \cite{prashanth2014actor} and the presentation of this section closely follows the original article. Obtaining an equivalent theorem for the discounted reward formulation is more challenging. In the article cited above, the authors prove the theorem under a very strong assumption on the dependence of rewards obtained at different time steps which is not verified in many applications, among which is the asset allocation problem that we will consider in the next chapter. We will discuss the problems arising in the discounted setting and why it is not easy to derive a policy gradient theorem in this case. In the original article the authors mostly considered the mean-variance criterion since all the algorithms they propose are easily adapted to the Sharpe ratio criterion. Here we take the opposite direction and present the algorithms for the Sharpe ratio, referring to their article for the mean-variance counterparts.\\   
+In this section the policy gradient theorem is extended to the risk-sensitive framework. In the average reward formulation of the control problem, the theorem and its derivation are analogous to those for the risk-neutral framework. This will allow us to derive in a trivial way the risk-sensitive versions of all the learning algorithms seen in the previous chapter. The risk-sensitive policy gradient theorem for the average-reward formulation was first derived in \cite{prashanth2014actor} and the presentation of this section closely follows the original article.\\
+On the other hand, obtaining an equivalent theorem for the discounted reward formulation is more challenging. In the article cited above, the authors prove the theorem under a very strong assumption on the dependence of rewards obtained at different time steps which is not verified in many applications, among which is the asset allocation problem that we will consider for the numerical applications. In the following sections, we will generalize this result by assuming that the reward can depend on both the initial state and the final state of the system. Furthermore, we will discuss the problems arising in the discounted setting and why it is not easy to derive an online policy gradient theorem in this case.\\
+ In the original article the authors mostly considered the mean-variance criterion since all the algorithms they propose are easily adapted to the Sharpe ratio criterion. Here we take the opposite direction and present the algorithms for the Sharpe ratio, referring to their article for the mean-variance counterparts.\\   
 Let us consider a family of parametrized policies $\pi_\theta$, with $\theta
 \in \Theta \subseteq \R^{D_\theta}$. The optimization problem then becomes
 \begin{equation}
-	\max_\theta J(\theta) =  \text{Sh}(\theta) = \frac{\rho(\theta)}{\sqrt{\Lambda(\theta)}}
+	\max_\theta \text{Sh}(\theta) = \frac{\rho(\theta)}{\sqrt{\Lambda(\theta)}}
 \end{equation}
 where we denoted by $\rho(\theta) = \rho_{\pi_\theta}$ and similarly for the other quantities. Using a policy gradient approach, the policy parameters are updated following the gradient ascent direction.
 
 \subsection{Average Reward Formulation}
 In the average reward formulation the gradient of the Sharpe ratio is
 \begin{equation}
-	\nabla_\theta J(\theta) = \frac{\eta(\theta) \nabla_\theta \rho(\theta) - \frac{1}{2} \rho(\theta) \nabla_\theta \eta(\theta)}{\Lambda(\theta) \sqrt{\Lambda(\theta)}}
+	\nabla_\theta \text{Sh}(\theta) = \frac{\eta(\theta) \nabla_\theta \rho(\theta) - \frac{1}{2} \rho(\theta) \nabla_\theta \eta(\theta)}{\Lambda(\theta) \sqrt{\Lambda(\theta)}}
 \end{equation}
 Hence, to compute the update direction, it is sufficient to estimate the various quantities appearing in this formula. For instance, the average reward $\rho(\theta)$, the average square reward $\eta(\theta)$ and the reward variance $\Lambda(\theta)$ can be approximated using exponentially weighted moving averages. On the other hand, the gradient of the average reward $\nabla_\theta \rho(\theta)$ is given by the standard policy gradient theorem \ref{thm:risk_neutral_policy_gradient}. The only term remaining is the gradient of the average square reward $\nabla_\theta \eta(\theta)$, which is provided by the risk-sensitive policy gradient theorem 
 \begin{theorem}[Risk-Sensitive Policy Gradient]
@@ -213,7 +215,7 @@ An estimate of the gradients can be obtained by replacing the advantage function
 		\nabla_\theta \eta(\theta) &\approx \nabla_\theta \log \pi_\theta(S_t, A_t) \delta_t^B\\
 	\end{split}
 \end{equation}
-The value functions are linearly approximated using some veatures vectors
+The value functions are linearly approximated using some feature vectors
 $\Phi_V: \S \to \R^{D_V}$ and $\Phi_U: \S \to \R^{D_U}$ as follows
 \begin{equation}
 	\begin{split}
@@ -340,4 +342,4 @@ The gradient of the state-value function $\nabla_\theta V_\theta(s_0)$ is given 
 		\end{split}
 	\end{equation*} 
 \end{proof}
-Compared to risk-sensitive policy gradient theorem in the average reward formulation, we have two additional terms: one term depending on the gradient of the state-value function at the next state and another term depending on the covariance between the one-step reward and the successive return. These terms are very difficult to approximate online in a continuing environment. Therefore, the result is of practical interest only for an episodic environment where the experiments have a finite (possibly random) lifespan. Since the application we considered does not fall in this category, we won't discuss any risk-sensitive algorithm for the discounted formulation. 
+Compared to risk-sensitive policy gradient theorem in the average reward formulation, we have two additional terms: one term depending on the gradient of the state-value function at the next state and another term depending on the covariance between the one-step reward and the successive return. These terms are very difficult to approximate online in a continuing environment. Therefore, the result is of practical interest only for an episodic environment where the experiments have a finite (possibly random) lifespan. Since the application we considered does not fall in this category, we will not discuss any risk-sensitive algorithm for the discounted formulation. 

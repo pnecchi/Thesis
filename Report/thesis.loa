@@ -1,11 +1,11 @@
-\contentsline {algorithm}{\numberline {4.1}{\ignorespaces General setup for a policy gradient algorithm.\relax }}{28}{algorithm.4.1}
-\contentsline {algorithm}{\numberline {4.2}{\ignorespaces Episodic REINFORCE policy gradient estimate\relax }}{33}{algorithm.4.2}
-\contentsline {algorithm}{\numberline {4.3}{\ignorespaces Episodic PGPE algorithm\relax }}{36}{algorithm.4.3}
-\contentsline {algorithm}{\numberline {4.4}{\ignorespaces Generic structure for an online actor-critic algorithm.\relax }}{43}{algorithm.4.4}
-\contentsline {algorithm}{\numberline {4.5}{\ignorespaces TD($\lambda $) policy gradient algorithm.\relax }}{44}{algorithm.4.5}
-\contentsline {algorithm}{\numberline {5.1}{\ignorespaces Risk-sensitive REINFORCE policy gradient estimate\relax }}{52}{algorithm.5.1}
-\contentsline {algorithm}{\numberline {5.2}{\ignorespaces Risk-Sensitive Average Reward Actor-Critic algorithm\relax }}{56}{algorithm.5.2}
-\contentsline {algorithm}{\numberline {6.1}{\ignorespaces Actor-Critic PGPE\relax }}{62}{algorithm.6.1}
-\contentsline {algorithm}{\numberline {6.2}{\ignorespaces NPGPE\relax }}{64}{algorithm.6.2}
-\contentsline {algorithm}{\numberline {6.3}{\ignorespaces Natural Actor-Critic PGPE\relax }}{65}{algorithm.6.3}
-\contentsline {algorithm}{\numberline {6.4}{\ignorespaces Risk-Sensitive NPGPE\relax }}{67}{algorithm.6.4}
+\contentsline {algorithm}{\numberline {4.1}{\ignorespaces General setup for a policy gradient algorithm.\relax }}{24}{algorithm.4.1}
+\contentsline {algorithm}{\numberline {4.2}{\ignorespaces Episodic REINFORCE policy gradient estimate\relax }}{28}{algorithm.4.2}
+\contentsline {algorithm}{\numberline {4.3}{\ignorespaces Episodic PGPE algorithm\relax }}{31}{algorithm.4.3}
+\contentsline {algorithm}{\numberline {4.4}{\ignorespaces Generic structure for an online actor-critic algorithm.\relax }}{37}{algorithm.4.4}
+\contentsline {algorithm}{\numberline {4.5}{\ignorespaces TD($\lambda $) policy gradient algorithm.\relax }}{38}{algorithm.4.5}
+\contentsline {algorithm}{\numberline {5.1}{\ignorespaces Risk-sensitive REINFORCE policy gradient estimate\relax }}{46}{algorithm.5.1}
+\contentsline {algorithm}{\numberline {5.2}{\ignorespaces Risk-Sensitive Average Reward Actor-Critic algorithm\relax }}{50}{algorithm.5.2}
+\contentsline {algorithm}{\numberline {6.1}{\ignorespaces Actor-Critic PGPE\relax }}{56}{algorithm.6.1}
+\contentsline {algorithm}{\numberline {6.2}{\ignorespaces NPGPE\relax }}{58}{algorithm.6.2}
+\contentsline {algorithm}{\numberline {6.3}{\ignorespaces Natural Actor-Critic PGPE\relax }}{59}{algorithm.6.3}
+\contentsline {algorithm}{\numberline {6.4}{\ignorespaces Risk-Sensitive NPGPE\relax }}{61}{algorithm.6.4}

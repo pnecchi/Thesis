@@ -2,7 +2,7 @@
 \label{ch:parameter_based_policy_gradient}
 
 The learning algorithms derived from the policy gradient theorems look for a set of optimal controller parameters by perturbing the control signal. Indeed, the policy gradient theorem holds only for stochastic policies, which explore in the action space.
-However, a significant problem with this sampling strategy is that the high variance in their gradient estimates leads to slow convergence. On the other hand, parameter-based algorithms such as PGPE look for an optimal solution to the control problem by directly perturbing the controller parameters. These algorithm thus employ a deterministic controller and explore in the parameters space. However, in its original version, PGPE was conceived for episodic environments and extended to continuing environment by artificially truncating the experiments lifespan. In this section we propose a parameter-based version of the policy gradient theorem, which can be used to derive online learning algorithms. The following discussion starts from and generalizes the results presented in \cite{miyamae2010natural}, where the authors propose an online natural PGPE algorithm. Given the difficulties to extend the policy gradient theorem to the risk-sensitive discounted formulation, here we consider only the averge reward formulation. 
+However, a significant problem with this sampling strategy is that the high variance in their gradient estimates leads to slow convergence. On the other hand, parameter-based algorithms such as PGPE look for an optimal solution to the control problem by directly perturbing the controller parameters. These algorithms thus employ a deterministic controller and explore in the parameters space. However, in its original version, PGPE was conceived for episodic environments and extended to continuing environment by artificially truncating the experiments lifespan. In this section we propose a parameter-based version of the policy gradient theorem, which can be used to derive online learning algorithms both in the risk-neutral and the risk-sensitive frameworks. The following discussion starts from and generalizes the results presented in \cite{miyamae2010natural}, where the authors propose an online natural PGPE algorithm for risk-neutral problems. Given the difficulties to extend the policy gradient theorem to the risk-sensitive discounted formulation, here we consider only the averge reward formulation. 
 
 \section{Risk-Neutral Framework}
 Let us consider a deterministic controller $F: \S \times
@@ -82,7 +82,7 @@ Indeed,
 	d\theta}_{\nabla_\xi 1 = 0} = 0
 	\end{split}
 \end{equation*}
-This result can be used to design several actor-only or actor-critic algorithms that are the parameter-based equivalents of the traditional control-based policy-gradient algorithms discussed in the previous sections. Algorithm \ref{algo:ACPGPE} reports the pseudocode for a parameter-based TD(0) actor-critic algorithm, which is one of the learning methods that will be used in the numerical applications. 
+This result can be used to design several actor-only or actor-critic algorithms that are the parameter-based equivalents of the traditional control-based policy-gradient algorithms discussed in the previous sections. Algorithm \ref{algo:ACPGPE} reports the pseudocode for a parameter-based actor-critic algorithm, which is one of the learning methods that will be used in the numerical applications. 
 
 \begin{algorithm}[t!]
 	\caption{Actor-Critic PGPE}
@@ -123,7 +123,7 @@ Natural parameter-based policy gradient methods update the hyper-parameters foll
 \begin{equation}
 	\widetilde{\nabla}_\xi \rho(\xi) = F_\xi^{-1} \nabla_\xi \rho(\xi)
 \end{equation}
-The advantage of this approach is that, for some particular probability distributions, the inverse of the Fisher information matrix can be computed analytically. This is for instance the case if the controller parameters are normally distributed. This choice leads to an efficient online algorithm called \emph{Natural Policy Gradient with Parameter-Based Exploration} (NPGPE) \cite{miyamae2010natural}. More in detail, suppose that
+The advantage of this approach is that, for some particular probability distributions, the inverse of the Fisher information matrix can be computed analytically. This is for instance the case if the controller parameters are normally distributed. This choice leads to an efficient online algorithm called \gls{NPGPE} \cite{miyamae2010natural}. More in detail, suppose that
 \begin{equation*}
 	\theta \sim \calN(\mu, \Gamma \Gamma^T)
 \end{equation*} 
@@ -266,7 +266,7 @@ The natural policy gradient idea can be trivially extended to the gradient of th
 \begin{equation}
 	\begin{split}
 	\widetilde{\nabla}_\xi \eta(\xi) &=  F_\xi^{-1} \nabla_\xi \eta(\xi)\\
-									 &\approx  F_\xi^{-1} \E[\substack{S \sim d^\xi\\\theta \sim p_\xi}]{\nabla_\xi \log p_\xi(\theta) \left(W_{\pi_\xi}(S, \theta) - B_\xi(S)\right)}\\
+									 &=  F_\xi^{-1} \E[\substack{S \sim d^\xi\\\theta \sim p_\xi}]{\nabla_\xi \log p_\xi(\theta) \left(W_{\pi_\xi}(S, \theta) - B_\xi(S)\right)}\\
 									 &=\E[\substack{S \sim d^\xi\\\theta \sim p_\xi}]{\widetilde{\nabla}_\xi \log p_\xi(\theta) \left(W_{\pi_\xi}(S, \theta) - B_\xi(S)\right)}
 	\end{split}
 \end{equation}
