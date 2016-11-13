@@ -1,534 +1,650 @@
 \begin{thebibliography}{100}
 
-\bibitem{agarwal2010optimal}
-{\sc A.~Agarwal, P.~Bartlett, and M.~Dama}, {\em Optimal allocation strategies
-  for the dark pool problem}, arXiv preprint arXiv:1003.2245,  (2010).
-
-\bibitem{akimoto2010bidirectional}
-{\sc Y.~Akimoto, Y.~Nagata, I.~Ono, and S.~Kobayashi}, {\em Bidirectional
-  relation between cma evolution strategies and natural evolution strategies},
-  in International Conference on Parallel Problem Solving from Nature,
-  Springer, 2010, pp.~154--163.
-
-\bibitem{almgren2001optimal}
-{\sc R.~Almgren and N.~Chriss}, {\em Optimal execution of portfolio
-  transactions}, Journal of Risk, 3 (2001), pp.~5--40.
-
-\bibitem{arapostathis1993discrete}
-{\sc A.~Arapostathis, V.~S. Borkar, E.~Fern{\'a}ndez-Gaucherand, M.~K. Ghosh,
-  and S.~I. Marcus}, {\em Discrete-time controlled markov processes with
-  average cost criterion: a survey}, SIAM Journal on Control and Optimization,
-  31 (1993), pp.~282--344.
-
-\bibitem{basu2008learning}
-{\sc A.~Basu, T.~Bhattacharyya, and V.~S. Borkar}, {\em A learning algorithm
-  for risk-sensitive cost}, Mathematics of Operations Research, 33 (2008),
-  pp.~880--898.
-
-\bibitem{bauerle2011markov}
-{\sc N.~B{\"a}uerle and U.~Rieder}, {\em Markov decision processes with
-  applications to finance}, Springer Science \& Business Media, 2011.
-
-\bibitem{baxter2001infinite}
-{\sc J.~Baxter and P.~L. Bartlett}, {\em Infinite-horizon policy-gradient
-  estimation}, Journal of Artificial Intelligence Research, 15 (2001),
-  pp.~319--350.
-
-\bibitem{bekiros2010heterogeneouseltit}
-{\sc S.~D. Bekiros}, {\em Heterogeneous trading strategies with adaptive fuzzy
-  actor–critic reinforcement learning: A behavioral approach}, Journal of
-  Economic Dynamics and Control, 34 (2010), pp.~1153--1170.
-
-\bibitem{bertoluzzo2012testing}
-{\sc F.~Bertoluzzo and M.~Corazza}, {\em Testing different reinforcement
-  learning configurations for financial trading: Introduction and
-  applications}, Procedia Economics and Finance, 3 (2012), pp.~68--77.
-
-\bibitem{corazza2014q}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Q-learning-based
-  financial trading systems with applications}, University Ca'Foscari of
-  Venice, Dept. of Economics Working Paper Series No, 15 (2014).
-
-\bibitem{bertoluzzo2014reinforcement}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Reinforcement
-  learning for automated financial trading: Basics and applications}, in Recent
-  Advances of Neural Network Models and Applications, Springer, 2014,
-  pp.~197--213.
-
-\bibitem{bertsekas1995dynamic}
-{\sc D.~P. Bertsekas}, {\em Dynamic programming and optimal control}, vol.~1,
-  Athena Scientific, Belmont, 1995.
-
-\bibitem{bertsekas1978stochastic}
-{\sc D.~P. Bertsekas and S.~E. Shreve}, {\em Stochastic optimal control: the
-  discrete-time case}, vol.~23, Academic Press New York, 1978.
-
-\bibitem{bertsekas1996neuro}
-{\sc D.~P. Bertsekas and J.~N. Tsitsiklis}, {\em Neuro-Dynamic Programming},
-  Optimization and neural computation series, Athena Scientific, Belmont,
-  1~ed., 1996.
-
-\bibitem{bhatnagar2009natural}
-{\sc S.~Bhatnagar, R.~S. Sutton, M.~Ghavamzadeh, and M.~Lee}, {\em Natural
-  actor--critic algorithms}, Automatica, 45 (2009), pp.~2471--2482.
-
-\bibitem{bishop2006pattern}
-{\sc C.~M. Bishop}, {\em Pattern Recognition and Machine Learning}, Springer,
-  2006.
-
-\bibitem{borkar2001sensitivity}
-{\sc V.~S. Borkar}, {\em A sensitivity formula for risk-sensitive cost and the
-  actor--critic algorithm}, Systems \& Control Letters, 44 (2001),
-  pp.~339--346.
-
-\bibitem{borkar2002q}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Q-learning for
-  risk-sensitive control}, Mathematics of operations research, 27 (2002),
-  pp.~294--311.
-
-\bibitem{borkar2002risk}
-{\sc V.~S. Borkar and S.~P. Meyn}, {\em Risk-sensitive optimal control for
-  markov decision processes with monotone cost}, Mathematics of Operations
-  Research, 27 (2002), pp.~192--209.
-
-\bibitem{brogaard2014high}
-{\sc J.~Brogaard, T.~Hendershott, and R.~Riordan}, {\em High-frequency trading
-  and price discovery}, Review of Financial Studies, 27 (2014), pp.~2267--2306.
-
-\bibitem{browne1995optimal}
-{\sc S.~Browne}, {\em Optimal investment policies for a firm with a random risk
-  process: exponential utility and minimizing the probability of ruin},
-  Mathematics of operations research, 20 (1995), pp.~937--958.
-
-\bibitem{browne1999reaching}
-{\sc S.~Browne et~al.}, {\em Reaching goals by a deadline: Digital options and
-  continuous-time active portfolio management}, Advances in Applied
-  Probability, 31 (1999), pp.~551--577.
-
-\bibitem{busoniu2010reinforcement}
-{\sc L.~Busoniu, R.~Babuska, B.~De~Schutter, and D.~Ernst}, {\em Reinforcement
-  learning and dynamic programming using function approximators}, vol.~39, CRC
-  press, 2010.
-
-\bibitem{cartea2015algorithmic}
-{\sc {\'A}.~Cartea, S.~Jaimungal, and J.~Penalva}, {\em Algorithmic and
-  high-frequency trading}, Cambridge University Press, 2015.
-
-\bibitem{casqueiro2006neuro}
-{\sc P.~X. Casqueiro and A.~J. Rodrigues}, {\em Neuro-dynamic trading methods},
-  European Journal of Operational Research, 175 (2006), pp.~1400--1412.
-
-\bibitem{chapados2001cost}
-{\sc N.~Chapados and Y.~Bengio}, {\em Cost functions and model combination for
-  var-based asset allocation using neural networks}, IEEE Transactions on
-  Neural Networks, 12 (2001), pp.~890--906.
-
-\bibitem{choey1997nonlineareltit}
-{\sc M.~Choey and A.~S. Weigend}, {\em Nonlinear trading models through sharpe
-  ratio maximization}, International Journal of Neural Systems, 8 (1997),
-  pp.~417--431.
-
-\bibitem{chow2015risk}
-{\sc Y.~Chow, A.~Tamar, S.~Mannor, and M.~Pavone}, {\em Risk-sensitive and
-  robust decision-making: a cvar optimization approach}, in Advances in Neural
-  Information Processing Systems, 2015, pp.~1522--1530.
-
-\bibitem{corazzaq}
-{\sc M.~Corazza and A.~Sangalli}, {\em Q-learning vs. sarsa: comparing two
-  intelligent stochastic control approaches for financial trading}.
-
-\bibitem{cumming2015investigation}
-{\sc J.~Cumming, D.~Alrajeh, and L.~Dickens}, {\em An investigation into the
-  use of reinforcement learning techniques within the algorithmic trading
-  domain},  (2015).
-
-\bibitem{dempster2006automated}
-{\sc M.~A. Dempster and V.~Leemans}, {\em An automated fx trading system using
-  adaptive reinforcement learning}, Expert Systems with Applications, 30
-  (2006), pp.~543--552.
-
-\bibitem{dempster2002intraday}
-{\sc M.~A.~H. Dempster and Y.~S. Romahi}, {\em Intraday FX trading: An
-  evolutionary reinforcement learning approach}, Springer, 2002.
-
-\bibitem{deng2016deep}
-{\sc Y.~Deng, F.~Bao, Y.~Kong, Z.~Ren, and Q.~Dai}, {\em Deep direct
-  reinforcement learning for financial signal representation and trading}, IEEE
-  Transactions on Neural Networks and Learning Systems,  (2016).
-
-\bibitem{deng2015sparse}
-{\sc Y.~Deng, Y.~Kong, F.~Bao, and Q.~Dai}, {\em Sparse coding inspired optimal
-  trading system for hft industry}, IEEE Transactions on Industrial
-  Informatics, 11 (2015), pp.~467--475.
-
 \bibitem{economist2016march}
-{\sc T.~Economist}, {\em March of the machines}.
+March of the machines.
 \newblock The Economist, June 2016.
 
 \bibitem{economist2016return}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em The return of the
-  machinery question}.
-\newblock Special report on artificial intelligence., June 2016.
+The return of the machinery question.
+\newblock The Economist, June 2016.
+
+\bibitem{agarwal2010optimal}
+{\sc Agarwal, A., Bartlett, P., and Dama, M.}
+\newblock Optimal allocation strategies for the dark pool problem.
+\newblock {\em arXiv preprint arXiv:1003.2245\/} (2010).
+
+\bibitem{akimoto2010bidirectional}
+{\sc Akimoto, Y., Nagata, Y., Ono, I., and Kobayashi, S.}
+\newblock Bidirectional relation between cma evolution strategies and natural
+  evolution strategies.
+\newblock In {\em International Conference on Parallel Problem Solving from
+  Nature\/} (2010), Springer, pp.~154--163.
+
+\bibitem{almgren2001optimal}
+{\sc Almgren, R., and Chriss, N.}
+\newblock Optimal execution of portfolio transactions.
+\newblock {\em Journal of Risk 3\/} (2001), 5--40.
+
+\bibitem{arapostathis1993discrete}
+{\sc Arapostathis, A., Borkar, V.~S., Fern{\'a}ndez-Gaucherand, E., Ghosh,
+  M.~K., and Marcus, S.~I.}
+\newblock Discrete-time controlled markov processes with average cost
+  criterion: a survey.
+\newblock {\em SIAM Journal on Control and Optimization 31}, 2 (1993),
+  282--344.
+
+\bibitem{basu2008learning}
+{\sc Basu, A., Bhattacharyya, T., and Borkar, V.~S.}
+\newblock A learning algorithm for risk-sensitive cost.
+\newblock {\em Mathematics of Operations Research 33}, 4 (2008), 880--898.
+
+\bibitem{bauerle2011markov}
+{\sc B{\"a}uerle, N., and Rieder, U.}
+\newblock {\em Markov decision processes with applications to finance}.
+\newblock Springer Science \& Business Media, 2011.
+
+\bibitem{baxter2001infinite}
+{\sc Baxter, J., and Bartlett, P.~L.}
+\newblock Infinite-horizon policy-gradient estimation.
+\newblock {\em Journal of Artificial Intelligence Research 15\/} (2001),
+  319--350.
+
+\bibitem{bekiros2010heterogeneouseltit}
+{\sc Bekiros, S.~D.}
+\newblock Heterogeneous trading strategies with adaptive fuzzy actor–critic
+  reinforcement learning: A behavioral approach.
+\newblock {\em Journal of Economic Dynamics and Control 34}, 6 (2010),
+  1153--1170.
+
+\bibitem{bertoluzzo2012testing}
+{\sc Bertoluzzo, F., and Corazza, M.}
+\newblock Testing different reinforcement learning configurations for financial
+  trading: Introduction and applications.
+\newblock {\em Procedia Economics and Finance 3\/} (2012), 68--77.
+
+\bibitem{corazza2014q}
+{\sc Bertoluzzo, F., and Corazza, M.}
+\newblock Q-learning-based financial trading systems with applications.
+\newblock {\em University Ca'Foscari of Venice, Dept. of Economics Working
+  Paper Series No 15\/} (2014).
+
+\bibitem{bertoluzzo2014reinforcement}
+{\sc Bertoluzzo, F., and Corazza, M.}
+\newblock Reinforcement learning for automated financial trading: Basics and
+  applications.
+\newblock In {\em Recent Advances of Neural Network Models and Applications}.
+  Springer, 2014, pp.~197--213.
+
+\bibitem{bertsekas1995dynamic}
+{\sc Bertsekas, D.~P.}
+\newblock {\em Dynamic programming and optimal control}, vol.~1.
+\newblock Athena Scientific, Belmont, 1995.
+
+\bibitem{bertsekas1978stochastic}
+{\sc Bertsekas, D.~P., and Shreve, S.~E.}
+\newblock {\em Stochastic optimal control: the discrete-time case}, vol.~23.
+\newblock Academic Press New York, 1978.
+
+\bibitem{bertsekas1996neuro}
+{\sc Bertsekas, D.~P., and Tsitsiklis, J.~N.}
+\newblock {\em Neuro-Dynamic Programming}, 1~ed.
+\newblock Optimization and neural computation series. Athena Scientific,
+  Belmont, 1996.
+
+\bibitem{bhatnagar2009natural}
+{\sc Bhatnagar, S., Sutton, R.~S., Ghavamzadeh, M., and Lee, M.}
+\newblock Natural actor--critic algorithms.
+\newblock {\em Automatica 45}, 11 (2009), 2471--2482.
+
+\bibitem{bishop2006pattern}
+{\sc Bishop, C.~M.}
+\newblock {\em Pattern Recognition and Machine Learning}.
+\newblock Springer, 2006.
+
+\bibitem{borkar2001sensitivity}
+{\sc Borkar, V.~S.}
+\newblock A sensitivity formula for risk-sensitive cost and the actor--critic
+  algorithm.
+\newblock {\em Systems \& Control Letters 44}, 5 (2001), 339--346.
+
+\bibitem{borkar2002q}
+{\sc Borkar, V.~S.}
+\newblock Q-learning for risk-sensitive control.
+\newblock {\em Mathematics of operations research 27}, 2 (2002), 294--311.
+
+\bibitem{borkar2002risk}
+{\sc Borkar, V.~S., and Meyn, S.~P.}
+\newblock Risk-sensitive optimal control for markov decision processes with
+  monotone cost.
+\newblock {\em Mathematics of Operations Research 27}, 1 (2002), 192--209.
+
+\bibitem{brogaard2014high}
+{\sc Brogaard, J., Hendershott, T., and Riordan, R.}
+\newblock High-frequency trading and price discovery.
+\newblock {\em Review of Financial Studies 27}, 8 (2014), 2267--2306.
+
+\bibitem{browne1995optimal}
+{\sc Browne, S.}
+\newblock Optimal investment policies for a firm with a random risk process:
+  exponential utility and minimizing the probability of ruin.
+\newblock {\em Mathematics of operations research 20}, 4 (1995), 937--958.
+
+\bibitem{browne1999reaching}
+{\sc Browne, S., et~al.}
+\newblock Reaching goals by a deadline: Digital options and continuous-time
+  active portfolio management.
+\newblock {\em Advances in Applied Probability 31}, 2 (1999), 551--577.
+
+\bibitem{busoniu2010reinforcement}
+{\sc Busoniu, L., Babuska, R., De~Schutter, B., and Ernst, D.}
+\newblock {\em Reinforcement learning and dynamic programming using function
+  approximators}, vol.~39.
+\newblock CRC press, 2010.
+
+\bibitem{cartea2015algorithmic}
+{\sc Cartea, {\'A}., Jaimungal, S., and Penalva, J.}
+\newblock {\em Algorithmic and high-frequency trading}.
+\newblock Cambridge University Press, 2015.
+
+\bibitem{casqueiro2006neuro}
+{\sc Casqueiro, P.~X., and Rodrigues, A.~J.}
+\newblock Neuro-dynamic trading methods.
+\newblock {\em European Journal of Operational Research 175}, 3 (2006),
+  1400--1412.
+
+\bibitem{chapados2001cost}
+{\sc Chapados, N., and Bengio, Y.}
+\newblock Cost functions and model combination for var-based asset allocation
+  using neural networks.
+\newblock {\em IEEE Transactions on Neural Networks 12\/} (2001), 890--906.
+
+\bibitem{choey1997nonlineareltit}
+{\sc Choey, M., and Weigend, A.~S.}
+\newblock Nonlinear trading models through sharpe ratio maximization.
+\newblock {\em International Journal of Neural Systems 8\/} (1997), 417--431.
+
+\bibitem{chow2015risk}
+{\sc Chow, Y., Tamar, A., Mannor, S., and Pavone, M.}
+\newblock Risk-sensitive and robust decision-making: a cvar optimization
+  approach.
+\newblock In {\em Advances in Neural Information Processing Systems\/} (2015),
+  pp.~1522--1530.
+
+\bibitem{corazzaq}
+{\sc Corazza, M., and Sangalli, A.}
+\newblock Q-learning vs. sarsa: comparing two intelligent stochastic control
+  approaches for financial trading.
+
+\bibitem{cumming2015investigation}
+{\sc Cumming, J., Alrajeh, D., and Dickens, L.}
+\newblock An investigation into the use of reinforcement learning techniques
+  within the algorithmic trading domain.
+
+\bibitem{dempster2006automated}
+{\sc Dempster, M.~A., and Leemans, V.}
+\newblock An automated fx trading system using adaptive reinforcement learning.
+\newblock {\em Expert Systems with Applications 30}, 3 (2006), 543--552.
+
+\bibitem{dempster2002intraday}
+{\sc Dempster, M. A.~H., and Romahi, Y.~S.}
+\newblock {\em Intraday FX trading: An evolutionary reinforcement learning
+  approach}.
+\newblock Springer, 2002.
+
+\bibitem{deng2016deep}
+{\sc Deng, Y., Bao, F., Kong, Y., Ren, Z., and Dai, Q.}
+\newblock Deep direct reinforcement learning for financial signal
+  representation and trading.
+\newblock {\em IEEE Transactions on Neural Networks and Learning Systems\/}
+  (2016).
+
+\bibitem{deng2015sparse}
+{\sc Deng, Y., Kong, Y., Bao, F., and Dai, Q.}
+\newblock Sparse coding inspired optimal trading system for hft industry.
+\newblock {\em IEEE Transactions on Industrial Informatics 11}, 2 (2015),
+  467--475.
 
 \bibitem{eldercreating}
-{\sc T.~Elder}, {\em Creating algorithmic traders with hierarchical
-  reinforcement learning},  (2008).
+{\sc Elder, T.}
+\newblock Creating algorithmic traders with hierarchical reinforcement
+  learning.
 
 \bibitem{fama1991efficient}
-{\sc E.~F. Fama}, {\em Efficient capital markets: Ii}, The journal of finance,
-  46 (1991), pp.~1575--1617.
+{\sc Fama, E.~F.}
+\newblock Efficient capital markets: Ii.
+\newblock {\em The journal of finance 46}, 5 (1991), 1575--1617.
 
 \bibitem{feldkamp1998enhanced}
-{\sc L.~A. Feldkamp, D.~V. Prokhorov, C.~F. Eagen, and F.~Yuan}, {\em Enhanced
-  multi-stream kalman filter training for recurrent networks}, in Nonlinear
-  Modeling, Springer, 1998, pp.~29--53.
+{\sc Feldkamp, L.~A., Prokhorov, D.~V., Eagen, C.~F., and Yuan, F.}
+\newblock Enhanced multi-stream kalman filter training for recurrent networks.
+\newblock In {\em Nonlinear Modeling}. Springer, 1998, pp.~29--53.
 
 \bibitem{ganchev2010censored}
-{\sc K.~Ganchev, Y.~Nevmyvaka, M.~Kearns, and J.~W. Vaughan}, {\em Censored
-  exploration and the dark pool problem}, Communications of the ACM, 53 (2010),
-  pp.~99--107.
+{\sc Ganchev, K., Nevmyvaka, Y., Kearns, M., and Vaughan, J.~W.}
+\newblock Censored exploration and the dark pool problem.
+\newblock {\em Communications of the ACM 53}, 5 (2010), 99--107.
 
 \bibitem{gittins2011multi}
-{\sc J.~Gittins, K.~Glazebrook, and R.~Weber}, {\em Multi-armed bandit
-  allocation indices}, John Wiley \& Sons, 2011.
+{\sc Gittins, J., Glazebrook, K., and Weber, R.}
+\newblock {\em Multi-armed bandit allocation indices}.
+\newblock John Wiley \& Sons, 2011.
 
 \bibitem{gold2003FX}
-{\sc C.~Gold}, {\em Fx trading via recurrent reinforcement learning}, in IEEE
-  2003 IEEE International Conference on Computational Intelligence for
-  Financial Engineering. Proceedings, 2003.
+{\sc Gold, C.}
+\newblock Fx trading via recurrent reinforcement learning.
+\newblock In {\em IEEE 2003 IEEE International Conference on Computational
+  Intelligence for Financial Engineering. Proceedings\/} (2003).
 
 \bibitem{Goodfellow-et-al-2016-Book}
-{\sc I.~Goodfellow, Y.~Bengio, and A.~Courville}, {\em Deep learning}.
+{\sc Goodfellow, I., Bengio, Y., and Courville, A.}
+\newblock Deep learning.
 \newblock Book in preparation for MIT Press, 2016.
 
 \bibitem{hastie2009unsupervised}
-{\sc T.~Hastie, R.~Tibshirani, and J.~Friedman}, {\em The elements of
-  statistical learning: data mining, inference, and prediction}, Springer,
-  2009.
+{\sc Hastie, T., Tibshirani, R., and Friedman, J.}
+\newblock {\em The elements of statistical learning: data mining, inference,
+  and prediction}.
+\newblock Springer, 2009.
 
 \bibitem{hendricks2014reinforcement}
-{\sc D.~Hendricks and D.~Wilcox}, {\em A reinforcement learning extension to
-  the almgren-chriss framework for optimal trade execution}, in IEEE Conference
-  on Computational Intelligence for Financial Engineering \& Economics (CIFEr),
-  2014, pp.~457--464.
+{\sc Hendricks, D., and Wilcox, D.}
+\newblock A reinforcement learning extension to the almgren-chriss framework
+  for optimal trade execution.
+\newblock In {\em IEEE Conference on Computational Intelligence for Financial
+  Engineering \& Economics (CIFEr)\/} (2014), pp.~457--464.
 
 \bibitem{jaeger2002tutorial}
-{\sc H.~Jaeger}, {\em Tutorial on training recurrent neural networks, covering
-  BPPT, RTRL, EKF and the echo state network approach}, GMD-Forschungszentrum
-  Informationstechnik, 2002.
+{\sc Jaeger, H.}
+\newblock {\em Tutorial on training recurrent neural networks, covering BPPT,
+  RTRL, EKF and the echo state network approach}.
+\newblock GMD-Forschungszentrum Informationstechnik, 2002.
 
 \bibitem{jensen1978some}
-{\sc M.~C. Jensen}, {\em Some anomalous evidence regarding market efficiency},
-  Journal of financial economics, 6 (1978), pp.~95--101.
+{\sc Jensen, M.~C.}
+\newblock Some anomalous evidence regarding market efficiency.
+\newblock {\em Journal of financial economics 6}, 2/3 (1978), 95--101.
 
 \bibitem{johnson2010algorithmic}
-{\sc B.~Johnson}, {\em Algorithmic Trading \& DMA: An introduction to direct
-  access trading strategies}, vol.~200, 4Myeloma Press London, 2010.
+{\sc Johnson, B.}
+\newblock {\em Algorithmic Trading \& DMA: An introduction to direct access
+  trading strategies}, vol.~200.
+\newblock 4Myeloma Press London, 2010.
 
 \bibitem{joshi2008c++}
-{\sc M.~S. Joshi}, {\em C++ design patterns and derivatives pricing}, vol.~2,
-  Cambridge University Press, 2008.
+{\sc Joshi, M.~S.}
+\newblock {\em C++ design patterns and derivatives pricing}, vol.~2.
+\newblock Cambridge University Press, 2008.
 
 \bibitem{kakade2001natural}
-{\sc S.~Kakade}, {\em A natural policy gradient.}, in NIPS, vol.~14, 2001,
-  pp.~1531--1538.
+{\sc Kakade, S.}
+\newblock A natural policy gradient.
+\newblock In {\em NIPS\/} (2001), vol.~14, pp.~1531--1538.
 
 \bibitem{kakade2001optimizing}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Optimizing average
-  reward using discounted rewards}, in International Conference on
-  Computational Learning Theory, Springer, 2001, pp.~605--615.
+{\sc Kakade, S.}
+\newblock Optimizing average reward using discounted rewards.
+\newblock In {\em International Conference on Computational Learning Theory\/}
+  (2001), Springer, pp.~605--615.
 
 \bibitem{kamijo1990stock}
-{\sc K.~Kamijo and T.~Tanigawa}, {\em Stock price pattern recognition-a
-  recurrent neural network approach}, in IEEE 1990 IJCNN International Joint
-  Conference on Neural Networks, 1990.
+{\sc Kamijo, K., and Tanigawa, T.}
+\newblock Stock price pattern recognition-a recurrent neural network approach.
+\newblock In {\em IEEE 1990 IJCNN International Joint Conference on Neural
+  Networks\/} (1990).
 
 \bibitem{kearns2013machine}
-{\sc M.~Kearns and Y.~Nevmyvaka}, {\em Machine learning for market
-  microstructure and high frequency trading}, High-Frequency Trading--New
-  Realities for Traders, Markets and Regulators,  (2013), pp.~91--124.
+{\sc Kearns, M., and Nevmyvaka, Y.}
+\newblock Machine learning for market microstructure and high frequency
+  trading.
+\newblock {\em High-Frequency Trading--New Realities for Traders, Markets and
+  Regulators\/} (2013), 91--124.
 
 \bibitem{konda1999actor}
-{\sc V.~R. Konda and J.~N. Tsitsiklis}, {\em Actor-critic algorithms.}, in
-  NIPS, vol.~13, 1999, pp.~1008--1014.
+{\sc Konda, V.~R., and Tsitsiklis, J.~N.}
+\newblock Actor-critic algorithms.
+\newblock In {\em NIPS\/} (1999), vol.~13, pp.~1008--1014.
 
 \bibitem{bloomberg2016ml}
-{\sc N.~Kumar and T.~Hall}, {\em Why mmachine still can't learn so good}.
+{\sc Kumar, N., and Hall, T.}
+\newblock Why machine still can't learn so good.
 \newblock Bloomberg, November 2016.
 
 \bibitem{kushner2003stochastic}
-{\sc H.~Kushner and G.~G. Yin}, {\em Stochastic approximation and recursive
-  algorithms and applications}, vol.~35, Springer Science \& Business Media,
-  2003.
+{\sc Kushner, H., and Yin, G.~G.}
+\newblock {\em Stochastic approximation and recursive algorithms and
+  applications}, vol.~35.
+\newblock Springer Science \& Business Media, 2003.
 
 \bibitem{NIPS2013_4917}
-{\sc P.~L.A. and M.~Ghavamzadeh}, {\em Actor-critic algorithms for
-  risk-sensitive mdps}, in Advances in Neural Information Processing Systems
-  26, C.~J.~C. Burges, L.~Bottou, M.~Welling, Z.~Ghahramani, and K.~Q.
-  Weinberger, eds., Curran Associates, Inc., 2013, pp.~252--260.
+{\sc L.A., P., and Ghavamzadeh, M.}
+\newblock Actor-critic algorithms for risk-sensitive mdps.
+\newblock In {\em Advances in Neural Information Processing Systems 26},
+  C.~J.~C. Burges, L.~Bottou, M.~Welling, Z.~Ghahramani, and K.~Q. Weinberger,
+  Eds. Curran Associates, Inc., 2013, pp.~252--260.
 
 \bibitem{laruelle2011optimal}
-{\sc S.~Laruelle, C.-A. Lehalle, and G.~Pages}, {\em Optimal split of orders
-  across liquidity pools: a stochastic algorithm approach}, SIAM Journal on
-  Financial Mathematics, 2 (2011), pp.~1042--1076.
+{\sc Laruelle, S., Lehalle, C.-A., and Pages, G.}
+\newblock Optimal split of orders across liquidity pools: a stochastic
+  algorithm approach.
+\newblock {\em SIAM Journal on Financial Mathematics 2}, 1 (2011), 1042--1076.
 
 \bibitem{laruelle2013optimal}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Optimal posting
-  price of limit orders: learning by trading}, Mathematics and Financial
-  Economics, 7 (2013), pp.~359--403.
+{\sc Laruelle, S., Lehalle, C.-A., and Pages, G.}
+\newblock Optimal posting price of limit orders: learning by trading.
+\newblock {\em Mathematics and Financial Economics 7}, 3 (2013), 359--403.
 
 \bibitem{lewis2014flash}
-{\sc M.~Lewis and D.~Baker}, {\em Flash boys}, Allen Lane, 2014.
+{\sc Lewis, M., and Baker, D.}
+\newblock {\em Flash boys}.
+\newblock Allen Lane, 2014.
 
 \bibitem{li2007short}
-{\sc H.~Li, C.~H. Dagli, and D.~Enke}, {\em Short-term stock market timing
-  prediction under reinforcement learning schemes}, in 2007 IEEE International
-  Symposium on Approximate Dynamic Programming and Reinforcement Learning,
-  2007, pp.~233--240.
+{\sc Li, H., Dagli, C.~H., and Enke, D.}
+\newblock Short-term stock market timing prediction under reinforcement
+  learning schemes.
+\newblock In {\em 2007 IEEE International Symposium on Approximate Dynamic
+  Programming and Reinforcement Learning\/} (2007), pp.~233--240.
 
 \bibitem{liang2011stock}
-{\sc J.~Liang, W.~Song, and M.~Wang}, {\em Stock price prediction based on
-  procedural neural networks}, Adv. Artif. Neu. Sys., 2011 (2011), pp.~1--11.
+{\sc Liang, J., Song, W., and Wang, M.}
+\newblock Stock price prediction based on procedural neural networks.
+\newblock {\em Adv. Artif. Neu. Sys. 2011\/} (2011), 1--11.
 
 \bibitem{littman1996algorithms}
-{\sc M.~L. Littman}, {\em Algorithms for sequential decision making}, PhD
-  thesis, Brown University, 1996.
+{\sc Littman, M.~L.}
+\newblock {\em Algorithms for sequential decision making}.
+\newblock PhD thesis, Brown University, 1996.
 
 \bibitem{lo2000foundations}
-{\sc A.~W. Lo, H.~Mamaysky, and J.~Wang}, {\em Foundations of technical
-  analysis: Computational algorithms, statistical inference, and empirical
-  implementation}, The journal of finance, 55 (2000), pp.~1705--1770.
+{\sc Lo, A.~W., Mamaysky, H., and Wang, J.}
+\newblock Foundations of technical analysis: Computational algorithms,
+  statistical inference, and empirical implementation.
+\newblock {\em The journal of finance 55}, 4 (2000), 1705--1770.
 
 \bibitem{mahadevan1996average}
-{\sc S.~Mahadevan}, {\em Average reward reinforcement learning: Foundations,
-  algorithms, and empirical results}, Machine learning, 22 (1996),
-  pp.~159--195.
+{\sc Mahadevan, S.}
+\newblock Average reward reinforcement learning: Foundations, algorithms, and
+  empirical results.
+\newblock {\em Machine learning 22}, 1-3 (1996), 159--195.
 
 \bibitem{malkiel2003efficient}
-{\sc B.~G. Malkiel}, {\em The efficient market hypothesis and its critics}, The
-  Journal of Economic Perspectives, 17 (2003), pp.~59--82.
+{\sc Malkiel, B.~G.}
+\newblock The efficient market hypothesis and its critics.
+\newblock {\em The Journal of Economic Perspectives 17}, 1 (2003), 59--82.
 
 \bibitem{malkiel1970efficient}
-{\sc B.~G. Malkiel and E.~F. Fama}, {\em Efficient capital markets: A review of
-  theory and empirical work}, The journal of Finance, 25 (1970), pp.~383--417.
+{\sc Malkiel, B.~G., and Fama, E.~F.}
+\newblock Efficient capital markets: A review of theory and empirical work.
+\newblock {\em The journal of Finance 25}, 2 (1970), 383--417.
 
 \bibitem{mallaby2010more}
-{\sc S.~Mallaby}, {\em More money than god: Hedge funds and the making of the
-  new elite}, A\&C Black, 2010.
+{\sc Mallaby, S.}
+\newblock {\em More money than god: Hedge funds and the making of the new
+  elite}.
+\newblock A\&C Black, 2010.
 
 \bibitem{markowitz1952portfolio}
-{\sc H.~Markowitz}, {\em Portfolio selection}, The journal of finance, 7
-  (1952), pp.~77--91.
+{\sc Markowitz, H.}
+\newblock Portfolio selection.
+\newblock {\em The journal of finance 7}, 1 (1952), 77--91.
 
 \bibitem{miyamae2010natural}
-{\sc A.~Miyamae, Y.~Nagata, I.~Ono, and S.~Kobayashi}, {\em Natural policy
-  gradient methods with parameter-based exploration for control tasks}, in
-  Advances in neural information processing systems, 2010, pp.~1660--1668.
+{\sc Miyamae, A., Nagata, Y., Ono, I., and Kobayashi, S.}
+\newblock Natural policy gradient methods with parameter-based exploration for
+  control tasks.
+\newblock In {\em Advances in neural information processing systems\/} (2010),
+  pp.~1660--1668.
 
 \bibitem{moody2001learning}
-{\sc J.~Moody and M.~Saffell}, {\em Learning to trade via direct
-  reinforcement}, Neural Networks, IEEE Transactions on, 12 (2001),
-  pp.~875--889.
+{\sc Moody, J., and Saffell, M.}
+\newblock Learning to trade via direct reinforcement.
+\newblock {\em Neural Networks, IEEE Transactions on 12}, 4 (2001), 875--889.
 
 \bibitem{moody2013reinforcement}
-{\sc J.~Moody, M.~Saffell, Y.~Liao, and L.~Wu}, {\em Reinforcement learning for
-  trading systems}, in Decision Technologies for Computational Finance:
-  Proceedings of the fifth International Conference Computational Finance,
-  vol.~2, Springer Science \& Business Media, 2013, p.~129.
+{\sc Moody, J., Saffell, M., Liao, Y., and Wu, L.}
+\newblock Reinforcement learning for trading systems.
+\newblock In {\em Decision Technologies for Computational Finance: Proceedings
+  of the fifth International Conference Computational Finance\/} (2013),
+  vol.~2, Springer Science \& Business Media, p.~129.
 
 \bibitem{moody1997optimization}
-{\sc J.~Moody and L.~Wu}, {\em Optimization of trading systems and portfolios},
-  in Proceedings of the IEEE/IAFE 1997 Computational Intelligence for Financial
-  Engineering (CIFEr), 1997, pp.~300--307.
+{\sc Moody, J., and Wu, L.}
+\newblock Optimization of trading systems and portfolios.
+\newblock In {\em Proceedings of the IEEE/IAFE 1997 Computational Intelligence
+  for Financial Engineering (CIFEr)\/} (1997), pp.~300--307.
 
 \bibitem{moody1998performance}
-{\sc J.~Moody, L.~Wu, Y.~Liao, and M.~Saffell}, {\em Performance functions and
-  reinforcement learning for trading systems and portfolios}, Journal of
-  Forecasting, 17 (1998), pp.~441--470.
+{\sc Moody, J., Wu, L., Liao, Y., and Saffell, M.}
+\newblock Performance functions and reinforcement learning for trading systems
+  and portfolios.
+\newblock {\em Journal of Forecasting 17\/} (1998), 441--470.
 
 \bibitem{nevmyvaka2006reinforcement}
-{\sc Y.~Nevmyvaka, Y.~Feng, and M.~Kearns}, {\em Reinforcement learning for
-  optimized trade execution}, in Proceedings of the 23rd international
-  conference on Machine learning, ACM, 2006, pp.~673--680.
+{\sc Nevmyvaka, Y., Feng, Y., and Kearns, M.}
+\newblock Reinforcement learning for optimized trade execution.
+\newblock In {\em Proceedings of the 23rd international conference on Machine
+  learning\/} (2006), ACM, pp.~673--680.
 
 \bibitem{nocedal2006numerical}
-{\sc J.~Nocedal and S.~Wright}, {\em Numerical optimization}, Springer Science
-  \& Business Media, 2006.
+{\sc Nocedal, J., and Wright, S.}
+\newblock {\em Numerical optimization}.
+\newblock Springer Science \& Business Media, 2006.
 
 \bibitem{o2006adaptive}
-{\sc J.~O, J.~Lee, J.~W. Lee, and B.-T. Zhang}, {\em Adaptive stock trading
-  with dynamic asset allocation using reinforcement learning}, Information
-  Sciences, 176 (2006), pp.~2121--2147.
+{\sc O, J., Lee, J., Lee, J.~W., and Zhang, B.-T.}
+\newblock Adaptive stock trading with dynamic asset allocation using
+  reinforcement learning.
+\newblock {\em Information Sciences 176}, 15 (2006), 2121--2147.
 
 \bibitem{pages2016introduction}
-{\sc G.~Pages}, {\em Introduction to Numerical Probability for Finance}, 2016.
+{\sc Pages, G.}
+\newblock {\em Introduction to Numerical Probability for Finance}.
+\newblock 2016.
 
 \bibitem{peters2010relative}
-{\sc J.~Peters, K.~M{\"u}lling, and Y.~Altun}, {\em Relative entropy policy
-  search.}, in AAAI, Atlanta, 2010.
+{\sc Peters, J., M{\"u}lling, K., and Altun, Y.}
+\newblock Relative entropy policy search.
+\newblock In {\em AAAI\/} (2010), Atlanta.
 
 \bibitem{peters2006policy}
-{\sc J.~Peters and S.~Schaal}, {\em Policy gradient methods for robotics}, in
-  Intelligent Robots and Systems, 2006 IEEE/RSJ International Conference on,
-  IEEE, 2006, pp.~2219--2225.
+{\sc Peters, J., and Schaal, S.}
+\newblock Policy gradient methods for robotics.
+\newblock In {\em Intelligent Robots and Systems, 2006 IEEE/RSJ International
+  Conference on\/} (2006), IEEE, pp.~2219--2225.
 
 \bibitem{peters2008reinforcement}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Reinforcement
-  learning of motor skills with policy gradients}, Neural networks, 21 (2008),
-  pp.~682--697.
+{\sc Peters, J., and Schaal, S.}
+\newblock Reinforcement learning of motor skills with policy gradients.
+\newblock {\em Neural networks 21}, 4 (2008), 682--697.
 
 \bibitem{prashanth2014actor}
-{\sc L.~Prashanth and M.~Ghavamzadeh}, {\em Actor-critic algorithms for
-  risk-sensitive reinforcement learning.}, arXiv preprint arXiv:1403.6530,
-  (2014).
+{\sc Prashanth, L., and Ghavamzadeh, M.}
+\newblock Actor-critic algorithms for risk-sensitive reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1403.6530\/} (2014).
 
 \bibitem{puterman1994markov}
-{\sc M.~L. Puterman}, {\em Markov decision processes: discrete stochastic
-  dynamic programming}, John Wiley \& Sons, 1994.
+{\sc Puterman, M.~L.}
+\newblock {\em Markov decision processes: discrete stochastic dynamic
+  programming}.
+\newblock John Wiley \& Sons, 1994.
 
 \bibitem{bloomberg2016hft}
-{\sc C.~Russo and J.~Detrixhe}, {\em Wall street’s speed demons are heroes}.
+{\sc Russo, C., and Detrixhe, J.}
+\newblock Wall street’s speed demons are heroes.
 \newblock Bloomberg, October 2016.
 
 \bibitem{saad1998comparative}
-{\sc E.~W. Saad, D.~V. Prokhorov, and D.~C. Wunsch}, {\em Comparative study of
-  stock trend prediction using time delay, recurrent and probabilistic neural
-  networks}, IEEE Transactions on Neural Networks, 9 (1998), pp.~1456--1470.
+{\sc Saad, E.~W., Prokhorov, D.~V., and Wunsch, D.~C.}
+\newblock Comparative study of stock trend prediction using time delay,
+  recurrent and probabilistic neural networks.
+\newblock {\em IEEE Transactions on Neural Networks 9}, 6 (1998), 1456--1470.
 
 \bibitem{sanderson2010armadillo}
-{\sc C.~Sanderson}, {\em Armadillo: An open source c++ linear algebra library
-  for fast prototyping and computationally intensive experiments},  (2010).
+{\sc Sanderson, C.}
+\newblock Armadillo: An open source c++ linear algebra library for fast
+  prototyping and computationally intensive experiments.
 
 \bibitem{sato2000variance}
-{\sc M.~Sato and S.~Kobayashi}, {\em Variance-penalized reinforcement learning
-  for risk-averse asset allocation}, in Intelligent Data Engineering and
-  Automated Learning—IDEAL 2000. Data Mining, Financial Engineering, and
-  Intelligent Agents, Springer, 2000, pp.~244--249.
+{\sc Sato, M., and Kobayashi, S.}
+\newblock Variance-penalized reinforcement learning for risk-averse asset
+  allocation.
+\newblock In {\em Intelligent Data Engineering and Automated Learning—IDEAL
+  2000. Data Mining, Financial Engineering, and Intelligent Agents}. Springer,
+  2000, pp.~244--249.
 
 \bibitem{Sato:2001:ARL:645530.757778}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Average-reward
-  reinforcement learning for variance penalized markov decision problems}, in
-  Proceedings of the Eighteenth International Conference on Machine Learning,
-  ICML '01, San Francisco, CA, USA, 2001, Morgan Kaufmann Publishers Inc.,
-  pp.~473--480.
+{\sc Sato, M., and Kobayashi, S.}
+\newblock Average-reward reinforcement learning for variance penalized markov
+  decision problems.
+\newblock In {\em Proceedings of the Eighteenth International Conference on
+  Machine Learning\/} (San Francisco, CA, USA, 2001), ICML '01, Morgan Kaufmann
+  Publishers Inc., pp.~473--480.
 
 \bibitem{pybrain2010jmlr}
-{\sc T.~Schaul, J.~Bayer, D.~Wierstra, Y.~Sun, M.~Felder, F.~Sehnke,
-  T.~R{\"u}ckstie{\ss}, and J.~Schmidhuber}, {\em {PyBrain}}, Journal of
-  Machine Learning Research, 11 (2010), pp.~743--746.
+{\sc Schaul, T., Bayer, J., Wierstra, D., Sun, Y., Felder, M., Sehnke, F.,
+  R{\"u}ckstie{\ss}, T., and Schmidhuber, J.}
+\newblock {PyBrain}.
+\newblock {\em Journal of Machine Learning Research 11\/} (2010), 743--746.
 
 \bibitem{sehnke2012parameter}
-{\sc F.~Sehnke et~al.}, {\em Parameter exploring policy gradients and their
-  implications}, PhD thesis, Technische Universit{\"a}t M{\"u}nchen, 2012.
+{\sc Sehnke, F., et~al.}
+\newblock {\em Parameter exploring policy gradients and their implications}.
+\newblock PhD thesis, Technische Universit{\"a}t M{\"u}nchen, 2012.
 
 \bibitem{sehnke2008policy}
-{\sc F.~Sehnke, C.~Osendorfer, T.~R{\"u}ckstie{\ss}, A.~Graves, J.~Peters, and
-  J.~Schmidhuber}, {\em Policy gradients with parameter-based exploration for
-  control}, in Artificial Neural Networks-ICANN 2008, Springer, 2008,
+{\sc Sehnke, F., Osendorfer, C., R{\"u}ckstie{\ss}, T., Graves, A., Peters, J.,
+  and Schmidhuber, J.}
+\newblock Policy gradients with parameter-based exploration for control.
+\newblock In {\em Artificial Neural Networks-ICANN 2008}. Springer, 2008,
   pp.~387--396.
 
 \bibitem{sehnke2010parameter}
-\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Parameter-exploring
-  policy gradients}, Neural Networks, 23 (2010), pp.~551--559.
+{\sc Sehnke, F., Osendorfer, C., R{\"u}ckstie{\ss}, T., Graves, A., Peters, J.,
+  and Schmidhuber, J.}
+\newblock Parameter-exploring policy gradients.
+\newblock {\em Neural Networks 23}, 4 (2010), 551--559.
 
 \bibitem{sharpe1994sharpe}
-{\sc W.~F. Sharpe}, {\em The sharpe ratio}, The journal of portfolio
-  management, 21 (1994), pp.~49--58.
+{\sc Sharpe, W.~F.}
+\newblock The sharpe ratio.
+\newblock {\em The journal of portfolio management 21}, 1 (1994), 49--58.
 
 \bibitem{silver2016mastering}
-{\sc D.~Silver, A.~Huang, C.~J. Maddison, A.~Guez, L.~Sifre, G.~Van
-  Den~Driessche, J.~Schrittwieser, I.~Antonoglou, V.~Panneershelvam,
-  M.~Lanctot, et~al.}, {\em Mastering the game of go with deep neural networks
-  and tree search}, Nature, 529 (2016), pp.~484--489.
+{\sc Silver, D., Huang, A., Maddison, C.~J., Guez, A., Sifre, L., Van
+  Den~Driessche, G., Schrittwieser, J., Antonoglou, I., Panneershelvam, V.,
+  Lanctot, M., et~al.}
+\newblock Mastering the game of go with deep neural networks and tree search.
+\newblock {\em Nature 529}, 7587 (2016), 484--489.
 
 \bibitem{silver2014deterministic}
-{\sc D.~Silver, G.~Lever, N.~Heess, T.~Degris, D.~Wierstra, and M.~Riedmiller},
-  {\em Deterministic policy gradient algorithms}, in ICML, 2014.
+{\sc Silver, D., Lever, G., Heess, N., Degris, T., Wierstra, D., and
+  Riedmiller, M.}
+\newblock Deterministic policy gradient algorithms.
+\newblock In {\em ICML\/} (2014).
 
 \bibitem{sobel1982variance}
-{\sc M.~J. Sobel}, {\em The variance of discounted markov decision processes},
-  Journal of Applied Probability,  (1982), pp.~794--802.
+{\sc Sobel, M.~J.}
+\newblock The variance of discounted markov decision processes.
+\newblock {\em Journal of Applied Probability\/} (1982), 794--802.
 
 \bibitem{sun2009efficient}
-{\sc Y.~Sun, D.~Wierstra, T.~Schaul, and J.~Schmidhuber}, {\em Efficient
-  natural evolution strategies}, in Proceedings of the 11th Annual conference
-  on Genetic and evolutionary computation, ACM, 2009, pp.~539--546.
+{\sc Sun, Y., Wierstra, D., Schaul, T., and Schmidhuber, J.}
+\newblock Efficient natural evolution strategies.
+\newblock In {\em Proceedings of the 11th Annual conference on Genetic and
+  evolutionary computation\/} (2009), ACM, pp.~539--546.
 
 \bibitem{sutton1998introduction}
-{\sc R.~S. Sutton and A.~G. Barto}, {\em Introduction to reinforcement
-  learning}, vol.~135, MIT Press Cambridge, 1998.
+{\sc Sutton, R.~S., and Barto, A.~G.}
+\newblock {\em Introduction to reinforcement learning}, vol.~135.
+\newblock MIT Press Cambridge, 1998.
 
 \bibitem{sutton1999policy}
-{\sc R.~S. Sutton, D.~A. McAllester, S.~P. Singh, Y.~Mansour, et~al.}, {\em
-  Policy gradient methods for reinforcement learning with function
-  approximation.}, in NIPS, vol.~99, 1999, pp.~1057--1063.
+{\sc Sutton, R.~S., McAllester, D.~A., Singh, S.~P., Mansour, Y., et~al.}
+\newblock Policy gradient methods for reinforcement learning with function
+  approximation.
+\newblock In {\em NIPS\/} (1999), vol.~99, pp.~1057--1063.
 
 \bibitem{szepesvari2010algorithms}
-{\sc C.~Szepesv{\'a}ri}, {\em Algorithms for reinforcement learning}, Synthesis
-  lectures on artificial intelligence and machine learning, 4 (2010),
-  pp.~1--103.
+{\sc Szepesv{\'a}ri, C.}
+\newblock Algorithms for reinforcement learning.
+\newblock {\em Synthesis lectures on artificial intelligence and machine
+  learning 4}, 1 (2010), 1--103.
 
 \bibitem{tamar2013temporal}
-{\sc A.~Tamar, D.~D. Castro, and S.~Mannor}, {\em Temporal difference methods
-  for the variance of the reward to go}, in Proceedings of the 30th
-  International Conference on Machine Learning (ICML-13), 2013, pp.~495--503.
+{\sc Tamar, A., Castro, D.~D., and Mannor, S.}
+\newblock Temporal difference methods for the variance of the reward to go.
+\newblock In {\em Proceedings of the 30th International Conference on Machine
+  Learning (ICML-13)\/} (2013), pp.~495--503.
 
 \bibitem{tamar2015policy}
-{\sc A.~Tamar, Y.~Chow, M.~Ghavamzadeh, and S.~Mannor}, {\em Policy gradient
-  for coherent risk measures}, in Advances in Neural Information Processing
-  Systems, 2015, pp.~1468--1476.
+{\sc Tamar, A., Chow, Y., Ghavamzadeh, M., and Mannor, S.}
+\newblock Policy gradient for coherent risk measures.
+\newblock In {\em Advances in Neural Information Processing Systems\/} (2015),
+  pp.~1468--1476.
 
 \bibitem{tamar2012policy}
-{\sc A.~Tamar, D.~Di~Castro, and S.~Mannor}, {\em Policy gradients with
-  variance related risk criteria}, in Proceedings of the 29th International
-  Conference on Machine Learning, 2012, pp.~387--396.
+{\sc Tamar, A., Di~Castro, D., and Mannor, S.}
+\newblock Policy gradients with variance related risk criteria.
+\newblock In {\em Proceedings of the 29th International Conference on Machine
+  Learning\/} (2012), pp.~387--396.
 
 \bibitem{tamar2013variance}
-{\sc A.~Tamar and S.~Mannor}, {\em Variance adjusted actor critic algorithms},
-  arXiv preprint arXiv:1310.3697,  (2013).
+{\sc Tamar, A., and Mannor, S.}
+\newblock Variance adjusted actor critic algorithms.
+\newblock {\em arXiv preprint arXiv:1310.3697\/} (2013).
 
 \bibitem{tan2011stock}
-{\sc Z.~Tan, C.~Quek, and P.~Y. Cheng}, {\em Stock trading with cycles: A
-  financial application of anfis and reinforcement learning}, Expert Systems
-  with Applications, 38 (2011), pp.~4741--4755.
+{\sc Tan, Z., Quek, C., and Cheng, P.~Y.}
+\newblock Stock trading with cycles: A financial application of anfis and
+  reinforcement learning.
+\newblock {\em Expert Systems with Applications 38}, 5 (2011), 4741--4755.
 
 \bibitem{timmermann2004efficient}
-{\sc A.~Timmermann and C.~W. Granger}, {\em Efficient market hypothesis and
-  forecasting}, International Journal of forecasting, 20 (2004), pp.~15--27.
+{\sc Timmermann, A., and Granger, C.~W.}
+\newblock Efficient market hypothesis and forecasting.
+\newblock {\em International Journal of forecasting 20}, 1 (2004), 15--27.
 
 \bibitem{tsay2005analysis}
-{\sc R.~S. Tsay}, {\em Analysis of financial time series}, vol.~543, John Wiley
-  \& Sons, 2005.
+{\sc Tsay, R.~S.}
+\newblock {\em Analysis of financial time series}, vol.~543.
+\newblock John Wiley \& Sons, 2005.
 
 \bibitem{werbos1990backpropagation}
-{\sc P.~J. Werbos}, {\em Backpropagation through time: what it does and how to
-  do it}, Proceedings of the IEEE, 78 (1990), pp.~1550--1560.
+{\sc Werbos, P.~J.}
+\newblock Backpropagation through time: what it does and how to do it.
+\newblock {\em Proceedings of the IEEE 78}, 10 (1990), 1550--1560.
 
 \bibitem{wiering2012reinforcement}
-{\sc M.~Wiering and M.~Van~Otterlo}, {\em Reinforcement Learning:
-  State-of-the-Art}, vol.~12 of Adaptation, Learning, and Optimization,
-  Springer, 1~ed., 2012.
+{\sc Wiering, M., and Van~Otterlo, M.}
+\newblock {\em Reinforcement Learning: State-of-the-Art}, 1~ed., vol.~12 of
+  {\em Adaptation, Learning, and Optimization}.
+\newblock Springer, 2012.
 
 \bibitem{williams1989learning}
-{\sc R.~J. Williams and D.~Zipser}, {\em A learning algorithm for continually
-  running fully recurrent neural networks}, Neural computation, 1 (1989),
-  pp.~270--280.
+{\sc Williams, R.~J., and Zipser, D.}
+\newblock A learning algorithm for continually running fully recurrent neural
+  networks.
+\newblock {\em Neural computation 1}, 2 (1989), 270--280.
 
 \bibitem{Yang2012behavior}
-{\sc S.~Yang, M.~Paddrik, R.~Hayes, A.~Todd, A.~Kirilenko, P.~Beling, and
-  W.~Scherer}, {\em Behavior based learning in identifying high frequency
-  trading strategies}, in IEEE Conference on Computational Intelligence for
-  Financial Engineering \& Economics (CIFEr), 2012.
+{\sc Yang, S., Paddrik, M., Hayes, R., Todd, A., Kirilenko, A., Beling, P., and
+  Scherer, W.}
+\newblock Behavior based learning in identifying high frequency trading
+  strategies.
+\newblock In {\em IEEE Conference on Computational Intelligence for Financial
+  Engineering \& Economics (CIFEr)\/} (2012).
 
 \bibitem{zhao2011analysis}
-{\sc T.~Zhao, H.~Hachiya, G.~Niu, and M.~Sugiyama}, {\em Analysis and
-  improvement of policy gradient estimation}, in Advances in Neural Information
-  Processing Systems, 2011, pp.~262--270.
+{\sc Zhao, T., Hachiya, H., Niu, G., and Sugiyama, M.}
+\newblock Analysis and improvement of policy gradient estimation.
+\newblock In {\em Advances in Neural Information Processing Systems\/} (2011),
+  pp.~262--270.
 
 \bibitem{zhao2015regularized}
-{\sc T.~Zhao, G.~Niu, N.~Xie, J.~Yang, and M.~Sugiyama}, {\em Regularized
-  policy gradients: Direct variance reduction in policy gradient estimation},
-  in Proceedings of The 7th Asian Conference on Machine Learning, 2015,
-  pp.~333--348.
+{\sc Zhao, T., Niu, G., Xie, N., Yang, J., and Sugiyama, M.}
+\newblock Regularized policy gradients: Direct variance reduction in policy
+  gradient estimation.
+\newblock In {\em Proceedings of The 7th Asian Conference on Machine
+  Learning\/} (2015), pp.~333--348.
 
 \end{thebibliography}

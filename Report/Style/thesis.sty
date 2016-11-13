@@ -1,7 +1,7 @@
 % Useful packages 
 \usepackage[utf8]{inputenc}
 \usepackage[]{xcolor}
-\usepackage[english]{babel}
+\usepackage[italian,english]{babel}
 \usepackage[left=37mm,right=30mm,top=35mm,bottom=30mm]{geometry}
 \usepackage{float}
 \usepackage{amsmath}
@@ -31,6 +31,7 @@
 \usepackage{emptypage}
 \usepackage[acronym]{glossaries}
 \usepackage[toc]{appendix}
+\usepackage[nottoc,numbib,notlof]{tocbibind}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
@@ -128,6 +129,35 @@
   columns=fullflexible,
   keepspaces=true,
 }
+
+% Abstract Environment 
+\newcommand\abstractname{Abstract}  %%% here
+\makeatletter
+\if@titlepage
+  \newenvironment{abstract}{%
+      \titlepage
+      \null\vfil
+      \@beginparpenalty\@lowpenalty
+      \begin{center}%
+        \bfseries \abstractname
+        \@endparpenalty\@M
+      \end{center}}%
+     {\par\vfil\null\endtitlepage}
+\else
+  \newenvironment{abstract}{%
+      \if@twocolumn
+        \section*{\abstractname}%
+      \else
+        \small
+        \begin{center}%
+          {\bfseries \abstractname\vspace{-.5em}\vspace{\z@}}%
+        \end{center}%
+        \quotation
+      \fi}
+      {\if@twocolumn\else\endquotation\fi}
+\fi
+\makeatother
+
 
 % Glossary 
 \input{Glossary/Glossary}

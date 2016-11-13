@@ -1,86 +1,94 @@
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.1.1}{The Computerization of Finance}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{The New Dawn of Artificial Intelligence}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Structure}{chapter.1}% 4
-\BOOKMARK [0][-]{chapter.2}{Discrete-Time Stochastic Optimal Control}{}% 5
-\BOOKMARK [1][-]{section.2.1}{Markov Decision Processes}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.2}{Policies}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.3}{Risk-Neutral Framework}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.3.1}{Discounted Reward Formulation}{section.2.3}% 9
-\BOOKMARK [2][-]{subsection.2.3.2}{Average Reward Formulation}{section.2.3}% 10
-\BOOKMARK [1][-]{section.2.4}{Risk-Sensitive Framework}{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.4.1}{Discounted Reward Formulation}{section.2.4}% 12
-\BOOKMARK [2][-]{subsection.2.4.2}{Average Reward Formulation}{section.2.4}% 13
-\BOOKMARK [1][-]{section.2.5}{Dynamic Programming Algorithms}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.5.1}{Value Iteration}{section.2.5}% 15
-\BOOKMARK [2][-]{subsection.2.5.2}{Policy Iteration}{section.2.5}% 16
-\BOOKMARK [0][-]{chapter.3}{Reinforcement Learning}{}% 17
-\BOOKMARK [1][-]{section.3.1}{The Reinforcement Learning Problem}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.2}{Model-Free RL Methods}{chapter.3}% 19
-\BOOKMARK [2][-]{subsection.3.2.1}{Model Approximation}{section.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.2.2}{Value Approximation}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.3}{Policy Approximation}{section.3.2}% 22
-\BOOKMARK [0][-]{chapter.4}{Risk-Neutral Policy Gradient}{}% 23
-\BOOKMARK [1][-]{section.4.1}{Basics of Policy Gradient Methods}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.2}{Risk-Neutral Objective Functions}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.3}{Finite Differences}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.4}{Likelihood Ratio Methods}{chapter.4}% 27
-\BOOKMARK [2][-]{subsection.4.4.1}{Monte Carlo Policy Gradient}{section.4.4}% 28
-\BOOKMARK [2][-]{subsection.4.4.2}{GPOMDP}{section.4.4}% 29
-\BOOKMARK [2][-]{subsection.4.4.3}{Stochastic Policies}{section.4.4}% 30
-\BOOKMARK [2][-]{subsection.4.4.4}{Policy Gradient with Parameter Exploration}{section.4.4}% 31
-\BOOKMARK [1][-]{section.4.5}{Risk-Neutral Policy Gradient Theorem}{chapter.4}% 32
-\BOOKMARK [2][-]{subsection.4.5.1}{Theorem Statement and Proof}{section.4.5}% 33
-\BOOKMARK [2][-]{subsection.4.5.2}{GPOMDP}{section.4.5}% 34
-\BOOKMARK [2][-]{subsection.4.5.3}{Actor-Critic Policy Gradient}{section.4.5}% 35
-\BOOKMARK [2][-]{subsection.4.5.4}{Compatible Function Approximation}{section.4.5}% 36
-\BOOKMARK [2][-]{subsection.4.5.5}{Natural Policy Gradient}{section.4.5}% 37
-\BOOKMARK [0][-]{chapter.5}{Risk-Sensitive Policy Gradient}{}% 38
-\BOOKMARK [1][-]{section.5.1}{Risk-Sensitive Framework}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.2}{Monte Carlo Policy Gradient}{chapter.5}% 40
-\BOOKMARK [1][-]{section.5.3}{Policy Gradient Theorem}{chapter.5}% 41
-\BOOKMARK [2][-]{subsection.5.3.1}{Average Reward Formulation}{section.5.3}% 42
-\BOOKMARK [2][-]{subsection.5.3.2}{Risk-Sensitive Actor-Critic Algorithm}{section.5.3}% 43
-\BOOKMARK [2][-]{subsection.5.3.3}{Discounted Reward Formulation}{section.5.3}% 44
-\BOOKMARK [0][-]{chapter.6}{Parameter-Based Policy Gradient}{}% 45
-\BOOKMARK [1][-]{section.6.1}{Risk-Neutral Framework}{chapter.6}% 46
-\BOOKMARK [2][-]{subsection.6.1.1}{Parameter-Based Natural Policy Gradient}{section.6.1}% 47
-\BOOKMARK [1][-]{section.6.2}{Risk-Sensitive Framework}{chapter.6}% 48
-\BOOKMARK [2][-]{subsection.6.2.1}{Parameter-Based Natural Policy Gradient}{section.6.2}% 49
-\BOOKMARK [0][-]{chapter.7}{Financial Applications of Reinforcement Learning}{}% 50
-\BOOKMARK [1][-]{section.7.1}{Efficient Market Hypothesis}{chapter.7}% 51
-\BOOKMARK [2][-]{subsection.7.1.1}{Formal Definitions of the EMH}{section.7.1}% 52
-\BOOKMARK [2][-]{subsection.7.1.2}{Critics to the EMH}{section.7.1}% 53
-\BOOKMARK [1][-]{section.7.2}{Bibliographical Survey}{chapter.7}% 54
-\BOOKMARK [2][-]{subsection.7.2.1}{Asset Allocation with Transaction Costs}{section.7.2}% 55
-\BOOKMARK [2][-]{subsection.7.2.2}{Optimal Order Execution in Limit Order Book}{section.7.2}% 56
-\BOOKMARK [2][-]{subsection.7.2.3}{Smart Order Routing Across Dark Pools}{section.7.2}% 57
-\BOOKMARK [1][-]{section.7.3}{Asset Allocation with Transaction Costs}{chapter.7}% 58
-\BOOKMARK [2][-]{subsection.7.3.1}{Wealth Dynamics}{section.7.3}% 59
-\BOOKMARK [2][-]{subsection.7.3.2}{Rewards and Objective Functions}{section.7.3}% 60
-\BOOKMARK [2][-]{subsection.7.3.3}{States}{section.7.3}% 61
-\BOOKMARK [2][-]{subsection.7.3.4}{Actions}{section.7.3}% 62
-\BOOKMARK [0][-]{chapter.8}{Numerical Results for the Asset Allocation Problem}{}% 63
-\BOOKMARK [1][-]{section.8.1}{Synthetic Risky Asset}{chapter.8}% 64
-\BOOKMARK [2][-]{subsection.8.1.1}{Specifications of the Learning Algorithms}{section.8.1}% 65
-\BOOKMARK [2][-]{subsection.8.1.2}{Experimental Setup}{section.8.1}% 66
-\BOOKMARK [2][-]{subsection.8.1.3}{Risk-Neutral Framework}{section.8.1}% 67
-\BOOKMARK [2][-]{subsection.8.1.4}{Risk-Sensitive Framework}{section.8.1}% 68
-\BOOKMARK [1][-]{section.8.2}{Historic Risky Asset}{chapter.8}% 69
-\BOOKMARK [1][-]{section.8.3}{Multiple Synthetic Risky Assets}{chapter.8}% 70
-\BOOKMARK [2][-]{subsection.8.3.1}{Specifications of the Learning Algorithms}{section.8.3}% 71
-\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 72
-\BOOKMARK [1][-]{section.9.1}{Summary}{chapter.9}% 73
-\BOOKMARK [1][-]{section.9.2}{Further Developments}{chapter.9}% 74
-\BOOKMARK [0][-]{section*.38}{Appendices}{}% 75
-\BOOKMARK [0][-]{Appendix.1.A}{Implementation}{}% 76
-\BOOKMARK [1][-]{section.1.A.1}{Python Prototype}{Appendix.1.A}% 77
-\BOOKMARK [1][-]{section.1.A.2}{C++ Implementation}{Appendix.1.A}% 78
-\BOOKMARK [2][-]{subsection.1.A.2.1}{Environment, Task, Agent and Experiment}{section.1.A.2}% 79
-\BOOKMARK [2][-]{subsection.1.A.2.2}{ARACAgent}{section.1.A.2}% 80
-\BOOKMARK [1][-]{section.1.A.3}{Execution Pipeline}{Appendix.1.A}% 81
-\BOOKMARK [2][-]{subsection.1.A.3.1}{Compilation}{section.1.A.3}% 82
-\BOOKMARK [2][-]{subsection.1.A.3.2}{generatesyntheticseries.py}{section.1.A.3}% 83
-\BOOKMARK [2][-]{subsection.1.A.3.3}{experimentlauncher.py}{section.1.A.3}% 84
-\BOOKMARK [2][-]{subsection.1.A.3.4}{mainthesis}{section.1.A.3}% 85
-\BOOKMARK [2][-]{subsection.1.A.3.5}{postprocessing.py}{section.1.A.3}% 86
+\BOOKMARK [0][-]{chapter*.3}{List of Figures}{}% 1
+\BOOKMARK [0][-]{chapter*.4}{List of Tables}{}% 2
+\BOOKMARK [0][-]{chapter*.5}{List of Algorithms}{}% 3
+\BOOKMARK [0][-]{chapter*.7}{Acronyms}{}% 4
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 5
+\BOOKMARK [1][-]{section.1.1}{The Computerization of Finance}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{The New Dawn of Artificial Intelligence}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.3}{Structure}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Discrete-Time Stochastic Optimal Control}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Markov Decision Processes}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Policies}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Risk-Neutral Framework}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.3.1}{Discounted Reward Formulation}{section.2.3}% 13
+\BOOKMARK [2][-]{subsection.2.3.2}{Average Reward Formulation}{section.2.3}% 14
+\BOOKMARK [1][-]{section.2.4}{Risk-Sensitive Framework}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.4.1}{Discounted Reward Formulation}{section.2.4}% 16
+\BOOKMARK [2][-]{subsection.2.4.2}{Average Reward Formulation}{section.2.4}% 17
+\BOOKMARK [1][-]{section.2.5}{Dynamic Programming Algorithms}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.5.1}{Value Iteration}{section.2.5}% 19
+\BOOKMARK [2][-]{subsection.2.5.2}{Policy Iteration}{section.2.5}% 20
+\BOOKMARK [0][-]{chapter.3}{Reinforcement Learning}{}% 21
+\BOOKMARK [1][-]{section.3.1}{The Reinforcement Learning Problem}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.2}{Model-Free RL Methods}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.2.1}{Model Approximation}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.2}{Value Approximation}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.3}{Policy Approximation}{section.3.2}% 26
+\BOOKMARK [0][-]{chapter.4}{Risk-Neutral Policy Gradient}{}% 27
+\BOOKMARK [1][-]{section.4.1}{Basics of Policy Gradient Methods}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.2}{Risk-Neutral Objective Functions}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.3}{Finite Differences}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.4}{Likelihood Ratio Methods}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.4.1}{Monte Carlo Policy Gradient}{section.4.4}% 32
+\BOOKMARK [2][-]{subsection.4.4.2}{GPOMDP}{section.4.4}% 33
+\BOOKMARK [2][-]{subsection.4.4.3}{Stochastic Policies}{section.4.4}% 34
+\BOOKMARK [2][-]{subsection.4.4.4}{Policy Gradient with Parameter Exploration}{section.4.4}% 35
+\BOOKMARK [1][-]{section.4.5}{Risk-Neutral Policy Gradient Theorem}{chapter.4}% 36
+\BOOKMARK [2][-]{subsection.4.5.1}{Theorem Statement and Proof}{section.4.5}% 37
+\BOOKMARK [2][-]{subsection.4.5.2}{GPOMDP}{section.4.5}% 38
+\BOOKMARK [2][-]{subsection.4.5.3}{Actor-Critic Policy Gradient}{section.4.5}% 39
+\BOOKMARK [2][-]{subsection.4.5.4}{Compatible Function Approximation}{section.4.5}% 40
+\BOOKMARK [2][-]{subsection.4.5.5}{Natural Policy Gradient}{section.4.5}% 41
+\BOOKMARK [0][-]{chapter.5}{Risk-Sensitive Policy Gradient}{}% 42
+\BOOKMARK [1][-]{section.5.1}{Risk-Sensitive Framework}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.2}{Monte Carlo Policy Gradient}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.3}{Policy Gradient Theorem}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.3.1}{Average Reward Formulation}{section.5.3}% 46
+\BOOKMARK [2][-]{subsection.5.3.2}{Risk-Sensitive Actor-Critic Algorithm}{section.5.3}% 47
+\BOOKMARK [2][-]{subsection.5.3.3}{Discounted Reward Formulation}{section.5.3}% 48
+\BOOKMARK [0][-]{chapter.6}{Parameter-Based Policy Gradient}{}% 49
+\BOOKMARK [1][-]{section.6.1}{Risk-Neutral Framework}{chapter.6}% 50
+\BOOKMARK [2][-]{subsection.6.1.1}{Parameter-Based Natural Policy Gradient}{section.6.1}% 51
+\BOOKMARK [1][-]{section.6.2}{Risk-Sensitive Framework}{chapter.6}% 52
+\BOOKMARK [2][-]{subsection.6.2.1}{Parameter-Based Natural Policy Gradient}{section.6.2}% 53
+\BOOKMARK [0][-]{chapter.7}{Financial Applications of Reinforcement Learning}{}% 54
+\BOOKMARK [1][-]{section.7.1}{Efficient Market Hypothesis}{chapter.7}% 55
+\BOOKMARK [2][-]{subsection.7.1.1}{Formal Definitions of the EMH}{section.7.1}% 56
+\BOOKMARK [2][-]{subsection.7.1.2}{Critics to the EMH}{section.7.1}% 57
+\BOOKMARK [1][-]{section.7.2}{Bibliographical Survey}{chapter.7}% 58
+\BOOKMARK [2][-]{subsection.7.2.1}{Asset Allocation with Transaction Costs}{section.7.2}% 59
+\BOOKMARK [2][-]{subsection.7.2.2}{Optimal Order Execution in Limit Order Book}{section.7.2}% 60
+\BOOKMARK [2][-]{subsection.7.2.3}{Smart Order Routing Across Dark Pools}{section.7.2}% 61
+\BOOKMARK [1][-]{section.7.3}{Asset Allocation with Transaction Costs}{chapter.7}% 62
+\BOOKMARK [2][-]{subsection.7.3.1}{Wealth Dynamics}{section.7.3}% 63
+\BOOKMARK [2][-]{subsection.7.3.2}{Rewards and Objective Functions}{section.7.3}% 64
+\BOOKMARK [2][-]{subsection.7.3.3}{States}{section.7.3}% 65
+\BOOKMARK [2][-]{subsection.7.3.4}{Actions}{section.7.3}% 66
+\BOOKMARK [0][-]{chapter.8}{Numerical Results for the Asset Allocation Problem}{}% 67
+\BOOKMARK [1][-]{section.8.1}{Synthetic Risky Asset}{chapter.8}% 68
+\BOOKMARK [2][-]{subsection.8.1.1}{Specifications of the Learning Algorithms}{section.8.1}% 69
+\BOOKMARK [2][-]{subsection.8.1.2}{Experimental Setup}{section.8.1}% 70
+\BOOKMARK [2][-]{subsection.8.1.3}{Risk-Neutral Framework}{section.8.1}% 71
+\BOOKMARK [2][-]{subsection.8.1.4}{Risk-Sensitive Framework}{section.8.1}% 72
+\BOOKMARK [1][-]{section.8.2}{Historical Risky Asset}{chapter.8}% 73
+\BOOKMARK [2][-]{subsection.8.2.1}{Risk-Neutral Framwork}{section.8.2}% 74
+\BOOKMARK [2][-]{subsection.8.2.2}{Risk-Sensitive Framework}{section.8.2}% 75
+\BOOKMARK [2][-]{subsection.8.2.3}{The Challenge of Historical Data}{section.8.2}% 76
+\BOOKMARK [1][-]{section.8.3}{Multiple Synthetic Risky Assets}{chapter.8}% 77
+\BOOKMARK [2][-]{subsection.8.3.1}{Specifications of the Learning Algorithms}{section.8.3}% 78
+\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 79
+\BOOKMARK [1][-]{section.9.1}{Summary}{chapter.9}% 80
+\BOOKMARK [1][-]{section.9.2}{Further Developments}{chapter.9}% 81
+\BOOKMARK [0][-]{section*.37}{Appendices}{}% 82
+\BOOKMARK [0][-]{Appendix.1.A}{Implementation}{}% 83
+\BOOKMARK [1][-]{section.1.A.1}{Python Prototype}{Appendix.1.A}% 84
+\BOOKMARK [1][-]{section.1.A.2}{C++ Implementation}{Appendix.1.A}% 85
+\BOOKMARK [2][-]{subsection.1.A.2.1}{Environment, Task, Agent and Experiment}{section.1.A.2}% 86
+\BOOKMARK [2][-]{subsection.1.A.2.2}{ARACAgent}{section.1.A.2}% 87
+\BOOKMARK [1][-]{section.1.A.3}{Execution Pipeline}{Appendix.1.A}% 88
+\BOOKMARK [2][-]{subsection.1.A.3.1}{Compilation}{section.1.A.3}% 89
+\BOOKMARK [2][-]{subsection.1.A.3.2}{generatesyntheticseries.py}{section.1.A.3}% 90
+\BOOKMARK [2][-]{subsection.1.A.3.3}{experimentlauncher.py}{section.1.A.3}% 91
+\BOOKMARK [2][-]{subsection.1.A.3.4}{mainthesis}{section.1.A.3}% 92
+\BOOKMARK [2][-]{subsection.1.A.3.5}{postprocessing.py}{section.1.A.3}% 93
+\BOOKMARK [0][-]{chapter*.42}{Bibliography}{}% 94
