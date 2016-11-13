@@ -97,21 +97,20 @@
 \contentsline {subsection}{\numberline {8.2.1}Risk-Neutral Framwork}{87}{subsection.8.2.1}
 \contentsline {subsection}{\numberline {8.2.2}Risk-Sensitive Framework}{89}{subsection.8.2.2}
 \contentsline {subsection}{\numberline {8.2.3}The Challenge of Historical Data}{89}{subsection.8.2.3}
-\contentsline {section}{\numberline {8.3}Multiple Synthetic Risky Assets}{91}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Specifications of the Learning Algorithms}{92}{subsection.8.3.1}
-\contentsline {chapter}{\numberline {9}Conclusions}{95}{chapter.9}
-\contentsline {section}{\numberline {9.1}Summary}{95}{section.9.1}
-\contentsline {section}{\numberline {9.2}Further Developments}{95}{section.9.2}
-\contentsline {chapter}{Appendices}{97}{section*.37}
-\contentsline {chapter}{\numberline {A}Implementation}{97}{Appendix.1.A}
-\contentsline {section}{\numberline {A.1}Python Prototype}{97}{section.1.A.1}
-\contentsline {section}{\numberline {A.2}C++ Implementation}{98}{section.1.A.2}
-\contentsline {subsection}{\numberline {A.2.1}\lstinline {Environment}, \lstinline {Task}, \lstinline {Agent} and \lstinline {Experiment}}{99}{subsection.1.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}\lstinline {ARACAgent}}{101}{subsection.1.A.2.2}
-\contentsline {section}{\numberline {A.3}Execution Pipeline}{104}{section.1.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Compilation}{104}{subsection.1.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}\lstinline {generate_synthetic_series.py}}{104}{subsection.1.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}\lstinline {experiment_launcher.py}}{104}{subsection.1.A.3.3}
-\contentsline {subsection}{\numberline {A.3.4}\lstinline {main_thesis}}{104}{subsection.1.A.3.4}
-\contentsline {subsection}{\numberline {A.3.5}\lstinline {postprocessing.py}}{105}{subsection.1.A.3.5}
-\contentsline {chapter}{Bibliography}{107}{chapter*.42}
+\contentsline {chapter}{\numberline {9}Conclusions}{91}{chapter.9}
+\contentsline {section}{\numberline {9.1}What Has Been Achieved}{91}{section.9.1}
+\contentsline {section}{\numberline {9.2}Conclusion}{92}{section.9.2}
+\contentsline {section}{\numberline {9.3}Further Developments}{93}{section.9.3}
+\contentsline {chapter}{Appendices}{95}{section*.36}
+\contentsline {chapter}{\numberline {A}Implementation}{95}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}Python Prototype}{95}{section.1.A.1}
+\contentsline {section}{\numberline {A.2}C++ Implementation}{96}{section.1.A.2}
+\contentsline {subsection}{\numberline {A.2.1}\lstinline {Environment}, \lstinline {Task}, \lstinline {Agent} and \lstinline {Experiment}}{97}{subsection.1.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}\lstinline {ARACAgent}}{99}{subsection.1.A.2.2}
+\contentsline {section}{\numberline {A.3}Execution Pipeline}{102}{section.1.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Compilation}{102}{subsection.1.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}\lstinline {generate_synthetic_series.py}}{102}{subsection.1.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}\lstinline {experiment_launcher.py}}{102}{subsection.1.A.3.3}
+\contentsline {subsection}{\numberline {A.3.4}\lstinline {main_thesis}}{102}{subsection.1.A.3.4}
+\contentsline {subsection}{\numberline {A.3.5}\lstinline {postprocessing.py}}{103}{subsection.1.A.3.5}
+\contentsline {chapter}{Bibliography}{105}{chapter*.41}

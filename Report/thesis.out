@@ -74,21 +74,20 @@
 \BOOKMARK [2][-]{subsection.8.2.1}{Risk-Neutral Framwork}{section.8.2}% 74
 \BOOKMARK [2][-]{subsection.8.2.2}{Risk-Sensitive Framework}{section.8.2}% 75
 \BOOKMARK [2][-]{subsection.8.2.3}{The Challenge of Historical Data}{section.8.2}% 76
-\BOOKMARK [1][-]{section.8.3}{Multiple Synthetic Risky Assets}{chapter.8}% 77
-\BOOKMARK [2][-]{subsection.8.3.1}{Specifications of the Learning Algorithms}{section.8.3}% 78
-\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 79
-\BOOKMARK [1][-]{section.9.1}{Summary}{chapter.9}% 80
-\BOOKMARK [1][-]{section.9.2}{Further Developments}{chapter.9}% 81
-\BOOKMARK [0][-]{section*.37}{Appendices}{}% 82
-\BOOKMARK [0][-]{Appendix.1.A}{Implementation}{}% 83
-\BOOKMARK [1][-]{section.1.A.1}{Python Prototype}{Appendix.1.A}% 84
-\BOOKMARK [1][-]{section.1.A.2}{C++ Implementation}{Appendix.1.A}% 85
-\BOOKMARK [2][-]{subsection.1.A.2.1}{Environment, Task, Agent and Experiment}{section.1.A.2}% 86
-\BOOKMARK [2][-]{subsection.1.A.2.2}{ARACAgent}{section.1.A.2}% 87
-\BOOKMARK [1][-]{section.1.A.3}{Execution Pipeline}{Appendix.1.A}% 88
-\BOOKMARK [2][-]{subsection.1.A.3.1}{Compilation}{section.1.A.3}% 89
-\BOOKMARK [2][-]{subsection.1.A.3.2}{generatesyntheticseries.py}{section.1.A.3}% 90
-\BOOKMARK [2][-]{subsection.1.A.3.3}{experimentlauncher.py}{section.1.A.3}% 91
-\BOOKMARK [2][-]{subsection.1.A.3.4}{mainthesis}{section.1.A.3}% 92
-\BOOKMARK [2][-]{subsection.1.A.3.5}{postprocessing.py}{section.1.A.3}% 93
-\BOOKMARK [0][-]{chapter*.42}{Bibliography}{}% 94
+\BOOKMARK [0][-]{chapter.9}{Conclusions}{}% 77
+\BOOKMARK [1][-]{section.9.1}{What Has Been Achieved}{chapter.9}% 78
+\BOOKMARK [1][-]{section.9.2}{Conclusion}{chapter.9}% 79
+\BOOKMARK [1][-]{section.9.3}{Further Developments}{chapter.9}% 80
+\BOOKMARK [0][-]{section*.36}{Appendices}{}% 81
+\BOOKMARK [0][-]{Appendix.1.A}{Implementation}{}% 82
+\BOOKMARK [1][-]{section.1.A.1}{Python Prototype}{Appendix.1.A}% 83
+\BOOKMARK [1][-]{section.1.A.2}{C++ Implementation}{Appendix.1.A}% 84
+\BOOKMARK [2][-]{subsection.1.A.2.1}{Environment, Task, Agent and Experiment}{section.1.A.2}% 85
+\BOOKMARK [2][-]{subsection.1.A.2.2}{ARACAgent}{section.1.A.2}% 86
+\BOOKMARK [1][-]{section.1.A.3}{Execution Pipeline}{Appendix.1.A}% 87
+\BOOKMARK [2][-]{subsection.1.A.3.1}{Compilation}{section.1.A.3}% 88
+\BOOKMARK [2][-]{subsection.1.A.3.2}{generatesyntheticseries.py}{section.1.A.3}% 89
+\BOOKMARK [2][-]{subsection.1.A.3.3}{experimentlauncher.py}{section.1.A.3}% 90
+\BOOKMARK [2][-]{subsection.1.A.3.4}{mainthesis}{section.1.A.3}% 91
+\BOOKMARK [2][-]{subsection.1.A.3.5}{postprocessing.py}{section.1.A.3}% 92
+\BOOKMARK [0][-]{chapter*.41}{Bibliography}{}% 93
