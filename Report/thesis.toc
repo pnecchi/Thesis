@@ -99,7 +99,7 @@
 \contentsline {subsection}{\numberline {8.2.3}The Challenge of Historical Data}{89}{subsection.8.2.3}
 \contentsline {chapter}{\numberline {9}Conclusions}{91}{chapter.9}
 \contentsline {section}{\numberline {9.1}What Has Been Achieved}{91}{section.9.1}
-\contentsline {section}{\numberline {9.2}Conclusion}{92}{section.9.2}
+\contentsline {section}{\numberline {9.2}Final Remarks}{92}{section.9.2}
 \contentsline {section}{\numberline {9.3}Further Developments}{93}{section.9.3}
 \contentsline {chapter}{Appendices}{95}{section*.36}
 \contentsline {chapter}{\numberline {A}Implementation}{95}{Appendix.1.A}
