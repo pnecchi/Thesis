@@ -29,7 +29,7 @@
 \contentsline {figure}{\numberline {8.12}{\ignorespaces Backtest performance with one historical risky asset}}{90}{figure.caption.34}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an RL problem.\relax }}{96}{figure.caption.37}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an \gls {RL} problem.\relax }}{96}{figure.caption.37}
 \contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the asset allocation problem.}}{98}{figure.caption.38}
 \contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an ARAC agent}}{101}{figure.caption.39}
 \contentsline {figure}{\numberline {A.4}{\ignorespaces Execution pipeline of an asset allocation experiment}}{104}{figure.caption.40}

@@ -7,52 +7,45 @@ The style file: acm.bst
 Database file #1: Bibliography/bibliography.bib
 Warning--to sort, need author or key in economist2016march
 Warning--to sort, need author or key in economist2016return
-Warning--can't use both volume and number fields in bertsekas1995dynamic
-Warning--can't use both author and editor fields in bishop2006pattern
-Warning--empty journal in corazzaq
-Warning--empty journal in cumming2015investigation
-Warning--empty journal in eldercreating
-Warning--empty publisher in pages2016introduction
-Warning--empty journal in sanderson2010armadillo
-You've used 114 entries,
+You've used 112 entries,
             2253 wiz_defined-function locations,
-            1124 strings with 22382 characters,
-and the built_in function-call counts, 38641 in all, are:
-= -- 3769
-> -- 1673
+            1111 strings with 22081 characters,
+and the built_in function-call counts, 38044 in all, are:
+= -- 3725
+> -- 1632
 < -- 0
-+ -- 703
-- -- 577
-* -- 2879
-:= -- 6123
-add.period$ -- 342
-call.type$ -- 114
-change.case$ -- 601
++ -- 686
+- -- 564
+* -- 2840
+:= -- 6026
+add.period$ -- 339
+call.type$ -- 112
+change.case$ -- 592
 chr.to.int$ -- 0
-cite$ -- 123
-duplicate$ -- 1513
-empty$ -- 3225
-format.name$ -- 577
-if$ -- 8183
+cite$ -- 114
+duplicate$ -- 1494
+empty$ -- 3178
+format.name$ -- 564
+if$ -- 8061
 int.to.chr$ -- 0
-int.to.str$ -- 114
-missing$ -- 128
-newline$ -- 567
-num.names$ -- 226
-pop$ -- 723
+int.to.str$ -- 112
+missing$ -- 123
+newline$ -- 561
+num.names$ -- 220
+pop$ -- 695
 preamble$ -- 1
-purify$ -- 510
+purify$ -- 502
 quote$ -- 0
-skip$ -- 990
+skip$ -- 977
 stack$ -- 0
-substring$ -- 2480
-swap$ -- 434
+substring$ -- 2459
+swap$ -- 430
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 412
-warning$ -- 9
-while$ -- 375
-width$ -- 117
-write$ -- 1153
-(There were 9 warnings)
+type$ -- 406
+warning$ -- 2
+while$ -- 370
+width$ -- 115
+write$ -- 1144
+(There were 2 warnings)

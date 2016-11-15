@@ -1,17 +1,17 @@
 \begin{thebibliography}{100}
 
 \bibitem{economist2016march}
-March of the machines.
+``march of the machines''.
 \newblock The Economist, June 2016.
 
 \bibitem{economist2016return}
-The return of the machinery question.
+``the return of the machinery question''.
 \newblock The Economist, June 2016.
 
 \bibitem{agarwal2010optimal}
 {\sc Agarwal, A., Bartlett, P., and Dama, M.}
 \newblock Optimal allocation strategies for the dark pool problem.
-\newblock {\em arXiv preprint arXiv:1003.2245\/} (2010).
+\newblock arXiv preprint arXiv:1003.2245, 2010.
 
 \bibitem{akimoto2010bidirectional}
 {\sc Akimoto, Y., Nagata, Y., Ono, I., and Kobayashi, S.}
@@ -61,6 +61,12 @@ The return of the machinery question.
   reinforcement learning: A behavioral approach.
 \newblock {\em Journal of Economic Dynamics and Control 34}, 6 (2010),
   1153--1170.
+
+\bibitem{bengio2015deep}
+{\sc Bengio, Y., Goodfellow, I.~J., and Courville, A.}
+\newblock Deep learning.
+\newblock An MIT Press book in preparation. Draft chapters available at
+  http://www.iro.umontreal.ca/~bengioy/dlbook, 2015.
 
 \bibitem{bertoluzzo2012testing}
 {\sc Bertoluzzo, F., and Corazza, M.}
@@ -176,15 +182,12 @@ The return of the machinery question.
 \newblock In {\em Advances in Neural Information Processing Systems\/} (2015),
   pp.~1522--1530.
 
-\bibitem{corazzaq}
+\bibitem{corazza2015q}
 {\sc Corazza, M., and Sangalli, A.}
-\newblock Q-learning vs. sarsa: comparing two intelligent stochastic control
-  approaches for financial trading.
-
-\bibitem{cumming2015investigation}
-{\sc Cumming, J., Alrajeh, D., and Dickens, L.}
-\newblock An investigation into the use of reinforcement learning techniques
-  within the algorithmic trading domain.
+\newblock Q-learning and sarsa: a comparison between two intelligent stochastic
+  control approaches for financial trading.
+\newblock {\em University Ca'Foscari of Venice, Dept. of Economics Research
+  Paper Series No 15\/} (2015).
 
 \bibitem{dempster2006automated}
 {\sc Dempster, M.~A., and Leemans, V.}
@@ -209,11 +212,6 @@ The return of the machinery question.
 \newblock Sparse coding inspired optimal trading system for hft industry.
 \newblock {\em IEEE Transactions on Industrial Informatics 11}, 2 (2015),
   467--475.
-
-\bibitem{eldercreating}
-{\sc Elder, T.}
-\newblock Creating algorithmic traders with hierarchical reinforcement
-  learning.
 
 \bibitem{fama1991efficient}
 {\sc Fama, E.~F.}
@@ -240,11 +238,6 @@ The return of the machinery question.
 \newblock Fx trading via recurrent reinforcement learning.
 \newblock In {\em IEEE 2003 IEEE International Conference on Computational
   Intelligence for Financial Engineering. Proceedings\/} (2003).
-
-\bibitem{Goodfellow-et-al-2016-Book}
-{\sc Goodfellow, I., Bengio, Y., and Courville, A.}
-\newblock Deep learning.
-\newblock Book in preparation for MIT Press, 2016.
 
 \bibitem{hastie2009unsupervised}
 {\sc Hastie, T., Tibshirani, R., and Friedman, J.}
@@ -313,7 +306,7 @@ The return of the machinery question.
 \bibitem{bloomberg2016ml}
 {\sc Kumar, N., and Hall, T.}
 \newblock Why machine still can't learn so good.
-\newblock Bloomberg, November 2016.
+\newblock {\em Bloomberg\/} (November 2016).
 
 \bibitem{kushner2003stochastic}
 {\sc Kushner, H., and Yin, G.~G.}
@@ -321,12 +314,11 @@ The return of the machinery question.
   applications}, vol.~35.
 \newblock Springer Science \& Business Media, 2003.
 
-\bibitem{NIPS2013_4917}
+\bibitem{la2013actor}
 {\sc L.A., P., and Ghavamzadeh, M.}
 \newblock Actor-critic algorithms for risk-sensitive mdps.
-\newblock In {\em Advances in Neural Information Processing Systems 26},
-  C.~J.~C. Burges, L.~Bottou, M.~Welling, Z.~Ghahramani, and K.~Q. Weinberger,
-  Eds. Curran Associates, Inc., 2013, pp.~252--260.
+\newblock In {\em Advances in Neural Information Processing Systems 26\/}
+  (2013), pp.~252--260.
 
 \bibitem{laruelle2011optimal}
 {\sc Laruelle, S., Lehalle, C.-A., and Pages, G.}
@@ -354,7 +346,7 @@ The return of the machinery question.
 \bibitem{liang2011stock}
 {\sc Liang, J., Song, W., and Wang, M.}
 \newblock Stock price prediction based on procedural neural networks.
-\newblock {\em Adv. Artif. Neu. Sys. 2011\/} (2011), 1--11.
+\newblock {\em Advances in Artificial Neural Systems 2011\/} (2011), 6.
 
 \bibitem{littman1996algorithms}
 {\sc Littman, M.~L.}
@@ -398,7 +390,7 @@ The return of the machinery question.
 {\sc Miyamae, A., Nagata, Y., Ono, I., and Kobayashi, S.}
 \newblock Natural policy gradient methods with parameter-based exploration for
   control tasks.
-\newblock In {\em Advances in neural information processing systems\/} (2010),
+\newblock In {\em Advances in Neural Information Processing Systems\/} (2010),
   pp.~1660--1668.
 
 \bibitem{moody2001learning}
@@ -445,7 +437,7 @@ The return of the machinery question.
 \bibitem{pages2016introduction}
 {\sc Pages, G.}
 \newblock {\em Introduction to Numerical Probability for Finance}.
-\newblock 2016.
+\newblock LPMA-Université Pierre et Marie Curie, 2016.
 
 \bibitem{peters2010relative}
 {\sc Peters, J., M{\"u}lling, K., and Altun, Y.}
@@ -466,7 +458,7 @@ The return of the machinery question.
 \bibitem{prashanth2014actor}
 {\sc Prashanth, L., and Ghavamzadeh, M.}
 \newblock Actor-critic algorithms for risk-sensitive reinforcement learning.
-\newblock {\em arXiv preprint arXiv:1403.6530\/} (2014).
+\newblock arXiv preprint arXiv:1403.6530, 2014.
 
 \bibitem{puterman1994markov}
 {\sc Puterman, M.~L.}
@@ -477,7 +469,7 @@ The return of the machinery question.
 \bibitem{bloomberg2016hft}
 {\sc Russo, C., and Detrixhe, J.}
 \newblock Wall street’s speed demons are heroes.
-\newblock Bloomberg, October 2016.
+\newblock {\em Bloomberg\/} (October 2016).
 
 \bibitem{saad1998comparative}
 {\sc Saad, E.~W., Prokhorov, D.~V., and Wunsch, D.~C.}
@@ -489,6 +481,7 @@ The return of the machinery question.
 {\sc Sanderson, C.}
 \newblock Armadillo: An open source c++ linear algebra library for fast
   prototyping and computationally intensive experiments.
+\newblock Tech. rep., NICTA, 2010.
 
 \bibitem{sato2000variance}
 {\sc Sato, M., and Kobayashi, S.}
@@ -546,7 +539,8 @@ The return of the machinery question.
 {\sc Silver, D., Lever, G., Heess, N., Degris, T., Wierstra, D., and
   Riedmiller, M.}
 \newblock Deterministic policy gradient algorithms.
-\newblock In {\em ICML\/} (2014).
+\newblock In {\em Proceedings of the 31th International Conference on Machine
+  Learning\/} (2014).
 
 \bibitem{sobel1982variance}
 {\sc Sobel, M.~J.}
@@ -568,7 +562,8 @@ The return of the machinery question.
 {\sc Sutton, R.~S., McAllester, D.~A., Singh, S.~P., Mansour, Y., et~al.}
 \newblock Policy gradient methods for reinforcement learning with function
   approximation.
-\newblock In {\em NIPS\/} (1999), vol.~99, pp.~1057--1063.
+\newblock In {\em Advances in Neural Information Processing Systems\/} (1999),
+  vol.~99, pp.~1057--1063.
 
 \bibitem{szepesvari2010algorithms}
 {\sc Szepesv{\'a}ri, C.}
@@ -580,7 +575,7 @@ The return of the machinery question.
 {\sc Tamar, A., Castro, D.~D., and Mannor, S.}
 \newblock Temporal difference methods for the variance of the reward to go.
 \newblock In {\em Proceedings of the 30th International Conference on Machine
-  Learning (ICML-13)\/} (2013), pp.~495--503.
+  Learning\/} (2013), pp.~495--503.
 
 \bibitem{tamar2015policy}
 {\sc Tamar, A., Chow, Y., Ghavamzadeh, M., and Mannor, S.}
