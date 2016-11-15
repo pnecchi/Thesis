@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.12)  13 NOV 2016 19:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.12)  15 NOV 2016 22:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1407,9 +1407,9 @@ l.3 \begin{abstract}
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5 \end{abstract}
-                   [1])pdfTeX warning (ext4): destination with the same identif
-ier (name{page.ii}) has been already used, duplicate ignored
+l.17 \end{abstract}
+                    [1])pdfTeX warning (ext4): destination with the same identi
+fier (name{page.ii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.33 \tableofcontents
@@ -2044,10 +2044,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 26012 strings out of 494458
- 435111 string characters out of 6166029
+ 26015 strings out of 494458
+ 435135 string characters out of 6166029
  567159 words of memory out of 5000000
- 27924 multiletter control sequences out of 15000+600000
+ 27927 multiletter control sequences out of 15000+600000
  25723 words of font info for 106 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
  63i,22n,75p,2729b,1813s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2071,7 +2071,7 @@ s/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on thesis.pdf (133 pages, 2809651 bytes).
+Output written on thesis.pdf (133 pages, 2810869 bytes).
 PDF statistics:
  2602 PDF objects out of 2984 (max. 8388607)
  1867 compressed objects within 19 object streams
