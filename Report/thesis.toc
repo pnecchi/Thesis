@@ -5,7 +5,7 @@
 \contentsline {chapter}{List of Figures}{vii}{chapter*.3}
 \contentsline {chapter}{List of Tables}{ix}{chapter*.4}
 \contentsline {chapter}{List of Algorithms}{xi}{chapter*.5}
-\contentsline {chapter}{Acronyms}{xiii}{chapter*.7}
+\contentsline {chapter}{Acronyms}{xiii}{section*.6}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}The Computerization of Finance}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}The New Dawn of Artificial Intelligence}{2}{section.1.2}

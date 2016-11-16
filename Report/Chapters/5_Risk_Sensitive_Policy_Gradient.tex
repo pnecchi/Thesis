@@ -95,7 +95,7 @@ Hence, by the likelihood ratio technique
 \begin{equation}
 	\nabla_\theta \text{SVar}(\theta) = \E[H \sim p_\theta]{\nabla_\theta \log p_\theta(H) \min\left\{G(H) - \E[H \sim p_\theta]{G(H)}, 0\right\}^2}
 \end{equation}
-From which we can easily derive a Monte Carlo estimate. Since the problems we will consider in the next chapters are not episodic. In the episodic setting, the extension of policy gradient algorithms to the risk-sensitive formulation doesn't present particular difficulties. For a more thorough presentation as well as some more advanced learning algorithms, we refer the interested reader to the extensive work of Tamar et Al.  \cite{tamar2013temporal}, \cite{tamar2013variance}, \cite{tamar2015policy}, \cite{chow2015risk}.
+From which we can easily derive a Monte Carlo estimate. Since the problems we will consider in the next chapters are not episodic. In the episodic setting, the extension of policy gradient algorithms to the risk-sensitive formulation does not present particular difficulties. For a more thorough presentation as well as some more advanced learning algorithms, we refer the interested reader to the extensive work of Tamar et Al.  \cite{tamar2013temporal}, \cite{tamar2013variance}, \cite{tamar2015policy}, \cite{chow2015risk}.
 \begin{algorithm}[t]
 	\caption{Risk-sensitive REINFORCE policy gradient estimate}
 	\label{algo:RSreinforce}
@@ -223,7 +223,7 @@ $\Phi_V: \S \to \R^{D_V}$ and $\Phi_U: \S \to \R^{D_U}$ as follows
 		\widehat{U}(s) &= \psi_U^T \Phi_U(s)\\
 	\end{split}
 \end{equation}
-Combining all these ingredients lead to the Risk-Sensitive Average Reward Actor-Critic algorithm (RSARAC), the pseudocode of which is reported in Algorithm \ref{algo:RSARAC}.
+Combining all these ingredients lead to the \gls{RSARAC}, the pseudocode of which is reported in Algorithm \ref{algo:RSARAC}.
 Let us notice that the algorithm is a three time-scale stochastic approximation algorithm, where the learning rates, in addition to the usual Robbins-Monro conditions, should satisfy
 \begin{equation*}
 	\alpha_k < \beta_k < \gamma_k

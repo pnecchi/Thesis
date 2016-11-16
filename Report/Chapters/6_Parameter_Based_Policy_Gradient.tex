@@ -2,7 +2,7 @@
 \label{ch:parameter_based_policy_gradient}
 
 The learning algorithms derived from the policy gradient theorems look for a set of optimal controller parameters by perturbing the control signal. Indeed, the policy gradient theorem holds only for stochastic policies, which explore in the action space.
-However, a significant problem with this sampling strategy is that the high variance in their gradient estimates leads to slow convergence. On the other hand, parameter-based algorithms such as PGPE look for an optimal solution to the control problem by directly perturbing the controller parameters. These algorithms thus employ a deterministic controller and explore in the parameters space. However, in its original version, PGPE was conceived for episodic environments and extended to continuing environment by artificially truncating the experiments lifespan. In this section we propose a parameter-based version of the policy gradient theorem, which can be used to derive online learning algorithms both in the risk-neutral and the risk-sensitive frameworks. The following discussion starts from and generalizes the results presented in \cite{miyamae2010natural}, where the authors propose an online natural PGPE algorithm for risk-neutral problems. Given the difficulties to extend the policy gradient theorem to the risk-sensitive discounted formulation, here we consider only the averge reward formulation. 
+However, a significant problem with this sampling strategy is that the high variance in their gradient estimates leads to slow convergence. On the other hand, parameter-based algorithms such as \gls{PGPE} look for an optimal solution to the control problem by directly perturbing the controller parameters. These algorithms thus employ a deterministic controller and explore in the parameters space. However, in its original version, \gls{PGPE} was conceived for episodic environments and extended to continuing environment by artificially truncating the experiments lifespan. In this section we propose a parameter-based version of the policy gradient theorem, which can be used to derive online learning algorithms both in the risk-neutral and the risk-sensitive frameworks. The following discussion starts from and generalizes the results presented in \cite{miyamae2010natural}, where the authors propose an online natural \gls{PGPE} algorithm for risk-neutral problems. Given the difficulties to extend the policy gradient theorem to the risk-sensitive discounted formulation, here we consider only the average reward formulation. 
 
 \section{Risk-Neutral Framework}
 Let us consider a deterministic controller $F: \S \times
@@ -123,7 +123,7 @@ Natural parameter-based policy gradient methods update the hyper-parameters foll
 \begin{equation}
 	\widetilde{\nabla}_\xi \rho(\xi) = F_\xi^{-1} \nabla_\xi \rho(\xi)
 \end{equation}
-The advantage of this approach is that, for some particular probability distributions, the inverse of the Fisher information matrix can be computed analytically. This is for instance the case if the controller parameters are normally distributed. This choice leads to an efficient online algorithm called \gls{NPGPE} \cite{miyamae2010natural}. More in detail, suppose that
+The advantage of this approach is that, for some particular probability distributions, the inverse of the Fisher information matrix can be computed analytically. This is for instance the case if the controller parameters are normally distributed. This choice leads to an efficient online algorithm called \glsfirst{NPGPE} \cite{miyamae2010natural}. More in detail, suppose that
 \begin{equation*}
 	\theta \sim \calN(\mu, \Gamma \Gamma^T)
 \end{equation*} 
@@ -138,7 +138,7 @@ where we denoted $\Gamma_k = \Gamma_{k,k:n}^T$ the $k$-th column of the Cholesky
 \begin{equation}
 	\nabla_{\Gamma_k} \log p_\xi(\theta) = \begin{bmatrix} 0 & I_{\bar{k}} \end{bmatrix} \left(\Gamma^{-1} Y - \diag\left(\Gamma^{-1}\right)\right) e_k
 \end{equation}
-where $Y = \Gamma^{-T} (\theta - \mu) (\theta - \mu)^T \Gamma^{-1}$. These formulas might be used in a standard PGPE algorithm. However, the inversion of $\Gamma$ is computationally expensive except for some very simple cases, for instance when $\Sigma$ is a diagonal matrix. In \cite{sun2009efficient}, the authors proved that the Fisher information matrix for this distribution is a block diagonal matrix $F_\xi = \diag\{B_0, B_1, ..., B_n\}$ where
+where $Y = \Gamma^{-T} (\theta - \mu) (\theta - \mu)^T \Gamma^{-1}$. These formulas might be used in a standard \gls{PGPE} algorithm. However, the inversion of $\Gamma$ is computationally expensive except for some very simple cases, for instance when $\Sigma$ is a diagonal matrix. In \cite{sun2009efficient}, the authors proved that the Fisher information matrix for this distribution is a block diagonal matrix $F_\xi = \diag\{B_0, B_1, ..., B_n\}$ where
 \begin{equation*}
 	\begin{cases}
 		B_0 &= \Sigma^{-1}\\	
@@ -170,7 +170,7 @@ Multiplying the policy gradients by the inverse Fisher informatio matrix $F_\xi^
 \begin{equation}
 	\widetilde{\nabla}_\Gamma \log p_\xi(\theta) = \left(\triu(Y) - \frac{1}{2} \diag(Y) - \frac{1}{2} I \right) \Gamma
 \end{equation}
-The natural policy gradients can be computed in $O(n^3)$, which is a sensible improvement compared to the $O(n^6)$ complexity for the standard PGPE updates. Let us remark that for an independent multi-variate Gaussian distribution, i.e. a diagonal covariance matrix $\Sigma$, the updates can be performed in $O(n)$. However, this approach neglects the dependences among parameters and could lead to suboptimal performances. On the other hand. updating the full Cholesky factor introduces many more parameters to be learned which may slow down the convergence of the method. The resulting NPGPE algorithm is reported in Algorithm \ref{algo:NPGPE}. Given the parameter-based policy gradient algorithm, we can easily combine the actor-critic approach and the natural gradient technique in a parameter-based natural actor-critic algorithm, which is outlined in Algorithm \ref{algo:NACPGPE}.
+The natural policy gradients can be computed in $O(n^3)$, which is a sensible improvement compared to the $O(n^6)$ complexity for the standard \gls{PGPE} updates. Let us remark that for an independent multi-variate Gaussian distribution, i.e. a diagonal covariance matrix $\Sigma$, the updates can be performed in $O(n)$. However, this approach neglects the dependences among parameters and could lead to suboptimal performances. On the other hand. updating the full Cholesky factor introduces many more parameters to be learned which may slow down the convergence of the method. The resulting \gls{NPGPE} algorithm is reported in Algorithm \ref{algo:NPGPE}. Given the parameter-based policy gradient algorithm, we can easily combine the actor-critic approach and the natural gradient technique in a parameter-based natural actor-critic algorithm, which is outlined in Algorithm \ref{algo:NACPGPE}.
 \begin{algorithm}[t!]
 	\caption{NPGPE}
 	\label{algo:NPGPE}
@@ -260,6 +260,7 @@ Again, we can add a state-dependent baseline $B_\xi(S)$ to the gradient without 
 	\nabla_\xi \eta(\xi) = \E{\nabla_\xi \log p_\xi(\theta) \left(W_{\pi_\xi}(S,
 						\theta) - B_\xi(S)\right)}
 \end{equation}
+This leads in a straightforward way to a \gls{RSPGPE} algorithm.
 
 \subsection{Parameter-Based Natural Policy Gradient}
 The natural policy gradient idea can be trivially extended to the gradient of the average square reward. This leads to the following natural gradient estimate 
@@ -274,7 +275,7 @@ which can be easily estimated via Monte Carlo. Combining this natural gradient w
 \begin{equation}
 	\widetilde{\nabla}_\xi \text{Sh}(\xi) = F_\xi^{-1} \nabla_\xi \text{Sh}(\xi) = \frac{\eta(\xi) \widetilde{\nabla}_\xi \rho(\xi) - \frac{1}{2} \rho(\xi) \widetilde{\nabla}_\xi \eta(\xi)}{\Lambda(\xi) \sqrt{\Lambda(\xi)}}
 \end{equation}
-Hence, it is trivial to derive a risk-sensitive version of the NPGPE learning algorithm. The pseudocode is reported in Algorithm \ref{algo:RSNPGPE}. Similarly to the risk-neutral case, it is simple to introduce a critic both for the average reward and for the average square reward. 
+Hence, it is trivial to derive a \gls{RSNPGPE} and its pseudocode reported in Algorithm \ref{algo:RSNPGPE}. Similarly to the risk-neutral case, it is simple to introduce a critic both for the average reward and for the average square reward. 
 
 \begin{algorithm}[t!]
 	\caption{Risk-Sensitive NPGPE}

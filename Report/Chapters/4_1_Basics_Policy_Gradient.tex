@@ -1,4 +1,4 @@
-Policy gradient methods directly store and iteratively improve a parametric approximation of the optimal policy. This policy is commonly referred to as an $\emph{actor}$ and methods that directly approximate the policy without exploiting an approximation of the optimal value function are called $\emph{actor-only}$. Algorithms that combine an approximation of the optimal policy with an approximation of the value function are commonly called $\emph{actor-critic}$ methods.\\
+Policy gradient methods directly store and iteratively improve a parametric approximation of the optimal policy. This policy is commonly referred to as an $\emph{actor}$ and methods that directly approximate the policy without exploiting an approximation of the optimal value function are called $\emph{actor-only}$. Algorithms that combine an approximation of the optimal policy with an approximation of the value function are commonly called $\emph{actor-critic}$.\\
 As discussed in Chapter \ref{ch:discrete_time_stochastic_optimal_control}, an optimal policy can be obtained by simply acting greedily with respect to the optimal action-value function. However, in large or continuous action spaces, this leads to a complex optimization problem that is computationally expensive to solve. Therefore, it can be beneficial to store an explicit estimation of the optimal policy from which we can select actions. Policy gradient methods have other advantages compared to standard value-based approaches. In many applications, a good policy has a more compact		representation than the value function so that it may be easier to approximate. Moreover, the policy parameterization can be chosen so as to be relevant for the task and to directly incorporate prior knowledge. Another advantage is that these methods can learn stochastic policies and not only deterministic ones, which might be useful in multi-player frameworks or in partially observable environments. Finally, these methods are guaranteed to converge at least to a local optimum, which may be good enough in practice. On the other hand, policy gradient methods are typically characterized by a large variance which may hinder the converge speed.\\
 In the following sections, we present the basics of policy gradient methods closely following the thorough overview provided in \cite{peters2008reinforcement}. Then, we discuss some state-of-the-art policy gradient algorithms. In particular, we focus on the risk-neutral framework postponing the analysis of the risk-sensitive framework to the next chapter. 
 
@@ -17,8 +17,7 @@ policy gradient algorithms is to update the policy parameters using the gradient
 \begin{equation}
 	\theta_{k+1} = \theta_k + \alpha_k \nabla_\theta J\left(\theta_k\right)
 \end{equation}
-where $\{\alpha_k\}_{k\geq 0}$ is a sequence of learning rates. Typically, the
-gradient of the objective function is not known and its approximation is the key component of every policy gradient algorithm, a general setup of which is outlined in Algorithm \ref{algo:policy_gradient}. It is a well-know result from stochastic optimization \cite{kushner2003stochastic} that, if the gradient estimate is unbiased and the learning rates satisfy the \emph{Robbins-Monro conditions}
+where $\{\alpha_k\}_{k\geq 0}$ is a time-dependent learning rate. Typically, the gradient of the objective function is not known and its approximation is the key component of every policy gradient algorithm, a general setup of which is outlined in Algorithm \ref{algo:policy_gradient}. It is a well-know result from stochastic optimization \cite{kushner2003stochastic} that, if the gradient estimate is unbiased and the learning rates satisfy the \emph{Robbins-Monro conditions}
 \begin{equation}
 	\sum_{k=0}^\infty \alpha_k = \infty \;\;\;\;\;\; \sum^{\infty}_{k=0}
 	\alpha_k^2 < \infty 
@@ -27,7 +26,7 @@ the learning process is guaranteed to converge at least to a local optimum of
 the objective function. Before describing various methods to approximate the gradient, let us give an overview of some standard objective functions and the situation in which they are commonly used. 
 
 \begin{algorithm}[t]
-	\caption{General setup for a policy gradient algorithm.}
+	\caption{General setup for a policy gradient algorithm}
 	\label{algo:policy_gradient}
 	\begin{algorithmic}[1]
 		\Require Initial parameters $\theta_0$, learning rate $\{\alpha_k\}$
@@ -41,7 +40,7 @@ the objective function. Before describing various methods to approximate the gra
 \end{algorithm}
 
 \section{Risk-Neutral Objective Functions}
-In the risk-neutral setting, the agent is only interested in maximizing his reward, without considering the risk he needs to take on to achieve it. In an episodic environment where the system always starts from an initial state $s_0$, the typical objective function is the start value.
+In the risk-neutral setting, the agent is only interested in maximizing its reward, without considering the risk it needs to take on to achieve it. In an episodic environment where the system always starts from an initial state $s_0$, the typical objective function is the start value.
 \begin{definition}[Start Value]
 	The start value is the expected return that can be obtained starting from the start state $s_0 \in \S$ and following policy $\pi_\theta$
 	\begin{equation}

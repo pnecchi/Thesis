@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.12)  15 NOV 2016 23:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.12)  16 NOV 2016 23:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1505,7 +1505,7 @@ Overfull \hbox (4.52098pt too wide) in paragraph at lines 461--461
  []
 
 [14] [15] [16]
-<Images/2_0_policy_iteration.png, id=960, 474.77374pt x 655.44875pt>
+<Images/2_0_policy_iteration.png, id=914, 474.77374pt x 655.44875pt>
 File: Images/2_0_policy_iteration.png Graphic file (type png)
 
 <use Images/2_0_policy_iteration.png>
@@ -1529,32 +1529,38 @@ x-i-mated us-ing a parametrized
 
 ]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 30.
+put line 29.
  [24]) (./Chapters/4_2_Likelihood_Ratio_Methods.tex [25] [26] [27] [28]
 [29]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 181.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 180.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-Overfull \hbox (6.17905pt too wide) in paragraph at lines 197--199
+Overfull \hbox (6.17905pt too wide) in paragraph at lines 196--198
 \OT1/cmr/m/n/12 By re-mark-ing that $\OML/cmm/m/it/12 h$ \OT1/cmr/m/n/12 is con
 -di-tion-ally in-de-pen-dent from $\OML/cmm/m/it/12 ^^X$ \OT1/cmr/m/n/12 given 
 $\OML/cmm/m/it/12 ^^R$\OT1/cmr/m/n/12 , so that $\OML/cmm/m/it/12 p[]\OT1/cmr/m
 /n/12 (\OML/cmm/m/it/12 ^^R; h\OT1/cmr/m/n/12 ) =
  []
 
-[30] [31] [32]) (./Chapters/4_3_Risk_Neutral_Policy_Gradient.tex [33] [34]
-[35]
+[30]
+Overfull \hbox (2.9875pt too wide) in paragraph at lines 233--236
+\OMS/cmsy/m/n/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^V[]; ^^[[]\OT1/cmr/m/n/12
+ )$, the gra-di-ent with re-spect to the hyper-parameters $\OML/cmm/m/it/12 ^^X
+ \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 ^^V[]; [] ; ^^V[]; ^^[[];$
+ []
+
+[31] [32]) (./Chapters/4_3_Risk_Neutral_Policy_Gradient.tex [33] [34] [35]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 132.
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
- [36] [37]
-[38] [39]
-<Images/4_0_euclidean_vs_natural.png, id=1187, 2434.09375pt x 768.8725pt>
+ [36] [37] [38]
+[39] <Images/4_0_euclidean_vs_natural.png, id=1163, 2434.09375pt x 768.8725pt>
 File: Images/4_0_euclidean_vs_natural.png Graphic file (type png)
 
 <use Images/4_0_euclidean_vs_natural.png>
@@ -1587,24 +1593,24 @@ Chapter 6.
 Chapter 7.
 [63] [64]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 38.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 37.
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--44
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
 
  []
 
 [65] [66] [67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 61--63
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
  []
 
 [69] [70] [71]
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
 
  []
 
 [72] [73]
-Overfull \hbox (7.92717pt too wide) in paragraph at lines 217--222
+Overfull \hbox (7.92717pt too wide) in paragraph at lines 216--221
 \OT1/cmr/m/n/12 The agent, or trad-ing sys-tem, only spec-i-fies the port-fo-li
 o weights $\OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 a[]; [] ; a
 []\OT1/cmr/m/n/12 )[]$
@@ -1629,7 +1635,7 @@ convergence.eps>
 (epstopdf)             \includegraphics on input line 52.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=1557,
+<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=1560,
  1445.4pt x 722.7pt>
 File: Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1654,7 +1660,7 @@ performance.eps>
 (epstopdf)             \includegraphics on input line 62.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=1567,
+<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=1578,
  1445.4pt x 722.7pt>
 File: Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1677,7 +1683,7 @@ ion_costs-eps-converted-to.pdf Images/6_2_impact_transaction_costs.eps>
 (epstopdf)             \includegraphics on input line 96.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=1628, 1445.4pt x 
+<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=1647, 1445.4pt x 
 722.7pt>
 File: Images/6_2_impact_transaction_costs-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1697,7 +1703,7 @@ lling_fees-eps-converted-to.pdf Images/6_3_impact_short_selling_fees.eps>
 (epstopdf)             \includegraphics on input line 104.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=1630, 1445.4pt x
+<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=1655, 1445.4pt x
  722.7pt>
 File: Images/6_3_impact_short_selling_fees-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1726,7 +1732,7 @@ ive_convergence.eps>
 (epstopdf)             \includegraphics on input line 114.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf, id=179
+<Images/8_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf, id=182
 3, 1445.4pt x 722.7pt>
 File: Images/8_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf Gr
 aphic file (type pdf)
@@ -1749,7 +1755,7 @@ ive_performance.eps>
 (epstopdf)             \includegraphics on input line 121.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_5_single_synthetic_sensitive_performance-eps-converted-to.pdf, id=179
+<Images/8_5_single_synthetic_sensitive_performance-eps-converted-to.pdf, id=182
 4, 1445.4pt x 722.7pt>
 File: Images/8_5_single_synthetic_sensitive_performance-eps-converted-to.pdf Gr
 aphic file (type pdf)
@@ -1784,7 +1790,7 @@ ion_costs_RS-eps-converted-to.pdf Images/8_6_impact_transaction_costs_RS.eps>
 (epstopdf)             \includegraphics on input line 179.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_6_impact_transaction_costs_RS-eps-converted-to.pdf, id=1908, 1445.4pt
+<Images/8_6_impact_transaction_costs_RS-eps-converted-to.pdf, id=1948, 1445.4pt
  x 722.7pt>
 File: Images/8_6_impact_transaction_costs_RS-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -1806,7 +1812,7 @@ lling_fees_RS-eps-converted-to.pdf Images/8_7_impact_short_selling_fees_RS.eps>
 (epstopdf)             \includegraphics on input line 186.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_7_impact_short_selling_fees_RS-eps-converted-to.pdf, id=1909, 1445.4p
+<Images/8_7_impact_short_selling_fees_RS-eps-converted-to.pdf, id=1949, 1445.4p
 t x 722.7pt>
 File: Images/8_7_impact_short_selling_fees_RS-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -1831,7 +1837,7 @@ e.eps>
 (epstopdf)             \includegraphics on input line 201.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_8_single_hist_neutral_convergence-eps-converted-to.pdf, id=2018, 1445
+<Images/8_8_single_hist_neutral_convergence-eps-converted-to.pdf, id=2061, 1445
 .4pt x 722.7pt>
 File: Images/8_8_single_hist_neutral_convergence-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1854,7 +1860,7 @@ e.eps>
 (epstopdf)             \includegraphics on input line 208.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf, id=2019, 1445
+<Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf, id=2062, 1445
 .4pt x 722.7pt>
 File: Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1882,7 +1888,7 @@ ergence.eps>
 (epstopdf)             \includegraphics on input line 241.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_10_single_hist_sensitive_convergence-eps-converted-to.pdf, id=2127, 1
+<Images/8_10_single_hist_sensitive_convergence-eps-converted-to.pdf, id=2175, 1
 445.4pt x 722.7pt>
 File: Images/8_10_single_hist_sensitive_convergence-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -1905,7 +1911,7 @@ ormance.eps>
 (epstopdf)             \includegraphics on input line 248.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_11_single_hist_sensitive_performance-eps-converted-to.pdf, id=2128, 1
+<Images/8_11_single_hist_sensitive_performance-eps-converted-to.pdf, id=2176, 1
 445.4pt x 722.7pt>
 File: Images/8_11_single_hist_sensitive_performance-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -1954,7 +1960,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\lstinline' on input line 43.
 
-<Images/A_agent_environment_interaction.png, id=2306, 1583.9175pt x 600.06pt>
+<Images/A_agent_environment_interaction.png, id=2359, 1583.9175pt x 600.06pt>
 File: Images/A_agent_environment_interaction.png Graphic file (type png)
 
 <use Images/A_agent_environment_interaction.png>
@@ -1970,7 +1976,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\lstinline' on input line 54.
 
-<Images/A_agent.png, id=2322, 1667.685pt x 885.3075pt>
+<Images/A_agent.png, id=2375, 1667.685pt x 885.3075pt>
 File: Images/A_agent.png Graphic file (type png)
 
 <use Images/A_agent.png>
@@ -2026,15 +2032,15 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 [112]) [113]
 \openout6 = `thesis.acn'.
 
-Package glossaries Info: Writing glossary file thesis.acn on input line 81.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
+Package glossaries Info: Writing glossary file thesis.acn on input line 80.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
  (./thesis.aux (./Abstract/abstract.aux)
 (./Acknowledgements/acknowledgements.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 81.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 81.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 80.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 80.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 5F746A3E8F9C1E1B0B6847C99880E752;6788.
+(rerunfilecheck)             Checksum: C128862CEA836240F6A6DDD9B834F758;6788.
 
 
 LaTeX Warning: There were undefined references.
@@ -2044,13 +2050,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 26013 strings out of 494458
- 435043 string characters out of 6166029
- 567064 words of memory out of 5000000
- 27926 multiletter control sequences out of 15000+600000
+ 26141 strings out of 494458
+ 437095 string characters out of 6166029
+ 588776 words of memory out of 5000000
+ 28047 multiletter control sequences out of 15000+600000
  25723 words of font info for 106 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
- 63i,22n,75p,2729b,1947s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,22n,75p,2729b,1943s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/pierpaolo/.texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive
@@ -2071,10 +2077,10 @@ s/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on thesis.pdf (133 pages, 2812580 bytes).
+Output written on thesis.pdf (133 pages, 2815630 bytes).
 PDF statistics:
- 2634 PDF objects out of 2984 (max. 8388607)
- 1898 compressed objects within 19 object streams
- 638 named destinations out of 1000 (max. 500000)
+ 2689 PDF objects out of 2984 (max. 8388607)
+ 1952 compressed objects within 20 object streams
+ 645 named destinations out of 1000 (max. 500000)
  842 words of extra memory for PDF output out of 10000 (max. 10000000)
 

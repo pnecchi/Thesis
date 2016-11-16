@@ -239,6 +239,13 @@
 \newblock In {\em IEEE 2003 IEEE International Conference on Computational
   Intelligence for Financial Engineering. Proceedings\/} (2003).
 
+\bibitem{grondman2012survey}
+{\sc Grondman, I., Busoniu, L., Lopes, G.~A., and Babuska, R.}
+\newblock A survey of actor-critic reinforcement learning: Standard and natural
+  policy gradients.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics, Part C
+  (Applications and Reviews) 42}, 6 (2012), 1291--1307.
+
 \bibitem{hastie2009unsupervised}
 {\sc Hastie, T., Tibshirani, R., and Friedman, J.}
 \newblock {\em The elements of statistical learning: data mining, inference,
