@@ -5,32 +5,32 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Agent-environment interaction in sequential decision problems.\relax }}{6}{figure.caption.8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm}}{17}{figure.caption.9}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Policy iteration algorithm.}}{17}{figure.caption.9}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Solution process for the control problem.\relax }}{21}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient}}{40}{figure.caption.14}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces ``Vanilla'' policy gradient vs. natural policy gradient.}}{40}{figure.caption.14}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Episodic formulation for the asset allocation problem.\relax }}{74}{figure.caption.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset}}{79}{figure.caption.19}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Backtest performance with one synthetic risky asset}}{80}{figure.caption.20}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Proportional transaction costs and risk-neutral strategies}}{82}{figure.caption.22}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Short-selling fees and risk-neutral strategies}}{82}{figure.caption.23}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset}}{83}{figure.caption.24}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset}}{84}{figure.caption.25}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Proportional transaction costs and risk-sensitive strategies}}{86}{figure.caption.28}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Short-selling fees and risk-sensitive strategies}}{86}{figure.caption.29}
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Risk-neutral learning process for the historical risky asset}}{88}{figure.caption.30}
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Backtest performance with one historical risky asset}}{88}{figure.caption.31}
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Risk-sensitive learning process for the historical risky asset}}{90}{figure.caption.33}
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Backtest performance with one historical risky asset}}{90}{figure.caption.34}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Risk-neutral learning process for one synthetic risky asset.}}{79}{figure.caption.19}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Backtest performance with one synthetic risky asset.}}{80}{figure.caption.20}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Proportional transaction costs and risk-neutral strategies.}}{82}{figure.caption.22}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Short-selling fees and risk-neutral strategies.}}{82}{figure.caption.23}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Risk-sensitive learning process for one synthetic risky asset.}}{83}{figure.caption.24}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Backtest performance with one synthetic risky asset.}}{84}{figure.caption.25}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Proportional transaction costs and risk-sensitive strategies.}}{86}{figure.caption.28}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Short-selling fees and risk-sensitive strategies.}}{86}{figure.caption.29}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Risk-neutral learning process for the historical risky asset.}}{88}{figure.caption.30}
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Backtest performance with one historical risky asset.}}{88}{figure.caption.31}
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Risk-sensitive learning process for the historical risky asset.}}{90}{figure.caption.33}
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Backtest performance with one historical risky asset.}}{90}{figure.caption.34}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for an \gls {RL} problem.\relax }}{96}{figure.caption.37}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces PyBrain standard architecture for a RL problem.\relax }}{96}{figure.caption.37}
 \contentsline {figure}{\numberline {A.2}{\ignorespaces Class architecture for the asset allocation problem.}}{98}{figure.caption.38}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an ARAC agent}}{101}{figure.caption.39}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution pipeline of an asset allocation experiment}}{104}{figure.caption.40}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Class architecture for an ARAC agent.}}{101}{figure.caption.39}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Execution pipeline of an asset allocation experiment.}}{104}{figure.caption.40}
 \addvspace {10\p@ }

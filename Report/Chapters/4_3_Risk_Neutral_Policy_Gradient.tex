@@ -124,7 +124,7 @@ where we introduced the advantage function
 \end{equation}
 which measures how good is to take action $a$ in state $s$ compared to simply following the policy $\pi_\theta$. The advantage function is unknown and should be estimated from samples of the \gls{MDP}. \emph{Actor-Critic} algorithms consist in all those methods that employ an approximation of the advantage function or of the value function, also known as critic, to estimate the policy gradient. These methods thus maintain two sets of parameters: a \emph{critic} that updates the action-value function parameters $\psi$ and an \emph{actor} that updates the policy parameters $\theta$ in the direction suggested by the critic. The general structure for an online actor-critic algorithm is reported in Algorithm \ref{algo:actor_critic}.\\
 \begin{algorithm}[t]
-	\caption{Generic structure for an online actor-critic algorithm.}
+	\caption{Generic structure for an online actor-critic algorithm}
 	\label{algo:actor_critic}
 	\begin{algorithmic}[0]
 		\Require{\\
@@ -253,7 +253,7 @@ plateaus. This technique was first proposed in the reinforcement learning settin
 \begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{Images/4_0_euclidean_vs_natural}
-	\caption[``Vanilla'' policy gradient vs. natural policy gradient]{``Vanilla'' policy gradient (left) vs. natural policy gradient (right). The main difference is how the two approaches punish the change in parameters. This distance is 	indicated by the blue ellipses in the contour plot while the dashed lines show the expected return. Obtaining a gradient then corresponds to finding a vector pointing from the center of the ellipses to the location with maximum expected return on the ellipse. A vanilla policy gradient (a) considers a change in all parameters as equally distant, thus, it is a search for a maximum on a circle while the natural gradient (b) uses scales determined by the Fisher information which results in a reduction in exploration. The slower reduction in exploration results into a faster convergence to the optimal policy \cite{peters2008reinforcement}.}
+	\caption[``Vanilla'' policy gradient vs. natural policy gradient.]{``Vanilla'' policy gradient (left) vs. natural policy gradient (right). The main difference is how the two approaches punish the change in parameters. This distance is 	indicated by the blue ellipses in the contour plot while the dashed lines show the expected return. Obtaining a gradient then corresponds to finding a vector pointing from the center of the ellipses to the location with maximum expected return on the ellipse. A vanilla policy gradient (a) considers a change in all parameters as equally distant, thus, it is a search for a maximum on a circle while the natural gradient (b) uses scales determined by the Fisher information which results in a reduction in exploration. The slower reduction in exploration results into a faster convergence to the optimal policy \cite{peters2008reinforcement}.}
 \end{figure}
 
 \subsubsection{Formalism of Natural Policy Gradients}

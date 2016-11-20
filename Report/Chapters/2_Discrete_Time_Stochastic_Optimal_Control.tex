@@ -577,7 +577,7 @@ This algorithm is guaranteed to converge to the optimal value function $V_*$ by 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.3\textwidth]{Images/2_0_policy_iteration.png}
-	\caption[Policy iteration algorithm]{Policy iteration algorithm \cite{sutton1998introduction}.}
+	\caption[Policy iteration algorithm.]{Policy iteration algorithm \cite{sutton1998introduction}.}
 	\label{fig:policy_iteration}
 \end{figure}
 Policy iteration is an iterative method to approximate both the optimal state-value function $V_*$ and the optimal policy $\pi_*$. This algorithm alternates an evaluation step, in which the current policy is evaluated using the state-value function, and an improvement step, in which the policy is improved by acting greedily with respect to the action-value function computed in the evaluation step. In the standard version of policy iteration, the state-value function for the current policy is evaluated starting from an arbitrary function $V_0(s)$ and iteratively applying the Bellman expectation operator in a fixed-point iteration scheme 

@@ -32,6 +32,11 @@ params = {'legend.fontsize': 'x-large',
           'ytick.labelsize': 'x-large'}
 pylab.rcParams.update(params)
 
+# Colors used
+colors = ['black',
+          'dimgrey',
+          'steelblue',
+          'lightsteelblue']
 
 #-----------------------#
 # Algorithms considered #
@@ -152,13 +157,13 @@ def compareAlgorithmConvergence(debugDir, imagesDir=None):
 
     # Average reward
     ax1 = fig.add_subplot(131)
-    (10000.0 * dfReward[algorithmsList]).plot(lw=3, color=colorsList, ax=ax1)
+    (10000.0 * dfReward[algorithmsList]).plot(lw=3, color=colors[1:], ax=ax1)
     dfRewardUpperBound = pd.DataFrame(1e4 * (dfReward[algorithmsList].values + 2.0 * dfReward[algorithmsListDelta].values),
                                       columns=algorithmsList, index=dfReward.index)
     dfRewardLowerBound = pd.DataFrame(1e4 * (dfReward[algorithmsList].values - 2.0 * dfReward[algorithmsListDelta].values),
                                       columns=algorithmsListDelta, index=dfReward.index)
-    dfRewardUpperBound.plot(lw=2, ls='--', color=colorsList, ax=ax1)
-    dfRewardLowerBound.plot(lw=2, ls='--', color=colorsList, ax=ax1)
+    dfRewardUpperBound.plot(lw=2, ls='--', color=colors[1:], ax=ax1)
+    dfRewardLowerBound.plot(lw=2, ls='--', color=colors[1:], ax=ax1)
 
     ax1.set_ylabel('Daily Average Reward [bps]')
     ax1.set_xlabel('Training Epoch')
@@ -167,13 +172,13 @@ def compareAlgorithmConvergence(debugDir, imagesDir=None):
 
     # Reward standard deviation
     ax2 = fig.add_subplot(132)
-    (1e4 * dfStddev[algorithmsList]).plot(lw=3, color=colorsList, legend=False, ax=ax2)
+    (1e4 * dfStddev[algorithmsList]).plot(lw=3, color=colors[1:], legend=False, ax=ax2)
     dfStddevUpperBound = pd.DataFrame(1e4 * (dfStddev[algorithmsList].values + 2.0 * dfStddev[algorithmsListDelta].values),
                                       columns=algorithmsList, index=dfStddev.index)
     dfStddevLowerBound = pd.DataFrame(1e4 * (dfStddev[algorithmsList].values - 2.0 * dfStddev[algorithmsListDelta].values),
                                       columns=algorithmsListDelta, index=dfStddev.index)
-    dfStddevUpperBound.plot(lw=2, ls='--', color=colorsList, legend=False, ax=ax2)
-    dfStddevLowerBound.plot(lw=2, ls='--', color=colorsList, legend=False, ax=ax2)
+    dfStddevUpperBound.plot(lw=2, ls='--', color=colors[1:], legend=False, ax=ax2)
+    dfStddevLowerBound.plot(lw=2, ls='--', color=colors[1:], legend=False, ax=ax2)
     ax2.set_title('Convergence of Learning Process', fontsize=18)
     ax2.set_ylabel('Daily Reward Standard Deviation [bps]')
     ax2.set_xlabel('Training Epoch')
@@ -181,13 +186,13 @@ def compareAlgorithmConvergence(debugDir, imagesDir=None):
 
     # Sharpe ratio
     ax3 = fig.add_subplot(133)
-    (np.sqrt(252) * dfSharpe[algorithmsList]).plot(lw=3, color=colorsList, legend=False, ax=ax3)
+    (np.sqrt(252) * dfSharpe[algorithmsList]).plot(lw=3, color=colors[1:], legend=False, ax=ax3)
     dfSharpeUpperBound = pd.DataFrame(np.sqrt(252) * (dfSharpe[algorithmsList].values + 2.0 * dfSharpe[algorithmsListDelta].values),
                                       columns=algorithmsList, index=dfSharpe.index)
     dfSharpeLowerBound = pd.DataFrame(np.sqrt(252) * (dfSharpe[algorithmsList].values - 2.0 * dfSharpe[algorithmsListDelta].values),
                                       columns=algorithmsListDelta, index=dfSharpe.index)
-    dfSharpeUpperBound.plot(lw=2, ls='--', color=colorsList, legend=False, ax=ax3)
-    dfSharpeLowerBound.plot(lw=2, ls='--', color=colorsList, legend=False, ax=ax3)
+    dfSharpeUpperBound.plot(lw=2, ls='--', color=colors[1:], legend=False, ax=ax3)
+    dfSharpeLowerBound.plot(lw=2, ls='--', color=colors[1:], legend=False, ax=ax3)
     ax3.set_ylabel('Annualized Sharpe Ratio')
     ax3.set_xlabel('Training Epoch')
     plt.grid(True)
@@ -310,14 +315,14 @@ def compareAlgorithmPerformance(outputDir, imagesDir):
     algorithmsListDelta = [algo + '_delta' for algo in algorithmsList]
     colorsList = ['steelblue', 'darkorange', 'seagreen']
     plt.figure()
-    ax = dfBuyHold.plot(title='Performance of Learning Algorithms', color='gray', lw=3)
-    dfPerf[algorithmsList].plot(title='Performance of Learning Algorithms', color=colorsList, lw=3, ax=ax)
+    ax = dfBuyHold.plot(title='Performance of Learning Algorithms', color=colors[0], lw=3)
+    dfPerf[algorithmsList].plot(title='Performance of Learning Algorithms', color=colors[1:], lw=3, ax=ax)
     dfPerfLowerBound = pd.DataFrame(dfPerf[algorithmsList].values - 2.0 * dfPerf[algorithmsListDelta].values,
                                     columns=algorithmsList, index=dfPerf.index)
     dfPerfUpperBound = pd.DataFrame(dfPerf[algorithmsList].values + 2.0 * dfPerf[algorithmsListDelta].values,
                                     columns=algorithmsList, index=dfPerf.index)
-    dfPerfLowerBound.plot(ax=ax, color=colorsList, ls='--', lw=2)
-    dfPerfUpperBound.plot(ax=ax, color=colorsList, ls='--', lw=2)
+    dfPerfLowerBound.plot(ax=ax, color=colors[1:], ls='--', lw=2)
+    dfPerfUpperBound.plot(ax=ax, color=colors[1:], ls='--', lw=2)
     ax.set_xlabel('Time Step')
     ax.set_ylabel('Cumulative Profit [%]')
     ax.legend(['Buy and Hold'] + algorithmsList, loc='upper left')

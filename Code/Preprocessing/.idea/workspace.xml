@@ -5,55 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9dcdd4-0c88-446a-95c0-440f8746c1a1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Images/convergence.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Images/performance.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment0.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment1.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment2.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment3.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment4.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment5.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment6.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment7.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment8.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSARAC/experiment9.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment0.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment1.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment2.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment3.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment4.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment5.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment6.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment7.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment8.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSNPGPE/experiment9.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment0.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment1.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment2.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment3.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment4.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment5.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment6.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment7.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment8.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/RSPGPE/experiment9.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Statistics/backtest.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Statistics/backtestRSARAC.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Statistics/backtestRSNPGPE.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../Data/Output/Single_Synth_RS_P0_F0_S0_N5/Statistics/backtestRSPGPE.csv" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Thesis/examples/main" afterPath="$PROJECT_DIR$/../Thesis/examples/main" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Thesis/examples/main_multiple" afterPath="$PROJECT_DIR$/../Thesis/examples/main_multiple" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Thesis/examples/main_thesis" afterPath="$PROJECT_DIR$/../Thesis/examples/main_thesis" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Thesis/libthesis.a" afterPath="$PROJECT_DIR$/../Thesis/libthesis.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf" afterPath="$PROJECT_DIR$/../../Report/Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf" afterPath="$PROJECT_DIR$/../../Report/Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/6_2_impact_transaction_costs-eps-converted-to.pdf" afterPath="$PROJECT_DIR$/../../Report/Images/6_2_impact_transaction_costs-eps-converted-to.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/6_3_impact_short_selling_fees-eps-converted-to.pdf" afterPath="$PROJECT_DIR$/../../Report/Images/6_3_impact_short_selling_fees-eps-converted-to.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_10_single_hist_sensitive_convergence-eps-converted-to.pdf" afterPath="$PROJECT_DIR$/../../Report/Images/8_10_single_hist_sensitive_convergence-eps-converted-to.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_11_single_hist_sensitive_performance-eps-converted-to.pdf" afterPath="$PROJECT_DIR$/../../Report/Images/8_11_single_hist_sensitive_performance-eps-converted-to.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf" afterPath="$PROJECT_DIR$/../../Report/Images/8_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_5_single_synthetic_sensitive_performance-eps-converted-to.pdf" afterPath="$PROJECT_DIR$/../../Report/Images/8_5_single_synthetic_sensitive_performance-eps-converted-to.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_8_single_hist_neutral_convergence-eps-converted-to.pdf" afterPath="$PROJECT_DIR$/../../Report/Images/8_8_single_hist_neutral_convergence-eps-converted-to.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf" afterPath="$PROJECT_DIR$/../../Report/Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.pdf" afterPath="$PROJECT_DIR$/../../Report/thesis.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.synctex.gz" afterPath="$PROJECT_DIR$/../../Report/thesis.synctex.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Postprocessing/AnalyzeTransactionCostsImpact.py" afterPath="$PROJECT_DIR$/../Postprocessing/AnalyzeTransactionCostsImpact.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Postprocessing/postprocessing.py" afterPath="$PROJECT_DIR$/../Postprocessing/postprocessing.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate_synthetic_series.py" afterPath="$PROJECT_DIR$/generate_synthetic_series.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Data/Parameters/Single_Synth_RS_P0_F0_S0_N5.pot" afterPath="$PROJECT_DIR$/../../Data/Parameters/Single_Synth_RS_P0_F0_S0_N5.pot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Thesis/src/ArrsacAgent.cpp" afterPath="$PROJECT_DIR$/../Thesis/src/ArrsacAgent.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Launchers/experiment_launcher.py" afterPath="$PROJECT_DIR$/../../Launchers/experiment_launcher.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Abstract/abstract.tex" afterPath="$PROJECT_DIR$/../../Report/Abstract/abstract.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Appendix/A_Implementation.tex" afterPath="$PROJECT_DIR$/../../Report/Appendix/A_Implementation.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Chapters/2_Discrete_Time_Stochastic_Optimal_Control.tex" afterPath="$PROJECT_DIR$/../../Report/Chapters/2_Discrete_Time_Stochastic_Optimal_Control.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Chapters/4_3_Risk_Neutral_Policy_Gradient.tex" afterPath="$PROJECT_DIR$/../../Report/Chapters/4_3_Risk_Neutral_Policy_Gradient.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Chapters/7_Asset_Allocation.tex" afterPath="$PROJECT_DIR$/../../Report/Chapters/7_Asset_Allocation.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Chapters/8_Numerical_Results.tex" afterPath="$PROJECT_DIR$/../../Report/Chapters/8_Numerical_Results.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/6_0_single_synthetic_neutral_convergence.eps" afterPath="$PROJECT_DIR$/../../Report/Images/6_0_single_synthetic_neutral_convergence.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/6_1_single_synthetic_neutral_performance.eps" afterPath="$PROJECT_DIR$/../../Report/Images/6_1_single_synthetic_neutral_performance.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/6_2_impact_transaction_costs.eps" afterPath="$PROJECT_DIR$/../../Report/Images/6_2_impact_transaction_costs.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/6_3_impact_short_selling_fees.eps" afterPath="$PROJECT_DIR$/../../Report/Images/6_3_impact_short_selling_fees.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_10_single_hist_sensitive_convergence.eps" afterPath="$PROJECT_DIR$/../../Report/Images/8_10_single_hist_sensitive_convergence.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_11_single_hist_sensitive_performance.eps" afterPath="$PROJECT_DIR$/../../Report/Images/8_11_single_hist_sensitive_performance.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_4_single_synthetic_sensitive_convergence.eps" afterPath="$PROJECT_DIR$/../../Report/Images/8_4_single_synthetic_sensitive_convergence.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_5_single_synthetic_sensitive_performance.eps" afterPath="$PROJECT_DIR$/../../Report/Images/8_5_single_synthetic_sensitive_performance.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_8_single_hist_neutral_convergence.eps" afterPath="$PROJECT_DIR$/../../Report/Images/8_8_single_hist_neutral_convergence.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Images/8_9_single_hist_neutral_performance.eps" afterPath="$PROJECT_DIR$/../../Report/Images/8_9_single_hist_neutral_performance.eps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/Style/thesis.sty" afterPath="$PROJECT_DIR$/../../Report/Style/thesis.sty" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.acn" afterPath="$PROJECT_DIR$/../../Report/thesis.acn" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.aux" afterPath="$PROJECT_DIR$/../../Report/thesis.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.ist" afterPath="$PROJECT_DIR$/../../Report/thesis.ist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.loa" afterPath="$PROJECT_DIR$/../../Report/thesis.loa" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.lof" afterPath="$PROJECT_DIR$/../../Report/thesis.lof" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.log" afterPath="$PROJECT_DIR$/../../Report/thesis.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.out" afterPath="$PROJECT_DIR$/../../Report/thesis.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.toc" afterPath="$PROJECT_DIR$/../../Report/thesis.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Report/thesis.lot" afterPath="$PROJECT_DIR$/../../Report/thesis.lot" />
     </list>
     <ignored path="Preprocessing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,11 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="experiment_launcher.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../Launchers/experiment_launcher.py">
+      <file leaf-file-name="AnalyzeTransactionCostsImpact.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../Postprocessing/AnalyzeTransactionCostsImpact.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1015">
-              <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+            <state relative-caret-position="406">
+              <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -129,8 +125,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -144,11 +140,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Launchers/experiment_launcher.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Postprocessing/AnalyzeTransactionCostsImpact.py" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.generate_cointegrated_series">
+  <component name="RunManager" selected="Python.AnalyzeTransactionCostsImpact">
     <configuration default="false" name="market_data_io" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -179,6 +175,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Preprocessing" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_cointegrated_series.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="AnalyzeTransactionCostsImpact" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Postprocessing" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Preprocessing" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Postprocessing/AnalyzeTransactionCostsImpact.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -317,14 +330,16 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.market_data_io" />
       <item index="1" class="java.lang.String" itemvalue="Python.generate_cointegrated_series" />
+      <item index="2" class="java.lang.String" itemvalue="Python.AnalyzeTransactionCostsImpact" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.generate_cointegrated_series" />
-        <item index="1" class="java.lang.String" itemvalue="Python.market_data_io" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.AnalyzeTransactionCostsImpact" />
+        <item index="1" class="java.lang.String" itemvalue="Python.generate_cointegrated_series" />
+        <item index="2" class="java.lang.String" itemvalue="Python.market_data_io" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +370,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="89" y="33" width="3111" height="1767" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2497561" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.4988618" order="6" side_tool="false" content_ui="tabs" />
@@ -366,7 +381,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.4988618" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4002486" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40024784" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -410,12 +425,25 @@
           <line>108</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/../Postprocessing/AnalyzeTransactionCostsImpact.py</url>
+          <line>89</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../../Launchers/experiment_launcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generate_cointegrated_series.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -430,7 +458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="35235">
           <caret line="1221" column="0" selection-start-line="1221" selection-start-column="0" selection-end-line="1221" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -457,28 +484,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generate_cointegrated_series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1373">
-          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/matplotlib/backends/backend_ps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="1221" column="0" selection-start-line="1221" selection-start-column="0" selection-end-line="1221" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Launchers/experiment_launcher.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1015">
-          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generate_cointegrated_series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="843">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Postprocessing/AnalyzeTransactionCostsImpact.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
           <folding />
         </state>
       </provider>

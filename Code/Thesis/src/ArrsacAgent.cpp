@@ -88,36 +88,35 @@ void ARRSACAgent::learn()
     averageSquareReward += alphaBaseline * (rewardSquared - averageSquareReward);
 
     // 2) Compute TD errors
-    double tdV = reward - averageReward +
-                 criticV.evaluate(nextObservation) -
-                 criticV.evaluate(observation);
-    double tdU = rewardSquared - averageSquareReward +
-                 criticU.evaluate(nextObservation) -
-                 criticU.evaluate(observation);
+//    double tdV = reward - averageReward +
+//                 criticV.evaluate(nextObservation) -
+//                 criticV.evaluate(observation);
+//    double tdU = rewardSquared - averageSquareReward +
+//                 criticU.evaluate(nextObservation) -
+//                 criticU.evaluate(observation);
 
     // 3) Update critics
-    double alphaCritic = criticLearningRatePtr->get();
-    // gradientCriticV = lambda * gradientCriticV + criticV.gradient(observation);
-    // gradientCriticU = lambda * gradientCriticU + criticU.gradient(observation);
-    //gradientCriticV /= arma::norm(gradientCriticV);
-    //gradientCriticU /= arma::norm(gradientCriticU);
-    gradientCriticV = criticV.gradient(observation);
-    gradientCriticU = criticU.gradient(observation);
-    criticV.setParameters(criticV.getParameters() + alphaCritic * tdV * gradientCriticV);
-    criticU.setParameters(criticU.getParameters() + alphaCritic * tdU * gradientCriticU);
+//    double alphaCritic = criticLearningRatePtr->get();
+//    gradientCriticV = criticV.gradient(observation);
+//    gradientCriticU = criticU.gradient(observation);
+//    criticV.setParameters(criticV.getParameters() + alphaCritic * tdV * gradientCriticV);
+//    criticU.setParameters(criticU.getParameters() + alphaCritic * tdU * gradientCriticU);
 
     // 4) Update actor
     double alphaActor = actorLearningRatePtr->get();
     double var = averageSquareReward - averageReward * averageReward;
     double sqrtVar = sqrt(var);
-    double coeffGradientSR = (averageSquareReward * tdV - 0.5 * averageReward * tdU) /
-                             (var * sqrtVar);
-    // gradientActor = lambda * gradientActor + actor.likelihoodScore(observation, action);
-    //gradientActor /= arma::norm(gradientActor, 2);
+//    double coeffGradientSR = (averageSquareReward * tdV - 0.5 * averageReward * tdU) /
+//                             (var * sqrtVar);
+
+
     gradientActor = actor.likelihoodScore(observation, action);
+    double coeffGradientSR = (averageSquareReward * (reward - averageReward) - 0.5 * averageReward * (rewardSquared - averageSquareReward)) /
+                             (var * sqrtVar);
+
     gradientSharpe = lambda * gradientSharpe + coeffGradientSR * gradientActor;
-    gradientSharpe /= arma::norm(gradientSharpe, 2);
-    actor.setParameters(actor.getParameters() + alphaActor * coeffGradientSR * gradientActor);
+    // gradientSharpe /= arma::norm(gradientSharpe, 2);
+    actor.setParameters(actor.getParameters() + alphaActor * gradientSharpe);
 }
 
 void ARRSACAgent::newEpoch()

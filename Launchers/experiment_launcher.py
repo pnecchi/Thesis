@@ -46,16 +46,16 @@ postProcessingDir = thesisBaseDir + 'Code/Postprocessing/'
 params = {'riskFreeRate'      : 0.0,
           'deltaP'            : 0.0000,
           'deltaF'            : 0.0,
-          'deltaS'            : 0.0000,
+          'deltaS'            : 0.0050,
           'numDaysObserved'   : 5,
           'lambda'            : 0.1,
-          'alphaConstActor'   : 0.5,
+          'alphaConstActor'   : 0.1,
           'alphaExpActor'     : 0.8,
-          'alphaConstCritic'  : 0.5,
+          'alphaConstCritic'  : 0.1,
           'alphaExpCritic'    : 0.7,
-          'alphaConstBaseline': 0.5,
+          'alphaConstBaseline': 0.1,
           'alphaExpBaseline'  : 0.6,
-          'numExperiments'    : 5,
+          'numExperiments'    : 10,
           'numEpochs'         : 1000,
           'numTrainingSteps'  : 7000,
           'numTestSteps'      : 2000}
@@ -70,7 +70,7 @@ params = {'riskFreeRate'      : 0.0,
 
 riskSensitive = True
 synthetic     = True
-multiAsset    = True
+multiAsset    = False
 
 if not synthetic and multiAsset:
     raise ValueError('ERROR: multi asset case not implemented for historical data.')

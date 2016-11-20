@@ -31,6 +31,20 @@ params = {'legend.fontsize': 'x-large',
           'ytick.labelsize': 'x-large'}
 pylab.rcParams.update(params)
 
+# Colors used
+colors = ['black',
+          'dimgrey',
+          'steelblue',
+          'lightsteelblue']
+
+#----------#
+# Settings #
+#----------#
+
+sensitive = True
+
+sensitiveStr = 'RS' if sensitive else 'RN'
+
 
 #-----------------------#
 # Algorithms considered #
@@ -70,10 +84,10 @@ def analyzeTransactionCostsImpact():
     dfTransactionCostPGPE = pd.DataFrame(index=propCostValues, columns=statsConsidered)
     dfTransactionCostNPGPE = pd.DataFrame(index=propCostValues, columns=statsConsidered)
 
-    filesList = ['~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Single_Synth_RS_P' +
+    filesList = ['~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Single_Synth_' + sensitiveStr + '_P' +
                  str(v) + '_F0_S0_N5/Statistics/backtest.csv' for v in propCostValues]
 
-    outputDir = os.path.expanduser('~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/ImpactTransactionCostsRS/')
+    outputDir = os.path.expanduser('~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/ImpactTransactionCosts' + sensitiveStr + '/')
 
     for v, f in zip(propCostValues, filesList):
 
@@ -96,24 +110,24 @@ def analyzeTransactionCostsImpact():
     # Plot results
     fig = plt.figure()
     plt.subplot(1, 3, 1)
-    ax1 = dfBuyHold['Reallocation Freq'].plot(color='gray', lw=3, label='Buy and Hold')
-    dfTransactionCostPGPE['Reallocation Freq'].plot(color='seagreen', lw=3, label='RSPGPE', ax=ax1)
-    dfTransactionCostNPGPE['Reallocation Freq'].plot(color='darkorange', lw=3, label='RSNPGPE', ax=ax1)
+    ax1 = dfBuyHold['Reallocation Freq'].plot(color=colors[0], lw=3, label='Buy and Hold')
+    dfTransactionCostPGPE['Reallocation Freq'].plot(color=colors[3], lw=3, label='RSPGPE', ax=ax1)
+    dfTransactionCostNPGPE['Reallocation Freq'].plot(color=colors[2], lw=3, label='RSNPGPE', ax=ax1)
     ax1.set_xlabel('Proportional Transaction Costs [bps]')
     ax1.set_ylabel('Reallocation Frequency [%]')
     ax1.grid(True)
-    ax1.legend(['Buy and Hold', 'RSPGPE', 'RSNPGPE'], loc='upper right')
+    ax1.legend(['Buy and Hold', 'PGPE', 'NPGPE'], loc='upper right')
     plt.subplot(1, 3, 2)
-    ax2 = dfBuyHold['Total Return'].plot(color='gray', lw=3, label='Buy and Hold')
-    dfTransactionCostPGPE['Total Return'].plot(color='seagreen', lw=3, label='RSPGPE', ax=ax2)
-    dfTransactionCostNPGPE['Total Return'].plot(color='darkorange', lw=3, label='RSNPGPE', ax=ax2)
+    ax2 = dfBuyHold['Total Return'].plot(color=colors[0], lw=3, label='Buy and Hold')
+    dfTransactionCostPGPE['Total Return'].plot(color=colors[3], lw=3, label='RSPGPE', ax=ax2)
+    dfTransactionCostNPGPE['Total Return'].plot(color=colors[2], lw=3, label='RSNPGPE', ax=ax2)
     ax2.set_xlabel('Proportional Transaction Costs [bps]')
     ax2.set_ylabel('Cumulative Profit [%]')
     ax2.grid(True)
     plt.subplot(1, 3, 3)
-    ax3 = dfBuyHold['Daily Sharpe'].plot(color='gray', lw=3, label='Buy and Hold')
-    dfTransactionCostPGPE['Daily Sharpe'].plot(color='seagreen', lw=3, label='RSPGPE', ax=ax3)
-    dfTransactionCostNPGPE['Daily Sharpe'].plot(color='darkorange', lw=3, label='RSNPGPE', ax=ax3)
+    ax3 = dfBuyHold['Daily Sharpe'].plot(color=colors[0], lw=3, label='Buy and Hold')
+    dfTransactionCostPGPE['Daily Sharpe'].plot(color=colors[3], lw=3, label='RSPGPE', ax=ax3)
+    dfTransactionCostNPGPE['Daily Sharpe'].plot(color=colors[2], lw=3, label='RSNPGPE', ax=ax3)
     ax3.set_xlabel('Proportional Transaction Costs [bps]')
     ax3.set_ylabel('Annualized Sharpe Ratio')
     ax3.grid(True)
@@ -140,10 +154,10 @@ def analyzeShortSellingFeesImpact():
     dfTransactionCostPGPE = pd.DataFrame(index=shortSellingFeeValues, columns=statsConsidered)
     dfTransactionCostNPGPE = pd.DataFrame(index=shortSellingFeeValues, columns=statsConsidered)
 
-    filesList = ['~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Single_Synth_RS_P0_F0_S' +
+    filesList = ['~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/Single_Synth_' + sensitiveStr + '_P0_F0_S' +
                  str(v) + '_N5/Statistics/backtest.csv' for v in shortSellingFeeValues]
 
-    outputDir = os.path.expanduser('~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/ImpactShortSellingFeeRS/')
+    outputDir = os.path.expanduser('~/Documents/University/6_Anno_Poli/7_Thesis/Data/Output/ImpactShortSellingFee' + sensitiveStr + '/')
 
     for v, f in zip(shortSellingFeeValues, filesList):
 
@@ -166,24 +180,24 @@ def analyzeShortSellingFeesImpact():
     # Plot results
     fig = plt.figure()
     plt.subplot(1, 3, 1)
-    ax1 = dfBuyHold['Short Freq'].plot(color='gray', lw=3, label='Buy and Hold')
-    dfTransactionCostPGPE['Short Freq'].plot(color='seagreen', lw=3, label='RSPGPE', ax=ax1)
-    dfTransactionCostNPGPE['Short Freq'].plot(color='darkorange', lw=3, label='RSNPGPE', ax=ax1)
+    ax1 = dfBuyHold['Short Freq'].plot(color=colors[0], lw=3, label='Buy and Hold')
+    dfTransactionCostPGPE['Short Freq'].plot(color=colors[3], lw=3, label='RSPGPE', ax=ax1)
+    dfTransactionCostNPGPE['Short Freq'].plot(color=colors[2], lw=3, label='RSNPGPE', ax=ax1)
     ax1.set_xlabel('Short-Selling Fees [bps]')
     ax1.set_ylabel('Short-Selling Frequency [%]')
     ax1.grid(True)
-    ax1.legend(['Buy and Hold', 'RSPGPE', 'RSNPGPE'], loc='upper right')
+    ax1.legend(['Buy and Hold', 'PGPE', 'NPGPE'], loc='upper right')
     plt.subplot(1, 3, 2)
-    ax2 = dfBuyHold['Total Return'].plot(color='gray', lw=3, label='Buy and Hold')
-    dfTransactionCostPGPE['Total Return'].plot(color='seagreen', lw=3, label='RSPGPE', ax=ax2)
-    dfTransactionCostNPGPE['Total Return'].plot(color='darkorange', lw=3, label='RSNPGPE', ax=ax2)
+    ax2 = dfBuyHold['Total Return'].plot(color=colors[0], lw=3, label='Buy and Hold')
+    dfTransactionCostPGPE['Total Return'].plot(color=colors[3], lw=3, label='RSPGPE', ax=ax2)
+    dfTransactionCostNPGPE['Total Return'].plot(color=colors[2], lw=3, label='RSNPGPE', ax=ax2)
     ax2.set_xlabel('Short-Selling Fees [bps]')
     ax2.set_ylabel('Cumulative Profit [%]')
     ax2.grid(True)
     plt.subplot(1, 3, 3)
-    ax3 = dfBuyHold['Daily Sharpe'].plot(color='gray', lw=3, label='Buy and Hold')
-    dfTransactionCostPGPE['Daily Sharpe'].plot(color='seagreen', lw=3, label='RSPGPE', ax=ax3)
-    dfTransactionCostNPGPE['Daily Sharpe'].plot(color='darkorange', lw=3, label='RSNPGPE', ax=ax3)
+    ax3 = dfBuyHold['Daily Sharpe'].plot(color=colors[0], lw=3, label='Buy and Hold')
+    dfTransactionCostPGPE['Daily Sharpe'].plot(color=colors[3], lw=3, label='RSPGPE', ax=ax3)
+    dfTransactionCostNPGPE['Daily Sharpe'].plot(color=colors[2], lw=3, label='RSNPGPE', ax=ax3)
     ax3.set_xlabel('Short-Selling Fees [bps]')
     ax3.set_ylabel('Annualized Sharpe Ratio')
     ax3.grid(True)

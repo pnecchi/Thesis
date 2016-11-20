@@ -32,7 +32,7 @@ This structure is quite standard for a \gls{RL} problem and can be easily adapte
 		\draw[line] (Environment.180) -- (Task.180);
 		\draw[line] (Agent.90) -- (Task.270); 
 	\end{tikzpicture}
-	\caption{PyBrain standard architecture for an \gls{RL} problem.}
+	\caption{PyBrain standard architecture for a RL problem.}
 	\label{fig:pybrain}
 \end{figure}
 
@@ -59,7 +59,7 @@ The objects discussed so far are sufficient to implement an actor-only learning 
 Finally, the \lstinline{ARACAgent} employs some \lstinline{LearningRate} to control the speed of the gradient descent optimization algorithm. A naive approach is to use a \lstinline{ConstantLearningRate}, but this leads to a large-variance in the objective function value attained by the stochastic optimization algorithm. A more sensible choice is to use a \lstinline{DecayingLearningRate} which decreases with the number of learning epochs performed by the agent according to $\alpha_n = \frac{a}{n^b}$. In this way, the learning process progressively ``cools down'' (using a simulated annealing terminology) and stabilizes to a given policy. This concludes our quick overview of the class architecture used for this project. In the thesis, other applications and algorithms were considered and we refer the reader to the full document for a more complete discussion.
 \begin{sidewaysfigure}[ht]
     \includegraphics[width=\textwidth]{Images/A_agent}
-    \caption[Class architecture for an ARAC agent]{Class architecture for an Average Reward Actor-Critic agent (ARAC).}
+    \caption[Class architecture for an ARAC agent.]{Class architecture for an Average Reward Actor-Critic agent (ARAC).}
     \label{fig:class_architecture_arac}
 \end{sidewaysfigure}
 \clearpage
@@ -117,6 +117,6 @@ In this section we describe the full pipeline of the program, which is schematic
 		\draw[line] (main_thesis.315) -- (debug.180);
 	\end{tikzpicture}
 	}
-	\caption[Execution pipeline of an asset allocation experiment]{Execution flow of an asset allocation experiment. Black boxes denote  Python scripts, blue boxes executables while red boxes input/output files.}
+	\caption[Execution pipeline of an asset allocation experiment.]{Execution flow of an asset allocation experiment. Black boxes denote  Python scripts, blue boxes executables while red boxes input/output files.}
 	\label{fig:pybrain}
 \end{sidewaysfigure}

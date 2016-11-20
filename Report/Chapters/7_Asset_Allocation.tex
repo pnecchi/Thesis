@@ -186,14 +186,14 @@ where $0 < \gamma < 1$ denotes as usual the discount factor.
 	\draw[help lines, step=1.0, color=gray!30, dashed] (-5,-3) grid (5,3);
 	\draw[->,ultra thick] (-5,0)--(5,0) node[right]{$t$};
 	\draw[->,ultra thick] (-5,-3)--(-5,3) node[above]{$R_{0,t}$};
-	\draw[GloriousGreen, ultra thick, name path=upper] (-5, 2) node[left]{$u$} -- (5, 2) ; 
-	\draw[RealRed, ultra thick, name path=lower] (-5, -2) node[left]{$l$} --(5, -2);  
+	\draw[LightSteelBlue, ultra thick, name path=upper] (-5, 2) node[left]{$u$} -- (5, 2) ; 
+	\draw[DimGray, ultra thick, name path=lower] (-5, -2) node[left]{$l$} --(5, -2);  
 	\draw[SteelBlue, ultra thick, name path=rw1] (-5, 0) -- (-4, 0.7) -- (-3, 0.2) -- (-2, 1.1) -- (-1, 0.2) -- (0, 1.0) -- (1, 2.5);
-	\draw[dashed, ultra thick] (1,2.5) node[above]{$1$} -- (1,0) node[below]{$\tau_u$};
+	\draw[dashed, thick] (1,2.5) node[above]{$1$} -- (1,0) node[below]{$\tau_u$};
 	\draw[SteelBlue, ultra thick, name path=rw2] (-5, 0) -- (-4, -0.2) -- (-3, -0.4) -- (-2, -1.1) -- (-1, -0.4) -- (0, -1.2) -- (1, -0.5) -- (2, -0.6) -- (3, -0.9) -- (4, -2.7);
 	\draw[dashed, thick] (4,-2.7) node[below]{$0$} -- (4,0) node[above]{$\tau_l$};
-	\fill[GloriousGreen, name intersections={of=rw1 and upper}] (intersection-1) circle (3pt);
-	\fill[RealRed, name intersections={of=rw2 and lower}] (intersection-1) circle (3pt);
+	\fill[LightSteelBlue, name intersections={of=rw1 and upper}] (intersection-1) circle (3pt);
+	\fill[DimGray, name intersections={of=rw2 and lower}] (intersection-1) circle (3pt);
 \end{tikzpicture}
 \caption{Episodic formulation for the asset allocation problem.}
 \label{fig:episodic_asset_alloc}
