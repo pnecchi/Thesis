@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.12)  20 NOV 2016 17:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.12)  1 DEC 2016 21:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1331,41 +1331,53 @@ LaTeX Info: Redefining \nameref on input line 5.
 English.dict
 Dictionary: glossaries-dictionary, Language: English 
 ) (./Cover/cover.tex
-<Cover/polimi_name_bn.png, id=380, 666.49pt x 489.83pt>
-File: Cover/polimi_name_bn.png Graphic file (type png)
+Package epstopdf Info: Source file: <Cover/polimi.eps>
+(epstopdf)                    date: 2016-11-30 22:12:50
+(epstopdf)                    size: 618976 bytes
+(epstopdf)             Output file: <Cover/polimi-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-11-30 22:13:14
+(epstopdf)                    size: 57386 bytes
+(epstopdf)             Command: <repstopdf --outfile=Cover/polimi-eps-converted
+-to.pdf Cover/polimi.eps>
+(epstopdf)             \includegraphics on input line 13.
+Package epstopdf Info: Output file is already uptodate.
 
-<use Cover/polimi_name_bn.png>
-Package pdftex.def Info: Cover/polimi_name_bn.png used on input line 5.
-(pdftex.def)             Requested size: 227.62204pt x 167.28741pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+<Cover/polimi-eps-converted-to.pdf, id=380, 98.3675pt x 89.33376pt>
+File: Cover/polimi-eps-converted-to.pdf Graphic file (type pdf)
+
+<use Cover/polimi-eps-converted-to.pdf>
+Package pdftex.def Info: Cover/polimi-eps-converted-to.pdf used on input line 1
+3.
+(pdftex.def)             Requested size: 113.81102pt x 103.35867pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 24.
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 24.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 24.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 24.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 26.
  [1
 
 \openout6 = `thesis.ist'.
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Cover/polimi_name_bn.png
->]) [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Cover/polimi-eps-convert
+ed-to.pdf>]) [2
 
 ]
 \openout2 = `Abstract/abstract.aux'.
@@ -1505,7 +1517,7 @@ Overfull \hbox (4.52098pt too wide) in paragraph at lines 461--461
  []
 
 [14] [15] [16]
-<Images/2_0_policy_iteration.png, id=909, 474.77374pt x 655.44875pt>
+<Images/2_0_policy_iteration.png, id=910, 474.77374pt x 655.44875pt>
 File: Images/2_0_policy_iteration.png Graphic file (type png)
 
 <use Images/2_0_policy_iteration.png>
@@ -1560,7 +1572,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 132.
  [36] [37] [38]
-[39] <Images/4_0_euclidean_vs_natural.png, id=1158, 2434.09375pt x 768.8725pt>
+[39] <Images/4_0_euclidean_vs_natural.png, id=1159, 2434.09375pt x 768.8725pt>
 File: Images/4_0_euclidean_vs_natural.png Graphic file (type png)
 
 <use Images/4_0_euclidean_vs_natural.png>
@@ -1635,7 +1647,7 @@ convergence.eps>
 (epstopdf)             \includegraphics on input line 52.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=1555,
+<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=1556,
  1445.4pt x 722.7pt>
 File: Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1660,7 +1672,7 @@ performance.eps>
 (epstopdf)             \includegraphics on input line 62.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=1570,
+<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=1571,
  1445.4pt x 722.7pt>
 File: Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1683,7 +1695,7 @@ ion_costs-eps-converted-to.pdf Images/6_2_impact_transaction_costs.eps>
 (epstopdf)             \includegraphics on input line 96.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=1640, 1445.4pt x 
+<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=1641, 1445.4pt x 
 722.7pt>
 File: Images/6_2_impact_transaction_costs-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1703,7 +1715,7 @@ lling_fees-eps-converted-to.pdf Images/6_3_impact_short_selling_fees.eps>
 (epstopdf)             \includegraphics on input line 103.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=1645, 1445.4pt x
+<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=1646, 1445.4pt x
  722.7pt>
 File: Images/6_3_impact_short_selling_fees-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1733,7 +1745,7 @@ ive_convergence.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <Images/8_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf, id=181
-3, 1445.4pt x 722.7pt>
+4, 1445.4pt x 722.7pt>
 File: Images/8_4_single_synthetic_sensitive_convergence-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
@@ -1756,7 +1768,7 @@ ive_performance.eps>
 Package epstopdf Info: Output file is already uptodate.
 
 <Images/8_5_single_synthetic_sensitive_performance-eps-converted-to.pdf, id=181
-4, 1445.4pt x 722.7pt>
+5, 1445.4pt x 722.7pt>
 File: Images/8_5_single_synthetic_sensitive_performance-eps-converted-to.pdf Gr
 aphic file (type pdf)
 
@@ -1789,7 +1801,7 @@ ion_costs_RS-eps-converted-to.pdf Images/8_6_impact_transaction_costs_RS.eps>
 (epstopdf)             \includegraphics on input line 178.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_6_impact_transaction_costs_RS-eps-converted-to.pdf, id=1932, 1445.4pt
+<Images/8_6_impact_transaction_costs_RS-eps-converted-to.pdf, id=1933, 1445.4pt
  x 722.7pt>
 File: Images/8_6_impact_transaction_costs_RS-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -1811,7 +1823,7 @@ lling_fees_RS-eps-converted-to.pdf Images/8_7_impact_short_selling_fees_RS.eps>
 (epstopdf)             \includegraphics on input line 185.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_7_impact_short_selling_fees_RS-eps-converted-to.pdf, id=1933, 1445.4p
+<Images/8_7_impact_short_selling_fees_RS-eps-converted-to.pdf, id=1934, 1445.4p
 t x 722.7pt>
 File: Images/8_7_impact_short_selling_fees_RS-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -1839,7 +1851,7 @@ e.eps>
 (epstopdf)             \includegraphics on input line 200.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_8_single_hist_neutral_convergence-eps-converted-to.pdf, id=2054, 1445
+<Images/8_8_single_hist_neutral_convergence-eps-converted-to.pdf, id=2055, 1445
 .4pt x 722.7pt>
 File: Images/8_8_single_hist_neutral_convergence-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1862,7 +1874,7 @@ e.eps>
 (epstopdf)             \includegraphics on input line 207.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf, id=2055, 1445
+<Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf, id=2056, 1445
 .4pt x 722.7pt>
 File: Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1890,7 +1902,7 @@ ergence.eps>
 (epstopdf)             \includegraphics on input line 240.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_10_single_hist_sensitive_convergence-eps-converted-to.pdf, id=2169, 1
+<Images/8_10_single_hist_sensitive_convergence-eps-converted-to.pdf, id=2170, 1
 445.4pt x 722.7pt>
 File: Images/8_10_single_hist_sensitive_convergence-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -1913,7 +1925,7 @@ ormance.eps>
 (epstopdf)             \includegraphics on input line 247.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/8_11_single_hist_sensitive_performance-eps-converted-to.pdf, id=2170, 1
+<Images/8_11_single_hist_sensitive_performance-eps-converted-to.pdf, id=2171, 1
 445.4pt x 722.7pt>
 File: Images/8_11_single_hist_sensitive_performance-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -1962,7 +1974,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\lstinline' on input line 43.
 
-<Images/A_agent_environment_interaction.png, id=2352, 1583.9175pt x 600.06pt>
+<Images/A_agent_environment_interaction.png, id=2353, 1583.9175pt x 600.06pt>
 File: Images/A_agent_environment_interaction.png Graphic file (type png)
 
 <use Images/A_agent_environment_interaction.png>
@@ -1978,7 +1990,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\lstinline' on input line 54.
 
-<Images/A_agent.png, id=2368, 1667.685pt x 885.3075pt>
+<Images/A_agent.png, id=2369, 1667.685pt x 885.3075pt>
 File: Images/A_agent.png Graphic file (type png)
 
 <use Images/A_agent.png>
@@ -2050,8 +2062,8 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  26146 strings out of 494458
- 437176 string characters out of 6166029
- 583011 words of memory out of 5000000
+ 437204 string characters out of 6166029
+ 582298 words of memory out of 5000000
  28052 multiletter control sequences out of 15000+600000
  25723 words of font info for 106 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
@@ -2076,10 +2088,10 @@ s/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on thesis.pdf (133 pages, 2811093 bytes).
+Output written on thesis.pdf (133 pages, 2789424 bytes).
 PDF statistics:
- 2682 PDF objects out of 2984 (max. 8388607)
- 1941 compressed objects within 20 object streams
+ 2683 PDF objects out of 2984 (max. 8388607)
+ 1942 compressed objects within 20 object streams
  645 named destinations out of 1000 (max. 500000)
  842 words of extra memory for PDF output out of 10000 (max. 10000000)
 

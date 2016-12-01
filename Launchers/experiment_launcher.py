@@ -46,7 +46,7 @@ postProcessingDir = thesisBaseDir + 'Code/Postprocessing/'
 params = {'riskFreeRate'      : 0.0,
           'deltaP'            : 0.0000,
           'deltaF'            : 0.0,
-          'deltaS'            : 0.0050,
+          'deltaS'            : 0.0000,
           'numDaysObserved'   : 5,
           'lambda'            : 0.1,
           'alphaConstActor'   : 0.1,
@@ -56,9 +56,9 @@ params = {'riskFreeRate'      : 0.0,
           'alphaConstBaseline': 0.1,
           'alphaExpBaseline'  : 0.6,
           'numExperiments'    : 10,
-          'numEpochs'         : 1000,
-          'numTrainingSteps'  : 7000,
-          'numTestSteps'      : 2000}
+          'numEpochs'         : 5000,
+          'numTrainingSteps'  : 1000,
+          'numTestSteps'      : 100}
 
 
 #------------------------------------------------------------------------------------------------------|
@@ -69,7 +69,7 @@ params = {'riskFreeRate'      : 0.0,
 #------------------------------------------------------------------------------------------------------|
 
 riskSensitive = True
-synthetic     = True
+synthetic     = False
 multiAsset    = False
 
 if not synthetic and multiAsset:
