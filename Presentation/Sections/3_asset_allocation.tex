@@ -1,0 +1,36 @@
+\section{Asset Allocation with Transaction Costs}
+\label{sec:asset_allocation}
+
+\begin{frame}{Asset Allocation with Transaction Costs}
+	
+	\begin{block}{Goal}
+		How to dynamically invest the available capital in a portfolio of different assets in order to maximize the expected total return or another relevant performance measure.
+	\end{block}
+	
+
+
+	\begin{block}{\textbf{Reward function}: portfolio log-return with transaction costs}
+		\vspace{-0.5cm}
+		\begin{equation*}
+		\resizebox{.9 \textwidth}{!}{ 
+		 $R_{t+1} = \log \left\{ 1 + \sum^{I}_{i=0} \left[ a_t^i X_{t+1}^i - \delta_i
+		 			 	\left| a_t^i - \tilde{a}_t^i \right| - \delta_s {(a_t^i)}^- \right] -
+		 			 	\delta_f \mathbf{1}_{{a}_t \neq \tilde{{a}}_{t-1}}\right\}$
+		 }
+		 \end{equation*}
+	\end{block}
+
+	\begin{block}{\textbf{Actions}: Portfolio weights}
+		\begin{equation*}
+			\{a_t^i\}_{i=0}^I \;\;\; \text{s.t.}\;\;\; \sum^{I}_{i=0} a_t^i = 1 \;\;\;\;\; \forall t \in \{0, 1, 2, \ldots\}
+		\end{equation*}
+	\end{block}
+
+	\begin{block}{\textbf{State}: assets past returns and current allocation}
+		\begin{equation*}
+			S_t = \{X, X_t, X_{t-1}, \ldots, X_{t-P}, \tilde{a}_t\}
+		\end{equation*}
+	\end{block}
+
+\end{frame}
+

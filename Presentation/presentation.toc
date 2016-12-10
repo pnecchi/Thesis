@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Basics of Reinforcement Learning}{6}{0}{1}
+\beamer@sectionintoc {2}{Policy Gradient Algorithms}{22}{0}{2}
+\beamer@sectionintoc {3}{Asset Allocation with Transaction Costs}{34}{0}{3}
+\beamer@sectionintoc {4}{Conclusions}{43}{0}{4}

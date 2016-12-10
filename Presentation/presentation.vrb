@@ -1,0 +1,31 @@
+\frametitle{PyBrain}
+
+\begin{figure}[t!]
+\centering
+\documentclass{article}
+\begin{tikzpicture}[node distance = 6em, auto, thick]
+\node (rect) at (0,0) [draw,thick,minimum width=8cm,minimum height=6cm] (Experiment) {};
+\node (rect) at (0,1.4) [draw,thick,minimum width=6cm,minimum height=2cm] (Task) {};
+\node (rect) at (0,1.4) [draw,thick,minimum width=3cm,minimum height=1cm] (Environment) {\lstinline{Environment}};
+\node (rect) at (0,-1.4) [draw,thick,minimum width=6cm,minimum height=2cm] (Agent) {};
+\node (rect) at (-1.9,-1.4) [draw,thick,minimum width=1.6cm,minimum height=1cm] (Critic) {\lstinline{Critic}};
+\node (rect) at (1.9,-1.4) [draw,thick,minimum width=1.6cm,minimum height=1cm] (Learner) {\lstinline{Learner}};
+\node (rect) at (0,-1.4) [draw,thick,minimum width=1.6cm,minimum height=1cm] (Actor) {\lstinline{Actor}};
+
+\draw (-2.8,3.3) node {\lstinline{Experiment}};
+\draw (-2.4,2.7) node {\lstinline{Task}};
+\draw (0.8,0) node {\lstinline{Action}};
+\draw (-2.25,1.7) node {\lstinline{State}};
+\draw (2.7,0) node {\lstinline{Reward}};
+\draw (-2.4,-2.7) node {\lstinline{Agent}};
+
+\path [line] (Task.180) --++ (-0.5cm,0cm) |- node [near start]{\lstinline{Observation}} (Agent.180);
+\path [line] (Task.0) --++ (+0.5cm,0cm) |- (Agent.0);
+\draw[line] (Environment.180) -- (Task.180);
+\draw[line] (Agent.90) -- (Task.270);
+\end{tikzpicture}
+\caption{PyBrain standard architecture for an RL problem.}
+\label{fig:pybrain}
+\end{figure}
+
+

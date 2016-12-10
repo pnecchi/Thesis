@@ -1,0 +1,82 @@
+\section{Policy Gradient Algorithms}
+
+
+\begin{frame}{Policy Gradient Algorithms}
+	
+	\begin{block}{Key Idea}
+	\begin{enumerate}
+		\item<+-> The optimal policy $\pi_*$ is approximated with a parametric policy $\pi_{\theta^*}$
+		\item<+-> The parameters $\theta^*$ of the policy solve the optimization problem 
+		\begin{equation*}
+			\max_{\theta \in \Theta} J(\theta) = V_{\pi_\theta}(s)
+		\end{equation*}
+		\item<+-> Which is solved numerically via gradient descent
+		\begin{equation*}
+		\theta_{k+1} = \theta_k + \alpha_k + 
+       		\tikz[baseline]{
+           		\node[anchor=base] (gradient) {$\nabla_\theta J\left(\theta_k\right)$};
+       	   }
+		\end{equation*}
+	\end{enumerate}
+	\end{block}
+	
+	\onslide<+->{
+		\begin{tikzpicture}[overlay]
+				\node[draw=SteelBlue, circle, line width=3pt, minimum size=1.8cm] at (8.9, 1.65) (g) {};
+				\node[SteelBlue] at (11,-0.2) (q) {\Huge \textbf{?}};
+		        \draw [->, line width=3pt, SteelBlue] (q) to [bend left=35] (g);
+		\end{tikzpicture}
+	}
+\end{frame}
+
+\begin{frame}{The Keystone of Policy Gradient Algorithms}
+	
+	\onslide<1->
+	\begin{block}{Policy Gradient Theorem}
+		\begin{equation*}
+			\nabla_\theta J(\theta) =
+			\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
+			\pi_\theta(S,A) Q_{\theta}(S, A)}
+		\end{equation*}
+	\end{block}
+	
+	\onslide<2->{
+	For an episodic environment, the policy gradient can be approximated via Monte Carlo
+	\begin{equation*}
+		\nabla_\theta J(\theta) \approx \frac{1}{M} \sum_{m=1}^M \nabla_\theta\log
+					\pi_\theta(s_0, a_0) Q_{\theta}(S, A)
+	\end{equation*}
+	}
+	
+	\onslide<3->{
+		However, this estimate is characterized by a large variance. Possible improvements:
+		\begin{enumerate}
+			\item Optimal baseline
+			\item Actor-critic methods
+			\item Natural gradient
+		\end{enumerate}
+	}
+\end{frame}
+
+\begin{frame}{Policy Gradient with Parameter-Based Exploration (PGPE)}
+	\begin{block}{Key Idea}
+		\begin{enumerate}
+			\item<+-> Actions are selected using a parametric and deterministic controller $F_\theta$
+			\item<+-> The policy parameters are drawn from a probability distribution $p_\xi$
+			\item<+-> The search for an optimum is performed in the space of the hyperparameters $\xi$
+		\end{enumerate}
+	\end{block}
+	
+	\onslide<+->{
+		More formally, the update scheme is
+			\begin{equation*}
+				\xi_{k+1} = \xi_k + \alpha_k \nabla_\xi J(\xi_k)
+			\end{equation*}
+		where the gradient is given by
+			\begin{equation*}
+				\nabla_\xi J(\xi) = \E[\substack{S \sim d^\xi\\\theta \sim p_\xi}]{\nabla_\xi \log p_\xi(\theta) Q_{\xi}\left(S, F_\theta(S)\right)}
+			\end{equation*}		
+	}
+\end{frame}
+
+

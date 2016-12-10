@@ -1,0 +1,95 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[11.5pt, aspectratio=169]{beamer}
+
+\usepackage{Style/style}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+% The short title appears at the bottom of every slide, the full title is only on the title page
+\title[]{Policy Gradient Algorithms for the Asset Allocation Problem} 
+
+\author[P.\,Necchi]
+{%
+  \texorpdfstring{
+    \begin{columns}%[onlytextwidth]
+      \column{1\linewidth}
+      \centering
+      Pierpaolo Necchi\\
+      \href{mailto:pierpaolo.necchi@gmail.com}{pierpaolo.necchi@gmail.com}
+    \end{columns}
+  }
+  {Pierpaolo Necchi}
+}
+		 
+\institute[Polimi] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{%
+%Politecnico di Milano%\\ % Your institution for the title page
+%\medskip
+%\textit{john@smith.com} % Your email address
+}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+	\begin{figure}[htpb]
+		\centering
+		\includegraphics[width=0.4\linewidth]{Images/polimi_name}
+	\end{figure}
+	\titlepage
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Introduzione 
+%------------------------------------------------------------------------------
+
+\input{Sections/0_introduction}
+
+%------------------------------------------------------------------------------
+% Indice 
+%------------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Plan} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Corpo della presentazione 
+%------------------------------------------------------------------------------
+
+\input{Sections/1_basics_of_reinforcement_learning}
+\input{Sections/2_policy_gradient_algorithms}
+\input{Sections/3_asset_allocation_problem}
+\input{Sections/4_conclusions}
+
+\begin{frame}[c]{}
+  \begin{center}
+	  \Huge Thank you for your attention!
+  \end{center} 
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Appendice
+%------------------------------------------------------------------------------
+
+\appendix
+\backupbegin
+
+\begin{frame}
+\frametitle{\refname}
+\nocite{*}
+\bibliographystyle{acm}
+\bibliography{Bibliography/bibliography_reduced}
+\end{frame}
+
+\input{Sections/appendix}
+
+\backupend
+
+\end{document}
