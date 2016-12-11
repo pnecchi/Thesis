@@ -5,30 +5,42 @@
 \begin{figure}[t]
 	\centering
 	\begin{tikzpicture}[node distance = 6em, auto, thick]
-		\onslide<1->{%
+		\onslide<2->{%
 			\node at (4, 0) (Environment) {\includegraphics[width=3cm]{Images/environment}};
 			\node at (4, 2) {\LARGE Environment};
 			\node at (4, -2) {\LARGE $\calP$, $\calR$};
 		}
 		
-		\onslide<2->{%
+		\onslide<3->{%
 			\node at (-4, 0) (Agent) {\includegraphics[width=3cm]{Images/agent}};
 			\node at (-4, 2) {\LARGE Agent};
 			\node at (-4, -2) {\LARGE $\pi$};
 		}
-
-		\onslide<3->{%
-		\draw [->, line width=5pt, SteelBlue] (Environment) to [bend right=35] (Agent);
+		
+		\onslide<4->{%
+		\draw [->, line width=5pt, Blue] (Environment) to [bend right=35] (Agent);
 		\node at (0, 2.5) {\Large State $S_t$};
 		}
 		
-		\onslide<4->{%
-		\draw [->, line width=5pt, LightSteelBlue] (Agent) to [bend right=35] (Environment);
+		\onslide<5>{%
+		\node[draw=RealRed, circle, line width=3pt, minimum size=1cm] at (-4, -2) {};
+		}
+		
+		\onslide<6->{%
+		\draw [->, line width=5pt, SteelBlue] (Agent) to [bend right=35] (Environment);
 		\node at (0, -2.5) {\Large Action $A_t$};
 		}
 		
-		\onslide<5->{%
-		\draw [->, line width=5pt, LightSkyBlue] (Environment) to (Agent);
+		\onslide<7>{%
+		\node[draw=RealRed, circle, line width=3pt, minimum size=1cm] at (3.56, -2) {};	
+		}
+		
+		\onslide<8>{%
+		\node[draw=RealRed, circle, line width=3pt, minimum size=1cm] at (4.42, -2) {};	
+		}
+					
+		\onslide<9->{%
+		\draw [->, line width=5pt, LightSteelBlue] (Environment) to (Agent);
 		\node at (0, 0.5) {\Large Reward $R_{t+1}$};
 		}		
 	\end{tikzpicture}
@@ -60,7 +72,7 @@
 	\onslide<4->{
 	\textbf{Optimal policy}
 		\begin{equation*}
-			\pi_* \;\text{s.t.}\; V_{\pi_*} (s) = V_*(s) 
+			\pi_* \;\text{s.t.}\; V_{\pi_*} (s) = V_*(s),\; \forall s \in \S
 		\end{equation*}
 	}
 \end{frame}
@@ -76,13 +88,13 @@
 		}
 		
 		\onslide<2->{%
-			\node [draw=LightSkyBlue, circle, line width=5pt, minimum size=2cm] at (-0, 0) (Value) {\Large $V_*$, $Q_*$};
+			\node [draw=SteelBlue, circle, line width=5pt, minimum size=2cm] at (-0, 0) (Value) {\Large $V_*$, $Q_*$};
 			\node at (0, 1.5) {\Large Value Functions};
 			\draw [->, line width=5pt, LightGray] (Model) to (Value);
 		}
 
 		\onslide<3->{%
-			\node [draw=SteelBlue, circle, line width=5pt, minimum size=2cm] at (4, 0) (Policy) {\Large $\pi_*$};
+			\node [draw=Blue, circle, line width=5pt, minimum size=2cm] at (4, 0) (Policy) {\Large $\pi_*$};
 			\node at (4, 1.5) {\Large Policy};
 			\draw [->, line width=5pt, LightGray] (Value) to (Policy);
 		}
@@ -94,13 +106,13 @@
 		}
 		
 		\onslide<5->{%
-			\node [draw=LightSkyBlue, circle, line width=5pt, minimum size=2cm] at (0, -3) (ApproxValue) {\Large $\widehat{V}$, $\widehat{Q}$};
+			\node [draw=SteelBlue, circle, line width=5pt, minimum size=2cm] at (0, -3) (ApproxValue) {\Large $\widehat{V}$, $\widehat{Q}$};
 			\node at (0, -4.5) {\Large Value-Based};
 			\draw [dashed, line width=5pt, LightGray] (ApproxValue) to (Value);
 		}
 		
 		\onslide<6->{%
-			\node [draw=SteelBlue, circle, line width=5pt, minimum size=2cm] at (4, -3) (ApproxPolicy) {\Large $\widehat{\pi}$};
+			\node [draw=Blue, circle, line width=5pt, minimum size=2cm] at (4, -3) (ApproxPolicy) {\Large $\widehat{\pi}$};
 			\node at (4, -4.5) {\Large Policy-Based};
 			\draw [dashed, line width=5pt, LightGray] (ApproxPolicy) to (Policy);
 		}

@@ -17,6 +17,81 @@
 \end{frame}
 
 
+\begin{frame}{Policy Gradient Theorem: Statement and Proof}
+
+	\begin{block}{Policy Gradient Theorem}
+	Let $\pi_\theta$ be a differentiable policy. The policy gradient is given by 
+	\begin{equation*}
+		\nabla_\theta J(\theta) =
+		\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
+		\pi_\theta(S,A) Q_{\theta}(S, A)}
+	\end{equation*}
+	where $d^\theta$ is the stationary distribution of the Markov chain induced by $\pi_\theta$. 
+	\end{block}
+	\textbf{Proof}\\
+	\scalebox{0.8}{%
+	$\nabla_\theta V_\theta(s) = \nabla_\theta \int_{\A} \pi_\theta(s,a) Q_\theta(s,a) da = \int_{\A} \left[ \nabla_\theta \pi_\theta(s,a) Q_\theta(s,a) + \pi_\theta(s,a) \nabla_\theta Q_\theta(s,a)\right] da$
+	} 
+	\scalebox{0.8}{%
+	$\nabla_\theta Q_\theta(s,a) = \nabla_\theta \left[ \calR(s,a) - \rho_\theta + \int_{\S} \calP(s,a,s') V_\theta(s') ds' \right] = -\nabla_\theta \rho_\theta + \int_{\S} \calP(s,a,s') \nabla_\theta V_\theta(s') ds'$
+		} 
+		\scalebox{0.8}{%
+	$\nabla_\theta V_\theta(s) = \int_{\A} \nabla_\theta \pi_\theta(s,a) Q_\theta(s,a) da - \nabla_\theta \rho_\theta + \int_\A \pi_\theta(s,a) \int_{\S} \calP(s,a,s') \nabla_\theta V_\theta(s') ds'$
+		} 
+		\scalebox{0.8}{%
+	$\int_{\S} d^\theta(s) \int_{\A} \pi(s,a) \int_{\S} \calP(s,a,s') \nabla_\theta V(s') ds' da ds = \int_{\S} d^\theta(s) \nabla_\theta V_\theta(s) ds$
+		} 
+		\scalebox{0.8}{%
+	$\nabla_\theta \rho_\theta = \int_{\S} d^\theta(s) \int_{\A} \nabla_\theta \pi_\theta(s,a) Q_\theta(s,a) da ds = \int_{\S} d^\theta(s) \int_{\A} \pi_\theta(s,a) \nabla_\theta \log\pi_\theta(s,a) Q_\theta(s,a) da ds$
+	}
+\end{frame}
+
+\begin{frame}{Episodic PGPE Algorithm: Pseudocode}
+	\begin{algorithmic}[1]
+		\Require Deterministic controller $F_\theta$, Initial hyper-parameters $\xi^0$, learning rate $\{\alpha_k\}$
+		\Ensure Approximation of the optimal policy $F_{\xi^*} \approx \pi_*$
+		\Repeat
+			\For {$m = 1, \ldots, M$}
+				\State Sample controller parameters $\theta^{(m)} \sim p_{\xi_k}$ 
+				\State Sample trajectory $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)})\}_{t \geq 0}$ under policy $F_{\theta^{(m)}}$
+			\EndFor
+			\State Approximate policy gradient 
+		  		\begin{equation*}
+		  		\nabla_\xi J(\xi_k) \approx \frac{1}{M} \sum^{M}_{m=1} \nabla_\xi \log p_\xi\left(\theta^{(m)}\right) \left[G\left(h^{(m)}\right)-b\right] 
+		  		\end{equation*}
+		  		
+			\State Update hyperparameters using gradient ascent $\xi_{k+1} = \xi_k + \alpha_k \nabla_\xi J(\xi_k)$
+			\State $k \leftarrow k + 1$
+		\Until{converged}
+	\end{algorithmic}
+\end{frame}
+
+\begin{frame}{Natural PGPE Algorithm: Pseudocode}
+	\begin{algorithmic}[1]
+		\Require Deterministic controller $F_\theta$, Initial hyper-parameters $\xi^0$, learning rate $\{\alpha_k\}$
+		\Ensure Approximation of the optimal hyper-parameters $\xi_*$
+		\Repeat
+			\State Observe current state $s_k$
+			\State Draw $\zeta_k \sim \calN(0, I_n)$
+			\State Compute controller parameters $\theta_k = \mu_k + \Gamma^T \zeta_k$
+			\State Perform action $a_k = F_{\theta_k}(s_k)$ and receive reward $r_{k+1}$
+			\State Update average reward estimate $\widehat{\rho}_{k+1} = \widehat{\rho}_{k} + \alpha_k (r_{k+1} - \widehat{\rho}_{k})$
+			\State Compute natural policy gradients
+				\begin{equation*}
+					\begin{split}
+						\widetilde{\nabla}_\mu \log p_{\xi_k}(\theta_k) = \theta_k - \mu_k \;\;\;\;\;
+						\widetilde{\nabla}_\Gamma \log p_{\xi_k}(\theta_k) = \left(\triu(\zeta_k \zeta_k^T) - \frac{1}{2} \diag(\zeta_k \zeta_k^T) - \frac{1}{2} I \right) \Gamma
+					\end{split}
+				\end{equation*}
+			\State Update eligibility trace $e_{k} = \lambda e_{k-1} + \nabla_\xi \log p_{\xi_k}(\theta_k)$
+			\State Update hyper-parameters $\xi_{k+1} = \xi_k + \alpha_k (r_{k+1} - \widehat{\rho}_{k}) e_k$
+			\State $k \leftarrow k + 1$
+		\Until{converged}
+	\end{algorithmic}
+\end{frame}
+
+
+
 \begin{frame}{Experiment on Synthetic Asset}
 	The synthetic asset price is given by
 	\begin{equation*}

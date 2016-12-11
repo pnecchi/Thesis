@@ -58,7 +58,37 @@
 \end{figure}
 \end{frame}
 
-\begin{frame}{The Challenge of Historical Data}
+\begin{frame}{Not So Fast}
+
+	\onslide<1->{
+	\begin{columns}
+	\begin{column}{0.6\textwidth}
+	   \begin{alertblock}{Insuccess on Historical Data}
+	   Successfully applying these RL algorithms to historical data is much more challenging
+	   \begin{enumerate}
+	   		\item Fail to converge
+	   		\item The strategies learned are not profitable
+	   \end{enumerate}
+	   \end{alertblock}
+	\end{column}
+	\begin{column}{0.4\textwidth}
+	    \begin{center}
+	     \includegraphics[width=1\textwidth]{Images/8_9_single_hist_neutral_performance}
+	     \end{center}
+	\end{column}
+	\end{columns}
+	}
+	
+	\onslide<2->{	
+	\begin{block}{Possible Explanations}
+		\begin{enumerate}
+			\item<2-> \textbf{Low signal-to-noise ratio}: extremely difficult to find tradable patterns in markets
+			\item<3-> \textbf{Lack of data}: impossible to find patterns in daily prices of liquid stocks
+			\item<4-> \textbf{Weak features}: parametric policy must be powerful enough to capture the signal
+			\item<5-> \textbf{Non-stationarity of financial time-series}: a signal needs to be persistent
+		\end{enumerate}
+	\end{block}
+	}
 
 \end{frame}
 

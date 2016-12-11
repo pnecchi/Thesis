@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.12)  10 DEC 2016 20:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.12)  11 DEC 2016 16:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1096,24 +1096,24 @@ Package pdftex.def Info: Images/2_algo_trading.jpg used on input line 22.
 File: Images/environment.png Graphic file (type png)
 
 <use Images/environment.png>
-Package pdftex.def Info: Images/environment.png used on input line 36.
+Package pdftex.def Info: Images/environment.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 85.62448pt.
  <Images/agent.png, id=85, 330.23375pt x 321.2pt>
 File: Images/agent.png Graphic file (type png)
 
 <use Images/agent.png>
-Package pdftex.def Info: Images/agent.png used on input line 36.
+Package pdftex.def Info: Images/agent.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 83.02481pt.
  [7
 
  <./Images/environment.png (PNG copy)> <./Images/agent.png (PNG copy)>]
 File: Images/environment.png Graphic file (type png)
  <use Images/environment.png>
-Package pdftex.def Info: Images/environment.png used on input line 36.
+Package pdftex.def Info: Images/environment.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 85.62448pt.
 File: Images/agent.png Graphic file (type png)
  <use Images/agent.png>
-Package pdftex.def Info: Images/agent.png used on input line 36.
+Package pdftex.def Info: Images/agent.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 83.02481pt.
  [8
 
@@ -1121,11 +1121,11 @@ Package pdftex.def Info: Images/agent.png used on input line 36.
 File: Images/environment.png Graphic file (type png)
 
 <use Images/environment.png>
-Package pdftex.def Info: Images/environment.png used on input line 36.
+Package pdftex.def Info: Images/environment.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 85.62448pt.
 File: Images/agent.png Graphic file (type png)
  <use Images/agent.png>
-Package pdftex.def Info: Images/agent.png used on input line 36.
+Package pdftex.def Info: Images/agent.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 83.02481pt.
  [9
 
@@ -1133,11 +1133,11 @@ Package pdftex.def Info: Images/agent.png used on input line 36.
 File: Images/environment.png Graphic file (type png)
 
 <use Images/environment.png>
-Package pdftex.def Info: Images/environment.png used on input line 36.
+Package pdftex.def Info: Images/environment.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 85.62448pt.
 File: Images/agent.png Graphic file (type png)
  <use Images/agent.png>
-Package pdftex.def Info: Images/agent.png used on input line 36.
+Package pdftex.def Info: Images/agent.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 83.02481pt.
  [10
 
@@ -1145,22 +1145,61 @@ Package pdftex.def Info: Images/agent.png used on input line 36.
 File: Images/environment.png Graphic file (type png)
 
 <use Images/environment.png>
-Package pdftex.def Info: Images/environment.png used on input line 36.
+Package pdftex.def Info: Images/environment.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 85.62448pt.
 File: Images/agent.png Graphic file (type png)
  <use Images/agent.png>
-Package pdftex.def Info: Images/agent.png used on input line 36.
+Package pdftex.def Info: Images/agent.png used on input line 48.
 (pdftex.def)             Requested size: 85.35826pt x 83.02481pt.
  [11
 
-] [12
+]
+File: Images/environment.png Graphic file (type png)
 
-] [13
-
-] [14
+<use Images/environment.png>
+Package pdftex.def Info: Images/environment.png used on input line 48.
+(pdftex.def)             Requested size: 85.35826pt x 85.62448pt.
+File: Images/agent.png Graphic file (type png)
+ <use Images/agent.png>
+Package pdftex.def Info: Images/agent.png used on input line 48.
+(pdftex.def)             Requested size: 85.35826pt x 83.02481pt.
+ [12
 
 ]
-[15
+File: Images/environment.png Graphic file (type png)
+
+<use Images/environment.png>
+Package pdftex.def Info: Images/environment.png used on input line 48.
+(pdftex.def)             Requested size: 85.35826pt x 85.62448pt.
+File: Images/agent.png Graphic file (type png)
+ <use Images/agent.png>
+Package pdftex.def Info: Images/agent.png used on input line 48.
+(pdftex.def)             Requested size: 85.35826pt x 83.02481pt.
+ [13
+
+]
+File: Images/environment.png Graphic file (type png)
+
+<use Images/environment.png>
+Package pdftex.def Info: Images/environment.png used on input line 48.
+(pdftex.def)             Requested size: 85.35826pt x 85.62448pt.
+File: Images/agent.png Graphic file (type png)
+ <use Images/agent.png>
+Package pdftex.def Info: Images/agent.png used on input line 48.
+(pdftex.def)             Requested size: 85.35826pt x 83.02481pt.
+ [14
+
+]
+File: Images/environment.png Graphic file (type png)
+
+<use Images/environment.png>
+Package pdftex.def Info: Images/environment.png used on input line 48.
+(pdftex.def)             Requested size: 85.35826pt x 85.62448pt.
+File: Images/agent.png Graphic file (type png)
+ <use Images/agent.png>
+Package pdftex.def Info: Images/agent.png used on input line 48.
+(pdftex.def)             Requested size: 85.35826pt x 83.02481pt.
+ [15
 
 ] [16
 
@@ -1168,27 +1207,28 @@ Package pdftex.def Info: Images/agent.png used on input line 36.
 
 ] [18
 
-] [19
+]
+[19
 
 ] [20
 
 ] [21
 
-])
-(./Sections/2_policy_gradient_algorithms.tex (./presentation.toc) [22
+] [22
 
 ] [23
 
-]
-[24
+] [24
 
 ] [25
 
-] [26
+])
+(./Sections/2_policy_gradient_algorithms.tex (./presentation.toc) [26
 
 ] [27
 
-] [28
+]
+[28
 
 ] [29
 
@@ -1200,32 +1240,40 @@ Package pdftex.def Info: Images/agent.png used on input line 36.
 
 ] [33
 
+] [34
+
+] [35
+
+] [36
+
+] [37
+
 ])
-(./Sections/3_asset_allocation_problem.tex (./presentation.toc) [34
+(./Sections/3_asset_allocation_problem.tex (./presentation.toc) [38
 
 ]
 Overfull \vbox (15.30777pt too high) detected at line 33
  []
 
-[35
+[39
 
 ]
 Overfull \vbox (15.30777pt too high) detected at line 33
  []
 
-[36
+[40
 
 ]
 Overfull \vbox (15.30777pt too high) detected at line 33
  []
 
-[37
+[41
 
 ]
 Overfull \vbox (15.30777pt too high) detected at line 33
  []
 
-[38
+[42
 
 ]
 Package epstopdf Info: Source file: <Images/6_0_single_synthetic_neutral_conver
@@ -1242,7 +1290,7 @@ convergence.eps>
 (epstopdf)             \includegraphics on input line 40.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=276, 
+<Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf, id=299, 
 1445.4pt x 722.7pt>
 File: Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1252,7 +1300,7 @@ Package pdftex.def Info: Images/6_0_single_synthetic_neutral_convergence-eps-co
 nverted-to.pdf used on input line 40.
 (pdftex.def)             Requested size: 318.67268pt x 142.26576pt.
 
-[39
+[43
 
  <./Images/6_0_single_synthetic_neutral_convergence-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Images/6_1_single_synthetic_neutral_perfor
@@ -1269,7 +1317,7 @@ performance.eps>
 (epstopdf)             \includegraphics on input line 48.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=333, 
+<Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf, id=357, 
 1445.4pt x 722.7pt>
 File: Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1279,7 +1327,7 @@ Package pdftex.def Info: Images/6_1_single_synthetic_neutral_performance-eps-co
 nverted-to.pdf used on input line 48.
 (pdftex.def)             Requested size: 318.67268pt x 170.71672pt.
 
-[40
+[44
 
  <./Images/6_1_single_synthetic_neutral_performance-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Images/6_2_impact_transaction_costs.eps>
@@ -1294,7 +1342,7 @@ ion_costs-eps-converted-to.pdf Images/6_2_impact_transaction_costs.eps>
 (epstopdf)             \includegraphics on input line 59.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=387, 1445.4pt x 7
+<Images/6_2_impact_transaction_costs-eps-converted-to.pdf, id=410, 1445.4pt x 7
 22.7pt>
 File: Images/6_2_impact_transaction_costs-eps-converted-to.pdf Graphic file (ty
 pe pdf)
@@ -1314,7 +1362,7 @@ lling_fees-eps-converted-to.pdf Images/6_3_impact_short_selling_fees.eps>
 (epstopdf)             \includegraphics on input line 59.
 Package epstopdf Info: Output file is already uptodate.
 
-<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=388, 1445.4pt x 
+<Images/6_3_impact_short_selling_fees-eps-converted-to.pdf, id=411, 1445.4pt x 
 722.7pt>
 File: Images/6_3_impact_short_selling_fees-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -1323,54 +1371,201 @@ Package pdftex.def Info: Images/6_3_impact_short_selling_fees-eps-converted-to.
 pdf used on input line 59.
 (pdftex.def)             Requested size: 318.67268pt x 85.35284pt.
 
-[41
+[45
 
  <./Images/6_2_impact_transaction_costs-eps-converted-to.pdf> <./Images/6_3_imp
-act_short_selling_fees-eps-converted-to.pdf>] [42
+act_short_selling_fees-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Images/8_9_single_hist_neutral_performance
+.eps>
+(epstopdf)                    date: 2016-11-20 13:21:25
+(epstopdf)                    size: 56097 bytes
+(epstopdf)             Output file: <Images/8_9_single_hist_neutral_performance
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-12-11 15:04:13
+(epstopdf)                    size: 29348 bytes
+(epstopdf)             Command: <repstopdf --outfile=Images/8_9_single_hist_neu
+tral_performance-eps-converted-to.pdf Images/8_9_single_hist_neutral_performanc
+e.eps>
+(epstopdf)             \includegraphics on input line 93.
+Package epstopdf Info: Output file is already uptodate.
+
+<Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf, id=515, 1445.
+4pt x 722.7pt>
+File: Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf Graphic f
+ile (type pdf)
+
+<use Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf>
+Package pdftex.def Info: Images/8_9_single_hist_neutral_performance-eps-convert
+ed-to.pdf used on input line 93.
+(pdftex.def)             Requested size: 159.333pt x 79.66264pt.
+ [46
+
+ <./Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <Images/8_9_single_hist_neutral_performance
+.eps>
+(epstopdf)                    date: 2016-11-20 13:21:25
+(epstopdf)                    size: 56097 bytes
+(epstopdf)             Output file: <Images/8_9_single_hist_neutral_performance
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-12-11 15:04:13
+(epstopdf)                    size: 29348 bytes
+(epstopdf)             Command: <repstopdf --outfile=Images/8_9_single_hist_neu
+tral_performance-eps-converted-to.pdf Images/8_9_single_hist_neutral_performanc
+e.eps>
+(epstopdf)             \includegraphics on input line 93.
+Package epstopdf Info: Output file is already uptodate.
+File: Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf Graphic f
+ile (type pdf)
+
+<use Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf>
+Package pdftex.def Info: Images/8_9_single_hist_neutral_performance-eps-convert
+ed-to.pdf used on input line 93.
+(pdftex.def)             Requested size: 159.333pt x 79.66264pt.
+ [47
+
+]
+Package epstopdf Info: Source file: <Images/8_9_single_hist_neutral_performance
+.eps>
+(epstopdf)                    date: 2016-11-20 13:21:25
+(epstopdf)                    size: 56097 bytes
+(epstopdf)             Output file: <Images/8_9_single_hist_neutral_performance
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-12-11 15:04:13
+(epstopdf)                    size: 29348 bytes
+(epstopdf)             Command: <repstopdf --outfile=Images/8_9_single_hist_neu
+tral_performance-eps-converted-to.pdf Images/8_9_single_hist_neutral_performanc
+e.eps>
+(epstopdf)             \includegraphics on input line 93.
+Package epstopdf Info: Output file is already uptodate.
+File: Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf Graphic f
+ile (type pdf)
+
+<use Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf>
+Package pdftex.def Info: Images/8_9_single_hist_neutral_performance-eps-convert
+ed-to.pdf used on input line 93.
+(pdftex.def)             Requested size: 159.333pt x 79.66264pt.
+ [48
+
+]
+Package epstopdf Info: Source file: <Images/8_9_single_hist_neutral_performance
+.eps>
+(epstopdf)                    date: 2016-11-20 13:21:25
+(epstopdf)                    size: 56097 bytes
+(epstopdf)             Output file: <Images/8_9_single_hist_neutral_performance
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-12-11 15:04:13
+(epstopdf)                    size: 29348 bytes
+(epstopdf)             Command: <repstopdf --outfile=Images/8_9_single_hist_neu
+tral_performance-eps-converted-to.pdf Images/8_9_single_hist_neutral_performanc
+e.eps>
+(epstopdf)             \includegraphics on input line 93.
+Package epstopdf Info: Output file is already uptodate.
+File: Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf Graphic f
+ile (type pdf)
+
+<use Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf>
+Package pdftex.def Info: Images/8_9_single_hist_neutral_performance-eps-convert
+ed-to.pdf used on input line 93.
+(pdftex.def)             Requested size: 159.333pt x 79.66264pt.
+ [49
+
+]
+Package epstopdf Info: Source file: <Images/8_9_single_hist_neutral_performance
+.eps>
+(epstopdf)                    date: 2016-11-20 13:21:25
+(epstopdf)                    size: 56097 bytes
+(epstopdf)             Output file: <Images/8_9_single_hist_neutral_performance
+-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-12-11 15:04:13
+(epstopdf)                    size: 29348 bytes
+(epstopdf)             Command: <repstopdf --outfile=Images/8_9_single_hist_neu
+tral_performance-eps-converted-to.pdf Images/8_9_single_hist_neutral_performanc
+e.eps>
+(epstopdf)             \includegraphics on input line 93.
+Package epstopdf Info: Output file is already uptodate.
+File: Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf Graphic f
+ile (type pdf)
+
+<use Images/8_9_single_hist_neutral_performance-eps-converted-to.pdf>
+Package pdftex.def Info: Images/8_9_single_hist_neutral_performance-eps-convert
+ed-to.pdf used on input line 93.
+(pdftex.def)             Requested size: 159.333pt x 79.66264pt.
+ [50
 
 ])
-(./Sections/4_conclusions.tex (./presentation.toc) [43
+(./Sections/4_conclusions.tex (./presentation.toc) [51
 
-] [44
+] [52
 
-]) [45
+] [53
+
+] [54
+
+] [55
+
+]
+[56
+
+] [57
+
+] [58
+
+]) [59
 
 ]
 \c@finalframe=\count196
-
-(./presentation.bbl) [46
+ (./presentation.bbl) [60
 
  </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>] (./Section
-s/appendix.tex [47
-
-] [48
-
-] [49
+s/appendix.tex [61
 
 ]
-<Images/AgentEnvironmentInteractionReduced.png, id=549, 602.25pt x 251.3025pt>
+Overfull \vbox (4.62866pt too high) detected at line 47
+ []
+
+[62
+
+] [63
+
+]
+Overfull \hbox (18.615pt too wide) detected at line 91
+[]
+ []
+
+
+Overfull \vbox (4.66571pt too high) detected at line 91
+ []
+
+[64
+
+] [65
+
+] [66
+
+]
+<Images/AgentEnvironmentInteractionReduced.png, id=689, 602.25pt x 251.3025pt>
 File: Images/AgentEnvironmentInteractionReduced.png Graphic file (type png)
 
 <use Images/AgentEnvironmentInteractionReduced.png>
 Package pdftex.def Info: Images/AgentEnvironmentInteractionReduced.png used on 
-input line 81.
+input line 156.
 (pdftex.def)             Requested size: 318.67209pt x 132.97878pt.
- [50
+ [67
 
  <./Images/AgentEnvironmentInteractionReduced.png>]
-<Images/agent_reduced.png, id=555, 1255.965pt x 749.5275pt>
+<Images/agent_reduced.png, id=696, 1255.965pt x 749.5275pt>
 File: Images/agent_reduced.png Graphic file (type png)
 
 <use Images/agent_reduced.png>
-Package pdftex.def Info: Images/agent_reduced.png used on input line 88.
+Package pdftex.def Info: Images/agent_reduced.png used on input line 163.
 (pdftex.def)             Requested size: 318.67209pt x 190.172pt.
- [51
+ [68
 
  <./Images/agent_reduced.png>]
-Overfull \vbox (1.5598pt too high) detected at line 135
+Overfull \vbox (1.5598pt too high) detected at line 210
  []
 
-[52
+[69
 
 ])
 \tf@nav=\write6
@@ -1397,13 +1592,13 @@ LaTeX Font Warning: Size substitutions with differences
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 21688 strings out of 494458
- 400317 string characters out of 6166029
- 484944 words of memory out of 5000000
- 24284 multiletter control sequences out of 15000+600000
- 19873 words of font info for 74 fonts, out of 8000000 for 9000
+ 21784 strings out of 494458
+ 402261 string characters out of 6166029
+ 485377 words of memory out of 5000000
+ 24344 multiletter control sequences out of 15000+600000
+ 20179 words of font info for 75 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
- 50i,16n,60p,401b,1510s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,17n,60p,401b,1510s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
@@ -1413,19 +1608,20 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
 /type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (52 pages, 1904549 bytes).
+nts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
+i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation.pdf (69 pages, 1976648 bytes).
 PDF statistics:
- 656 PDF objects out of 1000 (max. 8388607)
- 376 compressed objects within 4 object streams
- 114 named destinations out of 1000 (max. 500000)
- 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 807 PDF objects out of 1000 (max. 8388607)
+ 462 compressed objects within 5 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 160 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -32,13 +32,13 @@
 \begin{frame}{The Keystone of Policy Gradient Algorithms}
 	
 	\onslide<1->
-	\begin{block}{Policy Gradient Theorem}
+	\begin{alertblock}{Policy Gradient Theorem}
 		\begin{equation*}
 			\nabla_\theta J(\theta) =
 			\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
 			\pi_\theta(S,A) Q_{\theta}(S, A)}
 		\end{equation*}
-	\end{block}
+	\end{alertblock}
 	
 	\onslide<2->{
 	For an episodic environment, the policy gradient can be approximated via Monte Carlo
@@ -61,14 +61,14 @@
 \begin{frame}{Policy Gradient with Parameter-Based Exploration (PGPE)}
 	\begin{block}{Key Idea}
 		\begin{enumerate}
-			\item<+-> Actions are selected using a parametric and deterministic controller $F_\theta$
-			\item<+-> The policy parameters are drawn from a probability distribution $p_\xi$
+			\item<+-> Actions are selected using a deterministic parametric controller $F_\theta$
+			\item<+-> The controller parameters are drawn from a probability distribution $p_\xi$
 			\item<+-> The search for an optimum is performed in the space of the hyperparameters $\xi$
 		\end{enumerate}
 	\end{block}
 	
 	\onslide<+->{
-		More formally, the update scheme is
+		More formally, the update scheme becomes
 			\begin{equation*}
 				\xi_{k+1} = \xi_k + \alpha_k \nabla_\xi J(\xi_k)
 			\end{equation*}

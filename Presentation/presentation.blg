@@ -2,50 +2,50 @@ This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: presentation.aux
 The style file: apalike.bst
-Illegal, another \bibstyle command---line 93 of file presentation.aux
+Illegal, another \bibstyle command---line 112 of file presentation.aux
  : \bibstyle
  :          {acm}
 I'm skipping whatever remains of this command
 Database file #1: Bibliography/bibliography_reduced.bib
 You've used 4 entries,
             1935 wiz_defined-function locations,
-            495 strings with 4266 characters,
-and the built_in function-call counts, 1479 in all, are:
-= -- 140
-> -- 56
-< -- 5
-+ -- 18
-- -- 18
-* -- 124
-:= -- 264
+            495 strings with 4346 characters,
+and the built_in function-call counts, 1409 in all, are:
+= -- 134
+> -- 61
+< -- 4
++ -- 20
+- -- 20
+* -- 116
+:= -- 262
 add.period$ -- 12
 call.type$ -- 4
-change.case$ -- 27
+change.case$ -- 28
 chr.to.int$ -- 4
 cite$ -- 4
-duplicate$ -- 56
-empty$ -- 106
-format.name$ -- 26
-if$ -- 286
+duplicate$ -- 53
+empty$ -- 91
+format.name$ -- 28
+if$ -- 264
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 6
+missing$ -- 4
 newline$ -- 23
 num.names$ -- 12
 pop$ -- 26
 preamble$ -- 1
-purify$ -- 29
+purify$ -- 30
 quote$ -- 0
-skip$ -- 44
+skip$ -- 43
 stack$ -- 0
-substring$ -- 94
-swap$ -- 6
-text.length$ -- 2
+substring$ -- 73
+swap$ -- 5
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
+type$ -- 22
 warning$ -- 0
-while$ -- 11
+while$ -- 10
 width$ -- 0
-write$ -- 54
+write$ -- 53
 (There was 1 error message)
