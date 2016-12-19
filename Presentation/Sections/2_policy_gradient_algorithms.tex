@@ -12,7 +12,7 @@
 		\end{equation*}
 		\item<+-> Which is solved numerically via gradient descent
 		\begin{equation*}
-		\theta_{k+1} = \theta_k + \alpha_k + 
+		\theta_{k+1} = \theta_k + \alpha_k 
        		\tikz[baseline]{
            		\node[anchor=base] (gradient) {$\nabla_\theta J\left(\theta_k\right)$};
        	   }
@@ -20,9 +20,9 @@
 	\end{enumerate}
 	\end{block}
 	
-	\onslide<+->{
+	\onslide<+-|handout:0>{
 		\begin{tikzpicture}[overlay]
-				\node[draw=SteelBlue, circle, line width=3pt, minimum size=1.8cm] at (8.9, 1.65) (g) {};
+				\node[draw=SteelBlue, circle, line width=3pt, minimum size=1.8cm] at (8.67, 1.65) (g) {};
 				\node[SteelBlue] at (11,-0.2) (q) {\Huge \textbf{?}};
 		        \draw [->, line width=3pt, SteelBlue] (q) to [bend left=35] (g);
 		\end{tikzpicture}
@@ -41,10 +41,10 @@
 	\end{alertblock}
 	
 	\onslide<2->{
-	For an episodic environment, the policy gradient can be approximated via Monte Carlo
+	For an episodic environment, the policy gradient can be approximated via Monte-Carlo
 	\begin{equation*}
-		\nabla_\theta J(\theta) \approx \frac{1}{M} \sum_{m=1}^M \nabla_\theta\log
-					\pi_\theta(s_0, a_0) Q_{\theta}(S, A)
+		\nabla_\theta J(\theta_k) \approx \frac{1}{M} \sum_{m=0}^M
+		 \sum_{u=0}^{T^{(m)}-1} \nabla_\theta\log \pi_{\theta_k} \left(s_u^{(m)}, a_u^{(m)}\right) \sum_{v \geq u}^{T^{(m)}-1} \gamma^{v-u} r_{v+1}^{(m)}   
 	\end{equation*}
 	}
 	
@@ -72,10 +72,12 @@
 			\begin{equation*}
 				\xi_{k+1} = \xi_k + \alpha_k \nabla_\xi J(\xi_k)
 			\end{equation*}
-		where the gradient is given by
+		where the policy gradient is given by
+		\begin{alertblock}{Parameter-Based Policy Gradient Theorem}
 			\begin{equation*}
 				\nabla_\xi J(\xi) = \E[\substack{S \sim d^\xi\\\theta \sim p_\xi}]{\nabla_\xi \log p_\xi(\theta) Q_{\xi}\left(S, F_\theta(S)\right)}
 			\end{equation*}		
+		\end{alertblock}
 	}
 \end{frame}
 

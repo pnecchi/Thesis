@@ -7,28 +7,61 @@
 	\end{block}
 	}
 	
-
 	\onslide<2->{
 	\textbf{Rewards}: portfolio log-return with transaction costs
 		\begin{equation*}
-		 R_{t+1} = \log \left\{ 1 + \sum^{I}_{i=0} \left[ a_t^i X_{t+1}^i - \delta_i
-		 			 	\left| a_t^i - \tilde{a}_t^i \right| - \delta_s {(a_t^i)}^- \right] -
-		 			 	\delta_f \mathbf{1}_{{a}_t \neq \tilde{{a}}_{t-1}}\right\}
+			R_{t+1} = \log \left\{ 1 + \sum^{I}_{i=0} \left[ 
+				\tikz[baseline]{
+		        	\node[anchor=base] (t1) {$a_t^i X_{t+1}^i$};
+		        } - 
+		        \tikz[baseline]{
+		        	\node[anchor=base] (t2) {$\delta_i \left| a_t^i - \widetilde{a}_t^i \right|$};
+		       	} -
+		       	\tikz[baseline]{
+		       		\node[anchor=base] (t3) {$\delta_s {(a_t^i)}^-$};
+		       	} \right] -
+		       	\tikz[baseline]{
+		       		\node[anchor=base] (t4) {$\delta_f \mathbf{1}_{{a}_t \neq \tilde{{a}}_{t-1}}$};
+		       	} \right\}	 	
 		 \end{equation*}
 	}
-
-	\onslide<3->{
+	
+	\onslide<7->{
 	\textbf{Actions}: Portfolio weights
 		\begin{equation*}
 			\{a_t^i\}_{i=0}^I \;\;\; \text{s.t.}\;\;\; \sum^{I}_{i=0} a_t^i = 1 \;\;\;\;\; \forall t \in \{0, 1, 2, \ldots\}
 		\end{equation*}
 	}
 
-	\onslide<4->{
+	\onslide<8->{
 	\textbf{States}: assets past returns and current allocation
 		\begin{equation*}
 			S_t = \{X, X_t, X_{t-1}, \ldots, X_{t-P}, \tilde{a}_t\}
 		\end{equation*}
+	}
+	
+	\onslide<3|handout:0>{
+		\begin{tikzpicture}[overlay]
+				\node[draw=SteelBlue, circle, line width=3pt, minimum size=2cm] at (t1) {};
+		\end{tikzpicture}
+	}
+	
+	\onslide<4|handout:0>{
+		\begin{tikzpicture}[overlay]
+				\node[draw=SteelBlue, circle, line width=3pt, minimum size=2cm] at (t2) {};
+		\end{tikzpicture}
+	}
+		
+	\onslide<5|handout:0>{
+		\begin{tikzpicture}[overlay]
+				\node[draw=SteelBlue, circle, line width=3pt, minimum size=2cm] at (t3) {};
+		\end{tikzpicture}
+	}
+			
+	\onslide<6|handout:0>{
+		\begin{tikzpicture}[overlay]
+				\node[draw=SteelBlue, circle, line width=3pt, minimum size=2cm] at (t4) (g) {};
+		\end{tikzpicture}
 	}
 \end{frame}
 
@@ -83,7 +116,7 @@
 	\begin{block}{Possible Explanations}
 		\begin{enumerate}
 			\item<2-> \textbf{Low signal-to-noise ratio}: extremely difficult to find tradable patterns in markets
-			\item<3-> \textbf{Lack of data}: impossible to find patterns in daily prices of liquid stocks
+			\item<3-> \textbf{Quality of data}: unlikely to find patterns in daily prices of liquid stocks
 			\item<4-> \textbf{Weak features}: parametric policy must be powerful enough to capture the signal
 			\item<5-> \textbf{Non-stationarity of financial time-series}: a signal needs to be persistent
 		\end{enumerate}

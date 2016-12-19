@@ -20,9 +20,9 @@
 \begin{frame}{Policy Gradient Theorem: Statement and Proof}
 
 	\begin{block}{Policy Gradient Theorem}
-	Let $\pi_\theta$ be a differentiable policy. The policy gradient is given by 
+	Let $\pi_\theta$ be a differentiable policy. For the gradient of the average reward is 
 	\begin{equation*}
-		\nabla_\theta J(\theta) =
+		\nabla_\theta \rho(\theta) =
 		\E[\substack{S \sim d^\theta\\A \sim \pi_\theta}]{\nabla_\theta\log
 		\pi_\theta(S,A) Q_{\theta}(S, A)}
 	\end{equation*}
@@ -46,14 +46,35 @@
 	}
 \end{frame}
 
+
+
+\begin{frame}{Monte-Carlo Policy Gradient: Pseudocode}
+	\begin{algorithmic}[1]
+		\Require Stochastic policy $\pi_\theta$, Initial parameters $\theta_0$, learning rate $\{\alpha_k\}$
+		\Ensure Approximation of the optimal policy $\pi_{\theta^*} \approx \pi_*$
+		\Repeat
+			\State Sample $M$ trajectories $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)}, r_{t+1}^{(m)})\}_{t = 0}^{T^{(m)}}$ under policy $\pi_{\theta_k}$   
+			\State Approximate policy gradient 
+			\begin{equation*}
+				\nabla_\theta J(\theta_k) \approx \frac{1}{M} \sum_{m=0}^M
+				 \sum_{u=0}^{T^{(m)}-1} \nabla_\theta\log \pi_{\theta_k} \left(s_u^{(m)}, a_u^{(m)}\right) 
+				 \sum_{v \geq u}^{T^{(m)}-1} \gamma^{v-u} r_{v+1}^{(m)}   
+			\end{equation*}
+			\State Update parameters using gradient ascent $\theta_{k+1} = \theta_k + \alpha_k \nabla_\theta J(\theta_k)$
+			\State $k \leftarrow k + 1$
+		\Until{converged}
+	\end{algorithmic}
+\end{frame}
+
+
 \begin{frame}{Episodic PGPE Algorithm: Pseudocode}
 	\begin{algorithmic}[1]
-		\Require Deterministic controller $F_\theta$, Initial hyper-parameters $\xi^0$, learning rate $\{\alpha_k\}$
+		\Require Controller $F_\theta$, hyper-distribution $p_\xi$, initial guess $\xi_0$, learning rate $\{\alpha_k\}$
 		\Ensure Approximation of the optimal policy $F_{\xi^*} \approx \pi_*$
 		\Repeat
 			\For {$m = 1, \ldots, M$}
 				\State Sample controller parameters $\theta^{(m)} \sim p_{\xi_k}$ 
-				\State Sample trajectory $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)})\}_{t \geq 0}$ under policy $F_{\theta^{(m)}}$
+				\State Sample trajectory $h^{(m)} = \{(s_t^{(m)}, a_t^{(m)}, r_{t+1}^{(m)})\}_{t = 0}^{T^{(m)}}$ under policy $F_{\theta^{(m)}}$
 			\EndFor
 			\State Approximate policy gradient 
 		  		\begin{equation*}
@@ -68,8 +89,8 @@
 
 \begin{frame}{Natural PGPE Algorithm: Pseudocode}
 	\begin{algorithmic}[1]
-		\Require Deterministic controller $F_\theta$, Initial hyper-parameters $\xi^0$, learning rate $\{\alpha_k\}$
-		\Ensure Approximation of the optimal hyper-parameters $\xi_*$
+		\Require Controller $F_\theta$, hyper-distribution $p_\xi$, initial guess $\xi_0$, learning rate $\{\alpha_k\}$
+		\Ensure Approximation of the optimal policy $F_{\xi^*} \approx \pi_*$
 		\Repeat
 			\State Observe current state $s_k$
 			\State Draw $\zeta_k \sim \calN(0, I_n)$
